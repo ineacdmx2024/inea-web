@@ -27,14 +27,7 @@ const Navbar = () => {
                 passHref
                 className="hover:text-[#8B6C41] p-2 rounded"
               >
-                Trámites
-              </Link>
-              <Link
-                href="/"
-                passHref
-                className="hover:text-[#8B6C41] p-2 rounded"
-              >
-                Gobierno
+                ¿Qué es el INEA?
               </Link>
               <Link
                 href="/"
@@ -42,6 +35,13 @@ const Navbar = () => {
                 className="hover:text-[#8B6C41] p-2 rounded"
               >
                 Contacto
+              </Link>
+              <Link
+                href="/"
+                passHref
+                className="hover:text-[#8B6C41] p-2 rounded"
+              >
+                Mapa del sitio
               </Link>
               <Link
                 href="https://www.gob.mx/busqueda?utf8=%E2%9C%93"
@@ -111,7 +111,7 @@ const Navbar = () => {
                   href="#"
                   className="hover:text-[#8B6C41] p-2 rounded"
                 >
-                  Servicios
+                  Oferta educativa
                 </Link>
                 <div className="hidden group-hover:block absolute bg-gray-100 mt-2 rounded shadow-lg text-black">
                   <Link
@@ -127,13 +127,13 @@ const Navbar = () => {
                     Presencial
                   </Link>
                   <Link
-                    href="#"
+                    href="https://aprendeinea.inea.gob.mx/cursos_2023/index_todos.html"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     En línea / APRENDEINEA
                   </Link>
                   <Link
-                    href="#"
+                    href="http://www.cursosinea.conevyt.org.mx/index.php?option=com_k2&view=item&layout=item&id=658&Itemid=254"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     En línea / MEVyT
@@ -153,7 +153,7 @@ const Navbar = () => {
                   href="#"
                   className="hover:text-[#8B6C41] p-2 rounded"
                 >
-                  Trámites
+                  Servicios
                 </Link>
                 <div className="hidden group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg">
                   <Link
@@ -169,10 +169,22 @@ const Navbar = () => {
                     Solicitud de duplicados
                   </Link>
                   <Link
-                    href="#"
+                    href="https://www.gob.mx/curp/"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     Consulta tu CURP
+                  </Link>
+                  <Link
+                    href="/"
+                    className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
+                  >
+                    Constancia COMIPEMS
+                  </Link>
+                  <Link
+                    href="/"
+                    className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
+                  >
+                    Reposición certificados SEP
                   </Link>
                 </div>
               </div>
@@ -185,20 +197,6 @@ const Navbar = () => {
                 >
                   Ubicación
                 </Link>
-                <div className="hidden group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg">
-                  <Link
-                    href="#"
-                    className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
-                  >
-                    Plazas comunitarias
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
-                  >
-                    Coordinaciones de zona
-                  </Link>
-                </div>
               </div>
 
               {/* Control escolar */}
@@ -211,40 +209,28 @@ const Navbar = () => {
                 </Link>
                 <div className="hidden group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg">
                   <Link
-                    href="#"
+                    href="http://www.inea.gob.mx/servicios_en_linea/Consulta_avance_academico.html"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     Consulta tu avance académico
                   </Link>
                   <Link
-                    href="#"
+                    href="http://siga.inea.gob.mx/PEC/Account/Login?ReturnUrl=%2FPEC%2F"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     SIGA PEC
                   </Link>
                   <Link
-                    href="#"
+                    href="http://siga.inea.gob.mx/figuras/Account/Login?ReturnUrl=%2Ffiguras%2F"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     SIGA FIGURAS
                   </Link>
                   <Link
-                    href="#"
+                    href="http://sael.inea.gob.mx/Login.aspx?ReturnUrl=/&AspxAutoDetectCookieSupport=1"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     SAEL
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
-                  >
-                    FORMACION DE ASESORES
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
-                  >
-                    SASA
                   </Link>
                 </div>
               </div>
@@ -274,7 +260,7 @@ const Navbar = () => {
                     href="#"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
-                    Sistema de oficios
+                    Sistema de Oficios
                   </Link>
                   <Link
                     href="#"
@@ -283,16 +269,28 @@ const Navbar = () => {
                     SIMA
                   </Link>
                   <Link
-                    href="#"
+                    href="http://sibiplac.inea.gob.mx/Sibiplac/Login.aspx?ReturnUrl=%2fSibiplac%2fReportes.aspx"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     SIBIPLAC
                   </Link>
                   <Link
-                    href="#"
+                    href="http://plazas.conevyt.org.mx:8080/plazas/"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     SINAPLAC
+                  </Link>
+                  <Link
+                    href="/"
+                    className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
+                  >
+                    Constancias COMIPEMS
+                  </Link>
+                  <Link
+                    href="http://df.sasa.inea.gob.mx/INEAGUI/guiLogin.aspx?ReturnUrl=%2fINEAGUI%2fdefault.aspx"
+                    className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
+                  >
+                    SASA
                   </Link>
                 </div>
               </div>
