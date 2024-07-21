@@ -8,14 +8,14 @@ const Navbar = () => {
       <div className="w-full ">
         {/* Menú gobierno */}
         <nav className="bg-[#03281A]">
-          <div className="flex items-center justify-between py-0 px-4rem ml-[8rem] mr-[8rem]">
+          <div className="flex items-center justify-between py-[1rem] px-4rem ml-[8rem] mr-[8rem]">
             <div className="flex items-center">
               <Link
-                href="https://www.gob.mx/"
+                href="https://www.gob.mx/sep"
                 passHref
               >
                 <img
-                  src="https://framework-gb.cdn.gob.mx/landing/img/logoheader.svg"
+                  src="/LogoEducación.svg"
                   alt="Gobierno de México"
                   className="hover:text-[#8B6C41] p-2 rounded inline-block py-0.3rem mr-1rem leading-relaxed"
                 />
@@ -68,7 +68,7 @@ const Navbar = () => {
         </nav>
 
         {/* Menú inferior */}
-        <nav className="navBarINEA bg-[#0C3022] p-4 w-full">
+        <nav className="navBarINEA bg-[#0C3022] p-2 w-full">
           <div className="flex items-center justify-between container ml-auto px-4 ">
             <div className="flex items-center">
               <Link
@@ -78,7 +78,7 @@ const Navbar = () => {
                 <img
                   src="/LogoINEACDMX_withe.svg"
                   alt="INEA"
-                  className="hover:text-[#8B6C41] p-2 rounded inline-block py-0.3rem mr-1rem leading-relaxed"
+                  className="hover:text-[#8B6C41] p-1 rounded inline-block py-0.3rem mr-1rem leading-relaxed"
                 />
               </Link>
             </div>
@@ -115,13 +115,13 @@ const Navbar = () => {
                 </Link>
                 <div className="hidden group-hover:block absolute bg-gray-100 mt-2 rounded shadow-lg text-black">
                   <Link
-                    href="#"
+                    href="/oferta-educativa/que-modalidad-elijo"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     ¿Qué modalidad elijo?
                   </Link>
                   <Link
-                    href="#"
+                    href="/oferta-educativa/presencial"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     Presencial
@@ -139,7 +139,7 @@ const Navbar = () => {
                     En línea / MEVyT
                   </Link>
                   <Link
-                    href="#"
+                    href="/oferta-educativa/examen-unico"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     Examen Único
@@ -163,7 +163,7 @@ const Navbar = () => {
                     Descarga tu certificado
                   </Link>
                   <Link
-                    href="#"
+                    href="/servicios/solicitud-duplicados"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     Solicitud de duplicados
@@ -175,16 +175,34 @@ const Navbar = () => {
                     Consulta tu CURP
                   </Link>
                   <Link
-                    href="/"
+                    href="/servicios/constancia-comipems"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     Constancia COMIPEMS
                   </Link>
                   <Link
-                    href="/"
+                    href="/servicios/reposicion-certificados"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     Reposición certificados SEP
+                  </Link>
+                  <Link
+                    href="/servicios/guias-aprendizaje"
+                    className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
+                  >
+                    Guías de aprendizaje
+                  </Link>
+                  <Link
+                    href="/servicios/descargar-modulos"
+                    className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
+                  >
+                    Descarga de Módulos
+                  </Link>
+                  <Link
+                    href="/servicios/revalidacion-extranjeros"
+                    className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
+                  >
+                    Revalidación a extranjeros
                   </Link>
                 </div>
               </div>
@@ -192,7 +210,7 @@ const Navbar = () => {
               {/* Ubicación */}
               <div className="group relative">
                 <Link
-                  href="#"
+                  href="/ubicacion"
                   className="hover:text-[#8B6C41] p-2 rounded"
                 >
                   Ubicación
@@ -245,25 +263,25 @@ const Navbar = () => {
                 </Link>
                 <div className="hidden group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg">
                   <Link
-                    href="#"
+                    href="http://cdmx.inea.gob.mx/CATN2/login.asp"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     Mesa de servicios
                   </Link>
                   <Link
-                    href="#"
+                    href="http://cdmx.inea.gob.mx/gestion/"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     Sistema de Gestión
                   </Link>
                   <Link
-                    href="#"
+                    href="http://cdmx.inea.gob.mx/oficios/"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     Sistema de Oficios
                   </Link>
                   <Link
-                    href="#"
+                    href="http://cdmx.inea.gob.mx/SIMA/"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     SIMA
@@ -281,7 +299,7 @@ const Navbar = () => {
                     SINAPLAC
                   </Link>
                   <Link
-                    href="/"
+                    href="http://cdmx.inea.gob.mx/comipems/login.asp"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     Constancias COMIPEMS
@@ -291,6 +309,12 @@ const Navbar = () => {
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     SASA
+                  </Link>
+                  <Link
+                    href="http://satic.inea.gob.mx/"
+                    className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
+                  >
+                    SATIC
                   </Link>
                 </div>
               </div>
