@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.navBar{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    /* background: #03281A; */
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0;
+    font-size: 17.5px;
+    font-weight: 300;
+    justify-content: space-between;
+}
+
+.navBar ul{
+    display: flex;
+    gap: 1rem;
+}
+
+.navBar ul li{
+    list-style: none;
+}
+
+.navBarGob{
+    background: #03281A;
+}
+
+/* NavBar.css */
+.navBar img, .navBarINEA img {
+  height: 3.5rem; 
+  width: auto; /* Mantiene la proporción */
+}
+
+.navBarINEA .flex.items-center {
+  display: flex;
+  align-items: center;
+}
+
+.navBarINEA .flex.items-center {
+  display: flex;
+  align-items: center;
+}
+
+
