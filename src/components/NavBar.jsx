@@ -84,7 +84,7 @@ const Navbar = () => {
             </div>
             <div className="flex items-center space-x-4">
               <Link
-                href="/inicio"
+                href="/"
                 passHref
                 className="hover:text-[#8B6C41] p-2 rounded columns-2"
               >
@@ -187,7 +187,7 @@ const Navbar = () => {
                     Reposición certificados SEP
                   </Link>
                   <Link
-                    href="/servicios/guias-aprendizaje"
+                    href="/servicios/guias-aprendizajes"
                     className="block hover:bg-[#8B6C41] hover:text-white p-2 rounded"
                   >
                     Guías de aprendizaje
