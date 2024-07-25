@@ -9,7 +9,7 @@
     /* background: #03281A; */
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 0;
-    font-size: 17.5px;
+    font-size: 16px;
     font-weight: 300;
     justify-content: space-between;
 }
@@ -31,6 +31,7 @@
 .navBar img, .navBarINEA img {
   height: 3.5rem; 
   width: auto; /* Mantiene la proporción */
+  max-width: 10rem;
 }
 
 .navBarINEA .flex.items-center {
@@ -41,6 +42,22 @@
 .navBarINEA .flex.items-center {
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 450px) {
+  .navBar img, .navBarINEA img {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+@media screen and (min-width: 450px) {
+  .navBar img, .navBarINEA img {
+    margin-left: 8rem;
+    margin-right: 8rem;
+  }
+  #menubajo{
+    margin-right: 5rem;
+  }
 }
 
 
