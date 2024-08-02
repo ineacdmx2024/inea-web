@@ -1,6 +1,7 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import Ubicacion from "@/components/Ubicacion";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
       <body className={roboto.className}>
         <NavBar />
         {children}
+        <Ubicacion />
       </body>
     </html>
   );
