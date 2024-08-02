@@ -13,12 +13,18 @@ const Ubicacion = () => {
       <hr className="mb-4 border-gray-200 border-t-2"></hr>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="text-xl text-zinc-800">
+          <br />
           <p>Dirección INEA CDMX:</p>
           <p className="text-xl text-zinc-700">
-            Francisco Márquez 160, Colonia Condesa, Cuauhtémoc, 06140 Ciudad de
-            México, CDMX
+            Francisco Márquez 160 Planta baja, Colonia Condesa, Cuauhtémoc,
+            06140 Ciudad de México, Ciudad de México.
           </p>
-          <p>Telefono:</p>
+          <br />
+          <p>
+            Atención telefónica 800 8906 310, Conmutador 55 5211-0815 / 55
+            5211-0824 / 55 5211-0866 / 55 5211-0798 / 55 5211-0912
+          </p>
+          <br />
           <p>Horario de atención de 8:00 a 20:00 horas.</p>
         </div>
         <div>
@@ -26,7 +32,7 @@ const Ubicacion = () => {
             src="https://www.google.com/maps/d/embed?mid=1at8nJJLYa-9bcZEgHMt-8Nb_cPK8tnI&ehbc=2E312F"
             width="640"
             height="480"
-            className="w-full h-64 md:h-96 lg:h-[26rem] border-0"
+            className="w-full h-64 md:h-96 lg:h-[26rem] border-0 rounded-lg"
             allowFullScreen
           ></iframe>
         </div>
