@@ -3,3 +3,19 @@
 #UbicacionDivP{
     font-family: 'Montserrat', sans-serif;
 }
+
+@media screen and (min-width: 1200px) {
+  #UbicacionDivP{
+    margin-left: 20rem;
+    margin-right: 20rem;
+  }
+  
+  }
+
+  @media screen and (max-width: 1200px) and (min-width:300px) {
+   #direccion{
+    margin-bottom: 10%;
+   }
+  
+  }
+  
