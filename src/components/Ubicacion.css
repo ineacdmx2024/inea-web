@@ -3,7 +3,13 @@
 #UbicacionDivP{
     font-family: 'Montserrat', sans-serif;
 }
-
+#UbicacionDivP a{
+  color:#BC955C ;
+}
+#UbicacionDivP a:hover{
+  color:#BC955C ;
+  text-decoration: underline;
+}
 @media screen and (min-width: 1200px) {
   #UbicacionDivP{
     margin-left: 20rem;

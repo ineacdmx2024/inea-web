@@ -270,16 +270,16 @@ const Navbar = () => {
                         En línea / APRENDEINEA
                       </Link>
                       <Link
-                        href="http://www.cursosinea.conevyt.org.mx/index.php?option=com_k2&view=item&layout=item&id=658&Itemid=254"
-                        className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
+                        href="/oferta-educativa/examen-unico"
+                        className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
                       >
-                        En línea / MEVyT
+                        Examen Único
                       </Link>
                       <Link
                         href="/oferta-educativa/examen-unico"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
                       >
-                        Examen Único
+                        Exámenes diagnósticos
                       </Link>
                     </div>
                   </div>
@@ -339,16 +339,10 @@ const Navbar = () => {
                         Reposición certificados SEP
                       </Link>
                       <Link
-                        href="/servicios/guias-aprendizaje"
-                        className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
-                      >
-                        Guías de aprendizaje
-                      </Link>
-                      <Link
                         href="/servicios/descargar-modulos"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
                       >
-                        Descarga de Módulos
+                        Descarga material de estudio
                       </Link>
                       <Link
                         href="/servicios/revalidacion-extranjeros"
@@ -416,6 +410,12 @@ const Navbar = () => {
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
                       >
                         SAEL
+                      </Link>
+                      <Link
+                        href=""
+                        className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
+                      >
+                        Departamento de Planeación, Seguimiento Operativo y Acreditación
                       </Link>
                     </div>
                   </div>
@@ -619,16 +619,16 @@ const Navbar = () => {
                         En línea / APRENDEINEA
                       </Link>
                       <Link
-                        href="http://www.cursosinea.conevyt.org.mx/index.php?option=com_k2&view=item&layout=item&id=658&Itemid=254"
-                        className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
+                        href="/oferta-educativa/examen-unico"
+                        className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
                       >
-                        En línea / MEVyT
+                        Examen Único
                       </Link>
                       <Link
                         href="/oferta-educativa/examen-unico"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
                       >
-                        Examen Único
+                        Exámenes diagnósticos
                       </Link>
                     </div>
                   )}
@@ -690,16 +690,10 @@ const Navbar = () => {
                         Reposición certificados SEP
                       </Link>
                       <Link
-                        href="/servicios/guias-aprendizaje"
-                        className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
-                      >
-                        Guías de aprendizaje
-                      </Link>
-                      <Link
                         href="/servicios/descargar-modulos"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
                       >
-                        Descarga de Módulos
+                        Descarga material de estudio
                       </Link>
                       <Link
                         href="/servicios/revalidacion-extranjeros"
@@ -769,6 +763,12 @@ const Navbar = () => {
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
                       >
                         SAEL
+                      </Link>
+                      <Link
+                        href=""
+                        className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
+                      >
+                        Departamento de Planeación, Seguimiento Operativo y Acreditación
                       </Link>
                     </div>
                   )}

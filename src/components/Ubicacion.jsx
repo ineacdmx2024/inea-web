@@ -26,6 +26,9 @@ const Ubicacion = () => {
           </p>
           <br />
           <p>Horario de atención de 8:00 a 20:00 horas.</p>
+          <br />
+          
+          <a href="/">Detalles de ubicaciones</a>
         </div>
         <div>
           <iframe
