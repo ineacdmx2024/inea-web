@@ -51,7 +51,10 @@ const Navbar = () => {
                 />
               </Link>
             </div>
-            <div className="flex items-center space-x-7" id="contenidoSup">
+            <div
+              className="flex items-center space-x-7"
+              id="contenidoSup"
+            >
               <div className="hidden md:block">
                 <div className="ml-4 flex items-end space-x-5">
                   <Link
@@ -250,7 +253,10 @@ const Navbar = () => {
                       </svg>
                     </Link>
 
-                    <div className="hidden group-hover:block absolute bg-gray-100 mt-2 rounded shadow-lg text-black">
+                    {/* cambie que ahora en vez de que este oculto siempre este ahi pero en una capa de z mas alto para que no afecte el tamaño del navbar  */}
+                    <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50">
+                      {/* este es el anterior */}
+                      {/* <div className="hidden    group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg  transition-opacity duration-300 delay-200"> */}
                       <Link
                         href="/oferta-educativa/que-modalidad-elijo"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
@@ -307,7 +313,7 @@ const Navbar = () => {
                         />
                       </svg>
                     </Link>
-                    <div className="hidden group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg">
+                    <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50">
                       <Link
                         href="http://certificacion.inea.gob.mx/DescCertificado.aspx"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
@@ -386,7 +392,7 @@ const Navbar = () => {
                         />
                       </svg>
                     </Link>
-                    <div className="hidden group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg">
+                    <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50">
                       <Link
                         href="http://www.inea.gob.mx/servicios_en_linea/Consulta_avance_academico.html"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
@@ -415,7 +421,7 @@ const Navbar = () => {
                         href=""
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
                       >
-                        Departamento de Planeación, Seguimiento Operativo y Acreditación
+                        Departamento de Planeación
                       </Link>
                     </div>
                   </div>
@@ -443,7 +449,7 @@ const Navbar = () => {
                         />
                       </svg>
                     </Link>
-                    <div className="hidden group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg">
+                    <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50">
                       <Link
                         href="http://cdmx.inea.gob.mx/CATN2/login.asp"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
@@ -497,6 +503,12 @@ const Navbar = () => {
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
                       >
                         SATIC
+                      </Link>
+                      <Link
+                        href="https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=4&ct=1420848406&rver=6.4.6456.0&wp=MCMBI&wreply=https://portal.office.com/landing.aspx?target=%2fdefault.aspx&lc=2058&id=501392&sso_reload=true"
+                        className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
+                      >
+                        Correo Institucional
                       </Link>
                     </div>
                   </div>
@@ -768,7 +780,8 @@ const Navbar = () => {
                         href=""
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
                       >
-                        Departamento de Planeación, Seguimiento Operativo y Acreditación
+                        Departamento de Planeación, Seguimiento Operativo y
+                        Acreditación
                       </Link>
                     </div>
                   )}
@@ -852,6 +865,12 @@ const Navbar = () => {
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
                       >
                         SATIC
+                      </Link>
+                      <Link
+                        href="https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=4&ct=1420848406&rver=6.4.6456.0&wp=MCMBI&wreply=https://portal.office.com/landing.aspx?target=%2fdefault.aspx&lc=2058&id=501392&sso_reload=true"
+                        className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
+                      >
+                        Correo Institucional
                       </Link>
                     </div>
                   )}
