@@ -10,9 +10,14 @@ const Ubicacion = () => {
       <h2 className="text-3xl font-semibold tracking-wider text-gray-700 ">
         Ubicación
       </h2>
-      <hr className="mb-4 border-gray-200 border-t-2"></hr>
+
+      <hr className="border-gray-200 border-t-2"></hr>
+      <div className="h-1 w-16 bg-[#B38B57] mb-4"></div>
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <div id="direccion" className="text-s text-zinc-800 ">
+        <div
+          id="direccion"
+          className="text-s text-zinc-800 "
+        >
           <br />
           <p>Dirección INEA CDMX:</p>
           <p className="text-s text-zinc-700">
@@ -27,7 +32,7 @@ const Ubicacion = () => {
           <br />
           <p>Horario de atención de 8:00 a 20:00 horas.</p>
           <br />
-          
+
           <a href="/">Detalles de ubicaciones</a>
         </div>
         <div>

@@ -252,9 +252,9 @@ const Navbar = () => {
                         />
                       </svg>
                     </Link>
-
-                    {/* cambie que ahora en vez de que este oculto siempre este ahi pero en una capa de z mas alto para que no afecte el tamaño del navbar  */}
-                    <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50">
+                    <div className="absolute left-0 mt-2 hidden group-hover:block bg-gray-100 text-black rounded shadow-lg z-50">
+                      {/* <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50"> */}
+                      {/* cambie que ahora en vez de que este oculto siempre este ahi pero en una capa de z mas alto para que no afecte el tamaño del navbar  */}
                       {/* este es el anterior */}
                       {/* <div className="hidden    group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg  transition-opacity duration-300 delay-200"> */}
                       <Link
@@ -294,11 +294,11 @@ const Navbar = () => {
                   <div className="group relative">
                     <Link
                       href="#"
-                      className="hover:text-[#D3C09B] p-2 rounded flex items-center justify-between w-full "
+                      className="hover:text-[#D3C09B] p-2 flex items-center justify-between w-full"
                     >
                       Servicios
                       <svg
-                        class="w-2.5 h-2.5 ms-2.5"
+                        className="w-2.5 h-2.5 ms-2.5"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
@@ -306,14 +306,15 @@ const Navbar = () => {
                       >
                         <path
                           stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="1"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1"
                           d="M15.434 1.235A2 2 0 0 0 13.586 0H2.414A2 2 0 0 0 1 3.414L6.586 9a2 2 0 0 0 2.828 0L15 3.414a2 2 0 0 0 .434-2.179Z"
                         />
                       </svg>
                     </Link>
-                    <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50">
+
+                    <div className="absolute left-0 mt-2 hidden group-hover:block bg-gray-100 text-black rounded shadow-lg z-50">
                       <Link
                         href="http://certificacion.inea.gob.mx/DescCertificado.aspx"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
@@ -322,7 +323,7 @@ const Navbar = () => {
                       </Link>
                       <Link
                         href="/servicios/solicitud-duplicados"
-                        className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate "
+                        className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
                       >
                         Solicitud de duplicados
                       </Link>
@@ -392,7 +393,8 @@ const Navbar = () => {
                         />
                       </svg>
                     </Link>
-                    <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50">
+                    <div className="absolute left-0 mt-2 hidden group-hover:block bg-gray-100 text-black rounded shadow-lg z-50">
+                      {/* <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50"> */}
                       <Link
                         href="http://www.inea.gob.mx/servicios_en_linea/Consulta_avance_academico.html"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
@@ -449,7 +451,9 @@ const Navbar = () => {
                         />
                       </svg>
                     </Link>
-                    <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50">
+
+                    <div className="absolute left-0 mt-2 hidden group-hover:block bg-gray-100 text-black rounded shadow-lg z-50">
+                      {/* <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50"> */}
                       <Link
                         href="http://cdmx.inea.gob.mx/CATN2/login.asp"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
