@@ -65,6 +65,23 @@
   }
 }
 
+/* ____________submenus__________________- */
+.delayed-show {
+  transition-delay: 200ms;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-duration: 300ms; /* Duración de la transición */
+  transition-delay: 200ms; /* Retraso antes de iniciar la transición */
+}
+
+.delayed-transition {
+  transition: all 300ms ease-in-out 200ms;
+}
+
+
+
 
 
 
