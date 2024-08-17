@@ -36,13 +36,20 @@ const Ubicacion = () => {
           <a href="/">Detalles de ubicaciones</a>
         </div>
         <div>
-          <iframe
+          {/* <iframe
             src="https://www.google.com/maps/d/embed?mid=1at8nJJLYa-9bcZEgHMt-8Nb_cPK8tnI&ehbc=2E312F"
             width="600"
             height="480"
             className="w-full h-74 md:h-96 lg:h-[26rem] border-0 rounded-lg"
             allowFullScreen
-          ></iframe>
+          ></iframe> */}
+          <iframe
+            src="https://www.google.com/maps/d/embed?mid=11LVXyU_3QKH1JkOXIMVba2bEkN8f_iY&hl=es&ehbc=2E312F"
+            width="640"
+            height="480"
+            className="w-full h-74 md:h-96 lg:h-[26rem] border-0 rounded-lg"
+            allowFullScreen
+          />
         </div>
       </div>
     </div>
