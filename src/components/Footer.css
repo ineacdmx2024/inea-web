@@ -1,0 +1,45 @@
+@import url('https://framework-gb.cdn.gob.mx/assets/styles/main.css');
+
+.footer{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    /* background: #03281A; */
+    font-family: 'Montserrat', sans-serif;
+    color: aliceblue;
+    margin-bottom: 0;
+    font-size: 17.5px;
+    font-weight: 300;
+    justify-content: space-between;
+}
+
+.footer ul{
+    display: flex;
+    gap: 1rem;
+}
+
+.footerul li{
+    list-style: none;
+}
+
+.footerGob{
+    background: #03281A;
+}
+
+/* NavBar.css */
+.footer img, .footerINEA img {
+  height: 3.5rem; 
+  width: auto; /* Mantiene la proporción */
+}
+
+.footerINEA .flex.items-center {
+  display: flex;
+  align-items: center;
+}
+
+.footerINEA .flex.items-center {
+  display: flex;
+  align-items: center;
+}
