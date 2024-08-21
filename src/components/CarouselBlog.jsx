@@ -229,7 +229,7 @@ const CarouselBlog = () => {
       </Slider>
       <div className="flex justify-end m-auto">
         <Link
-          className="mt-20 mr-[1rem] lg:bg-black lg:mr-[5rem] xl:mr-[24rem] xl:bg-yellow-600  md:bg-blue-700 w-36 text-center bg-red-700 text-white py-2 px-4 sm:bg-purple-950 hover:bg-red-800 rounded-full block letras:text-base text-xs letras:w-44"
+          className="mt-20 mr-[1rem] lg:mr-[5rem] xl:mr-[24rem] w-36 text-center bg-red-700 text-white py-2 px-4 hover:bg-red-800 rounded-full block letras:text-base text-xs letras:w-44"
           href={"/#"}
         >
           <p>Noticias Anteriores</p>
