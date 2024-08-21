@@ -7,11 +7,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "tablet": "1210px",
+        "arrow": "810px",
+        "medida3" : "750px",
+        "letras" : "390px"
+      },
       maxWidth: {
         "2xl2" : "75rem"
       },
       width: {
         "46": "750",
+      },
+      padding: {
+        "88": "22rem",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
