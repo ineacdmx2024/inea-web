@@ -51,7 +51,10 @@ const Navbar = () => {
                 />
               </Link>
             </div>
-            <div className="flex items-center space-x-7" id="contenidoSup">
+            <div
+              className="flex items-center space-x-7"
+              id="contenidoSup"
+            >
               <div className="hidden md:block">
                 <div className="ml-4 flex items-end space-x-5">
                   <Link
@@ -250,10 +253,7 @@ const Navbar = () => {
                         />
                       </svg>
                     </Link>
-<<<<<<< Updated upstream
-
-                    <div className="hidden group-hover:block absolute bg-gray-100 mt-2 rounded shadow-lg text-black">
-=======
+                    {/* <div className="hidden group-hover:block absolute bg-gray-100 mt-2 rounded shadow-lg text-black"> */}
                     <div
                       className={`absolute left-0 mt-2 ${
                         // isClickOE ? "opacity-100" : "opacity-0"
@@ -266,7 +266,6 @@ const Navbar = () => {
                       {/* cambie que ahora en vez de que este oculto siempre este ahi pero en una capa de z mas alto para que no afecte el tamaño del navbar  */}
                       {/* este es el anterior */}
                       {/* <div className="hidden    group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg  transition-opacity duration-300 delay-200"> */}
->>>>>>> Stashed changes
                       <Link
                         href="/oferta-educativa/que-modalidad-elijo"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
@@ -304,12 +303,8 @@ const Navbar = () => {
                   <div className="group relative">
                     <Link
                       href="#"
-<<<<<<< Updated upstream
-                      className="hover:text-[#D3C09B] p-2 rounded flex items-center justify-between w-full "
-=======
                       onClick={() => setisClickS(!isClickS)}
                       className="hover:text-[#D3C09B] p-2 flex items-center justify-between w-full cursor-pointer"
->>>>>>> Stashed changes
                     >
                       Servicios
                       <svg
@@ -328,16 +323,12 @@ const Navbar = () => {
                         />
                       </svg>
                     </Link>
-<<<<<<< Updated upstream
-                    <div className="hidden group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg">
-=======
-
+                    {/* <div className="hidden group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg"> */}
                     <div
                       className={`absolute left-0 mt-2 ${
                         isClickS ? "block" : "hidden"
                       } bg-gray-100 text-black rounded shadow-lg transition-opacity duration-300 ease-in-out delay-200 z-50`}
                     >
->>>>>>> Stashed changes
                       <Link
                         href="http://certificacion.inea.gob.mx/DescCertificado.aspx"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
@@ -393,7 +384,7 @@ const Navbar = () => {
                   <div className="group relative ">
                     <Link
                       href="/ubicacion"
-                      className="hover:text-[#D3C09B] p-2 rounded rounded flex items-center justify-between w-full "
+                      className="hover:text-[#D3C09B] p-2 rounded flex items-center justify-between w-full "
                     >
                       Ubicación
                     </Link>
@@ -423,10 +414,8 @@ const Navbar = () => {
                         />
                       </svg>
                     </Link>
-<<<<<<< Updated upstream
-                    <div className="hidden group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg">
-=======
 
+                    {/* <div className="hidden group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg"> */}
                     <div
                       className={`absolute left-0 mt-2 ${
                         isClickCE ? "block" : "hidden"
@@ -434,7 +423,6 @@ const Navbar = () => {
                     >
                       {" "}
                       {/* <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50"> */}
->>>>>>> Stashed changes
                       <Link
                         href="http://www.inea.gob.mx/servicios_en_linea/Consulta_avance_academico.html"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
@@ -486,10 +474,7 @@ const Navbar = () => {
                         />
                       </svg>
                     </Link>
-<<<<<<< Updated upstream
-                    <div className="hidden group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg">
-=======
-
+                    {/* <div className="hidden group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg"> */}
                     <div
                       className={`absolute left-0 mt-2 ${
                         isClickI ? "block" : "hidden"
@@ -497,7 +482,6 @@ const Navbar = () => {
                     >
                       {" "}
                       {/* <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50"> */}
->>>>>>> Stashed changes
                       <Link
                         href="http://cdmx.inea.gob.mx/CATN2/login.asp"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
@@ -552,8 +536,6 @@ const Navbar = () => {
                       >
                         SATIC
                       </Link>
-<<<<<<< Updated upstream
-=======
                       <Link
                         href="https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=4&ct=1420848406&rver=6.4.6456.0&wp=MCMBI&wreply=https://portal.office.com/landing.aspx?target=%2fdefault.aspx&lc=2058&id=501392&sso_reload=true"
                         className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
@@ -566,7 +548,6 @@ const Navbar = () => {
                       >
                         Iniciar sesión
                       </Link>
->>>>>>> Stashed changes
                     </div>
                   </div>
                 </div>
