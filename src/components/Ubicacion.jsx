@@ -6,13 +6,18 @@ const Ubicacion = () => {
     <div
       id="UbicacionDivP"
       className="container w-auto mx-auto px-4 py-8"
+      // className="mx-auto mt-32 mb-16 w-full letras:w-1/2 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]"
     >
-      <h2 className="text-3xl font-semibold tracking-wider text-gray-700 ">
-        Ubicación
-      </h2>
+      <div className="mx-auto w-full letras:w-1/2 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
+        <h1 className="text-3xl font-medium text-slate-600 mb-2 letras:text-4xl ">
+          Ubicación
+        </h1>
+        <div className="flex items-center">
+          <div className="w-12 h-2 bg-[#af8900] mt-1"></div>
+          <div className="flex-grow h-px bg-gray-300"></div>
+        </div>
+      </div>
 
-      <hr className="border-gray-200 border-t-2"></hr>
-      <div className="h-1 w-16 bg-[#B38B57] mb-4"></div>
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div
           id="direccion"
@@ -47,7 +52,7 @@ const Ubicacion = () => {
             src="https://www.google.com/maps/d/embed?mid=11LVXyU_3QKH1JkOXIMVba2bEkN8f_iY&hl=es&ehbc=2E312F"
             width="640"
             height="480"
-            className="w-full h-74 md:h-96 lg:h-[26rem] border-0 rounded-lg"
+            className="w-full h-74 md:h-96 lg:h-[26rem] border-0 rounded-lg p-2"
             allowFullScreen
           />
         </div>
