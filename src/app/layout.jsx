@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
       <body className={roboto.className}>
         <NavBar />
         {children}
+        <Ubicacion />
       </body>
     </html>
   );

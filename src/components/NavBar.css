@@ -39,7 +39,25 @@
   align-items: center;
 }
 
+#Msup{
+  
+  margin-left: auto;
+  margin-right: auto;
+  width: 1142px;
+  height: auto;
+}
 
+#Minf{
+  flex-wrap: wrap;
+  justify-content:flex-end;
+  margin-left: auto;
+  margin-right: auto;
+  width: 899px;
+  height: auto;
+}
+
+
+/*
 @media screen and (max-width: 1200px) and (min-width:300px) {
   .navBar img, .navBarINEA img {
     margin-left: 2rem;
@@ -51,8 +69,7 @@
 
 }
 
-
-@media screen and (min-width: 1200px)  {
+@media screen and (min-width: 1500px) {
   .navBar img, .navBarINEA img {
     margin-left: 20rem;
   }
@@ -64,7 +81,7 @@
     margin-right: 20rem;
   }
 }
-
+*/
 
 
 
