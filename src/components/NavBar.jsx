@@ -13,23 +13,39 @@ const Navbar = () => {
   const [isClickCE, setisClickCE] = useState(false);
   const [isClickI, setisClickI] = useState(false);
 
+  const toggleOE = () => {
+    setisClickOE(!isClickOE);
+    setisClickS(false);
+    setisClickCE(false);
+    setisClickI(false);
+  };
+
+  const toggleS = () => {
+    setisClickOE(false);
+    setisClickS(!isClickS);
+    setisClickCE(false);
+    setisClickI(false);
+  };
+
+  const toggleCE = () => {
+    setisClickCE(!isClickCE);
+    setisClickOE(false);
+    setisClickS(false);
+    setisClickI(false);
+  };
+
+  const toggleI = () => {
+    setisClickI(!isClickI);
+    setisClickOE(false);
+    setisClickS(false);
+    setisClickCE(false);
+  };
+
   const toggleNavBar = () => {
     setisClick(!isClick);
   };
   const toggleNavBarINEA = () => {
     setisClickINEA(!isClickINEA);
-  };
-  const toggleOE = () => {
-    setisClickOE(!isClickOE);
-  };
-  const toggleS = () => {
-    setisClickS(!isClickS);
-  };
-  const toggleCE = () => {
-    setisClickCE(!isClickCE);
-  };
-  const toggleI = () => {
-    setisClickI(!isClickI);
   };
 
   return (
@@ -38,8 +54,11 @@ const Navbar = () => {
       <div className="w-full ">
         {/* Menú gobierno */}
         <nav className="bg-[#0C231E]">
-          <div className="flex items-center justify-between py-[0.1rem] px-auto" >
-            <div className="flex items-center justify-between" id="Msup">
+          <div className="flex items-center justify-between py-[0.1rem] px-auto">
+            <div
+              className="flex items-center justify-between"
+              id="Msup"
+            >
               <div className="flex items-center">
                 <Link
                   href="https://www.gob.mx/sep"
@@ -102,8 +121,6 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
-
-
 
               {/*Boton para desplegable hamburguesa */}
               <div className="md:hidden flex items-end">
@@ -205,11 +222,11 @@ const Navbar = () => {
                 passHref
               ></Link>
             </div>
-            <div  className="flex" id="Minf">
-              <div
-
-                className="flex items-center space-x-10"
-              >
+            <div
+              className="flex"
+              id="Minf"
+            >
+              <div className="flex items-center space-x-10">
                 <div className="hidden md:block">
                   <div className="ml-4 flex items-end space-x-5">
                     <Link
@@ -238,7 +255,8 @@ const Navbar = () => {
                     <div className="group relative">
                       <Link
                         href="#"
-                        className="hover:text-[#D3C09B] p-2 flex items-center justify-between w-full "
+                        onClick={toggleOE}
+                        className="hover:text-[#D3C09B] p-2 flex items-center justify-between w-full cursor-pointer"
                       >
                         Oferta educativa
                         <svg
@@ -257,7 +275,13 @@ const Navbar = () => {
                           />
                         </svg>
                       </Link>
-                      <div className="absolute left-0 mt-2 hidden group-hover:block bg-gray-100 text-black rounded shadow-lg z-50">
+                      <div
+                        className={`absolute left-0 mt-2 ${
+                          // isClickOE ? "opacity-100" : "opacity-0"
+                          isClickOE ? "block" : "hidden"
+                        } bg-gray-100 text-black rounded shadow-lg transition-opacity duration-300 ease-in-out delay-200 z-50`}
+                      >
+                        {/* <div className="absolute left-0 mt-2 hidden group-hover:block bg-gray-100 text-black rounded shadow-lg z-50"> */}
                         {/* <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50"> */}
                         {/* cambie que ahora en vez de que este oculto siempre este ahi pero en una capa de z mas alto para que no afecte el tamaño del navbar  */}
                         {/* este es el anterior */}
@@ -299,7 +323,8 @@ const Navbar = () => {
                     <div className="group relative">
                       <Link
                         href="#"
-                        className="hover:text-[#D3C09B] p-2 flex items-center justify-between w-full"
+                        onClick={toggleS}
+                        className="hover:text-[#D3C09B] p-2 flex items-center justify-between w-full cursor-pointer"
                       >
                         Servicios
                         <svg
@@ -319,7 +344,11 @@ const Navbar = () => {
                         </svg>
                       </Link>
 
-                      <div className="absolute left-0 mt-2 hidden group-hover:block bg-gray-100 text-black rounded shadow-lg z-50">
+                      <div
+                        className={`absolute left-0 mt-2 ${
+                          isClickS ? "block" : "hidden"
+                        } bg-gray-100 text-black rounded shadow-lg transition-opacity duration-300 ease-in-out delay-200 z-50`}
+                      >
                         <Link
                           href="http://certificacion.inea.gob.mx/DescCertificado.aspx"
                           className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
@@ -369,7 +398,7 @@ const Navbar = () => {
                     <div className="group relative ">
                       <Link
                         href="/ubicacion"
-                        className="hover:text-[#D3C09B] p-2 rounded rounded flex items-center justify-between w-full "
+                        className="hover:text-[#D3C09B] p-2 rounded flex items-center justify-between w-full "
                       >
                         Ubicación
                       </Link>
@@ -379,7 +408,9 @@ const Navbar = () => {
                     <div className="group relative">
                       <Link
                         href="#"
-                        className="hover:text-[#D3C09B] p-2 rounded flex items-center justify-between w-full  "
+                        // onClick={() => setisClickCE(!isClickCE)}
+                        onClick={toggleCE}
+                        className="hover:text-[#D3C09B] p-2 flex items-center justify-between w-full cursor-pointer"
                       >
                         Control escolar
                         <svg
@@ -398,7 +429,11 @@ const Navbar = () => {
                           />
                         </svg>
                       </Link>
-                      <div className="absolute left-0 mt-2 hidden group-hover:block bg-gray-100 text-black rounded shadow-lg z-50">
+                      <div
+                        className={`absolute left-0 mt-2 ${
+                          isClickCE ? "block" : "hidden"
+                        } bg-gray-100 text-black rounded shadow-lg transition-opacity duration-300 ease-in-out delay-200 z-50`}
+                      >
                         {/* <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50"> */}
                         <Link
                           href="http://www.inea.gob.mx/servicios_en_linea/Consulta_avance_academico.html"
@@ -437,7 +472,9 @@ const Navbar = () => {
                     <div className="group relative">
                       <Link
                         href="#"
-                        className="hover:text-[#D3C09B] p-2 rounded flex items-center justify-between w-full "
+                        // onClick={() => setisClickI(!isClickI)}
+                        onClick={toggleI}
+                        className="hover:text-[#D3C09B] p-2 flex items-center justify-between w-full cursor-pointer"
                       >
                         INTRANET
                         <svg
@@ -457,7 +494,11 @@ const Navbar = () => {
                         </svg>
                       </Link>
 
-                      <div className="absolute left-0 mt-2 hidden group-hover:block bg-gray-100 text-black rounded shadow-lg z-50">
+                      <div
+                        className={`absolute left-0 mt-2 ${
+                          isClickI ? "block" : "hidden"
+                        } bg-gray-100 text-black rounded shadow-lg transition-opacity duration-300 ease-in-out delay-200 z-50`}
+                      >
                         {/* <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50"> */}
                         <Link
                           href="http://cdmx.inea.gob.mx/CATN2/login.asp"
