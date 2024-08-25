@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Modalidad() {
-  return (
-    <div>¿Que modalidad elijo?</div>
-  )
+  return <div>¿Que modalidad elijo?</div>;
 }
 
-export default Modalidad
+export default Modalidad;

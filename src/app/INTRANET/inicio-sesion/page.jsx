@@ -1,13 +1,13 @@
 import React from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 
-function En_linea() {
+function InicioSesion() {
   return (
     <div>
-      En linea
+      Inicio de sesion
       <Breadcrumb />
     </div>
   );
 }
 
-export default En_linea;
+export default InicioSesion;
