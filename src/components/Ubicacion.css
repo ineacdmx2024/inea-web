@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+#UbicacionDivP{
+    font-family: 'Montserrat', sans-serif;
+    width: 1142px;
+    height: auto;
+}
+#UbicacionDivP a{
+  color:#BC955C ;
+}
+#UbicacionDivP a:hover{
+  color:#BC955C ;
+  text-decoration: underline;
+}
+/*@media screen and (min-width: 1200px) {
+  #UbicacionDivP{
+    margin-left: 20rem;
+    margin-right: 20rem;
+  }
+  
+  }*/
+
+  @media screen and (max-width: 1200px) and (min-width:300px) {
+   #direccion{
+    margin-bottom: 10%;
+    width: auto;
+    height: auto;
+   }
+   #UbicacionDivP{
+    width: auto;
+    height: auto;
+   }
+  
+  }
+  
