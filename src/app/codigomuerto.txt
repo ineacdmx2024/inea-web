@@ -1,0 +1,705 @@
+v1 
+<h1>
+<br>
+<table> <tr>
+<th>  <div1> <img src="images\logoheader.svg"  alt="logoheaderi" height="250" width="250"> </div1> </th>
+<th> <img src="images\ineapng2.png"  alt="ineapngimage" height="100" width="100"> </th>
+<th>cdmx.inea.gob.mx
+<table>
+<tr><th> 
+<div2>
+  <input name="q" type="text" id="q" onblur="SiBlur(this);" onfocus="SiFocus(this);" value="Buscar...">
+
+  <input type="submit" name="btnG" id="buscador" value=" "> 
+</div2> 
+
+
+</th></tr>
+</table>
+</th>
+</tr> </table>
+</h1>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+  </title>
+
+v1.2
+
+<footer
+  data-v-77c1804b=""
+  data-v-4bcc00b8=""
+  class="main-footer"
+>
+<div data-v-77c1804b="" class="container">
+ 
+
+<table>
+ <tr>
+ 
+ <th>
+  <div data-v-77c1804b="" class="col-sm-3">
+      <img src="images\logoheader.svg"  alt="logoheaderi" height="250" width="250"style="max-width: 80%; margin-left: 1px; margin-top: -300px;">
+    </div>
+ </th>
+
+
+
+ <th>
+
+    <div data-v-77c1804b="" class="col-sm-3">
+      <h2 data-v-77c1804b="">Enlaces</h2>
+
+      <ul data-v-77c1804b="">
+        <li data-v-77c1804b="">
+          <a data-v-77c1804b="" href="https://datos.gob.mx/">Datos</a>
+        </li>
+        <li data-v-77c1804b="">
+          <a data-v-77c1804b="" href="https://www.gob.mx/publicaciones" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Publicaciones </a>
+        </li>
+        <li data-v-77c1804b="">
+          <a data-v-77c1804b="" href="https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/faces/view/consultaPublica.xhtml?idEntidad=MzM=&amp;idSujetoObligado=MTAwMDE=#inicio" id="Transparencia" target="blank" title="Enlace abre en ventana nueva" class="footer">Portal de Obligaciones de Transparencia</a>
+        </li>
+        <li data-v-77c1804b="">
+          <a data-v-77c1804b="" href="https://www.infomex.org.mx/gobiernofederal/home.action" id="PNT" target="blank" title="Enlace abre PNT en ventana nueva" class="footer">PNT</a>
+        </li>
+        <li data-v-77c1804b="">
+          <a data-v-77c1804b="" href="http://www.inai.org.mx/" id="INAI" target="blank" title="Enlace abre sitio INAI en ventana nueva" class="footer">INAI</a>
+        </li>
+        <li data-v-77c1804b="">
+          <a data-v-77c1804b="" id="INAI" href="http://alertadores.funcionpublica.gob.mx/" target="_blank" rel="alertadores" class="footer">Alerta</a>
+        </li>
+        <li data-v-77c1804b="">
+          <a data-v-77c1804b="" id="SIDEC" href="http://sidec.funcionpublica.gob.mx/" target="_blank" rel="sidec" class="footer">Denuncia</a></li></ul>
+        </div>
+    </th>
+      <th>
+
+        <div data-v-77c1804b="" class="col-sm-3"><h2 data-v-77c1804b="">¿Qué es gob.mx?</h2><p data-v-77c1804b="">Es el portal único de trámites, información y participación ciudadana.  <a data-v-77c1804b="" href="https://www.gob.mx/que-es-gobmx" style="text-decoration: none;">Leer más </a></p>
+          <ul data-v-77c1804b=""><li data-v-77c1804b=""><a data-v-77c1804b="" href="http://www.gob.mx/epn"> Administraciones anteriores  </a></li><li data-v-77c1804b=""><a data-v-77c1804b="" href="https://www.gob.mx/accesibilidad">Declaración de Accesibilidad</a></li><li data-v-77c1804b=""><a data-v-77c1804b="" href="https://www.gob.mx/privacidadintegral">Aviso de privacidad</a></li><li data-v-77c1804b=""><a data-v-77c1804b="" href="https://www.gob.mx/privacidadsimplificado">Aviso de privacidad simplificado</a></li><li data-v-77c1804b=""><a data-v-77c1804b="" href="https://www.gob.mx/terminos">Términos y Condiciones </a></li><li data-v-77c1804b=""><a data-v-77c1804b="" href="https://www.gob.mx/terminos#medidas-seguridad-informacion">Política de seguridad</a></li><li data-v-77c1804b=""><a data-v-77c1804b="" id="Marco Juridico" href="http://www.ordenjuridico.gob.mx" target="_blank" rel="noopener" title="Enlace abre en ventana nueva" class="footer">Marco jurídico</a></li><li data-v-77c1804b=""><a data-v-77c1804b="" href="https://www.gob.mx/sitemap">Mapa de sitio</a></li></ul></div>
+
+  </th>
+    <th>
+
+
+
+          <div data-v-77c1804b="" class="col-sm-3"><h6 data-v-77c1804b=""><a data-v-77c1804b="" href="https://www.gob.mx/tramites/ficha/presentacion-de-quejas-y-denuncias-en-la-sfp/SFP54"><u data-v-77c1804b="">Denuncia contra servidores públicos</u></a></h6><p data-v-77c1804b=""></p><h2 data-v-77c1804b="">Síguenos en </h2><ul data-v-77c1804b="" class="list-inline"><li data-v-77c1804b=""><a data-v-77c1804b="" id="Facebook" href="https://www.facebook.com/gobmexico" target="_blank" rel="noopener" title="enlace a facebook abre en una nueva ventana" class="sendEst share-info footer"><img data-v-77c1804b="" alt="Facebook" src="https://framework-gb.cdn.gob.mx/landing/img/facebook.png"></a></li><li data-v-77c1804b=""><a data-v-77c1804b="" id="Twitter" href="https://twitter.com/GobiernoMX" target="_blank" rel="noopener" title="Enlace a twitter abre en una nueva ventana" class="sendEst share-info footer"><img data-v-77c1804b="" alt="Twitter" src="https://framework-gb.cdn.gob.mx/landing/img/twitter.png"></a></li></ul></div>
+
+
+  </th>
+
+        </div>
+
+</tr>
+
+
+  
+
+</table>
+
+  <div data-v-77c1804b="" class="col-sm-3">
+      <img src="images\Pleca_footer.svg"  alt="logoheaderi" height="800" width="1500"style="max-width: 600%; margin-left: 1px; margin-top: -400px;">
+    </div>
+
+</footer>
+
+
+v1.3
+
+footer
+  data-v-77c1804b=""
+  data-v-4bcc00b8=""
+  class="main-footer"
+>
+  <div
+    data-v-77c1804b=""
+    class="list-info"
+  >
+    <div
+      data-v-77c1804b=""
+      class="container"
+    >
+      <div
+        data-v-77c1804b=""
+        class="col-sm-3"
+      >
+        <img
+          data-v-77c1804b=""
+          src="https://framework-gb.cdn.gob.mx/landing/img/logoheader.svg"
+          href="/"
+          alt="logo gobierno de méxico"
+          class="logo_footer"
+          style="max-width: 80%; margin-left: -27px; margin-top: 12px"
+        />
+      </div>
+      <div
+        data-v-77c1804b=""
+        class="col-sm-3"
+      >
+        <h2 data-v-77c1804b="">Enlaces</h2>
+        <ul data-v-77c1804b="">
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              href="https://datos.gob.mx/"
+              >Datos</a
+            >
+          </li>
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              href="https://www.gob.mx/publicaciones"
+              target="_blank"
+              rel="noopener"
+              title="Enlace abre en ventana nueva"
+              >Publicaciones
+            </a>
+          </li>
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              href="https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/faces/view/consultaPublica.xhtml?idEntidad=MzM=&amp;idSujetoObligado=MTAwMDE=#inicio"
+              id="Transparencia"
+              target="blank"
+              title="Enlace abre en ventana nueva"
+              class="footer"
+              >Portal de Obligaciones de Transparencia</a
+            >
+          </li>
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              href="https://www.infomex.org.mx/gobiernofederal/home.action"
+              id="PNT"
+              target="blank"
+              title="Enlace abre PNT en ventana nueva"
+              class="footer"
+              >PNT</a
+            >
+          </li>
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              href="http://www.inai.org.mx/"
+              id="INAI"
+              target="blank"
+              title="Enlace abre sitio INAI en ventana nueva"
+              class="footer"
+              >INAI</a
+            >
+          </li>
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              id="INAI"
+              href="http://alertadores.funcionpublica.gob.mx/"
+              target="_blank"
+              rel="alertadores"
+              class="footer"
+              >Alerta</a
+            >
+          </li>
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              id="SIDEC"
+              href="http://sidec.funcionpublica.gob.mx/"
+              target="_blank"
+              rel="sidec"
+              class="footer"
+              >Denuncia</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div
+        data-v-77c1804b=""
+        class="col-sm-3"
+      >
+        <h2 data-v-77c1804b="">¿Qué es gob.mx?</h2>
+        <p data-v-77c1804b="">
+          Es el portal único de trámites, información y participación ciudadana.
+          <a
+            data-v-77c1804b=""
+            href="https://www.gob.mx/que-es-gobmx"
+            style="text-decoration: none"
+            >Leer más
+          </a>
+        </p>
+        <ul data-v-77c1804b="">
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              href="http://www.gob.mx/epn"
+            >
+              Administraciones anteriores
+            </a>
+          </li>
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              href="https://www.gob.mx/accesibilidad"
+              >Declaración de Accesibilidad</a
+            >
+          </li>
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              href="https://www.gob.mx/privacidadintegral"
+              >Aviso de privacidad</a
+            >
+          </li>
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              href="https://www.gob.mx/privacidadsimplificado"
+              >Aviso de privacidad simplificado</a
+            >
+          </li>
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              href="https://www.gob.mx/terminos"
+              >Términos y Condiciones
+            </a>
+          </li>
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              href="https://www.gob.mx/terminos#medidas-seguridad-informacion"
+              >Política de seguridad</a
+            >
+          </li>
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              id="Marco Juridico"
+              href="http://www.ordenjuridico.gob.mx"
+              target="_blank"
+              rel="noopener"
+              title="Enlace abre en ventana nueva"
+              class="footer"
+              >Marco jurídico</a
+            >
+          </li>
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              href="https://www.gob.mx/sitemap"
+              >Mapa de sitio</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div
+        data-v-77c1804b=""
+        class="col-sm-3"
+      >
+        <h6 data-v-77c1804b="">
+          <a
+            data-v-77c1804b=""
+            href="https://www.gob.mx/tramites/ficha/presentacion-de-quejas-y-denuncias-en-la-sfp/SFP54"
+            ><u data-v-77c1804b="">Denuncia contra servidores públicos</u></a
+          >
+        </h6>
+        <p data-v-77c1804b=""></p>
+        <h2 data-v-77c1804b="">Síguenos en</h2>
+        <ul
+          data-v-77c1804b=""
+          class="list-inline"
+        >
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              id="Facebook"
+              href="https://www.facebook.com/gobmexico"
+              target="_blank"
+              rel="noopener"
+              title="enlace a facebook abre en una nueva ventana"
+              class="sendEst share-info footer"
+              ><img
+                data-v-77c1804b=""
+                alt="Facebook"
+                src="https://framework-gb.cdn.gob.mx/landing/img/facebook.png"
+            /></a>
+          </li>
+          <li data-v-77c1804b="">
+            <a
+              data-v-77c1804b=""
+              id="Twitter"
+              href="https://twitter.com/GobiernoMX"
+              target="_blank"
+              rel="noopener"
+              title="Enlace a twitter abre en una nueva ventana"
+              class="sendEst share-info footer"
+              ><img
+                data-v-77c1804b=""
+                alt="Twitter"
+                src="https://framework-gb.cdn.gob.mx/landing/img/twitter.png"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    data-v-77c1804b=""
+    class="container-fluid footer-pleca"
+  >
+    <div
+      data-v-77c1804b=""
+      class="row"
+    >
+      <div
+        data-v-77c1804b=""
+        class="col"
+      >
+        <br data-v-77c1804b="" /><br data-v-77c1804b="" />
+      </div>
+    </div>
+  </div>
+</footer>
+
+v2
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+body {
+
+	height: 95vh;
+  background-color: #FFFFFF;
+}
+
+h1 {
+  color: #FFFFFF;
+  margin-left: -40px;
+  margin-right: -40px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+
+/*  width: 1000px;
+  height: 50px;*/
+
+  background-color: #007849;
+}
+
+h2{
+	 margin-left: 40px;
+  margin-right: 40px;
+}
+
+div1{
+	 margin-left: 40px;
+
+}
+div2{
+	 margin-left: 500px;
+
+}
+footer {
+	 margin-left: -10px;
+  margin-right: -10px;
+  text-align: left;
+  padding: 3px;
+  background-color: #01382B;
+  color: white;
+}
+nav > ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+a { color: white; }
+li {
+  margin: 1 auto;
+}
+ul{
+display: table;
+margin: 1 auto;
+}
+
+
+</style>
+
+
+
+<link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+
+
+
+
+<footer class="main-footer" >
+  <div align="justify" class="list-info">
+    <div class="container">
+
+      <div class="col-sm-3">
+
+
+
+
+ 				<img  src="images\LogoEducación.svg"  href="/" alt="logo_edu" class="logo_footer" style="max-width: 120%; margin-left: -80px;   margin-top: 12px;">
+
+        <img  src="images\LogoINEACDMX_withe.svg"  href="/" alt="Inea_Logo" class="logo_footer" style="max-width: 90%; margin-left: -50px;   margin-top: 12px;">
+      </div>
+      <div class="col-sm-3">
+
+
+
+        <h3>Mapa del Sitio</h3>
+        <ul>
+         <!-- <li><a  href="http://www.participa.gob.mx">Participa</a></li> -->
+          <li><a  href="https://datos.gob.mx/">Tramites y Servicios</a></li>
+          <li><a href="https://www.gob.mx/publicaciones" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">¿Quiénes Somos? </a></li>
+
+                  <li><a class="footer" href="http://www.inea.gob.mx/Transparencia1/transparencia.html" id="Transparencia" target="blank" title="Enlace abre en ventana nueva">Aviso de privacidad</a></li>
+
+                  <li><a class="footer" href="https://www.infomex.org.mx/gobiernofederal/home.action" id="PNT" target="blank" title="Enlace abre PNT en ventana nueva">Comité de Ética</a></li>
+
+                  <li><a class="footer" href="http://www.inai.org.mx/" id="INAI" target="blank" title="Enlace abre sitio INAI en ventana nueva">Transparencia</a></li>
+
+          <li><a class="footer" id="INAI" href="http://alertadores.funcionpublica.gob.mx/" target="_blank" rel="alertadores">glosario</a></li>
+         
+         <!-- <li><a class="footer" id="SIDEC" href="http://sidec.funcionpublica.gob.mx/" target="_blank" rel="sidec">Denuncia</a></li> -->
+           </ul>
+      </div>
+
+
+       <!-- 
+      <div class="col-sm-3">
+        <h2>¿Qué es gob.mx?</h2>
+        <p>Es el portal único de trámites, información y participación ciudadana.  <a href="/que-es-gobmx" style="text-decoration: none;">Leer más </a></p>
+        <ul>
+
+        
+            
+          <li><a href="/accesibilidad">Declaración de Accesibilidad</a></li>
+          <li><a href="/privacidadintegral">Aviso de privacidad</a></li>
+          <li><a href="/privacidadsimplificado">Aviso de privacidad simplificado</a></li>
+          <li><a href="/terminos">Términos y Condiciones </a></li>
+          <li><a href="/terminos#medidas-seguridad-informacion">Política de seguridad</a></li>
+          <li><a class="footer" id="Marco Juridico" href="http://www.ordenjuridico.gob.mx" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Marco jurídico</a></li>
+          <li><a href="/sitemap">Mapa de sitio</a></li>
+        </ul>
+      </div>
+
+-->
+      <div class="col-sm-3">
+
+
+          <h3>Contacto</h3>
+        <p> <a href="mailto:atencion_inea@inea.gob.mx"> Directorio </a></p> 
+           <p><a href="mailto:atencion_inea@inea.gob.mx"> correo@inea </a></p> 
+        </p>
+
+        <h3>Síguenos en </h3>
+        <ul class="list-inline">
+          <li>
+            <a id="Facebook" href="https://www.facebook.com/gobmexico" target="_blank" rel="noopener" class="sendEst share-info footer" title="enlace a facebook abre en una nueva ventana">
+              <img alt="Facebook" src="https://framework-gb.cdn.gob.mx/landing/img/facebook.png" />
+            </a>
+          </li>
+          <li>
+            <a id="Twitter" href="https://twitter.com/GobiernoMX" target="_blank" rel="noopener" class="sendEst share-info footer" title="Enlace a twitter abre en una nueva ventana">
+              <img alt="Twitter" src="https://framework-gb.cdn.gob.mx/landing/img/twitter.png" />
+            </a>
+          </li>
+             <li>
+            <a id="Youtube" href="https://www.youtube.com/gobmexico" target="_blank" rel="noopener" class="sendEst share-info footer" title="enlace a yutub abre en una nueva ventana">
+              <img alt="Youtube" src="images\tutublogo.png"style="max-width: 15%;margin-left: 50px;   margin-top: -60px; " />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <div class="container-fluid footer-pleca">
+    <div class="row">
+      <div class="col">
+        <br><br>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script type="text/javascript">
+      $("a.footer").click(function () {
+          var pagina_sitio = window.location.pathname;
+          var outbound_link = $(this).attr("id");
+          var subgrupo_paginas = "inea";
+          var page_type = "Home";
+          var pages_group = "Gobierno";
+          if($("#page_type").length > 0){ page_type = $("#page_type").val(); }
+
+          console.log("Metrica links externos footer - "+outbound_link);
+          gtag('set', 'dimension14', pages_group);
+          gtag('set', 'dimension15', subgrupo_paginas);
+          gtag('set', 'dimension16', page_type);
+          gtag('send', 'event', 'Outbound link - Footer', outbound_link, pagina_sitio);
+          gtag('set', 'dimension14', null);
+          gtag('set, ‘dimension15', null);
+      })
+  </script>
+
+</html>
+
+v3
+
+"use client"
+
+// Footer.js
+import React from 'react';
+import "./Footer.css";
+
+// Este es un componente funcional de React para el pie de página.
+const Footer = () => {
+  return (
+
+    <footer className="main-footer">
+      <div className="container mx-auto text-left">
+      <div className="flex items-center justify-between py-[1rem] px-4rem ml-[8rem] mr-[8rem]"> 
+        <div className="flex flex-wrap center">
+          {/* Columna 1: Logos */}
+          <div className="w-full sm:w-1/4 mb-8">
+            <img
+              src="/LogoEducación.svg"
+              alt="Logo Educación"
+              className="mx-auto max-w-[90%] mt-3"
+              style={{ marginLeft: '0px' }}
+            />
+            <img
+              src="/LogoINEACDMX_withe.svg"
+              alt="Logo INEACDMX"
+              className="mx-auto max-w-[75%] mt-8 p-2 rounded inline-block py-0.3rem mr-1rem leading-relaxed"
+              style={{ marginLeft: '0px' }}
+            />
+          </div>
+          
+          {/* Columna 2: Mapa del Sitio */}
+          <div className="w-full sm:w-1/4 mb-1">
+            <h1 className="text-lg font-moserrat  ">Mapa del Sitio</h1>
+            <ul className="list-none space-y-2 mt-2">
+
+              <li><a href="https://datos.gob.mx/" className="text-white-600 hover:underline hover:text-[#8B6C41]">Trámites y Servicios</a></li>
+              <li><a href="https://www.gob.mx/publicaciones" target="_blank" rel="noopener noreferrer" className="text-white-600 hover:underline hover:text-[#8B6C41]">¿Quiénes Somos?</a></li>
+              <li><a href="http://www.inea.gob.mx/Transparencia1/transparencia.html" target="_blank" rel="noopener noreferrer" className="text-white-600 hover:underline hover:text-[#8B6C41]">Aviso de privacidad</a></li>
+              <li><a href="https://www.infomex.org.mx/gobiernofederal/home.action" target="_blank" rel="noopener noreferrer" className="text-white-600 hover:underline hover:text-[#8B6C41]">Comité de Ética</a></li>
+              <li><a href="http://www.inai.org.mx/" target="_blank" rel="noopener noreferrer" className="text-white-600 hover:underline hover:text-[#8B6C41]">Transparencia</a></li>
+              <li><a href="http://alertadores.funcionpublica.gob.mx/" target="_blank" rel="noopener noreferrer" className="text-white-600 hover:underline hover:text-[#8B6C41]">Glosario</a></li>
+              <li><a href="https://www.gob.mx/inea" target="_blank" rel="noopener noreferrer" className="text-white-600 hover:underline hover:text-[#8B6C41]">INEA Nacional</a></li>
+              <li><a href="https://www.gob.mx" target="_blank" rel="noopener noreferrer" className="text-white-600 hover:underline hover:text-[#8B6C41]">Gobierno</a></li>
+              <li><a href="http://sidec.funcionpublica.gob.mx/" target="_blank" rel="noopener noreferrer" className="text-white-600 hover:underline hover:text-[#8B6C41]">Créditos</a></li>
+            
+            </ul>
+          </div>
+
+          {/* Columna 3: Contacto */}
+          <div className="w-full sm:w-1/4 mb-8  ">
+            <h5 className="text-lg font-monserrat">Contacto</h5>
+        
+            <ul className="list-none flex jutify-center space-y-10 mt-10  ">
+    
+              <li><a href="mailto:atencion_inea@inea.gob.mx" className="text-white-500 hover:underline hover:text-[#8B6C41]">Directorio</a></li>
+              <li><a href="mailto:atencion_inea@inea.gob.mx" className="text-light-blue-500 hover:underline hover:text-[#8B6C41]">correo@inea</a></li>
+        
+            </ul>
+       
+          </div>
+
+          {/* Columna 4: Redes Sociales */}
+          <div className="w-full sm:w-1/4 mb-8">
+            <h1 className="text-lg font-monserrat">Síguenos en:</h1>
+            <ul className="list-inline flex center space-x-6 mt-5">
+              <li>
+                <a href="https://www.facebook.com/gobmexico" target="_blank" rel="noopener noreferrer" title="Facebook">
+                  <img src="https://framework-gb.cdn.gob.mx/landing/img/facebook.png" alt="Facebook" className="w-8 h-8 " />
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/GobiernoMX" target="_blank" rel="noopener noreferrer" title="Twitter">
+                  <img src="https://framework-gb.cdn.gob.mx/landing/img/twitter.png" alt="Twitter" className="w-8 h-8" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/gobmexico" target="_blank" rel="noopener noreferrer" title="YouTube">
+                  <img src="/images/tutublogo.svg" alt="YouTube" className="w-8 h-8" style={{ marginLeft: '0px', marginTop: '0px' }} />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="container-fluid footer-pleca" style={{ marginLeft: '-500px', marginRight: '-500px' }}  >
+        <div className="row">
+         
+            {/* Espacio vacío para ajuste */}
+            <div        className="mx-auto max-w-[100%] mt-8 p-2 rounded inline-block "
+              ></div>
+    
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+.jsx
+@import url('https://framework-gb.cdn.gob.mx/assets/styles/main.css');
+
+.footer{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    /* background: #03281A; */
+    font-family: 'Montserrat', sans-serif;
+    color: aliceblue;
+    margin-bottom: 0;
+    font-size: 17.5px;
+    font-weight: 300;
+    justify-content: space-between;
+}
+
+.footer ul{
+    display: flex;
+    gap: 1rem;
+}
+
+.footerul li{
+    list-style: none;
+}
+
+.footerGob{
+    background: #03281A;
+}
+
+/* NavBar.css */
+.footer img, .footerINEA img {
+  height: 3.5rem; 
+  width: auto; /* Mantiene la proporción */
+}
+
+.footerINEA .flex.items-center {
+  display: flex;
+  align-items: center;
+}
+
+.footerINEA .flex.items-center {
+  display: flex;
+  align-items: center;
+}
+.css
+
+
