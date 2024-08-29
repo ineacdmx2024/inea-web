@@ -6,6 +6,14 @@ import "slick-carousel/slick/slick-theme.css";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+const truncateText = (text, maxWords) => {
+  const words = text.split(' ');
+  if (words.length > maxWords) {
+    return words.slice(0, maxWords).join(' ') + '...';
+  }
+  return text;
+};
+
 function PrevArrow(props) {
   const { className, style, onClick } = props;
   const [leftValue, setLeftValue] = useState("20rem");
@@ -112,7 +120,7 @@ const NextArrow = (props) => {
   );
 };
 
-const CarouselBlog = () => {
+const CarouselBlog = ({item}) => {
   // Configuracion del carousel
   const settings = {
     dots: true,
@@ -145,9 +153,9 @@ const CarouselBlog = () => {
     {
       image: "/imagePrueba/prueba2.jpg",
       date: "jueves, 25 de agosto de 2024",
-      title: "CONVOCATORIA PARA PARTICIPAR COMO PERSONA VOLUNTARIA",
+      title: "CONVOCATORIA PARA PARTICIPAR COMO PERSONA VOLUNTARIA BENEFICIARIA DEL SUBSIDIO 435634 HOLA AMIGO",
       content:
-        "Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 34524",
+        "Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 32786 pasaste la etapa IV para iniciar 3456 Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 3456",
     },
     {
       image: "/imagePrueba/prueba3.jpg",
@@ -155,13 +163,13 @@ const CarouselBlog = () => {
       title:
         "CONVOCATORIA PARA PARTICIPAR COMO PERSONA VOLUNTARIA BENEFICIARIA DEL SUBSIDIO 452",
       content:
-        "Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 32786 pasaste la etapa IV para iniciar actividades 3456",
+        "Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 32786 pasaste la etapa IV para iniciar 3456 Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 3456",
     },
     {
       image: "/imagePrueba/prueba4.jpg",
       date: "martes, 10 de junio de 2024",
       title:
-        "CONVOCATORIA PARA PARTICIPAR COMO PERSONA VOLUNTARIA BENEFICIARIA DEL SUBSIDIO 435634",
+        "CONVOCATORIA PARA PARTICIPAR COMO PERSONA VOLUNTARIA BENEFICIARIA DEL SUBSIDIO 435634 HOLA AMIGO",
       content:
         "Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 3456",
     },
@@ -211,10 +219,10 @@ const CarouselBlog = () => {
               <article className="mt-5 tablet:m-0 w-auto tablet:w-[390px] px-5 py-1 m-auto arrow:w-[750px]">
                 <p className="letras:text-base text-gray-600 text-sm mb-2">{item.date}</p>
                 <h2 className="letras:text-[27px] text-[20px] leading-tight font-medium mb-4">
-                  {item.title}
+                  {truncateText(item.title, 10)}
                 </h2>
                 <p className="letras:text-[17px] text-gray-900 font-light text-[14px] mb-4 uppercase">
-                  {item.content}
+                  {truncateText(item.content, 25)}
                 </p>
 
                 <div className="overflow-visible !z-10">
