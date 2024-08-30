@@ -11,7 +11,8 @@ module.exports = {
         "tablet": "1210px",
         "arrow": "810px",
         "medida3" : "750px",
-        "letras" : "390px"
+        "letras" : "390px",
+        "ofertaEdu" : "500px"
       },
       maxWidth: {
         "2xl2" : "75rem"

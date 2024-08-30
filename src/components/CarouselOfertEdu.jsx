@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -22,7 +22,7 @@ function PrevArrow(props) {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-8 h-8 text-white bg-black bg-opacity-60 rounded-full hover:bg-opacity-75"
+        className="hidden arrow:block w-8 h-8 text-white bg-black bg-opacity-60 rounded-full hover:bg-opacity-75"
       >
         <path
           strokeLinecap="round"
@@ -52,7 +52,7 @@ const NextArrow = (props) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-8 h-8 text-white bg-black bg-opacity-60 rounded-full hover:bg-opacity-75"
+        className="hidden arrow:block w-8 h-8 text-white bg-black bg-opacity-60 rounded-full hover:bg-opacity-75"
       >
         <path
           strokeLinecap="round"
@@ -65,31 +65,42 @@ const NextArrow = (props) => {
 };
 
 function CarouselOfertEdu() {
+  const [slidesToShow, setSlidesToShow] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSlidesToShow(window.innerWidth < 1210 ? 1 : 3);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const modalidades = [
     {
-        "name": "Alfabetización, Primaria Y Secundaria Presencial",
-        "image": "/Modalidad1.jpg"
-      },
-      {
-        "name": "Primaria Y Secundaria En Línea",
-        "image": "/Modalidad2.jpg"
-      },
-      {
-        "name": "Examen Único",
-        "image": "/Modalidad3.jpg"
-      },
-      {
-        "name": "Exámenes Diagnóstico",
-        "image": "/Modalidad4.jpg"
-      }
-      
+      name: "Alfabetización, Primaria Y Secundaria Presencial",
+      image: "/Modalidad1.jpg",
+    },
+    {
+      name: "Primaria Y Secundaria En Línea",
+      image: "/Modalidad2.jpg",
+    },
+    {
+      name: "Examen Único",
+      image: "/Modalidad3.jpg",
+    },
   ];
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
@@ -128,26 +139,25 @@ function CarouselOfertEdu() {
         }
       `}</style>
       <div className="slider-container">
-        <Slider {...settings} className="w-full px-3">
+        <Slider {...settings} className="mx-auto !z-5 w-4/5 tablet:w-[1150px]">
           {modalidades.map((item, index) => (
-            <div
-              key={index}
-              className="px-2"
-            >
-              <div className="border-2 border-slate-300 h-[460px] rounded-lg p-12 shadow-lg flex flex-col justify-between">
-                <div className="flex flex-col items-center">
-                  <img
-                    className="max-w-60 w-full h-full object-cover rounded-lg"
-                    src={item.image}
-                    alt={item.name}
-                  />
-                  <h3 className="my-7 px-4 text-center text-[22px] text-slate-500 font-medium capitalize">
-                    {item.name}
-                  </h3>
+            <div key={index} className=" px-0">
+              <div className="">
+                <div className="border-2 border-slate-300 shadow-lg rounded-lg h-[400px] letras:h-[460px] mx-auto flex flex-col w-[260px] letras:w-[320px] ofertaEdu:w-[400px] tablet:w-[350px] tablet:h-[400px] justify-center items-center">
+                  <div className="w-52 letras:w-60 h-[310px] letras:h-[340px]  flex flex-col justify-between items-center ">
+                    <img
+                      className="w-60 h-auto object-cover rounded-lg"
+                      src={item.image}
+                      alt={item.name}
+                    />
+                    <h3 className="text-center text-[18px] letras:text-[22px] text-slate-500 font-medium capitalize">
+                      {item.name}
+                    </h3>
+                    <button className="bg-red-700 text-white text-xs letras:text-base py-2 px-4 rounded-full hover:bg-red-800 mx-auto block">
+                      Ir al sitio
+                    </button>
+                  </div>
                 </div>
-                <button className="bg-red-700 text-white py-2 px-4 rounded-full hover:bg-red-800 mx-auto block">
-                  Ir al sitio
-                </button>
               </div>
             </div>
           ))}
