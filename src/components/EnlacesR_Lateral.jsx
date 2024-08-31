@@ -7,7 +7,7 @@ const Card = ({ title, imageSrc, buttonText, link }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden p-6 w-60 m-2">
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden p-6 w-60 m-2 md:w-72 lg:w-60 xl:w-68">
       <img
         src={imageSrc}
         alt={title}
@@ -17,7 +17,7 @@ const Card = ({ title, imageSrc, buttonText, link }) => {
       <div className="flex justify-center mt-4">
         <button
           onClick={handleButtonClick}
-          className="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700 focus:outline-none"
+          className="bg-red-700 text-white px-4 py-2 rounded-full hover:bg-red-800 focus:outline-none"
         >
           {buttonText}
         </button>
