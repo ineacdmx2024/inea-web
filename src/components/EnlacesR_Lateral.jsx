@@ -7,7 +7,7 @@ const Card = ({ title, imageSrc, buttonText, link }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden p-6 w-60 m-2 md:w-72 lg:w-60 xl:w-68">
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden p-6 w-[280px] m-2 md:w-72 lg:w-60 xl:w-[280px]">
       <img
         src={imageSrc}
         alt={title}
