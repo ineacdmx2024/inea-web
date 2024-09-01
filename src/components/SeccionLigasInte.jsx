@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -22,7 +22,7 @@ function PrevArrow(props) {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-8 h-8 text-white bg-black bg-opacity-60 rounded-full hover:bg-opacity-75"
+        className="hidden arrow:block w-8 h-8 text-white bg-black bg-opacity-60 rounded-full hover:bg-opacity-75"
       >
         <path
           strokeLinecap="round"
@@ -52,7 +52,7 @@ const NextArrow = (props) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-8 h-8 text-white bg-black bg-opacity-60 rounded-full hover:bg-opacity-75"
+        className="hidden arrow:block w-8 h-8 text-white bg-black bg-opacity-60 rounded-full hover:bg-opacity-75"
       >
         <path
           strokeLinecap="round"
@@ -65,6 +65,23 @@ const NextArrow = (props) => {
 };
 
 function SeccionLigasInte() {
+  const [slidesToShow, setSlidesToShow] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSlidesToShow(window.innerWidth < 1210 ? 1 : 3);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // Implementacion de la API
   const noticias = [
     {
       title: "Explorando las Estrellas",
@@ -195,7 +212,7 @@ function SeccionLigasInte() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
@@ -235,13 +252,15 @@ function SeccionLigasInte() {
         }
       `}</style>
       <div className="p-2">
-        <div className="fijas flex justify-center items-center w-full">
+
+        {/* Div de notificias fijas */}
+        <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex">
           {fijas.map((noticia, index) => (
-            <div key={index} className="px-2 w-1/3">
-              <div className="border-2 border-slate-300 h-[460px] rounded-lg p-12 shadow-lg flex flex-col justify-between">
+            <div key={index} className="px-4 w-1/3">
+              <div className="border-2 border-slate-300 h-[420px] rounded-lg p-8 shadow-lg flex flex-col justify-between">
                 <div className="flex flex-col items-center">
                   <img
-                    className="max-w-60 w-full h-full object-cover rounded-lg"
+                    className="w-60 h-auto object-cover rounded-lg"
                     src={noticia.image}
                     alt={noticia.title}
                   />
@@ -256,22 +275,52 @@ function SeccionLigasInte() {
             </div>
           ))}
         </div>
-        <div className="carrusel">
+
+        {/* Div de noticias fijas en carousel */}
+        <div className="border-2 border-slate-300 rounded-lg shadow-lg bg-white w-[260px] letras:w-[320px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto">
           <Slider {...settings}>
-            {restantes.map((noticia, index) => (
-              <div key={index} className="px-2 mt-4">
-                <div className="border-2 border-slate-300 h-[460px] rounded-lg p-12 shadow-lg flex flex-col justify-between">
+            {fijas.map((noticia, index) => (
+              <div key={index} className="px-2">
+                <div className="h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
                   <div className="flex flex-col items-center">
                     <img
-                      className="max-w-60 w-full h-full object-cover rounded-lg"
+                      className="w-60 h-auto object-cover rounded-lg"
                       src={noticia.image}
                       alt={noticia.title}
                     />
-                    <h3 className="my-7 px-4 text-center text-[22px] text-slate-500 font-medium capitalize">
+                    <h3 className="my-7 px-4 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium capitalize">
                       {noticia.title}
                     </h3>
                   </div>
-                  <button className="bg-red-700 text-white py-2 px-4 rounded-full hover:bg-red-800 mx-auto block">
+                  <button className="text-xs letras:text-base bg-red-700 text-white py-2 px-4 rounded-full hover:bg-red-800 mx-auto block">
+                    Ir al sitio
+                  </button>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+
+        {/* Div de noticias restantes */}
+        <div className="carrusel">
+          <Slider
+            {...settings}
+            className="bg-white border-2 tablet:border-0 border-slate-300 shadow-lg tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-[260px] letras:w-[320px] ofertaEdu:w-[400px] tablet:w-[1150px] mt-8"
+          >
+            {restantes.map((noticia, index) => (
+              <div key={index} className="px-4">
+                <div className="border-0 tablet:border-2 border-slate-300 shadow-none tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
+                  <div className="flex flex-col items-center">
+                    <img
+                      className="w-60 h-auto object-cover rounded-lg"
+                      src={noticia.image}
+                      alt={noticia.title}
+                    />
+                    <h3 className="my-7 px-4 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium capitalize">
+                      {noticia.title}
+                    </h3>
+                  </div>
+                  <button className="bg-red-700 text-white text-xs letras:text-base py-2 px-4 rounded-full hover:bg-red-800 mx-auto block">
                     Ir al sitio
                   </button>
                 </div>
