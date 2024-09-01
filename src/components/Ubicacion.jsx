@@ -5,18 +5,9 @@ const Ubicacion = () => {
   return (
     <div
       id="UbicacionDivP"
-      className="container w-auto mx-auto px-4 py-8"
+      className="container w-auto mx-auto px-4 py-0"
       // className="mx-auto mt-32 mb-16 w-full letras:w-1/2 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]"
     >
-      <div className="mx-auto w-full letras:w-1/2 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-        <h1 className="text-3xl font-medium text-slate-600 mb-2 letras:text-4xl ">
-          Ubicación
-        </h1>
-        <div className="flex items-center">
-          <div className="w-12 h-2 bg-[#af8900] mt-1"></div>
-          <div className="flex-grow h-px bg-gray-300"></div>
-        </div>
-      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div
