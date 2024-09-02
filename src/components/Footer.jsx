@@ -11,10 +11,14 @@ const Footer = () => {
 
     <footer className="main-footer">
       <div className="container mx-auto text-left ">
+
+
+
+
       <div className="flex items-center justify-between py-[1rem] px-4rem ml-[8rem] mr-[8rem] my-[5rem] "> 
         <div className="flex flex-wrap center">
           {/* Columna 1: Logos */}
-          <div className="w-full sm:w-1/4 mb-8 ">
+          <div className="w-full sm:w-1/4 mb-5 ml-[3rem] ">
             <img
               src="/LogoEducación.svg"
               alt="Logo Educación"
@@ -30,9 +34,9 @@ const Footer = () => {
           </div>
           
           {/* Columna 2: Mapa del Sitio */}
-          <div className="w-full sm:w-1/4 mb-1 ml-[3rem] mr-[1rem] ">
-            <h1 className="font-moserrat">Mapa del Sitio</h1>
-            <ul className="list-none space-y-2 mt-2 mb-[1rem]">
+          <div className="w-full sm:w-1/4 mb-5 ml-[3rem] ">
+            <h1 className="text-2xl font Monserrat " style={{fontSize:"25px"}}>Mapa del Sitio</h1> 
+            <ul className="list-none space-y-4 mt-2 mb-[1rem]">
 
               <li><a href="https://datos.gob.mx/" className="text-white-600 hover:underline hover:text-[#8B6C41]">Trámites y Servicios</a></li>
               <li><a href="https://www.gob.mx/publicaciones" target="_blank" rel="noopener noreferrer" className="text-white-600 hover:underline hover:text-[#8B6C41]">¿Quiénes Somos?</a></li>
@@ -48,15 +52,15 @@ const Footer = () => {
           </div>
 
           {/* Columna 3: Contacto */}
-          <div className="w-full sm:w-1/4 mb-8 ml-[3rem] ">
-          <ul> <h1 className=" font-monserrat">Contacto</h1></ul> 
+          <div className="w-full sm:w-1/4 mb-5 ml-[3rem]">
+          <ul> <h1  className="text-2xl font Monserrat" style={{fontSize:"25px"}}>Contacto</h1></ul> 
         
             <ul className="list-inline flex center space-y-6 mt-5  ">
     
               <li><a href="mailto:atencion_inea@inea.gob.mx" className="text-white-500 hover:underline hover:text-[#8B6C41]">Directorio</a></li>
               
             </ul>
-            <ul className="list-inline flex center space-y-6 mt-5  ">
+            <ul className="list-inline flex center space-y-0 mt-300  ">
             <li><a href="mailto:atencion_inea@inea.gob.mx" className="text-light-blue-500 hover:underline hover:text-[#8B6C41]">correo@inea</a></li>
             </ul>
 
@@ -64,8 +68,8 @@ const Footer = () => {
           </div>
 
           {/* Columna 4: Redes Sociales */}
-          <div className="   ml-[4rem]">
-            <div className=" font-monserrat "><h1>Síguenos en</h1></div>
+          <div className=" w-full sm:w-1/4 py-200 px-100">
+            <h1  className="text-2xl font Monserrat" style={{fontSize:"25px"}}>Síguenos en</h1>
 
             <ul className="list-inline flex center space-x-6 mt-5">
 
@@ -94,18 +98,40 @@ const Footer = () => {
 
           </div>
         </div>
-      </div>
-      <div className="container-fluid footer-pleca" style={{ marginLeft: '-500px', marginRight: '-500px' }}  >
-        <div className="row">
-         
-            {/* Espacio vacío para ajuste */}
-            <div        className="mx-auto max-w-[100%] mt-8 p-2 rounded inline-block "
-              ></div>
-    
-          </div>
+
+
+     
+
+
+
+
+
         </div>
+
+
+
+ <div className=" p-6 footer-pleca flex justify-start w-full lg:w-[calc(100vw - 14rem)] lg:absolute lg:left-0">
+ 
       </div>
+
+
+
+
+
+
+      </div>
+
+
+    
+
+
     </footer>
+
+
+
+
+
+
   );
 };
 
@@ -114,5 +140,7 @@ export default Footer;
 
 //
 //
+// <img src="/images/pleca_footer.svg" className="container-fluid  mb-[-6rem]   w-[100%] flex  leading-relaxed" style={{  borderRadius:'10%'}}></img>
+
 //https://docs.strapi.io/dev-docs/quick-start#:~:text=Step%201%3A%20Log%20in%20to%20the%20admin%20panel,Publish%20the%20content%20Step%206%3A%20Use%20the%20API
 //
