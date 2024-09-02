@@ -253,7 +253,7 @@ function SeccionLigasInte() {
       `}</style>
       <div className="p-2">
 
-        {/* Div de notificias fijas */}
+        {/* Div de noticias fijas */}
         <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex">
           {fijas.map((noticia, index) => (
             <div key={index} className="px-4 w-1/3">
@@ -268,7 +268,7 @@ function SeccionLigasInte() {
                     {noticia.title}
                   </h3>
                 </div>
-                <button className="bg-[#a42145] text-white py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block letras:text-base text-xs">
+                <button className="bg-[#a42145] text-white py-1 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block letras:text-base text-xs">
                   Ir al sitio
                 </button>
               </div>

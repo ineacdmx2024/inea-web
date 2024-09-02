@@ -180,14 +180,6 @@ const CarouselBlog = ({item}) => {
       content:
         "Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 3456",
     },
-    {
-      image: "/imagePrueba/prueba4.jpg",
-      date: "martes, 10 de septiembre de 2024",
-      title:
-        "CONVOCATORIA PARA PARTICIPAR COMO",
-      content:
-        "Si participaste en la convocatoria Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste",
-    },
   ];
 
   return (
