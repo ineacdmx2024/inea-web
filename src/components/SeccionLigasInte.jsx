@@ -146,15 +146,15 @@ function SeccionLigasInte() {
       description:
         "Consejos y técnicas de fotógrafos profesionales para ayudarte a tomar fotos impresionantes.",
     },
-    {
-      title: "Cocina Global: Un Viaje Culinario",
-      image: "/imagePrueba/interes8.jpg",
-      link: "https://example.com/article/cocina-global",
-      caption: "Saborea el mundo",
-      date: "2024-06-08",
-      description:
-        "Emprende una aventura culinaria y explora los diversos sabores de la cocina mundial.",
-    },
+    // {
+    //   title: "Cocina Global: Un Viaje Culinario",
+    //   image: "/imagePrueba/interes8.jpg",
+    //   link: "https://example.com/article/cocina-global",
+    //   caption: "Saborea el mundo",
+    //   date: "2024-06-08",
+    //   description:
+    //     "Emprende una aventura culinaria y explora los diversos sabores de la cocina mundial.",
+    // },
     {
       title: "La Psicología de la Felicidad",
       image: "/imagePrueba/interes9.jpg",
@@ -268,7 +268,7 @@ function SeccionLigasInte() {
                     {noticia.title}
                   </h3>
                 </div>
-                <button className="bg-red-700 text-white py-2 px-4 rounded-full hover:bg-red-800 mx-auto block">
+                <button className="bg-[#a42145] text-white py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block letras:text-base text-xs">
                   Ir al sitio
                 </button>
               </div>
@@ -292,7 +292,7 @@ function SeccionLigasInte() {
                       {noticia.title}
                     </h3>
                   </div>
-                  <button className="text-xs letras:text-base bg-red-700 text-white py-2 px-4 rounded-full hover:bg-red-800 mx-auto block">
+                  <button className="text-xs letras:text-[13.5px] bg-[#a42145] text-white py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
                     Ir al sitio
                   </button>
                 </div>
@@ -320,7 +320,7 @@ function SeccionLigasInte() {
                       {noticia.title}
                     </h3>
                   </div>
-                  <button className="bg-red-700 text-white text-xs letras:text-base py-2 px-4 rounded-full hover:bg-red-800 mx-auto block">
+                  <button className="bg-[#a42145] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
                     Ir al sitio
                   </button>
                 </div>

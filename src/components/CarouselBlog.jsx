@@ -1,10 +1,17 @@
 "use client";
 import Image from "next/image";
 import Slider from "react-slick";
+import { Open_Sans } from "next/font/google"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+
+const open_Sans = Open_Sans({
+  weight: ["300", "400", "500", "700"],
+  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
+  subsets: ["latin"],
+});
 
 const truncateText = (text, maxWords) => {
   const words = text.split(' ');
@@ -173,6 +180,14 @@ const CarouselBlog = ({item}) => {
       content:
         "Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 3456",
     },
+    {
+      image: "/imagePrueba/prueba4.jpg",
+      date: "martes, 10 de septiembre de 2024",
+      title:
+        "CONVOCATORIA PARA PARTICIPAR COMO",
+      content:
+        "Si participaste en la convocatoria Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste",
+    },
   ];
 
   return (
@@ -200,10 +215,10 @@ const CarouselBlog = ({item}) => {
           transform: scale(1.2);
         }
       `}</style>
-      <Slider {...settings} className=" mx-auto !z-5">
+      <Slider {...settings} className="mx-auto !z-5">
         {news.map((item, index) => (
           <div key={index} className="px-4">
-            <div className="w-full letras:w-2/3 arrow:w-[750px] medida3:w-4/5 h-auto mx-auto flex flex-col tablet:flex-row tablet:w-[1142px] tablet:h-[390px] justify-between bg-white rounded-xl ">
+            <div className="w-full letras:w-full arrow:w-[750px] medida3:w-4/5 h-auto mx-auto flex flex-col tablet:flex-row tablet:w-[1142px] tablet:h-[390px] justify-between bg-white rounded-xl ">
               {/* Div de la imagen */}
               <div className=" m-auto w-auto arrow:w-[750px]">
                 <Image
@@ -216,18 +231,18 @@ const CarouselBlog = ({item}) => {
               </div>
 
               {/* Div del texto */}
-              <article className="mt-5 tablet:m-0 w-auto tablet:w-[390px] px-5 py-1 m-auto arrow:w-[750px]">
-                <p className="letras:text-base text-gray-600 text-sm mb-2">{item.date}</p>
-                <h2 className="letras:text-[27px] text-[20px] leading-tight font-medium mb-4">
+              <article className={`${open_Sans.className} flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] px-5 py-2 m-auto arrow:w-[750px]`}>
+                <p className="letras:text-base text-gray-700 text-sm mb-2 ">{item.date}</p>
+                <h2 className="letras:text-[28px] text-[20px] leading-tight font-medium mb-4">
                   {truncateText(item.title, 10)}
                 </h2>
                 <p className="letras:text-[17px] text-gray-900 font-light text-[14px] mb-4 uppercase">
-                  {truncateText(item.content, 25)}
+                  {truncateText(item.content, 20)}
                 </p>
 
                 <div className="overflow-visible !z-10">
-                  <button className="m-auto letras:ml-auto bg-red-700 text-white py-2 px-4 hover:bg-red-800 rounded-full block">
-                    <p className="text-xs letras:text-base">Continuar leyendo</p>
+                  <button className="m-auto letras:ml-auto bg-[#a42145] text-white py-2 px-2 hover:bg-[#8a1b39] rounded-full block">
+                    <p className="text-xs letras:text-[13.5px]">Continuar leyendo</p>
                   </button>
                 </div>
               </article>
@@ -237,7 +252,7 @@ const CarouselBlog = ({item}) => {
       </Slider>
       <div className="flex justify-end m-auto">
         <Link
-          className="mt-20 mr-[1rem] lg:mr-[5rem] xl:mr-[24rem] w-36 text-center bg-red-700 text-white py-2 px-4 hover:bg-red-800 rounded-full block letras:text-base text-xs letras:w-44"
+          className="mt-20 mr-[1rem] lg:mr-[5rem] xl:mr-[24rem] w-36 text-center bg-[#a42145] text-white py-2 px-4 hover:bg-[#8a1b39] rounded-full block letras:text-base text-xs letras:w-44"
           href={"/#"}
         >
           <p>Noticias Anteriores</p>
