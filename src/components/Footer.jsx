@@ -15,7 +15,7 @@ const Footer = () => {
 
 
 
-      <div className="flex items-center justify-between py-[1rem] px-4rem ml-[2.5rem]  my-[5rem] "> 
+      <div className="flex items-center justify-between py-[1rem] px-4rem ml-[2.5rem]  my-[5rem] ">
         <div className="flex flex-wrap center">
           {/* Columna 1: Logos */}
           <div className="w-full sm:w-1/4 mb-5  ">
@@ -32,7 +32,7 @@ const Footer = () => {
               style={{ marginLeft: '-0px' }}
             />
           </div>
-          
+
           {/* Columna 2: Mapa del Sitio */}
           <div className="w-full sm:w-1/4 mb-5 ml-[3.5rem] ">
           <ul> <h1 className="text-2xl font Monserrat " style={{fontSize:"18px"}}>Mapa del Sitio</h1> </ul>
@@ -47,31 +47,31 @@ const Footer = () => {
               <li><a href="https://www.gob.mx/inea" target="_blank" rel="noopener noreferrer" className="text-white-600 hover:underline hover:text-[#8B6C41]">INEA Nacional</a></li>
               <li><a href="https://www.gob.mx" target="_blank" rel="noopener noreferrer" className="text-white-600 hover:underline hover:text-[#8B6C41]">Gobierno</a></li>
               <li><a href="http://sidec.funcionpublica.gob.mx/" target="_blank" rel="noopener noreferrer" className="text-white-600 hover:underline hover:text-[#8B6C41]">Créditos</a></li>
-            
+
             </ul>
           </div>
 
           {/* Columna 3: Contacto */}
           <div className="w-full sm:w-1/4 mb-5 ml-[1rem]">
-          <ul> <h1  className="text-2xl font Monserrat" style={{fontSize:"18px"}}>Contacto</h1></ul> 
-        
+          <ul> <h1  className="text-2xl font Monserrat" style={{fontSize:"18px"}}>Contacto</h1></ul>
+
             <ul className="list-none flex center space-y-6 mt-5 text-[16px] ">
-    
+
               <li><a href="mailto:atencion_inea@inea.gob.mx" className="text-white-500 hover:underline hover:text-[#8B6C41 ] ">Directorio</a></li>
-              
+
             </ul>
             <ul className="list-inline flex center space-y-0 mt-0  ">
             <li><a href="mailto:atencion_inea@inea.gob.mx" className="text-light-blue-500 hover:underline hover:text-[#8B6C41] ">correo@inea</a></li>
             </ul>
 
-       
+
           </div>
 
 
 
           {/* Columna 4: Redes Sociales */}
         <div className="w-full sm:w-1/4 mb-5 ml-[-8rem] ">
-          <div className="flex flex-col items-end"> 
+          <div className="flex flex-col items-end">
             <h1  className="text-2xl font Monserrat" style={{fontSize:"18px"}}>Síguenos en</h1>
 
             <ul className="list-inline flex space-x-5 mt-5">
@@ -104,7 +104,7 @@ const Footer = () => {
         </div>
 
 
-     
+
 
 
 
@@ -113,7 +113,7 @@ const Footer = () => {
         </div>
 
 
-      
+
 
 
 
@@ -123,7 +123,7 @@ const Footer = () => {
       </div>
 
 
-      <img src="/images/pleca_footer.svg" alt="plecabnj" className="w-full h-auto"></img> 
+      <img src="/images/Pleca_footer.svg" alt="plecabnj" className="w-full h-auto"/>
 
 
 
@@ -142,7 +142,7 @@ export default Footer;
 
 //
 // <div className=" footer-pleca p-6  flex justify-start w-full lg:w-[calc(100vw - 14rem)] lg:absolute lg:left-0 h-auto">
- 
+
 //</div>
 // <img src="/images/pleca_footer.svg" className="container-fluid  mb-[-6rem]   w-[100%] flex  leading-relaxed" style={{  borderRadius:'10%'}}></img>
 
