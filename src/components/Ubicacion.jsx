@@ -5,10 +5,9 @@ const Ubicacion = () => {
   return (
     <div
       id="UbicacionDivP"
-      className="container w-auto mx-auto px-4 py-0"
+      className="container w-auto mx-auto px-4 py-0 tablet:w-[1160px] arrow:w-[740px]"
       // className="mx-auto mt-32 mb-16 w-full letras:w-1/2 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]"
     >
-
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div
           id="direccion"
