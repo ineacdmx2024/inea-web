@@ -60,7 +60,7 @@ const Footer = () => {
               <li><a href="mailto:atencion_inea@inea.gob.mx" className="text-white-500 hover:underline hover:text-[#8B6C41 ] ">Directorio</a></li>
               
             </ul>
-            <ul className="list-inline flex center space-y-0 mt-0  ">
+            <ul className="list-inline flex center space-y-0 mt-0  text-[16px] ">
             <li><a href="mailto:atencion_inea@inea.gob.mx" className="text-light-blue-500 hover:underline hover:text-[#8B6C41] ">correo@inea</a></li>
             </ul>
 
