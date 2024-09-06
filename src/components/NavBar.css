@@ -9,7 +9,7 @@
     /* background: #03281A; */
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 0;
-    font-size: 17.5px;
+    font-size: 16px;
     font-weight: 300;
     justify-content: space-between;
 }
@@ -24,13 +24,14 @@
 }
 
 .navBarGob{
-    background: #03281A;
+    background: #0C231E;
 }
 
 /* NavBar.css */
 .navBar img, .navBarINEA img {
-  height: 3.5rem; 
+  height: 4rem; 
   width: auto; /* Mantiene la proporción */
+  max-width: 12rem;
 }
 
 .navBarINEA .flex.items-center {
@@ -38,9 +39,46 @@
   align-items: center;
 }
 
-.navBarINEA .flex.items-center {
-  display: flex;
-  align-items: center;
+#Msup{
+  
+  margin-left: auto;
+  margin-right: auto;
+  width: 1142px;
+  height: auto;
+}
+
+#Minf{
+  flex-wrap: wrap;
+  justify-content:flex-end;
+  margin-left: auto;
+  margin-right: auto;
+  width: 899px;
+  height: auto;
 }
 
 
+/*
+@media screen and (max-width: 1200px) and (min-width:300px) {
+  .navBar img, .navBarINEA img {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  #contenidoSup{
+    margin-right: 1rem;
+  }
+
+}
+
+@media screen and (min-width: 1500px) {
+  .navBar img, .navBarINEA img {
+    margin-left: 20rem;
+  }
+  #contenidoSup{
+    margin-right: 20rem;
+  }
+
+  #menubajo{
+    margin-right: 20rem;
+  }
+}
+*/
