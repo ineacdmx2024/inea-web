@@ -94,6 +94,10 @@ function CarouselOfertEdu() {
       name: "Examen Único",
       image: "/Modalidad3.jpg",
     },
+    {
+      name: "¿Qué opcion me conviene?",
+      image: "/Modalidad4.jpg",
+    },
   ];
 
   const settings = {
