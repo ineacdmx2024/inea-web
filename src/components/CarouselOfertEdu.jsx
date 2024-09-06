@@ -22,7 +22,7 @@ function PrevArrow(props) {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="hidden arrow:block w-8 h-8 text-white bg-black bg-opacity-60 rounded-full hover:bg-opacity-75"
+        className="hidden arrow:block w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
       >
         <path
           strokeLinecap="round"
@@ -52,7 +52,7 @@ const NextArrow = (props) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="hidden arrow:block w-8 h-8 text-white bg-black bg-opacity-60 rounded-full hover:bg-opacity-75"
+        className="hidden arrow:block w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
       >
         <path
           strokeLinecap="round"
@@ -143,7 +143,7 @@ function CarouselOfertEdu() {
           {modalidades.map((item, index) => (
             <div key={index} className=" px-0">
               <div className="">
-                <div className="border-2 border-slate-300 shadow-lg rounded-lg h-[400px] letras:h-[460px] mx-auto flex flex-col w-[260px] letras:w-[320px] ofertaEdu:w-[400px] tablet:w-[350px] tablet:h-[400px] justify-center items-center">
+                <div className="border border-slate-300 rounded-lg h-[400px] letras:h-[460px] mx-auto flex flex-col w-[260px] letras:w-[320px] ofertaEdu:w-[400px] tablet:w-[350px] tablet:h-[400px] justify-center items-center">
                   <div className="w-52 letras:w-60 h-[310px] letras:h-[340px]  flex flex-col justify-between items-center ">
                     <img
                       className="w-60 h-auto object-cover rounded-lg"

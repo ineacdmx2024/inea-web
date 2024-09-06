@@ -22,7 +22,7 @@ function PrevArrow(props) {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="hidden arrow:block w-8 h-8 text-white bg-black bg-opacity-60 rounded-full hover:bg-opacity-75"
+        className="hidden arrow:block w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
       >
         <path
           strokeLinecap="round"
@@ -52,7 +52,7 @@ const NextArrow = (props) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="hidden arrow:block w-8 h-8 text-white bg-black bg-opacity-60 rounded-full hover:bg-opacity-75"
+        className="hidden arrow:block w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
       >
         <path
           strokeLinecap="round"
@@ -257,7 +257,7 @@ function SeccionLigasInte() {
         <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex">
           {fijas.map((noticia, index) => (
             <div key={index} className="px-4 w-1/3">
-              <div className="border-2 border-slate-300 h-[420px] rounded-lg p-8 shadow-lg flex flex-col justify-between">
+              <div className="border border-slate-300 h-[420px] rounded-lg p-8 flex flex-col justify-between">
                 <div className="flex flex-col items-center">
                   <img
                     className="w-60 h-auto object-cover rounded-lg"
@@ -268,7 +268,7 @@ function SeccionLigasInte() {
                     {noticia.title}
                   </h3>
                 </div>
-                <button className="bg-[#a42145] text-white py-1 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block letras:text-base text-xs">
+                <button className="bg-[#a42145] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
                   Ir al sitio
                 </button>
               </div>
@@ -277,7 +277,7 @@ function SeccionLigasInte() {
         </div>
 
         {/* Div de noticias fijas en carousel */}
-        <div className="border-2 border-slate-300 rounded-lg shadow-lg bg-white w-[260px] letras:w-[320px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto">
+        <div className="border border-slate-300 rounded-lg bg-white w-[260px] letras:w-[320px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto">
           <Slider {...settings}>
             {fijas.map((noticia, index) => (
               <div key={index} className="px-2">
@@ -305,11 +305,11 @@ function SeccionLigasInte() {
         <div className="carrusel">
           <Slider
             {...settings}
-            className="bg-white border-2 tablet:border-0 border-slate-300 shadow-lg tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-[260px] letras:w-[320px] ofertaEdu:w-[400px] tablet:w-[1150px] mt-8"
+            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-[260px] letras:w-[320px] ofertaEdu:w-[400px] tablet:w-[1150px] mt-8"
           >
             {restantes.map((noticia, index) => (
               <div key={index} className="px-4">
-                <div className="border-0 tablet:border-2 border-slate-300 shadow-none tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
+                <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
                   <div className="flex flex-col items-center">
                     <img
                       className="w-60 h-auto object-cover rounded-lg"

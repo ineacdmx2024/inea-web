@@ -62,7 +62,7 @@ function PrevArrow(props) {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="hidden arrow:block w-8 h-8 text-white bg-black bg-opacity-60 rounded-full hover:bg-opacity-75"
+        className="hidden arrow:block w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
       >
         <path
           strokeLinecap="round"
@@ -115,7 +115,7 @@ const NextArrow = (props) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-8 h-8 text-white bg-black bg-opacity-60 rounded-full hover:bg-opacity-75 hidden arrow:block "
+        className="w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75 hidden arrow:block "
       >
         <path
           strokeLinecap="round"
