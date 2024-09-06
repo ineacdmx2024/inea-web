@@ -19,7 +19,7 @@ const CollapsiblePanel = ({ title, content }) => {
         Al hacer clic en este `div`, `setIsOpen` invierte el valor de `isOpen`.
       */}
       <div
-        className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left bg-gray-200 rounded-lg cursor-pointer"
+        className="flex justify-between w-full px-4 py-2 text-xl font-medium text-left bg-gray-200 rounded-lg cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
         {/* Mostramos el título del panel */}
@@ -58,7 +58,7 @@ const CollapsiblePanel = ({ title, content }) => {
         Solo se muestra si `isOpen` es true.
       */}
       {isOpen && (
-        <div className="px-4 pt-4 pb-2 text-sm text-gray-700">
+        <div className="px-4 pt-4 pb-2 text-base text-gray-700">
           {/* Contenido del panel */}
           {content}
         </div>
