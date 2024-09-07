@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Slider from "react-slick";
-import { Open_Sans } from "next/font/google"
+import { Open_Sans } from "next/font/google";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useState, useEffect } from "react";
@@ -14,9 +14,9 @@ const open_Sans = Open_Sans({
 });
 
 const truncateText = (text, maxWords) => {
-  const words = text.split(' ');
+  const words = text.split(" ");
   if (words.length > maxWords) {
-    return words.slice(0, maxWords).join(' ') + '...';
+    return words.slice(0, maxWords).join(" ") + "...";
   }
   return text;
 };
@@ -127,7 +127,7 @@ const NextArrow = (props) => {
   );
 };
 
-const CarouselBlog = ({item}) => {
+const CarouselBlog = ({ item }) => {
   // Configuracion del carousel
   const settings = {
     dots: true,
@@ -160,7 +160,8 @@ const CarouselBlog = ({item}) => {
     {
       image: "/imagePrueba/prueba2.jpg",
       date: "jueves, 25 de agosto de 2024",
-      title: "CONVOCATORIA PARA PARTICIPAR COMO PERSONA VOLUNTARIA BENEFICIARIA DEL SUBSIDIO 435634 HOLA AMIGO",
+      title:
+        "CONVOCATORIA PARA PARTICIPAR COMO PERSONA VOLUNTARIA BENEFICIARIA DEL SUBSIDIO 435634 HOLA AMIGO",
       content:
         "Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 32786 pasaste la etapa IV para iniciar 3456 Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 3456",
     },
@@ -184,7 +185,10 @@ const CarouselBlog = ({item}) => {
 
   return (
     <>
-      <style jsx global>{`
+      <style
+        jsx
+        global
+      >{`
         .custom-dots {
           bottom: -30px;
         }
@@ -207,9 +211,15 @@ const CarouselBlog = ({item}) => {
           transform: scale(1.2);
         }
       `}</style>
-      <Slider {...settings} className="mx-auto !z-5">
+      <Slider
+        {...settings}
+        className="mx-auto !z-5"
+      >
         {news.map((item, index) => (
-          <div key={index} className="px-4">
+          <div
+            key={index}
+            className="px-4"
+          >
             <div className="w-full letras:w-full arrow:w-[750px] medida3:w-4/5 h-auto mx-auto flex flex-col tablet:flex-row tablet:w-[1142px] tablet:h-[390px] justify-between bg-white rounded-xl ">
               {/* Div de la imagen */}
               <div className=" m-auto w-auto arrow:w-[750px]">
@@ -223,8 +233,12 @@ const CarouselBlog = ({item}) => {
               </div>
 
               {/* Div del texto */}
-              <article className={`${open_Sans.className} flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] px-5 py-2 m-auto arrow:w-[750px]`}>
-                <p className="letras:text-base text-gray-700 text-sm mb-2 ">{item.date}</p>
+              <article
+                className={`${open_Sans.className} flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] px-5 py-2 m-auto arrow:w-[750px]`}
+              >
+                <p className="letras:text-base text-gray-700 text-sm mb-2 ">
+                  {item.date}
+                </p>
                 <h2 className="letras:text-[28px] text-[20px] leading-tight font-medium mb-4">
                   {truncateText(item.title, 10)}
                 </h2>
@@ -234,7 +248,9 @@ const CarouselBlog = ({item}) => {
 
                 <div className="overflow-visible !z-10">
                   <button className="m-auto letras:ml-auto bg-[#a42145] text-white py-2 px-2 hover:bg-[#8a1b39] rounded-full block">
-                    <p className="text-xs letras:text-[13.5px]">Continuar leyendo</p>
+                    <p className="text-xs letras:text-[13.5px]">
+                      Continuar leyendo
+                    </p>
                   </button>
                 </div>
               </article>

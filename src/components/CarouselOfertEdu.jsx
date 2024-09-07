@@ -119,7 +119,10 @@ function CarouselOfertEdu() {
   };
   return (
     <>
-      <style jsx global>{`
+      <style
+        jsx
+        global
+      >{`
         .custom-dots {
           bottom: -30px;
         }
@@ -143,9 +146,15 @@ function CarouselOfertEdu() {
         }
       `}</style>
       <div className="slider-container">
-        <Slider {...settings} className="mx-auto !z-5 w-4/5 tablet:w-[1150px]">
+        <Slider
+          {...settings}
+          className="mx-auto !z-5 w-4/5 tablet:w-[1150px]"
+        >
           {modalidades.map((item, index) => (
-            <div key={index} className=" px-0">
+            <div
+              key={index}
+              className=" px-0"
+            >
               <div className="">
                 <div className="border border-slate-300 rounded-lg h-[400px] letras:h-[460px] mx-auto flex flex-col w-[260px] letras:w-[320px] ofertaEdu:w-[400px] tablet:w-[350px] tablet:h-[400px] justify-center items-center">
                   <div className="w-52 letras:w-60 h-[310px] letras:h-[340px]  flex flex-col justify-between items-center ">
