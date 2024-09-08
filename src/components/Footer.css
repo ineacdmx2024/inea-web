@@ -1,260 +1,29 @@
-/* @import url('https://framework-gb.cdn.gob.mx/assets/styles/main.css'); */
-
-.footer {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
-  /* background: #03281A; */
-  font-family: 'Montserrat', sans-serif;
-  color: aliceblue;
-  margin-bottom: 0;
-  font-size: 16px;
-  font-weight: 300;
-  justify-content: space-between;
-}
-
-.footer ul {
-  display: flex;
-  gap: 1rem;
-}
-
-.footerul li {
-  list-style: none;
-}
-
-.footerGob {
-  background: #03281A;
-}
-
-/* NavBar.css */
-.footer img,
-.footerINEA img {
-  height: 3.5rem;
-  width: auto;
-  /* Mantiene la proporción */
-}
-
-.footerINEA .flex.items-center {
-  display: flex;
-  align-items: center;
-}
-
-.footerINEA .flex.items-center {
-  display: flex;
-  align-items: center;
-}
-
-/* Nuevos estilos */
-
-.footer-pleca {
-  background-color: #12322B;
-  background-image: url(https://framework-gb.cdn.gob.mx/landing/img/pleca.svg);
-  background-repeat: repeat-x;
-}
-
 footer{
-  display: block
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 5rem;
+}
+li{
+  padding: 4px;
 }
 
-blockquote footer{
-  line-height: 1.428571429
+li:hover{
+  color: #8B6C41;
 }
 
-.modal-footer:after{
-  clear: both
+#Content{
+  justify-content: space-evenly;
 }
 
-blockquote footer{
-  display: block;
-  font-size: 80%;
-  color: #777
-}
-
-blockquote footer:before{
-  content: '\2014 \00A0'
-}
-
-.blockquote-reverse footer:before
-blockquote.pull-right footer:before {
-  content: ''
-}
-
-.blockquote-reverse footer:after,
-blockquote.pull-right footer:after {
-  content: '\00A0 \2014'
-}
-
-.panel-footer {
-  padding: 10px 15px;
-  background-color: #f5f5f5;
-  border-top: 1px solid #ddd;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px
-}
-
-.list-group+.panel-footer,
-.panel-heading+.list-group .list-group-item:first-child {
-  border-top-width: 0
-}
-
-.panel-group .panel-footer {
-  border-top: 0
-}
-
-.panel-group .panel-footer+.panel-collapse .panel-body {
-  border-bottom: 1px solid #ddd
-}
-
-.panel-default>.panel-footer+.panel-collapse>.panel-body {
-  border-bottom-color: #ddd
-}
-
-.panel-primary>.panel-footer+.panel-collapse>.panel-body {
-  border-bottom-color: #4A90E2
-}
-
-.panel-success>.panel-footer+.panel-collapse>.panel-body {
-  border-bottom-color: #d6e9c6
-}
-
-.panel-info>.panel-footer+.panel-collapse>.panel-body {
-  border-bottom-color: #bce8f1
-}
-
-.panel-warning>.panel-footer+.panel-collapse>.panel-body {
-  border-bottom-color: #faebcc
-}
-
-.panel-danger>.panel-footer+.panel-collapse>.panel-body {
-  border-bottom-color: #ebccd1
-}
-
-.modal-footer {
-  padding: 15px;
-  text-align: right;
-  border-top: 1px solid transparent
-}
-
-.modal-footer:after,
-.modal-footer:before {
-  content: " ";
-  display: table
-}
-
-.modal-footer .btn+.btn {
-  margin-left: 5px;
-  margin-bottom: 0
-}
-
-.modal-footer .btn-group .btn+.btn {
-  margin-left: -1px
-}
-
-.modal-footer .btn-block+.btn-block {
-  margin-left: 0
-}
-
-.main-footer .list-info a.link-email,
-.main-footer .list-info a:hover {
-  text-decoration: none
-}
-
-.main-footer {
-  background-color: #13322B;
-  min-height: 56px;
-  color: #FFF;
-  padding: 0px 0 0px;
-  text-align: left;
-  font-weight: 300
-}
-
-.main-footer .list-info {
-  line-height: auto;
-  /*background-color: #12322B;*/
-
-  /* background-image: url(https://framework-gb.cdn.gob.mx/landing/img/fondofooter3.svg); */
-  color: white;
-  background-size: cover;
-  background-position: bottom;
-  padding: 30px 10px 10px;
-  /*margin-bottom: 30px*/
-}
-
-.main-footer .list-info form label {
-  font-weight: 300;
-  margin-bottom: 15px;
-  line-height: 110% black;
-}
-
-.main-footer .list-info form .form-group-icon {
-  max-width: none;
-  font-size: 14px
-}
-
-.main-footer .list-info form .form-control {
-  font-size: 14px
-}
-
-.main-footer .list-info h5 {
-  font-weight: 300;
-  margin-bottom: 20px
-}
-
-.main-footer .list-info a {
-  color: #FFF;
-  font-size: 14px;
-  text-decoration: none;
-}
-
-.main-footer .list-info a.link-email {
-  color: #fff;
-  font-size: 14px
-}
-
-.main-footer .list-info p {
-  margin-bottom: 15px
-}
-
-.main-footer .list-info ul {
-  margin: 0 0 60px;
-  padding: 0
-}
-
-.main-footer .list-info ul li {
-  list-style-type: none;
-  margin: 0 0 2px;
-  padding: 0;
-  line-height: 110%
-}
-
-.main-footer .row>div {
-  margin-bottom: 15px
-}
-
-.main-footer p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 136%;
-  height: auto;
-  position: static
-}
-
-.gobmx-footer {
-  margin-top: 15px
-}
-
-@media (min-width:768px) {
-  .main-footer {
-    text-align: left
+@media screen and (max-width: 1200px) and (min-width:300px) {
+  .pleca {
+    height: 40%;
+    width: 100%;
+    overflow: hidden;
   }
-
-  .main-footer .list-info form .form-group-icon {
-    max-width: 300px
+  .pleca img{
+    max-width: 1200px;
   }
-
-  .main-footer .row>div {
-    margin-bottom: 0
+  #content{
+    height: 50%;
   }
 }

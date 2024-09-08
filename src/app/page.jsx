@@ -54,7 +54,7 @@ function page() {
         </div>
       </div>
       <Ubicacion />
-
+      <br />
     </main>
   );
 }
