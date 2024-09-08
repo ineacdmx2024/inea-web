@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "flowbite";
 
 *{
     font-family: 'Montserrat', sans-serif;
@@ -26,3 +27,29 @@
     justify-content: center;
 
 }
+
+.carousel {
+    @apply flex justify-center;
+  }
+  
+  .carousel-inner {
+    @apply flex overflow-x-hidden;
+  }
+  
+  .carousel-item {
+    @apply w-full h-full;
+  }
+  
+  .carousel-item.active {
+    @apply opacity-100;
+  }
+  
+  .carousel-item:not(.active) {
+    @apply opacity-50;
+  }
+  .carousel-item.hidden {
+    display: none;
+  }
+  #buttonCarousel {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded;
+  }

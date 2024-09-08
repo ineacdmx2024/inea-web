@@ -230,7 +230,7 @@ const Navbar = () => {
                 <div className="hidden md:block">
                   <div className="ml-4 flex items-end space-x-5">
                     <Link
-                      href="/inicio"
+                      href="/"
                       passHref
                       className="hover:text-[#D3C09B] p-2 rounded columns-2 "
                     >
@@ -560,6 +560,12 @@ const Navbar = () => {
                         >
                           Correo Institucional
                         </Link>
+                        <Link
+                          href="/src/app/INTRANET/inicio-sesion"
+                          className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
+                        >
+                          Iniciar sesion
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -613,7 +619,7 @@ const Navbar = () => {
             <div className="md:hidden block bg-[#0C3022]">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 w-full">
                 <Link
-                  href="/inicio"
+                  href="/"
                   passHref
                   className="hover:text-[#D3C09B] p-1 rounded flex items-center justify-between w-full"
                 >
