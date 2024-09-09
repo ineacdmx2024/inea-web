@@ -6,9 +6,6 @@ li{
   padding: 4px;
 }
 
-li:hover{
-  color: #8B6C41;
-}
 
 #Content{
   justify-content: space-evenly;

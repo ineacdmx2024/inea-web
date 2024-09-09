@@ -22,50 +22,50 @@ const Footer = () => {
           </div>
           <div className="grid grid-cols-1 gap-8 sm:gap-24 sm:grid-cols-3">
             <div>
-              <h2 className="mb-3 text-sm text-gray-900 uppercase dark:text-white">Mapa de Sitio</h2>
-              <ul className="text-gray-600 dark:text-white">
+              <h2 className="mb-3 text-gray-900 dark:text-white">Mapa de Sitio</h2>
+              <ul className="text-gray-600 text-sm dark:text-white">
                 <li>
-                  <a href="https://datos.gob.mx/" className="hover:underline">Trámites y Servicios</a>
+                  <a href="https://datos.gob.mx/">Trámites y Servicios</a>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline">¿Quiénes Somos?</a>
+                  <a href="/">¿Quiénes Somos?</a>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline">Aviso de privacidad</a>
+                  <a href="/">Aviso de privacidad</a>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline">Comité de Ética</a>
+                  <a href="/">Comité de Ética</a>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline">Transparencia</a>
+                  <a href="/">Transparencia</a>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline">Glosario</a>
+                  <a href="/">Glosario</a>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline">INEA Nacional</a>
+                  <a href="/">INEA Nacional</a>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline">Gobierno</a>
+                  <a href="/">Gobierno</a>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline">Créditos</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="mb-6 text-sm text-gray-900 uppercase dark:text-white">Contacto</h2>
-              <ul className="text-gray-600 dark:text-white">
-                <li>
-                  <a href="/" className="hover:underline ">Directorio</a>
-                </li>
-                <li>
-                  <a href="/" className="hover:underline">Correo@inea.gob.mx</a>
+                  <a href="/">Créditos</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm text-gray-900 uppercase dark:text-white">Síguenos en</h2>
+              <h2 className="mb-3 text-gray-900 dark:text-white">Contacto</h2>
+              <ul className="text-gray-600 text-sm dark:text-white">
+                <li>
+                  <a href="/">Directorio</a>
+                </li>
+                <li>
+                  <a href="/">Correo@inea.gob.mx</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="mb-4 text-gray-900 dark:text-white">Síguenos en</h2>
               <div className="flex mt-4 space-x-3 sm:justify-left sm:mt-0">
                 <a href="/" className="text-white hover:text-gray-900 dark:hover:text-white">
                   <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
