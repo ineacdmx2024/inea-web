@@ -148,7 +148,7 @@ function CarouselOfertEdu() {
             <div key={index} className=" px-0">
               <div className="">
                 <div className="border border-slate-300 rounded-lg h-[400px] letras:h-[460px] mx-auto flex flex-col w-[260px] letras:w-[320px] ofertaEdu:w-[400px] tablet:w-[350px] tablet:h-[400px] justify-center items-center">
-                  <div className="w-52 letras:w-60 h-[310px] letras:h-[340px]  flex flex-col justify-between items-center ">
+                  <div className="w-44 mobileEdu:w-[216px] letras:w-60 h-[310px] letras:h-[340px]  flex flex-col justify-between items-center ">
                     <img
                       className="w-60 h-auto object-cover rounded-lg"
                       src={item.image}

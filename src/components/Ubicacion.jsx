@@ -24,7 +24,7 @@ const Ubicacion = () => {
             5211-0824 / 55 5211-0866 / 55 5211-0798 / 55 5211-0912
           </p>
           <br />
-          <p>Horario de atención de 8:00 a 20:00 horas.</p>
+          <p>Horario de atención de 8:00 a 16:00 horas.</p>
           <br />
 
           <a href="/">Detalles de ubicaciones</a>
