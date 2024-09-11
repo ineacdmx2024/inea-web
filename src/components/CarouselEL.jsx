@@ -1,54 +1,47 @@
 "use client";
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./EnlacesR_Lateral";
-import { Carousel } from "flowbite-react";
 
-//recibimos un arreglo de objetos (las cards que se pondran en el carrusel)
+// Recibimos un arreglo de objetos (las cards que se pondrán en el carrusel)
 const CarouselEL = ({ cards }) => {
-  //Controla el index de que tarjeta se muestra
-  //setcurrentIndex es lo que suaremos apra cambiar de Card
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0); // Índice de la tarjeta actual
+  const [autoPlay, setAutoPlay] = useState(true); // Controla si el carrusel debe reproducirse automáticamente
+  const maxCards = 4; // Máximo de tarjetas visibles
+  const visibleCards = cards.slice(0, maxCards); // Selecciona las primeras 4 tarjetas
 
-  const updateIndex = () => {
+  // Función para avanzar al siguiente índice
+  const handleNext = () => {
     setCurrentIndex((currentIndex + 1) % visibleCards.length);
   };
-  //Es el intervalo para el cambio cada cierto tiempo
-  const [intervalId, setIntervalId] = useState(null);
-  //Evitar el cambio automatico con los botones
-  const [autoPlay, setAutoPlay] = useState(true);
-  //Marcamos que como el maximo de enlaces relacionados en el lateral es de 4 entonces tambien el maximo de cards en el carrusel es de 4
-  const maxCards = 4;
-  //con .slice sacamos las primeras 4 Cards del arreglo de objetos y las asignamos a visibleCards
-  const visibleCards = cards.slice(0, maxCards);
-  //incrementamos el contador en 1 y aseguramos que cuando llegue a la 4 Card con visibleCards.length vuelva a 0 para asi ciclarlo
-  const handleNext = () => {
-    if (autoPlay) {
-      setCurrentIndex((currentIndex + 1) % visibleCards.length);
-    }
-  };
-  //Ahora en vez de hacer el ciclo en aumento, lo haremos en decremento
+
+  // Función para retroceder al índice anterior
   const handlePrev = () => {
-    setAutoPlay(false);
+    setAutoPlay(false); // Detiene la reproducción automática al interactuar con los botones
     setCurrentIndex(
       (currentIndex - 1 + visibleCards.length) % visibleCards.length
     );
   };
 
-  // //Cambio segun el intervalo escogido
-  // useEffect(() => {
-  //   const newIntervalId = setInterval(updateIndex, 5000); //5000 ms = 5seg
-  //   setIntervalId(() => newIntervalId);
-  //   return () => {
-  //     clearInterval(intervalId); // Utilizamos el estado intervalId para limpiar el intervalo
-  //   };
-  // }, [updateIndex, visibleCards.length, autoPlay]); // Agregamos currentIndex como dependencia para que pueda realizar el cambio
+  // Cambia automáticamente las tarjetas cada 5 segundos
+  useEffect(() => {
+    if (autoPlay) {
+      const intervalId = setInterval(() => {
+        handleNext();
+      }, 5000); // Cambia cada 5 segundos
+
+      return () => clearInterval(intervalId); // Limpia el intervalo al desmontar el componente o cambiar el estado
+    }
+  }, [currentIndex, autoPlay, visibleCards.length]);
 
   return (
-    <div className="carousel">
+    <div className="carousel relative">
+      {" "}
+      {/* Asegúrate de usar clases de posicionamiento relativas */}
       <div className="carousel-inner">
+        {/* Botón anterior */}
         <button
           id="buttonCarousel"
-          onClick={() => handlePrev()}
+          onClick={handlePrev}
         >
           <svg
             className="w-6 h-6 text-gray-800 dark:text-white"
@@ -66,7 +59,8 @@ const CarouselEL = ({ cards }) => {
             />
           </svg>
         </button>
-        {/* con visibleCards.map recorreremos el arreglo de objetos */}
+
+        {/* Muestra las tarjetas del carrusel */}
         {visibleCards.map((card, index) => (
           <div
             key={index}
@@ -83,9 +77,10 @@ const CarouselEL = ({ cards }) => {
           </div>
         ))}
 
+        {/* Botón siguiente */}
         <button
           id="buttonCarousel"
-          onClick={() => handleNext()}
+          onClick={handleNext}
         >
           <svg
             className="w-6 h-6 text-gray-800 dark:text-white"
@@ -103,6 +98,19 @@ const CarouselEL = ({ cards }) => {
             />
           </svg>
         </button>
+      </div>
+      {/* Indicadores debajo del carrusel */}
+      <div className="flex justify-center space-x-2 absolute bottom-4 sm:bottom-6 xs:mt-8 left-0 right-0">
+        {visibleCards.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)} // Permite al usuario saltar a una tarjeta específica
+            className={`w-3 h-3 rounded-full ${
+              currentIndex === index ? "bg-gray-500" : "bg-gray-300"
+            }`}
+            aria-label={`Ir a la tarjeta ${index + 1}`}
+          ></button>
+        ))}
       </div>
     </div>
   );
