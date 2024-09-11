@@ -929,6 +929,12 @@ const Navbar = () => {
                       >
                         Correo Institucional
                       </Link>
+                      <Link
+                        href="/src/app/INTRANET/inicio-sesion"
+                        className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
+                      >
+                        Iniciar sesion
+                      </Link>
                     </div>
                   )}
                 </div>
