@@ -39,7 +39,10 @@ function Modalidad() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 grid p-1">
+    <div
+      className="min-h-screen bg-gray-100 grid p-1"
+      id="main-content"
+    >
       {" "}
       <br />
       <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-4 ">

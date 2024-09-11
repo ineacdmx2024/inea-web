@@ -49,9 +49,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navBar text-white w-full ">
-      {/* Contenedor del menú */}
-      <div className="w-full ">
+    // <div className="navBar text-white ">
+    <div className="navBar">
+      <div className="bg-[#0C231E] w-full">
+        {/* Menú gobierno */}
+        {/* <nav className="flex items-center justify-between py-[0.1rem] px-auto"></nav> */}
         {/* Menú gobierno */}
         <nav className="bg-[#0C231E]">
           <div className="flex items-center justify-between py-[0.1rem] px-auto">

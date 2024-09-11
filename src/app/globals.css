@@ -28,6 +28,10 @@
 
 }
 
+#main-content{
+  padding-top: 115px; /*espacio del navbar*/
+}
+
 .carousel {
     @apply flex justify-center;
   }
