@@ -2,7 +2,6 @@ import React from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import Card from "@/components/EnlacesR_Lateral";
 import CollapsiblePanel from "@/components/PanelColapsable";
-import { Carousel } from "flowbite-react";
 import CarouselEL from "@/components/CarouselEL";
 import "../../../../src/app/globals.css";
 
@@ -154,7 +153,12 @@ function Modalidad() {
                     dedicando 4 horas por semana.
                   </p>
                   <p className="mt-2">
-                    <strong>Requisitos:</strong> Tener 15 años o más...
+                    <strong>Requisitos:</strong> Tener 15 años o más. Acta de
+                    nacimiento, CURP, certificado Primaria (en caso de comenzar
+                    Secundaria), documento binacional (para personas
+                    provenientes del extranjero). En caso de haber cursado en
+                    grados escolarizados (Primaria o Secundaria) se deben
+                    presentar las boletas correspondientes.
                   </p>
                 </div>
               }
@@ -197,7 +201,12 @@ function Modalidad() {
                     <strong>Tiempo estimado de conclusión:</strong> Inmediato
                   </p>
                   <p className="mt-2">
-                    <strong>Requisitos:</strong> Tener 15 años o más...
+                    <strong>Requisitos:</strong> Tener 15 años o más.
+                    Identificación oficial con fotografía, portafolio de
+                    evidencias (reconocimientos, constancias y diplomas), dos
+                    fotografías tamaño infantil (color o blanco y negro),
+                    certificado de Primaria (sólo para quienes harán examen de
+                    secundaria).
                   </p>
                 </div>
               }
@@ -237,7 +246,12 @@ function Modalidad() {
                     semanas por módulo.
                   </p>
                   <p className="mt-2">
-                    <strong>Requisitos:</strong> Tener 15 años o más...
+                    <strong>Requisitos:</strong> Tener 15 años o más. Acta de
+                    nacimiento, CURP, certificado Primaria (en caso de comenzar
+                    Secundaria), documento binacional (para personas
+                    provenientes del extranjero). En caso de haber cursado en
+                    grados escolarizados (Primaria o Secundaria) se deben
+                    presentar las boletas correspondientes.
                   </p>
                 </div>
               }
@@ -281,7 +295,12 @@ function Modalidad() {
                     dedicando 2 horas por semana.
                   </p>
                   <p className="mt-2">
-                    <strong>Requisitos:</strong> Tener 15 años o más.
+                    <strong>Requisitos:</strong> Tener 15 años o más.Acta de
+                    nacimiento, CURP, certificado Primaria (en caso de comenzar
+                    Secundaria), documento binacional (para personas
+                    provenientes del extranjero). En caso de haber cursado en
+                    grados escolarizados (Primaria o Secundaria) se deben
+                    presentar las boletas correspondientes.
                   </p>
                 </div>
               }
