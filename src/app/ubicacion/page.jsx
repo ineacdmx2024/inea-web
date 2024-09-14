@@ -243,35 +243,6 @@ function Ubicacion() {
           <CarouselEL cards={cards} />
         </div>
 
-        {/* Contenido principal en pantallas medianas y grandes */}
-        <div
-          className="col-span-1 md:col-span-8 md:col-start-2 p-8 ml-auto bg-white content-start justify-end"
-          id="contenido-principal"
-        >
-          <div className="mx-auto w-full">Ubicacion</div>
-          {/* <div className="container mx-auto flex justify-between h-full py-[200px]">
-          <div className=" text-[20px] h-[300px] sticky top-[300px] w-2/4">
-            <h2>EULALIA GUZMÁN BARRÓN</h2>
-            <p>Nicolas Mario Sánchez y Flores</p>
-            <p>Cel: 56 21 30 54 89/ 55 40 43 53 10</p>
-            <p>nmsanchez@inea.gob.mx cdmx_operacion@inea.gob.mx</p>
-          </div>
-
-          <div className="flex flex-col gap-[100px] sticky w-2/4 ">
-            <div className="bg-red-300 w-[400px] h-[300px] sticky top-[300px]">
-              tlahuac
-            </div>
-            <div className="bg-blue-300 w-[400px] h-[300px] sticky top-[300px]">
-              Milpalta
-            </div>
-            <div className="bg-green-300 w-[600px] h-[300px] sticky top-[300px]">
-              Tlalpan
-            </div>
-          </div>
-        </div> */}
-          <SkewedPages datos={pageData} />
-        </div>
-
         {/* Cards lateral en pantallas medianas y grandes */}
         <div
           className="hidden md:flex md:col-span-2 md:col-start-10 flex-col mr-auto"
@@ -307,6 +278,34 @@ function Ubicacion() {
             />
           </div>
         </div>
+      </div>
+      {/* Contenido principal en pantallas medianas y grandes */}
+      <div
+        className="col-span-1 md:col-span-8 md:col-start-2 p-8 ml-auto bg-white content-start justify-end"
+        id="contenido-principal"
+      >
+        <div className="mx-auto w-full">Ubicacion</div>
+        {/* <div className="container mx-auto flex justify-between h-full py-[200px]">
+          <div className=" text-[20px] h-[300px] sticky top-[300px] w-2/4">
+            <h2>EULALIA GUZMÁN BARRÓN</h2>
+            <p>Nicolas Mario Sánchez y Flores</p>
+            <p>Cel: 56 21 30 54 89/ 55 40 43 53 10</p>
+            <p>nmsanchez@inea.gob.mx cdmx_operacion@inea.gob.mx</p>
+          </div>
+
+          <div className="flex flex-col gap-[100px] sticky w-2/4 ">
+            <div className="bg-red-300 w-[400px] h-[300px] sticky top-[300px]">
+              tlahuac
+            </div>
+            <div className="bg-blue-300 w-[400px] h-[300px] sticky top-[300px]">
+              Milpalta
+            </div>
+            <div className="bg-green-300 w-[600px] h-[300px] sticky top-[300px]">
+              Tlalpan
+            </div>
+          </div>
+        </div> */}
+        <SkewedPages datos={pageData} />
       </div>
     </div>
   );
