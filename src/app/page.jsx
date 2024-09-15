@@ -3,7 +3,7 @@ import { Open_Sans } from "@next/font/google";
 import CarouselBlog from "@/components/CarouselBlog";
 import CarouselOfertEdu from "@/components/CarouselOfertEdu";
 import SeccionLigasInte from "@/components/SeccionLigasInte";
-import Ubicacion from "./ubicacion/page";
+import Ubicacion from "@/components/Ubicacion";
 const open_Sans = Open_Sans({
   subsets: ["latin"],
 });

@@ -95,6 +95,10 @@ const SkewedPages = ({ datos }) => {
                   <p className="skw-page__description">
                     Email: {pageData.email}
                   </p>
+                  <br />
+                  <p className="skw-page__description">
+                    {pageData.map}
+                  </p>
                 </div>
               </div>
             </div>
