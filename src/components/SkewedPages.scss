@@ -27,11 +27,20 @@ $scrollTime: 1s;
   left: 0;
   top: 0;
   width: 100%;
+  display: flex;
+  flex-wrap: column;
+  @media (min-width: 768px) {
+    flex-direction: row; /* Layout en columnas para pantallas md o más grandes */
+  }
 
   &__half {
-    position: absolute;
+    // position: absolute;
     top: 0;
-    width: 50%; /* Mantén el ancho al 50% para hacer la división en dos mitades */
+    width: 100%;
+    // width: 50%; /* Mantén el ancho al 50% para hacer la división en dos mitades */
+    @media (min-width: 768px) {
+      width: 50%; // A partir de md (768px) los paneles ocuparán el 50%
+    }
     min-height: 100vh;
     height: 100%;
     transition: transform $scrollTime;
@@ -75,11 +84,14 @@ $scrollTime: 1s;
 
   &__content {
     display: flex;
-    // align-items: center;
-    margin: 0 auto;
+    // margin: 0 auto;
+    align-items: center;
     justify-content: center;
-    flex-flow: column wrap;
-    position: absolute;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    // flex-flow: column wrap;
+    // position: absolute;
     left: 0;
     top: 0;
     width: 100%;
@@ -90,9 +102,13 @@ $scrollTime: 1s;
     transition: transform $scrollTime, opacity $scrollTime;
     background-size: cover;
 
+    @media (max-width: 768px) {
+      padding: 0.5rem;
+    }
+
     .skw-page__half--left & {
-      // padding-left: 30%;
-      // padding-right: 30%;
+      padding-left: 20%;
+      padding-right: 20%;
       // margin-left: auto;
       // margin-right: auto;
     }
@@ -129,7 +145,7 @@ $scrollTime: 1s;
     .skw-page__half--left .skw-page__content {
       // background-image: url("https://mexicocity.cdmx.gob.mx/wp-content/uploads/2022/04/descubre-villa-milpa-alta-1.png");
       // url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/mousover-img-1.jpg");
-      background-color: #13322b;
+      background: #13322b;
     }
     .skw-page__half--right .skw-page__content {
       background: #f6f6f6;

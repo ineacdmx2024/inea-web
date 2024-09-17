@@ -43,7 +43,13 @@ function Ubicacion() {
       nom: "Nicolas Mario Sánchez y FLores",
       tel: "56 2130 5489/ 55 4043 5310",
       email: "nmsanchez@inea.gob.mx",
-      map: <iframe src="https://www.google.com/maps/d/embed?mid=1FsXAud9CllSOEjWiT4arwULZUqOCKd8&ehbc=2E312F&noprof=1" width="540" height="380"></iframe>,
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1FsXAud9CllSOEjWiT4arwULZUqOCKd8&ehbc=2E312F&noprof=1"
+          width="540"
+          height="380"
+        ></iframe>
+      ),
       items: [
         {
           alcaldia: "TLAHUAC",
@@ -64,7 +70,13 @@ function Ubicacion() {
       nom: "Mitzi Martínez Pérez",
       tel: " 55 25 20 46 76",
       email: "",
-      map: <iframe src="https://www.google.com/maps/d/embed?mid=1DnzAWb6HfZL92gs6BNOGroi21kkju_I&ehbc=2E312F&noprof=1" width="540" height="380"></iframe>,
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1DnzAWb6HfZL92gs6BNOGroi21kkju_I&ehbc=2E312F&noprof=1"
+          width="540"
+          height="380"
+        ></iframe>
+      ),
       items: [
         {
           alcaldia: "TLÁLPAN",
@@ -85,7 +97,13 @@ function Ubicacion() {
       nom: "Paola Angélica Avalos Jiménez",
       tel: "55 76 06 72 05",
       email: "",
-      map: <iframe src="https://www.google.com/maps/d/embed?mid=1JhoJSIiFRRUplgG9h_UALj9c52Nukzo&ehbc=2E312F&noprof=1" width="540" height="380"></iframe>,
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1JhoJSIiFRRUplgG9h_UALj9c52Nukzo&ehbc=2E312F&noprof=1"
+          width="540"
+          height="380"
+        ></iframe>
+      ),
       items: [
         {
           alcaldia: "COYOACÁN / XOCHIMILCO",
@@ -100,7 +118,13 @@ function Ubicacion() {
       nom: "Laura Merlos Sedeño",
       tel: "55 79 46 79 55",
       email: "lmerlos@inea.gob.mx",
-      map: <iframe src="https://www.google.com/maps/d/embed?mid=1ZdLJbmN9rGg7_yyrmMVj-1dgdtqjbLg&ehbc=2E312F&noprof=1" width="540" height="380"></iframe>,
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1ZdLJbmN9rGg7_yyrmMVj-1dgdtqjbLg&ehbc=2E312F&noprof=1"
+          width="540"
+          height="380"
+        ></iframe>
+      ),
       items: [
         {
           alcaldia: "ÁLVARO OBREGÓN NORTE",
@@ -127,7 +151,13 @@ function Ubicacion() {
       nom: "Miguel Rojas Merino",
       tel: "55 34 27 18 77 ",
       email: "mrojas@inea.gob.mx",
-      map: <iframe src="https://www.google.com/maps/d/embed?mid=1LqLkBGzSpuzU1hcRl61MW0NzwoRzI8I&ehbc=2E312F&noprof=1" width="540" height="380"></iframe>,
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1LqLkBGzSpuzU1hcRl61MW0NzwoRzI8I&ehbc=2E312F&noprof=1"
+          width="540"
+          height="380"
+        ></iframe>
+      ),
       items: [
         {
           alcaldia: "GUSTAVO A. MADERO PONIENTE",
@@ -148,7 +178,13 @@ function Ubicacion() {
       nom: "Wiliber Sánchez Sánchez",
       tel: "55 24 18 63 42",
       email: "wsanchez@inea.gob.mx",
-      map: <iframe src="https://www.google.com/maps/d/embed?mid=1DvjlXXI1hAS5boToQLhwhpDfMt3XhQA&ehbc=2E312F&noprof=1" width="540" height="380"></iframe>,
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1DvjlXXI1hAS5boToQLhwhpDfMt3XhQA&ehbc=2E312F&noprof=1"
+          width="540"
+          height="380"
+        ></iframe>
+      ),
 
       items: [
         {
@@ -176,7 +212,13 @@ function Ubicacion() {
       nom: "Rosa Isela Benitez Valle ",
       tel: "56 21 30 54 89",
       email: "",
-      map: <iframe src="https://www.google.com/maps/d/embed?mid=1HJ-1KElEVyWVm6oY57TGkgmdh1fLFTc&ehbc=2E312F&noprof=1" width="540" height="380"></iframe>,
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1HJ-1KElEVyWVm6oY57TGkgmdh1fLFTc&ehbc=2E312F&noprof=1"
+          width="540"
+          height="380"
+        ></iframe>
+      ),
       items: [
         {
           alcaldia: "AZCAPOTZALCO",
@@ -203,7 +245,13 @@ function Ubicacion() {
       nom: "Gilberto Camacho Herrera",
       tel: "55 11 42 46 91",
       email: "gcamacho@inea.gob.mx",
-      map: <iframe src="https://www.google.com/maps/d/embed?mid=1IzhLw6uilcpWGFT4z3sLDhl6Tu1z5hs&ehbc=2E312F&noprof=1" width="540" height="380"></iframe>,
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1IzhLw6uilcpWGFT4z3sLDhl6Tu1z5hs&ehbc=2E312F&noprof=1"
+          width="540"
+          height="380"
+        ></iframe>
+      ),
       items: [
         {
           alcaldia: "IZTAPALAPA CENTRO",
@@ -242,7 +290,6 @@ function Ubicacion() {
           <div className="mx-auto py-1 px-4 mt-3 sm:px-6 md:px-8">
             <Breadcrumb />
           </div>
-
         </div>
 
         {/* Carrusel de Cards (visible en pantallas pequeñas) */}
@@ -290,15 +337,15 @@ function Ubicacion() {
           </div>
         </div>
         <div
-          className="col-span-1 md: w-full col-span-8 col-start-1 p-8 ml-auto bg-white content-start justify-end"
+          className="col-span-1 md:w-full md:col-span-8 md:col-start-2 md:row-start-2 p-8 ml-auto bg-white content-start justify-end"
           id="contenido-principal"
         >
-          <div className="mx-auto w-full">Ubicacion</div>
-          <SkewedPages datos={pageData} />
+          <div className="mx-auto w-full">
+            <SkewedPages datos={pageData} />
+          </div>
         </div>
       </div>
       {/* Contenido principal en pantallas medianas y grandes */}
-
 
       {/*<div className="container mx-auto flex justify-between h-full py-[200px]">
           <div className=" text-[20px] h-[300px] sticky top-[300px] w-2/4">
@@ -321,9 +368,6 @@ function Ubicacion() {
           </div>
           </div>
         */}
-
-
-
     </div>
   );
 }
