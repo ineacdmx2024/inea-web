@@ -142,30 +142,33 @@ function CarouselOfertEdu() {
           transform: scale(1.2);
         }
       `}</style>
-      <div className="slider-container">
-        <Slider {...settings} className="mx-auto !z-5 w-4/5 tablet:w-[1150px]">
-          {modalidades.map((item, index) => (
-            <div key={index} className=" px-0">
-              <div className="">
-                <div className="border border-slate-300 rounded-lg h-[400px] letras:h-[460px] mx-auto flex flex-col w-[260px] letras:w-[320px] ofertaEdu:w-[400px] tablet:w-[350px] tablet:h-[400px] justify-center items-center">
-                  <div className="w-52 letras:w-60 h-[310px] letras:h-[340px]  flex flex-col justify-between items-center ">
+      <div className="p-2 pt-0">
+      <div className="carrusel">
+          <Slider
+            {...settings}
+            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] mt-8"
+          >
+            {modalidades.map((noticia, index) => (
+              <div key={index} className="px-4">
+                <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[420px] p-8 flex flex-col justify-between">
+                  <div className="flex flex-col items-center">
                     <img
                       className="w-60 h-auto object-cover rounded-lg"
-                      src={item.image}
-                      alt={item.name}
+                      src={noticia.image}
+                      alt={noticia.name}
                     />
-                    <h3 className="text-center text-[18px] letras:text-[22px] text-slate-500 font-medium capitalize">
-                      {item.name}
+                    <h3 className="my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium capitalize">
+                      {noticia.name}
                     </h3>
-                    <button className="hover:bg-[#8a1b39] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full bg-[#a42145] mx-auto block">
-                      Ir al sitio
-                    </button>
                   </div>
+                  <button className="bg-[#a42145] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
+                    Ir al sitio
+                  </button>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
       </div>
     </>
   );

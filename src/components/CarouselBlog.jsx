@@ -223,7 +223,7 @@ const CarouselBlog = ({item}) => {
               </div>
 
               {/* Div del texto */}
-              <article className={`${open_Sans.className} flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] px-5 py-2 m-auto arrow:w-[750px]`}>
+              <article className={`${open_Sans.className} flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] blog:px-5 px-0 py-2 m-auto arrow:w-[750px]`}>
                 <p className="letras:text-base text-gray-700 text-sm mb-2 ">{item.date}</p>
                 <h2 className="letras:text-[28px] text-[20px] leading-tight font-medium mb-4">
                   {truncateText(item.title, 10)}

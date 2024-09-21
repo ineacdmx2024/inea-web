@@ -41,7 +41,7 @@ const Ubicacion = () => {
             src="https://www.google.com/maps/d/embed?mid=11LVXyU_3QKH1JkOXIMVba2bEkN8f_iY&hl=es&ehbc=2E312F"
             width="640"
             height="480"
-            className="w-full h-74 md:h-96 lg:h-[26rem] border-0 rounded-lg p-2"
+            className="w-full h-74 md:h-96 lg:h-[26rem] border-0 rounded-lg p-0"
             allowFullScreen
           />
         </div>

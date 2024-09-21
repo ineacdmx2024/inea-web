@@ -11,7 +11,8 @@ module.exports = {
         "arrow": "810px",
         "medida3" : "750px",
         "letras" : "390px",
-        "ofertaEdu" : "500px"
+        "ofertaEdu" : "500px",
+        "blog" : "420px"
 
       },
       maxWidth: {
