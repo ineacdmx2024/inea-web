@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 // Este es un componente funcional que toma `title` y `content` como props.
 const CollapsiblePanel = ({ title, content }) => {
@@ -7,6 +7,14 @@ const CollapsiblePanel = ({ title, content }) => {
   // `setIsOpen` es la función que actualiza el estado de `isOpen`.
   // Por defecto, el panel está cerrado (isOpen es false).
   const [isOpen, setIsOpen] = useState(false);
+  const [height, setHeight] = useState("0px"); // Estado para la altura del contenido
+  const contentRef = useRef(null); // Referencia al contenido
+  // Función para alternar entre abrir y cerrar el panel
+  const togglePanel = () => {
+    setIsOpen(!isOpen);
+    // Establece la altura del contenido basado en el tamaño real del contenido.
+    setHeight(isOpen ? "0px" : `${contentRef.current.scrollHeight}px`);
+  };
 
   return (
     // Este `div` contiene todo el panel.
@@ -20,7 +28,7 @@ const CollapsiblePanel = ({ title, content }) => {
       */}
       <div
         className="flex justify-between w-full px-4 py-2 text-xl font-medium text-left bg-gray-200 rounded-lg cursor-pointer"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={togglePanel}
       >
         {/* Mostramos el título del panel */}
         <span>{title}</span>
@@ -53,16 +61,14 @@ const CollapsiblePanel = ({ title, content }) => {
         </svg>
       </div>
 
-      {/* 
-        Este es el contenido que se colapsa o se expande.
-        Solo se muestra si `isOpen` es true.
-      */}
-      {isOpen && (
-        <div className="px-4 pt-4 pb-2 text-lg text-gray-700">
-          {/* Contenido del panel */}
-          {content}
-        </div>
-      )}
+      {/* Contenedor del contenido colapsable con transición */}
+      <div
+        ref={contentRef} // Referencia para calcular la altura
+        style={{ maxHeight: `${height}`, transition: "max-height 0.8s ease" }} // Establece la transición de altura
+        className="overflow-hidden"
+      >
+        <div className="px-4 pt-4 pb-2 text-lg text-gray-700">{content}</div>
+      </div>
     </div>
   );
 };
