@@ -7,17 +7,21 @@ const Card = ({ title, imageSrc, buttonText, link }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden p-6 my-2 md:min-w-40 md:max-w-72 ">
-      <img
-        src={imageSrc}
-        alt={title}
-        className="w-full h-48 object-cover"
-      />
-      <h3 className="text-xl font-semibold mt-4 mb-2 text-center">{title}</h3>
-      <div className="flex justify-center mt-4">
+    <div className=" my-2 mx-auto py-3 border border-slate-300 rounded-lg min-h-[300px] letras:min-h-[360px] tablet:h-[300px]  flex flex-col w-full  justify-center items-center">
+      {/*  */}
+      <div className="mx-3 min-h-[310px] letras:min-h-[340px] flex flex-col justify-between items-center">
+        <img
+          src={imageSrc}
+          alt={title}
+          // w-full h-48 object-cover
+          className="w-60 h-48 object-cover rounded-lg"
+        />
+        <h3 className="my-4 px-4 text-center text-[22px] text-slate-500 font-medium capitalize">
+          {title}
+        </h3>
         <button
           onClick={handleButtonClick}
-          className="bg-red-700 text-white px-4 py-2 rounded-full hover:bg-red-800 focus:outline-none"
+          className="bg-[#a42145] text-white hover:bg-[#8a1b39] text-xs letras:text-[13.5px] px-4 py-2 rounded-full mx-auto block focus:outline-none"
         >
           {buttonText}
         </button>

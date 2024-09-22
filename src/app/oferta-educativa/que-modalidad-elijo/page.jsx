@@ -39,7 +39,7 @@ function Modalidad() {
 
   return (
     <div
-      className="min-h-screen bg-gray-100 grid p-1"
+      className="min-h-screen bg-white grid p-1"
       id="main-content"
     >
       {" "}
@@ -47,7 +47,7 @@ function Modalidad() {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-4 ">
         {/* Migajas (Breadcrumb) */}
         <div
-          className="col-span-1 md:col-span-10 md:col-start-2 bg-white shadow md:min-w-max"
+          className="col-span-1 md:col-span-10 md:col-start-2  md:min-w-max"
           id="migajas"
         >
           <div className="mx-auto py-1 px-4 mt-3 sm:px-6 md:px-8">
@@ -55,57 +55,14 @@ function Modalidad() {
           </div>
         </div>
 
-        {/* Carrusel de Cards (visible en pantallas pequeñas) */}
-        <div
-          className="md:hidden flex justify-center w-full py-4 col-span-1"
-          id="carousel-cards"
-          data-carousel="slide"
-        >
-          {/* <div
-            className="flex items-center"
-            id="enlaces"
-          >
-            <div className="flex space-x-4 overflow-x-auto w-full px-4">
-              <Carousel slideInterval={5000}>
-                <Card
-                  title="Explorando Las Estrellas"
-                  imageSrc="https://imgs.search.brave.com/RAPyqA9Q7HK7hP22bJsUZyXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc"
-                  buttonText="Ir al sitio"
-                  link="https://www.astromia.com/universo/lasestrellas.htm"
-                />{" "}
-                <Card
-                  title="El Arte Del Minimalismo 1"
-                  imageSrc="https://imgs.search.brave.com/2dxg5TJM1uHv9oVLCBw3j3GcOQgbjLXLW4lRK4VoTG0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lbGJs/b2dkZWxtaW5pbWFs/aXN0YS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMTkvMTEv/Y3VhZHJvLW1vbmRy/aWFuLWFydGUtbWlu/aW1hbGlzdGEtODA0/eDEwMjQuanBn"
-                  buttonText="Ir al sitio"
-                  link="https://elblogdelminimalista.com/minimalismo/arte-minimalista-movimiento/"
-                />
-                <Card
-                  title="El Arte Del Minimalismo 2"
-                  imageSrc="https://imgs.search.brave.com/2dxg5TJM1uHv9oVLCBw3j3GcOQgbjLXLW4lRK4VoTG0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lbGJs/b2dkZWxtaW5pbWFs/aXN0YS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMTkvMTEv/Y3VhZHJvLW1vbmRy/aWFuLWFydGUtbWlu/aW1hbGlzdGEtODA0/eDEwMjQuanBn"
-                  buttonText="Ir al sitio"
-                  link="https://elblogdelminimalista.com/minimalismo/arte-minimalista-movimiento/"
-                />
-                <Card
-                  title="El Arte Del Minimalismo 3"
-                  imageSrc="https://imgs.search.brave.com/2dxg5TJM1uHv9oVLCBw3j3GcOQgbjLXLW4lRK4VoTG0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lbGJs/b2dkZWxtaW5pbWFs/aXN0YS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMTkvMTEv/Y3VhZHJvLW1vbmRy/aWFuLWFydGUtbWlu/aW1hbGlzdGEtODA0/eDEwMjQuanBn"
-                  buttonText="Ir al sitio"
-                  link="https://elblogdelminimalista.com/minimalismo/arte-minimalista-movimiento/"
-                />
-              </Carousel>
-            </div>
-          </div> */}
-
-          <CarouselEL cards={cards} />
-        </div>
-
         {/* Contenido principal en pantallas medianas y grandes */}
         <div
-          className="col-span-1 md:col-span-8 md:col-start-2 p-8 ml-auto bg-white content-start justify-end"
+          className="col-span-1 md:col-span-8 md:col-start-2 p-8 ml-auto content-start justify-end"
           id="contenido-principal"
         >
           {" "}
           <div className="mx-auto w-full">
-            <h1 className="text-3xl font-medium text-slate-600 mb-2 letras:text-4xl ">
+            <h1 className="text-3xl font-medium text-[#404041] mb-2 letras:text-4xl ">
               ¿Qué opción del INEA me conviene para certificar mi Primaria y/o
               Secundaria?
             </h1>
@@ -341,6 +298,15 @@ function Modalidad() {
               link="https://elblogdelminimalista.com/minimalismo/arte-minimalista-movimiento/"
             />
           </div>
+        </div>
+
+        {/* Carrusel de Cards (visible en pantallas pequeñas) */}
+        <div
+          className="md:hidden flex justify-center w-full py-4 col-span-1"
+          id="carousel-cards"
+          data-carousel="slide"
+        >
+          <CarouselEL cards={cards} />
         </div>
       </div>
     </div>

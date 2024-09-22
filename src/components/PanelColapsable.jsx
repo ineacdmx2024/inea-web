@@ -58,7 +58,7 @@ const CollapsiblePanel = ({ title, content }) => {
         Solo se muestra si `isOpen` es true.
       */}
       {isOpen && (
-        <div className="px-4 pt-4 pb-2 text-base text-gray-700">
+        <div className="px-4 pt-4 pb-2 text-lg text-gray-700">
           {/* Contenido del panel */}
           {content}
         </div>
