@@ -77,8 +77,43 @@ const SkewedPages = ({ datos }) => {
             currentPage === index + 1 ? "active" : ""
           } sticky flex flex-col md:flex-row`} // Para pantallas md, usa flex-row
         >
+          {/* Flechas en la esquina superior izquierda */}
+          <div className="flechas">
+            <svg
+              onClick={navigateUp} // Disminuir el índice en 1
+              className={`h-8 w-8 ${
+                currentPage % 2 === 0 ? "text-[#404041]" : "text-white"
+              }`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M8 7l4-4m0 0l4 4m-4-4v18"
+              />
+            </svg>
+            <svg
+              onClick={navigateDown} // Aumentar el índice en 1 ${isEven ? "text-white" : "text-black"}
+              className={`h-8 w-8 ${
+                currentPage % 2 === 0 ? "text-[#404041]" : "text-white"
+              } `}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M16 17l-4 4m0 0l-4-4m4 4V3"
+              />
+            </svg>
+          </div>
           {/* Lado izquierdo */}
-          <div className="skw-page__half skw-page__half--left w-full md:w-1/2 p-4">
+          <div className="skw-page__half skw-page__half--left w-full md:w-1/2 p-4 relative">
             <div className="skw-page__skewed">
               <div className="skw-page__content">
                 <div>

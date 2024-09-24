@@ -16,6 +16,24 @@ body {
   overflow: hidden;
   position: relative;
   height: 100vh;
+
+  .flechas {
+    position: absolute;
+    top: 10px; /* Ajusta según la necesidad */
+    left: 10px; /* Ajusta según la necesidad */
+    z-index: 1000; /* Coloca las flechas sobre otros elementos */
+    display: flex;
+    flex-direction: column; /* Para que las flechas estén una encima de otra */
+
+    svg {
+      cursor: pointer;
+      transition: color 0.3s ease; /* Transición para hover */
+
+      &:hover {
+        color: #d4c19c; /* Cambia a rojo cuando esté en hover */
+      }
+    }
+  }
 }
 
 $skewDeg: 18deg;
@@ -29,6 +47,7 @@ $scrollTime: 1s;
   width: 100%;
   display: flex;
   flex-wrap: column;
+  z-index: 1;
   @media (min-width: 768px) {
     flex-direction: row; /* Layout en columnas para pantallas md o más grandes */
   }
@@ -67,11 +86,13 @@ $scrollTime: 1s;
   &__skewed {
     overflow: hidden;
     position: absolute;
+    // position: relative;
     top: 0;
     width: 100%; /* Cambia de 140% a 100% para un ancho normal */
     height: 100%;
     /* Elimina transform: skewX */
     background: #000;
+    z-index: 1;
 
     .skw-page__half--left & {
       left: 0; /* Ajuste de posición en lugar de -40% */
@@ -190,11 +211,11 @@ $scrollTime: 1s;
   }
   &-6 {
     .skw-page__half--left .skw-page__content {
-      background-color: #13322b;
-    }
-    .skw-page__half--right .skw-page__content {
       background: #f6f6f6;
       color: #000;
+    }
+    .skw-page__half--right .skw-page__content {
+      background-color: #13322b;
     }
   }
   &-7 {
@@ -208,11 +229,11 @@ $scrollTime: 1s;
   }
   &-8 {
     .skw-page__half--left .skw-page__content {
-      background-color: #13322b;
-    }
-    .skw-page__half--right .skw-page__content {
       background: #f6f6f6;
       color: #000;
+    }
+    .skw-page__half--right .skw-page__content {
+      background-color: #13322b;
     }
   }
 }
