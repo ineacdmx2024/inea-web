@@ -1,11 +1,15 @@
+// "use client";
 import React from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import Card from "@/components/EnlacesR_Lateral";
 import CarouselEL from "@/components/CarouselEL";
 import SkewedPages from "@/components/SkewedPages";
+import v2SkewedPages from "@/components/v2SkewedPages";
 // import "../../../../src/app/globals.css";
 import "../../app/globals.css";
 function Ubicacion() {
+  // const [currentPage, setCurrentPage] = useState(1);
+
   const cards = [
     {
       title: "Explorando Las Estrellas 1",
@@ -274,6 +278,26 @@ function Ubicacion() {
       ],
     },
   ];
+
+  const alcaldias = [
+    { alcaldia: "Álvaro Obregón", IndexSlides: 4 },
+    { alcaldia: "Azcapotzalco", IndexSlides: 7 },
+    { alcaldia: "Benito Juárez", IndexSlides: 6 },
+    { alcaldia: "Coyoacán", IndexSlides: 3 },
+    { alcaldia: "Cuajimalpa", IndexSlides: 2 },
+    { alcaldia: "Cuauhtémoc", IndexSlides: 7 },
+    { alcaldia: "Gustavo A. Madero", IndexSlides: 5 },
+    { alcaldia: "Iztacalco", IndexSlides: 6 },
+    { alcaldia: "Iztapalapa", IndexSlides: 8 },
+    { alcaldia: "La Magdalena Contreras", IndexSlides: 4 },
+    { alcaldia: "Miguel Hidalgo", IndexSlides: 7 },
+    { alcaldia: "Milpa Alta", IndexSlides: 1 },
+    { alcaldia: "Tláhuac", IndexSlides: 1 },
+    { alcaldia: "Tlalpan", IndexSlides: 2 },
+    { alcaldia: "Venustiano Carranza", IndexSlides: 6 },
+    { alcaldia: "Xochimilco", IndexSlides: 3 },
+  ];
+
   return (
     <div
       classname="min-h-screen bg-gray-100 grid p-1"
@@ -282,13 +306,59 @@ function Ubicacion() {
       <br />
       <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-4 ">
         {/* Migajas (Breadcrumb) */}
-
         <div
           className="col-span-1 md:col-span-10 md:col-start-2 bg-white shadow md:min-w-max"
           id="migajas"
         >
           <div className="mx-auto py-1 px-4 mt-3 sm:px-6 md:px-8">
             <Breadcrumb />
+          </div>
+        </div>
+
+        {/* contenido princiapal  */}
+        <div
+          className="col-span-1 md:w-full md:col-span-8 md:col-start-2 md:row-start-2 p-8 ml-auto bg-white content-start justify-end grid grid-cols-1"
+          id="contenido-principal"
+        >
+          <div className="flex flex-wrap">
+            {alcaldias.map((elemento) => (
+              <button
+                key={elemento.IndexSlides}
+                type="button"
+                className="text-[#8A1B39] hover:text-white border border-[#8A1B39] hover:bg-[#7c1833] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 text-lg flex"
+                // onClick={() => setCurrentPage(elemento.IndexSlides)}
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokelinecap="round"
+                    strokelinejoin="round"
+                    strokewidth="{2}"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokelinecap="round"
+                    strokelinejoin="round"
+                    strokewidth="{2}"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                {elemento.alcaldia}
+              </button>
+            ))}
+          </div>
+
+          <div className="mx-auto w-full grid grid-cols-1">
+            <SkewedPages
+              datos={pageData}
+              // cPage={currentPage}
+              cPage={1}
+              className="w-full sm:h-screen"
+            />
           </div>
         </div>
 
@@ -336,38 +406,7 @@ function Ubicacion() {
             />
           </div>
         </div>
-        <div
-          className="col-span-1 md:w-full md:col-span-8 md:col-start-2 md:row-start-2 p-8 ml-auto bg-white content-start justify-end"
-          id="contenido-principal"
-        >
-          <div className="mx-auto w-full">
-            <SkewedPages datos={pageData} />
-          </div>
-        </div>
       </div>
-      {/* Contenido principal en pantallas medianas y grandes */}
-
-      {/*<div className="container mx-auto flex justify-between h-full py-[200px]">
-          <div className=" text-[20px] h-[300px] sticky top-[300px] w-2/4">
-            <h2>EULALIA GUZMÁN BARRÓN</h2>
-            <p>Nicolas Mario Sánchez y Flores</p>
-            <p>Cel: 56 21 30 54 89/ 55 40 43 53 10</p>
-            <p>nmsanchez@inea.gob.mx cdmx_operacion@inea.gob.mx</p>
-          </div>
-
-          <div className="flex flex-col gap-[100px] sticky w-2/4 ">
-            <div className="bg-red-300 w-[400px] h-[300px] sticky top-[300px]">
-              tlahuac
-            </div>
-            <div className="bg-blue-300 w-[400px] h-[300px] sticky top-[300px]">
-              Milpalta
-            </div>
-            <div className="bg-green-300 w-[600px] h-[300px] sticky top-[300px]">
-              Tlalpan
-            </div>
-          </div>
-          </div>
-        */}
     </div>
   );
 }

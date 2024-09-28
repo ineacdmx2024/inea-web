@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import "./SkewedPages.scss"; // Importar el archivo SCSS
-
-const SkewedPages = ({ datos }) => {
+const v2SkewedPages = ({ datos, cPage }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [allowScroll, setAllowScroll] = useState(false);
   const colors = [
@@ -11,33 +9,22 @@ const SkewedPages = ({ datos }) => {
     "text-blue-500",
     "text-green-500",
     "text-yellow-500",
-  ]; // Array de colores
+  ];
+};
 
-  // Manejar el control de scroll del body
-  useEffect(() => {
-    document.body.style.overflow = allowScroll ? "auto" : "hidden";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [allowScroll]);
+const navigateUp = () => {
+  setCurrentPage((prevPage) => (prevPage > 1 ? prevPage - 1 : datos.length));
+};
 
-  // Funciones para navegar entre las páginas
-  const navigateUp = () => {
-    setCurrentPage((prevPage) => (prevPage > 1 ? prevPage - 1 : datos.length));
-    setAllowScroll(false); // Reiniciar scroll al cambiar de página
-  };
+const navigateDown = () => {
+  setCurrentPage((prevPage) => {
+    const nextPage = prevPage < datos.length ? prevPage + 1 : prevPage;
+    if (nextPage === datos.length) {
+      setAllowScroll(true);
+    }
+    return nextPage;
+  });
 
-  const navigateDown = () => {
-    setCurrentPage((prevPage) => {
-      const nextPage = prevPage < datos.length ? prevPage + 1 : prevPage;
-      if (nextPage === datos.length) {
-        setAllowScroll(true); // Permitir scroll al final
-      }
-      return nextPage;
-    });
-  };
-
-  // Detectar scroll del mouse para cambiar de página
   useEffect(() => {
     const handleScroll = (e) => {
       if (e.deltaY > 0) {
@@ -53,7 +40,6 @@ const SkewedPages = ({ datos }) => {
     };
   }, []);
 
-  // Detectar teclas de flecha para cambiar de página
   useEffect(() => {
     const handleKeydown = (e) => {
       if (e.key === "ArrowDown") {
@@ -70,16 +56,14 @@ const SkewedPages = ({ datos }) => {
   }, []);
 
   return (
-    <div className="skw-pages sticky container mx-auto flex h-full bg-[#ffff]">
+    <div className="overflow-hidden sticky min-h-[100v] container mx-auto flex h-full bg-[#ffff]">
       {datos.map((pageData, index) => (
         <div
           key={index}
-          className={`skw-page skw-page-${index + 1} ${
-            currentPage === index + 1 ? "active" : "inactive"
-          } sticky flex flex-col md:flex-row`} // Para pantallas md, usa flex-row
+          className="sticky left-0 top-0 w-full flex flex-col z-10 md:flex-row" // Para pantallas md, usa flex-row
         >
           {/* Flechas en la esquina superior izquierda */}
-          <div className="flechas">
+          <div className="absolute top-3 left-3 z-50 flex flex-col">
             <svg
               onClick={navigateUp} // Disminuir el índice en 1
               className={`h-8 w-8 ${
@@ -97,10 +81,10 @@ const SkewedPages = ({ datos }) => {
               />
             </svg>
             <svg
-              onClick={navigateDown} // Aumentar el índice en 1
+              onClick={navigateDown} // Aumentar el índice en 1 ${isEven ? "text-white" : "text-black"}
               className={`h-8 w-8 ${
                 currentPage % 2 === 0 ? "text-[#404041]" : "text-white"
-              }`}
+              } `}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -115,25 +99,29 @@ const SkewedPages = ({ datos }) => {
           </div>
 
           {/* Lado izquierdo */}
-          <div className="skw-page__half skw-page__half--left w-full">
-            <div className="skw-page__skewed">
-              <div className="skw-page__content">
-                <h1 className="skw-page__heading">{pageData.title}</h1>
-                <p className="skw-page__description">{pageData.nom}</p>
-                <p className="skw-page__description">
-                  Teléfono: {pageData.tel}
-                </p>
-                <p className="skw-page__description">Email: {pageData.email}</p>
-                <br />
-                <p className="skw-page__description">{pageData.map}</p>
+          <div className="absolute left-0 top-0 w-full flex flex-col z-10 min-h-[100vh] translate-y-[100%] ">
+            <div className="overflow-hidden absolute top-0 w-full h-[100%] bg-black z-10">
+              <div className="flex items-center justify-center flex-col text-center p-4 left-0 top-0 w-full h-full text-white bg-cover ">
+                <div>
+                  <h1 className="skw-page__heading">{pageData.title}</h1>
+                  <p className="skw-page__description">{pageData.nom}</p>
+                  <p className="skw-page__description">
+                    Teléfono: {pageData.tel}
+                  </p>
+                  <p className="skw-page__description">
+                    Email: {pageData.email}
+                  </p>
+                  <br />
+                  <p className="skw-page__description">{pageData.map}</p>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Lado derecho */}
-          <div className="skw-page__half skw-page__half--right w-full">
+          <div className="absolute left-[50%] top-0 w-full flex flex-col z-10 min-h-[100vh] translate-y-[-100%] ">
             <div className="overflow-hidden absolute top-0 w-full h-[100%] bg-black z-10">
-              <div className="skw-page__content">
+              <div className="flex items-center justify-center flex-col text-center p-4 left-0 top-0 w-full h-full text-white bg-cover ">
                 {pageData.items.map((item, idx) => (
                   <div key={idx}>
                     <svg
@@ -173,4 +161,4 @@ const SkewedPages = ({ datos }) => {
   );
 };
 
-export default SkewedPages;
+export default v2SkewedPages;
