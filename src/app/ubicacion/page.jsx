@@ -279,25 +279,6 @@ function Ubicacion() {
     },
   ];
 
-  const alcaldias = [
-    { alcaldia: "Álvaro Obregón", IndexSlides: 4 },
-    { alcaldia: "Azcapotzalco", IndexSlides: 7 },
-    { alcaldia: "Benito Juárez", IndexSlides: 6 },
-    { alcaldia: "Coyoacán", IndexSlides: 3 },
-    { alcaldia: "Cuajimalpa", IndexSlides: 2 },
-    { alcaldia: "Cuauhtémoc", IndexSlides: 7 },
-    { alcaldia: "Gustavo A. Madero", IndexSlides: 5 },
-    { alcaldia: "Iztacalco", IndexSlides: 6 },
-    { alcaldia: "Iztapalapa", IndexSlides: 8 },
-    { alcaldia: "La Magdalena Contreras", IndexSlides: 4 },
-    { alcaldia: "Miguel Hidalgo", IndexSlides: 7 },
-    { alcaldia: "Milpa Alta", IndexSlides: 1 },
-    { alcaldia: "Tláhuac", IndexSlides: 1 },
-    { alcaldia: "Tlalpan", IndexSlides: 2 },
-    { alcaldia: "Venustiano Carranza", IndexSlides: 6 },
-    { alcaldia: "Xochimilco", IndexSlides: 3 },
-  ];
-
   return (
     <div
       classname="min-h-screen bg-gray-100 grid p-1"
@@ -320,38 +301,6 @@ function Ubicacion() {
           className="col-span-1 md:w-full md:col-span-8 md:col-start-2 md:row-start-2 p-8 ml-auto bg-white content-start justify-end grid grid-cols-1"
           id="contenido-principal"
         >
-          <div className="flex flex-wrap">
-            {alcaldias.map((elemento) => (
-              <button
-                key={elemento.IndexSlides}
-                type="button"
-                className="text-[#8A1B39] hover:text-white border border-[#8A1B39] hover:bg-[#7c1833] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 text-lg flex"
-                // onClick={() => setCurrentPage(elemento.IndexSlides)}
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokelinecap="round"
-                    strokelinejoin="round"
-                    strokewidth="{2}"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokelinecap="round"
-                    strokelinejoin="round"
-                    strokewidth="{2}"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-                {elemento.alcaldia}
-              </button>
-            ))}
-          </div>
-
           <div className="mx-auto w-full grid grid-cols-1">
             <SkewedPages
               datos={pageData}
