@@ -18,10 +18,10 @@ body {
   height: 100vh;
 
   .flechas {
-    position: absolute;
+    position: absolute ;
     top: 10px; /* Ajusta según la necesidad */
     left: 10px; /* Ajusta según la necesidad */
-    z-index: 1000; /* Coloca las flechas sobre otros elementos */
+    /*z-index: 0;  Coloca las flechas sobre otros elementos */
     display: flex;
     flex-direction: column; /* Para que las flechas estén una encima de otra */
 
@@ -48,18 +48,18 @@ $scrollTime: 1s;
   display: flex;
   flex-wrap: column;
   z-index: 1;
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     flex-direction: row; /* Layout en columnas para pantallas md o más grandes */
+    width: 100%;
   }
 
+
   &__half {
-    // position: absolute;
     top: 0;
     width: 100%;
     // width: 50%; /* Mantén el ancho al 50% para hacer la división en dos mitades */
-    @media (min-width: 768px) {
-      width: 50%; // A partir de md (768px) los paneles ocuparán el 50%
-    }
+   
+   
     min-height: 100vh;
     height: 100%;
     transition: transform $scrollTime;
@@ -164,9 +164,7 @@ $scrollTime: 1s;
 
   &-1 {
     .skw-page__half--left .skw-page__content {
-      // background-image: url("https://mexicocity.cdmx.gob.mx/wp-content/uploads/2022/04/descubre-villa-milpa-alta-1.png");
-      // url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/mousover-img-1.jpg");
-      background: #13322b;
+       background: #13322b;
     }
     .skw-page__half--right .skw-page__content {
       background: #f6f6f6;
@@ -227,13 +225,13 @@ $scrollTime: 1s;
       color: #000;
     }
   }
-  &-8 {
+ &-8 {
     .skw-page__half--left .skw-page__content {
       background: #f6f6f6;
       color: #000;
     }
     .skw-page__half--right .skw-page__content {
       background-color: #13322b;
-    }
+    } 
   }
 }

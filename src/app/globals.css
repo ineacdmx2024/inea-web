@@ -7,8 +7,17 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+#animation{
+  animation: fadeIn 1.5s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 #principal{
     justify-content: space-evenly;
+    
 }
 
 #contenido{
@@ -17,7 +26,7 @@
     width: 1142px;
     height: auto;
     justify-content: center;
-
+   
 }
 #enlaces{
     flex-direction: column;
@@ -30,6 +39,7 @@
 
 #main-content{
   padding-top: 115px; /*espacio del navbar*/
+  
 }
 
 .carousel {
@@ -57,3 +67,4 @@
   #buttonCarousel {
     @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded;
   }
+

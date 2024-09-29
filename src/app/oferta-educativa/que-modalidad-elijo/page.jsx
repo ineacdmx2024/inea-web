@@ -41,6 +41,7 @@ function Modalidad() {
     <div
       className="min-h-screen bg-white grid p-1"
       id="main-content"
+      
     >
       {" "}
       <br />
@@ -58,7 +59,7 @@ function Modalidad() {
         {/* Contenido principal en pantallas medianas y grandes */}
         <div
           className="col-span-1 md:col-span-8 md:col-start-2 p-8 ml-auto content-start justify-end"
-          id="contenido-principal"
+          id="animation"
         >
           {" "}
           <div className="mx-auto w-full">

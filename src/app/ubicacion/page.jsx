@@ -4,7 +4,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Card from "@/components/EnlacesR_Lateral";
 import CarouselEL from "@/components/CarouselEL";
 import SkewedPages from "@/components/SkewedPages";
-import v2SkewedPages from "@/components/v2SkewedPages";
+import SkewedPagesResponsive from "@/components/SkewedPagesResponsive";
 // import "../../../../src/app/globals.css";
 import "../../app/globals.css";
 function Ubicacion() {
@@ -49,9 +49,8 @@ function Ubicacion() {
       email: "nmsanchez@inea.gob.mx",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1FsXAud9CllSOEjWiT4arwULZUqOCKd8&ehbc=2E312F&noprof=1"
-          width="540"
-          height="380"
+          src="https://www.google.com/maps/d/embed?mid=122hM5GKsgDsm2hophXyiQkdE6I-kzgU&ehbc=2E312F"
+          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
       items: [
@@ -76,9 +75,8 @@ function Ubicacion() {
       email: "",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1DnzAWb6HfZL92gs6BNOGroi21kkju_I&ehbc=2E312F&noprof=1"
-          width="540"
-          height="380"
+          src="https://www.google.com/maps/d/embed?mid=19J4WWcFAKKUoKRAwA5MC_6Nl4y29PUo&ehbc=2E312F"
+          className="  md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
       items: [
@@ -103,9 +101,8 @@ function Ubicacion() {
       email: "",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1JhoJSIiFRRUplgG9h_UALj9c52Nukzo&ehbc=2E312F&noprof=1"
-          width="540"
-          height="380"
+          src="https://www.google.com/maps/d/embed?mid=1ADndmYvW3k1K5kQU7_icHDSJWItFpMs&ehbc=2E312F"
+          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
       items: [
@@ -124,9 +121,8 @@ function Ubicacion() {
       email: "lmerlos@inea.gob.mx",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1ZdLJbmN9rGg7_yyrmMVj-1dgdtqjbLg&ehbc=2E312F&noprof=1"
-          width="540"
-          height="380"
+          src="https://www.google.com/maps/d/embed?mid=1KNGOzsp4CL4BUr69KA3UFsheA_jVG2E&ehbc=2E312F"
+          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
       items: [
@@ -157,9 +153,8 @@ function Ubicacion() {
       email: "mrojas@inea.gob.mx",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1LqLkBGzSpuzU1hcRl61MW0NzwoRzI8I&ehbc=2E312F&noprof=1"
-          width="540"
-          height="380"
+          src="https://www.google.com/maps/d/embed?mid=1yJS8ylTeFs_h-AIe7K4RG4dLXXj5Wzo&ehbc=2E312F"
+          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
       items: [
@@ -184,9 +179,8 @@ function Ubicacion() {
       email: "wsanchez@inea.gob.mx",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1DvjlXXI1hAS5boToQLhwhpDfMt3XhQA&ehbc=2E312F&noprof=1"
-          width="540"
-          height="380"
+          src="https://www.google.com/maps/d/embed?mid=1jYl_g2AOqdFwlTY8BqtN3JrPofhRaZc&ehbc=2E312F"
+          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
 
@@ -218,9 +212,8 @@ function Ubicacion() {
       email: "",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1HJ-1KElEVyWVm6oY57TGkgmdh1fLFTc&ehbc=2E312F&noprof=1"
-          width="540"
-          height="380"
+          src="https://www.google.com/maps/d/embed?mid=1m7JWJM7KiLjTibY591u_2iTi0T01mTs&ehbc=2E312F"
+          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
       items: [
@@ -251,9 +244,8 @@ function Ubicacion() {
       email: "gcamacho@inea.gob.mx",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1IzhLw6uilcpWGFT4z3sLDhl6Tu1z5hs&ehbc=2E312F&noprof=1"
-          width="540"
-          height="380"
+          src="https://www.google.com/maps/d/embed?mid=1m7JWJM7KiLjTibY591u_2iTi0T01mTs&ehbc=2E312F"
+          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
       items: [
@@ -298,16 +290,22 @@ function Ubicacion() {
 
         {/* contenido princiapal  */}
         <div
-          className="col-span-1 md:w-full md:col-span-8 md:col-start-2 md:row-start-2 p-8 ml-auto bg-white content-start justify-end grid grid-cols-1"
+          className="col-span-1 md:w-full md:col-span-8 md:col-start-2 md:row-start-2 pt-2 p-8  ml-auto bg-white content-start justify-end grid grid-cols-1"
           id="contenido-principal"
         >
           <div className="mx-auto w-full grid grid-cols-1">
-            <SkewedPages
-              datos={pageData}
-              // cPage={currentPage}
-              cPage={1}
-              className="w-full sm:h-screen"
-            />
+            <div className="hidden md:w-full flex-col md:flex">
+              <SkewedPages
+                datos={pageData}
+              />
+            </div>
+            <div className="md:hidden w-full ">
+              <SkewedPagesResponsive
+                datos={pageData}
+                
+              />
+            </div>
+
           </div>
         </div>
 
