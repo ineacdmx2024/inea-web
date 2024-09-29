@@ -31,12 +31,12 @@ const SkewedPages = ({ datos }) => {
     { alcaldia: "Tlalpan", IndexSlides: 1 },
     { alcaldia: "Venustiano Carranza", IndexSlides: 5 },
     { alcaldia: "Xochimilco", IndexSlides: 2 },
-];
+  ];
 
   return (
     <div id="animation">
       {/* botones */}
-      <div className="flex flex-wrap" >
+      <div className="flex flex-wrap">
         {alcaldias.map((elemento) => (
           <button
             key={elemento.IndexSlides}
@@ -77,7 +77,8 @@ const SkewedPages = ({ datos }) => {
               index === currentPage
                 ? "visible opacity-100 translate-y-0"
                 : "hidden opacity-0 translate-y-full"
-            } transition duration-500`}id="animation"
+            } transition duration-500`}
+            id="animation"
           >
             {/* Lado izquierdo */}
             <div
@@ -105,28 +106,30 @@ const SkewedPages = ({ datos }) => {
                   key={idx}
                   className="mb-4 text-center"
                 >
-                  <svg
-                    className={`h-8 w-8 ${colors[idx % colors.length]}`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <h3 className="mb-4 uppercase text-2xl text-center">
-                    {item.alcaldia}
-                  </h3>
+                  <div className="flex justify-center m-[20px]">
+                    <svg
+                      className={`h-8 w-8 ${colors[idx % colors.length]}`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokelinecap="round"
+                        strokelinejoin="round"
+                        strokewidth="{2}"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokelinecap="round"
+                        strokelinejoin="round"
+                        strokewidth="{2}"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                    <div className="m-[0%] uppercase text-2xl text-center">
+                      {item.alcaldia}
+                    </div>
+                  </div>
                   <p>Dirección: {item.dir}</p>
                   <p>Tel: {item.atel}</p>
                   <p>{item.aemail}</p>

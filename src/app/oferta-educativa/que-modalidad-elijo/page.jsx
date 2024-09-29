@@ -41,7 +41,6 @@ function Modalidad() {
     <div
       className="min-h-screen bg-white grid p-1"
       id="main-content"
-      
     >
       {" "}
       <br />
@@ -120,6 +119,7 @@ function Modalidad() {
                   </p>
                 </div>
               }
+              imageSrc="/Modalidad/programa_regular2.webp"
             />
             <CollapsiblePanel
               title="¿Cuentas con antecedentes escolares y deseas realizar solo un examen por nivel? "
@@ -168,6 +168,7 @@ function Modalidad() {
                   </p>
                 </div>
               }
+              imageSrc="/Modalidad/Examenunico2.webp"
             />
             <CollapsiblePanel
               title="¿Deseas estudiar con el uso de dispositivos móviles o computadora desde casa?  "
@@ -213,6 +214,7 @@ function Modalidad() {
                   </p>
                 </div>
               }
+              imageSrc="/Modalidad/aprendeINEAenlinea2.webp"
             />
 
             <CollapsiblePanel
@@ -262,6 +264,7 @@ function Modalidad() {
                   </p>
                 </div>
               }
+              imageSrc="/Modalidad/examenes_diagnostico.jpg"
             />
           </div>
         </div>
