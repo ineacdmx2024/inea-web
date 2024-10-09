@@ -5,6 +5,7 @@ import Card from "@/components/EnlacesR_Lateral";
 import CarouselEL from "@/components/CarouselEL";
 import SkewedPages from "@/components/SkewedPages";
 import SkewedPagesResponsive from "@/components/SkewedPagesResponsive";
+import PagSec from "@/components/PlantillaPagSec";
 // import "../../../../src/app/globals.css";
 import "../../app/globals.css";
 function Ubicacion() {
@@ -12,16 +13,15 @@ function Ubicacion() {
 
   const cards = [
     {
-      title: "Explorando Las Estrellas 1",
-      imageSrc:
-        "https://imgs.search.brave.com/RAPyqA9Q7HK7hP22bJsUZyXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc",
+      title: "Modalidad presencial",
+      imageSrc: "/Modalidad/programa_regular2.webp",
       buttonText: "Ir al sitio",
-      link: "https://www.astromia.com/universo/lasestrellas.htm",
+      link: "/oferta-educativa/presencial",
     },
     {
       title: "La Vida en el Espacio 2",
       imageSrc:
-        "https://imgs.search.brave.com/RAPyqA9Q7HK7hP22bJsUZyXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc",
+        "httpXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc",
       buttonText: "Ir al sitio",
       link: "https://www.astromia.com/universo/lavidaenelpacio.htm",
     },
@@ -272,88 +272,50 @@ function Ubicacion() {
   ];
 
   return (
-    <div
-      classname="min-h-screen bg-gray-100 grid p-1"
-      id="main-content"
-    >
-      <br />
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-4 ">
-        {/* Migajas (Breadcrumb) */}
-        <div
-          className="col-span-1 md:col-span-10 md:col-start-2 bg-white shadow md:min-w-max"
-          id="migajas"
-        >
-          <div className="mx-auto py-1 px-4 mt-3 sm:px-6 md:px-8">
-            <Breadcrumb />
-          </div>
-        </div>
-
-        {/* contenido princiapal  */}
-        <div
-          className="col-span-1 md:w-full md:col-span-8 md:col-start-2 md:row-start-2 pt-2 p-8  ml-auto bg-white content-start justify-end grid grid-cols-1"
-          id="contenido-principal"
-        >
-          <div className="mx-auto w-full grid grid-cols-1">
-            <div className="hidden md:w-full flex-col md:flex">
-              <SkewedPages
-                datos={pageData}
-              />
+    <div classname="">
+      <PagSec Enlaces={cards}>
+        <div className="mx-auto w-full grid grid-cols-1 gap-2 row-span-1">
+          <div className="mx-auto mt-2 mb-4 w-full max-w-full md:max-w-[1140px]">
+            <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
+              Coordinaciones de zona
+            </h1>
+            <div className="flex items-center mb-2">
+              <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+              <div className="flex-grow h-px bg-gray-300"></div>
             </div>
-            <div className="md:hidden w-full ">
-              <SkewedPagesResponsive
-                datos={pageData}
-                
-              />
+            <div className="px-4 pt-4 pb-2 text-lg text-gray-700">
+              Ubica la coordinación de zona dependiendo de tu delegación. Dentro
+              de las coordinaciones de zona podrás realizar tus trámites.
             </div>
+          </div>
 
+          <div className="hidden md:w-full flex-col md:flex">
+            <SkewedPages datos={pageData} />
+          </div>
+          <div className="md:hidden w-full ">
+            <SkewedPagesResponsive datos={pageData} />
           </div>
         </div>
-
-        {/* Carrusel de Cards (visible en pantallas pequeñas) */}
-        <div
-          className="md:hidden flex justify-center w-full py-4 col-span-1"
-          id="carousel-cards"
-          data-carousel="slide"
-        >
-          <CarouselEL cards={cards} />
-        </div>
-
-        {/* Cards lateral en pantallas medianas y grandes */}
-        <div
-          className="hidden md:flex md:col-span-2 md:col-start-10 flex-col mr-auto"
-          id="cards-laterales"
-        >
-          <div
-            className="items-start"
-            id="enlaces"
-          >
-            <Card
-              title="Explorando Las Estrellas"
-              imageSrc="https://imgs.search.brave.com/RAPyqA9Q7HK7hP22bJsUZyXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc"
-              buttonText="Ir al sitio"
-              link="https://www.astromia.com/universo/lasestrellas.htm"
-            />
-            <Card
-              title="El Arte Del Minimalismo 1"
-              imageSrc="https://imgs.search.brave.com/2dxg5TJM1uHv9oVLCBw3j3GcOQgbjLXLW4lRK4VoTG0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lbGJs/b2dkZWxtaW5pbWFs/aXN0YS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMTkvMTEv/Y3VhZHJvLW1vbmRy/aWFuLWFydGUtbWlu/aW1hbGlzdGEtODA0/eDEwMjQuanBn"
-              buttonText="Ir al sitio"
-              link="https://elblogdelminimalista.com/minimalismo/arte-minimalista-movimiento/"
-            />
-            <Card
-              title="El Arte Del Minimalismo 2"
-              imageSrc="https://imgs.search.brave.com/2dxg5TJM1uHv9oVLCBw3j3GcOQgbjLXLW4lRK4VoTG0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lbGJs/b2dkZWxtaW5pbWFs/aXN0YS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMTkvMTEv/Y3VhZHJvLW1vbmRy/aWFuLWFydGUtbWlu/aW1hbGlzdGEtODA0/eDEwMjQuanBn"
-              buttonText="Ir al sitio"
-              link="https://elblogdelminimalista.com/minimalismo/arte-minimalista-movimiento/"
-            />
-            <Card
-              title="El Arte Del Minimalismo 3"
-              imageSrc="https://imgs.search.brave.com/2dxg5TJM1uHv9oVLCBw3j3GcOQgbjLXLW4lRK4VoTG0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lbGJs/b2dkZWxtaW5pbWFs/aXN0YS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMTkvMTEv/Y3VhZHJvLW1vbmRy/aWFuLWFydGUtbWlu/aW1hbGlzdGEtODA0/eDEwMjQuanBn"
-              buttonText="Ir al sitio"
-              link="https://elblogdelminimalista.com/minimalismo/arte-minimalista-movimiento/"
-            />
+        <div className="row-span-1">
+          <div className="mx-auto mt-2 mb-4 w-full max-w-full md:max-w-[1140px]">
+            <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
+              Plazas comunitarias
+            </h1>
+            <div className="flex items-center mb-2">
+              <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+              <div className="flex-grow h-px bg-gray-300"></div>
+            </div>
+            <br />
+            <div className="px-4 pt-4 pb-2 text-lg text-gray-700">...</div>
+          </div>
+          <div className="hidden md:w-full flex-col md:flex">
+            <SkewedPages datos={pageData} />
+          </div>
+          <div className="md:hidden w-full ">
+            <SkewedPagesResponsive datos={pageData} />
           </div>
         </div>
-      </div>
+      </PagSec>
     </div>
   );
 }

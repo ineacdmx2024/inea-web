@@ -7,7 +7,7 @@ const Card = ({ title, imageSrc, buttonText, link }) => {
   };
 
   return (
-    <div className=" my-2 mx-auto py-3 border border-slate-300 rounded-lg min-h-[300px] letras:min-h-[360px] tablet:h-[300px]  flex flex-col w-full  justify-center items-center">
+    <div className=" mb-8 mx-auto py-3 border border-slate-300 rounded-lg min-h-[300px] letras:min-h-[360px] tablet:h-[300px] flex flex-col w-full justify-center items-center">
       {/*  */}
       <div className="mx-3 min-h-[310px] letras:min-h-[340px] flex flex-col justify-between items-center">
         <img
@@ -21,7 +21,7 @@ const Card = ({ title, imageSrc, buttonText, link }) => {
         </h3>
         <button
           onClick={handleButtonClick}
-          className="bg-[#a42145] text-white hover:bg-[#8a1b39] text-xs letras:text-[13.5px] px-4 py-2 rounded-full mx-auto block focus:outline-none"
+          className="bg-[#611232] text-white hover:bg-[#611232] text-xs letras:text-[13.5px] px-4 py-2 rounded-full mx-auto block focus:outline-none"
         >
           {buttonText}
         </button>

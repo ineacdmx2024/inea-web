@@ -41,7 +41,7 @@ const SkewedPages = ({ datos }) => {
           <button
             key={elemento.IndexSlides}
             type="button"
-            className="text-[#8A1B39] hover:text-white border border-[#8A1B39] hover:bg-[#7c1833] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 text-lg flex"
+            className="text-[#611232] hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-[white] font-medium rounded-lg px-5 py-2.5 text-center me-2 mb-2  text-lg flex"
             onClick={() => handleAlcaldiaClick(elemento.IndexSlides)}
           >
             <svg
@@ -69,7 +69,7 @@ const SkewedPages = ({ datos }) => {
       </div>
 
       {/* Contenido principal */}
-      <div className="container mx-auto flex-column h-full bg-white mt-20">
+      <div className="container mx-auto flex-column h-full bg-white mt-8">
         {datos.map((pageData, index) => (
           <div
             key={index}
@@ -82,7 +82,7 @@ const SkewedPages = ({ datos }) => {
           >
             {/* Lado izquierdo */}
             <div
-              className={`flex flex-col justify-center items-center p-3 bg-[#13322b] text-white ${
+              className={`flex flex-col justify-center items-center p-3 bg-[#611232] text-white ${
                 index === currentPage ? "translate-x-0" : "translate-x-full"
               } transition duration-500`}
             >

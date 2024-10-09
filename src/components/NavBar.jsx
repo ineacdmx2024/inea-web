@@ -51,11 +51,11 @@ const Navbar = () => {
   return (
     // <div className="navBar text-white ">
     <div className="navBar">
-      <div className="bg-[#0C231E] w-full">
+      <div className="bg-[#611232] w-full">
         {/* Menú gobierno */}
         {/* <nav className="flex items-center justify-between py-[0.1rem] px-auto"></nav> */}
         {/* Menú gobierno */}
-        <nav className="bg-[#0C231E]">
+        <nav className="bg-[#611232]">
           <div className="flex items-center justify-between py-[0.1rem] px-auto">
             <div
               className="flex items-center justify-between"
@@ -216,7 +216,7 @@ const Navbar = () => {
         </nav>
 
         {/* Menú inferior */}
-        <nav className="navBarINEA bg-[#12322B] p-1 w-full">
+        <nav className="navBarINEA bg-[#A57F2C] p-1 w-full">
           <div className="flex items-center justify-between container ml-auto">
             <div className="flex items-center">
               <Link
