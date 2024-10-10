@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Slider from "react-slick";
-import { Open_Sans } from "next/font/google"
+import { Open_Sans } from "next/font/google";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useState, useEffect } from "react";
@@ -14,9 +14,9 @@ const open_Sans = Open_Sans({
 });
 
 const truncateText = (text, maxWords) => {
-  const words = text.split(' ');
+  const words = text.split(" ");
   if (words.length > maxWords) {
-    return words.slice(0, maxWords).join(' ') + '...';
+    return words.slice(0, maxWords).join(" ") + "...";
   }
   return text;
 };
@@ -127,8 +127,26 @@ const NextArrow = (props) => {
   );
 };
 
-const CarouselBlog = ({item}) => {
-  // Configuracion del carousel
+const CarouselBlog = ({ item }) => {
+  const [datos, setData] = useState(null);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "https://inea-web-backend.onrender.com/api/blogs?populate=*&pagination[limit]=4&sort[0]=fecha:desc"
+      );
+      const result = await response.json();
+      setData(result.data);
+    } catch (error) {
+      console.error("Error al obtener los datos:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData(); // Llama la función para obtener los datos
+  }, []); // El array vacío hace que se ejecute solo una vez al montarse el componente
+
+  // Configuracion del   carousel
   const settings = {
     dots: true,
     infinite: true,
@@ -147,40 +165,41 @@ const CarouselBlog = ({item}) => {
     ),
   };
 
-  // Aqui se esta consumiendo la API de la noticia
-  const news = [
-    {
-      image: "/imagePrueba/prueba1.jpg",
-      date: "martes, 30 de abril de 2024",
-      title:
-        "CONVOCATORIA PARA PARTICIPAR COMO PERSONA VOLUNTARIA BENEFICIARIA DEL SUBSIDIO",
-      content:
-        "Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades",
-    },
-    {
-      image: "/imagePrueba/prueba2.jpg",
-      date: "jueves, 25 de agosto de 2024",
-      title: "CONVOCATORIA PARA PARTICIPAR COMO PERSONA VOLUNTARIA BENEFICIARIA DEL SUBSIDIO 435634 HOLA AMIGO",
-      content:
-        "Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 32786 pasaste la etapa IV para iniciar 3456 Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 3456",
-    },
-    {
-      image: "/imagePrueba/prueba3.jpg",
-      date: "viernes, 16 de mayo de 2024",
-      title:
-        "CONVOCATORIA PARA PARTICIPAR COMO PERSONA VOLUNTARIA BENEFICIARIA DEL SUBSIDIO 452",
-      content:
-        "Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 32786 pasaste la etapa IV para iniciar 3456 Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 3456",
-    },
-    {
-      image: "/imagePrueba/prueba4.jpg",
-      date: "martes, 10 de junio de 2024",
-      title:
-        "CONVOCATORIA PARA PARTICIPAR COMO PERSONA VOLUNTARIA BENEFICIARIA DEL SUBSIDIO 435634 HOLA AMIGO",
-      content:
-        "Si participaste en la convocatoria de PVBS checa en la liga de tu estado si pasaste la etapa IV para iniciar actividades 3456",
-    },
-  ];
+  const fechaFun = (fechaAPI) => {
+    const fechaApi = fechaAPI;
+
+    const diasSemana = [
+      "domingo",
+      "lunes",
+      "martes",
+      "miércoles",
+      "jueves",
+      "viernes",
+      "sábado",
+    ];
+    const meses = [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre",
+    ];
+    const fecha = new Date(fechaApi);
+
+    const diaSemana = diasSemana[fecha.getDay()];
+    const dia = fecha.getDate();
+    const mes = meses[fecha.getMonth()];
+    const año = fecha.getFullYear();
+
+    return `${diaSemana}, ${dia} de ${mes} de ${año}`;
+  };
 
   return (
     <>
@@ -208,46 +227,58 @@ const CarouselBlog = ({item}) => {
         }
       `}</style>
       <Slider {...settings} className="mx-auto !z-5">
-        {news.map((item, index) => (
-          <div key={index} className="px-4">
-            <div className="w-full letras:w-full arrow:w-[750px] medida3:w-4/5 h-auto mx-auto flex flex-col tablet:flex-row tablet:w-[1142px] tablet:h-[390px] justify-between bg-white rounded-xl ">
-              {/* Div de la imagen */}
-              <div className=" m-auto w-auto arrow:w-[750px]">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-contain rounded-lg"
-                  width={750}
-                  height={392}
-                />
-              </div>
-
-              {/* Div del texto */}
-              <article className={`${open_Sans.className} flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] blog:px-5 px-0 py-2 m-auto arrow:w-[750px]`}>
-                <p className="letras:text-base text-gray-700 text-sm mb-2 ">{item.date}</p>
-                <h2 className="letras:text-[28px] text-[20px] leading-tight font-medium mb-4">
-                  {truncateText(item.title, 10)}
-                </h2>
-                <p className="letras:text-[17px] text-gray-900 font-light text-[14px] mb-4 uppercase">
-                  {truncateText(item.content, 20)}
-                </p>
-
-                <div className="overflow-visible !z-10">
-                  <button className="m-auto letras:ml-auto bg-[#a42145] text-white py-2 px-2 hover:bg-[#8a1b39] rounded-full block">
-                    <p className="text-xs letras:text-[13.5px]">Continuar leyendo</p>
-                  </button>
+        {datos ? (
+          datos.map((item, index) => (
+            <div key={index} className="px-4">
+              <div className="w-full letras:w-full arrow:w-[750px] medida3:w-4/5 h-auto mx-auto flex flex-col tablet:flex-row tablet:w-[1142px] tablet:h-[390px] justify-between bg-white rounded-xl ">
+                {/* Div de la imagen */}
+                <div className=" m-auto w-auto arrow:w-[750px] max-h-[392px]">
+                  <Image
+                    src={`https://inea-web-backend.onrender.com${item.attributes.imagen?.data?.attributes?.formats?.small?.url}`}
+                    alt={item.attributes.titulo}
+                    className="w-full h-full object-contain rounded-lg"
+                    width={750}
+                    height={392}
+                  />
                 </div>
-              </article>
+
+                {/* Div del texto */}
+                <article
+                  className={`${open_Sans.className} flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] px-5 py-2 m-auto arrow:w-[750px]`}
+                >
+                  <p className="letras:text-base text-gray-700 text-sm mb-2 ">
+                    {item.attributes.fecha
+                      ? fechaFun(item.attributes.fecha)
+                      : "No hay"}
+                  </p>
+                  <h2 className="letras:text-[28px] text-[20px] leading-tight font-medium mb-4 uppercase">
+                    {truncateText(item.attributes.titulo, 10)}
+                  </h2>
+                  <p className="letras:text-[17px] text-gray-900 font-light text-[14px] mb-4 uppercase">
+                    {truncateText(item.attributes.subtitulo, 20)}
+                  </p>
+
+                  <div className="overflow-visible !z-10">
+                    <button className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-[#8a1b39] rounded-full block">
+                      <p className="text-xs letras:text-[14.5px] font-light">
+                        Continuar leyendo
+                      </p>
+                    </button>
+                  </div>
+                </article>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p className="text-center">Cargando noticias...</p>
+        )}
       </Slider>
       <div className="flex justify-end m-auto">
         <Link
-          className="mt-20 mr-[1rem] lg:mr-[5rem] xl:mr-[24rem] w-36 text-center bg-[#a42145] text-white py-2 px-4 hover:bg-[#8a1b39] rounded-full block letras:text-base text-xs letras:w-44"
+          className="mt-20 mr-[1rem] lg:mr-[5rem] xl:mr-[24rem] w-36 text-center bg-[#611232] text-white py-2 px-4 hover:bg-[#8a1b39] rounded-full block letras:text-base text-xs letras:w-44"
           href={"/#"}
         >
-          <p>Noticias Anteriores</p>
+          <p className="font-light">Noticias Anteriores</p>
         </Link>
       </div>
     </>
