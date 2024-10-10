@@ -143,7 +143,7 @@ function CarouselOfertEdu() {
         }
       `}</style>
       <div className="p-2 pt-0">
-      <div className="carrusel">
+        <div className="carrusel">
           <Slider
             {...settings}
             className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] mt-8"
@@ -161,7 +161,7 @@ function CarouselOfertEdu() {
                       {noticia.name}
                     </h3>
                   </div>
-                  <button className="bg-[#a42145] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
+                  <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block font-light">
                     Ir al sitio
                   </button>
                 </div>

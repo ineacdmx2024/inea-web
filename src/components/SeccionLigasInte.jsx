@@ -252,7 +252,6 @@ function SeccionLigasInte() {
         }
       `}</style>
       <div className="p-2">
-
         {/* Div de noticias fijas */}
         <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex">
           {fijas.map((noticia, index) => (
@@ -268,7 +267,7 @@ function SeccionLigasInte() {
                     {noticia.title}
                   </h3>
                 </div>
-                <button className="bg-[#a42145] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
+                <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
                   Ir al sitio
                 </button>
               </div>
@@ -292,7 +291,7 @@ function SeccionLigasInte() {
                       {noticia.title}
                     </h3>
                   </div>
-                  <button className="text-xs letras:text-[13.5px] bg-[#a42145] text-white py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
+                  <button className="text-xs letras:text-[13.5px] bg-[#611232] text-white py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
                     Ir al sitio
                   </button>
                 </div>
@@ -320,7 +319,7 @@ function SeccionLigasInte() {
                       {noticia.title}
                     </h3>
                   </div>
-                  <button className="bg-[#a42145] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
+                  <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
                     Ir al sitio
                   </button>
                 </div>
