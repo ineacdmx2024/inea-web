@@ -133,7 +133,7 @@ const CarouselBlog = ({ item }) => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://inea-web-backend.onrender.com/api/blogs?populate=*&pagination[limit]=4&sort[0]=fecha:desc"
+        "https://inea-web-backend.onrender.com/api/blogs?populate=*&pagination[limit]=4&sort[0]=Fecha:desc"
       );
       const result = await response.json();
       setData(result.data);
@@ -232,11 +232,14 @@ const CarouselBlog = ({ item }) => {
             <div key={index} className="px-4">
               <div className="w-full letras:w-full arrow:w-[750px] medida3:w-4/5 h-auto mx-auto flex flex-col tablet:flex-row tablet:w-[1142px] tablet:h-[390px] justify-between bg-white rounded-xl ">
                 {/* Div de la imagen */}
-                <div className=" m-auto w-auto arrow:w-[750px] max-h-[392px]">
+                <div className=" m-auto w-auto arrow:w-[750px] rounded-xl max-h-[392px] overflow-hidden">
                   <Image
-                    src={`https://inea-web-backend.onrender.com${item.attributes.imagen?.data?.attributes?.formats?.small?.url}`}
-                    alt={item.attributes.titulo}
-                    className="w-full h-full object-contain rounded-lg"
+                    src={
+                      item.attributes.Imagen?.data?.attributes?.formats?.small
+                        ?.url
+                    }
+                    alt={item.attributes.Titulo}
+                    className="w-full h-full object-contain rounded-xl "
                     width={750}
                     height={392}
                   />
@@ -247,15 +250,15 @@ const CarouselBlog = ({ item }) => {
                   className={`${open_Sans.className} flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] px-5 py-2 m-auto arrow:w-[750px]`}
                 >
                   <p className="letras:text-base text-gray-700 text-sm mb-2 ">
-                    {item.attributes.fecha
-                      ? fechaFun(item.attributes.fecha)
+                    {item.attributes.Fecha
+                      ? fechaFun(item.attributes.Fecha)
                       : "No hay"}
                   </p>
                   <h2 className="letras:text-[28px] text-[20px] leading-tight font-medium mb-4 uppercase">
-                    {truncateText(item.attributes.titulo, 10)}
+                    {truncateText(item.attributes.Titulo, 10)}
                   </h2>
                   <p className="letras:text-[17px] text-gray-900 font-light text-[14px] mb-4 uppercase">
-                    {truncateText(item.attributes.subtitulo, 20)}
+                    {truncateText(item.attributes.Subtitulo, 20)}
                   </p>
 
                   <div className="overflow-visible !z-10">
