@@ -8,9 +8,9 @@ const SkewedPages = ({ datos }) => {
     setCurrentPage(indexSlides); // Cambia la página actual usando IndexSlides
   };
   const colors = [
-    "text-red-500",
-    "text-blue-500",
-    "text-green-500",
+    "text-[#9C27B0]",
+    "text-[#1A237E]",
+    "text-[#E65100]",
     "text-yellow-500",
   ]; // Array de colores
 
@@ -34,7 +34,7 @@ const SkewedPages = ({ datos }) => {
   ];
 
   return (
-    <div id="animation">
+    <div className="min-h-[500px] h-[700px">
       {/* botones */}
       <div className="flex flex-wrap">
         {alcaldias.map((elemento) => (

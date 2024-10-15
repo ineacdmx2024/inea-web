@@ -1,117 +1,71 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Card from "./EnlacesR_Lateral";
+import { useState, useEffect } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // Recibimos un arreglo de objetos (las cards que se pondrán en el carrusel)
 const CarouselEL = ({ cards }) => {
-  const [currentIndex, setCurrentIndex] = useState(0); // Índice de la tarjeta actual
-  const [autoPlay, setAutoPlay] = useState(true); // Controla si el carrusel debe reproducirse automáticamente
-  const maxCards = 4; // Máximo de tarjetas visibles
-  const visibleCards = cards.slice(0, maxCards); // Selecciona las primeras 4 tarjetas
+  const [slidesToShow, setSlidesToShow] = useState(3);
 
-  // Función para avanzar al siguiente índice
-  const handleNext = () => {
-    setCurrentIndex((currentIndex + 1) % visibleCards.length);
-  };
-
-  // Función para retroceder al índice anterior
-  const handlePrev = () => {
-    setAutoPlay(false); // Detiene la reproducción automática al interactuar con los botones
-    setCurrentIndex(
-      (currentIndex - 1 + visibleCards.length) % visibleCards.length
-    );
-  };
-
-  // Cambia automáticamente las tarjetas cada 5 segundos
   useEffect(() => {
-    if (autoPlay) {
-      const intervalId = setInterval(() => {
-        handleNext();
-      }, 5000); // Cambia cada 5 segundos
+    const handleResize = () => {
+      setSlidesToShow(window.innerWidth < 768 ? 1 : 4);
+    };
 
-      return () => clearInterval(intervalId); // Limpia el intervalo al desmontar el componente o cambiar el estado
-    }
-  }, [currentIndex, autoPlay, visibleCards.length]);
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Ejecutar al cargar por primera vez
+
+    return () => {
+      window.removeEventListener("resize", handleResize); // Limpiar evento
+    };
+  }, []);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: slidesToShow,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    dotsClass: "slick-dots custom-dots",
+    appendDots: (dots) => (
+      <div style={{ bottom: "-25px" }}>
+        <ul style={{ margin: "0" }}> {dots} </ul>
+      </div>
+    ),
+  };
 
   return (
-    <div className="carousel relative">
-      {" "}
-      {/* Asegúrate de usar clases de posicionamiento relativas */}
-      <div className="carousel-inner">
-        {/* Botón anterior */}
-        <button
-          id="buttonCarousel"
-          onClick={handlePrev}
-        >
-          <svg
-            className="w-6 h-6 text-gray-800 dark:text-white"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 8 14"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M7 1 1.3 6.326a.91.91 0 0 0 0 1.348L7 13"
-            />
-          </svg>
-        </button>
-
-        {/* Muestra las tarjetas del carrusel */}
-        {visibleCards.map((card, index) => (
+    <div className="slider-container">
+      <Slider
+        {...settings}
+        className="mx-auto !z-5 w-4/5"
+      >
+        {cards.map((card, index) => (
           <div
             key={index}
-            className={`carousel-item ${
-              index === currentIndex ? "active" : "hidden"
-            }`}
+            className="px-0"
           >
-            <Card
-              title={card.title}
-              imageSrc={card.imageSrc}
-              buttonText={card.buttonText}
-              link={card.link}
-            />
+            <div className="border border-slate-300 rounded-lg h-[400px]  mx-auto flex flex-col w-[260px]  justify-center items-center">
+              <div className="w-52 h-[310px]  flex flex-col justify-between items-center">
+                <img
+                  className="w-60 h-auto object-cover rounded-lg"
+                  src={card.imageSrc}
+                  alt={card.title}
+                />
+                <h3 className="text-center text-[18px]  text-slate-500 font-medium capitalize">
+                  {card.title}
+                </h3>
+                <button className="hover:bg-[#8a1b39] text-white text-xs  py-2 px-4 rounded-full bg-[#a42145] mx-auto block">
+                  {card.buttonText}
+                </button>
+              </div>
+            </div>
           </div>
         ))}
-
-        {/* Botón siguiente */}
-        <button
-          id="buttonCarousel"
-          onClick={handleNext}
-        >
-          <svg
-            className="w-6 h-6 text-gray-800 dark:text-white"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 8 14"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"
-            />
-          </svg>
-        </button>
-      </div>
-      {/* Indicadores debajo del carrusel */}
-      <div className="flex justify-center space-x-2 absolute bottom-4 sm:bottom-6 xs:mt-8 left-0 right-0">
-        {visibleCards.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)} // Permite al usuario saltar a una tarjeta específica
-            className={`w-3 h-3 rounded-full ${
-              currentIndex === index ? "bg-gray-500" : "bg-gray-300"
-            }`}
-            aria-label={`Ir a la tarjeta ${index + 1}`}
-          ></button>
-        ))}
-      </div>
+      </Slider>
     </div>
   );
 };

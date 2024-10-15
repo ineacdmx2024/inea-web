@@ -18,18 +18,18 @@ const CollapsiblePanel = ({ title, content, imageSrc }) => {
         onClick={togglePanel}
       >
         {/* Usamos grid para dividir en 1/3 y 2/3 */}
-        <div className="grid grid-cols-3 items-center w-full">
+        <div className="grid grid-cols-1  md:grid-cols-3 items-center w-full">
           {/* Imagen ocupa 1/3 */}
           {imageSrc && (
             <img
               src={imageSrc}
               alt="Icon"
-              className="w-full h-auto rounded-md"
+              className="w-full md:mb-0 mb-2 h-auto rounded-md"
             />
           )}
 
           {/* Título ocupa 2/3 */}
-          <div className="col-span-2 pl-4">
+          <div className="col-span-1 md:col-span-2 pl-4">
             <span>{title}</span>
           </div>
         </div>

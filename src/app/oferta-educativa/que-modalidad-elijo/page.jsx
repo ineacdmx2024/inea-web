@@ -1,60 +1,33 @@
 import React from "react";
-import Breadcrumb from "@/components/Breadcrumb";
-import Card from "@/components/EnlacesR_Lateral";
 import CollapsiblePanel from "@/components/PanelColapsable";
-import CarouselEL from "@/components/CarouselEL";
+import PagSec from "@/components/PlantillaPagSec";
 import "../../../../src/app/globals.css";
-
+import CarouselEL from "@/components/CarouselEL";
 function Modalidad() {
   const cards = [
     {
-      title: "Explorando Las Estrellas 1",
-      imageSrc:
-        "https://imgs.search.brave.com/RAPyqA9Q7HK7hP22bJsUZyXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc",
+      title: "Modalidad presencial",
+      imageSrc: "/Modalidad/programa_regular2.webp",
       buttonText: "Ir al sitio",
-      link: "https://www.astromia.com/universo/lasestrellas.htm",
+      link: "/oferta-educativa/presencial",
     },
     {
-      title: "La Vida en el Espacio 2",
-      imageSrc:
-        "https://imgs.search.brave.com/RAPyqA9Q7HK7hP22bJsUZyXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc",
+      title: "Modalidad en linea",
+      imageSrc: "/Modalidad/aprendeINEAenlinea2.webp",
       buttonText: "Ir al sitio",
-      link: "https://www.astromia.com/universo/lavidaenelpacio.htm",
+      link: "/oferta-educativa/enlinea",
     },
     {
-      title: "La Vida en el Espacio 3",
-      imageSrc:
-        "https://imgs.search.brave.com/RAPyqA9Q7HK7hP22bJsUZyXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc",
+      title: "Examen único",
+      imageSrc: "/Modalidad/Examenunico2.webp",
       buttonText: "Ir al sitio",
-      link: "https://www.astromia.com/universo/lavidaenelpacio.htm",
-    },
-    {
-      title: "La Vida en el Espacio 4",
-      imageSrc:
-        "https://imgs.search.brave.com/RAPyqA9Q7HK7hP22bJsUZyXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc",
-      buttonText: "Ir al sitio",
-      link: "https://www.astromia.com/universo/lavidaenelpacio.htm",
+      link: "/oferta-educativa/examen-unico",
     },
   ];
 
   return (
-    <div
-      className="min-h-screen bg-white grid p-1"
-      id="main-content"
-    >
-      {" "}
-      <br />
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-4 ">
-        {/* Migajas (Breadcrumb) */}
-        <div
-          className="col-span-1 md:col-span-10 md:col-start-2  md:min-w-max"
-          id="migajas"
-        >
-          <div className="mx-auto py-1 px-4 mt-3 sm:px-6 md:px-8">
-            <Breadcrumb />
-          </div>
-        </div>
-
+    <div>
+      <PagSec Enlaces={cards}>
         {/* Contenido principal en pantallas medianas y grandes */}
         <div
           className="col-span-1 md:col-span-8 md:col-start-2 p-8 ml-auto content-start justify-end"
@@ -109,14 +82,45 @@ function Modalidad() {
                     <strong>Tiempo estimado de conclusión:</strong> 3 a 6 meses
                     dedicando 4 horas por semana.
                   </p>
-                  <p className="mt-2">
-                    <strong>Requisitos:</strong> Tener 15 años o más. Acta de
-                    nacimiento, CURP, certificado Primaria (en caso de comenzar
-                    Secundaria), documento binacional (para personas
-                    provenientes del extranjero). En caso de haber cursado en
-                    grados escolarizados (Primaria o Secundaria) se deben
-                    presentar las boletas correspondientes.
-                  </p>
+                  <div
+                    id="alert-additional-content-4"
+                    className="p-4 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
+                    role="alert"
+                  >
+                    <div className="flex items-center">
+                      <svg
+                        className="flex-shrink-0 w-4 h-4 me-2"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                      </svg>
+                      <span className="sr-only">Info</span>
+                      <h3 className="text-lg font-medium">
+                        <strong>Requisitos:</strong>
+                      </h3>
+                    </div>
+                    <div className="mt-2 mb-4 text-xl">
+                      <ul className="list-disc ml-8">
+                        <li>Tener 15 años o más.</li>
+                        <li>Acta de nacimiento</li>
+                        <li>CURP</li>
+                        <li>Certificado</li>
+                        <li>Primaria (en caso de comenzar Secundaria)</li>
+                        <li>
+                          Documento binacional (para personas provenientes del
+                          extranjero).
+                        </li>
+                        <li>
+                          En caso de haber cursado en grados escolarizados
+                          (Primaria o Secundaria) se deben presentar las boletas
+                          correspondientes.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               }
               imageSrc="/Modalidad/programa_regular2.webp"
@@ -158,14 +162,46 @@ function Modalidad() {
                   <p className="mt-2">
                     <strong>Tiempo estimado de conclusión:</strong> Inmediato
                   </p>
-                  <p className="mt-2">
-                    <strong>Requisitos:</strong> Tener 15 años o más.
-                    Identificación oficial con fotografía, portafolio de
-                    evidencias (reconocimientos, constancias y diplomas), dos
-                    fotografías tamaño infantil (color o blanco y negro),
-                    certificado de Primaria (sólo para quienes harán examen de
-                    secundaria).
-                  </p>
+
+                  <div
+                    id="alert-additional-content-4"
+                    className="p-4 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
+                    role="alert"
+                  >
+                    <div className="flex items-center">
+                      <svg
+                        className="flex-shrink-0 w-4 h-4 me-2"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                      </svg>
+                      <span className="sr-only">Info</span>
+                      <h3 className="text-lg font-medium">
+                        <strong>Requisitos:</strong>
+                      </h3>
+                    </div>
+                    <div className="mt-2 mb-4 text-xl">
+                      <ul className="list-disc ml-8">
+                        <li>Tener 15 años o más.</li>
+                        <li>Identificación oficial con fotografía.</li>
+                        <li>
+                          Portafolio de evidencias (reconocimientos, constancias
+                          y diplomas).
+                        </li>
+                        <li>
+                          Dos fotografías tamaño infantil (color o blanco y
+                          negro).
+                        </li>
+                        <li>
+                          Certificado de Primaria (sólo para quienes harán
+                          examen de secundaria).
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               }
               imageSrc="/Modalidad/Examenunico2.webp"
@@ -204,14 +240,45 @@ function Modalidad() {
                     <strong>Tiempo estimado de conclusión:</strong> 2 a 3
                     semanas por módulo.
                   </p>
-                  <p className="mt-2">
-                    <strong>Requisitos:</strong> Tener 15 años o más. Acta de
-                    nacimiento, CURP, certificado Primaria (en caso de comenzar
-                    Secundaria), documento binacional (para personas
-                    provenientes del extranjero). En caso de haber cursado en
-                    grados escolarizados (Primaria o Secundaria) se deben
-                    presentar las boletas correspondientes.
-                  </p>
+                  <div
+                    id="alert-additional-content-4"
+                    className="p-4 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
+                    role="alert"
+                  >
+                    <div className="flex items-center">
+                      <svg
+                        className="flex-shrink-0 w-4 h-4 me-2"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                      </svg>
+                      <span className="sr-only">Info</span>
+                      <h3 className="text-lg font-medium">
+                        <strong>Requisitos:</strong>
+                      </h3>
+                    </div>
+                    <div className="mt-2 mb-4 text-xl">
+                      <ul className="list-disc ml-8">
+                        <li>Tener 15 años o más.</li>
+                        <li>Acta de nacimiento.</li>
+                        <li>CURP</li>
+                        <li>Certificado.</li>
+                        <li>Primaria (en caso de comenzar Secundaria).</li>
+                        <li>
+                          Documento binacional (para personas provenientes del
+                          extranjero).
+                        </li>
+                        <li>
+                          En caso de haber cursado en grados escolarizados
+                          (Primaria o Secundaria) se deben presentar las boletas
+                          correspondientes.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               }
               imageSrc="/Modalidad/aprendeINEAenlinea2.webp"
@@ -254,65 +321,52 @@ function Modalidad() {
                     <strong>Tiempo estimado de conclusión:</strong>2 a 3 meses
                     dedicando 2 horas por semana.
                   </p>
-                  <p className="mt-2">
-                    <strong>Requisitos:</strong> Tener 15 años o más.Acta de
-                    nacimiento, CURP, certificado Primaria (en caso de comenzar
-                    Secundaria), documento binacional (para personas
-                    provenientes del extranjero). En caso de haber cursado en
-                    grados escolarizados (Primaria o Secundaria) se deben
-                    presentar las boletas correspondientes.
-                  </p>
+                  <div
+                    id="alert-additional-content-4"
+                    className="p-4 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
+                    role="alert"
+                  >
+                    <div className="flex items-center">
+                      <svg
+                        className="flex-shrink-0 w-4 h-4 me-2"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                      </svg>
+                      <span className="sr-only">Info</span>
+                      <h3 className="text-lg font-medium">
+                        <strong>Requisitos:</strong>
+                      </h3>
+                    </div>
+                    <div className="mt-2 mb-4 text-xl">
+                      <ul className="list-disc ml-8">
+                        <li>Tener 15 años o más.</li>
+                        <li>Acta de nacimiento.</li>
+                        <li>CURP.</li>
+                        <li>Certificado.</li>
+                        <li>Primaria (en caso de comenzar Secundaria).</li>
+                        <li>
+                          Documento binacional (para personas provenientes del
+                          extranjero).{" "}
+                        </li>
+                        <li>
+                          En caso de haber cursado en grados escolarizados
+                          (Primaria o Secundaria) se deben presentar las boletas
+                          correspondientes.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               }
               imageSrc="/Modalidad/examenes_diagnostico.jpg"
             />
           </div>
         </div>
-        {/* Cards lateral en pantallas medianas y grandes */}
-        <div
-          className="hidden md:flex md:col-span-2 md:col-start-10 flex-col mr-auto"
-          id="cards-laterales"
-        >
-          <div
-            className="items-start"
-            id="enlaces"
-          >
-            <Card
-              title="Explorando Las Estrellas"
-              imageSrc="https://imgs.search.brave.com/RAPyqA9Q7HK7hP22bJsUZyXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc"
-              buttonText="Ir al sitio"
-              link="https://www.astromia.com/universo/lasestrellas.htm"
-            />
-            <Card
-              title="El Arte Del Minimalismo 1"
-              imageSrc="https://imgs.search.brave.com/2dxg5TJM1uHv9oVLCBw3j3GcOQgbjLXLW4lRK4VoTG0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lbGJs/b2dkZWxtaW5pbWFs/aXN0YS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMTkvMTEv/Y3VhZHJvLW1vbmRy/aWFuLWFydGUtbWlu/aW1hbGlzdGEtODA0/eDEwMjQuanBn"
-              buttonText="Ir al sitio"
-              link="https://elblogdelminimalista.com/minimalismo/arte-minimalista-movimiento/"
-            />
-            <Card
-              title="El Arte Del Minimalismo 2"
-              imageSrc="https://imgs.search.brave.com/2dxg5TJM1uHv9oVLCBw3j3GcOQgbjLXLW4lRK4VoTG0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lbGJs/b2dkZWxtaW5pbWFs/aXN0YS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMTkvMTEv/Y3VhZHJvLW1vbmRy/aWFuLWFydGUtbWlu/aW1hbGlzdGEtODA0/eDEwMjQuanBn"
-              buttonText="Ir al sitio"
-              link="https://elblogdelminimalista.com/minimalismo/arte-minimalista-movimiento/"
-            />
-            <Card
-              title="El Arte Del Minimalismo 3"
-              imageSrc="https://imgs.search.brave.com/2dxg5TJM1uHv9oVLCBw3j3GcOQgbjLXLW4lRK4VoTG0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9lbGJs/b2dkZWxtaW5pbWFs/aXN0YS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMTkvMTEv/Y3VhZHJvLW1vbmRy/aWFuLWFydGUtbWlu/aW1hbGlzdGEtODA0/eDEwMjQuanBn"
-              buttonText="Ir al sitio"
-              link="https://elblogdelminimalista.com/minimalismo/arte-minimalista-movimiento/"
-            />
-          </div>
-        </div>
-
-        {/* Carrusel de Cards (visible en pantallas pequeñas) */}
-        <div
-          className="md:hidden flex justify-center w-full py-4 col-span-1"
-          id="carousel-cards"
-          data-carousel="slide"
-        >
-          <CarouselEL cards={cards} />
-        </div>
-      </div>
+      </PagSec>
     </div>
   );
 }

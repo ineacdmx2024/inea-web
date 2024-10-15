@@ -19,25 +19,16 @@ function Ubicacion() {
       link: "/oferta-educativa/presencial",
     },
     {
-      title: "La Vida en el Espacio 2",
-      imageSrc:
-        "httpXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc",
+      title: "Modalidad en linea",
+      imageSrc: "/Modalidad/aprendeINEAenlinea2.webp",
       buttonText: "Ir al sitio",
-      link: "https://www.astromia.com/universo/lavidaenelpacio.htm",
+      link: "/oferta-educativa/enlinea",
     },
     {
-      title: "La Vida en el Espacio 3",
-      imageSrc:
-        "https://imgs.search.brave.com/RAPyqA9Q7HK7hP22bJsUZyXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc",
+      title: "Examen único",
+      imageSrc: "/Modalidad/Examenunico2.webp",
       buttonText: "Ir al sitio",
-      link: "https://www.astromia.com/universo/lavidaenelpacio.htm",
-    },
-    {
-      title: "La Vida en el Espacio 4",
-      imageSrc:
-        "https://imgs.search.brave.com/RAPyqA9Q7HK7hP22bJsUZyXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc",
-      buttonText: "Ir al sitio",
-      link: "https://www.astromia.com/universo/lavidaenelpacio.htm",
+      link: "/oferta-educativa/examen-unico",
     },
   ];
 
@@ -274,7 +265,7 @@ function Ubicacion() {
   return (
     <div classname="">
       <PagSec Enlaces={cards}>
-        <div className="mx-auto w-full grid grid-cols-1 gap-2 row-span-1">
+        <div className="mx-auto mb-72 w-full grid grid-cols-1 gap-2 row-span-1">
           <div className="mx-auto mt-2 mb-4 w-full max-w-full md:max-w-[1140px]">
             <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
               Coordinaciones de zona
@@ -284,8 +275,15 @@ function Ubicacion() {
               <div className="flex-grow h-px bg-gray-300"></div>
             </div>
             <div className="px-4 pt-4 pb-2 text-lg text-gray-700">
-              Ubica la coordinación de zona dependiendo de tu delegación. Dentro
-              de las coordinaciones de zona podrás realizar tus trámites.
+              <strong>
+                Ubica tu coordinación de zona dependiendo de tu delegación.
+              </strong>
+              <p>
+                Las coordinaciones de zona son unidades geográficas responsables
+                de promover, organizar y diagnosticar los servicios de educación
+                para jóvenes y adultos no escolarizados. Dentro de las
+                coordinaciones de zona podrás realizar tus trámites.
+              </p>
             </div>
           </div>
 
@@ -306,10 +304,24 @@ function Ubicacion() {
               <div className="flex-grow h-px bg-gray-300"></div>
             </div>
             <br />
-            <div className="px-4 pt-4 pb-2 text-lg text-gray-700">...</div>
+            <div className="px-4 pt-4 pb-2 text-lg text-gray-700">
+              <strong>
+                Ubica tu plaza comunitaria dependiendo de tu delegación.
+              </strong>
+              <p>
+                Las Plazas Comunitarias INEA son espacios educativos abiertos a
+                la comunidad, donde personas de diferentes edades y niveles de
+                educación pueden acudir para aprender a leer, escribir, terminar
+                su educación primaria y secundaria, completar su bachillerato o
+                tomar cursos de capacitación para la vida y el trabajo.
+              </p>
+            </div>
           </div>
           <div className="hidden md:w-full flex-col md:flex">
-            <SkewedPages datos={pageData} />
+            <SkewedPages
+              datos={pageData}
+              id="animation"
+            />
           </div>
           <div className="md:hidden w-full ">
             <SkewedPagesResponsive datos={pageData} />
