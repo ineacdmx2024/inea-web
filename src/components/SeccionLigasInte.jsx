@@ -273,7 +273,7 @@ function SeccionLigasInte() {
                     {noticia.title}
                   </h3>
                 </div>
-                <button className="bg-[#a42145] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
+                <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
                   Ir al sitio
                 </button>
               </div>
@@ -282,7 +282,7 @@ function SeccionLigasInte() {
         </div>
 
         {/* Div de noticias fijas en carousel */}
-        <div className="border border-slate-300 rounded-lg bg-white w-[260px] letras:w-[320px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto">
+        <div className="border border-slate-300 rounded-lg bg-white w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto">
           <Slider {...settings}>
             {fijas.map((noticia, index) => (
               <div
@@ -300,7 +300,7 @@ function SeccionLigasInte() {
                       {noticia.title}
                     </h3>
                   </div>
-                  <button className="text-xs letras:text-[13.5px] bg-[#a42145] text-white py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
+                  <button className="text-xs letras:text-[13.5px] bg-[#611232] text-white py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
                     Ir al sitio
                   </button>
                 </div>
@@ -313,7 +313,7 @@ function SeccionLigasInte() {
         <div className="carrusel">
           <Slider
             {...settings}
-            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-[260px] letras:w-[320px] ofertaEdu:w-[400px] tablet:w-[1150px] mt-8"
+            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] mt-8"
           >
             {restantes.map((noticia, index) => (
               <div
@@ -331,7 +331,7 @@ function SeccionLigasInte() {
                       {noticia.title}
                     </h3>
                   </div>
-                  <button className="bg-[#a42145] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
+                  <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
                     Ir al sitio
                   </button>
                 </div>

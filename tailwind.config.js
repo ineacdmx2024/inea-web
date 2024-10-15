@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./node_modules/flowbite-react/**/*.js",
@@ -14,6 +13,7 @@ module.exports = {
         medida3: "750px",
         letras: "390px",
         ofertaEdu: "500px",
+        blog: "420px",
       },
       maxWidth: {
         "2xl2": "75rem",
