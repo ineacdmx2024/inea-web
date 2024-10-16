@@ -235,7 +235,7 @@ const CarouselBlog = ({ item }) => {
                 <div className=" m-auto w-auto arrow:w-[750px] rounded-xl max-h-[392px] overflow-hidden">
                   <Image
                     src={
-                      item.attributes.Imagen?.data?.attributes?.formats?.small
+                      item.attributes.Imagen?.data?.attributes?.formats?.medium
                         ?.url
                     }
                     alt={item.attributes.Titulo}
@@ -279,7 +279,7 @@ const CarouselBlog = ({ item }) => {
       <div className="flex justify-end m-auto">
         <Link
           className="mt-20 mr-[1rem] lg:mr-[5rem] xl:mr-[24rem] w-36 text-center bg-[#611232] text-white py-2 px-4 hover:bg-[#8a1b39] rounded-full block letras:text-base text-xs letras:w-44"
-          href={"/#"}
+          href={"/blog/noticias-antiguas"}
         >
           <p className="font-light">Noticias Anteriores</p>
         </Link>
