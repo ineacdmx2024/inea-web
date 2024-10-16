@@ -21,7 +21,7 @@ const Card = ({ title, imageSrc, buttonText, link }) => {
         </h3>
         <button
           onClick={handleButtonClick}
-          className="bg-[#611232] text-white hover:bg-[#611232] text-xs letras:text-[13.5px] px-4 py-2 rounded-full mx-auto block focus:outline-none"
+          className="focus:border-[#611232] focus:bg-[#A57F2C]  border-[5px] bg-[#611232] text-white hover:bg-[#A57F2C]  text-xs letras:text-[13.5px] px-4 py-2 rounded-full mx-auto block focus:outline-none"
         >
           {buttonText}
         </button>

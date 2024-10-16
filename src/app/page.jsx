@@ -13,11 +13,6 @@ function page() {
     <main className={`mx-auto ${open_Sans.className} bg-white pt-[115px]`}>
       <div>
         <img
-          src="/Banner_INEA_CDMX.jpg"
-          alt="Banner"
-          className="w-full h-auto hidden medida3:block"
-        />
-        <img
           src="/Banner_INEA_CDMX_EducacionMovil.jpg"
           alt="BannerMovil"
           className="w-full h-auto block medida3:hidden"
@@ -26,11 +21,6 @@ function page() {
           src="/Banner_INEA_CDMX.jpg"
           alt="Banner"
           className="w-full h-auto hidden medida3:block"
-        />
-        <img
-          src="/Banner_INEA_CDMX_EducacionMovil.jpg"
-          alt="BannerMovil"
-          className="w-full h-auto block medida3:hidden"
         />
       </div>
 
