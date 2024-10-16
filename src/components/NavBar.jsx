@@ -75,19 +75,24 @@ const Navbar = () => {
                 className="flex items-center space-x-7"
                 id="contenidoSup"
               >
-                <div className="hidden md:block">
+                <div className="hidden md:block" >
                   <div className="ml-4 flex items-end space-x-5">
                     <Link
                       href="/"
                       passHref
                       className="hover:text-[#D3C09B] p-1 rounded"
+                        //  ClassName=" onFocus: bg-[#FFAF00] onFocus: text-black p-2 rounded truncate"
+                       
                     >
                       ¿Qué es el INEA?
                     </Link>
+
                     <Link
                       href="/"
                       passHref
-                      className="hover:text-[#D3C09B] p-1 rounded"
+                      className="hover:text-[#FFAF00] p-1 rounded"
+                    //  
+                     // block hover:bg-[#D3C09B] hover:text-white p-2 rounded
                     >
                       Contacto
                     </Link>
@@ -177,7 +182,8 @@ const Navbar = () => {
                 <Link
                   href="/"
                   passHref
-                  className="hover:text-[#D3C09B] hover:bg-[#36514B] block p-2 rounded w-full text-start"
+                  className="hover:text-[#FFAF00] hover:bg-[#36514B] block p-2 rounded w-full text-start"
+              //  ClassName=" onFocus: bg-[#D3C09B] onFocus: text-black p-2 rounded truncate"
                 >
                   Contacto
                 </Link>
@@ -357,19 +363,19 @@ const Navbar = () => {
                         </Link>
                         <Link
                           href="/servicios/solicitud-duplicados"
-                          className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded truncate"
+                          className="block hover:bg-[#D3C09B] hover:text-black p-2 rounded truncate"
                         >
                           Solicitud de duplicados
                         </Link>
                         <Link
                           href="https://www.gob.mx/curp/"
-                          className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
+                          className="block hover:bg-[#8c7a52] hover:text-white p-2 rounded"
                         >
                           Consulta tu CURP
                         </Link>
                         <Link
                           href="/servicios/constancia-comipems"
-                          className="block hover:bg-[#D3C09B] hover:text-white p-2 rounded"
+                          className="block hover:bg-[#918e86] hover:text-white p-2 rounded"
                         >
                           Constancia COMIPEMS
                         </Link>

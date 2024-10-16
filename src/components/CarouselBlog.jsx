@@ -233,8 +233,8 @@ const CarouselBlog = ({item}) => {
                 </p>
 
                 <div className="overflow-visible !z-10">
-                  <button className="m-auto letras:ml-auto bg-[#a42145] text-white py-2 px-2 hover:bg-[#8a1b39] rounded-full block">
-                    <p className="text-xs letras:text-[13.5px]">Continuar leyendo</p>
+                  <button className="m-auto letras:ml-auto bg-[#a42145] text-white py-2 px-2 hover:bg-[#005b22] rounded-full block">
+                    <p className="text-xs letras:text-[13.5px]  ">Continuar leyendo</p>
                   </button>
                 </div>
               </article>
