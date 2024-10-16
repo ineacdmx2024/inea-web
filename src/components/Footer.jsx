@@ -6,7 +6,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className=" bg-[#13322B] h-auto">
+    <footer className=" bg-[#611232] h-auto">
       <div
         className="p-8 mx-auto max-w-screen-xl sm:p-6"
         id="content"
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
           <div className="grid grid-cols-1 gap-8 sm:gap-24 sm:grid-cols-3">
             <div>
-              <h2 className="mb-3 text-gray-900 dark:text-white">
+              <h2 className="mb-3 text-white dark:text-white">
                 Mapa de Sitio
               </h2>
               <ul className="text-gray-600 text-sm dark:text-white">
@@ -74,7 +74,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h2 className="mb-3 text-gray-900 dark:text-white">Contacto</h2>
+              <h2 className="mb-3 text-white dark:text-white">Contacto</h2>
               <ul className="text-gray-600 text-sm dark:text-white">
                 <li>
                   <a href="/">Directorio</a>
@@ -85,7 +85,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h2 className="mb-4 text-gray-900 dark:text-white">
+              <h2 className="mb-4 text-white dark:text-white">
                 Síguenos en
               </h2>
               <div className="flex mt-4 space-x-3 sm:justify-left sm:mt-0">
@@ -152,10 +152,7 @@ const Footer = () => {
         </div> */}
       </div>
       <div className="pleca">
-        <img
-          src="/Pleca_footer.svg"
-          alt=""
-        />
+       
       </div>
     </footer>
   );

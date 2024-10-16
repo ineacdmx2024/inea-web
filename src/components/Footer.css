@@ -6,21 +6,26 @@ li{
   padding: 4px;
 }
 
+a{
+  color: #fff;
+}
 
 #Content{
   justify-content: space-evenly;
 }
+.pleca{
+  background-color: #fff;
+  background-image: url("../../public/pleca.svg");
+  height: 5vh;
 
-@media screen and (max-width: 1200px) and (min-width:300px) {
+}
+
+@media screen and (max-width: 800px) and (min-width:300px) {
   .pleca {
-    height: 40%;
     width: 100%;
-    overflow: hidden;
+    background-repeat: repeat-x;
+    background-size: auto 100%;
   }
-  .pleca img{
-    max-width: 1200px;
-  }
-  #content{
-    height: 50%;
-  }
+ 
+  
 }
