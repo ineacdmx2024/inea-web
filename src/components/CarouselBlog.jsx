@@ -235,13 +235,15 @@ const CarouselBlog = ({ item }) => {
                 <div className=" m-auto w-auto arrow:w-[750px] rounded-xl max-h-[392px] overflow-hidden">
                   <Image
                     src={
-                      item.attributes.Imagen?.data?.attributes?.formats?.medium
+                      item.attributes.Imagen?.data?.attributes?.formats?.large
                         ?.url
                     }
-                    alt={item.attributes.Titulo}
+                    alt={
+                      item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
+                    }
                     className="w-full h-full object-contain rounded-xl "
-                    width={750}
-                    height={392}
+                    width={950}
+                    height={500}
                   />
                 </div>
 
