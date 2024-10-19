@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { FaUpload } from "react-icons/fa";
+import { motion } from "framer-motion";
 import CardComponent from "./AnimatedCards";
 
 function PagMod({ info }) {
@@ -53,7 +53,7 @@ function PagMod({ info }) {
         className="relative w-full overflow-hidden transition-all duration-300 ease-in-out cursor-pointer rounded-lg mb-2"
         style={{
           height: "calc(100vh - 4rem)",
-          maxHeight: "600px",
+          maxHeight: "400px",
         }}
         onClick={handleBannerClick}
         role="banner"
@@ -75,14 +75,6 @@ function PagMod({ info }) {
             <p className="text-xl md:text-2xl mb-8 text-center max-w-2xl px-4">
               {info.description}
             </p>
-            <input
-              type="file"
-              id="imageUpload"
-              accept="image/*"
-              className="hidden"
-              onChange={handleImageUpload}
-              aria-label="Upload banner image"
-            />
           </div>
         </div>
       </div>
@@ -98,12 +90,40 @@ function PagMod({ info }) {
           </p>
         ))}
 
+        {/* Colocar la sección de Tiempo estimado después de los párrafos de texto */}
         <p className="mt-2 text-lg">
           <strong>Tiempo estimado de conclusión:</strong> {info.time}
         </p>
+        <br />
+        {/* Boton section - mostrar solo si Boton array tiene algo (o sea en linea)  */}
+        {info.Boton && info.Boton.length > 0 && (
+          <div>
+            {info.Boton.map((paragraph, index) => (
+              <div
+                key={index}
+                className="mb-2"
+              >
+                <p className="text-xl text-center font-bold">
+                  {paragraph.description}
+                </p>
+                <motion.button
+                  className="mt-4 px-4 py-2 bg-[#611232] text-white rounded-lg mx-auto block border-2 hover:bg-white hover:text-[#611232] hover:border-[#611232] focus:bg-[#A57F2C]"
+                  onClick={() => window.open(paragraph.link, "_blank")}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {paragraph.buttonLabel}
+                </motion.button>
+              </div>
+            ))}
+            <br />
+          </div>
+        )}
+
+        {/* Requesitos */}
         <div
           id="alert-additional-content-4"
-          className="p-4 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
+          className=" p-4 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
           role="alert"
         >
           <div className="flex items-center">
@@ -121,10 +141,15 @@ function PagMod({ info }) {
               <strong>Requisitos:</strong>
             </h3>
           </div>
-          <div className="mt-2 mb-4 text-xl">
+          <div className="mt-2 mb-4">
             <ul className="list-disc ml-8">
               {info.requirements.map((requirements, index) => (
-                <li key={index}>{requirements}</li>
+                <li
+                  className="text-lg"
+                  key={index}
+                >
+                  {requirements}
+                </li>
               ))}
             </ul>
           </div>

@@ -216,19 +216,13 @@ const Navbar = () => {
         </nav>
 
         {/* Menú inferior */}
-        <nav className="navBarINEA bg-[#A57F2C] p-1 w-full">
-          <div className="flex items-center justify-between container ml-auto">
-            <div className="flex items-center">
-              <Link
-                href="/"
-                passHref
-              ></Link>
-            </div>
+        <nav className="bg-[#A57F2C]">
+          <div className="flex items-center justify-between py-[0.1rem] px-auto">
             <div
-              className="flex"
+              className="flex items-end justify-end"
               id="Minf"
             >
-              <div className="flex items-center space-x-10">
+              <div className="flex items-end space-x-10">
                 <div className="hidden md:block">
                   <div className="ml-4 flex items-end space-x-5">
                     <Link
@@ -614,6 +608,14 @@ const Navbar = () => {
                   )}
                 </button>
               </div>
+            </div>
+          </div>
+          <div className="flex items-center justify-between py-[0.1rem] container mx-auto">
+            <div className="flex items-center justify-between">
+              <div
+                className="flex"
+                id="Minf"
+              ></div>
             </div>
           </div>
 
