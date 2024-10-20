@@ -53,8 +53,6 @@ const Navbar = () => {
     <div className="navBar">
       <div className="bg-[#611232] w-full">
         {/* Menú gobierno */}
-        {/* <nav className="flex items-center justify-between py-[0.1rem] px-auto"></nav> */}
-        {/* Menú gobierno */}
         <nav className="bg-[#611232]">
           <div className="flex items-center justify-between py-[0.1rem] px-auto">
             <div
@@ -111,7 +109,7 @@ const Navbar = () => {
                         viewBox="0 0 24 24"
                         strokeWidth="1.5"
                         stroke="currentColor"
-                        className="h-6 w-6"
+                        className="h-5 w-5"
                       >
                         <path
                           strokeLinecap="round"
@@ -228,23 +226,23 @@ const Navbar = () => {
                     <Link
                       href="/"
                       passHref
-                      className="hover:text-[#CBB486] p-2 rounded columns-2 "
+                      className="hover:text-[#CBB486] p-2 rounded grid grid-cols-2 grid-rows-1 gap-0 content-center "
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 4 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        className="h-6 w-full m-0"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-                        />
-                      </svg>
-                      <span className="w-full mr-0">Inicio</span>
+                      <div>
+                        <svg
+                          fill="none"
+                          viewBox="0 0 4 24"
+                          stroke="currentColor"
+                          className="h-5 w-full m-0 mr-1 text-base items-end"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                          />
+                        </svg>
+                      </div>
+                      <div>Inicio</div>
                     </Link>
 
                     {/* Servicios */}
