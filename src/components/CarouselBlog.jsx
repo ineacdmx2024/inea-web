@@ -203,7 +203,10 @@ const CarouselBlog = ({ item }) => {
 
   return (
     <>
-      <style jsx global>{`
+      <style
+        jsx
+        global
+      >{`
         .custom-dots {
           bottom: -30px;
         }
@@ -226,10 +229,16 @@ const CarouselBlog = ({ item }) => {
           transform: scale(1.2);
         }
       `}</style>
-      <Slider {...settings} className="mx-auto !z-5">
+      <Slider
+        {...settings}
+        className="mx-auto !z-5"
+      >
         {datos ? (
           datos.map((item, index) => (
-            <div key={index} className="px-4">
+            <div
+              key={index}
+              className="px-4"
+            >
               <div className="w-full letras:w-full arrow:w-[750px] medida3:w-4/5 h-auto mx-auto flex flex-col tablet:flex-row tablet:w-[1142px] tablet:h-[390px] justify-between bg-white rounded-xl ">
                 {/* Div de la imagen */}
                 <div className=" m-auto w-auto arrow:w-[750px] rounded-xl max-h-[392px] overflow-hidden">

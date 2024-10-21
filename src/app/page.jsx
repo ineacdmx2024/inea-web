@@ -1,28 +1,26 @@
-import { Open_Sans } from "next/font/google";
+import React from "react";
+import { Open_Sans } from "@next/font/google";
 import CarouselBlog from "@/components/CarouselBlog";
 import CarouselOfertEdu from "@/components/CarouselOfertEdu";
 import SeccionLigasInte from "@/components/SeccionLigasInte";
 import Ubicacion from "@/components/Ubicacion";
-
 const open_Sans = Open_Sans({
-  weight: ["300", "400", "500", "700"],
-  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
 });
 
 function page() {
   return (
-    <main className={`mx-auto ${open_Sans.className} bg-white`}>
+    <main className={`mx-auto ${open_Sans.className} bg-white pt-[115px]`}>
       <div>
-        <img
-          src="/Banner_INEA_CDMX.jpg"
-          alt="Banner"
-          className="w-full h-auto hidden medida3:block"
-        />
         <img
           src="/Banner_INEA_CDMX_EducacionMovil.jpg"
           alt="BannerMovil"
           className="w-full h-auto block medida3:hidden"
+        />
+        <img
+          src="/Banner_INEA_CDMX.jpg"
+          alt="Banner"
+          className="w-full h-auto hidden medida3:block"
         />
       </div>
 
@@ -69,7 +67,6 @@ function page() {
         </div>
       </div>
       <Ubicacion />
-      <br />
     </main>
   );
 }

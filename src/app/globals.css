@@ -1,3 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "flowbite";
+
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+#animation{
+  animation: fadeIn 1.5s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+#principal{
+    justify-content: space-evenly;
+    
+}
+
+#contenido{
+    border: 0;
+    margin: 0;
+    width: 1142px;
+    height: auto;
+    justify-content: center;
+   
+}
+#enlaces{
+    flex-direction: column;
+    float: right;
+}
+#migajas{
+    justify-content: center;
+
+}
+
+#main-content{
+  padding-top: 115px; /*espacio del navbar*/
+  
+}
+
+.carousel {
+    @apply flex justify-center;
+  }
+  
+  .carousel-inner {
+    @apply flex overflow-x-hidden;
+  }
+  
+  .carousel-item {
+    @apply w-full h-full;
+  }
+  
+  .carousel-item.active {
+    @apply opacity-100;
+  }
+  
+  .carousel-item:not(.active) {
+    @apply opacity-50;
+  }
+  .carousel-item.hidden {
+    display: none;
+  }
+  #buttonCarousel {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded;
+  }
+

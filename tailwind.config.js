@@ -1,5 +1,6 @@
 module.exports = {
   content: [
+    "./node_modules/flowbite-react/**/*.js",
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,22 +8,21 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        "tablet": "1210px",
-        "arrow": "810px",
-        "medida3" : "750px",
-        "letras" : "390px",
-        "ofertaEdu" : "500px",
-        "blog" : "420px"
-
+        tablet: "1210px",
+        arrow: "810px",
+        medida3: "750px",
+        letras: "390px",
+        ofertaEdu: "500px",
+        blog: "420px",
       },
       maxWidth: {
-        "2xl2" : "75rem"
+        "2xl2": "75rem",
       },
       width: {
-        "46": "750",
+        46: "750",
       },
       padding: {
-        "88": "22rem",
+        88: "22rem",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -31,5 +31,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 };
