@@ -18,7 +18,7 @@ function page() {
           className="w-full h-auto block medida3:hidden"
         />
         <img
-          src="/Banner_INEA_CDMX.jpg"
+          src="/Banner_INEA_CDMX_Educacion_nueva.webp"
           alt="Banner"
           className="w-full h-auto hidden medida3:block"
         />
