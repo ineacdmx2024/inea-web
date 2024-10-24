@@ -13,7 +13,7 @@ function page() {
     <main className={`mx-auto ${open_Sans.className} bg-white pt-[115px]`}>
       <div>
         <img
-          src="/Banner_INEA_CDMX_EducacionMovil.jpg"
+          src="/Banner_INEA_CDMX_EducacionMovilnueva.webp"
           alt="BannerMovil"
           className="w-full h-auto block medida3:hidden"
         />
