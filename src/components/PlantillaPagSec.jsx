@@ -7,7 +7,7 @@ import CarouselEL from "@/components/CarouselEL";
 function PagSec({ Enlaces, children }) {
   return (
     <div className="mt-[12.5vh]">
-      <div className="mx-auto md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-[1vh]">
+      <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-y-[1vh] gap-x-[4vh]">
         <br />
         {/* Breadcrumb */}
         <div className="col-span-1 md:col-span-12 ">
@@ -17,10 +17,10 @@ function PagSec({ Enlaces, children }) {
         </div>
 
         {/* Contenido principal*/}
-        <div className="col-span-1 md:col-span-9 px-2">{children}</div>
+        <div className="col-span-1 md:col-span-8 ">{children}</div>
 
         {/* Enlaces laterales  */}
-        <div className="hidden md:block md:col-span-3">
+        <div className="hidden md:block md:col-span-4 ">
           <div className="flex flex-col">
             {Enlaces.map((enlace) => (
               <Card

@@ -6,6 +6,7 @@ import CarouselEL from "@/components/CarouselEL";
 import SkewedPages from "@/components/SkewedPages";
 import SkewedPagesResponsive from "@/components/SkewedPagesResponsive";
 import PagSec from "@/components/PlantillaPagSec";
+import Plazas from "@/components/Plazas";
 // import "../../../../src/app/globals.css";
 import "../../app/globals.css";
 function Ubicacion() {
@@ -50,12 +51,14 @@ function Ubicacion() {
           dir: "Hidalgo # 1, Col. Barrio San Juan, Alcaldía Tláhuac, CP 13060, CDMX",
           atel: "55 5842 1618",
           aemail: "cztlahuac@inea.gob.mx",
+          url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
         },
         {
           alcaldia: "MILPA ALTA",
           dir: "Av. Chiapas # 2, Col. Barrio de Santa Martha, Alcaldía Milpa Alta, CP 12000,CDMX",
           atel: "55 5844 4886",
           aemail: "czmilpaalta@inea.gob.mX",
+          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
         },
       ],
     },
@@ -76,12 +79,14 @@ function Ubicacion() {
           dir: "Periférico Sur # 5290, Col. Isidro Fabela, Alcaldía Tlalpan, CP 01403, CDMX ",
           atel: "55 56 66 17 50",
           aemail: "cztlalpan@inea.gob.mx",
+          url: "https://maps.app.goo.gl/cc5DzfS5bnXHnneM6",
         },
         {
           alcaldia: "CUAJIMALPA",
           dir: "Av. Luis Castillo Ledón # 17, Col. Cuajimalpa, Alcaldía Cuajimalpa, CP 05000, CDMX",
           atel: "55 58 12 35 91",
           aemail: "czcuajimalpa@inea.gob.mx",
+          url: "https://maps.app.goo.gl/jUQ8fgfUi3unTXhH8",
         },
       ],
     },
@@ -102,6 +107,7 @@ function Ubicacion() {
           dir: "Pedro Ramírez del Castillo S/N, Colonia Centro de Xochimilco, Alcaldía Xochimilco CP 16000, CDMX",
           atel: "55 56 76 66 60",
           aemail: "czxochimilco@inea.gob.mx",
+          url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
       ],
     },
@@ -122,18 +128,21 @@ function Ubicacion() {
           dir: "Santa Lucía S/N, Col. Molino de Santo Domingo, Alcaldía Álvaro Obregón, CP 01130, CDMX ",
           atel: "55 52 71 14 43 / 55 26 14 02 78",
           aemail: "czobregonn@inea.gob.mx",
+          url: "https://maps.app.goo.gl/ba9BXgUnybZy12Az7",
         },
         {
           alcaldia: "ÁLVARO OBREGÓN SUR",
           dir: "Av. Barranca del Muerto # 482, Col. Los Alpes, Alcaldía Álvaro Obregón, CP 01010, CDMX ",
           atel: " 55 55 50 65 33",
           aemail: "czobregons@inea.gob.mx",
+          url: "https://maps.app.goo.gl/gxEYgfWfWUkEz4hGA",
         },
         {
           alcaldia: "MAGDALENA CONTRERAS",
           dir: "Av. México # 985, Col. Héroes de Padierna,  Alcaldía Magdalena Contreras, CP 10700, CDMX",
           atel: "55 56 52 72 87",
           aemail: "czmcontreras@inea.gob.mx",
+          url: "https://maps.app.goo.gl/ktTcibPfD4cdxyeq6",
         },
       ],
     },
@@ -154,12 +163,14 @@ function Ubicacion() {
           dir: "Francisco Villa, Esq. Justo Sierra, Col. Zona Escolar, Alcaldía Gustavo A. Madero, CP 07230, CDMX",
           atel: "55 22 27 30 81",
           aemail: "czgamponiente@inea.gob.mx",
+          url: "https://maps.app.goo.gl/HM4eMth7weetM5X9A",
         },
         {
           alcaldia: "GUSTAVO A. MADERO ORIENTE",
           dir: "Av. 5 de Febrero, Esq. Vicente Villada (dentro del edificio de la Alcaldía), Col. Aragón Villa, Alcaldía Gustavo A. Madero, CP 07050, CDMX",
           atel: "55 57 81 06 34",
           aemail: "czgamoriente@inea.gob.mx",
+          url: "https://maps.app.goo.gl/Sbn6JDancZimecdL6",
         },
       ],
     },
@@ -181,18 +192,21 @@ function Ubicacion() {
           dir: "Extremadura # 26, Col. Insurgentes Mixcoac, Alcaldía Benito Juárez, CP 03920, CDMX",
           atel: "55 56 11 51 01",
           aemail: "czbjuarez@inea.gob.mx ",
+          url: "https://maps.app.goo.gl/AHcxE3qhmyRFPb839",
         },
         {
           alcaldia: "IZTACALCO",
           dir: "Coyuya # 10, Esq. Viaducto, Col. La Cruz, Alcaldía Iztacalco, CP 08310, CDMX",
           atel: "56 50 26 45 / 56 50 26 35 ",
           aemail: "cziztacalco@inea.gob.mx",
+          url: "https://maps.app.goo.gl/H2T4d2b4frJ65rTu7",
         },
         {
           alcaldia: "VENUSTIANO CARRANZA",
           dir: "Bacum, Esq. Río Bárcenas (a espaldas del Mercado Álvaro Obregón), Col. Magdalena Mixhuca, Alcaldía Venustiano Carranza, CP 15850, CDMX",
           atel: "55 55 52 41 75",
           aemail: "czvcarranza@inea.gob.mx",
+          url: "https://maps.app.goo.gl/UTa8tyL126a9ua169",
         },
       ],
     },
@@ -203,9 +217,9 @@ function Ubicacion() {
       email: "",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1m7JWJM7KiLjTibY591u_2iTi0T01mTs&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1C9rsjt3V3drRpnMGa-f3mXlpiUIiPYU&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
+        />
       ),
       items: [
         {
@@ -213,18 +227,21 @@ function Ubicacion() {
           dir: "Calle 22 # 17, Col. Pro-Hogar, Alcaldía Azcapotzalco, CP 02600, CDMX.",
           atel: "55 53 56 30 38/55 53 68 19 13",
           aemail: "czazcapotzalco@inea.gob.mx",
+          url: "https://maps.app.goo.gl/JSE8nwqGbHf7hBv68",
         },
         {
           alcaldia: "CUAUHTÉMOC",
           dir: "Mosqueta # 154, Col. Guerrero, Alcaldía Cuauhtémoc, CP 06300, CDMX",
           atel: "55 55 66 70 22",
           aemail: "czcuauhtemoc@inea.gob.mx",
+          url: "https://maps.app.goo.gl/EsEhgiroM27usZQz6",
         },
         {
           alcaldia: "MIGUEL HIDALGO",
           dir: "Av. De los Alpes S/N, Esq. Monte Altaí, Col. Lomas de Chapultepec, Alcaldía Miguel Hidalgo, CP 11000, CDMX",
           atel: "55 52 02 65 15 / 55 52 49 35 00 EXT. 5022 / 5023",
           aemail: "czmhidalgo@inea.gob.mx",
+          url: "https://maps.app.goo.gl/KqsuzUAZLsNBBU6K7",
         },
       ],
     },
@@ -245,18 +262,21 @@ function Ubicacion() {
           dir: "Super Manzana 6, Edificio B primer piso, Col. Unidad Vicente Guerrero, Alcaldía Iztapalapa, CP 09200, CDMX",
           atel: " 55 56 42 36 09",
           aemail: "cziztapalapac@inea.gob.mx",
+          url: "https://maps.app.goo.gl/qm4NSfteMpjrpFDZA",
         },
         {
           alcaldia: "IZTAPALAPA PONIENTE",
           dir: "Av. Ermita Iztapalapa # 1029, Col. Barrio San Lucas, Alcaldía Iztapalapa, CP 09000, CDMX",
           atel: "55 26 36 13 88",
           aemail: "cziztapalapap@inea.gob.mx",
+          url: "https://maps.app.goo.gl/AFuMTMiLeQ5ceMB47",
         },
         {
           alcaldia: "IZTAPALAPA ORIENTE",
           dir: "Lázaro Cárdenas S/N, Col. Ixtlahuacan, Alcaldía Iztapalapa, CP 09690, CDMX",
           atel: "55 26 35 61 42",
           aemail: "ziztapalapao@inea.gob.mx",
+          url: "https://maps.app.goo.gl/D9zKDShpbBGSkwCr9",
         },
       ],
     },
@@ -267,16 +287,20 @@ function Ubicacion() {
       <PagSec Enlaces={cards}>
         <div className="mx-auto mb-72 w-full grid grid-cols-1 gap-2 row-span-1">
           <div className="mx-auto mt-2 mb-4 w-full max-w-full md:max-w-[1140px]">
-            <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
-              Coordinaciones de zona
+            <h1 className="text-[38px] font-medium uppercase font-sans text-[#404041] mb-2 letras:text-4xl">
+              Ubicación de oficinas de trámites y espacios de estudio
             </h1>
+            <br />
+            <h2 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
+              Coordinaciones de zona
+            </h2>
             <div className="flex items-center mb-2">
               <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
               <div className="flex-grow h-px bg-gray-300"></div>
             </div>
             <div className="px-4 pt-4 pb-2 text-lg text-gray-700">
               <strong>
-                Ubica tu coordinación de zona dependiendo de tu delegación.
+                Ubica tu coordinación de zona dependiendo de tu delegación
               </strong>
               <p>
                 Las coordinaciones de zona son unidades geográficas responsables
@@ -296,9 +320,9 @@ function Ubicacion() {
         </div>
         <div className="row-span-1">
           <div className="mx-auto mt-2 mb-4 w-full max-w-full md:max-w-[1140px]">
-            <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
+            <h2 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
               Plazas comunitarias
-            </h1>
+            </h2>
             <div className="flex items-center mb-2">
               <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
               <div className="flex-grow h-px bg-gray-300"></div>
@@ -318,10 +342,11 @@ function Ubicacion() {
             </div>
           </div>
           <div className="hidden md:w-full flex-col md:flex">
-            <SkewedPages
+            {/* <SkewedPages
               datos={pageData}
               id="animation"
-            />
+            /> */}
+            <Plazas datos={pageData}></Plazas>
           </div>
           <div className="md:hidden w-full ">
             <SkewedPagesResponsive datos={pageData} />

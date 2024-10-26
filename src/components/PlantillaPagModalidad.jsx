@@ -32,11 +32,6 @@ function PagMod({ info }) {
     }
   };
 
-  const handleBannerClick = () => {
-    console.log("Banner clicked!");
-    // Add your custom click event logic here
-  };
-
   if (!info) {
     return <div>No hay información disponible</div>;
   }
@@ -55,7 +50,6 @@ function PagMod({ info }) {
           height: "calc(100vh - 4rem)",
           maxHeight: "400px",
         }}
-        onClick={handleBannerClick}
         role="banner"
         aria-label="Interactive banner"
       >
@@ -63,7 +57,7 @@ function PagMod({ info }) {
           className="absolute top-0 left-0 w-full h-full bg-cover bg-center transition-transform duration-300 ease-in-out"
           style={{
             backgroundImage: `url(${bannerImage})`,
-            transform: `translateY(${parallaxOffset}px)`,
+            // transform: `translateY(${parallaxOffset}px)`,
           }}
           aria-hidden="true"
         />
@@ -80,11 +74,11 @@ function PagMod({ info }) {
       </div>
 
       {/* Info */}
-      <div className="border border-slate-300 rounded-lg py-4 px-6 text-justify">
+      <div className=" py-4 px-6 ">
         {info.paragraphs.map((paragraph, index) => (
           <p
             key={index}
-            className="mb-2 text-lg"
+            className="mb-7 text-lg"
           >
             {paragraph}
           </p>

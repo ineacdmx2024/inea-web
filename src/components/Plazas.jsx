@@ -2,7 +2,7 @@
 import "../app/globals.css";
 import React, { useState, useEffect } from "react";
 
-const SkewedPages = ({ datos }) => {
+const Plazas = ({ datos }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const handleAlcaldiaClick = (indexSlides) => {
     setCurrentPage(indexSlides); // Cambia la página actual usando IndexSlides
@@ -33,8 +33,72 @@ const SkewedPages = ({ datos }) => {
     { alcaldia: "Xochimilco", IndexSlides: 2 },
   ];
 
+  const Colcontent = (items) => {
+    if (Array.length(items) > 10) {
+      return (
+        <div className="grid grid-cols-3">
+          {items.map((item, index) => (
+            <div className="flex justify-center m-[20px]">
+              <svg
+                className={`h-8 w-8 ${colors[index % colors.length]}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokelinecap="round"
+                  strokelinejoin="round"
+                  strokewidth="{2}"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  strokelinecap="round"
+                  strokelinejoin="round"
+                  strokewidth="{2}"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+
+              <div className="m-[0%] uppercase text-2xl text-center">
+                {item}
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    } else {
+      <div className="grid grid-cols-2">
+        {items.map((item, index) => (
+          <div className="flex justify-center m-[20px]">
+            <svg
+              className={`h-8 w-8 ${colors[index % colors.length]}`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokelinecap="round"
+                strokelinejoin="round"
+                strokewidth="{2}"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                strokelinecap="round"
+                strokelinejoin="round"
+                strokewidth="{2}"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+
+            <div className="m-[0%] uppercase text-2xl text-center">{item}</div>
+          </div>
+        ))}
+      </div>;
+    }
+  };
+
   return (
-    <div className="">
+    <div className="h-auto">
       {/* botones */}
       <div className="flex flex-wrap">
         {alcaldias.map((elemento) => (
@@ -67,35 +131,30 @@ const SkewedPages = ({ datos }) => {
           </button>
         ))}
       </div>
-
       {/* Contenido principal */}
-      <div className="container mx-auto flex-column md:h-[65vh] bg-white mt-8">
+      <div className="container mx-auto flex-column h-full bg-white mt-8">
         {datos.map((pageData, index) => (
           <div
             key={index}
-            className={`border border-slate-300 rounded-lg grid grid-cols-2 grid-rows-1 gap-0 h-full bg-white ${
+            className={`mb-5 border border-slate-300 rounded-lg grid grid-cols-1 grid-rows-2 gap-0 h-full bg-white ${
               index === currentPage
                 ? "visible opacity-100 translate-y-0"
                 : "hidden opacity-0 translate-y-full"
             } transition duration-500`}
             id="animation"
           >
-            {/* Lado izquierdo */}
+            {/* Arriba */}
             <div
-              className={`flex flex-col justify-center items-center p-3 bg-[#611232] text-white ${
+              className={`flex flex-col justify-center items-center p-5 bg-[#611232] text-white ${
                 index === currentPage ? "translate-x-0" : "translate-x-full"
               } transition duration-500`}
             >
               <h1 className="mb-4 uppercase text-2xl text-center">
                 {pageData.title}
               </h1>
-              <p className="text-lg text-center">{pageData.nom}</p>
-              <p className="text-lg text-center">Teléfono: {pageData.tel}</p>
-              <p className="text-lg text-center">Email: {pageData.email}</p>
-              <br />
               <p className="w-[100%]">{pageData.map}</p>
             </div>
-            {/* Lado derecho */}
+            {/* Abajo */}
             <div
               className={`flex flex-col justify-center items-center bg-[#f6f6f6] p-3 ${
                 index === currentPage ? "translate-x-0" : "-translate-x-full"
@@ -104,8 +163,7 @@ const SkewedPages = ({ datos }) => {
               {pageData.items.map((item, idx) => (
                 <div
                   key={idx}
-                  className="mb-4 text-center cursor-pointer"
-                  onClick={() => window.open(item.url, "_blank")}
+                  className="mb-4 text-center"
                 >
                   <div className="flex justify-center m-[20px]">
                     <svg
@@ -131,10 +189,6 @@ const SkewedPages = ({ datos }) => {
                       {item.alcaldia}
                     </div>
                   </div>
-                  <p>Dirección: {item.dir}</p>
-                  <p>Tel: {item.atel}</p>
-                  <p>{item.aemail}</p>
-                  <br />
                 </div>
               ))}
             </div>
@@ -145,4 +199,4 @@ const SkewedPages = ({ datos }) => {
   );
 };
 
-export default SkewedPages;
+export default Plazas;
