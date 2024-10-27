@@ -129,7 +129,7 @@ const Navbar = () => {
               </div>
 
               {/*Boton para desplegable hamburguesa */}
-              <div className="md:hidden flex items-end">
+              <div className="md:hidden flex items-end mr-[15px]">
                 <button
                   className="inline-flex items-center w-auto h-auto rounded-md text-white hover:text-[#E4CDA7]
                  focus:outline-none focus:ring-2 p-2 focus:ring-inset focus:ring-[#E4CDA7] px-auto"
@@ -597,7 +597,7 @@ const Navbar = () => {
               </div>
 
               {/* Boton hamburguesa */}
-              <div className="md:hidden flex ">
+              <div className="md:hidden flex mr-[15px]">
                 <button
                   className="inline-flex items-center justify-center  p-2 rounded-md text-white hover:text-[#E4CDA7]
                  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#E4CDA7]"
@@ -636,14 +636,6 @@ const Navbar = () => {
                   )}
                 </button>
               </div>
-            </div>
-          </div>
-          <div className="flex items-center justify-between py-[0.1rem] container mx-auto">
-            <div className="flex items-center justify-between">
-              <div
-                className="flex"
-                id="Minf"
-              ></div>
             </div>
           </div>
 

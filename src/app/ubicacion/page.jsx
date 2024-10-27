@@ -285,7 +285,7 @@ function Ubicacion() {
   return (
     <div classname="">
       <PagSec Enlaces={cards}>
-        <div className="mx-auto mb-72 w-full grid grid-cols-1 gap-2 row-span-1">
+        <div className="mx-auto mb-32 w-full grid grid-cols-1 gap-2 row-span-1">
           <div className="mx-auto mt-2 mb-4 w-full max-w-full md:max-w-[1140px]">
             <h1 className="text-[38px] font-medium uppercase font-sans text-[#404041] mb-2 letras:text-4xl">
               Ubicación de oficinas de trámites y espacios de estudio

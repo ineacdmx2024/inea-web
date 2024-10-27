@@ -73,7 +73,7 @@ const SkewedPages = ({ datos }) => {
         {datos.map((pageData, index) => (
           <div
             key={index}
-            className={`border border-slate-300 rounded-lg grid grid-cols-2 grid-rows-1 gap-0 h-full bg-white ${
+            className={`border border-slate-300 grid grid-cols-2 grid-rows-1 gap-0 h-full bg-white ${
               index === currentPage
                 ? "visible opacity-100 translate-y-0"
                 : "hidden opacity-0 translate-y-full"
