@@ -1,8 +1,5 @@
 // "use client";
 import React from "react";
-import Breadcrumb from "@/components/Breadcrumb";
-import Card from "@/components/EnlacesR_Lateral";
-import CarouselEL from "@/components/CarouselEL";
 import SkewedPages from "@/components/SkewedPages";
 import SkewedPagesResponsive from "@/components/SkewedPagesResponsive";
 import PagSec from "@/components/PlantillaPagSec";
@@ -282,8 +279,272 @@ function Ubicacion() {
     },
   ];
 
+  const plazasData = [
+    {
+      title: "EULALIA GUZMÁN",
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=122hM5GKsgDsm2hophXyiQkdE6I-kzgU&ehbc=2E312F"
+          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+        ></iframe>
+      ),
+      items: [
+        {
+          alcaldia: "TLAHUAC 1",
+          url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
+        },
+        {
+          alcaldia: "MILPA ALTA 2",
+          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
+        },
+        {
+          alcaldia: "TLAHUAC 3",
+          url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
+        },
+        {
+          alcaldia: "MILPA ALTA 4",
+          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
+        },
+        {
+          alcaldia: "TLAHUAC 5",
+          url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
+        },
+        {
+          alcaldia: "MILPA ALTA 6",
+          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
+        },
+        {
+          alcaldia: "TLAHUAC 7",
+          url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
+        },
+        {
+          alcaldia: "MILPA ALTA 8",
+          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
+        },
+        {
+          alcaldia: "TLAHUAC  9",
+
+          url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
+        },
+        {
+          alcaldia: "MILPA ALTA 10",
+          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
+        },
+        {
+          alcaldia: "TLAHUAC  11",
+
+          url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
+        },
+        {
+          alcaldia: "MILPA ALTA  12",
+
+          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
+        },
+
+        {
+          alcaldia: "MILPA ALTA  13",
+
+          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
+        },
+
+        {
+          alcaldia: "MILPA ALTA  14",
+
+          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
+        },
+        {
+          alcaldia: "MILPA ALTA 15",
+          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
+        },
+        {
+          alcaldia: "TLAHUAC  16",
+
+          url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
+        },
+        {
+          alcaldia: "MILPA ALTA  17",
+
+          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
+        },
+
+        {
+          alcaldia: "MILPA ALTA  18",
+
+          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
+        },
+
+        {
+          alcaldia: "MILPA ALTA  19",
+
+          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
+        },
+
+        {
+          alcaldia: "MILPA ALTA  20",
+
+          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
+        },
+
+        {
+          alcaldia: "MILPA ALTA  21",
+
+          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
+        },
+      ],
+    },
+    {
+      title: "ELENA GARRO",
+
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=19J4WWcFAKKUoKRAwA5MC_6Nl4y29PUo&ehbc=2E312F"
+          className="  md:h-[380px] sm: w-[100%] sm: h-[300px]"
+        ></iframe>
+      ),
+      items: [
+        {
+          alcaldia: "TLÁLPAN",
+          url: "https://maps.app.goo.gl/cc5DzfS5bnXHnneM6",
+        },
+        {
+          alcaldia: "CUAJIMALPA",
+          url: "https://maps.app.goo.gl/jUQ8fgfUi3unTXhH8",
+        },
+      ],
+    },
+    {
+      title: "FERNANDO SOLANA MORALES",
+
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1ADndmYvW3k1K5kQU7_icHDSJWItFpMs&ehbc=2E312F"
+          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+        ></iframe>
+      ),
+      items: [
+        {
+          alcaldia: "COYOACÁN / XOCHIMILCO",
+          url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
+        },
+      ],
+    },
+    {
+      title: "JUSTO SIERRA",
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1KNGOzsp4CL4BUr69KA3UFsheA_jVG2E&ehbc=2E312F"
+          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+        ></iframe>
+      ),
+      items: [
+        {
+          alcaldia: "ÁLVARO OBREGÓN NORTE",
+          url: "https://maps.app.goo.gl/ba9BXgUnybZy12Az7",
+        },
+        {
+          alcaldia: "ÁLVARO OBREGÓN SUR",
+          url: "https://maps.app.goo.gl/gxEYgfWfWUkEz4hGA",
+        },
+        {
+          alcaldia: "MAGDALENA CONTRERAS",
+          url: "https://maps.app.goo.gl/ktTcibPfD4cdxyeq6",
+        },
+      ],
+    },
+    {
+      title: "ROSARIO CASTELLANOS",
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1yJS8ylTeFs_h-AIe7K4RG4dLXXj5Wzo&ehbc=2E312F"
+          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+        ></iframe>
+      ),
+      items: [
+        {
+          alcaldia: "GUSTAVO A. MADERO PONIENTE",
+          url: "https://maps.app.goo.gl/HM4eMth7weetM5X9A",
+        },
+        {
+          alcaldia: "GUSTAVO A. MADERO ORIENTE",
+          url: "https://maps.app.goo.gl/Sbn6JDancZimecdL6",
+        },
+      ],
+    },
+    {
+      title: "SOR JUANA INES DE LA CRUZ",
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1jYl_g2AOqdFwlTY8BqtN3JrPofhRaZc&ehbc=2E312F"
+          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+        ></iframe>
+      ),
+
+      items: [
+        {
+          alcaldia: "BENITO JUÁREZ",
+          url: "https://maps.app.goo.gl/AHcxE3qhmyRFPb839",
+        },
+        {
+          alcaldia: "IZTACALCO",
+          url: "https://maps.app.goo.gl/H2T4d2b4frJ65rTu7",
+        },
+        {
+          alcaldia: "VENUSTIANO CARRANZA",
+          url: "https://maps.app.goo.gl/UTa8tyL126a9ua169",
+        },
+      ],
+    },
+    {
+      title: "JOSE VASCONCELOS",
+
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1C9rsjt3V3drRpnMGa-f3mXlpiUIiPYU&ehbc=2E312F&noprof=1"
+          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+        />
+      ),
+      items: [
+        {
+          alcaldia: "AZCAPOTZALCO",
+          url: "https://maps.app.goo.gl/JSE8nwqGbHf7hBv68",
+        },
+        {
+          alcaldia: "CUAUHTÉMOC",
+          url: "https://maps.app.goo.gl/EsEhgiroM27usZQz6",
+        },
+        {
+          alcaldia: "MIGUEL HIDALGO",
+          url: "https://maps.app.goo.gl/KqsuzUAZLsNBBU6K7",
+        },
+      ],
+    },
+    {
+      title: "JAIME TORRES BODET",
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1m7JWJM7KiLjTibY591u_2iTi0T01mTs&ehbc=2E312F"
+          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+        ></iframe>
+      ),
+      items: [
+        {
+          alcaldia: "IZTAPALAPA CENTRO",
+          url: "https://maps.app.goo.gl/qm4NSfteMpjrpFDZA",
+        },
+        {
+          alcaldia: "IZTAPALAPA PONIENTE",
+          url: "https://maps.app.goo.gl/AFuMTMiLeQ5ceMB47",
+        },
+        {
+          alcaldia: "IZTAPALAPA ORIENTE",
+          url: "https://maps.app.goo.gl/D9zKDShpbBGSkwCr9",
+        },
+      ],
+    },
+  ];
+
   return (
-    <div classname="">
+    <div>
       <PagSec Enlaces={cards}>
         <div className="mx-auto mb-32 w-full grid grid-cols-1 gap-2 row-span-1">
           <div className="mx-auto mt-2 mb-4 w-full max-w-full md:max-w-[1140px]">
@@ -346,7 +607,7 @@ function Ubicacion() {
               datos={pageData}
               id="animation"
             /> */}
-            <Plazas datos={pageData}></Plazas>
+            <Plazas datos={plazasData}></Plazas>
           </div>
           <div className="md:hidden w-full ">
             <SkewedPagesResponsive datos={pageData} />

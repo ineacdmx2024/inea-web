@@ -8,10 +8,27 @@ const Plazas = ({ datos }) => {
     setCurrentPage(indexSlides); // Cambia la página actual usando IndexSlides
   };
   const colors = [
-    "text-[#9C27B0]",
-    "text-[#1A237E]",
-    "text-[#E65100]",
-    "text-yellow-500",
+    "text-[#9C27B0]", //1
+    "text-[#1A237E]", //2
+    "text-[#E65100]", //3
+    "text-[#33C4FF]", // Cyan 4
+    "text-[#33FF57]", // Bright green 5
+    "text-[#FF33A8]", // Magenta 6
+    "text-[#00CED1]", // Dark Turquoise 7
+    "text-[#00FA9A]", // Medium Spring Green  8
+    "text-[#FF33FF]", // Bright pink 9
+    "text-[#FFA500]", // Orange 10
+    "text-[#4B0082]", // Indigo 11
+    "text-[#FFD700]", // Gold 12
+    "text-[#FF4500]", // Orange Red 13
+    "text-[#8A2BE2]", // Blue Violet 14
+    "text-[#FF1493]", // Deep Pink 15
+    "text-[#ADFF2F]", // Green Yellow 16
+    "text-[#FF6347]", // Tomato 17
+    "text-[#FFDAB9]", // Peach Puff 18
+    "text-[#FF8C00]", // Dark Orange 19
+    "text-[#7FFF00]", // Chartreuse 20
+    "text-[#DC143C]", // Crimson 21
   ]; // Array de colores
 
   const alcaldias = [
@@ -33,68 +50,43 @@ const Plazas = ({ datos }) => {
     { alcaldia: "Xochimilco", IndexSlides: 2 },
   ];
 
-  const Colcontent = (items) => {
-    if (Array.length(items) > 10) {
-      return (
-        <div className="grid grid-cols-3">
-          {items.map((item, index) => (
-            <div className="flex justify-center m-[20px]">
-              <svg
-                className={`h-8 w-8 ${colors[index % colors.length]}`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokelinecap="round"
-                  strokelinejoin="round"
-                  strokewidth="{2}"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  strokelinecap="round"
-                  strokelinejoin="round"
-                  strokewidth="{2}"
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
+  const ColContent = ({ items }) => {
+    if (!items) return null;
 
-              <div className="m-[0%] uppercase text-2xl text-center">
-                {item}
-              </div>
-            </div>
-          ))}
-        </div>
-      );
-    } else {
-      <div className="grid grid-cols-2">
+    const columns = items.length > 10 ? "grid-cols-3" : "grid-cols-2";
+
+    return (
+      <div className={`grid ${columns}`}>
         {items.map((item, index) => (
-          <div className="flex justify-center m-[20px]">
+          <div
+            key={index}
+            className="flex justify-start m-[20px]"
+          >
             <svg
               className={`h-8 w-8 ${colors[index % colors.length]}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              strokeWidth="2"
             >
               <path
-                strokelinecap="round"
-                strokelinejoin="round"
-                strokewidth="{2}"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
               />
               <path
-                strokelinecap="round"
-                strokelinejoin="round"
-                strokewidth="{2}"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
               />
             </svg>
-
-            <div className="m-[0%] uppercase text-2xl text-center">{item}</div>
+            <div className="m-[0%] uppercase text-2xl text-center">
+              {item.alcaldia}
+            </div>
           </div>
         ))}
-      </div>;
-    }
+      </div>
+    );
   };
 
   return (
@@ -160,37 +152,7 @@ const Plazas = ({ datos }) => {
                 index === currentPage ? "translate-x-0" : "-translate-x-full"
               } transition duration-500`}
             >
-              {pageData.items.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="mb-4 text-center"
-                >
-                  <div className="flex justify-center m-[20px]">
-                    <svg
-                      className={`h-8 w-8 ${colors[idx % colors.length]}`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokelinecap="round"
-                        strokelinejoin="round"
-                        strokewidth="{2}"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokelinecap="round"
-                        strokelinejoin="round"
-                        strokewidth="{2}"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    <div className="m-[0%] uppercase text-2xl text-center">
-                      {item.alcaldia}
-                    </div>
-                  </div>
-                </div>
-              ))}
+              <ColContent items={pageData.items} />
             </div>
           </div>
         ))}
