@@ -69,7 +69,7 @@ const SkewedPages = ({ datos }) => {
       </div>
 
       {/* Contenido principal */}
-      <div className="container mx-auto flex-column md:h-[65vh] bg-white mt-8">
+      <div className="container mx-auto flex-column md:h-[90vh] bg-white mt-8">
         {datos.map((pageData, index) => (
           <div
             key={index}

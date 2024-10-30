@@ -32,22 +32,22 @@ const Plazas = ({ datos }) => {
   ]; // Array de colores
 
   const alcaldias = [
-    { alcaldia: "Álvaro Obregón", IndexSlides: 3 },
-    { alcaldia: "Azcapotzalco", IndexSlides: 6 },
-    { alcaldia: "Benito Juárez", IndexSlides: 5 },
-    { alcaldia: "Coyoacán", IndexSlides: 2 },
-    { alcaldia: "Cuajimalpa", IndexSlides: 1 },
-    { alcaldia: "Cuauhtémoc", IndexSlides: 6 },
-    { alcaldia: "Gustavo A. Madero", IndexSlides: 4 },
-    { alcaldia: "Iztacalco", IndexSlides: 5 },
-    { alcaldia: "Iztapalapa", IndexSlides: 7 },
-    { alcaldia: "La Magdalena Contreras", IndexSlides: 3 },
-    { alcaldia: "Miguel Hidalgo", IndexSlides: 6 },
-    { alcaldia: "Milpa Alta", IndexSlides: 0 },
-    { alcaldia: "Tláhuac", IndexSlides: 0 },
-    { alcaldia: "Tlalpan", IndexSlides: 1 },
-    { alcaldia: "Venustiano Carranza", IndexSlides: 5 },
-    { alcaldia: "Xochimilco", IndexSlides: 2 },
+    { alcaldia: "Álvaro Obregón", IndexSlides: 0 },
+    { alcaldia: "Azcapotzalco", IndexSlides: 1 }, //v
+    { alcaldia: "Benito Juárez", IndexSlides: 2 }, //V
+    { alcaldia: "Coyoacán", IndexSlides: 3 },
+    { alcaldia: "Cuajimalpa", IndexSlides: 4 },
+    { alcaldia: "Cuauhtémoc", IndexSlides: 5 },
+    { alcaldia: "Gustavo A. Madero", IndexSlides: 6 },
+    { alcaldia: "Iztacalco", IndexSlides: 7 }, //V
+    { alcaldia: "Iztapalapa", IndexSlides: 8 },
+    { alcaldia: "La Magdalena Contreras", IndexSlides: 9 },
+    { alcaldia: "Miguel Hidalgo", IndexSlides: 10 },
+    { alcaldia: "Milpa Alta", IndexSlides: 11 }, //v
+    { alcaldia: "Tláhuac", IndexSlides: 12 }, //V
+    { alcaldia: "Tlalpan", IndexSlides: 13 }, //v
+    { alcaldia: "Venustiano Carranza", IndexSlides: 14 }, //v
+    { alcaldia: "Xochimilco", IndexSlides: 15 }, // v
   ];
 
   const ColContent = ({ items }) => {
