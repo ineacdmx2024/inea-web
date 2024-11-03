@@ -74,7 +74,7 @@ function PagMod({ info }) {
       </div>
 
       {/* Info */}
-      <div className=" py-4 px-6 ">
+      <div className=" py-4">
         {info.paragraphs.map((paragraph, index) => (
           <p
             key={index}

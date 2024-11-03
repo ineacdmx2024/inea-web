@@ -35,7 +35,7 @@ function PagSec({ Enlaces, children }) {
         </div>
 
         {/* Carrusel de Cards (visible en pantallas pequeñas) */}
-        <div className="md:hidden w-full ">
+        <div className="md:hidden w-full mt-20 ">
           <CarouselEL cards={Enlaces} />
         </div>
       </div>
