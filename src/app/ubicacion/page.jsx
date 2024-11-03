@@ -284,10 +284,10 @@ function Ubicacion() {
       title: "Álvaro Obregón",
 
       map: (
-        <iframe
-          src="https://www.google.com/maps/d/embed?mid=1ADndmYvW3k1K5kQU7_icHDSJWItFpMs&ehbc=2E312F"
+        <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1GLZ_yu1v0d_ReD9eQTP9S5z5XfOS77M&ehbc=2E312F"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
+        >
+        </iframe>
       ),
       items: [
         {
@@ -333,7 +333,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1ADndmYvW3k1K5kQU7_icHDSJWItFpMs&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1OpDsI4wB82GhT1H24u5RPISvOZn7wPc&ehbc=2E312F"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -351,7 +351,7 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "PILARES Margarita Maza",
+          alcaldia: "PILARES Margarita Maza de Juárez",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
@@ -373,7 +373,7 @@ function Ubicacion() {
       title: "Benito Juárez",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=122hM5GKsgDsm2hophXyiQkdE6I-kzgU&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/1/embed?mid=11TxF0-Xr_zMdOm3JohqipE9ULyNeVyE&ehbc=2E312F"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -383,101 +383,12 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
         },
         {
-          alcaldia: "Centro de desarrollo Social 8",
+          alcaldia: "Centro de desarrollo Social 8 de Agosto",
           url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
         },
         {
           alcaldia: "Pilares 8 de Agosto",
           url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
-        },
-        {
-          alcaldia: "MILPA ALTA 4",
-          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
-        },
-        {
-          alcaldia: "TLAHUAC 5",
-          url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
-        },
-        {
-          alcaldia: "MILPA ALTA 6",
-          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
-        },
-        {
-          alcaldia: "TLAHUAC 7",
-          url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
-        },
-        {
-          alcaldia: "MILPA ALTA 8",
-          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
-        },
-        {
-          alcaldia: "TLAHUAC  9",
-
-          url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
-        },
-        {
-          alcaldia: "MILPA ALTA 10",
-          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
-        },
-        {
-          alcaldia: "TLAHUAC  11",
-
-          url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
-        },
-        {
-          alcaldia: "MILPA ALTA  12",
-
-          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
-        },
-
-        {
-          alcaldia: "MILPA ALTA  13",
-
-          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
-        },
-
-        {
-          alcaldia: "MILPA ALTA  14",
-
-          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
-        },
-        {
-          alcaldia: "MILPA ALTA 15",
-          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
-        },
-        {
-          alcaldia: "TLAHUAC  16",
-
-          url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
-        },
-        {
-          alcaldia: "MILPA ALTA  17",
-
-          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
-        },
-
-        {
-          alcaldia: "MILPA ALTA  18",
-
-          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
-        },
-
-        {
-          alcaldia: "MILPA ALTA  19",
-
-          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
-        },
-
-        {
-          alcaldia: "MILPA ALTA  20",
-
-          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
-        },
-
-        {
-          alcaldia: "MILPA ALTA  21",
-
-          url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
         },
       ],
     },
@@ -486,7 +397,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1ADndmYvW3k1K5kQU7_icHDSJWItFpMs&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1sBBkdZDsa_VAHhVpQHMPNzmD840E_sc&ehbc=2E312F"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -496,7 +407,7 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "Centro de Desarrollo Comuni...",
+          alcaldia: "Centro de Desarrollo Comunitario \"San Francisco Culhuacan\"",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
@@ -522,7 +433,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1ADndmYvW3k1K5kQU7_icHDSJWItFpMs&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1pRhCdjAb3bGbYXk59bzElVfrvzxyib4&ehbc=2E312F"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -540,7 +451,7 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "PILARES Lic. Benito Juárez",
+          alcaldia: "PILARES Lic. Benito Juárez García (Chamixto)",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
@@ -562,7 +473,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1ADndmYvW3k1K5kQU7_icHDSJWItFpMs&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1QeQuu8mT6f2UGhEMEPPzUKpfFpJAD38&ehbc=2E312F"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -580,7 +491,7 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "Biblioteca Jesús Reyes  Heroles",
+          alcaldia: "Biblioteca Jesús Reyes Heroles",
 
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
@@ -615,13 +526,13 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1ADndmYvW3k1K5kQU7_icHDSJWItFpMs&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1eCfaAhwI_yQASenCJukusXFzawGqr9I&ehbc=2E312F"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
       items: [
         {
-          alcaldia: "Cooperativa LF del Centro-Si...",
+          alcaldia: "Cooperativa LF del Centro-Sindicato Mexicano de Electricistas",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
@@ -637,11 +548,11 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "PILARES Benemerito de las... ",
+          alcaldia: "PILARES Benemerito de las Américas",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "PILARES Cuchilla del tes...",
+          alcaldia: "PILARES Cuchilla del tesoro",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
@@ -649,7 +560,7 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "PILARES Magdalena de...",
+          alcaldia: "PILARES Magdalena de la salinas",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
@@ -690,7 +601,7 @@ function Ubicacion() {
       title: "Iztacalco",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1KNGOzsp4CL4BUr69KA3UFsheA_jVG2E&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1Ba0DuI4nZyUHQJeM9ICUqwcBd3goN2s&ehbc=2E312F"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -712,7 +623,7 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/ba9BXgUnybZy12Az7",
         },
         {
-          alcaldia: "PILARES PAquita Calvo",
+          alcaldia: "PILARES Paquita Calvo Zapata",
           url: "https://maps.app.goo.gl/ba9BXgUnybZy12Az7",
         },
       ],
@@ -722,7 +633,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1ADndmYvW3k1K5kQU7_icHDSJWItFpMs&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1hfbIhr2v6I2MUr0OKcH3FAHv7jYZlL4&ehbc=2E312F"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -732,15 +643,15 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "PILARES 'Tetecón'",
+          alcaldia: "PILARES \"Tetecón\"",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "PILARES 'Villa Cid'",
+          alcaldia: "PILARES \"Villa Cid\"",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "PILARES Valle de Luces",
+          alcaldia: "PILARES \"Valle de Luces\"",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
@@ -748,7 +659,7 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "PILARES Comunitario 'Pa'",
+          alcaldia: "PILARES Comunitario \"Paraje San Juan Joya\"",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
@@ -768,19 +679,19 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "PILARES 'Cerro Azul'",
+          alcaldia: "PILARES \"Cerro Azul\"",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "PILARES Calmécac mirav",
+          alcaldia: "PILARES Calmécac Miravalle",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "PILARES Banbú",
+          alcaldia: "PILARES Bambú",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "CONALEP Iztapalapa",
+          alcaldia: "CONALEP Iztapalapa V",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
@@ -788,7 +699,7 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "Atlalilco ",
+          alcaldia: "Atlalilco",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
@@ -806,7 +717,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1ADndmYvW3k1K5kQU7_icHDSJWItFpMs&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1lOqAixDT8dKi2x_QV3Ya8prcg3y0Bck&ehbc=2E312F"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -820,7 +731,7 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
         {
-          alcaldia: "Escuela de oficios La Malinc...",
+          alcaldia: "Escuela de oficios La Malinche",
           url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
         },
       ],
@@ -830,7 +741,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1ADndmYvW3k1K5kQU7_icHDSJWItFpMs&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/1/embed?mid=16fPqTuB8v8TY7fMcTs4xp6CafHTz29g&ehbc=2E312F"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -858,7 +769,7 @@ function Ubicacion() {
       title: "Milpa Alta",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1m7JWJM7KiLjTibY591u_2iTi0T01mTs&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1W-f09zlUlMIutaNVR7GYCYlOLuWKN2c&ehbc=2E312F"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -872,7 +783,7 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/AFuMTMiLeQ5ceMB47",
         },
         {
-          alcaldia: " Temachtilcalco",
+          alcaldia: "Temachtilcalco",
           url: "https://maps.app.goo.gl/D9zKDShpbBGSkwCr9",
         },
         {
@@ -886,10 +797,38 @@ function Ubicacion() {
       ],
     },
     {
+      title: "Tláhuac",
+
+      map: (
+        <iframe
+          src="https://www.google.com/maps/d/u/1/embed?mid=18MvNS2u4wLcz6z9sUDxPeTzEKvZptXA&ehbc=2E312F"
+          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+        />
+      ),
+      items: [
+        {
+          alcaldia: "PILARES Tierra Blanca",
+          url: "https://maps.app.goo.gl/JSE8nwqGbHf7hBv68",
+        },
+        {
+          alcaldia: "PILARES García Lorca",
+          url: "https://maps.app.goo.gl/EsEhgiroM27usZQz6",
+        },
+        {
+          alcaldia: "PILARES Ana Bolena",
+          url: "https://maps.app.goo.gl/KqsuzUAZLsNBBU6K7",
+        },
+        {
+          alcaldia: "Del Mar",
+          url: "https://maps.app.goo.gl/JSE8nwqGbHf7hBv68",
+        },
+      ],
+    },
+    {
       title: "Tlalpan",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1jYl_g2AOqdFwlTY8BqtN3JrPofhRaZc&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1_DlpyIry4s8cb6iZnr76O6-uD1T-W4E&ehbc=2E312F"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -931,38 +870,10 @@ function Ubicacion() {
       ],
     },
     {
-      title: "Tláhuac",
-
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/embed?mid=1C9rsjt3V3drRpnMGa-f3mXlpiUIiPYU&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        />
-      ),
-      items: [
-        {
-          alcaldia: "PILARES Tierra Blanca",
-          url: "https://maps.app.goo.gl/JSE8nwqGbHf7hBv68",
-        },
-        {
-          alcaldia: "PILARES García Lorca",
-          url: "https://maps.app.goo.gl/EsEhgiroM27usZQz6",
-        },
-        {
-          alcaldia: "PILARES Ana Bolena",
-          url: "https://maps.app.goo.gl/KqsuzUAZLsNBBU6K7",
-        },
-        {
-          alcaldia: "Del Mar",
-          url: "https://maps.app.goo.gl/JSE8nwqGbHf7hBv68",
-        },
-      ],
-    },
-    {
       title: "Venustiano Carranza",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1yJS8ylTeFs_h-AIe7K4RG4dLXXj5Wzo&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1Z-CZEd0zxdnDZWghgIOxlrOaA9wpMf4&ehbc=2E312F"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -981,7 +892,7 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/Sbn6JDancZimecdL6",
         },
         {
-          alcaldia: "Casa de cultura Enrique",
+          alcaldia: "Casa de cultura Enrique Ramírez y Ramírez",
           url: "https://maps.app.goo.gl/Sbn6JDancZimecdL6",
         },
         {
@@ -996,13 +907,13 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=19J4WWcFAKKUoKRAwA5MC_6Nl4y29PUo&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1gDIObMv2mNjoF5xMGtf6TIhxdEW5qFw&ehbc=2E312F"
           className="  md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
       items: [
         {
-          alcaldia: "PILARES San Luis Tlaxialte",
+          alcaldia: "PILARES San Luis Tlaxialtemalco",
           url: "https://maps.app.goo.gl/cc5DzfS5bnXHnneM6",
         },
         {
@@ -1010,7 +921,7 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/jUQ8fgfUi3unTXhH8",
         },
         {
-          alcaldia: "PILARES modulo de bienestar",
+          alcaldia: "PILARES modulo de bienestar social Ahualapa",
           url: "https://maps.app.goo.gl/jUQ8fgfUi3unTXhH8",
         },
 

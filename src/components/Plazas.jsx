@@ -8,27 +8,27 @@ const Plazas = ({ datos }) => {
     setCurrentPage(indexSlides); // Cambia la página actual usando IndexSlides
   };
   const colors = [
-    "text-[#9C27B0]", //1
-    "text-[#1A237E]", //2
-    "text-[#E65100]", //3
-    "text-[#33C4FF]", // Cyan 4
-    "text-[#33FF57]", // Bright green 5
-    "text-[#FF33A8]", // Magenta 6
-    "text-[#00CED1]", // Dark Turquoise 7
-    "text-[#00FA9A]", // Medium Spring Green  8
-    "text-[#FF33FF]", // Bright pink 9
-    "text-[#FFA500]", // Orange 10
-    "text-[#4B0082]", // Indigo 11
-    "text-[#FFD700]", // Gold 12
-    "text-[#FF4500]", // Orange Red 13
-    "text-[#8A2BE2]", // Blue Violet 14
-    "text-[#FF1493]", // Deep Pink 15
-    "text-[#ADFF2F]", // Green Yellow 16
-    "text-[#FF6347]", // Tomato 17
-    "text-[#FFDAB9]", // Peach Puff 18
-    "text-[#FF8C00]", // Dark Orange 19
-    "text-[#7FFF00]", // Chartreuse 20
-    "text-[#DC143C]", // Crimson 21
+    "text-[#880D4F]", //1
+    "text-[#A52714]", //2
+    "text-[#E55100]", //3
+    "text-[#F57C02]", // Cyan 4
+    "text-[#FFD603]", // Bright green 5
+    "text-[#817717]", // Magenta 6
+    "text-[#548B2F]", // Dark Turquoise 7
+    "text-[#0A7138]", // Medium Spring Green  8
+    "text-[#006064]", // Bright pink 9
+    "text-[#00579B]", // Orange 10
+    "text-[#1A237E]", // Indigo 11
+    "text-[#673AB7]", // Gold 12
+    "text-[#4E342E]", // Orange Red 13
+    "text-[#C2185B]", // Blue Violet 14
+    "text-[#FF5252]", // Deep Pink 15
+    "text-[#F57C02]", // Green Yellow 16
+    "text-[#FBC02D]", // Tomato 17
+    "text-[#FFEA00]", // Peach Puff 18
+    "text-[#AFB42C]", // Dark Orange 19
+    "text-[#7CB342]", // Chartreuse 20
+    "text-[#0097A6]", // Crimson 21
   ]; // Array de colores
 
   const alcaldias = [
@@ -53,7 +53,7 @@ const Plazas = ({ datos }) => {
   const ColContent = ({ items }) => {
     if (!items) return null;
 
-    const columns = items.length > 10 ? "grid-cols-3" : "grid-cols-2";
+    const columns = items.length > 10 ? "grid-cols-3 text-lg" : "grid-cols-2 text-xl";
 
     return (
       <div className={`grid ${columns}`}>
@@ -62,26 +62,31 @@ const Plazas = ({ datos }) => {
             key={index}
             className="flex justify-start m-[20px]"
           >
-            <svg
-              className={`h-8 w-8 ${colors[index % colors.length]}`}
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-            <div className="m-[0%] uppercase text-2xl text-center">
-              {item.alcaldia}
+            <div className="flex justify-center">
+              <div className="flex h-auto w-auto">
+                <svg
+                  className={`h-7 w-7 ${colors[index % colors.length]}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+              </div>
+
+              <div className="m-[0%] uppercase">
+                {item.alcaldia}
+              </div>
             </div>
           </div>
         ))}
@@ -128,18 +133,16 @@ const Plazas = ({ datos }) => {
         {datos.map((pageData, index) => (
           <div
             key={index}
-            className={`mb-5 border border-slate-300 rounded-lg grid grid-cols-1 grid-rows-2 gap-0 h-full bg-white ${
-              index === currentPage
-                ? "visible opacity-100 translate-y-0"
-                : "hidden opacity-0 translate-y-full"
-            } transition duration-500`}
+            className={`mb-5 border border-slate-300 rounded-lg grid grid-cols-1 grid-rows-2 gap-0 h-full bg-white ${index === currentPage
+              ? "visible opacity-100 translate-y-0"
+              : "hidden opacity-0 translate-y-full"
+              } transition duration-500`}
             id="animation"
           >
             {/* Arriba */}
             <div
-              className={`flex flex-col justify-center items-center p-5 bg-[#611232] text-white ${
-                index === currentPage ? "translate-x-0" : "translate-x-full"
-              } transition duration-500`}
+              className={`flex flex-col justify-center items-center p-5 bg-[#611232] text-white ${index === currentPage ? "translate-x-0" : "translate-x-full"
+                } transition duration-500`}
             >
               <h1 className="mb-4 uppercase text-2xl text-center">
                 {pageData.title}
@@ -148,9 +151,8 @@ const Plazas = ({ datos }) => {
             </div>
             {/* Abajo */}
             <div
-              className={`flex flex-col justify-center items-center bg-[#f6f6f6] p-3 ${
-                index === currentPage ? "translate-x-0" : "-translate-x-full"
-              } transition duration-500`}
+              className={`flex flex-col justify-center items-center bg-[#f6f6f6] p-3 ${index === currentPage ? "translate-x-0" : "-translate-x-full"
+                } transition duration-500`}
             >
               <ColContent items={pageData.items} />
             </div>

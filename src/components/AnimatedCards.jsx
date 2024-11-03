@@ -49,7 +49,7 @@ const CardComponent = ({ items }) => {
         <motion.div
           layoutId={item.id}
           key={item.id}
-          className="p-4 bg-white shadow-lg rounded-lg cursor-pointer
+          className="p-4 bg-white rounded-lg cursor-pointer
           border border-slate-300 
           "
           onClick={() => setSelectedId(item.id)}
