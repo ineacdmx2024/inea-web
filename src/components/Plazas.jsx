@@ -53,16 +53,20 @@ const Plazas = ({ datos }) => {
   const ColContent = ({ items }) => {
     if (!items) return null;
 
-    const columns = items.length > 10 ? "grid-cols-3 text-lg" : "grid-cols-2 text-xl";
+    const columns =
+      items.length > 10 ? "grid-cols-3 text-lg" : "grid-cols-2 text-xl";
 
     return (
-      <div className={`grid ${columns}`}>
+      <div
+        className={`grid ${columns} flex flex-col justify-center items-center`}
+      >
         {items.map((item, index) => (
           <div
             key={index}
-            className="flex justify-start m-[20px]"
+            className="mb-4 text-start justify-start cursor-pointer"
+            onClick={() => window.open(item.url, "_blank")}
           >
-            <div className="flex justify-center">
+            <div className="flex justify-start m-[20px]">
               <div className="flex h-auto w-auto">
                 <svg
                   className={`h-7 w-7 ${colors[index % colors.length]}`}
@@ -84,9 +88,19 @@ const Plazas = ({ datos }) => {
                 </svg>
               </div>
 
-              <div className="m-[0%] uppercase">
-                {item.alcaldia}
-              </div>
+              <div className="m-[0%] uppercase">{item.alcaldia}</div>
+            </div>
+            <div className="justify-center m-[20px]">
+              {item.dir && (
+                <p>
+                  <strong>Dirección:</strong> {item.dir}
+                </p>
+              )}
+              {item.atel && (
+                <p>
+                  <strong>Tel:</strong> {item.atel}
+                </p>
+              )}
             </div>
           </div>
         ))}
@@ -102,7 +116,7 @@ const Plazas = ({ datos }) => {
           <button
             key={elemento.IndexSlides}
             type="button"
-            className="text-[#611232] hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-[white] font-medium rounded-lg px-5 py-2.5 text-center me-2 mb-2  text-lg flex"
+            className="text-[#611232] rounded-lg hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-[white] font-medium px-5 py-2.5 text-center me-2 mb-2  text-lg flex"
             onClick={() => handleAlcaldiaClick(elemento.IndexSlides)}
           >
             <svg
@@ -133,16 +147,15 @@ const Plazas = ({ datos }) => {
         {datos.map((pageData, index) => (
           <div
             key={index}
-            className={`mb-5 border border-slate-300 rounded-lg grid grid-cols-1 grid-rows-2 gap-0 h-full bg-white ${index === currentPage
-              ? "visible opacity-100 translate-y-0"
-              : "hidden opacity-0 translate-y-full"
-              } transition duration-500`}
-            id="animation"
+            className={`mb-5 border border-slate-300 rounded-lg  ${
+              index === currentPage ? "visible" : "hidden"
+            }`}
           >
             {/* Arriba */}
             <div
-              className={`flex flex-col justify-center items-center p-5 bg-[#611232] text-white ${index === currentPage ? "translate-x-0" : "translate-x-full"
-                } transition duration-500`}
+              className={`flex flex-col rounded-t-lg justify-center items-center p-5 bg-[#611232] text-white max-h-max ${
+                index === currentPage ? "translate-x-0" : "translate-x-full"
+              } transition duration-500`}
             >
               <h1 className="mb-4 uppercase text-2xl text-center">
                 {pageData.title}
@@ -151,8 +164,9 @@ const Plazas = ({ datos }) => {
             </div>
             {/* Abajo */}
             <div
-              className={`flex flex-col justify-center items-center bg-[#f6f6f6] p-3 ${index === currentPage ? "translate-x-0" : "-translate-x-full"
-                } transition duration-500`}
+              className={`flex flex-col rounded-b-lg justify-center items-center bg-[#f6f6f6] p-3 ${
+                index === currentPage ? "translate-x-0" : "-translate-x-full"
+              } transition duration-500`}
             >
               <ColContent items={pageData.items} />
             </div>

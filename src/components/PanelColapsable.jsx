@@ -39,15 +39,16 @@ const CollapsiblePanel = ({ title, content, imageSrc }) => {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth="1.5"
+          strokeWidth="3"
           stroke="currentColor"
-          className={`w-5 h-5 transform transition-transform duration-300 ${
+          className={`w-7 h-7 transform transition-transform duration-300 ${
             isOpen ? "rotate-180" : "rotate-0"
-          } ml-3`}
+          } ml-3 font-bold`}
         >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
+            className="font-bold"
             d="M19.5 12l-7.5-7.5L4.5 12"
           />
         </svg>
