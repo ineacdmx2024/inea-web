@@ -203,10 +203,7 @@ const CarouselBlog = ({ item }) => {
 
   return (
     <>
-      <style
-        jsx
-        global
-      >{`
+      <style jsx global>{`
         .custom-dots {
           bottom: -30px;
         }
@@ -229,16 +226,10 @@ const CarouselBlog = ({ item }) => {
           transform: scale(1.2);
         }
       `}</style>
-      <Slider
-        {...settings}
-        className="mx-auto !z-5"
-      >
+      <Slider {...settings} className="mx-auto !z-5">
         {datos ? (
           datos.map((item, index) => (
-            <div
-              key={index}
-              className="px-4"
-            >
+            <div key={index} className="px-4">
               <div className="w-full letras:w-full arrow:w-[750px] medida3:w-4/5 h-auto mx-auto flex flex-col tablet:flex-row tablet:w-[1142px] tablet:h-[390px] justify-between bg-white rounded-xl ">
                 {/* Div de la imagen */}
                 <div className=" m-auto w-auto arrow:w-[750px] rounded-xl max-h-[392px] overflow-hidden">
@@ -273,7 +264,7 @@ const CarouselBlog = ({ item }) => {
                   </p>
 
                   <div className="overflow-visible !z-10">
-                    <button className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-[#a57e2d] rounded-full block">
+                    <button className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] block">
                       <p className="text-xs letras:text-[14.5px] font-light">
                         Continuar leyendo
                       </p>
@@ -289,7 +280,7 @@ const CarouselBlog = ({ item }) => {
       </Slider>
       <div className="flex justify-end m-auto">
         <Link
-          className="mt-20 mr-[1rem] lg:mr-[5rem] xl:mr-[24rem] w-36 text-center bg-[#611232] text-white py-2 px-4 hover:bg-[#a57e2d] rounded-full block letras:text-base text-xs letras:w-44"
+          className="mt-20 mr-[1rem] lg:mr-[5rem] xl:mr-[24rem] w-36 text-center bg-[#611232] text-white py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block letras:text-base text-xs letras:w-44"
           href={"/blog/noticias-antiguas"}
         >
           <p className="font-light">Noticias Anteriores</p>

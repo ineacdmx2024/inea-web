@@ -50,8 +50,29 @@ function NoticiasAntiguas({ item }) {
   }, [paginaActual]);
 
   const fechaFun = (fechaAPI) => {
-    const diasSemana = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
-    const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+    const diasSemana = [
+      "domingo",
+      "lunes",
+      "martes",
+      "miércoles",
+      "jueves",
+      "viernes",
+      "sábado",
+    ];
+    const meses = [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre",
+    ];
     const fecha = new Date(fechaAPI);
     const diaSemana = diasSemana[fecha.getDay()];
     const dia = fecha.getDate();
@@ -87,7 +108,6 @@ function NoticiasAntiguas({ item }) {
         <h1 className="text-4xl font-medium text-slate-700 mb-2 letras:text-5xl uppercase">
           Noticias Antiguas
         </h1>
-
       </div>
 
       {/* Contenido principal */}
@@ -99,28 +119,41 @@ function NoticiasAntiguas({ item }) {
               <div key={index} className="px-0">
                 <div className="overflow-hidden w-full h-auto tablet:h-[450px] rounded-xl border border-slate-300 ">
                   {/* Div de la imagen */}
-                  <div className="m-auto rounded-xl max-h-[392px]">
+                  <div className="m-auto rounded-t-xl max-h-[392px]">
                     <Image
-                      src={item.attributes.Imagen?.data?.attributes?.formats?.small?.url}
-                      alt={item.attributes.Nombre_de_la_Imagen || "Imagen sin título"}
-                      className="w-full h-[208px] rounded-xl"
+                      src={
+                        item.attributes.Imagen?.data?.attributes?.formats?.small
+                          ?.url
+                      }
+                      alt={
+                        item.attributes.Nombre_de_la_Imagen ||
+                        "Imagen sin título"
+                      }
+                      className="w-full h-[208px] rounded-t-xl"
                       width={350}
                       height={258}
                     />
                   </div>
 
                   {/* Div del texto */}
-                  <article className={`${open_Sans.className} flex flex-col justify-between letras:mt-0 pt-4 mt-2 tablet:m-0 w-full tablet:w-[375px] px-5 py-2 m-auto arrow:w-full`}>
+                  <article
+                    className={`${open_Sans.className} flex flex-col justify-between letras:mt-0 pt-4 mt-2 tablet:m-0 w-full tablet:w-[375px] px-5 py-2 m-auto arrow:w-full`}
+                  >
                     <p className="letras:text-base text-gray-700 text-sm mb-2 ">
-                      {item.attributes.Fecha ? fechaFun(item.attributes.Fecha) : "No hay"}
+                      {item.attributes.Fecha
+                        ? fechaFun(item.attributes.Fecha)
+                        : "No hay"}
                     </p>
                     <h2 className="letras:text-[21px] text-[20px] leading-tight font-medium mb-4 uppercase arrow:text-[21px]">
                       {truncateText(item.attributes.Titulo, 65)}
                     </h2>
                     <div className="overflow-visible !z-10 w-full h-auto">
-                      <button onClick={()=>{
-                        router.push(`/blog/noticias-antiguas/${item.id}`)
-                        }} className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-[#a57e2d] rounded-full block">
+                      <button
+                        onClick={() => {
+                          router.push(`/blog/noticias-antiguas/${item.id}`);
+                        }}
+                        className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block"
+                      >
                         <p className="text-xs letras:text-[14.5px] font-light">
                           Continuar leyendo
                         </p>
@@ -140,7 +173,11 @@ function NoticiasAntiguas({ item }) {
           <button
             onClick={handlePrevPage}
             disabled={paginaActual === 1}
-            className={`rounded-l-lg py-2 px-3 ${paginaActual === 1 ? "bg-gray-300" : "bg-[#d6f1eb] hover:bg-gray-300"} text-lg border border-slate-400`}
+            className={`rounded-l-lg py-2 px-3 ${
+              paginaActual === 1
+                ? "bg-gray-300"
+                : "bg-[#d6f1eb] hover:bg-gray-300"
+            } text-lg border border-slate-400`}
           >
             {"<<"}
           </button>
@@ -149,7 +186,11 @@ function NoticiasAntiguas({ item }) {
               key={i}
               onClick={() => handlePageChange(i + 1)}
               disabled={paginaActual === i + 1}
-              className={`py-2 px-4 ${paginaActual === i + 1 ? "bg-[#360a1c] text-white" : "bg-white hover:bg-[#611232] hover:text-white "} text-xl border border-slate-400`}
+              className={`py-2 px-4 ${
+                paginaActual === i + 1
+                  ? "bg-[#360a1c] text-white"
+                  : "bg-white hover:bg-[#611232] hover:text-white "
+              } text-xl border border-slate-400`}
             >
               {i + 1}
             </button>
@@ -157,7 +198,11 @@ function NoticiasAntiguas({ item }) {
           <button
             onClick={handleNextPage}
             disabled={paginaActual === totalPaginas}
-            className={`rounded-r-lg py-2 px-3 ${paginaActual === totalPaginas ? "bg-gray-300" : "bg-[#d6f1eb] hover:bg-gray-300"} text-lg border border-slate-400`}
+            className={`rounded-r-lg py-2 px-3 ${
+              paginaActual === totalPaginas
+                ? "bg-gray-300"
+                : "bg-[#d6f1eb] hover:bg-gray-300"
+            } text-lg border border-slate-400`}
           >
             {">>"}
           </button>
