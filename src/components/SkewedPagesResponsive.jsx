@@ -92,7 +92,7 @@ const SkewedPagesResponsive = ({ datos }) => {
                 </div>
 
                 <br />
-                <p className="mb-5">{pageData.map}</p>
+                <p className="mb-5 p-4">{pageData.map}</p>
               </div>
             </div>
 
@@ -100,7 +100,11 @@ const SkewedPagesResponsive = ({ datos }) => {
             <div className="right-0 bottom-0">
               <div className="flex-column items-center justify-center text-center p-2 h-full bg-cover bg-[#f6f6f6] rounded-t-lg">
                 {pageData.items.map((item, idx) => (
-                  <div key={idx}>
+                  <div
+                    key={idx}
+                    className="cursor-pointer"
+                    onClick={() => window.open(item.url, "_blank")}
+                  >
                     <div className="flex justify-center m-[20px]">
                       <svg
                         className={`h-8 w-8 ${colors[idx % colors.length]}`}

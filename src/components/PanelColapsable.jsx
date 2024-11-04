@@ -12,9 +12,9 @@ const CollapsiblePanel = ({ title, content, imageSrc }) => {
   };
 
   return (
-    <div className="w-full p-2">
+    <div className="w-full mb-5">
       <div
-        className="flex justify-between items-center w-full px-4 py-2 text-xl font-medium text-left bg-gray-200 rounded-lg cursor-pointer"
+        className="flex justify-between items-center w-full p-3 text-xl font-medium text-left bg-gray-200 rounded-lg cursor-pointer"
         onClick={togglePanel}
       >
         {/* Usamos grid para dividir en 1/3 y 2/3 */}
@@ -39,15 +39,16 @@ const CollapsiblePanel = ({ title, content, imageSrc }) => {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth="1.5"
+          strokeWidth="3"
           stroke="currentColor"
-          className={`w-5 h-5 transform transition-transform duration-300 ${
+          className={`w-7 h-7 transform transition-transform duration-300 ${
             isOpen ? "rotate-180" : "rotate-0"
-          }`}
+          } ml-3 font-bold`}
         >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
+            className="font-bold"
             d="M19.5 12l-7.5-7.5L4.5 12"
           />
         </svg>
@@ -59,7 +60,7 @@ const CollapsiblePanel = ({ title, content, imageSrc }) => {
         style={{ maxHeight: `${height}`, transition: "max-height 0.8s ease" }}
         className="overflow-hidden"
       >
-        <div className="px-4 pt-4 pb-2 text-lg text-gray-700">{content}</div>
+        <div className=" pt-4 pb-2 text-lg text-gray-700">{content}</div>
       </div>
     </div>
   );

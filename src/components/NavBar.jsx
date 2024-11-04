@@ -47,6 +47,17 @@ const Navbar = () => {
   const toggleNavBarINEA = () => {
     setisClickINEA(!isClickINEA);
   };
+  const closeAllMenus = () => {
+    setisClickOE(false);
+    setisClickS(false);
+    setisClickCE(false);
+    setisClickI(false);
+  };
+
+  const closeMobileMenu = () => {
+    setisClickINEA(false);
+    setisClick(false);
+  };
 
   return (
     // <div className="navBar text-white ">
@@ -123,7 +134,7 @@ const Navbar = () => {
               </div>
 
               {/*Boton para desplegable hamburguesa */}
-              <div className="md:hidden flex items-end">
+              <div className="md:hidden flex items-end mr-[15px]">
                 <button
                   className="inline-flex items-center w-auto h-auto rounded-md text-white hover:text-[#E4CDA7]
                  focus:outline-none focus:ring-2 p-2 focus:ring-inset focus:ring-[#E4CDA7] px-auto"
@@ -170,28 +181,28 @@ const Navbar = () => {
                 <Link
                   href="/"
                   passHref
-                  className="hover:text-[#D3C09B] hover:bg-[#36514B] block p-2 rounded w-full text-start"
+                  className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
                 >
                   ¿Qué es el INEA?
                 </Link>
                 <Link
                   href="/"
                   passHref
-                  className="hover:text-[#D3C09B] hover:bg-[#36514B] block p-2 rounded w-full text-start"
+                  className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
                 >
                   Contacto
                 </Link>
                 <Link
                   href="/"
                   passHref
-                  className="hover:text-[#D3C09B] hover:bg-[#36514B] block p-2 rounded w-full text-start"
+                  className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
                 >
                   Mapa del sitio
                 </Link>
                 <Link
                   href="https://www.gob.mx/busqueda?utf8=%E2%9C%93"
                   passHref
-                  className="hover:text-[#D3C09B] hover:bg-[#36514B] p-2 rounded flex items-center justify-between w-full"
+                  className="hover:text-[#D3C09B] hover:bg-[#611232] p-2 rounded flex items-center justify-between w-full"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -275,37 +286,37 @@ const Navbar = () => {
                           isClickOE ? "block" : "hidden"
                         } bg-gray-100 text-black rounded shadow-lg transition-opacity duration-300 ease-in-out delay-200 z-50`}
                       >
-                        {/* <div className="absolute left-0 mt-2 hidden group-hover:block bg-gray-100 text-black rounded shadow-lg z-50"> */}
-                        {/* <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50"> */}
-                        {/* cambie que ahora en vez de que este oculto siempre este ahi pero en una capa de z mas alto para que no afecte el tamaño del navbar  */}
-                        {/* este es el anterior */}
-                        {/* <div className="hidden    group-hover:block absolute bg-gray-100 text-black mt-2 rounded shadow-lg  transition-opacity duration-300 delay-200"> */}
                         <Link
                           href="/oferta-educativa/que-modalidad-elijo"
+                          onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
                         >
                           ¿Qué modalidad elijo?
                         </Link>
                         <Link
                           href="/oferta-educativa/presencial"
+                          onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           Presencial
                         </Link>
                         <Link
                           href="/oferta-educativa/enlinea"
+                          onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
                         >
                           En línea / APRENDEINEA
                         </Link>
                         <Link
                           href="/oferta-educativa/examen-unico"
+                          onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           Examen Único
                         </Link>
                         <Link
                           href="/oferta-educativa/examen-diagnostico"
+                          onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           Exámenes diagnósticos
@@ -345,42 +356,49 @@ const Navbar = () => {
                       >
                         <Link
                           href="http://certificacion.inea.gob.mx/DescCertificado.aspx"
+                          onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
                         >
                           Descarga tu certificado
                         </Link>
                         <Link
                           href="/servicios/solicitud-duplicados"
+                          onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
                         >
                           Solicitud de duplicados
                         </Link>
                         <Link
                           href="https://www.gob.mx/curp/"
+                          onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           Consulta tu CURP
                         </Link>
                         <Link
                           href="/servicios/constancia-comipems"
+                          onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           Constancia COMIPEMS
                         </Link>
                         <Link
                           href="/servicios/reposicion-certificados"
+                          onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           Reposición certificados SEP
                         </Link>
                         <Link
                           href="/servicios/descargar-modulos"
+                          onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           Descarga material de estudio
                         </Link>
                         <Link
                           href="/servicios/revalidacion-extranjeros"
+                          onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
                         >
                           Revalidación a extranjeros
@@ -392,6 +410,7 @@ const Navbar = () => {
                     <div className="group relative ">
                       <Link
                         href="/ubicacion"
+                        onClick={closeAllMenus}
                         className="hover:text-[#CBB486] p-2 rounded flex items-center justify-between w-full "
                       >
                         Ubicación
@@ -430,24 +449,28 @@ const Navbar = () => {
                       >
                         {/* <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50"> */}
                         <Link
+                          onClick={closeAllMenus}
                           href="http://www.inea.gob.mx/servicios_en_linea/Consulta_avance_academico.html"
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
                         >
                           Consulta tu avance académico
                         </Link>
                         <Link
+                          onClick={closeAllMenus}
                           href="http://siga.inea.gob.mx/PEC/Account/Login?ReturnUrl=%2FPEC%2F"
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           SIGA PEC
                         </Link>
                         <Link
+                          onClick={closeAllMenus}
                           href="http://siga.inea.gob.mx/figuras/Account/Login?ReturnUrl=%2Ffiguras%2F"
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           SIGA FIGURAS
                         </Link>
                         <Link
+                          onClick={closeAllMenus}
                           href="http://sael.inea.gob.mx/Login.aspx?ReturnUrl=/&AspxAutoDetectCookieSupport=1"
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
@@ -455,6 +478,7 @@ const Navbar = () => {
                         </Link>
                         <Link
                           href=""
+                          onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           Departamento de Planeación
@@ -495,66 +519,77 @@ const Navbar = () => {
                       >
                         {/* <div className="opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform transition-all duration-300 delay-200 absolute bg-gray-100 text-black mt-2 rounded shadow-lg z-50"> */}
                         <Link
+                          onClick={closeAllMenus}
                           href="http://cdmx.inea.gob.mx/CATN2/login.asp"
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
                         >
                           Mesa de servicios
                         </Link>
                         <Link
+                          onClick={closeAllMenus}
                           href="http://cdmx.inea.gob.mx/gestion/"
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           Sistema de Gestión
                         </Link>
                         <Link
+                          onClick={closeAllMenus}
                           href="http://cdmx.inea.gob.mx/oficios/"
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           Sistema de Oficios
                         </Link>
                         <Link
+                          onClick={closeAllMenus}
                           href="http://cdmx.inea.gob.mx/SIMA/"
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           SIMA
                         </Link>
                         <Link
+                          onClick={closeAllMenus}
                           href="http://sibiplac.inea.gob.mx/Sibiplac/Login.aspx?ReturnUrl=%2fSibiplac%2fReportes.aspx"
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           SIBIPLAC
                         </Link>
                         <Link
+                          onClick={closeAllMenus}
                           href="http://plazas.conevyt.org.mx:8080/plazas/"
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           SINAPLAC
                         </Link>
                         <Link
+                          onClick={closeAllMenus}
                           href="http://cdmx.inea.gob.mx/comipems/login.asp"
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
                         >
                           Constancias COMIPEMS
                         </Link>
                         <Link
+                          onClick={closeAllMenus}
                           href="http://df.sasa.inea.gob.mx/INEAGUI/guiLogin.aspx?ReturnUrl=%2fINEAGUI%2fdefault.aspx"
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           SASA
                         </Link>
                         <Link
+                          onClick={closeAllMenus}
                           href="http://satic.inea.gob.mx/"
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           SATIC
                         </Link>
                         <Link
+                          onClick={closeAllMenus}
                           href="https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=4&ct=1420848406&rver=6.4.6456.0&wp=MCMBI&wreply=https://portal.office.com/landing.aspx?target=%2fdefault.aspx&lc=2058&id=501392&sso_reload=true"
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
                           Correo Institucional
                         </Link>
                         <Link
+                          onClick={closeAllMenus}
                           href="/src/app/INTRANET/inicio-sesion"
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
@@ -567,7 +602,7 @@ const Navbar = () => {
               </div>
 
               {/* Boton hamburguesa */}
-              <div className="md:hidden flex ">
+              <div className="md:hidden flex mr-[15px]">
                 <button
                   className="inline-flex items-center justify-center  p-2 rounded-md text-white hover:text-[#E4CDA7]
                  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#E4CDA7]"
@@ -608,22 +643,15 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-between py-[0.1rem] container mx-auto">
-            <div className="flex items-center justify-between">
-              <div
-                className="flex"
-                id="Minf"
-              ></div>
-            </div>
-          </div>
 
           {isClickINEA && (
-            <div className="md:hidden block bg-[#0C3022]">
+            <div className="md:hidden block bg-[#A57F2C]">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 w-full">
                 <Link
                   href="/"
                   passHref
-                  className="hover:text-[#D3C09B] p-1 rounded flex items-center justify-between w-full"
+                  onClick={closeAllMenus && closeMobileMenu}
+                  className="hover:text-[#611232] p-1 rounded flex items-center justify-between w-full"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -648,11 +676,11 @@ const Navbar = () => {
                     onClick={toggleOE}
                     //
                     // hover:text-[#D3C09B] p-2 flex items-center justify-between w-full
-                    className="text-left hover:text-[#CBB486] p-2  flex items-center justify-between w-full "
+                    className="text-left hover:text-[#611232] p-2  flex items-center justify-between w-full "
                   >
                     Oferta educativa
                     <svg
-                      className="w-2.5 h-2.5 ms-2.5"
+                      className="w-2.5 h-2.5 ms-2.5 hover:text-[#611232]"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
@@ -672,32 +700,37 @@ const Navbar = () => {
                     // hidden group-hover:block absolute bg-gray-100 mt-2 rounded shadow-lg text-black
                     <div className="pl-4 space-y-1">
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="/oferta-educativa/que-modalidad-elijo"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232] p-2 rounded truncate"
                       >
                         ¿Qué modalidad elijo?
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="/oferta-educativa/presencial"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         Presencial
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="/oferta-educativa/enlinea"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded truncate"
                       >
                         En línea / APRENDEINEA
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="/oferta-educativa/examen-unico"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         Examen Único
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="/oferta-educativa/examen-diagnostico"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         Exámenes diagnósticos
                       </Link>
@@ -709,7 +742,7 @@ const Navbar = () => {
                 <div className="group relative">
                   <button
                     onClick={toggleS}
-                    className="text-left hover:text-[#CBB486] p-2  flex items-center justify-between w-full "
+                    className="text-left hover:text-[#611232]  p-2  flex items-center justify-between w-full "
                   >
                     Servicios
                     <svg
@@ -731,44 +764,51 @@ const Navbar = () => {
                   {isClickS && (
                     <div className="pl-4 space-y-1">
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="http://certificacion.inea.gob.mx/DescCertificado.aspx"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded truncate"
                       >
                         Descarga tu certificado
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="/servicios/solicitud-duplicados"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate "
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded truncate "
                       >
                         Solicitud de duplicados
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="https://www.gob.mx/curp/"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         Consulta tu CURP
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="/servicios/constancia-comipems"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         Constancia COMIPEMS
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="/servicios/reposicion-certificados"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         Reposición certificados SEP
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="/servicios/descargar-modulos"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         Descarga material de estudio
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="/servicios/revalidacion-extranjeros"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded truncate"
                       >
                         Revalidación a extranjeros
                       </Link>
@@ -779,8 +819,9 @@ const Navbar = () => {
                 {/* Ubicación */}
                 <div className="group relative">
                   <Link
+                    onClick={closeAllMenus && closeMobileMenu}
                     href="/ubicacion"
-                    className="hover:text-[#D3C09B] p-2 rounded"
+                    className="hover:text-[#611232]  p-2 rounded"
                   >
                     Ubicación
                   </Link>
@@ -790,11 +831,11 @@ const Navbar = () => {
                 <div className="group relative">
                   <button
                     onClick={toggleCE}
-                    className="text-left hover:text-[#CBB486] p-2  flex items-center justify-between w-full "
+                    className="text-left hover:text-[#611232]  p-2  flex items-center justify-between w-full "
                   >
                     Control escolar
                     <svg
-                      class="w-2.5 h-2.5 ms-2.5"
+                      class="w-2.5 h-2.5 ms-2.5 hover:text-[#611232] "
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
@@ -812,35 +853,39 @@ const Navbar = () => {
                   {isClickCE && (
                     <div className="pl-4 space-y-1">
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="http://www.inea.gob.mx/servicios_en_linea/Consulta_avance_academico.html"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded truncate"
                       >
                         Consulta tu avance académico
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="http://siga.inea.gob.mx/PEC/Account/Login?ReturnUrl=%2FPEC%2F"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         SIGA PEC
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="http://siga.inea.gob.mx/figuras/Account/Login?ReturnUrl=%2Ffiguras%2F"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         SIGA FIGURAS
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="http://sael.inea.gob.mx/Login.aspx?ReturnUrl=/&AspxAutoDetectCookieSupport=1"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         SAEL
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href=""
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
-                        Departamento de Planeación, Seguimiento Operativo y
-                        Acreditación
+                        Departamento de Planeación
                       </Link>
                     </div>
                   )}
@@ -850,11 +895,11 @@ const Navbar = () => {
                 <div className="group relative">
                   <button
                     onClick={toggleI}
-                    className="text-left hover:text-[#CBB486] p-2  flex items-center justify-between w-full "
+                    className="text-left hover:text-[#611232]  p-2  flex items-center justify-between w-full "
                   >
                     INTRANET
                     <svg
-                      className="w-2.5 h-2.5 ms-2.5"
+                      className="w-2.5 h-2.5 ms-2.5 hover:text-[#611232] "
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
@@ -872,68 +917,79 @@ const Navbar = () => {
                   {isClickI && (
                     <div className="pl-4 space-y-1">
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="http://cdmx.inea.gob.mx/CATN2/login.asp"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded truncate"
                       >
                         Mesa de servicios
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="http://cdmx.inea.gob.mx/gestion/"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         Sistema de Gestión
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="http://cdmx.inea.gob.mx/oficios/"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         Sistema de Oficios
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="http://cdmx.inea.gob.mx/SIMA/"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         SIMA
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="http://sibiplac.inea.gob.mx/Sibiplac/Login.aspx?ReturnUrl=%2fSibiplac%2fReportes.aspx"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         SIBIPLAC
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="http://plazas.conevyt.org.mx:8080/plazas/"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         SINAPLAC
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="http://cdmx.inea.gob.mx/comipems/login.asp"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded truncate"
                       >
                         Constancias COMIPEMS
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="http://df.sasa.inea.gob.mx/INEAGUI/guiLogin.aspx?ReturnUrl=%2fINEAGUI%2fdefault.aspx"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         SASA
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="http://satic.inea.gob.mx/"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         SATIC
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=4&ct=1420848406&rver=6.4.6456.0&wp=MCMBI&wreply=https://portal.office.com/landing.aspx?target=%2fdefault.aspx&lc=2058&id=501392&sso_reload=true"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         Correo Institucional
                       </Link>
                       <Link
+                        onClick={closeAllMenus && closeMobileMenu}
                         href="/src/app/INTRANET/inicio-sesion"
-                        className="block hover:bg-[#A57F2C] hover:text-white p-2 rounded"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         Iniciar sesion
                       </Link>

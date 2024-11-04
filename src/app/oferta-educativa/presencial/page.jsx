@@ -15,7 +15,7 @@ const regular = {
     "Tener 15 años o más.",
     "Acta de nacimiento",
     "CURP",
-    "Certificado",
+    "Certificado de Primaria (en caso de comenzar Secundaria)",
     "Primaria (en caso de comenzar Secundaria)",
     "Documento binacional (para personas provenientes del extranjero).",
     "En caso de haber cursado en grados escolarizados (Primaria o Secundaria) se deben presentar las boletas correspondientes.",
@@ -25,7 +25,7 @@ const regular = {
       id: "1",
       title: "Quienes",
       subtitle:
-        "Quieren aprender a leer y escribir y estudiar primaria o secundaria con materiales impresos en un lugar fijo ",
+        "Quieren aprender a leer y escribir y estudiar primaria o secundaria con materiales impresos en un lugar fijo.",
     },
     {
       id: "2",
@@ -48,8 +48,8 @@ const regular = {
     },
     {
       id: "4",
-      title: "Tiempo estimado",
-      subtitle: "4 horas por semana de 3 a 6 meses por nivel ",
+      title: "Materiales",
+      subtitle: "Libros impresos o electrónicos gratuitos",
     },
   ],
 };

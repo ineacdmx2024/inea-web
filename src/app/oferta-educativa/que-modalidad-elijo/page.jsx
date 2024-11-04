@@ -30,19 +30,16 @@ function Modalidad() {
       <PagSec Enlaces={cards}>
         {/* Contenido principal en pantallas medianas y grandes */}
         <div
-          className="col-span-1 md:col-span-8 md:col-start-2 p-8 ml-auto content-start justify-end"
-          id="animation"
+          className="ml-auto content-start justify-end"
+          // id="animation"
         >
           {" "}
           <div className="mx-auto w-full">
-            <h1 className="text-3xl font-medium text-[#404041] mb-2 letras:text-4xl ">
+            <h1 className="text-[38px] font-medium uppercase font-sans text-[#404041] mb-2 letras:text-4xl">
               ¿Qué opción del INEA me conviene para certificar mi Primaria y/o
               Secundaria?
             </h1>
-            <div className="flex items-center">
-              <div className="w-12 h-2 bg-[#af8900] mt-1"></div>
-              <div className="flex-grow h-px bg-gray-300"></div>
-            </div>
+
             <br />
             <CollapsiblePanel
               title="¿Quieres estudiar primaria o secundaria con materiales impresos en un lugar fijo o conoces a alguien que quiera aprender a leer y escribir?"
@@ -53,33 +50,33 @@ function Modalidad() {
                     Educación para la Vida - MEV AprendeINEA)
                   </p>
                   <p className="mt-2">
-                    <strong>Descripción:</strong> Opción educativa presencial y
+                    <strong>Descripción: </strong> Opción educativa presencial y
                     gratuita diseñada para personas de 15 años o más con tiempo
                     para dedicar al estudio que buscan alfabetizarse u obtener
                     el certificado de Primaria o Secundaria.
                   </p>
                   <p className="mt-2">
-                    <strong>Objetivo:</strong> Brindar una alternativa educativa
-                    accesible y de calidad para aquellos que nunca han asistido
-                    a la escuela o no han concluido sus estudios.
+                    <strong>Objetivo: </strong> Brindar una alternativa
+                    educativa accesible y de calidad para aquellos que nunca han
+                    asistido a la escuela o no han concluido sus estudios.
                   </p>
                   <p className="mt-2">
-                    <strong>Modalidad de atención:</strong> Presencial (en una
+                    <strong>Modalidad de atención: </strong> Presencial (en una
                     de las 120 Plazas Comunitarias del INEA en Ciudad de
                     México).
                   </p>
                   <p className="mt-2">
-                    <strong>Material de estudio:</strong> Módulos impresos.
+                    <strong>Material de estudio: </strong> Módulos impresos.
                   </p>
                   <p className="mt-2">
-                    <strong>Estructura curricular:</strong> Cinco módulos
+                    <strong>Estructura curricular: </strong> Cinco módulos
                     básicos y uno diversificado para Primaria; siete módulos
                     básicos y dos diversificados para Secundaria. Incluye áreas
                     como lectura, escritura, matemáticas, ciencias sociales y
                     naturales.
                   </p>
                   <p className="mt-2">
-                    <strong>Tiempo estimado de conclusión:</strong> 3 a 6 meses
+                    <strong>Tiempo estimado de conclusión: </strong> 3 a 6 meses
                     dedicando 4 horas por semana.
                   </p>
                   <div
@@ -102,7 +99,7 @@ function Modalidad() {
                         <strong>Requisitos:</strong>
                       </h3>
                     </div>
-                    <div className="mt-2 mb-4 text-xl">
+                    <div className="mt-2 mb-4 text-lg">
                       <ul className="list-disc ml-8">
                         <li>Tener 15 años o más.</li>
                         <li>Acta de nacimiento</li>
@@ -134,33 +131,34 @@ function Modalidad() {
                     Único)
                   </p>
                   <p className="mt-2">
-                    <strong>Descripción:</strong> Examen único para evaluar y
+                    <strong>Descripción: </strong> Examen único para evaluar y
                     certificar los conocimientos y habilidades adquiridos por
                     personas de 15 años o más a lo largo de su vida.
                   </p>
                   <p className="mt-2">
-                    <strong>Objetivo:</strong> Ofrecer una oportunidad rápida y
+                    <strong>Objetivo: </strong> Ofrecer una oportunidad rápida y
                     gratuita para obtener el certificado de Primaria o
                     Secundaria sin necesidad de cursar un programa educativo
                     completo.
                   </p>
                   <p className="mt-2">
-                    <strong>Modalidad de atención:</strong>Presencial (una única
-                    vez para aplicación del examen). El estudio es autodidacta,
-                    con opción de asesorías presenciales o en línea.
+                    <strong>Modalidad de atención: </strong>Presencial (una
+                    única vez para aplicación del examen). El estudio es
+                    autodidacta, con opción de asesorías presenciales o en
+                    línea.
                   </p>
                   <p className="mt-2">
-                    <strong>Material de estudio:</strong> Guía impresa de
+                    <strong>Material de estudio: </strong> Guía impresa de
                     preparación para el Examen Único.
                   </p>
                   <p className="mt-2">
-                    <strong>Estructura curricular:</strong> Examen con 70
+                    <strong>Estructura curricular: </strong> Examen con 70
                     preguntas que evalúan áreas como lectura, escritura,
                     matemáticas, ciencias sociales y naturales con diferentes
                     niveles de profundidad según el nivel educativo.
                   </p>
                   <p className="mt-2">
-                    <strong>Tiempo estimado de conclusión:</strong> Inmediato
+                    <strong>Tiempo estimado de conclusión: </strong> Inmediato
                   </p>
 
                   <div
@@ -183,7 +181,7 @@ function Modalidad() {
                         <strong>Requisitos:</strong>
                       </h3>
                     </div>
-                    <div className="mt-2 mb-4 text-xl">
+                    <div className="mt-2 mb-4 text-lg">
                       <ul className="list-disc ml-8">
                         <li>Tener 15 años o más.</li>
                         <li>Identificación oficial con fotografía.</li>
@@ -214,30 +212,30 @@ function Modalidad() {
                     Te conviene estudiar en AprendeINEA en Línea{" "}
                   </p>
                   <p className="mt-2">
-                    <strong>Descripción:</strong>Plataforma educativa en línea
+                    <strong>Descripción: </strong>Plataforma educativa en línea
                     diseñada para que los adultos de 15 años o más completen su
                     educación Primaria o Secundaria en línea.
                   </p>
                   <p className="mt-2">
-                    <strong>Objetivo:</strong>Proporcionar una vía flexible,
+                    <strong>Objetivo: </strong>Proporcionar una vía flexible,
                     conveniente y gratuita para obtener el certificado de
                     Primaria o Secundaria.
                   </p>
                   <p className="mt-2">
-                    <strong>Modalidad de atención:</strong>En línea.
+                    <strong>Modalidad de atención: </strong>En línea.
                   </p>
                   <p className="mt-2">
-                    <strong>Material de estudio:</strong>Materiales digitales
+                    <strong>Material de estudio: </strong>Materiales digitales
                     disponibles en la plataforma en línea (es necesario contar
                     con teléfono o computadora con acceso a internet).
                   </p>
                   <p className="mt-2">
-                    <strong>Estructura curricular:</strong>Un propedéutico y 5
+                    <strong>Estructura curricular: </strong>Un propedéutico y 5
                     módulos para Primaria y un propedéutico y 7 módulos para
                     Secundaria.
                   </p>
                   <p className="mt-2">
-                    <strong>Tiempo estimado de conclusión:</strong> 2 a 3
+                    <strong>Tiempo estimado de conclusión: </strong> 2 a 3
                     semanas por módulo.
                   </p>
                   <div
@@ -260,7 +258,7 @@ function Modalidad() {
                         <strong>Requisitos:</strong>
                       </h3>
                     </div>
-                    <div className="mt-2 mb-4 text-xl">
+                    <div className="mt-2 mb-4 text-lg">
                       <ul className="list-disc ml-8">
                         <li>Tener 15 años o más.</li>
                         <li>Acta de nacimiento.</li>
@@ -292,33 +290,33 @@ function Modalidad() {
                     Te convienen los Exámenes Diagnóstico{" "}
                   </p>
                   <p className="mt-2">
-                    <strong>Descripción:</strong>Modalidad para evaluar y
+                    <strong>Descripción: </strong>Modalidad para evaluar y
                     certificar conocimientos de personas de 15 años o más,
                     permitiendo acreditar Primaria o Secundaria a través de
                     exámenes divididos en dos módulos, reconociendo
                     progresivamente lo aprendido.
                   </p>
                   <p className="mt-2">
-                    <strong>Objetivo:</strong>Certificar conocimientos
+                    <strong>Objetivo: </strong>Certificar conocimientos
                     adquiridos y, si es necesario, ofrecer retroalimentación y
                     orientación en los módulos de estudio requeridos para
                     obtener el certificado de Primario y/o Secundaria.
                   </p>
                   <p className="mt-2">
-                    <strong>Modalidad de atención:</strong>Sesiones de estudio
+                    <strong>Modalidad de atención: </strong>Sesiones de estudio
                     presencial y asesoría opcional.
                   </p>
                   <p className="mt-2">
-                    <strong>Material de estudio:</strong>Guías de Aprendizaje
+                    <strong>Material de estudio: </strong>Guías de Aprendizaje
                     impresas, organizadas en unidades de aprendizaje.
                   </p>
                   <p className="mt-2">
-                    <strong>Estructura curricular:</strong>Dos unidades de
+                    <strong>Estructura curricular: </strong>Dos unidades de
                     aprendizaje que abarcan lengua y comunicación, pensamiento
                     matemático, y vida y comunidad.
                   </p>
                   <p className="mt-2">
-                    <strong>Tiempo estimado de conclusión:</strong>2 a 3 meses
+                    <strong>Tiempo estimado de conclusión: </strong>2 a 3 meses
                     dedicando 2 horas por semana.
                   </p>
                   <div
@@ -341,7 +339,7 @@ function Modalidad() {
                         <strong>Requisitos:</strong>
                       </h3>
                     </div>
-                    <div className="mt-2 mb-4 text-xl">
+                    <div className="mt-2 mb-4 text-lg">
                       <ul className="list-disc ml-8">
                         <li>Tener 15 años o más.</li>
                         <li>Acta de nacimiento.</li>
