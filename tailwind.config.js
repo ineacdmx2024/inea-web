@@ -29,6 +29,9 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        sans: ['"Open Sans"', "sans-serif"], // Definimos Open Sans como la fuente sans-serif
+      },
     },
   },
   plugins: [require("flowbite/plugin")],

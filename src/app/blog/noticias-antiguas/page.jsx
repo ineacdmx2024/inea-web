@@ -1,8 +1,9 @@
 "use client";
 import { Open_Sans } from "next/font/google";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const open_Sans = Open_Sans({
   weight: ["300", "400", "500", "700"],
@@ -18,58 +19,37 @@ const truncateText = (text, maxLetters) => {
 };
 
 function NoticiasAntiguas({ item }) {
-  // Implementacion de la API
-  const noticias = [
-    {
-      title: "Explorando las Estrellas",
-      image: "/imagePrueba/interes1.jpg",
-      link: "https://example.com/article/explorando-las-estrellas",
-      caption: "Un viaje por el cosmos",
-      date: "2024-01-12",
-      description:
-        "Sumérgete en los misterios del universo y descubre los secretos de las estrellas.",
-    },
-    {
-      title: "El Arte del Minimalismo",
-      image: "/imagePrueba/interes2.jpg",
-      link: "https://example.com/article/arte-del-minimalismo",
-      caption: "Menos es más",
-      date: "2024-03-05",
-      description:
-        "Descubre cómo el minimalismo puede llevar a una vida más plena al enfocarse en lo que realmente importa.",
-    },
-    {
-      title: "Innovaciones Tecnológicas 2024",
-      image: "/imagePrueba/interes3.jpg",
-      link: "https://example.com/article/innovaciones-tecnologicas-2024",
-      caption: "El futuro está aquí",
-      date: "2024-07-19",
-      description:
-        "Una mirada a los avances tecnológicos más innovadores que moldearán el año que viene.",
-    },
-  ];
+  const [datos, setDatos] = useState(null);
+  const [totalNoticias, setTotalNoticias] = useState(0);
+  const [paginaActual, setPaginaActual] = useState(1);
+  const noticiasPorPagina = 9;
+  //const router = useRouter();
 
-  const [datos, setData] = useState(null);
+  const fetchData = async (page = 1) => {
+    const start = (page - 1) * noticiasPorPagina;
 
-  const fetchData = async () => {
     try {
+      // Fetch de las noticias paginadas
       const response = await fetch(
-        "https://inea-web-backend.onrender.com/api/blogs?populate=*&sort[0]=Fecha:desc"
+        `https://inea-web-backend.onrender.com/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
       );
       const result = await response.json();
-      setData(result.data);
+      setDatos(result.data);
+
+      // Fetch del total de noticias
+
+      const total = result.meta.pagination.total;
+      setTotalNoticias(total);
     } catch (error) {
       console.error("Error al obtener los datos:", error);
     }
   };
 
   useEffect(() => {
-    fetchData(); // Llama la función para obtener los datos
-  }, []); // El array vacío hace que se ejecute solo una vez al montarse el componente
+    fetchData(paginaActual); // Cargar la página actual
+  }, [paginaActual]);
 
   const fechaFun = (fechaAPI) => {
-    const fechaApi = fechaAPI;
-
     const diasSemana = [
       "domingo",
       "lunes",
@@ -93,40 +73,53 @@ function NoticiasAntiguas({ item }) {
       "noviembre",
       "diciembre",
     ];
-
-    const fecha = new Date(fechaApi);
-
+    const fecha = new Date(fechaAPI);
     const diaSemana = diasSemana[fecha.getDay()];
     const dia = fecha.getDate();
     const mes = meses[fecha.getMonth()];
     const año = fecha.getFullYear();
-
     return `${diaSemana}, ${dia} de ${mes} de ${año}`;
   };
+
+  // Cambiar página al hacer clic en un botón
+  const handlePageChange = (newPage) => {
+    setPaginaActual(newPage);
+  };
+
+  const totalPaginas = Math.ceil(totalNoticias / noticiasPorPagina);
+
+  const handleNextPage = () => {
+    if (paginaActual < totalPaginas) setPaginaActual(paginaActual + 1);
+  };
+
+  const handlePrevPage = () => {
+    if (paginaActual > 1) setPaginaActual(paginaActual - 1);
+  };
+
+  const router = useRouter();
 
   return (
     <main>
       {/* Barra separadora */}
-      <div className="mx-auto mt-44 mb-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-        <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl ">
-          Noticias Anteriores
-        </h1>
-        <div className="flex items-center">
-          <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
-          <div className="flex-grow h-px bg-gray-300"></div>
+      <div className="mx-auto mt-40 mb-16 w-11/12 medida3:w-11/12 arrow:w-11/12 tablet:w-[1140px]">
+        <div className="ml-10 mb-10">
+          <Breadcrumb />
         </div>
+        <h1 className="text-4xl font-medium text-slate-700 mb-2 letras:text-5xl uppercase">
+          Noticias Antiguas
+        </h1>
       </div>
 
       {/* Contenido principal */}
-      <div className="mx-auto mt-20 mb-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px] flex flex-row gap-8">
+      <div className="mx-auto mt-20 mb-16 w-11/12 medida3:w-11/12 arrow:w-11/12 tablet:w-[1140px] flex flex-col justify-center items-end gap-8">
         {/* Todas las Noticias */}
-        <div className="w-2/3 grid grid-cols-2 grid-flow-row gap-4">
+        <div className="w-full grid grid-cols-1 grid-flow-row gap-4 arrow:grid-cols-3 ofertaEdu:grid-cols-2 ">
           {datos ? (
             datos.map((item, index) => (
               <div key={index} className="px-0">
-                <div className="w-full h-auto tablet:h-[450px] rounded-xl border border-slate-300 ">
+                <div className="overflow-hidden w-full h-auto tablet:h-[450px] rounded-xl border border-slate-300 ">
                   {/* Div de la imagen */}
-                  <div className=" m-auto rounded-xl max-h-[392px]">
+                  <div className="m-auto rounded-t-xl max-h-[392px]">
                     <Image
                       src={
                         item.attributes.Imagen?.data?.attributes?.formats?.small
@@ -136,7 +129,7 @@ function NoticiasAntiguas({ item }) {
                         item.attributes.Nombre_de_la_Imagen ||
                         "Imagen sin título"
                       }
-                      className="w-full h-[208px] rounded-xl"
+                      className="w-full h-[208px] rounded-t-xl"
                       width={350}
                       height={258}
                     />
@@ -144,22 +137,23 @@ function NoticiasAntiguas({ item }) {
 
                   {/* Div del texto */}
                   <article
-                    className={`${open_Sans.className} flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-1/2 tablet:w-[390px] px-5 py-2 m-auto arrow:w-[750px]`}
+                    className={`${open_Sans.className} flex flex-col justify-between letras:mt-0 pt-4 mt-2 tablet:m-0 w-full tablet:w-[375px] px-5 py-2 m-auto arrow:w-full`}
                   >
                     <p className="letras:text-base text-gray-700 text-sm mb-2 ">
                       {item.attributes.Fecha
                         ? fechaFun(item.attributes.Fecha)
                         : "No hay"}
                     </p>
-                    <h2 className="letras:text-[23px] text-[20px] leading-tight font-medium mb-4 uppercase">
+                    <h2 className="letras:text-[21px] text-[20px] leading-tight font-medium mb-4 uppercase arrow:text-[21px]">
                       {truncateText(item.attributes.Titulo, 65)}
                     </h2>
-                    {/* <p className="letras:text-[17px] text-gray-900 font-light text-[14px] mb-4 uppercase">
-                      {truncateText(item.attributes.Subtitulo, 20)}
-                    </p> */}
-
                     <div className="overflow-visible !z-10 w-full h-auto">
-                      <button className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-[#8a1b39] rounded-full block">
+                      <button
+                        onClick={() => {
+                          router.push(`/blog/noticias-antiguas/${item.id}`);
+                        }}
+                        className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block"
+                      >
                         <p className="text-xs letras:text-[14.5px] font-light">
                           Continuar leyendo
                         </p>
@@ -174,39 +168,44 @@ function NoticiasAntiguas({ item }) {
           )}
         </div>
 
-        {/* Ligas de interes */}
-        <div className="w-1/3 bg-white">
-          {/* Barra separadora */}
-          <div className="mx-auto mt-2 mb-8 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-full">
-            <h1 className="text-2xl font-medium text-slate-700 mb-2 ">
-              Ligas de interes
-            </h1>
-            <div className="flex items-center">
-              <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
-              <div className="flex-grow h-px bg-gray-300"></div>
-            </div>
-          </div>
-          <div className="fijas !z-5 w-full mx-auto flex flex-col gap-4 justify-center">
-            {noticias.map((noticia, index) => (
-              <div key={index} className="px-4 w-full">
-                <div className="border border-slate-300 h-[420px] rounded-lg p-8 flex flex-col justify-between">
-                  <div className="flex flex-col items-center">
-                    <img
-                      className="w-60 h-auto object-cover rounded-lg"
-                      src={noticia.image}
-                      alt={noticia.title}
-                    />
-                    <h3 className="my-7 px-4 text-center text-[22px] text-slate-500 font-medium capitalize">
-                      {noticia.title}
-                    </h3>
-                  </div>
-                  <button className="bg-[#611232] text-white text-xs letras:text-[14.5px] font-light py-3 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
-                    Ir al sitio
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Paginación */}
+        <div className=" mt-8 ">
+          <button
+            onClick={handlePrevPage}
+            disabled={paginaActual === 1}
+            className={`rounded-l-lg py-2 px-3 ${
+              paginaActual === 1
+                ? "bg-gray-300"
+                : "bg-[#d6f1eb] hover:bg-gray-300"
+            } text-lg border border-slate-400`}
+          >
+            {"<<"}
+          </button>
+          {Array.from({ length: totalPaginas }, (_, i) => (
+            <button
+              key={i}
+              onClick={() => handlePageChange(i + 1)}
+              disabled={paginaActual === i + 1}
+              className={`py-2 px-4 ${
+                paginaActual === i + 1
+                  ? "bg-[#360a1c] text-white"
+                  : "bg-white hover:bg-[#611232] hover:text-white "
+              } text-xl border border-slate-400`}
+            >
+              {i + 1}
+            </button>
+          ))}
+          <button
+            onClick={handleNextPage}
+            disabled={paginaActual === totalPaginas}
+            className={`rounded-r-lg py-2 px-3 ${
+              paginaActual === totalPaginas
+                ? "bg-gray-300"
+                : "bg-[#d6f1eb] hover:bg-gray-300"
+            } text-lg border border-slate-400`}
+          >
+            {">>"}
+          </button>
         </div>
       </div>
     </main>

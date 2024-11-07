@@ -13,7 +13,7 @@ const examen = {
   requirements: [
     "Tener 15 años o más.",
     "Identificación oficial con fotografía",
-    "Portafolio de evidencias (reconocimientos, constancias y diplomas)",
+    "OPCIONAL: Portafolio de evidencias (reconocimientos, constancias y diplomas)",
     "Dos fotografías tamaño infantil (color o blanco y negro) ",
     "Certificado de Primaria (sólo para quienes harán examen de secundaria).",
   ],
@@ -33,14 +33,19 @@ const examen = {
       id: "3",
       title: "Características",
       subtitle: [
-        "Asesoría opcional: 1 examen primaria 1 examen de secundaria",
+        "Asesoría gratuita opcional",
+        "Examen unico para certificar primaria",
+        "Examen unico para certificar secundaria",
         "Materiales: Guía para el reconocimiento de saberes ",
       ],
     },
     {
       id: "4",
-      title: "Tiempo estimado",
-      subtitle: "Inmediato",
+      title: "Opciones",
+      subtitle: [
+        "Examen en línea con calificación inmediata",
+        "Examen impreso",
+      ],
     },
   ],
 };

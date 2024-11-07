@@ -34,7 +34,7 @@ const SkewedPages = ({ datos }) => {
   ];
 
   return (
-    <div className="min-h-[500px] h-[700px">
+    <div className="">
       {/* botones */}
       <div className="flex flex-wrap">
         {alcaldias.map((elemento) => (
@@ -69,11 +69,11 @@ const SkewedPages = ({ datos }) => {
       </div>
 
       {/* Contenido principal */}
-      <div className="container mx-auto flex-column h-full bg-white mt-8">
+      <div className="container mx-auto flex-column md:h-[90vh] bg-white mt-8">
         {datos.map((pageData, index) => (
           <div
             key={index}
-            className={`mb-5 border border-slate-300 rounded-lg grid grid-cols-2 grid-rows-1 gap-0 h-full bg-white ${
+            className={`border border-slate-300 grid grid-cols-2 grid-rows-1 gap-0 h-full bg-white ${
               index === currentPage
                 ? "visible opacity-100 translate-y-0"
                 : "hidden opacity-0 translate-y-full"
@@ -104,7 +104,8 @@ const SkewedPages = ({ datos }) => {
               {pageData.items.map((item, idx) => (
                 <div
                   key={idx}
-                  className="mb-4 text-center"
+                  className="mb-4 text-center cursor-pointer"
+                  onClick={() => window.open(item.url, "_blank")}
                 >
                   <div className="flex justify-center m-[20px]">
                     <svg

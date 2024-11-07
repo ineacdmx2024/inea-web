@@ -39,42 +39,42 @@ const Footer = () => {
                   Mapa de Sitio
                 </h2>
                 <ul className=" text-sm dark:text-white">
-                  <li>
+                  <li className="hover:text-[#A57F2C]">
                     <a href="https://datos.gob.mx/">Trámites y Servicios</a>
                   </li>
-                  <li>
+                  <li className="hover:text-[#A57F2C]">
                     <a href="/">¿Quiénes Somos?</a>
                   </li>
-                  <li>
+                  <li className="hover:text-[#A57F2C]">
                     <a href="/">Aviso de privacidad</a>
                   </li>
-                  <li>
+                  <li className="hover:text-[#A57F2C]">
                     <a href="/">Comité de Ética</a>
                   </li>
-                  <li>
+                  <li className="hover:text-[#A57F2C]">
                     <a href="/">Transparencia</a>
                   </li>
-                  <li>
+                  <li className="hover:text-[#A57F2C]">
                     <a href="/">Glosario</a>
                   </li>
-                  <li>
+                  <li className="hover:text-[#A57F2C]">
                     <a href="/">INEA Nacional</a>
                   </li>
-                  <li>
+                  <li className="hover:text-[#A57F2C]">
                     <a href="/">Gobierno</a>
                   </li>
-                  <li>
+                  <li className="hover:text-[#A57F2C]">
                     <a href="/">Créditos</a>
                   </li>
                 </ul>
               </div>
               <div>
-                <h2 className="mb-3 text-white dark:text-white">Contacto</h2>
+                <h2 className="mb-3 text-white dark:text-white ">Contacto</h2>
                 <ul className=" text-sm dark:text-white">
-                  <li>
+                  <li className="hover:text-[#A57F2C]">
                     <a href="/">Directorio</a>
                   </li>
-                  <li>
+                  <li className="hover:text-[#A57F2C]">
                     <a href="/">Correo@inea.gob.mx</a>
                   </li>
                 </ul>
@@ -86,7 +86,7 @@ const Footer = () => {
                 <div className="flex mt-4 space-x-3 sm:justify-left sm:mt-0">
                   <a
                     href="/"
-                    className="text-white hover:text-gray-900 dark:hover:text-white"
+                    className="text-white hover:text-[#A57F2C] dark:hover:text-white"
                   >
                     <svg
                       className="w-7 h-7"
@@ -103,7 +103,7 @@ const Footer = () => {
                   </a>
                   <a
                     href="/"
-                    className="text-white hover:text-gray-900 dark:hover:text-white"
+                    className="text-white hover:text-[#A57F2C] dark:hover:text-white"
                   >
                     <svg
                       className="w-7 h-7"
@@ -116,20 +116,16 @@ const Footer = () => {
                   </a>
                   <a
                     href="/"
-                    className="text-white hover:text-gray-900 dark:hover:text-white"
+                    className="text-white hover:text-[#A57F2C] dark:hover:text-white"
                   >
                     <svg
                       className="h-8 w-8"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 576 512"
                     >
-                      {" "}
-                      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />{" "}
-                      <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                      {/*!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. */}
+                      <path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z" />
                     </svg>
                   </a>
                 </div>

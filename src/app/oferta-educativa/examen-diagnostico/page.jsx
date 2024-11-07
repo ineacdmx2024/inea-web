@@ -23,27 +23,30 @@ const examen = {
       id: "1",
       title: "Quienes",
       subtitle:
-        "Tienen antecedentes escolares y desean realzar sólo exámenes para concluir sus estudios",
+        "Tienen antecedentes escolares y desean realizar sólo exámenes para concluir sus estudios",
     },
     {
       id: "2",
       title: "Niveles",
-      subtitle: ["Primaria: Guía de estudio", "Secundaria: Guía de estudio"],
+      subtitle: ["Primaria", "Secundaria"],
     },
     {
       id: "3",
       title: "Características",
       subtitle: [
         "Sesiones de estudio presencial y asesoría opcional ",
-        "3 exámenes de primaria ",
+        "2 exámenes de primaria ",
         "2 exámenes de secundaria ",
-        "Materiales: Guías para el examen diagnóstico ",
+        "Materiales: Guías de estudio para el examen diagnóstico ",
       ],
     },
     {
       id: "4",
-      title: "Tiempo estimado",
-      subtitle: "2 horas por semana de 2 a 3 meses dedicando por nivel  ",
+      title: "Opciones",
+      subtitle: [
+        "2 Exámenes de primaria correspondientes a las materias de Español, Matemáticas, Ciencias naturales y sociales",
+        "2 Exámenes de secundaria correspondientes a las materias de Español, Matemáticas, Ciencias naturales y sociales",
+      ],
     },
   ],
 };

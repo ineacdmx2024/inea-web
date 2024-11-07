@@ -38,35 +38,80 @@ const CarouselEL = ({ cards }) => {
   };
 
   return (
-    <div className="slider-container">
-      <Slider
-        {...settings}
-        className="mx-auto !z-5 w-4/5"
-      >
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className="px-0"
-          >
-            <div className="border border-slate-300 rounded-lg h-[400px]  mx-auto flex flex-col w-[260px]  justify-center items-center">
-              <div className="w-52 h-[310px]  flex flex-col justify-between items-center">
-                <img
-                  className="w-60 h-auto object-cover rounded-lg"
-                  src={card.imageSrc}
-                  alt={card.title}
-                />
-                <h3 className="text-center text-[18px]  text-slate-500 font-medium capitalize">
-                  {card.title}
-                </h3>
-                <button className="hover:bg-[#8a1b39] text-white text-xs  py-2 px-4 rounded-full bg-[#a42145] mx-auto block">
+    <>
+      <style
+        jsx
+        global
+      >{`
+        .custom-dots {
+          bottom: -30px;
+        }
+        .custom-dots li {
+          margin: 0 4px;
+        }
+        .custom-dots li button {
+          border: none;
+          background: none;
+          padding: 0;
+        }
+        .custom-dots li button:before {
+          font-size: 12px;
+          color: #ccc;
+          opacity: 1;
+          transition: all 0.3s ease;
+        }
+        .custom-dots li.slick-active button:before {
+          color: #790101; // Color verde para el punto activo
+          transform: scale(1.2);
+        }
+      `}</style>
+      <div className="border border-slate-300 rounded-lg bg-white w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto ">
+        <Slider {...settings}>
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className="px-2"
+            >
+              <div className="h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
+                <div className="flex flex-col items-center">
+                  <img
+                    className="w-60 h-auto object-cover rounded-lg"
+                    src={card.imageSrc}
+                    alt={card.title}
+                  />
+                  <h3 className="my-7 px-4 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium capitalize">
+                    {card.title}
+                  </h3>
+                </div>
+                <button
+                  className=" 
+                  focus:border-[#611232] focus:bg-[#A57F2C] focus:border-[5px] 
+                  bg-[#611232] text-white 
+                  hover:border-[#611232] hover:border-2 hover:bg-white hover:text-[#611232] 
+                    text-xs  py-2 px-4 rounded-full mx-auto block"
+                >
                   {card.buttonText}
                 </button>
               </div>
+
+              {/* <div className="border border-slate-300 rounded-lg h-[400px]  mx-auto flex flex-col w-[260px]  justify-center items-center">
+                <div className="w-52 h-[310px]  flex flex-col justify-between items-center">
+                  <img
+                    className="w-60 h-auto object-cover rounded-lg"
+                    src={card.imageSrc}
+                    alt={card.title}
+                  />
+                  <h3 className="text-center text-[18px]  text-slate-500 font-medium capitalize">
+                    {card.title}
+                  </h3>
+                  
+                </div>
+              </div> */}
             </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
+          ))}
+        </Slider>
+      </div>
+    </>
   );
 };
 

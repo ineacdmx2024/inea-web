@@ -18,12 +18,12 @@ const linea = {
     },
   ],
 
-  time: " 3 a 6 meses dedicando, 4 horas por semana.",
+  time: " 3 a 6 meses dedicando 4 horas por semana.",
   requirements: [
     "Tener 15 años o más.",
     "Acta de nacimiento",
     "CURP",
-    "Certificado",
+    "Certificado de Primaria (en caso de comenzar Secundaria)",
     "Primaria (en caso de comenzar Secundaria)",
     "Documento binacional (para personas provenientes del extranjero).",
     "En caso de haber cursado en grados escolarizados (Primaria o Secundaria) se deben presentar las boletas correspondientes.",
@@ -33,7 +33,7 @@ const linea = {
       id: "1",
       title: "Quienes",
       subtitle:
-        "Desean estudiar con el uso de dispositivos móviles o computadora desde casa",
+        "Desean estudiar con el uso de dispositivos móviles o computadora desde casa; si no cuentas con alguno podrás acudir a nuestras Plazas Comunitarias",
     },
     {
       id: "2",
@@ -44,16 +44,16 @@ const linea = {
       id: "3",
       title: "Características",
       subtitle: [
+        "Modular, diversificado, flexible, abierto e integral",
         "PC, Laptop, tableta o celular con acceso a internet con opción de descarga",
-        "Asesoría opcional (presencial o virtual) ",
+        "Asesoría gratuita opcional (presencial o virtual) ",
         "Evaluación continua y final ",
-        "Materiales: Educativos digitales  ",
       ],
     },
     {
       id: "4",
-      title: "Tiempo estimado",
-      subtitle: "3 a 6 meses dedicando, 4 horas por semana.",
+      title: "Materiales",
+      subtitle: "Libros electrónicos",
     },
   ],
 };
