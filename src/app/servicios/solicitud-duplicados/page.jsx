@@ -90,8 +90,8 @@ return (
       <div class="pt-3">
         <label className="">Estado de la República donde concluyó su primaria y/o secundario</label>
         <div className="border rounded ">
-          <select className="w-full border rounded" name="" id="">
-            <option value="">Ciudad de México</option>
+          <select  className="w-full border rounded" name="Estado de la Republica" id="">
+            <option  value="Ciudad de Mexico">Ciudad de México</option>
           </select>
         </div>
       </div>
@@ -103,7 +103,7 @@ return (
         <div className="sm:mr-7">
           <label className="block">Apellido Paterno</label>
           <input type="text"
-            name="apellidoPaterno"
+            name="Apellido Paterno"
             className="border rounded p-2  w-full"
             id="title"
             placeholder="Apellido Paterno"
@@ -114,7 +114,7 @@ return (
         <div clclassNameass="">
           <label className="pt-3 sm:pt-0 block">Apellido Materno</label>
           <input type="text"
-              name="apellidoMaterno"
+              name="aAellido Materno"
               className="border rounded p-2 w-full sm:w-11/12"
               id="title"
               placeholder="Apellido Materno"
@@ -124,7 +124,7 @@ return (
         <div clclassNameass="sm:ml-5">
           <label className="pt-3 sm:pt-0 block">Nombre(s)</label>
           <input type="text"
-              name="nombre"
+              name="Nombre(S)"
               className="border rounded p-2 w-full"
               id="title"
              placeholder="Nombre(s)"
@@ -140,31 +140,31 @@ return (
            id="calendarYear"
            className="border rounded w-full"
            placeholder="DD/MM/AAAA"
-           name="fechanacimiento"
+           name="Fecha de Nacimiento"
            />
         </div>
 
         <div className="">
            <label className="pt-3 sm:pt-0 block">Lugar de Nacimiento</label>
-         <select className="border rounded  w-full" name="" id="">
+         <select className="border rounded  w-full" name="Lugar de Nacimiento" id="">
             <option value="">Seleccione..</option>
-              <option value="">Aguascalientes</option>
-              <option value="">Baja California</option>
-              <option value="">Baja California Sur</option>
-              <option value="">Campeche</option>
-              <option value="">Ciudad de México</option>
-              <option value="">Chiapas</option>
-              <option value="">Chihuahua</option>
-              <option value="">Coahuila de Zaragoza</option>
-              <option value="">Colima</option>
-              <option value="">Durango</option>
-              <option value="">Estado de México</option>
-              <option value="">Guanajuato</option>
-              <option value="">Guerrero</option>
-              <option value="">Hidalgo</option>
-              <option value="">Jalisco</option>
-              <option value="">Michuacan de Ocampo</option>
-              <option value="">Morelos</option>
+              <option value="Aguascalientes">Aguascalientes</option>
+              <option value="Baja California">Baja California</option>
+              <option value="Baja California Sur">Baja California Sur</option>
+              <option value="Campeche">Campeche</option>
+              <option value="Ciudad de México">Ciudad de México</option>
+              <option value="Chiapas">Chiapas</option>
+              <option value="Chihuahua">Chihuahua</option>
+              <option value="Coahuila de Zaragoza">Coahuila de Zaragoza</option>
+              <option value="Colima">Colima</option>
+              <option value="Durango">Durango</option>
+              <option value="Estado de México">Estado de México</option>
+              <option value="Guanajuato">Guanajuato</option>
+              <option value="Guerrero">Guerrero</option>
+              <option value="Hidalgo">Hidalgo</option>
+              <option value="Jalisco">Jalisco</option>
+              <option value="Michuacan de Ocampo">Michuacan de Ocampo</option>
+              <option value="Morelos">Morelos</option>
             </select>
         </div>
 
@@ -173,7 +173,7 @@ return (
            <input 
             id="email-01" 
             type="email"
-            name="email"
+            name="Email"
             className="border rounded  w-full"
            />
         </div>
@@ -183,7 +183,7 @@ return (
            <input type="text"
            className="border rounded w-full"
            id="telefono" 
-           name="telefono"
+           name="Teléfono"
            />
         </div>
 
@@ -192,7 +192,7 @@ return (
            <textarea type="text"
             className="border rounded w-full"
            id="comentarios" 
-           name="comentarios"
+           name="Comentarios"
            />
         </div>
 
@@ -200,8 +200,8 @@ return (
            <label className="pt-0 sm:pt-3  block" for="niveleducativo">Nivel educativo del duplicado</label>
             <select className="border rounded  w-full" name="" id="">
             <option value="">Seleccione..</option>
-              <option value="">Primaria</option>
-              <option value="">Secundaria</option>
+              <option value="Primaria">Primaria</option>
+              <option value="Secundaria">Secundaria</option>
             </select>
         </div>
       </div>
@@ -213,18 +213,18 @@ return (
               <input 
               id="curp" 
               type="file"
-              accept="image/jpeg,image/jpg"
+              accept="image/jpeg,image/jpg/application/pdf"
               className="w-full"
-              name="curp"
+              name="Curp"
               />
           </div>
           <div className="">
             <label className="w-full" for="ine">Identificación oficial con fotografía por ambos lados:</label>
               <input 
-                id="ine" 
+                id="INE" 
                 name="ine"
                 type="file"
-                accept="image/jpeg,image/jpg"
+                accept="image/jpeg,image/jpg/application/pdf"
                 className="w-full"
                 />
           </div>
@@ -234,9 +234,9 @@ return (
             <input 
             id="fotografia" 
             type="file"
-            accept="image/jpeg,image/jpg"
+            accept="image/jpeg,image/jpg/application/pdf"
             className="w-full"
-            name="fotografia"
+            name="Fotografía"
             />
         </div>
       </div>
@@ -253,9 +253,9 @@ return (
               <input 
                 id="certificado"
                 type="file"
-                accept="image/jpeg,image/jpg"
+                accept="image/jpeg,image/jpg/application/pdf"
                 className="w-full"
-                name="certificado"
+                name="Certificado"
                 />
           </div>
 
@@ -265,7 +265,7 @@ return (
                id="file-03"
                type="text"
                className="border rounded  w-full"
-               name="aaa"
+               name="Año"
                />
           </div>
         </div>
@@ -273,7 +273,7 @@ return (
         <div class="pt-4 form-group">
           <div class="checkbox">
             <label>
-              <input name="terminos" type="checkbox"/>
+              <input name="Terminos" type="checkbox"/>
             </label>
           </div>
             <p class="text-justify" for="file-01">Manifiesto bajo protesta de decir verdad que la información y los datos aquí asentados son 
