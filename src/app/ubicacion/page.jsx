@@ -1135,26 +1135,26 @@ function Ubicacion() {
       items: [
         {
           alcaldia: "PILARES San Luis Tlaxialtemalco",
-          url: "https://maps.app.goo.gl/cc5DzfS5bnXHnneM6",
+          url: "https://maps.app.goo.gl/MV3qHmKb3kJ5m5Ux8",
           dir: "San Luis Tlaxialtemalco (Pblo), S/N, San Luis Tlaxialtemalco, Xochimilco, C.P. 16610",
           atel: "",
         },
         {
           alcaldia: "PILARES muyuguarda",
-          url: "https://maps.app.goo.gl/jUQ8fgfUi3unTXhH8",
+          url: "https://maps.app.goo.gl/2zgZwRgMQBvabesg8",
           dir: "Plande Muyuguarda y Canal de la Noria, S/N, Barrio 18, Xochimilco, C.P. 16034",
           atel: "",
         },
         {
           alcaldia: "PILARES modulo de bienestar social Ahualapa",
-          url: "https://maps.app.goo.gl/jUQ8fgfUi3unTXhH8",
+          url: "https://maps.app.goo.gl/fgXeQRx8m66Wg3TT9",
           dir: "Ahualapa, S/N, Pueblo Santa Cruz Acalpixcla, Xochimilco, C.P. 1653",
           atel: "",
         },
 
         {
           alcaldia: "Xochimilco",
-          url: "https://maps.app.goo.gl/jUQ8fgfUi3unTXhH8",
+          url: "https://maps.app.goo.gl/S6wEWd2ZE8JZ52bQ8",
           dir: "Pedro Ramírez del Castillo, S/N, Barrio de San Antonio, Xochimilco, C.P. 16000",
           atel: "55 / 54897413",
         },

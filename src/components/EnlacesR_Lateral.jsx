@@ -15,7 +15,7 @@ const Card = ({ title, imageSrc, buttonText, link }) => {
           src={imageSrc}
           alt={title}
           // w-full h-48 object-cover
-          className="w-60 h-auto object-cover rounded-lg"
+          className="w-10/12 h-auto object-cover rounded-lg"
         />
         <h3 className="my-7 px-4 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium capitalize">
           {title}
