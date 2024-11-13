@@ -10,7 +10,7 @@ const open_Sans = Open_Sans({
 
 function page() {
   return (
-    <main className={`mx-auto ${open_Sans.className} bg-white pt-[115px]`}>
+    <main className={`mx-auto ${open_Sans.className} bg-white pt-[100px]`}>
       <div>
         <img
           src="/Banner_INEA_CDMX_EducacionMovil.jpg"
