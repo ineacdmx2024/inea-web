@@ -27,7 +27,12 @@ function Modalidad() {
 
   return (
     <div>
-      <PagSec Enlaces={cards}>
+      <PagSec
+        Enlaces={cards}
+        Titulo={
+          "¿Qué opción del INEA me conviene para certificar mi Primaria y/o Secundaria?"
+        }
+      >
         {/* Contenido principal en pantallas medianas y grandes */}
         <div
           className="ml-auto content-start justify-end"
@@ -35,12 +40,6 @@ function Modalidad() {
         >
           {" "}
           <div className="mx-auto w-full">
-            <h1 className="text-[38px] font-medium uppercase font-sans text-[#404041] mb-2 letras:text-4xl">
-              ¿Qué opción del INEA me conviene para certificar mi Primaria y/o
-              Secundaria?
-            </h1>
-
-            <br />
             <CollapsiblePanel
               title="¿Quieres estudiar primaria o secundaria con materiales impresos en un lugar fijo o conoces a alguien que quiera aprender a leer y escribir?"
               content={
