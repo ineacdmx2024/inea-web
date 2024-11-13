@@ -74,7 +74,7 @@ function Modalidad() {
                     como lectura, escritura, matemáticas, ciencias sociales y
                     naturales.
                   </p>
-                  <p className="mt-2">
+                  <p className="mt-2 mb-9">
                     <strong>Tiempo estimado de conclusión: </strong> 3 a 6 meses
                     dedicando 4 horas por semana.
                   </p>
@@ -156,7 +156,7 @@ function Modalidad() {
                     matemáticas, ciencias sociales y naturales con diferentes
                     niveles de profundidad según el nivel educativo.
                   </p>
-                  <p className="mt-2">
+                  <p className="mt-2 mb-9">
                     <strong>Tiempo estimado de conclusión: </strong> Inmediato
                   </p>
 
@@ -233,7 +233,7 @@ function Modalidad() {
                     módulos para Primaria y un propedéutico y 7 módulos para
                     Secundaria.
                   </p>
-                  <p className="mt-2">
+                  <p className="mt-2 mb-9">
                     <strong>Tiempo estimado de conclusión: </strong> 2 a 3
                     semanas por módulo.
                   </p>
@@ -314,7 +314,7 @@ function Modalidad() {
                     aprendizaje que abarcan lengua y comunicación, pensamiento
                     matemático, y vida y comunidad.
                   </p>
-                  <p className="mt-2">
+                  <p className="mt-2 mb-9">
                     <strong>Tiempo estimado de conclusión: </strong>2 a 3 meses
                     dedicando 2 horas por semana.
                   </p>
