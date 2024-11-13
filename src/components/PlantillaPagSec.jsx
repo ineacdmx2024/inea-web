@@ -16,14 +16,14 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children }) {
       <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-x-[4vh]">
         <br />
         {/* Breadcrumb */}
-        <div className="col-span-1 md:col-span-12 bg-blue-500">
+        <div className="col-span-1 md:col-span-12 ">
           <div className="mx-auto py-1 px-4 sm:px-6 md:px-8">
             <Breadcrumb />
           </div>
         </div>
 
         {/* Contenido principal*/}
-        <div className="col-span-1 md:col-span-8 bg-red-600">
+        <div className="col-span-1 md:col-span-8 ">
           {Titulo && (
             <h1
               className={`${open_Sans.className} text-[38px] font-medium uppercase text-[#404041] mb-8`}
@@ -42,7 +42,7 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children }) {
         </div>
 
         {/* Enlaces laterales  */}
-        <div className="hidden md:block md:col-span-4 bg-yellow-300">
+        <div className="hidden md:block md:col-span-4 ">
           <div className="flex flex-col">
             {Enlaces.map((enlace) => (
               <Card
