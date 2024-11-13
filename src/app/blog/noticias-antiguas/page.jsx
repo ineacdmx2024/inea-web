@@ -176,7 +176,7 @@ function NoticiasAntiguas({ item }) {
             className={`rounded-l-lg py-2 px-3 ${
               paginaActual === 1
                 ? "bg-gray-300"
-                : "bg-[#d6f1eb] hover:bg-gray-300"
+                : "bg-[#ffffff] hover:bg-gray-300"
             } text-lg border border-slate-400`}
           >
             {"<<"}

@@ -1,6 +1,8 @@
 import { Open_Sans } from "next/font/google";
 import Breadcrumb from "@/components/Breadcrumb";
+import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
+import React from "react";
 
 const open_Sans = Open_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -22,55 +24,177 @@ async function loadPost(id) {
 async function Page({ params }) {
   const post = await loadPost(params.noticiasAntiguasId);
 
-  //console.log("Post ", post.data)
   const contenido = post.data.attributes.Contenido;
+
+  const fechaFun = (fechaAPI) => {
+    const diasSemana = [
+      "domingo",
+      "lunes",
+      "martes",
+      "miércoles",
+      "jueves",
+      "viernes",
+      "sábado",
+    ];
+    const meses = [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre",
+    ];
+    const fecha = new Date(fechaAPI);
+    const diaSemana = diasSemana[fecha.getDay()];
+    const dia = fecha.getDate();
+    const mes = meses[fecha.getMonth()];
+    const año = fecha.getFullYear();
+    return `${dia} de ${mes} de ${año}`;
+  };
+
+  const renderContenido = (contenido) => {
+    return contenido.map((item, index) => {
+      switch (item.type) {
+        case "heading":
+          return React.createElement(
+            `h${item.level}`,
+            {
+              key: index,
+              className: `${open_Sans.className} font-bold text-[${
+                21 - item.level
+              }px]`,
+            },
+            item.children[0]?.text || ""
+          );
+        case "paragraph":
+          return (
+            <p
+              key={index}
+              className={`${open_Sans.className} text-[#404041] text-[16px] font-light`}
+            >
+              {item.children.map((child, i) => (
+                <span
+                  key={i}
+                  style={{
+                    fontWeight: child.bold ? "bold" : "normal",
+                    fontStyle: child.italic ? "italic" : "normal",
+                    textDecoration: `${child.underline ? "underline" : ""} ${
+                      child.strikethrough ? "line-through" : ""
+                    }`,
+                  }}
+                >
+                  {child.text}
+                </span>
+              ))}
+            </p>
+          );
+        case "image":
+          return (
+            <Image
+              key={index}
+              src={item.image.formats.large.url}
+              alt={item.image.alternativeText || "Imagen de la noticia"}
+              width={item.image.width}
+              height={item.image.height}
+              className="my-4"
+            />
+          );
+        case "list":
+          return (
+            <ol
+              key={index}
+              className={`${open_Sans.className} list-decimal pl-6 mb-4`}
+            >
+              {item.children.map((listItem, liIndex) => (
+                <li key={liIndex}>{listItem.children[0]?.text || ""}</li>
+              ))}
+            </ol>
+          );
+        case "quote":
+          return (
+            <blockquote
+              key={index}
+              className="border-l-4 border-gray-500 pl-4 italic text-gray-600 my-4"
+            >
+              {item.children[0]?.text || ""}
+            </blockquote>
+          );
+        default:
+          return null;
+      }
+    });
+  };
+
+  const noticias = [
+    {
+      title: "Explorando las Estrellas",
+      imageSrc: "/imagePrueba/interes1.jpg",
+      link: "https://example.com/article/explorando-las-estrellas",
+      caption: "Un viaje por el cosmos",
+      date: "2024-01-12",
+      buttonText: "Ir al sitio",
+      description:
+        "Sumérgete en los misterios del universo y descubre los secretos de las estrellas.",
+    },
+    {
+      title: "El Arte del Minimalismo",
+      imageSrc: "/imagePrueba/interes2.jpg",
+      link: "https://example.com/article/arte-del-minimalismo",
+      caption: "Menos es más",
+      date: "2024-03-05",
+      buttonText: "Ir al sitio",
+      description:
+        "Descubre cómo el minimalismo puede llevar a una vida más plena al enfocarse en lo que realmente importa.",
+    },
+    {
+      title: "Innovaciones Tecnológicas 2024",
+      imageSrc: "/imagePrueba/interes3.jpg",
+      link: "https://example.com/article/innovaciones-tecnologicas-2024",
+      caption: "El futuro está aquí",
+      date: "2024-07-19",
+      buttonText: "Ir al sitio",
+      description:
+        "Una mirada a los avances tecnológicos más innovadores que moldearán el año que viene.",
+    },
+  ];
+
   return (
     <div>
-      <div className="mt-40 ml-[26rem] mb-10">
-        <Breadcrumb />
-      </div>
-      <div className="mx-auto mt-20 mb-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1140px] flex flex-row gap-8">
-        {/* noticias */}
-        <div className={`${open_Sans.className}  w-2/3 mb-44`}>
-          <h1 className="text-[40px] text-[#404041] uppercase font-semibold">
-            {post.data.attributes.Titulo}
-          </h1>
-          <h2 className="text-[30px] text-[#404041] uppercase">
-            {post.data.attributes.Subtitulo}
-          </h2>
-          <h2 className="text-[20px] text-[#404041] my-5">
-            {post.data.attributes.Fecha}
-          </h2>
-          <div className="m-auto rounded-lg max-h-[392px]">
-            <Image
-              src={
-                post.data.attributes.Imagen?.data?.attributes?.formats?.large
-                  ?.url
-              }
-              alt={
-                post.data.attributes.Nombre_de_la_Imagen || "Imagen sin título"
-              }
-              className="w-full rounded-lg"
-              width={1000}
-              height={700}
-            />
-          </div>
-          {contenido?.map((item, index) => (
-            <div key={index} className="p-5 mt-16">
-              {item.children.map((child, childIndex) => (
-                <p className="text-xl leading-relaxed" key={childIndex}>
-                  {child.text}
-                </p>
-              ))}
-            </div>
-          ))}
+      <div className="mt-40 ml-[26rem] mb-10"></div>
+      <PagSec
+        Enlaces={noticias}
+        Titulo={post.data.attributes.Titulo}
+        Subtitulo={post.data.attributes.Subtitulo}
+      >
+        <h1
+          className={`${open_Sans.className} text-[#404041] text-[18px] font-light`}
+        >
+          INEA Ciudad de México |{" "}
+          {post.data.attributes.Fecha
+            ? fechaFun(post.data.attributes.Fecha)
+            : ""}
+        </h1>
+        <div className="m-auto my-6 rounded-lg max-h-[392px]">
+          <Image
+            src={
+              post.data.attributes.Imagen?.data?.attributes?.formats?.large?.url
+            }
+            alt={
+              post.data.attributes.Nombre_de_la_Imagen || "Imagen sin título"
+            }
+            className="w-full rounded-lg"
+            width={1000}
+            height={700}
+          />
         </div>
-
-        {/* noticias mas recientes */}
-        <div className="bg-yellow-500 w-1/3">
-          <h1>Noticias mas recientes</h1>
-        </div>
-      </div>
+        <div className="mb-6 mt-12 ">{renderContenido(contenido)}</div>
+      </PagSec>
     </div>
   );
 }
