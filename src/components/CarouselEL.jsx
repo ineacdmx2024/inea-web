@@ -73,7 +73,7 @@ const CarouselEL = ({ cards }) => {
               className="px-2"
             >
               <div className="h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center w-full">
                   <img
                     className="w-60 h-auto object-cover rounded-lg"
                     src={card.imageSrc}

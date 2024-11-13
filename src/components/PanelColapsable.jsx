@@ -34,7 +34,7 @@ const CollapsiblePanel = ({ title, content, imageSrc }) => {
           </div>
         </div>
 
-        {/* Ícono SVG de colapsar/expandir */}
+        {/* Ícono SVG de colapsar/expandir
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -51,7 +51,20 @@ const CollapsiblePanel = ({ title, content, imageSrc }) => {
             className="font-bold"
             d="M19.5 12l-7.5-7.5L4.5 12"
           />
-        </svg>
+        </svg> */}
+        <button onClick={togglePanel}>
+          {isOpen ? (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={`w-7 h-7 transform transition-transform duration-300 ${
+            isOpen ? "rotate-180" : "rotate-0"
+          } ml-3 font-bold`}>
+            <path fillRule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
+          </svg>
+          ) :
+            (<svg strokeWidth="4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={`w-7 h-7 transform transition-transform duration-300 ${
+              isOpen ? "rotate-180" : "rotate-0"
+            } ml-3 font-bold`}>
+              <path fillRule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clipRule="evenodd" />
+            </svg>)}
+        </button>
       </div>
 
       {/* Contenedor del contenido colapsable con transición */}

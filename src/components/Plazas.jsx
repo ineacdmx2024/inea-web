@@ -91,16 +91,8 @@ const Plazas = ({ datos }) => {
               <div className="m-[0%] uppercase">{item.alcaldia}</div>
             </div>
             <div className="justify-center m-[20px]">
-              {item.dir && (
-                <p>
-                  <strong>Dirección:</strong> {item.dir}
-                </p>
-              )}
-              {item.atel && (
-                <p>
-                  <strong>Tel:</strong> {item.atel}
-                </p>
-              )}
+              {item.dir && <p>{item.dir}</p>}
+              {item.atel && <p>Tel: {item.atel}</p>}
             </div>
           </div>
         ))}
