@@ -14,8 +14,8 @@ export default function Banner() {
           "https://inea-web-backend.onrender.com/api/banner-contingencia?populate=*"
         );
         const json = await res.json();
-        console.log("data ", json.data.attributes);
-        setData(json.data.attributes); // Ajusta según la estructura de tu respuesta
+
+        setData(json.data.attributes);
       } catch (error) {
         console.error("Error fetching data:", error);
         setError(error);
@@ -29,23 +29,21 @@ export default function Banner() {
 
   if (loading) return <p>Cargando...</p>;
   if (error) return <p>Error al cargar el banner.</p>;
-  console.log(data.Banner.data?.attributes?.formats?.large?.url);
 
   return (
     <div>
-      {data ? (
-        <div className=" w-20">
+      {data?.Encendido ? (
+        <div className=" w-full">
           <Image
-            src={data.Banner.data?.attributes?.formats?.large?.url}
+            src={data.Banner.data[0]?.attributes?.formats?.large?.url}
             alt={data.Nombre_de_la_Imagen || "Imagen sin título"}
-            className="w-full h-full object-contain rounded-xl "
+            className="w-full h-full object-contain bg-purple-800 "
             width={950}
             height={500}
           />
-          {/* Renderiza otros datos que obtengas de la API */}
         </div>
       ) : (
-        <p>No se pudo cargar el banner.</p>
+        <div></div>
       )}
     </div>
   );

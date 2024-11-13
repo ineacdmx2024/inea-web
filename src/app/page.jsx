@@ -25,7 +25,7 @@ function page() {
         />
       </div>
 
-      {/* <BannerContingencia/> */}
+      <BannerContingencia />
 
       <div className="mx-auto mt-20 mb-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
         <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl ">

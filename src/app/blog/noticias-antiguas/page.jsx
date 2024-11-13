@@ -173,11 +173,9 @@ function NoticiasAntiguas({ item }) {
           <button
             onClick={handlePrevPage}
             disabled={paginaActual === 1}
-            className={`rounded-l-lg py-2 px-3 ${
-              paginaActual === 1
-                ? "bg-gray-300"
-                : "bg-[#ffffff] hover:bg-gray-300"
-            } text-lg border border-slate-400`}
+            className={`rounded-l py-1 px-1 text-[16px] ${
+              paginaActual === 1 ? "bg-white" : "bg-[#ffffff] hover:bg-gray-200"
+            } text-lg border border-slate-300 font-light`}
           >
             {"<<"}
           </button>
@@ -186,11 +184,11 @@ function NoticiasAntiguas({ item }) {
               key={i}
               onClick={() => handlePageChange(i + 1)}
               disabled={paginaActual === i + 1}
-              className={`py-2 px-4 ${
+              className={`py-1 px-3  ${
                 paginaActual === i + 1
                   ? "bg-[#360a1c] text-white"
-                  : "bg-white hover:bg-[#611232] hover:text-white "
-              } text-xl border border-slate-400`}
+                  : "bg-white hover:bg-gray-200 hover:text-[#360a1c] "
+              } text-lg border border-slate-300 font-light`}
             >
               {i + 1}
             </button>
@@ -198,11 +196,11 @@ function NoticiasAntiguas({ item }) {
           <button
             onClick={handleNextPage}
             disabled={paginaActual === totalPaginas}
-            className={`rounded-r-lg py-2 px-3 ${
+            className={`rounded-r py-1 px-1 text-[18px] ${
               paginaActual === totalPaginas
-                ? "bg-gray-300"
-                : "bg-[#d6f1eb] hover:bg-gray-300"
-            } text-lg border border-slate-400`}
+                ? "bg-white"
+                : "bg-white hover:bg-gray-200"
+            } text-lg border border-slate-300`}
           >
             {">>"}
           </button>
