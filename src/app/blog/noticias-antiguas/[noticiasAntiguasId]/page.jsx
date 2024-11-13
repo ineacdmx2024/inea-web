@@ -10,19 +10,20 @@ const open_Sans = Open_Sans({
   subsets: ["latin"],
 });
 
-async function loadPost(id) {
+async function loadPost(slug) {
   const res = await fetch(
-    `https://inea-web-backend.onrender.com/api/blogs/${id}?populate=*`
+    `https://inea-web-backend.onrender.com/api/blogs/${slug}?populate=%2A`
   );
   const data = await res.json();
 
   await new Promise((resolve) => setTimeout(resolve, 3000));
-
+  console.log("Datos: ", data);
   return data;
 }
 
 async function Page({ params }) {
   const post = await loadPost(params.noticiasAntiguasId);
+  console.log(post);
 
   const contenido = post.data.attributes.Contenido;
 
@@ -169,24 +170,25 @@ async function Page({ params }) {
       <div className="mt-40 ml-[26rem] mb-10"></div>
       <PagSec
         Enlaces={noticias}
-        Titulo={post.data.attributes.Titulo}
-        Subtitulo={post.data.attributes.Subtitulo}
+        Titulo={post.data?.attributes?.Titulo}
+        Subtitulo={post.data?.attributes?.Subtitulo}
       >
         <h1
           className={`${open_Sans.className} text-[#404041] text-[18px] font-light`}
         >
           INEA Ciudad de México |{" "}
-          {post.data.attributes.Fecha
-            ? fechaFun(post.data.attributes.Fecha)
+          {post.data?.attributes?.Fecha
+            ? fechaFun(post.data?.attributes?.Fecha)
             : ""}
         </h1>
         <div className="m-auto my-6 rounded-lg max-h-[392px]">
           <Image
             src={
-              post.data.attributes.Imagen?.data?.attributes?.formats?.large?.url
+              post.data.attributes?.Imagen?.data?.attributes?.formats?.large
+                ?.url
             }
             alt={
-              post.data.attributes.Nombre_de_la_Imagen || "Imagen sin título"
+              post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"
             }
             className="w-full rounded-lg"
             width={1000}

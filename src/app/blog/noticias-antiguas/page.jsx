@@ -150,7 +150,9 @@ function NoticiasAntiguas({ item }) {
                     <div className="overflow-visible !z-10 w-full h-auto">
                       <button
                         onClick={() => {
-                          router.push(`/blog/noticias-antiguas/${item.id}`);
+                          router.push(
+                            `/blog/noticias-antiguas/${item.attributes.slug}`
+                          );
                         }}
                         className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block"
                       >
