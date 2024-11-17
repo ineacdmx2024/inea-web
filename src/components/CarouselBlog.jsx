@@ -143,8 +143,8 @@ const CarouselBlog = ({ item }) => {
   };
 
   useEffect(() => {
-    fetchData(); // Llama la función para obtener los datos
-  }, []); // El array vacío hace que se ejecute solo una vez al montarse el componente
+    fetchData();
+  }, []);
 
   // Configuracion del   carousel
   const settings = {
@@ -203,10 +203,7 @@ const CarouselBlog = ({ item }) => {
 
   return (
     <>
-      <style
-        jsx
-        global
-      >{`
+      <style jsx global>{`
         .custom-dots {
           bottom: -30px;
         }
@@ -225,32 +222,28 @@ const CarouselBlog = ({ item }) => {
           transition: all 0.3s ease;
         }
         .custom-dots li.slick-active button:before {
-          color: #790101; // Color verde para el punto activo
+          color: #360a1c; // Color verde para el punto activo
           transform: scale(1.2);
         }
       `}</style>
-      <Slider
-        {...settings}
-        className="mx-auto !z-5"
-      >
+      <Slider {...settings} className="mx-auto !z-5">
         {datos ? (
           datos.map((item, index) => (
-            <div
-              key={index}
-              className="px-4"
-            >
+            <div key={index} className="px-4">
               <div className="w-full letras:w-full arrow:w-[750px] medida3:w-4/5 h-auto mx-auto flex flex-col tablet:flex-row tablet:w-[1142px] tablet:h-[390px] justify-between bg-white rounded-xl ">
                 {/* Div de la imagen */}
                 <div className=" m-auto w-auto arrow:w-[750px] rounded-xl max-h-[392px] overflow-hidden">
                   <Image
                     src={
-                      item.attributes.Imagen?.data?.attributes?.formats?.small
+                      item.attributes.Imagen?.data?.attributes?.formats?.large
                         ?.url
                     }
-                    alt={item.attributes.Titulo}
+                    alt={
+                      item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
+                    }
                     className="w-full h-full object-contain rounded-xl "
-                    width={750}
-                    height={392}
+                    width={950}
+                    height={500}
                   />
                 </div>
 
@@ -271,7 +264,7 @@ const CarouselBlog = ({ item }) => {
                   </p>
 
                   <div className="overflow-visible !z-10">
-                    <button className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-[#8a1b39] rounded-full block">
+                    <button className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] block">
                       <p className="text-xs letras:text-[14.5px] font-light">
                         Continuar leyendo
                       </p>
@@ -287,8 +280,8 @@ const CarouselBlog = ({ item }) => {
       </Slider>
       <div className="flex justify-end m-auto">
         <Link
-          className="mt-20 mr-[1rem] lg:mr-[5rem] xl:mr-[24rem] w-36 text-center bg-[#611232] text-white py-2 px-4 hover:bg-[#8a1b39] rounded-full block letras:text-base text-xs letras:w-44"
-          href={"/#"}
+          className="mt-20 mr-[1rem] lg:mr-[5rem] xl:mr-[24rem] w-36 text-center bg-[#611232] text-white py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block letras:text-base text-xs letras:w-44"
+          href={"/blog/noticias-antiguas"}
         >
           <p className="font-light">Noticias Anteriores</p>
         </Link>

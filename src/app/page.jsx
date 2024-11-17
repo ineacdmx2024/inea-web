@@ -4,6 +4,7 @@ import CarouselBlog from "@/components/CarouselBlog";
 import CarouselOfertEdu from "@/components/CarouselOfertEdu";
 import SeccionLigasInte from "@/components/SeccionLigasInte";
 import Ubicacion from "@/components/Ubicacion";
+import BannerContingencia from "@/components/BannerContingencia";
 const open_Sans = Open_Sans({
   subsets: ["latin"],
 });
@@ -13,16 +14,18 @@ function page() {
     <main className={`mx-auto ${open_Sans.className} bg-white pt-[100px]`}>
       <div>
         <img
-          src="/Banner_INEA_CDMX_EducacionMovil.jpg"
+          src="/Banner_INEA_CDMX_EducacionMovilnueva.webp"
           alt="BannerMovil"
           className="w-full h-auto block medida3:hidden"
         />
         <img
-          src="/Banner_INEA_CDMX.jpg"
+          src="/Banner_INEA_CDMX_Educacion_nueva.webp"
           alt="Banner"
           className="w-full h-auto hidden medida3:block"
         />
       </div>
+
+      <BannerContingencia />
 
       <div className="mx-auto mt-20 mb-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
         <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl ">

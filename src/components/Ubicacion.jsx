@@ -3,20 +3,14 @@ import "./Ubicacion.css";
 
 const Ubicacion = () => {
   return (
-    <div
-      id="UbicacionDivP"
-      className="container w-auto mx-auto px-4 py-0 "
-    >
+    <div id="UbicacionDivP" className="container w-auto mx-auto px-4 py-0 ">
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <div
-          id="direccion"
-          className="text-s text-zinc-800"
-        >
+        <div id="direccion" className="text-s text-zinc-800">
           <br />
-          <p>Dirección INEA CDMX:</p>
+          <p>Dirección INEA Ciudad de México:</p>
           <p className="text-s text-zinc-700">
-            Francisco Márquez 160 Planta baja, Colonia Condesa, Cuauhtémoc,
-            06140 Ciudad de México, Ciudad de México.
+            Francisco Márquez 160 Planta Baja, Col. Condesa, Alcaldía
+            Cuauhtémoc, C.P. 06140, Ciudad de México.
           </p>
           <br />
           <p>
@@ -24,7 +18,7 @@ const Ubicacion = () => {
             5211-0824 / 55 5211-0866 / 55 5211-0798 / 55 5211-0912
           </p>
           <br />
-          <p>Horario de atención de 8:00 a 21:00 horas.</p>
+          <p>Horario de atención de 9:00 a 16:00 horas.</p>
           <br />
 
           <a href="/">Detalles de ubicaciones</a>
