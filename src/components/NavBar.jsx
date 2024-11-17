@@ -96,7 +96,7 @@ const Navbar = () => {
                       ¿Qué es el INEA?
                     </Link>
                     <Link
-                      href="/"
+                      href="/#ubicacion"
                       passHref
                       className="hover:text-[#D3C09B] p-1 rounded"
                     >
@@ -186,7 +186,7 @@ const Navbar = () => {
                   ¿Qué es el INEA?
                 </Link>
                 <Link
-                  href="/"
+                  href="/#ubicacion"
                   passHref
                   className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
                 >

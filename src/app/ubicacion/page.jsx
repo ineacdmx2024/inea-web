@@ -1191,16 +1191,13 @@ function Ubicacion() {
             </div>
           </div>
 
-          <div className="hidden md:w-full flex-col md:flex">
+          <div className="w-full flex-col">
             {/* <SkewedPages datos={pageData} /> */}
-            <SkewedPagesResponsive datos={pageData} />
-          </div>
-          <div className="md:hidden w-full ">
             <SkewedPagesResponsive datos={pageData} />
           </div>
         </div>
         <div className="row-span-1">
-          <div className="mx-auto mt-2 mb-4 w-full max-w-full md:max-w-[1140px]">
+          <div className="mx-auto mt-2 mb-4 w-full max-w-full ">
             <h2 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
               Plazas comunitarias
             </h2>

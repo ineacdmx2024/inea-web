@@ -6,6 +6,11 @@ const Plazas = ({ datos }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const handleAlcaldiaClick = (indexSlides) => {
     setCurrentPage(indexSlides); // Cambia la página actual usando IndexSlides
+    //Centrar en los mapas
+    const datosMapa = document.getElementById("datosMapaPlazas");
+    if (datosMapa) {
+      datosMapa.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
   };
   const colors = [
     "text-[#880D4F]", //1
@@ -135,7 +140,10 @@ const Plazas = ({ datos }) => {
         ))}
       </div>
       {/* Contenido principal */}
-      <div className="container mx-auto flex-column h-full bg-white mt-8">
+      <div
+        id="datosMapaPlazas"
+        className="container mx-auto flex-column h-full bg-white mt-8"
+      >
         {datos.map((pageData, index) => (
           <div
             key={index}

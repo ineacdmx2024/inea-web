@@ -6,6 +6,12 @@ const SkewedPagesResponsive = ({ datos }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const handleAlcaldiaClick = (indexSlides) => {
     setCurrentPage(indexSlides); // Cambia la página actual usando IndexSlides
+
+    //Centrar en los mapas
+    const datosMapa = document.getElementById("datosMapa");
+    if (datosMapa) {
+      datosMapa.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
   };
   const colors = [
     "text-red-500",
@@ -67,7 +73,10 @@ const SkewedPagesResponsive = ({ datos }) => {
         ))}
       </div>
       <br />
-      <div className="sticky container mx-auto flex-column h-full bg-white">
+      <div
+        id="datosMapa"
+        className="sticky container mx-auto flex-column h-full bg-white"
+      >
         {datos.map((pageData, index) => (
           <div
             key={index}

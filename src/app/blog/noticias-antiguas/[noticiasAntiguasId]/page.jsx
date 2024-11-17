@@ -167,7 +167,7 @@ async function Page({ params }) {
 
   return (
     <div>
-      <div className="mt-40 ml-[26rem] mb-10"></div>
+      <div className="ml-[26rem] mb-10"></div>
       <PagSec
         Enlaces={noticias}
         Titulo={post.data?.attributes?.Titulo}
