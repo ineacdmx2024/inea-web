@@ -167,7 +167,7 @@ function CarouselOfertEdu() {
                       {noticia.name}
                     </h3>
                   </div>
-                  <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block font-light">
+                  <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#FFFFFF] hover:text-black  hover:ring-[#611232] hover:ring-4 mx-auto block font-light">
                     Ir al sitio
                   </button>
                 </div>

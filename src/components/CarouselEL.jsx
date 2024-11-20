@@ -58,7 +58,7 @@ const CarouselEL = ({ cards }) => {
                 <h3 className="text-center text-[18px]  text-slate-500 font-medium capitalize">
                   {card.title}
                 </h3>
-                <button className="hover:bg-[#8a1b39] text-white text-xs  py-2 px-4 rounded-full bg-[#a42145] mx-auto block">
+                <button className="hover:bg-[#FFFFFF] hover:text-black  hover:ring-[#611232] hover:ring-4 text-white text-xs  py-2 px-4 rounded-full bg-[#a42145] mx-auto block">
                   {card.buttonText}
                 </button>
               </div>
