@@ -59,11 +59,12 @@ const Plazas = ({ datos }) => {
     if (!items) return null;
 
     const columns =
-      items.length > 10 ? "grid-cols-3 text-lg" : "grid-cols-2 text-xl";
+      items.length > 10 ? "grid-cols-3 text-[13px] md:text-lg" : "grid-cols-2 text-sm md:text-xl";
 
     return (
       <div
-        className={`grid ${columns} flex flex-col justify-center items-center`}
+        className={`grid ${columns} flex flex-col justify-center`}
+        style={{ alignItems: 'baseline' }}
       >
         {items.map((item, index) => (
           <div
@@ -71,10 +72,14 @@ const Plazas = ({ datos }) => {
             className="mb-4 text-start justify-start cursor-pointer"
             onClick={() => window.open(item.url, "_blank")}
           >
-            <div className="flex justify-start m-[20px]">
+            <div className="flex m-[20px]" style={{ justifyContent: 'center' }}>
+              
+                
+             
+              <div className="flex m-[0%] uppercase">
               <div className="flex h-auto w-auto">
-                <svg
-                  className={`h-7 w-7 ${colors[index % colors.length]}`}
+              <svg
+                  className={`h-6 w-6 ${colors[index % colors.length]}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -91,9 +96,10 @@ const Plazas = ({ datos }) => {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-              </div>
-
-              <div className="m-[0%] uppercase">{item.alcaldia}</div>
+                </div>
+                {item.alcaldia}
+                
+                </div>
             </div>
             <div className="justify-center m-[20px]">
               {item.dir && <p>{item.dir}</p>}
