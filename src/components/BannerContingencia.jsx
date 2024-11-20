@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from 'next/link'
 
 export default function Banner() {
   const [data, setData] = useState(null);
@@ -33,14 +34,16 @@ export default function Banner() {
   return (
     <div>
       {data?.Encendido ? (
-        <div className=" w-full">
-          <Image
-            src={data.Banner.data[0]?.attributes?.formats?.large?.url}
-            alt={data.Nombre_de_la_Imagen || "Imagen sin título"}
-            className="w-full h-full object-contain bg-purple-800 "
-            width={950}
-            height={500}
-          />
+        <div className=" w-full m-auto">
+          <Link href="/comunicado-contingencia">
+            <Image
+              src={data.Banner.data[0]?.attributes?.url}
+              alt={data.Nombre_de_la_Imagen || "Imagen sin título"}
+              className="w-full h-full object-contain bg-purple-800 "
+              width={2500}
+              height={500}
+            />
+          </Link>
         </div>
       ) : (
         <div></div>

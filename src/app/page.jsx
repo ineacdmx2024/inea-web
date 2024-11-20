@@ -40,7 +40,7 @@ function page() {
 
       <div className="mx-auto mt-32 mb-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
         <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl ">
-          Oferta Educativa
+          Oferta educativa
         </h1>
         <div className="flex items-center">
           <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
@@ -51,7 +51,7 @@ function page() {
 
       <div className="my-20 mx-auto mt-32 mb-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
         <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl ">
-          Ligas de Interes
+          Enlaces de interes
         </h1>
         <div className="flex items-center">
           <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>

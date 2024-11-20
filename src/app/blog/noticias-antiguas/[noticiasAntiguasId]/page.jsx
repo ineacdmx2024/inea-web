@@ -12,18 +12,22 @@ const open_Sans = Open_Sans({
 
 async function loadPost(slug) {
   const res = await fetch(
-    `https://inea-web-backend.onrender.com/api/blogs/${slug}?populate=%2A`
+    `https://inea-web-backend.onrender.com/api/blogs/${slug}?populate=%2A`, {
+      cache: 'no-store',
+      headers: {
+        'Cache-Control': 'no-cache'
+      }
+    }
   );
   const data = await res.json();
 
   await new Promise((resolve) => setTimeout(resolve, 3000));
-  console.log("Datos: ", data);
+  // console.log("Datos: ", data);
   return data;
 }
 
 async function Page({ params }) {
   const post = await loadPost(params.noticiasAntiguasId);
-  console.log(post);
 
   const contenido = post.data.attributes.Contenido;
 
@@ -56,7 +60,7 @@ async function Page({ params }) {
     const dia = fecha.getDate();
     const mes = meses[fecha.getMonth()];
     const año = fecha.getFullYear();
-    return `${dia} de ${mes} de ${año}`;
+    return `${dia + 1} de ${mes} de ${año}`;
   };
 
   const renderContenido = (contenido) => {
@@ -195,7 +199,7 @@ async function Page({ params }) {
             height={700}
           />
         </div>
-        <div className="mb-6 mt-12 ">{renderContenido(contenido)}</div>
+        <div className="mb-6 mt-12 leading-loose">{renderContenido(contenido)}</div>
       </PagSec>
     </div>
   );

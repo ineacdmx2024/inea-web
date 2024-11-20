@@ -258,7 +258,7 @@ function SeccionLigasInte() {
               <div className="border border-slate-300 h-[420px] rounded-lg p-8 flex flex-col justify-between">
                 <div className="flex flex-col items-center">
                   <img
-                    className="w-60 h-auto object-cover rounded-lg"
+                    className="w-full h-auto object-cover rounded-lg"
                     src={noticia.image}
                     alt={noticia.title}
                   />
@@ -282,7 +282,7 @@ function SeccionLigasInte() {
                 <div className="h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
                   <div className="flex flex-col items-center">
                     <img
-                      className="w-60 h-auto object-cover rounded-lg"
+                      className="w-full h-auto object-cover rounded-lg"
                       src={noticia.image}
                       alt={noticia.title}
                     />
@@ -310,7 +310,7 @@ function SeccionLigasInte() {
                 <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
                   <div className="flex flex-col items-center">
                     <img
-                      className="w-60 h-auto object-cover rounded-lg"
+                      className="w-full h-auto object-cover rounded-lg"
                       src={noticia.image}
                       alt={noticia.title}
                     />
