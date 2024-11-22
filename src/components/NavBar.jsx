@@ -78,7 +78,7 @@ const Navbar = () => {
                   <img
                     src="/LogoEducacion.svg"
                     alt="Educacion"
-                    className=" hover:text-[#8B6C41]  rounded inline-block py-[0.3rem] mr-[1rem]"
+                    className="    rounded inline-block py-[0.3rem] mr-[1rem]"
                   />
                 </Link>
               </div>
@@ -98,14 +98,14 @@ const Navbar = () => {
                     <Link
                       href="/"
                       passHref
-                      className="hover:text-[#D3C09B] p-1 rounded"
+                      className="hover:text-[#D3C09B] p-1 rounded  "
                     >
                       Contacto
                     </Link>
                     <Link
                       href="/"
                       passHref
-                      className="hover:text-[#D3C09B] p-1 rounded"
+                      className="hover:text-[#D3C09B] p-1 rounded  "
                     >
                       Mapa del sitio
                     </Link>
