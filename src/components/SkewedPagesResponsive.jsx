@@ -10,7 +10,16 @@ const SkewedPagesResponsive = ({ datos }) => {
     //Centrar en los mapas
     const datosMapa = document.getElementById("datosMapa");
     if (datosMapa) {
-      datosMapa.scrollIntoView({ behavior: "smooth", block: "center" });
+      // datosMapa.scrollIntoView({ behavior: "smooth", block: "center" });
+      const offset = 115; // Espacio de 115 píxeles arriba del top del elemento
+      const elementPosition =
+        datosMapa.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
   const colors = [

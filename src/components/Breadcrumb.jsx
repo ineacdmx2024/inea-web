@@ -8,14 +8,20 @@ const Breadcrumb = () => {
   const pathArray = pathname.split("/").filter((path) => path);
 
   const generateBreadcrumbTitle = (segment) => {
+    const maxLenght = 30;
+
+    const formatoSegment = segment
+      .replace(/-/g, " ")
+      .toLowerCase()
+      .replace(/^\w/, (l) => l.toUpperCase());
+
     switch (segment) {
       // Tu lógica para generar los títulos
       // ...
       default:
-        return segment
-          .replace(/-/g, " ")
-          .toLowerCase()
-          .replace(/^\w/, (l) => l.toUpperCase());
+        return formatoSegment.length > maxLenght
+          ? formatoSegment.slice(0, maxLenght) + "..."
+          : formatoSegment;
     }
   };
 
