@@ -266,7 +266,7 @@ function SeccionLigasInte() {
                     {noticia.title}
                   </h3>
                 </div>
-                <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#FFFFFF] hover:text-black  hover:ring-[#611232] hover:ring-4 mx-auto block">
+                <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
                   Ir al sitio
                 </button>
               </div>
@@ -290,7 +290,7 @@ function SeccionLigasInte() {
                       {noticia.title}
                     </h3>
                   </div>
-                  <button className="text-xs letras:text-[13.5px] bg-[#611232] text-white py-2 px-4 rounded-full hover:bg-[#FFFFFF] hover:text-black  hover:ring-[#611232] hover:ring-4 mx-auto block">
+                  <button className="text-xs letras:text-[13.5px] bg-[#611232] text-white py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
                     Ir al sitio
                   </button>
                 </div>
@@ -318,7 +318,7 @@ function SeccionLigasInte() {
                       {noticia.title}
                     </h3>
                   </div>
-                  <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#FFFFFF] hover:text-black  hover:ring-[#611232] hover:ring-4 mx-auto block">
+                  <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
                     Ir al sitio
                   </button>
                 </div>

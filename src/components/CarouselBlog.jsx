@@ -1,19 +1,58 @@
 "use client";
-import { useState, useEffect } from "react";
+import Image from "next/image";
 import Slider from "react-slick";
+import { Open_Sans } from "next/font/google";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Link from 'next/link'
+import { useState, useEffect } from "react";
+import Link from "next/link";
+
+const open_Sans = Open_Sans({
+  weight: ["300", "400", "500", "700"],
+  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
+  subsets: ["latin"],
+});
+
+const truncateText = (text, maxWords) => {
+  const words = text.split(" ");
+  if (words.length > maxWords) {
+    return words.slice(0, maxWords).join(" ") + "...";
+  }
+  return text;
+};
 
 function PrevArrow(props) {
   const { className, style, onClick } = props;
+  const [leftValue, setLeftValue] = useState("20rem");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1850) {
+        setLeftValue("20rem");
+      } else if (window.innerWidth > 1630) {
+        setLeftValue("15rem");
+      } else if (window.innerWidth > 1500) {
+        setLeftValue("10rem");
+      } else if (window.innerWidth > 1330) {
+        setLeftValue("5rem");
+      } else {
+        setLeftValue("1rem");
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div
       className={`${className} !z-10 before:!content-none`}
       style={{
         ...style,
         display: "block",
-        left: "-25px",
+        left: leftValue,
       }}
       onClick={onClick}
     >
@@ -37,13 +76,36 @@ function PrevArrow(props) {
 
 const NextArrow = (props) => {
   const { className, style, onClick } = props;
+  const [rightValue, setRightValue] = useState("22rem");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1850) {
+        setRightValue("22rem");
+      } else if (window.innerWidth > 1630) {
+        setRightValue("15rem");
+      } else if (window.innerWidth > 1500) {
+        setRightValue("10rem");
+      } else if (window.innerWidth > 1330) {
+        setRightValue("5rem");
+      } else {
+        setRightValue("1rem");
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div
       className={`${className} !z-10 before:!content-none`}
       style={{
         ...style,
         display: "block",
-        right: "-15px",
+        right: rightValue,
       }}
       onClick={onClick}
     >
@@ -53,7 +115,7 @@ const NextArrow = (props) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="hidden arrow:block w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
+        className="w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75 hidden arrow:block "
       >
         <path
           strokeLinecap="round"
@@ -65,68 +127,80 @@ const NextArrow = (props) => {
   );
 };
 
-function CarouselOfertEdu() {
-  const [slidesToShow, setSlidesToShow] = useState(3);
+const CarouselBlog = ({ item }) => {
+  const [datos, setData] = useState(null);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "https://inea-web-backend.onrender.com/api/blogs?populate=*&pagination[limit]=4&sort[0]=Fecha:desc"
+      );
+      const result = await response.json();
+      setData(result.data);
+    } catch (error) {
+      console.error("Error al obtener los datos:", error);
+    }
+  };
 
   useEffect(() => {
-    const handleResize = () => {
-      setSlidesToShow(window.innerWidth < 1210 ? 1 : 3);
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    fetchData();
   }, []);
 
-  const modalidades = [
-    {
-      name: "Alfabetización, Primaria Y Secundaria Presencial",
-      image: "/Modalidad1.jpg",
-      url: ""
-    },
-    {
-      name: "Primaria Y Secundaria En Línea",
-      image: "/Modalidad2.jpg",
-      url: "/enlinea"
-    },
-    {
-      name: "Examen Único",
-      image: "/Modalidad3.jpg",
-      url: "/examen-unico",
-    },
-    {
-      name: "¿Qué opcion me conviene?",
-      image: "/Modalidad4.jpg",
-      url: "/que-modalidad-elijo",
-    },
-    {
-      name: "Examenes diagnostico",
-      image: "/Modalidad5.jpg",
-      url: "/examene-diagnostico",
-    },
-  ];
-
+  // Configuracion del   carousel
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: slidesToShow,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     dotsClass: "slick-dots custom-dots",
     appendDots: (dots) => (
       <div style={{ bottom: "-25px" }}>
         <ul style={{ margin: "0" }}> {dots} </ul>
       </div>
     ),
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
   };
+
+  const fechaFun = (fechaAPI) => {
+    const fechaApi = fechaAPI;
+
+    const diasSemana = [
+      "domingo",
+      "lunes",
+      "martes",
+      "miércoles",
+      "jueves",
+      "viernes",
+      "sábado",
+    ];
+    const meses = [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre",
+    ];
+    const fecha = new Date(fechaApi);
+
+    const diaSemana = diasSemana[fecha.getDay() + 1];
+    const dia = fecha.getDate() + 1;
+    const mes = meses[fecha.getMonth()];
+    const año = fecha.getFullYear();
+
+    return `${diaSemana}, ${dia} de ${mes} de ${año}`;
+  };
+
   return (
     <>
       <style jsx global>{`
@@ -148,40 +222,73 @@ function CarouselOfertEdu() {
           transition: all 0.3s ease;
         }
         .custom-dots li.slick-active button:before {
-          color: #790101; // Color verde para el punto activo
+          color: #360a1c; // Color verde para el punto activo
           transform: scale(1.2);
         }
       `}</style>
-      <div className="p-2 pt-0">
-        <div className="carrusel">
-          <Slider
-            {...settings}
-            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] mt-8"
-          >
-            {modalidades.map((noticia, index) => (
-              <div key={index} className="px-4">
-                <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[420px] p-8 flex flex-col justify-between">
-                  <div className="flex flex-col items-center">
-                    <img
-                      className="bg-blue-700 w-full h-auto object-cover rounded-lg"
-                      src={noticia.image}
-                      alt={noticia.name}
-                    />
-                    <h3 className="my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium capitalize">
-                      {noticia.name}
-                    </h3>
-                  </div>
-                  <Link className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block font-light" href={`/oferta-educativa${noticia.url}`}>
-                    Ir al sitio
-                  </Link>
+      <Slider {...settings} className="mx-auto !z-5">
+        {datos ? (
+          datos.map((item, index) => (
+            <div key={index} className="px-4">
+              <div className="w-full letras:w-full arrow:w-[750px] medida3:w-4/5 h-auto mx-auto flex flex-col tablet:flex-row tablet:w-[1142px] tablet:h-[390px] justify-between bg-white rounded-xl ">
+                {/* Div de la imagen */}
+                <div className=" m-auto w-auto arrow:w-[750px] rounded-xl max-h-[392px] overflow-hidden">
+                  <Image
+                    src={
+                      item.attributes.Imagen?.data?.attributes?.formats?.large
+                        ?.url
+                    }
+                    alt={
+                      item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
+                    }
+                    className="w-full h-full object-contain rounded-xl "
+                    width={950}
+                    height={500}
+                  />
                 </div>
+
+                {/* Div del texto */}
+                <article
+                  className={`${open_Sans.className} flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] px-5 py-2 m-auto arrow:w-[750px]`}
+                >
+                  <p className="letras:text-base text-gray-700 text-sm mb-2 ">
+                    {item.attributes.Fecha
+                      ? fechaFun(item.attributes.Fecha)
+                      : "No hay"}
+                  </p>
+                  <h2 className="letras:text-[28px] text-[20px] leading-tight font-medium mb-4 uppercase">
+                    {truncateText(item.attributes.Titulo, 10)}
+                  </h2>
+                  <p className="letras:text-[17px] text-gray-900 font-light text-[14px] mb-4 uppercase">
+                    {truncateText(item.attributes.Subtitulo, 20)}
+                  </p>
+
+                  <div className="overflow-visible !z-10">
+                    <Link className="text-center m-auto w-44 letras:ml-auto bg-[#611232] text-white py-3  hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] block" href={`/blog/noticias-antiguas/${ item.attributes.slug}`}>
+                    {console.log(item.attributes.slug)}
+                      <p className="text-xs letras:text-[14.5px] font-light">
+                        Continuar leyendo
+                      </p>
+                    </Link>
+                  </div>
+                </article>
               </div>
-            ))}
-          </Slider>
-        </div>
+            </div>
+          ))
+        ) : (
+          <p className="text-center">Cargando noticias...</p>
+        )}
+      </Slider>
+      <div className="flex justify-end m-auto">
+        <Link
+          className="mt-20 mr-[1rem] lg:mr-[5rem] xl:mr-[24rem] w-36 text-center bg-[#611232] text-white py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block letras:text-base text-xs letras:w-44"
+          href={`/blog/noticias-antiguas/`}
+        >
+          <p className="font-light">Noticias Anteriores</p>
+        </Link>
       </div>
     </>
   );
-}
+};
 
-export default CarouselOfertEdu;
+export default CarouselBlog;
