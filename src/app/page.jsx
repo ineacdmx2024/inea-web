@@ -11,7 +11,7 @@ const open_Sans = Open_Sans({
 
 function page() {
   return (
-    <main className={`mx-auto ${open_Sans.className} bg-white pt-[115px]`}>
+    <main className={`mx-auto ${open_Sans.className} bg-white pt-[100px]`}>
       <div>
         <img
           src="/Banner_INEA_CDMX_EducacionMovilnueva.webp"
@@ -60,7 +60,10 @@ function page() {
       </div>
       <SeccionLigasInte />
 
-      <div className="my-20 mx-auto mt-32 mb-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
+      <div
+        id="ubicacion"
+        className="my-20 mx-auto mt-32 mb-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]"
+      >
         <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl ">
           Ubicación
         </h1>

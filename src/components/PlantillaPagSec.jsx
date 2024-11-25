@@ -12,12 +12,13 @@ const open_Sans = Open_Sans({
 
 function PagSec({ Enlaces, Titulo, Subtitulo, children }) {
   return (
-    <div className="mt-[12.5vh]">
+    <div className="mt-[10.5vh]">
       <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-x-[4vh]">
         <br />
         {/* Breadcrumb */}
         <div className="col-span-1 md:col-span-12 ">
           <div className="mx-auto py-1 px-4 sm:px-6 md:px-8">
+
             <Breadcrumb />
           </div>
         </div>

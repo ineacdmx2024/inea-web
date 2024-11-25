@@ -8,20 +8,27 @@ const Breadcrumb = () => {
   const pathArray = pathname.split("/").filter((path) => path);
 
   const generateBreadcrumbTitle = (segment) => {
+    const maxLenght = 30;
+
+    const formatoSegment = segment
+      .replace(/-/g, " ")
+      .toLowerCase()
+      .replace(/^\w/, (l) => l.toUpperCase());
+
     switch (segment) {
       // Tu lógica para generar los títulos
       // ...
       default:
-        return segment
-          .replace(/-/g, " ")
-          .replace(/\b\w/g, (l) => l.toUpperCase());
+        return formatoSegment.length > maxLenght
+          ? formatoSegment.slice(0, maxLenght) + "..."
+          : formatoSegment;
     }
   };
 
   return (
     <nav className="text-lg text-gray-700 mb-4">
       <ol className="list-none p-0 flex flex-wrap">
-        <li>
+        <li className="mx-0">
           <Link
             href="/"
             className="flex items-center text-gray-500 hover:underline"
@@ -32,7 +39,7 @@ const Breadcrumb = () => {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-5 h-5 mx-2"
+              className="w-5 h-5 mr-2"
             >
               <path
                 strokeLinecap="round"

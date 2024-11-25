@@ -100,19 +100,19 @@ function Modalidad() {
                     </div>
                     <div className="mt-2 mb-4 text-lg">
                       <ul className="list-disc ml-8">
-                        <li>Tener 15 años o más.</li>
+                        <li>Tener 15 años o más</li>
                         <li>Acta de nacimiento</li>
                         <li>CURP</li>
                         <li>Certificado</li>
                         <li>Primaria (en caso de comenzar Secundaria)</li>
                         <li>
                           Documento binacional (para personas provenientes del
-                          extranjero).
+                          extranjero)
                         </li>
                         <li>
                           En caso de haber cursado en grados escolarizados
                           (Primaria o Secundaria) se deben presentar las boletas
-                          correspondientes.
+                          correspondientes
                         </li>
                       </ul>
                     </div>
@@ -182,19 +182,19 @@ function Modalidad() {
                     </div>
                     <div className="mt-2 mb-4 text-lg">
                       <ul className="list-disc ml-8">
-                        <li>Tener 15 años o más.</li>
-                        <li>Identificación oficial con fotografía.</li>
+                        <li>Tener 15 años o más</li>
+                        <li>Identificación oficial con fotografía</li>
                         <li>
                           Portafolio de evidencias (reconocimientos, constancias
-                          y diplomas).
+                          y diplomas)
                         </li>
                         <li>
                           Dos fotografías tamaño infantil (color o blanco y
-                          negro).
+                          negro)
                         </li>
                         <li>
                           Certificado de Primaria (sólo para quienes harán
-                          examen de secundaria).
+                          examen de secundaria)
                         </li>
                       </ul>
                     </div>
@@ -259,19 +259,19 @@ function Modalidad() {
                     </div>
                     <div className="mt-2 mb-4 text-lg">
                       <ul className="list-disc ml-8">
-                        <li>Tener 15 años o más.</li>
-                        <li>Acta de nacimiento.</li>
+                        <li>Tener 15 años o más</li>
+                        <li>Acta de nacimiento</li>
                         <li>CURP</li>
-                        <li>Certificado.</li>
-                        <li>Primaria (en caso de comenzar Secundaria).</li>
+                        <li>Certificado</li>
+                        <li>Primaria (en caso de comenzar Secundaria)</li>
                         <li>
                           Documento binacional (para personas provenientes del
-                          extranjero).
+                          extranjero)
                         </li>
                         <li>
                           En caso de haber cursado en grados escolarizados
                           (Primaria o Secundaria) se deben presentar las boletas
-                          correspondientes.
+                          correspondientes
                         </li>
                       </ul>
                     </div>
@@ -340,19 +340,19 @@ function Modalidad() {
                     </div>
                     <div className="mt-2 mb-4 text-lg">
                       <ul className="list-disc ml-8">
-                        <li>Tener 15 años o más.</li>
-                        <li>Acta de nacimiento.</li>
-                        <li>CURP.</li>
-                        <li>Certificado.</li>
-                        <li>Primaria (en caso de comenzar Secundaria).</li>
+                        <li>Tener 15 años o más</li>
+                        <li>Acta de nacimiento</li>
+                        <li>CURP</li>
+                        <li>Certificado</li>
+                        <li>Primaria (en caso de comenzar Secundaria)</li>
                         <li>
                           Documento binacional (para personas provenientes del
-                          extranjero).{" "}
+                          extranjero)
                         </li>
                         <li>
                           En caso de haber cursado en grados escolarizados
                           (Primaria o Secundaria) se deben presentar las boletas
-                          correspondientes.
+                          correspondientes
                         </li>
                       </ul>
                     </div>
