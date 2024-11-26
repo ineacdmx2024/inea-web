@@ -171,7 +171,7 @@ function CarouselOfertEdu() {
                       {noticia.name}
                     </h3>
                   </div>
-                  <Link className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block font-light" href={`/oferta-educativa${noticia.url}`}>
+                  <Link className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light" href={`/oferta-educativa${noticia.url}`}>
                     Ir al sitio
                   </Link>
                 </div>
