@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from 'next/link'
+import Link from "next/link";
 
 export default function Banner() {
   const [data, setData] = useState(null);
@@ -28,22 +28,35 @@ export default function Banner() {
     fetchData();
   }, []);
 
+  const renderTextWithLineBreaks = (text) => {
+    return text.split("\n").map((line, index) => (
+      <p key={index} className="text-center text-gray-700">
+        {line.trim()}
+      </p>
+    ));
+  };
+
   if (loading) return <p>Cargando...</p>;
   if (error) return <p>Error al cargar el banner.</p>;
 
   return (
     <div>
       {data?.Encendido ? (
-        <div className=" w-full m-auto">
+        <div className="w-full m-auto">
           <Link href="/comunicado-contingencia">
             <Image
               src={data.Banner.data[0]?.attributes?.url}
               alt={data.Nombre_de_la_Imagen || "Imagen sin título"}
-              className="w-full h-full object-contain bg-purple-800 "
+              className="w-full h-full object-contain bg-purple-800"
               width={2500}
               height={500}
             />
           </Link>
+          {data.Texto && (
+            <div className="mt-4 px-4">
+              {renderTextWithLineBreaks(data.Texto)}
+            </div>
+          )}
         </div>
       ) : (
         <div></div>

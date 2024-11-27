@@ -63,6 +63,7 @@ async function Page({ params }) {
     return `${dia + 1} de ${mes} de ${año}`;
   };
 
+  // Modificación en renderContenido
   const renderContenido = (contenido) => {
     return contenido.map((item, index) => {
       switch (item.type) {
@@ -78,6 +79,11 @@ async function Page({ params }) {
             item.children[0]?.text || ""
           );
         case "paragraph":
+          const textContent = item.children.map((child) => child.text).join("");
+          if (textContent.trim() === "") {
+            // Manejo de párrafos vacíos: agrega un salto de línea visual
+            return <br key={index} />;
+          }
           return (
             <p
               key={index}
