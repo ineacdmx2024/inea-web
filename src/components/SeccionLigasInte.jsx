@@ -82,7 +82,7 @@ function SeccionLigasInte() {
   }, []);
 
   // Implementacion de la API
-  const noticias = [
+  /*const noticias = [
     {
       title: "Explorando las Estrellas",
       image: "/imagePrueba/interes1.jpg",
@@ -205,7 +205,52 @@ function SeccionLigasInte() {
   const [fijas, setFijas] = useState([noticias[0], noticias[1], noticias[2]]);
   const [restantes, setRestantes] = useState(
     noticias.filter((n, index) => ![0, 1, 2].includes(index))
-  );
+  );*/
+  const [fijos, setFijos] = useState([]);
+  useEffect(() => {
+    const fetchFijos = async () => {
+      const res = await fetch(
+        "http://localhost:1337/api/i-enlaces?filters[Fijo][$eq]=true&populate=*"
+      );
+      const data = await res.json();
+      const enlacesData = data.data.map((item) => ({
+        id: item.id,
+        titulo: item.attributes.Titulo,
+        link: item.attributes.Link,
+        fijo: item.attributes.Fijo,
+        fecha: item.attributes.Fecha,
+        imagen: item.attributes.Imagen?.data?.attributes?.formats?.large?.url,
+      }));
+      setFijos(enlacesData);
+    };
+
+    fetchFijos();
+  }, []);
+
+  const [restantes, setRestantes] = useState([]);
+  useEffect(() => {
+    const fetchEnlaces = async () => {
+      const res = await fetch(
+        "http://localhost:1337/api/i-enlaces?filters[Fijo][$eq]=false&populate=*"
+      );
+      const data = await res.json();
+      const enlacesData2 = data.data.map((item) => ({
+        id: item.id,
+        titulo: item.attributes.Titulo,
+        link: item.attributes.Link,
+        fijo: item.attributes.Fijo,
+        fecha: item.attributes.Fecha,
+        imagen: item.attributes.Imagen?.data?.attributes?.formats?.large?.url,
+      }));
+      setRestantes(enlacesData2);
+    };
+
+    fetchEnlaces();
+  }, []);
+
+  const handleButtonClick = (link) => {
+    return window.open(link);
+  };
 
   const settings = {
     dots: true,
@@ -227,7 +272,10 @@ function SeccionLigasInte() {
 
   return (
     <>
-      <style jsx global>{`
+      <style
+        jsx
+        global
+      >{`
         .custom-dots {
           bottom: -30px;
         }
@@ -250,23 +298,30 @@ function SeccionLigasInte() {
           transform: scale(1.2);
         }
       `}</style>
+
       <div className="p-2">
         {/* Div de noticias fijas */}
         <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex">
-          {fijas.map((noticia, index) => (
-            <div key={index} className="px-4 w-1/3">
+          {fijos.map((fijos, index) => (
+            <div
+              key={index}
+              className="px-4 w-1/3"
+            >
               <div className="border border-slate-300 h-[420px] rounded-lg p-8 flex flex-col justify-between">
                 <div className="flex flex-col items-center">
                   <img
                     className="w-60 h-auto object-cover rounded-lg"
-                    src={noticia.image}
-                    alt={noticia.title}
+                    src={fijos.imagen}
+                    alt={fijos.titulo}
                   />
                   <h3 className="my-7 px-4 text-center text-[22px] text-slate-500 font-medium capitalize">
-                    {noticia.title}
+                    {fijos.titulo}
                   </h3>
                 </div>
-                <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
+                <button
+                  className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block"
+                  onClick={() => handleButtonClick(fijos.link)}
+                >
                   Ir al sitio
                 </button>
               </div>
@@ -277,17 +332,20 @@ function SeccionLigasInte() {
         {/* Div de noticias fijas en carousel */}
         <div className="border border-slate-300 rounded-lg bg-white w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto">
           <Slider {...settings}>
-            {fijas.map((noticia, index) => (
-              <div key={index} className="px-2">
+            {fijos.map((fijos, index) => (
+              <div
+                key={index}
+                className="px-2"
+              >
                 <div className="h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
                   <div className="flex flex-col items-center">
                     <img
                       className="w-60 h-auto object-cover rounded-lg"
-                      src={noticia.image}
-                      alt={noticia.title}
+                      src={fijos.imagen}
+                      alt={fijos.titulo}
                     />
                     <h3 className="my-7 px-4 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium capitalize">
-                      {noticia.title}
+                      {fijos.titulo}
                     </h3>
                   </div>
                   <button className="text-xs letras:text-[13.5px] bg-[#611232] text-white py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
@@ -305,20 +363,26 @@ function SeccionLigasInte() {
             {...settings}
             className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] mt-8"
           >
-            {restantes.map((noticia, index) => (
-              <div key={index} className="px-4">
+            {restantes.map((restantes, index) => (
+              <div
+                key={index}
+                className="px-4"
+              >
                 <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
                   <div className="flex flex-col items-center">
                     <img
                       className="w-60 h-auto object-cover rounded-lg"
-                      src={noticia.image}
-                      alt={noticia.title}
+                      src={restantes.imagen}
+                      alt={restantes.titulo}
                     />
                     <h3 className="my-7 px-4 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium capitalize">
-                      {noticia.title}
+                      {restantes.titulo}
                     </h3>
                   </div>
-                  <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
+                  <button
+                    className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block"
+                    onClick={() => handleButtonClick(restantes.link)}
+                  >
                     Ir al sitio
                   </button>
                 </div>
