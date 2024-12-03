@@ -47,9 +47,16 @@ export default function Banner() {
             <Image
               src={data.Banner.data[0]?.attributes?.url}
               alt={data.Nombre_de_la_Imagen || "Imagen sin título"}
-              className="w-full h-full object-contain bg-purple-800"
+              className="w-full h-full object-contain bg-purple-800 hidden medida3:block"
               width={2500}
               height={500}
+            />
+            <Image
+              src={data.Banner_moviles.data[0]?.attributes?.url}
+              alt={data.Nombre_de_la_Imagen || "Imagen sin título"}
+              className="w-full h-full object-contain bg-purple-800 block medida3:hidden"
+              width={900}
+              height={600}
             />
           </Link>
           {data.Texto && (

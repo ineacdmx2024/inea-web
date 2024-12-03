@@ -2,7 +2,6 @@ import React from "react";
 import { Open_Sans } from "next/font/google";
 import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
-import ReactMarkdown from 'react-markdown';
 
 const open_Sans = Open_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -12,12 +11,13 @@ const open_Sans = Open_Sans({
 
 async function loadPost() {
   const res = await fetch(
-    `https://inea-web-backend.onrender.com/api/banner-contingencia?populate=%2A`, {
-        cache: 'no-store',
-        headers: {
-          'Cache-Control': 'no-cache'
-        }
-      }
+    `https://inea-web-backend.onrender.com/api/banner-contingencia?populate=%2A`,
+    {
+      cache: "no-store",
+      headers: {
+        "Cache-Control": "no-cache",
+      },
+    }
   );
   const data = await res.json();
   return data;
@@ -25,11 +25,21 @@ async function loadPost() {
 
 async function ComunicadoContingencia() {
   const post = await loadPost();
-  
+
   const fechaFun = (fechaAPI) => {
     const meses = [
-      "enero", "febrero", "marzo", "abril", "mayo", "junio",
-      "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre",
     ];
     const fecha = new Date(fechaAPI);
     const dia = fecha.getDate();
@@ -71,50 +81,111 @@ async function ComunicadoContingencia() {
     },
   ];
 
-  // Componentes personalizados para el Markdown
-  const components = {
-    h1: ({children}) => (
-      <h1 className={`${open_Sans.className} font-bold text-2xl mb-4`}>{children}</h1>
-    ),
-    h2: ({children}) => (
-      <h2 className={`${open_Sans.className} font-bold text-xl mb-3`}>{children}</h2>
-    ),
-    h3: ({children}) => (
-      <h3 className={`${open_Sans.className} font-bold text-lg mb-2`}>{children}</h3>
-    ),
-    p: ({children}) => {
-      // Si es un párrafo que contiene solo una imagen, no lo envolvemos en <p>
-      if (React.isValidElement(children) && children.type === 'img') {
-        return children;
+  const renderContenido = (contenido) => {
+    return contenido.map((item, index) => {
+      switch (item.type) {
+        case "heading":
+          return React.createElement(
+            `h${item.level}`,
+            {
+              key: index,
+              className: `${open_Sans.className} font-bold text-[${
+                21 - item.level
+              }px]`,
+            },
+            item.children[0]?.text || ""
+          );
+          case "paragraph":
+            const textContent = item.children
+              .map((child) => (child.type === "text" ? child.text : ""))
+              .join("");
+          
+            if (textContent.trim() === "") {
+              // Manejo de párrafos vacíos: agrega un salto de línea visual
+              return <br key={index} />;
+            }
+          
+            return (
+              <p
+                key={index}
+                className={`${open_Sans.className} text-[#404041] text-[16px] font-light`}
+              >
+                {item.children.map((child, i) => {
+                  if (child.type === "link" && child.url) {
+                    return (
+                      <a
+                        key={i}
+                        href={child.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 underline hover:text-blue-700"
+                      >
+                        {child.children?.map((linkChild, j) =>
+                          linkChild.type === "text" ? (
+                            <span key={j}>{linkChild.text}</span>
+                          ) : null
+                        )}
+                      </a>
+                    );
+                  }
+          
+                  if (child.type === "text") {
+                    return (
+                      <span
+                        key={i}
+                        style={{
+                          fontWeight: child.bold ? "bold" : "normal",
+                          fontStyle: child.italic ? "italic" : "normal",
+                          textDecoration: `${child.underline ? "underline" : ""} ${
+                            child.strikethrough ? "line-through" : ""
+                          }`,
+                        }}
+                      >
+                        {child.text}
+                      </span>
+                    );
+                  }
+          
+                  return null; // Manejo para tipos inesperados
+                })}
+              </p>
+            );
+          
+        case "image":
+          return (
+            <Image
+              key={index}
+              src={item.image.formats.large.url}
+              alt={item.image.alternativeText || "Imagen de la noticia"}
+              width={item.image.width}
+              height={item.image.height}
+              className="my-4"
+            />
+          );
+        case "list":
+          return (
+            <ol
+              key={index}
+              className={`${open_Sans.className} list-decimal pl-6 mb-4`}
+            >
+              {item.children.map((listItem, liIndex) => (
+                <li key={liIndex}>{listItem.children[0]?.text || ""}</li>
+              ))}
+            </ol>
+          );
+        case "quote":
+          return (
+            <blockquote
+              key={index}
+              className="border-l-4 border-gray-500 pl-4 italic text-gray-600 my-4"
+            >
+              {item.children[0]?.text || ""}
+            </blockquote>
+          );
+        default:
+          return null;
       }
-      return (
-        <p className={`${open_Sans.className} text-[#404041] text-[16px] font-light mb-4`}>
-          {children}
-        </p>
-      );
-    },
-    img: ({src, alt}) => {
-    //   console.log("Image src:", src); // Para depuración
-      
-      if (!src){
-
-        console.log("No hay imagen");
-        return null;
-      };
-
-      return (
-        <div className="my-6">
-          <Image
-            src={src}
-            alt={alt || "Imagen del comunicado"}
-            width={1000}
-            height={700}
-            className="w-full rounded-lg"
-            unoptimized // Agregamos esta prop para manejar imágenes de Cloudinary
-          />
-        </div>
-      );
-    }
+    });
   };
 
   return (
@@ -131,7 +202,7 @@ async function ComunicadoContingencia() {
             ? fechaFun(post.data?.attributes?.Fecha)
             : ""}
         </h1>
-        
+
         {/* Banner principal */}
         {post.data.attributes?.Banner?.data?.[0]?.attributes?.url && (
           <div className="m-auto my-6 rounded-lg max-h-[392px]">
@@ -141,15 +212,12 @@ async function ComunicadoContingencia() {
               className="w-full rounded-lg"
               width={1000}
               height={700}
-              unoptimized
             />
           </div>
         )}
 
         <div className="mb-6 mt-12 leading-loose">
-          <ReactMarkdown components={components}>
-            {post.data.attributes.Contenido}
-          </ReactMarkdown>
+          {renderContenido(post.data.attributes.Contenido)}
         </div>
       </PagSec>
     </div>
