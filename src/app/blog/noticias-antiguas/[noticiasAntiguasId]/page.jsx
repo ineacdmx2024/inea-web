@@ -1,8 +1,9 @@
 import { Open_Sans } from "next/font/google";
-import Breadcrumb from "@/components/Breadcrumb";
 import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
 import React from "react";
+import Link from 'next/link'
+
 
 const open_Sans = Open_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -78,33 +79,62 @@ async function Page({ params }) {
             },
             item.children[0]?.text || ""
           );
-        case "paragraph":
-          const textContent = item.children.map((child) => child.text).join("");
-          if (textContent.trim() === "") {
-            // Manejo de párrafos vacíos: agrega un salto de línea visual
-            return <br key={index} />;
-          }
-          return (
-            <p
-              key={index}
-              className={`${open_Sans.className} text-[#404041] text-[16px] font-light`}
-            >
-              {item.children.map((child, i) => (
-                <span
-                  key={i}
-                  style={{
-                    fontWeight: child.bold ? "bold" : "normal",
-                    fontStyle: child.italic ? "italic" : "normal",
-                    textDecoration: `${child.underline ? "underline" : ""} ${
-                      child.strikethrough ? "line-through" : ""
-                    }`,
-                  }}
-                >
-                  {child.text}
-                </span>
-              ))}
-            </p>
-          );
+          case "paragraph":
+            const textContent = item.children
+              .map((child) => (child.type === "text" ? child.text : ""))
+              .join("");
+          
+            if (textContent.trim() === "") {
+              // Manejo de párrafos vacíos: agrega un salto de línea visual
+              return <br key={index} />;
+            }
+          
+            return (
+              <p
+                key={index}
+                className={`${open_Sans.className} text-[#404041] text-[16px] font-light`}
+              >
+                {item.children.map((child, i) => {
+                  if (child.type === "link" && child.url) {
+                    return (
+                      <a
+                        key={i}
+                        href={child.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 underline hover:text-blue-700"
+                      >
+                        {child.children?.map((linkChild, j) =>
+                          linkChild.type === "text" ? (
+                            <span key={j}>{linkChild.text}</span>
+                          ) : null
+                        )}
+                      </a>
+                    );
+                  }
+          
+                  if (child.type === "text") {
+                    return (
+                      <span
+                        key={i}
+                        style={{
+                          fontWeight: child.bold ? "bold" : "normal",
+                          fontStyle: child.italic ? "italic" : "normal",
+                          textDecoration: `${child.underline ? "underline" : ""} ${
+                            child.strikethrough ? "line-through" : ""
+                          }`,
+                        }}
+                      >
+                        {child.text}
+                      </span>
+                    );
+                  }
+          
+                  return null; // Manejo para tipos inesperados
+                })}
+              </p>
+            );
+          
         case "image":
           return (
             <Image
@@ -136,6 +166,18 @@ async function Page({ params }) {
               {item.children[0]?.text || ""}
             </blockquote>
           );
+          case "link":
+            return (
+              <Link
+                key={index}
+                href={item.url || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 underline hover:text-blue-700"
+              >
+                {item.children[0]?.text || "Enlace"}
+              </Link>
+            );
         default:
           return null;
       }
