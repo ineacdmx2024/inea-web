@@ -79,7 +79,7 @@ async function Page({ params }) {
     const dia = fecha.getDate();
     const mes = meses[fecha.getMonth()];
     const año = fecha.getFullYear();
-    return `${dia + 1} de ${mes} de ${año}`;
+    return `${dia} de ${mes} de ${año}`;
   };
 
   // Modificación en renderContenido
