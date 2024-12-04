@@ -27,8 +27,26 @@ async function loadPost(slug) {
   return data;
 }
 
+async function loadEnlaces() {
+  const res = await fetch(
+    `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
+      cache: 'no-store',
+      headers: {
+        'Cache-Control': 'no-cache'
+      }
+    }
+  );
+  const data = await res.json();
+
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+  // console.log("Datos: ", data);
+  return data;
+}
+
 async function Page({ params }) {
   const post = await loadPost(params.noticiasAntiguasId);
+
+  const enlaces = await loadEnlaces();
 
   const contenido = post.data.attributes.Contenido;
 
@@ -184,38 +202,13 @@ async function Page({ params }) {
     });
   };
 
-  const noticias = [
+  const noticias = enlaces.data.map((item) => (
     {
-      title: "Explorando las Estrellas",
-      imageSrc: "/imagePrueba/interes1.jpg",
-      link: "https://example.com/article/explorando-las-estrellas",
-      caption: "Un viaje por el cosmos",
-      date: "2024-01-12",
-      buttonText: "Ir al sitio",
-      description:
-        "Sumérgete en los misterios del universo y descubre los secretos de las estrellas.",
-    },
-    {
-      title: "El Arte del Minimalismo",
-      imageSrc: "/imagePrueba/interes2.jpg",
-      link: "https://example.com/article/arte-del-minimalismo",
-      caption: "Menos es más",
-      date: "2024-03-05",
-      buttonText: "Ir al sitio",
-      description:
-        "Descubre cómo el minimalismo puede llevar a una vida más plena al enfocarse en lo que realmente importa.",
-    },
-    {
-      title: "Innovaciones Tecnológicas 2024",
-      imageSrc: "/imagePrueba/interes3.jpg",
-      link: "https://example.com/article/innovaciones-tecnologicas-2024",
-      caption: "El futuro está aquí",
-      date: "2024-07-19",
-      buttonText: "Ir al sitio",
-      description:
-        "Una mirada a los avances tecnológicos más innovadores que moldearán el año que viene.",
-    },
-  ];
+    title: item.attributes.Titulo,
+    imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
+    buttonText: "Ir al sitio",
+    link: `/blog/noticias-antiguas/${item.attributes.id}`,
+  }));
 
   return (
     <div>
