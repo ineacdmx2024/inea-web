@@ -74,8 +74,8 @@ function NoticiasAntiguas({ item }) {
       "diciembre",
     ];
     const fecha = new Date(fechaAPI);
-    const diaSemana = diasSemana[fecha.getDay()];
-    const dia = fecha.getDate();
+    const diaSemana = diasSemana[fecha.getDay() + 1];
+    const dia = fecha.getDate() + 1;
     const mes = meses[fecha.getMonth()];
     const año = fecha.getFullYear();
     return `${diaSemana}, ${dia} de ${mes} de ${año}`;
