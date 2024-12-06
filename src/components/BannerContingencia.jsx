@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Banner() {
   const [data, setData] = useState(null);
@@ -14,8 +15,8 @@ export default function Banner() {
           "https://inea-web-backend.onrender.com/api/banner-contingencia?populate=*"
         );
         const json = await res.json();
-        console.log("data ", json.data.attributes);
-        setData(json.data.attributes); // Ajusta según la estructura de tu respuesta
+
+        setData(json.data.attributes);
       } catch (error) {
         console.error("Error fetching data:", error);
         setError(error);
@@ -27,25 +28,45 @@ export default function Banner() {
     fetchData();
   }, []);
 
+  const renderTextWithLineBreaks = (text) => {
+    return text.split("\n").map((line, index) => (
+      <p key={index} className="text-center text-gray-700">
+        {line.trim()}
+      </p>
+    ));
+  };
+
   if (loading) return <p>Cargando...</p>;
   if (error) return <p>Error al cargar el banner.</p>;
-  console.log(data.Banner.data?.attributes?.formats?.large?.url);
 
   return (
     <div>
-      {data ? (
-        <div className=" w-20">
-          <Image
-            src={data.Banner.data?.attributes?.formats?.large?.url}
-            alt={data.Nombre_de_la_Imagen || "Imagen sin título"}
-            className="w-full h-full object-contain rounded-xl "
-            width={950}
-            height={500}
-          />
-          {/* Renderiza otros datos que obtengas de la API */}
+      {data?.Encendido ? (
+        <div className="w-full m-auto">
+          <Link href="/comunicado-contingencia">
+            <Image
+              src={data.Banner.data[0]?.attributes?.url}
+              alt={data.Nombre_de_la_Imagen || "Imagen sin título"}
+              className="w-full h-full object-contain bg-purple-800 hidden medida3:block"
+              width={2500}
+              height={500}
+            />
+            <Image
+              src={data.Banner_moviles.data[0]?.attributes?.url}
+              alt={data.Nombre_de_la_Imagen || "Imagen sin título"}
+              className="w-full h-full object-contain bg-purple-800 block medida3:hidden"
+              width={900}
+              height={600}
+            />
+          </Link>
+          {data.Texto && (
+            <div className="mt-4 px-4">
+              {renderTextWithLineBreaks(data.Texto)}
+            </div>
+          )}
         </div>
       ) : (
-        <p>No se pudo cargar el banner.</p>
+        <div></div>
       )}
     </div>
   );

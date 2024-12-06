@@ -207,7 +207,6 @@ function SeccionLigasInte() {
     noticias.filter((n, index) => ![0, 1, 2].includes(index))
   );
 
-  // Configuración del carrusel
   const settings = {
     dots: true,
     infinite: true,
@@ -228,10 +227,7 @@ function SeccionLigasInte() {
 
   return (
     <>
-      <style
-        jsx
-        global
-      >{`
+      <style jsx global>{`
         .custom-dots {
           bottom: -30px;
         }
@@ -258,14 +254,11 @@ function SeccionLigasInte() {
         {/* Div de noticias fijas */}
         <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex">
           {fijas.map((noticia, index) => (
-            <div
-              key={index}
-              className="px-4 w-1/3"
-            >
+            <div key={index} className="px-4 w-1/3">
               <div className="border border-slate-300 h-[420px] rounded-lg p-8 flex flex-col justify-between">
                 <div className="flex flex-col items-center">
                   <img
-                    className="w-60 h-auto object-cover rounded-lg"
+                    className="w-full h-auto object-cover rounded-lg"
                     src={noticia.image}
                     alt={noticia.title}
                   />
@@ -273,7 +266,7 @@ function SeccionLigasInte() {
                     {noticia.title}
                   </h3>
                 </div>
-                <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
+                <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block">
                   Ir al sitio
                 </button>
               </div>
@@ -285,14 +278,11 @@ function SeccionLigasInte() {
         <div className="border border-slate-300 rounded-lg bg-white w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto">
           <Slider {...settings}>
             {fijas.map((noticia, index) => (
-              <div
-                key={index}
-                className="px-2"
-              >
+              <div key={index} className="px-2">
                 <div className="h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
                   <div className="flex flex-col items-center">
                     <img
-                      className="w-60 h-auto object-cover rounded-lg"
+                      className="w-full h-auto object-cover rounded-lg"
                       src={noticia.image}
                       alt={noticia.title}
                     />
@@ -300,7 +290,7 @@ function SeccionLigasInte() {
                       {noticia.title}
                     </h3>
                   </div>
-                  <button className="text-xs letras:text-[13.5px] bg-[#611232] text-white py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
+                  <button className="text-xs letras:text-[13.5px] bg-[#611232] text-white py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block">
                     Ir al sitio
                   </button>
                 </div>
@@ -316,14 +306,11 @@ function SeccionLigasInte() {
             className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] mt-8"
           >
             {restantes.map((noticia, index) => (
-              <div
-                key={index}
-                className="px-4"
-              >
+              <div key={index} className="px-4">
                 <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
                   <div className="flex flex-col items-center">
                     <img
-                      className="w-60 h-auto object-cover rounded-lg"
+                      className="w-full h-auto object-cover rounded-lg"
                       src={noticia.image}
                       alt={noticia.title}
                     />
@@ -331,7 +318,7 @@ function SeccionLigasInte() {
                       {noticia.title}
                     </h3>
                   </div>
-                  <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
+                  <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block">
                     Ir al sitio
                   </button>
                 </div>

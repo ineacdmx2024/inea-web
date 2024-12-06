@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from 'next/link'
 
 function PrevArrow(props) {
   const { className, style, onClick } = props;
@@ -83,20 +84,29 @@ function CarouselOfertEdu() {
 
   const modalidades = [
     {
-      name: "Alfabetización, Primaria Y Secundaria Presencial",
+      name: "Alfabetización, primaria y secundaria presencial",
       image: "/Modalidad1.jpg",
+      url: "/que-modalidad-elijo"
     },
     {
-      name: "Primaria Y Secundaria En Línea",
+      name: "Primaria y secundaria en línea",
       image: "/Modalidad2.jpg",
+      url: "/enlinea"
     },
     {
-      name: "Examen Único",
+      name: "Examen único",
       image: "/Modalidad3.jpg",
+      url: "/examen-unico",
     },
     {
       name: "¿Qué opcion me conviene?",
       image: "/Modalidad4.jpg",
+      url: "/que-modalidad-elijo",
+    },
+    {
+      name: "Examenes diagnostico",
+      image: "/Modalidad5.jpg",
+      url: "/examen-diagnostico",
     },
   ];
 
@@ -119,10 +129,7 @@ function CarouselOfertEdu() {
   };
   return (
     <>
-      <style
-        jsx
-        global
-      >{`
+      <style jsx global>{`
         .custom-dots {
           bottom: -30px;
         }
@@ -152,24 +159,21 @@ function CarouselOfertEdu() {
             className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] mt-8"
           >
             {modalidades.map((noticia, index) => (
-              <div
-                key={index}
-                className="px-4"
-              >
+              <div key={index} className="px-4">
                 <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[420px] p-8 flex flex-col justify-between">
                   <div className="flex flex-col items-center">
                     <img
-                      className="w-60 h-auto object-cover rounded-lg"
+                      className="bg-blue-700 w-full h-auto object-cover rounded-lg"
                       src={noticia.image}
                       alt={noticia.name}
                     />
-                    <h3 className="my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium capitalize">
+                    <h3 className="my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium ">
                       {noticia.name}
                     </h3>
                   </div>
-                  <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block font-light">
+                  <Link className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light" href={`/oferta-educativa${noticia.url}`}>
                     Ir al sitio
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
