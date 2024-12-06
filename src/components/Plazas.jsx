@@ -6,6 +6,20 @@ const Plazas = ({ datos }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const handleAlcaldiaClick = (indexSlides) => {
     setCurrentPage(indexSlides); // Cambia la página actual usando IndexSlides
+    //Centrar en los mapas
+    const datosMapa = document.getElementById("datosMapaPlazas");
+    if (datosMapa) {
+      // datosMapa.scrollIntoView({ behavior: "smooth", block: "start" });
+      const offset = 115; // Espacio de 115 píxeles arriba del top del div para que no lo cubra el navbar
+      const elementPosition =
+        datosMapa.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
   };
   const colors = [
     "text-[#880D4F]", //1
@@ -54,11 +68,14 @@ const Plazas = ({ datos }) => {
     if (!items) return null;
 
     const columns =
-      items.length > 10 ? "grid-cols-3 text-lg" : "grid-cols-2 text-xl";
+      items.length > 10
+        ? "md:grid-cols-3  md:text-lg"
+        : "md:grid-cols-2  md:text-xl";
 
     return (
       <div
-        className={`grid ${columns} flex flex-col justify-center items-center`}
+        className={`grid grid-cols-1 ${columns} text-xl flex flex-col justify-center`}
+        style={{ alignItems: "baseline" }}
       >
         {items.map((item, index) => (
           <div
@@ -66,41 +83,37 @@ const Plazas = ({ datos }) => {
             className="mb-4 text-start justify-start cursor-pointer"
             onClick={() => window.open(item.url, "_blank")}
           >
-            <div className="flex justify-start m-[20px]">
-              <div className="flex h-auto w-auto">
-                <svg
-                  className={`h-7 w-7 ${colors[index % colors.length]}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
+            <div
+              className="flex mt-[20px] mb-1 mx-[20px] justify-center"
+              // style={{ justifyContent: "center" }}
+            >
+              <div className="flex m-[0%] uppercase justify-center text-center">
+                <div className="flex h-auto w-auto ml-1">
+                  <svg
+                    className={`h-6 w-6 ml-1 ${colors[index % colors.length]}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+                {item.alcaldia}
               </div>
-
-              <div className="m-[0%] uppercase">{item.alcaldia}</div>
             </div>
-            <div className="justify-center m-[20px]">
-              {item.dir && (
-                <p>
-                  <strong>Dirección:</strong> {item.dir}
-                </p>
-              )}
-              {item.atel && (
-                <p>
-                  <strong>Tel:</strong> {item.atel}
-                </p>
-              )}
+            <div className="justify-center items-center text-center mb-[20px] mx--[20px]">
+              {item.dir && <p>{item.dir}</p>}
+              {item.atel && <p>Tel: {item.atel}</p>}
             </div>
           </div>
         ))}
@@ -143,7 +156,10 @@ const Plazas = ({ datos }) => {
         ))}
       </div>
       {/* Contenido principal */}
-      <div className="container mx-auto flex-column h-full bg-white mt-8">
+      <div
+        id="datosMapaPlazas"
+        className="container mx-auto flex-column h-full bg-white mt-8"
+      >
         {datos.map((pageData, index) => (
           <div
             key={index}

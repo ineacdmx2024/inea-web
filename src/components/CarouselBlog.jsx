@@ -143,8 +143,8 @@ const CarouselBlog = ({ item }) => {
   };
 
   useEffect(() => {
-    fetchData(); // Llama la función para obtener los datos
-  }, []); // El array vacío hace que se ejecute solo una vez al montarse el componente
+    fetchData();
+  }, []);
 
   // Configuracion del   carousel
   const settings = {
@@ -193,8 +193,8 @@ const CarouselBlog = ({ item }) => {
     ];
     const fecha = new Date(fechaApi);
 
-    const diaSemana = diasSemana[fecha.getDay()];
-    const dia = fecha.getDate();
+    const diaSemana = diasSemana[fecha.getDay() + 1];
+    const dia = fecha.getDate() + 1;
     const mes = meses[fecha.getMonth()];
     const año = fecha.getFullYear();
 
@@ -222,7 +222,7 @@ const CarouselBlog = ({ item }) => {
           transition: all 0.3s ease;
         }
         .custom-dots li.slick-active button:before {
-          color: #790101; // Color verde para el punto activo
+          color: #360a1c; // Color verde para el punto activo
           transform: scale(1.2);
         }
       `}</style>
@@ -264,11 +264,12 @@ const CarouselBlog = ({ item }) => {
                   </p>
 
                   <div className="overflow-visible !z-10">
-                    <button className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] block">
+                    <Link className="text-center m-auto w-44 letras:ml-auto bg-[#611232] text-white py-3  hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] block" href={`/blog/noticias-antiguas/${ item.attributes.slug}`}>
+                    {console.log(item.attributes.slug)}
                       <p className="text-xs letras:text-[14.5px] font-light">
                         Continuar leyendo
                       </p>
-                    </button>
+                    </Link>
                   </div>
                 </article>
               </div>
@@ -281,7 +282,7 @@ const CarouselBlog = ({ item }) => {
       <div className="flex justify-end m-auto">
         <Link
           className="mt-20 mr-[1rem] lg:mr-[5rem] xl:mr-[24rem] w-36 text-center bg-[#611232] text-white py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block letras:text-base text-xs letras:w-44"
-          href={"/blog/noticias-antiguas"}
+          href={`/blog/noticias-antiguas/`}
         >
           <p className="font-light">Noticias Anteriores</p>
         </Link>

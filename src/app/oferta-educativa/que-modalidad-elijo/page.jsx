@@ -27,7 +27,12 @@ function Modalidad() {
 
   return (
     <div>
-      <PagSec Enlaces={cards}>
+      <PagSec
+        Enlaces={cards}
+        Titulo={
+          "¿Qué opción del INEA me conviene para certificar mi Primaria y/o Secundaria?"
+        }
+      >
         {/* Contenido principal en pantallas medianas y grandes */}
         <div
           className="ml-auto content-start justify-end"
@@ -35,12 +40,6 @@ function Modalidad() {
         >
           {" "}
           <div className="mx-auto w-full">
-            <h1 className="text-[38px] font-medium uppercase font-sans text-[#404041] mb-2 letras:text-4xl">
-              ¿Qué opción del INEA me conviene para certificar mi Primaria y/o
-              Secundaria?
-            </h1>
-
-            <br />
             <CollapsiblePanel
               title="¿Quieres estudiar primaria o secundaria con materiales impresos en un lugar fijo o conoces a alguien que quiera aprender a leer y escribir?"
               content={
@@ -75,7 +74,7 @@ function Modalidad() {
                     como lectura, escritura, matemáticas, ciencias sociales y
                     naturales.
                   </p>
-                  <p className="mt-2">
+                  <p className="mt-2 mb-9">
                     <strong>Tiempo estimado de conclusión: </strong> 3 a 6 meses
                     dedicando 4 horas por semana.
                   </p>
@@ -101,19 +100,19 @@ function Modalidad() {
                     </div>
                     <div className="mt-2 mb-4 text-lg">
                       <ul className="list-disc ml-8">
-                        <li>Tener 15 años o más.</li>
+                        <li>Tener 15 años o más</li>
                         <li>Acta de nacimiento</li>
                         <li>CURP</li>
                         <li>Certificado</li>
                         <li>Primaria (en caso de comenzar Secundaria)</li>
                         <li>
                           Documento binacional (para personas provenientes del
-                          extranjero).
+                          extranjero)
                         </li>
                         <li>
                           En caso de haber cursado en grados escolarizados
                           (Primaria o Secundaria) se deben presentar las boletas
-                          correspondientes.
+                          correspondientes
                         </li>
                       </ul>
                     </div>
@@ -157,7 +156,7 @@ function Modalidad() {
                     matemáticas, ciencias sociales y naturales con diferentes
                     niveles de profundidad según el nivel educativo.
                   </p>
-                  <p className="mt-2">
+                  <p className="mt-2 mb-9">
                     <strong>Tiempo estimado de conclusión: </strong> Inmediato
                   </p>
 
@@ -183,19 +182,19 @@ function Modalidad() {
                     </div>
                     <div className="mt-2 mb-4 text-lg">
                       <ul className="list-disc ml-8">
-                        <li>Tener 15 años o más.</li>
-                        <li>Identificación oficial con fotografía.</li>
+                        <li>Tener 15 años o más</li>
+                        <li>Identificación oficial con fotografía</li>
                         <li>
                           Portafolio de evidencias (reconocimientos, constancias
-                          y diplomas).
+                          y diplomas)
                         </li>
                         <li>
                           Dos fotografías tamaño infantil (color o blanco y
-                          negro).
+                          negro)
                         </li>
                         <li>
                           Certificado de Primaria (sólo para quienes harán
-                          examen de secundaria).
+                          examen de secundaria)
                         </li>
                       </ul>
                     </div>
@@ -234,7 +233,7 @@ function Modalidad() {
                     módulos para Primaria y un propedéutico y 7 módulos para
                     Secundaria.
                   </p>
-                  <p className="mt-2">
+                  <p className="mt-2 mb-9">
                     <strong>Tiempo estimado de conclusión: </strong> 2 a 3
                     semanas por módulo.
                   </p>
@@ -260,19 +259,19 @@ function Modalidad() {
                     </div>
                     <div className="mt-2 mb-4 text-lg">
                       <ul className="list-disc ml-8">
-                        <li>Tener 15 años o más.</li>
-                        <li>Acta de nacimiento.</li>
+                        <li>Tener 15 años o más</li>
+                        <li>Acta de nacimiento</li>
                         <li>CURP</li>
-                        <li>Certificado.</li>
-                        <li>Primaria (en caso de comenzar Secundaria).</li>
+                        <li>Certificado</li>
+                        <li>Primaria (en caso de comenzar Secundaria)</li>
                         <li>
                           Documento binacional (para personas provenientes del
-                          extranjero).
+                          extranjero)
                         </li>
                         <li>
                           En caso de haber cursado en grados escolarizados
                           (Primaria o Secundaria) se deben presentar las boletas
-                          correspondientes.
+                          correspondientes
                         </li>
                       </ul>
                     </div>
@@ -315,7 +314,7 @@ function Modalidad() {
                     aprendizaje que abarcan lengua y comunicación, pensamiento
                     matemático, y vida y comunidad.
                   </p>
-                  <p className="mt-2">
+                  <p className="mt-2 mb-9">
                     <strong>Tiempo estimado de conclusión: </strong>2 a 3 meses
                     dedicando 2 horas por semana.
                   </p>
@@ -341,19 +340,19 @@ function Modalidad() {
                     </div>
                     <div className="mt-2 mb-4 text-lg">
                       <ul className="list-disc ml-8">
-                        <li>Tener 15 años o más.</li>
-                        <li>Acta de nacimiento.</li>
-                        <li>CURP.</li>
-                        <li>Certificado.</li>
-                        <li>Primaria (en caso de comenzar Secundaria).</li>
+                        <li>Tener 15 años o más</li>
+                        <li>Acta de nacimiento</li>
+                        <li>CURP</li>
+                        <li>Certificado</li>
+                        <li>Primaria (en caso de comenzar Secundaria)</li>
                         <li>
                           Documento binacional (para personas provenientes del
-                          extranjero).{" "}
+                          extranjero)
                         </li>
                         <li>
                           En caso de haber cursado en grados escolarizados
                           (Primaria o Secundaria) se deben presentar las boletas
-                          correspondientes.
+                          correspondientes
                         </li>
                       </ul>
                     </div>

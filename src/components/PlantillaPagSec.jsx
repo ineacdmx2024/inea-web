@@ -12,32 +12,33 @@ const open_Sans = Open_Sans({
 
 function PagSec({ Enlaces, Titulo, Subtitulo, children }) {
   return (
-    <div className="mt-[12.5vh]">
-      <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-y-[1vh] gap-x-[4vh]">
+    <div className="mt-[10.5vh]">
+      <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-x-[4vh]">
         <br />
         {/* Breadcrumb */}
         <div className="col-span-1 md:col-span-12 ">
           <div className="mx-auto py-1 px-4 sm:px-6 md:px-8">
+
             <Breadcrumb />
           </div>
         </div>
 
         {/* Contenido principal*/}
         <div className="col-span-1 md:col-span-8 ">
-          <h1
-            className={
-              "${open_Sans.className} text-[38px] font-medium uppercase text-[#404041] mb-8 "
-            }
-          >
-            {Titulo}
-          </h1>
-          <h2
-            className={
-              "${open_Sans.className} text-[27px] font-medium  text-[#404041] mb-4 "
-            }
-          >
-            {Subtitulo}
-          </h2>
+          {Titulo && (
+            <h1
+              className={`${open_Sans.className} text-[38px] font-medium uppercase text-[#404041] mb-8`}
+            >
+              {Titulo}
+            </h1>
+          )}
+          {Subtitulo && (
+            <h2
+              className={`${open_Sans.className} text-[27px] font-medium text-[#404041] mb-4`}
+            >
+              {Subtitulo}
+            </h2>
+          )}
           {children}
         </div>
 

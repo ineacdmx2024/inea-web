@@ -96,7 +96,7 @@ const Navbar = () => {
                       ¿Qué es el INEA?
                     </Link>
                     <Link
-                      href="/"
+                      href="/#ubicacion"
                       passHref
                       className="hover:text-[#D3C09B] p-1 rounded"
                     >
@@ -186,7 +186,7 @@ const Navbar = () => {
                   ¿Qué es el INEA?
                 </Link>
                 <Link
-                  href="/"
+                  href="/#ubicacion"
                   passHref
                   className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
                 >
@@ -225,10 +225,10 @@ const Navbar = () => {
         </nav>
 
         {/* Menú inferior */}
-        <nav className="bg-[#A57F2C]">
-          <div className="flex items-center justify-between py-[0.1rem] px-auto">
+        <nav className="bg-[#A57F2C] lg:h-8">
+          <div className="flex items-center justify-between py-[0.06rem] px-auto lg:h-8">
             <div
-              className="flex items-end justify-end"
+              className="flex items-end justify-end lg:h-8"
               id="Minf"
             >
               <div className="flex items-end space-x-10">
