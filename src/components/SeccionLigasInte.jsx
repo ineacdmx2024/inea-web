@@ -348,7 +348,7 @@ function SeccionLigasInte() {
                       {fijos.titulo}
                     </h3>
                   </div>
-                  <button className="text-xs letras:text-[13.5px] bg-[#611232] text-white py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block">
+                  <button className="text-xs letras:text-[13.5px] bg-[#611232] text-white py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block">
                     Ir al sitio
                   </button>
                 </div>

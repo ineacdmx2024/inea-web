@@ -6,22 +6,20 @@
     height: auto;
 }
 #UbicacionDivP a{
-  color:#BC955C ;
+  padding: 10px;
+  color:#ffffff ;
 }
 #UbicacionDivP a:hover{
-  color:#BC955C ;
-  text-decoration: underline;
+  color:#611232 ;
+  /* text-decoration: underline; */
 }
-/*@media screen and (min-width: 1200px) {
-  #UbicacionDivP{
-    margin-left: 20rem;
-    margin-right: 20rem;
-  }
-  
-  }*/
 
+#direccion{
+    margin-top: -5%;
+}
   @media screen and (max-width: 1200px) and (min-width:430px) {
    #direccion{
+    margin-top: -5%;
     margin-bottom: 10%;
     width: auto;
     height: auto;

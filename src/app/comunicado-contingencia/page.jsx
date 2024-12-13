@@ -1,9 +1,7 @@
+import React from "react";
 import { Open_Sans } from "next/font/google";
 import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
-import React from "react";
-import Link from 'next/link'
-
 
 const open_Sans = Open_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -11,17 +9,17 @@ const open_Sans = Open_Sans({
   subsets: ["latin"],
 });
 
-async function loadPost(slug) {
+async function loadPost() {
   const res = await fetch(
-    `https://inea-web-backend.onrender.com/api/blogs/${slug}?populate=%2A`, {
-      cache: 'no-store',
+    `https://inea-web-backend.onrender.com/api/banner-contingencia?populate=%2A`,
+    {
+      cache: "no-store",
       headers: {
-        'Cache-Control': 'no-cache'
-      }
+        "Cache-Control": "no-cache",
+      },
     }
   );
   const data = await res.json();
-
   return data;
 }
 
@@ -39,23 +37,11 @@ async function loadEnlaces() {
   return data;
 }
 
-async function Page({ params }) {
-  const post = await loadPost(params.noticiasAntiguasId);
-
+async function ComunicadoContingencia() {
+  const post = await loadPost();
   const enlaces = await loadEnlaces();
 
-  const contenido = post.data.attributes.Contenido;
-
   const fechaFun = (fechaAPI) => {
-    const diasSemana = [
-      "domingo",
-      "lunes",
-      "martes",
-      "miércoles",
-      "jueves",
-      "viernes",
-      "sábado",
-    ];
     const meses = [
       "enero",
       "febrero",
@@ -71,14 +57,20 @@ async function Page({ params }) {
       "diciembre",
     ];
     const fecha = new Date(fechaAPI);
-    const diaSemana = diasSemana[fecha.getDay()];
     const dia = fecha.getDate();
     const mes = meses[fecha.getMonth()];
     const año = fecha.getFullYear();
-    return `${dia} de ${mes} de ${año}`;
+    return `${dia + 1} de ${mes} de ${año}`;
   };
 
-  // Modificación en renderContenido
+  const noticias = enlaces.data.map((item) => (
+    {
+    title: item.attributes.Titulo,
+    imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
+    buttonText: "Ir al sitio",
+    link: `/enlaces-de-interes/${item.id}`,
+  }));
+
   const renderContenido = (contenido) => {
     return contenido.map((item, index) => {
       switch (item.type) {
@@ -180,66 +172,46 @@ async function Page({ params }) {
               {item.children[0]?.text || ""}
             </blockquote>
           );
-          case "link":
-            return (
-              <Link
-                key={index}
-                href={item.url || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 underline hover:text-blue-700"
-              >
-                {item.children[0]?.text || "Enlace"}
-              </Link>
-            );
         default:
           return null;
       }
     });
   };
 
-  const noticias = enlaces.data.map((item) => (
-    {
-    title: item.attributes.Titulo,
-    imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
-    buttonText: "Ir al sitio",
-    link: `/enlaces-de-interes/${item.id}`,
-  }));
-
   return (
     <div>
-      <div className="ml-[26rem] mb-10"></div>
+      
       <PagSec
         Enlaces={noticias}
         Titulo={post.data?.attributes?.Titulo}
         Subtitulo={post.data?.attributes?.Subtitulo}
       >
-        <h1
-          className={`${open_Sans.className} text-[#404041] text-[18px] font-light`}
-        >
+        <h1 className={`${open_Sans.className} text-[#404041] text-[18px] font-light`}>
           INEA Ciudad de México |{" "}
           {post.data?.attributes?.Fecha
             ? fechaFun(post.data?.attributes?.Fecha)
             : ""}
         </h1>
-        <div className="m-auto my-6 rounded-lg max-h-[392px]">
-          <Image
-            src={
-              post.data.attributes?.Imagen?.data?.attributes?.formats?.large
-                ?.url
-            }
-            alt={
-              post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"
-            }
-            className="w-full rounded-lg"
-            width={1000}
-            height={700}
-          />
+
+        {/* Banner principal */}
+        {post.data.attributes?.Banner?.data?.[0]?.attributes?.url && (
+          <div className="m-auto my-6 rounded-lg max-h-[392px]">
+            <Image
+              src={post.data.attributes.Banner.data[0].attributes.url}
+              alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen del banner"}
+              className="w-full rounded-lg"
+              width={1000}
+              height={700}
+            />
+          </div>
+        )}
+
+        <div className="mb-6 mt-12 leading-loose">
+          {renderContenido(post.data.attributes.Contenido)}
         </div>
-        <div className="mb-6 mt-12 leading-loose">{renderContenido(contenido)}</div>
       </PagSec>
     </div>
   );
 }
 
-export default Page;
+export default ComunicadoContingencia;

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from "next/link";
 
 // Recibimos un arreglo de objetos (las cards que se pondrán en el carrusel)
 const CarouselEL = ({ cards }) => {
@@ -68,6 +69,7 @@ const CarouselEL = ({ cards }) => {
       <div className="border border-slate-300 rounded-lg bg-white w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto ">
         <Slider {...settings}>
           {cards.map((card, index) => (
+            <Link key={index} href={card.link}>
             <div
               key={index}
               className="px-2"
@@ -75,11 +77,11 @@ const CarouselEL = ({ cards }) => {
               <div className="h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
                 <div className="flex flex-col items-center w-full">
                   <img
-                    className="w-60 h-auto object-cover rounded-lg"
+                    className="w-full h-auto object-cover rounded-lg"
                     src={card.imageSrc}
                     alt={card.title}
                   />
-                  <h3 className="my-7 px-4 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium capitalize">
+                  <h3 className="my-7 px-4 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium">
                     {card.title}
                   </h3>
                 </div>
@@ -93,21 +95,8 @@ const CarouselEL = ({ cards }) => {
                   {card.buttonText}
                 </button>
               </div>
-
-              {/* <div className="border border-slate-300 rounded-lg h-[400px]  mx-auto flex flex-col w-[260px]  justify-center items-center">
-                <div className="w-52 h-[310px]  flex flex-col justify-between items-center">
-                  <img
-                    className="w-60 h-auto object-cover rounded-lg"
-                    src={card.imageSrc}
-                    alt={card.title}
-                  />
-                  <h3 className="text-center text-[18px]  text-slate-500 font-medium capitalize">
-                    {card.title}
-                  </h3>
-                  
-                </div>
-              </div> */}
             </div>
+            </Link>
           ))}
         </Slider>
       </div>

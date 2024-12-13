@@ -138,7 +138,7 @@ const CarouselBlog = ({ item }) => {
       const result = await response.json();
       setData(result.data);
     } catch (error) {
-      console.error("Error al obtener los datos:", error);
+      console.error("Error al obtener los datos");
     }
   };
 
@@ -193,8 +193,8 @@ const CarouselBlog = ({ item }) => {
     ];
     const fecha = new Date(fechaApi);
 
-    const diaSemana = diasSemana[fecha.getDay()];
-    const dia = fecha.getDate();
+    const diaSemana = diasSemana[fecha.getDay() + 1];
+    const dia = fecha.getDate() + 1;
     const mes = meses[fecha.getMonth()];
     const año = fecha.getFullYear();
 
@@ -233,44 +233,59 @@ const CarouselBlog = ({ item }) => {
               <div className="w-full letras:w-full arrow:w-[750px] medida3:w-4/5 h-auto mx-auto flex flex-col tablet:flex-row tablet:w-[1142px] tablet:h-[390px] justify-between bg-white rounded-xl ">
                 {/* Div de la imagen */}
                 <div className=" m-auto w-auto arrow:w-[750px] rounded-xl max-h-[392px] overflow-hidden">
-                  <Image
-                    src={
-                      item.attributes.Imagen?.data?.attributes?.formats?.large
-                        ?.url
-                    }
-                    alt={
-                      item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
-                    }
-                    className="w-full h-full object-contain rounded-xl "
-                    width={950}
-                    height={500}
-                  />
+                  <Link
+                    key={index}
+                    href={`/blog/noticias-antiguas/${item.attributes.slug}`}
+                    className="bg-slate-800"
+                  >
+                    <Image
+                      src={
+                        item.attributes.Imagen?.data?.attributes?.formats?.large
+                          ?.url
+                      }
+                      alt={
+                        item.attributes.Nombre_de_la_Imagen ||
+                        "Imagen sin título"
+                      }
+                      className="w-full h-full object-contain rounded-xl "
+                      width={950}
+                      height={500}
+                    />
+                  </Link>
                 </div>
 
                 {/* Div del texto */}
-                <article
-                  className={`${open_Sans.className} flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] px-5 py-2 m-auto arrow:w-[750px]`}
+                <Link
+                  key={index}
+                  href={`/blog/noticias-antiguas/${item.attributes.slug}`}
                 >
-                  <p className="letras:text-base text-gray-700 text-sm mb-2 ">
-                    {item.attributes.Fecha
-                      ? fechaFun(item.attributes.Fecha)
-                      : "No hay"}
-                  </p>
-                  <h2 className="letras:text-[28px] text-[20px] leading-tight font-medium mb-4 uppercase">
-                    {truncateText(item.attributes.Titulo, 10)}
-                  </h2>
-                  <p className="letras:text-[17px] text-gray-900 font-light text-[14px] mb-4 uppercase">
-                    {truncateText(item.attributes.Subtitulo, 20)}
-                  </p>
+                  <article
+                    className={`${open_Sans.className} h-auto blog:h-[390px] letras:h-auto flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] px-5 py-2 m-auto arrow:w-[750px]`}
+                  >
+                    <p className="letras:text-base text-gray-700 text-sm mb-2 ">
+                      {item.attributes.Fecha
+                        ? fechaFun(item.attributes.Fecha)
+                        : "No hay"}
+                    </p>
+                    <h2 className="letras:text-[28px] text-[20px] leading-tight font-medium mb-4 uppercase">
+                      {truncateText(item.attributes.Titulo, 9)}
+                    </h2>
+                    <p className="letras:text-[17px] text-gray-900 font-light text-[14px] mb-4 uppercase">
+                      {truncateText(item.attributes.Subtitulo, 18)}
+                    </p>
 
-                  <div className="overflow-visible !z-10">
-                    <button className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] block">
-                      <p className="text-xs letras:text-[14.5px] font-light">
-                        Continuar leyendo
-                      </p>
-                    </button>
-                  </div>
-                </article>
+                    <div className="overflow-visible !z-10 ">
+                      <Link
+                        className="text-center m-auto w-44 letras:ml-auto bg-[#611232] text-white py-3  hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] block"
+                        href={`/blog/noticias-antiguas/${item.attributes.slug}`}
+                      >
+                        <p className="text-xs letras:text-[14.5px] font-light">
+                          Continuar leyendo
+                        </p>
+                      </Link>
+                    </div>
+                  </article>
+                </Link>
               </div>
             </div>
           ))
@@ -281,7 +296,7 @@ const CarouselBlog = ({ item }) => {
       <div className="flex justify-end m-auto">
         <Link
           className="mt-20 mr-[1rem] lg:mr-[5rem] xl:mr-[24rem] w-36 text-center bg-[#611232] text-white py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block letras:text-base text-xs letras:w-44"
-          href={"/blog/noticias-antiguas"}
+          href={`/blog/noticias-antiguas/`}
         >
           <p className="font-light">Noticias Anteriores</p>
         </Link>

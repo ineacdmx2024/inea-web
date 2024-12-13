@@ -17,10 +17,8 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children }) {
         <br />
         {/* Breadcrumb */}
         <div className="col-span-1 md:col-span-12 ">
-          <div
-            className="mx-auto py-1 
-        "
-          >
+          <div className="mx-auto py-1 px-4 sm:px-6 md:px-8">
+
             <Breadcrumb />
           </div>
         </div>
@@ -29,7 +27,7 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children }) {
         <div className="col-span-1 md:col-span-8 ">
           {Titulo && (
             <h1
-              className={`${open_Sans.className} text-[38px] font-medium uppercase text-[#404041] mb-8`}
+              className={`${open_Sans.className} text-[38px] font-medium uppercase text-[#404041] mb-5`}
             >
               {Titulo}
             </h1>
