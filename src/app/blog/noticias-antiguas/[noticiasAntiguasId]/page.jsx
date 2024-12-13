@@ -22,8 +22,6 @@ async function loadPost(slug) {
   );
   const data = await res.json();
 
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-  // console.log("Datos: ", data);
   return data;
 }
 
@@ -38,8 +36,6 @@ async function loadEnlaces() {
   );
   const data = await res.json();
 
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-  // console.log("Datos: ", data);
   return data;
 }
 
@@ -207,7 +203,7 @@ async function Page({ params }) {
     title: item.attributes.Titulo,
     imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
     buttonText: "Ir al sitio",
-    link: `/blog/noticias-antiguas/${item.attributes.id}`,
+    link: `/enlaces-de-interes/${item.id}`,
   }));
 
   return (

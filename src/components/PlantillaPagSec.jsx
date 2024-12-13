@@ -27,7 +27,7 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children }) {
         <div className="col-span-1 md:col-span-8 ">
           {Titulo && (
             <h1
-              className={`${open_Sans.className} text-[38px] font-medium uppercase text-[#404041] mb-8`}
+              className={`${open_Sans.className} text-[38px] font-medium uppercase text-[#404041] mb-5`}
             >
               {Titulo}
             </h1>

@@ -23,8 +23,23 @@ async function loadPost() {
   return data;
 }
 
+async function loadEnlaces() {
+  const res = await fetch(
+    `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
+      cache: 'no-store',
+      headers: {
+        'Cache-Control': 'no-cache'
+      }
+    }
+  );
+  const data = await res.json();
+
+  return data;
+}
+
 async function ComunicadoContingencia() {
   const post = await loadPost();
+  const enlaces = await loadEnlaces();
 
   const fechaFun = (fechaAPI) => {
     const meses = [
@@ -48,38 +63,13 @@ async function ComunicadoContingencia() {
     return `${dia + 1} de ${mes} de ${año}`;
   };
 
-  const noticias = [
+  const noticias = enlaces.data.map((item) => (
     {
-      title: "Explorando las Estrellas",
-      imageSrc: "/imagePrueba/interes1.jpg",
-      link: "https://example.com/article/explorando-las-estrellas",
-      caption: "Un viaje por el cosmos",
-      date: "2024-01-12",
-      buttonText: "Ir al sitio",
-      description:
-        "Sumérgete en los misterios del universo y descubre los secretos de las estrellas.",
-    },
-    {
-      title: "El Arte del Minimalismo",
-      imageSrc: "/imagePrueba/interes2.jpg",
-      link: "https://example.com/article/arte-del-minimalismo",
-      caption: "Menos es más",
-      date: "2024-03-05",
-      buttonText: "Ir al sitio",
-      description:
-        "Descubre cómo el minimalismo puede llevar a una vida más plena al enfocarse en lo que realmente importa.",
-    },
-    {
-      title: "Innovaciones Tecnológicas 2024",
-      imageSrc: "/imagePrueba/interes3.jpg",
-      link: "https://example.com/article/innovaciones-tecnologicas-2024",
-      caption: "El futuro está aquí",
-      date: "2024-07-19",
-      buttonText: "Ir al sitio",
-      description:
-        "Una mirada a los avances tecnológicos más innovadores que moldearán el año que viene.",
-    },
-  ];
+    title: item.attributes.Titulo,
+    imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
+    buttonText: "Ir al sitio",
+    link: `/enlaces-de-interes/${item.id}`,
+  }));
 
   const renderContenido = (contenido) => {
     return contenido.map((item, index) => {
@@ -190,7 +180,7 @@ async function ComunicadoContingencia() {
 
   return (
     <div>
-      <div className="mt-40 ml-[26rem] mb-10"></div>
+      
       <PagSec
         Enlaces={noticias}
         Titulo={post.data?.attributes?.Titulo}
