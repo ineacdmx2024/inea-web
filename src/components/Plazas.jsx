@@ -37,13 +37,44 @@ const Plazas = ({ datos }) => {
     "text-[#4E342E]", // Orange Red 13
     "text-[#C2185B]", // Blue Violet 14
     "text-[#FF5252]", // Deep Pink 15
-    "text-[#F57C02]", // Green Yellow 16
-    "text-[#FBC02D]", // Tomato 17
-    "text-[#FFEA00]", // Peach Puff 18
-    "text-[#AFB42C]", // Dark Orange 19
+    //"text-[#F57C02]", // Green Yellow 16
+    //"text-[#FBC02D]", // Tomato 17
+    //"text-[#FFEA00]", // Peach Puff 18
+    //"text-[#AFB42C]", // Dark Orange 19
     "text-[#7CB342]", // Chartreuse 20
     "text-[#0097A6]", // Crimson 21
-  ]; // Array de colores
+    //"text-[#0F9D58]",//22
+    //"text-[#0097A7]",//23
+    "text-[#0288D1]", //24
+    "text-[#3949AB]", //25
+    "text-[#9C27B0]", //26
+    "text-[#795548]", //27
+    "text-[#BDBDBD]", //28
+    "text-[#757575]", //29
+    "text-[#424242]", //30
+    "text-[#000000]", //31
+  ];
+
+  // Array de colores
+  const color = [
+    "text-[#880D4F]", //1
+    "text-[#F57C02]", //4
+    "text-[#FFD603]", //5
+    "text-[#548B2F]", //7
+    "text-[#00579B]", //10
+    "text-[#673AB7]", //12
+    "text-[#C2185B]", //14
+    "text-[#FF5252]", //15
+    "text-[#7CB342]", // Chartreuse 20
+    "text-[#0097A6]", // Crimson 21
+    "text-[#0F9D58]", //22
+    "text-[#0097A7]", //23
+    "text-[#0288D1]", //24
+    "text-[#3949AB]", //25
+    "text-[#9C27B0]", //26
+    "text-[#795548]", //27
+    "text-[#424242]", //28
+  ];
 
   const alcaldias = [
     { alcaldia: "Álvaro Obregón", IndexSlides: 0 },
@@ -77,46 +108,52 @@ const Plazas = ({ datos }) => {
         className={`grid grid-cols-1 ${columns} text-xl flex flex-col justify-center`}
         style={{ alignItems: "baseline" }}
       >
-        {items.map((item, index) => (
-          <div
-            key={index}
-            className="mb-4 text-start justify-start cursor-pointer"
-            onClick={() => window.open(item.url, "_blank")}
-          >
+        {items.map((item, index) => {
+          // Determina el paso dinámicamente
+          const arreglo = items.length < 10 ? color : colors;
+          return (
             <div
-              className="flex mt-[20px] mb-1 mx-[20px] justify-center"
-              // style={{ justifyContent: "center" }}
+              key={index}
+              className="mb-4 text-start justify-start cursor-pointer"
+              onClick={() => window.open(item.url, "_blank")}
             >
-              <div className="flex m-[0%] uppercase justify-center text-center">
-                <div className="flex h-auto w-auto ml-1">
-                  <svg
-                    className={`h-6 w-6 ml-1 ${colors[index % colors.length]}`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
+              {
+                //step} {arreglo}
+              }
+              <div className="flex mt-[20px] mb-1 mx-[20px] justify-center">
+                <div className="flex m-[0%] uppercase justify-center text-center">
+                  <div className="flex h-auto w-auto ml-1">
+                    <svg
+                      className={`h-6 w-6 ml-1 ${
+                        arreglo[(index * 1) % arreglo.length]
+                      }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </div>
+                  {item.alcaldia}
                 </div>
-                {item.alcaldia}
+              </div>
+              <div className="justify-center items-center text-center mb-[20px] mx--[20px]">
+                {item.dir && <p>{item.dir}</p>}
+                {item.atel && <p>Tel: {item.atel}</p>}
               </div>
             </div>
-            <div className="justify-center items-center text-center mb-[20px] mx--[20px]">
-              {item.dir && <p>{item.dir}</p>}
-              {item.atel && <p>Tel: {item.atel}</p>}
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     );
   };
