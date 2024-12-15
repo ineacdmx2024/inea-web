@@ -1,4 +1,5 @@
 import React from "react";
+//import { useRouter } from "next/router"; // Importa para redirección dinámica
 import { Open_Sans } from "@next/font/google";
 import CarouselBlog from "@/components/CarouselBlog";
 import CarouselOfertEdu from "@/components/CarouselOfertEdu";
