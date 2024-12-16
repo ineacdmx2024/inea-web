@@ -93,7 +93,7 @@ async function Page({ params }) {
             `h${item.level}`,
             {
               key: index,
-              className: `${montserrat.className} font-bold text-[${
+              className: `${montserrat.className} text-[#333334] font-bold text-[${
                 21 - item.level
               }px]`,
             },
@@ -112,7 +112,7 @@ async function Page({ params }) {
             return (
               <p
                 key={index}
-                className={` text-[#404041] text-[18px] font-light`}
+                className={` text-[#333334] text-[18px] font-light`}
               >
                 {item.children.map((child, i) => {
                   if (child.type === "link" && child.url) {
@@ -222,7 +222,7 @@ async function Page({ params }) {
         Subtitulo={post.data?.attributes?.Subtitulo}
       >
         <h1
-          className={`${open_Sans.className} text-[#404041] text-[18px] font-light`}
+          className={`${open_Sans.className} text-[#333334] text-[18px] font-light`}
         >
           INEA Ciudad de México |{" "}
           {post.data?.attributes?.Fecha
