@@ -94,7 +94,7 @@ async function Page({ params }) {
             `h${item.level}`,
             {
               key: index,
-              className: `font-serif font-bold text-[#272727] text-[${21 - item.level}px]`,
+              className: `font-body font-bold text-[#272727] text-[${21 - item.level}px]`,
             },
             item.children[0]?.text || ""
           );
@@ -112,7 +112,7 @@ async function Page({ params }) {
             <p
               key={index}
               style={{ fontFamily: "IBM Plex Serif, serif" }}
-              className={`font-serif text-[#272727] text-[18px] font-thin tracking-wider`}
+              className={`font-body text-[#272727] text-[18px] font-thin tracking-wider`}
             >
               {item.children.map((child, i) => {
                 if (child.type === "link" && child.url) {
@@ -137,7 +137,7 @@ async function Page({ params }) {
                   return (
                     <span
                       key={i}
-                      className="font-serif font-light"
+                      className="font-body font-light"
                       style={{
                         fontWeight: child.bold ? "normal" : "thin",
                         fontStyle: child.italic ? "italic" : "normal",
@@ -239,7 +239,7 @@ async function Page({ params }) {
             height={700}
           />
         </div>
-        <div className={`mb-6 mt-12 leading-relaxed font-serif font-thin`}>
+        <div className={`mb-6 mt-12 leading-8 font-serif font-thin`}>
           {renderContenido(contenido)}
         </div>
       </PagSec>

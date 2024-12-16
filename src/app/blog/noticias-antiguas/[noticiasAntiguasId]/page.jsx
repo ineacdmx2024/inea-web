@@ -243,7 +243,7 @@ async function Page({ params }) {
             height={700}
           />
         </div>
-        <div className="mb-6 mt-12 leading-loose">{renderContenido(contenido)}</div>
+        <div className="mb-6 mt-12 leading-8">{renderContenido(contenido)}</div>
       </PagSec>
     </div>
   );
