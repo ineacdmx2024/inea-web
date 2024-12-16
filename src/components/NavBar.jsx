@@ -362,7 +362,7 @@ const Navbar = () => {
                           Descarga tu certificado
                         </Link>
                         <Link
-                          href="/servicios/solicitud-duplicados"
+                          href="/servicios/solicitud-duplicados/"
                           onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
                         >

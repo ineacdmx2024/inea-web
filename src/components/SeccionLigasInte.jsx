@@ -1,9 +1,11 @@
 "use client";
+import DetalleEnlace from "@/app/home-enlaces-de-interes/[home-enlace-interesId]/page"
 import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRouter } from "next/navigation"; // Importa para redirección dinámica
+
 
 function PrevArrow(props) {
   const { className, style, onClick } = props;
@@ -136,14 +138,11 @@ function SeccionLigasInte() {
     if (item && item.link) {
       window.open(item.link, "_blank"); // Abre en una nueva pestaña
     } else if (item && item.slug) {
-      router.push(`/home-enlaces-de-interes/${item.slug}`, undefined, {
-        query: {
-          slug: item.slug,
-          titulo: item.titulo,
-          subtitulo: item.subtitulo,
-          contenido: item.contenido,
-        },
-      }); // Navega internamente con los datos necesarios
+      <DetalleEnlace slug={item.slug} />
+      router.push(`/home-enlaces-de-interes/${item.slug}`);
+     
+      
+      console.log(item.slug.toString())
     } else {
       console.log("El objeto 'item' no está bien definido:", item);
     }
