@@ -160,21 +160,21 @@ function CarouselOfertEdu() {
           >
             {modalidades.map((noticia, index) => (
               <div key={index} className="px-4">
-                <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[420px] p-8 flex flex-col justify-between">
-                  <div className="flex flex-col items-center">
-                    <img
-                      className="bg-blue-700 w-full h-auto object-cover rounded-lg"
-                      src={noticia.image}
-                      alt={noticia.name}
-                    />
-                    <h3 className="my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium ">
-                      {noticia.name}
-                    </h3>
-                  </div>
-                  <Link className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light" href={`/oferta-educativa${noticia.url}`}>
-                    Ir al sitio
-                  </Link>
-                </div>
+                    <Link href={`/oferta-educativa${noticia.url}`} className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[420px] p-8 flex flex-col justify-between">
+                      <div className="flex flex-col items-center">
+                        <img
+                          className="bg-blue-700 w-full h-auto object-cover rounded-lg"
+                          src={noticia.image}
+                          alt={noticia.name}
+                        />
+                        <h3 className="my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium ">
+                          {noticia.name}
+                        </h3>
+                      </div>
+                      <div className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light" href={`/oferta-educativa${noticia.url}`}>
+                        Ir al sitio
+                      </div>
+                    </Link>
               </div>
             ))}
           </Slider>

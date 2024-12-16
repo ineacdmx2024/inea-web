@@ -112,7 +112,7 @@ async function Page({ params }) {
             <p
               key={index}
               style={{ fontFamily: "IBM Plex Serif, serif" }}
-              className={`font-serif text-[#62626e] text-[17px] font-thin tracking-wider`}
+              className={`font-serif text-[#404041] text-[18px] font-thin tracking-wider`}
             >
               {item.children.map((child, i) => {
                 if (child.type === "link" && child.url) {
