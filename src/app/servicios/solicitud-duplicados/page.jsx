@@ -154,12 +154,12 @@ const onSubmit = async(data) =>{
 
 return (
   <div>
-    Solicitud de duplicados
+    Duplicado de certificado de estudios
     <br />
     <PagSec Enlaces={cards}>
       <div className="mx-auto w-full">
         <h1 className="text-3xl font-medium text-[#404041] mb-2 letras:text-4xl ">
-          Solicitud de duplicados
+        Duplicado de certificado de estudios
         </h1>
       </div>
       <div className="flex items-center">
@@ -171,11 +171,10 @@ return (
       <div className="container mx-auto flex">
         <div className="w-full md:w-auto">
           <p className="text-justify">
-            La siguinte información será enviada a la Unidad de Operación del
-            INEA Ciudad de México, por eso, es importante que llenes
-            correctamente los campos que se solicitan. Si tiene alguna duda
-            sobre el proceso de llenado, le invitamos a ver el siguiente
-            tutorila dando clic en este enlace.Gracias.
+            La siguiente información será enviada a la Unidad de Operación del INEA
+            Ciudad de México para tramitar el duplicado de un certificado de primaria
+            o secundaria expedido por es institucióon. Por eso, es importante que llenes
+            correctamente los campos que se solicitan.
           </p>
 
           <label class="pt-3 control-label flex justify-center">
