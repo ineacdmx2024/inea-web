@@ -232,8 +232,7 @@ async function Page({ params }) {
         <div className="m-auto my-6 rounded-lg max-h-[392px]">
           <Image
             src={
-              post.data.attributes?.Imagen?.data?.attributes?.formats?.large
-                ?.url
+              post.data.attributes?.Imagen?.data?.attributes?.url
             }
             alt={
               post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"
@@ -243,7 +242,7 @@ async function Page({ params }) {
             height={700}
           />
         </div>
-        <div className="mb-6 mt-12 leading-8">{renderContenido(contenido)}</div>
+        <div className="mb-6 mt-12 leading-7">{renderContenido(contenido)}</div>
       </PagSec>
     </div>
   );
