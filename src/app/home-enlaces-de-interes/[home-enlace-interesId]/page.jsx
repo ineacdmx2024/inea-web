@@ -2,7 +2,7 @@
 import { Open_Sans } from "next/font/google";
 import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
-import Link from 'next/link'
+import Link from "next/link";
 import { useEffect } from "react";
 import { useState } from "react";
 const open_Sans = Open_Sans({
@@ -10,8 +10,15 @@ const open_Sans = Open_Sans({
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
 });
-function DetalleEnlace(slug) {
 
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+function DetalleEnlace(slug) {
   const fechaFun = (fechaAPI) => {
     const diasSemana = [
       "domingo",
@@ -46,44 +53,42 @@ function DetalleEnlace(slug) {
 
   async function loadPost(slug) {
     const res = await fetch(
-      `https://inea-web-backend.onrender.com/api/blogs/${slug}?populate=%2A`, {
-      cache: 'no-store',
-      headers: {
-        'Cache-Control': 'no-cache'
+      `https://inea-web-backend.onrender.com/api/blogs/${slug}?populate=%2A`,
+      {
+        cache: "no-store",
+        headers: {
+          "Cache-Control": "no-cache",
+        },
       }
-    }
     );
     const data = await res.json();
 
     return data;
   }
-
-
 
   async function loadEnlaces() {
     const res = await fetch(
-      `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
-      cache: 'no-store',
-      headers: {
-        'Cache-Control': 'no-cache'
+      `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`,
+      {
+        cache: "no-store",
+        headers: {
+          "Cache-Control": "no-cache",
+        },
       }
-    }
     );
     const data = await res.json();
 
     return data;
   }
 
-
   // Modificación en renderContenido
-  
 
   const [cont, setCont] = useState([]);
-  console.log(slug.params['home-enlace-interesId'])
+  console.log(slug.params["home-enlace-interesId"]);
   useEffect(() => {
     const Contenido = async () => {
       const res = await fetch(
-        `http://localhost:1337/api/i-enlaces?filters[slug][$eq]=${slug.params['home-enlace-interesId']}&populate=*`
+        `http://localhost:1337/api/i-enlaces?filters[slug][$eq]=${slug.params["home-enlace-interesId"]}&populate=*`
       );
       const data = await res.json();
       const enlacesData = data.data.map((item) => ({
@@ -96,7 +101,6 @@ function DetalleEnlace(slug) {
         NomImg: item.attributes.Imagen?.data?.attributes?.name,
       }));
       setCont(enlacesData);
-
     };
     Contenido();
   }, []);
@@ -104,20 +108,21 @@ function DetalleEnlace(slug) {
   useEffect(() => {
     const noiticas = async () => {
       const res = await fetch(
-        `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
-        cache: 'no-store',
-        headers: {
-          'Cache-Control': 'no-cache'
-        }
-      });
-      const enlaces = await res.json();
-      const Noti = enlaces.data.map((item) => (
+        `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`,
         {
-          title: item.attributes.Titulo,
-          imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
-          buttonText: "Ir al sitio",
-          link: `/enlaces-de-interes/${item.id}`,
-        }));
+          cache: "no-store",
+          headers: {
+            "Cache-Control": "no-cache",
+          },
+        }
+      );
+      const enlaces = await res.json();
+      const Noti = enlaces.data.map((item) => ({
+        title: item.attributes.Titulo,
+        imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
+        buttonText: "Ir al sitio",
+        link: `/enlaces-de-interes/${item.id}`,
+      }));
       setNoti(Noti);
     };
     noiticas();
@@ -131,8 +136,9 @@ function DetalleEnlace(slug) {
             `h${item.level}`,
             {
               key: index,
-              className: `${open_Sans.className} font-bold text-[${21 - item.level
-                }px]`,
+              className: `${montserrat.className} font-bold text-[${
+                21 - item.level
+              }px]`,
             },
             item.children[0]?.text || ""
           );
@@ -149,7 +155,8 @@ function DetalleEnlace(slug) {
           return (
             <p
               key={index}
-              className={`${open_Sans.className} text-[#404041] text-[16px] font-light`}
+              className={`${montserrat.className} text-[#333334] text-[18px] leading-[32px]`}
+              //className={`${open_Sans.className} text-[#404041] text-[16px] font-light`}
             >
               {item.children.map((child, i) => {
                 if (child.type === "link" && child.url) {
@@ -177,8 +184,9 @@ function DetalleEnlace(slug) {
                       style={{
                         fontWeight: child.bold ? "bold" : "normal",
                         fontStyle: child.italic ? "italic" : "normal",
-                        textDecoration: `${child.underline ? "underline" : ""} ${child.strikethrough ? "line-through" : ""
-                          }`,
+                        textDecoration: `${
+                          child.underline ? "underline" : ""
+                        } ${child.strikethrough ? "line-through" : ""}`,
                       }}
                     >
                       {child.text}
@@ -206,7 +214,7 @@ function DetalleEnlace(slug) {
           return (
             <ol
               key={index}
-              className={`${open_Sans.className} list-decimal pl-6 mb-4`}
+              className={`${montserrat.className} list-decimal pl-6 mb-4`}
             >
               {item.children.map((listItem, liIndex) => (
                 <li key={liIndex}>{listItem.children[0]?.text || ""}</li>
@@ -260,37 +268,28 @@ function DetalleEnlace(slug) {
             Subtitulo={cont.subtitulo}
           >
             <h1
-              className={`${open_Sans.className} text-[#404041] text-[18px] font-light`}
+              className={`${montserrat.className} text-[#404041] text-[18px] font-light`}
             >
-              INEA Ciudad de México |{" "}
-              {cont.fecha
-                ? fechaFun(cont.fecha)
-                : ""}
+              INEA Ciudad de México | {cont.fecha ? fechaFun(cont.fecha) : ""}
             </h1>
             <div className="m-auto my-6 rounded-lg max-h-[392px]">
               <Image
-                src={
-                  cont.imagen
-                }
-                alt={
-                  cont.NomImg || "Imagen sin título"
-                }
+                src={cont.imagen}
+                alt={cont.NomImg || "Imagen sin título"}
                 className="w-full rounded-lg"
                 width={1000}
                 height={700}
               />
             </div>
-            <div className="mb-6 mt-12 leading-loose">{renderContenido(cont.contenido)}</div>
+            <div className="mb-6 mt-12 leading-loose">
+              {renderContenido(cont.contenido)}
+            </div>
           </PagSec>
         </div>
       ))}
     </div>
-
   );
   // Accede a los parámetros
-
-
-
 }
 
 export default DetalleEnlace;

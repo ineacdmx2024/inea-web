@@ -1,11 +1,10 @@
 "use client";
-import DetalleEnlace from "@/app/home-enlaces-de-interes/[home-enlace-interesId]/page"
+import DetalleEnlace from "@/app/home-enlaces-de-interes/[home-enlace-interesId]/page";
 import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRouter } from "next/navigation"; // Importa para redirección dinámica
-
 
 function PrevArrow(props) {
   const { className, style, onClick } = props;
@@ -138,11 +137,10 @@ function SeccionLigasInte() {
     if (item && item.link) {
       window.open(item.link, "_blank"); // Abre en una nueva pestaña
     } else if (item && item.slug) {
-      <DetalleEnlace slug={item.slug} />
+      <DetalleEnlace slug={item.slug} />;
       router.push(`/home-enlaces-de-interes/${item.slug}`);
-     
-      
-      console.log(item.slug.toString())
+
+      console.log(item.slug.toString());
     } else {
       console.log("El objeto 'item' no está bien definido:", item);
     }
@@ -201,7 +199,8 @@ function SeccionLigasInte() {
           {fijos.map((fijos, index) => (
             <div
               key={index}
-              className="px-4 w-1/3"
+              className="px-4 w-1/3 cursor-pointer"
+              onClick={() => handleButtonClick(fijos)}
             >
               <div className="border border-slate-300 h-[420px] rounded-lg p-8 flex flex-col justify-between">
                 <div className="flex flex-col items-center">
@@ -231,7 +230,8 @@ function SeccionLigasInte() {
             {fijos.map((fijos, index) => (
               <div
                 key={index}
-                className="px-2"
+                className="px-2 cursor-pointer"
+                onClick={() => handleButtonClick(fijos)}
               >
                 <div className="h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
                   <div className="flex flex-col items-center">
@@ -265,7 +265,8 @@ function SeccionLigasInte() {
             {restantes.map((restantes, index) => (
               <div
                 key={index}
-                className="px-4"
+                className="px-4 cursor-pointer"
+                onClick={() => handleButtonClick(restantes)}
               >
                 <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
                   <div className="flex flex-col items-center">
