@@ -26,7 +26,7 @@ const Breadcrumb = () => {
   };
 
   return (
-    <nav className="text-lg text-gray-700 mb-4">
+    <nav className="text-[17px] text-gray-700 mb-4">
       <ol className="list-none p-0 flex flex-wrap">
         <li className="mx-0">
           <Link

@@ -62,7 +62,7 @@ const CarouselEL = ({ cards }) => {
           transition: all 0.3s ease;
         }
         .custom-dots li.slick-active button:before {
-          color: #790101; // Color verde para el punto activo
+          color: #611232; // Color verde para el punto activo
           transform: scale(1.2);
         }
       `}</style>
@@ -81,13 +81,13 @@ const CarouselEL = ({ cards }) => {
                     src={card.imageSrc}
                     alt={card.title}
                   />
-                  <h3 className="my-7 px-4 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium">
+                  <h3 className="my-7 px-4 text-center text-[18px] letras:text-[22px] text-[#333334] font-medium">
                     {card.title}
                   </h3>
                 </div>
                 <button
                   className=" 
-                  focus:border-[#611232] focus:bg-[#A57F2C] focus:border-[5px] 
+                  focus:border-[#611232] focus:bg-[#ffffff] focus:border-[5px] 
                   bg-[#611232] text-white 
                   hover:border-[#611232] hover:border-2 hover:bg-white hover:text-[#611232] 
                     text-xs  py-2 px-4 rounded-full mx-auto block"

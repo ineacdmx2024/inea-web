@@ -222,7 +222,7 @@ async function Page({ params }) {
         Subtitulo={post.data?.attributes?.Subtitulo}
       >
         <h1
-          className={`${open_Sans.className} text-[#333334] text-[18px] font-light`}
+          className={`${montserrat.className} text-[#333334] text-[18px] font-light`}
         >
           INEA Ciudad de México |{" "}
           {post.data?.attributes?.Fecha

@@ -222,7 +222,7 @@ const CarouselBlog = ({ item }) => {
           transition: all 0.3s ease;
         }
         .custom-dots li.slick-active button:before {
-          color: #360a1c; // Color verde para el punto activo
+          color: #611232; // Color verde para el punto activo
           transform: scale(1.2);
         }
       `}</style>

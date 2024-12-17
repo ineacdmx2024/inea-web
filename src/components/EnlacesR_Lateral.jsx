@@ -22,7 +22,7 @@ const Card = ({ title, imageSrc, buttonText, link }) => {
             className="w-11/12 h-auto object-cover rounded-lg"
           />
           {/* Imagen con diseño responsivo, cubriendo el espacio disponible y con bordes redondeados. */}
-          <h3 className="my-7 px-4 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium">
+          <h3 className="my-7 px-4 text-center text-[18px] letras:text-[22px] text-[#333334] font-medium">
             {title}
           </h3>
           {/* Título centrado con tamaño de fuente dinámico para diferentes configuraciones (clase `letras`). */}

@@ -3,9 +3,10 @@ import React from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import Card from "@/components/EnlacesR_Lateral";
 import CarouselEL from "@/components/CarouselEL";
-import { Open_Sans } from "next/font/google";
-const open_Sans = Open_Sans({
-  weight: ["300", "400", "500", "700"],
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
 });
@@ -17,7 +18,7 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children }) {
         <br />
         {/* Breadcrumb */}
         <div className="col-span-1 md:col-span-12 ">
-          <div className="mx-auto py-1 px-4 sm:px-6 md:px-8">
+          <div className="mx-auto py-1 px-0">
 
             <Breadcrumb />
           </div>
@@ -27,14 +28,14 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children }) {
         <div className="col-span-1 md:col-span-8 ">
           {Titulo && (
             <h1
-              className={`${open_Sans.className} text-[38px] font-medium uppercase text-[#404041] mb-5`}
+              className={`${montserrat.className} text-[38px] font-semibold text-[#404041] mb-5`}
             >
               {Titulo}
             </h1>
           )}
           {Subtitulo && (
             <h2
-              className={`${open_Sans.className} text-[27px] font-medium text-[#404041] mb-4`}
+              className={`${montserrat.className} text-[27px] font-medium text-[#404041] mb-4`}
             >
               {Subtitulo}
             </h2>
@@ -43,7 +44,7 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children }) {
         </div>
 
         {/* Enlaces laterales  */}
-        <div className="hidden md:block md:col-span-4 ">
+        <div className="hidden md:block md:col-span-4 mt-3">
           <div className="flex flex-col">
             {Enlaces.map((enlace) => (
               <Card
