@@ -240,8 +240,7 @@ const CarouselBlog = ({ item }) => {
                   >
                     <Image
                       src={
-                        item.attributes.Imagen?.data?.attributes?.formats?.large
-                          ?.url
+                        item.attributes.Imagen?.data?.attributes?.url
                       }
                       alt={
                         item.attributes.Nombre_de_la_Imagen ||
