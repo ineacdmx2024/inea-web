@@ -28,14 +28,14 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children }) {
         <div className="col-span-1 md:col-span-8 ">
           {Titulo && (
             <h1
-              className={`${montserrat.className} text-[38px] font-semibold text-[#404041] mb-5`}
+              className={`${montserrat.className} text-[38px] font-semibold text-[#333334] mb-5`}
             >
               {Titulo}
             </h1>
           )}
           {Subtitulo && (
             <h2
-              className={`${montserrat.className} text-[27px] font-medium text-[#404041] mb-4`}
+              className={`${montserrat.className} text-[27px] font-normal text-[#333334] mb-4`}
             >
               {Subtitulo}
             </h2>
