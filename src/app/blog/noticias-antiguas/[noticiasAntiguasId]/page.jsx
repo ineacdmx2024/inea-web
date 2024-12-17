@@ -229,7 +229,7 @@ async function Page({ params }) {
             ? fechaFun(post.data?.attributes?.Fecha)
             : ""}
         </h1>
-        <div className="m-auto my-6 rounded-lg max-h-[392px]">
+        <div className="m-auto my-6 rounded-lg">
           <Image
             src={
               post.data.attributes?.Imagen?.data?.attributes?.url
