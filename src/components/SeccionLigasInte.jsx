@@ -6,6 +6,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRouter } from "next/navigation"; // Importa para redirección dinámica
 
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 function PrevArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -209,7 +216,9 @@ function SeccionLigasInte() {
                     src={fijos.imagen}
                     alt={fijos.titulo}
                   />
-                  <h3 className="my-7 px-4 text-center text-[22px] text-slate-500 font-medium capitalize">
+                  <h3
+                    className={`${montserrat.className} my-7 text-[#404041] px-4 text-center text-[22px] leading-[32px] font-medium capitalize`}
+                  >
                     {fijos.titulo}
                   </h3>
                 </div>
@@ -240,7 +249,9 @@ function SeccionLigasInte() {
                       src={fijos.imagen}
                       alt={fijos.titulo}
                     />
-                    <h3 className="my-7 px-4 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium capitalize">
+                    <h3
+                      className={`${montserrat.className} my-7 text-[#404041] px-4 text-center text-[22px] leading-[32px] font-medium capitalize`}
+                    >
                       {fijos.titulo}
                     </h3>
                   </div>
@@ -275,7 +286,9 @@ function SeccionLigasInte() {
                       src={restantes.imagen}
                       alt={restantes.titulo}
                     />
-                    <h3 className="my-7 px-4 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium capitalize">
+                    <h3
+                      className={`${montserrat.className} my-7 text-[#404041] px-4 text-center text-[22px] leading-[32px] font-medium capitalize`}
+                    >
                       {restantes.titulo}
                     </h3>
                   </div>
