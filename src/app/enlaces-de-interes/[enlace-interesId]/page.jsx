@@ -1,4 +1,4 @@
-import { Open_Sans, IBM_Plex_Serif } from "next/font/google";
+import { Open_Sans, Montserrat } from "next/font/google";
 import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
 import React from "react";
@@ -10,7 +10,7 @@ const open_Sans = Open_Sans({
   subsets: ["latin"],
 });
 
-const ibm_plex_serif = IBM_Plex_Serif({
+const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
@@ -94,7 +94,7 @@ async function Page({ params }) {
             `h${item.level}`,
             {
               key: index,
-              className: `font-serif font-bold text-[${21 - item.level}px]`,
+              className: `font-body font-bold text-[#333334] text-[${21 - item.level}px]`,
             },
             item.children[0]?.text || ""
           );
@@ -112,7 +112,7 @@ async function Page({ params }) {
             <p
               key={index}
               style={{ fontFamily: "IBM Plex Serif, serif" }}
-              className={`font-serif text-[#62626e] text-[17px] font-thin tracking-wider`}
+              className={`font-body text-[#333334] text-[18px] font-thin tracking-wider`}
             >
               {item.children.map((child, i) => {
                 if (child.type === "link" && child.url) {
@@ -137,7 +137,7 @@ async function Page({ params }) {
                   return (
                     <span
                       key={i}
-                      className="font-serif font-light"
+                      className="font-body font-light"
                       style={{
                         fontWeight: child.bold ? "normal" : "thin",
                         fontStyle: child.italic ? "italic" : "normal",
@@ -221,14 +221,14 @@ async function Page({ params }) {
         Subtitulo={post.data?.attributes?.Subtitulo}
       >
         <h1
-          className={`${open_Sans.className} text-[#404041] text-[18px] font-light`}
+          className={`${montserrat.className} text-[#272727] text-[18px] font-light`}
         >
           INEA Ciudad de México |{" "}
           {post.data?.attributes?.Fecha
             ? fechaFun(post.data?.attributes?.Fecha)
             : ""}
         </h1>
-        <div className="m-auto my-6 rounded-lg max-h-[392px]">
+        <div className="m-auto my-6 rounded-lg">
           <Image
             src={post.data.attributes?.Imagen?.data[0]?.attributes?.url}
             alt={
@@ -239,7 +239,7 @@ async function Page({ params }) {
             height={700}
           />
         </div>
-        <div className={`mb-6 mt-12 leading-relaxed font-serif font-thin`}>
+        <div className={`mb-6 mt-12 leading-7 font-serif font-thin`}>
           {renderContenido(contenido)}
         </div>
       </PagSec>

@@ -1,9 +1,15 @@
 import React from "react";
-import { Open_Sans } from "next/font/google";
+import { Open_Sans, Montserrat } from "next/font/google";
 import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
 
 const open_Sans = Open_Sans({
+  weight: ["300", "400", "500", "600", "700", "800"],
+  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
+  subsets: ["latin"],
+});
+
+const montserrat = Montserrat({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
@@ -79,7 +85,7 @@ async function ComunicadoContingencia() {
             `h${item.level}`,
             {
               key: index,
-              className: `${open_Sans.className} font-bold text-[${
+              className: `${montserrat.className} font-bold text-[${
                 21 - item.level
               }px]`,
             },
@@ -98,7 +104,7 @@ async function ComunicadoContingencia() {
             return (
               <p
                 key={index}
-                className={`${open_Sans.className} text-[#404041] text-[16px] font-light`}
+                className={`${montserrat.className} text-[#333334] text-[18px] font-light`}
               >
                 {item.children.map((child, i) => {
                   if (child.type === "link" && child.url) {
@@ -122,6 +128,7 @@ async function ComunicadoContingencia() {
                   if (child.type === "text") {
                     return (
                       <span
+                      className={`${montserrat.className}`}
                         key={i}
                         style={{
                           fontWeight: child.bold ? "bold" : "normal",
@@ -186,7 +193,7 @@ async function ComunicadoContingencia() {
         Titulo={post.data?.attributes?.Titulo}
         Subtitulo={post.data?.attributes?.Subtitulo}
       >
-        <h1 className={`${open_Sans.className} text-[#404041] text-[18px] font-light`}>
+        <h1 className={`${montserrat.className} text-[#333334] text-[18px] font-light`}>
           INEA Ciudad de México |{" "}
           {post.data?.attributes?.Fecha
             ? fechaFun(post.data?.attributes?.Fecha)
@@ -195,7 +202,7 @@ async function ComunicadoContingencia() {
 
         {/* Banner principal */}
         {post.data.attributes?.Banner?.data?.[0]?.attributes?.url && (
-          <div className="m-auto my-6 rounded-lg max-h-[392px]">
+          <div className="m-auto my-6 rounded-lg">
             <Image
               src={post.data.attributes.Banner.data[0].attributes.url}
               alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen del banner"}
@@ -206,7 +213,7 @@ async function ComunicadoContingencia() {
           </div>
         )}
 
-        <div className="mb-6 mt-12 leading-loose">
+        <div className="mb-6 mt-12 leading-7">
           {renderContenido(post.data.attributes.Contenido)}
         </div>
       </PagSec>

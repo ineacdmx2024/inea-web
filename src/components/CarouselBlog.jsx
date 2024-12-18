@@ -222,7 +222,7 @@ const CarouselBlog = ({ item }) => {
           transition: all 0.3s ease;
         }
         .custom-dots li.slick-active button:before {
-          color: #360a1c; // Color verde para el punto activo
+          color: #611232; // Color verde para el punto activo
           transform: scale(1.2);
         }
       `}</style>
@@ -232,7 +232,7 @@ const CarouselBlog = ({ item }) => {
             <div key={index} className="px-4">
               <div className="w-full letras:w-full arrow:w-[750px] medida3:w-4/5 h-auto mx-auto flex flex-col tablet:flex-row tablet:w-[1142px] tablet:h-[390px] justify-between bg-white rounded-xl ">
                 {/* Div de la imagen */}
-                <div className=" m-auto w-auto arrow:w-[750px] rounded-xl max-h-[392px] overflow-hidden">
+                <div className=" m-auto w-auto arrow:w-[750px] rounded-xl max-h-[200px] blog:max-h-[392px] overflow-hidden">
                   <Link
                     key={index}
                     href={`/blog/noticias-antiguas/${item.attributes.slug}`}
@@ -240,14 +240,13 @@ const CarouselBlog = ({ item }) => {
                   >
                     <Image
                       src={
-                        item.attributes.Imagen?.data?.attributes?.formats?.large
-                          ?.url
+                        item.attributes.Imagen?.data?.attributes?.url
                       }
                       alt={
                         item.attributes.Nombre_de_la_Imagen ||
                         "Imagen sin título"
                       }
-                      className="w-full h-full object-contain rounded-xl "
+                      className="h-[200px] w-[500px] blog:w-full blog:h-full object-contain letras:object-fill rounded-xl"
                       width={950}
                       height={500}
                     />

@@ -1,12 +1,18 @@
 "use client";
-import { Open_Sans } from "next/font/google";
+import { Open_Sans, Montserrat } from "next/font/google";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
+import Link from "next/link";
 
 const open_Sans = Open_Sans({
   weight: ["300", "400", "500", "700"],
+  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
+  subsets: ["latin"],
+});
+
+const montserrat = Montserrat({
+  weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
 });
@@ -96,7 +102,6 @@ function NoticiasAntiguas({ item }) {
     if (paginaActual > 1) setPaginaActual(paginaActual - 1);
   };
 
-  const router = useRouter();
 
   return (
     <main>
@@ -105,7 +110,9 @@ function NoticiasAntiguas({ item }) {
         <div className="ml-10 mb-10">
           <Breadcrumb />
         </div>
-        <h1 className="text-4xl font-medium text-slate-700 mb-2 letras:text-5xl uppercase">
+        <h1
+          className={`${montserrat.className} text-4xl font-semibold text-[#333334] mb-2 letras:text-[38px] uppercase`}
+        >
           Noticias Antiguas
         </h1>
       </div>
@@ -118,50 +125,51 @@ function NoticiasAntiguas({ item }) {
             datos.map((item, index) => (
               <div key={index} className="px-0">
                 <div className="overflow-hidden w-full h-auto tablet:h-[450px] rounded-xl border border-slate-300 ">
-                  {/* Div de la imagen */}
-                  <div className="m-auto rounded-t-xl max-h-[392px]">
-                    <Image
-                      src={
-                        item.attributes.Imagen?.data?.attributes?.formats?.small
-                          ?.url
-                      }
-                      alt={
-                        item.attributes.Nombre_de_la_Imagen ||
-                        "Imagen sin título"
-                      }
-                      className="w-full h-[208px] rounded-t-xl"
-                      width={350}
-                      height={258}
-                    />
-                  </div>
-
-                  {/* Div del texto */}
-                  <article
-                    className={`${open_Sans.className} flex flex-col justify-between letras:mt-0 pt-4 mt-2 tablet:m-0 w-full tablet:w-[375px] px-5 py-2 m-auto arrow:w-full`}
+                  <Link
+                    rel="stylesheet"
+                    href={`/blog/noticias-antiguas/${item.attributes.slug}`}
                   >
-                    <p className="letras:text-base text-gray-700 text-sm mb-2 ">
-                      {item.attributes.Fecha
-                        ? fechaFun(item.attributes.Fecha)
-                        : "No hay"}
-                    </p>
-                    <h2 className="letras:text-[21px] text-[20px] leading-tight font-medium mb-4 uppercase arrow:text-[21px]">
-                      {truncateText(item.attributes.Titulo, 65)}
-                    </h2>
-                    <div className="overflow-visible !z-10 w-full h-auto">
-                      <button
-                        onClick={() => {
-                          router.push(
-                            `/blog/noticias-antiguas/${item.attributes.slug}`
-                          );
-                        }}
-                        className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block"
-                      >
-                        <p className="text-xs letras:text-[14.5px] font-light">
-                          Continuar leyendo
-                        </p>
-                      </button>
+                    {/* Div de la imagen */}
+                    <div className="m-auto rounded-t-xl max-h-[392px]">
+                      <Image
+                        src={
+                          item.attributes.Imagen?.data?.attributes?.formats
+                            ?.small?.url
+                        }
+                        alt={
+                          item.attributes.Nombre_de_la_Imagen ||
+                          "Imagen sin título"
+                        }
+                        className="w-full h-[208px] rounded-t-xl"
+                        width={350}
+                        height={258}
+                      />
                     </div>
-                  </article>
+
+                    {/* Div del texto */}
+                    <article
+                      className={`${open_Sans.className} h-[240px] flex flex-col justify-between letras:mt-0 pt-4 mt-2 tablet:m-0 w-full tablet:w-[375px] px-5 py-2 m-auto arrow:w-full`}
+                    >
+                      <p className="letras:text-base text-gray-700 text-sm mb-2 ">
+                        {item.attributes.Fecha
+                          ? fechaFun(item.attributes.Fecha)
+                          : "No hay"}
+                      </p>
+                      <h2 className="letras:text-[21px] text-[20px] leading-tight font-medium mb-4 uppercase arrow:text-[21px] text-[#333334]">
+                        {truncateText(item.attributes.Titulo, 45)}
+                      </h2>
+                      <div className="overflow-visible !z-10 w-full h-auto">
+                        <Link
+                          href={`/blog/noticias-antiguas/${item.attributes.slug}`}
+                          className="m-auto letras:ml-auto bg-[#611232] text-white text-center py-3 px-2 w-40 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block"
+                        >
+                          <p className="text-xs letras:text-[14.5px] font-light">
+                            Continuar leyendo
+                          </p>
+                        </Link>
+                      </div>
+                    </article>
+                  </Link>
                 </div>
               </div>
             ))

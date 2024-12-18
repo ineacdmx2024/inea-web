@@ -1,4 +1,4 @@
-import { Open_Sans } from "next/font/google";
+import { Open_Sans, Montserrat } from "next/font/google";
 import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
 import React from "react";
@@ -6,6 +6,12 @@ import Link from 'next/link'
 
 
 const open_Sans = Open_Sans({
+  weight: ["300", "400", "500", "600", "700", "800"],
+  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
+  subsets: ["latin"],
+});
+
+const montserrat = Montserrat({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
@@ -87,7 +93,7 @@ async function Page({ params }) {
             `h${item.level}`,
             {
               key: index,
-              className: `${open_Sans.className} font-bold text-[${
+              className: `${montserrat.className} text-[#333334] font-bold text-[${
                 21 - item.level
               }px]`,
             },
@@ -106,7 +112,7 @@ async function Page({ params }) {
             return (
               <p
                 key={index}
-                className={`${open_Sans.className} text-[#404041] text-[16px] font-light`}
+                className={` text-[#333334] text-[18px] font-light`}
               >
                 {item.children.map((child, i) => {
                   if (child.type === "link" && child.url) {
@@ -131,6 +137,7 @@ async function Page({ params }) {
                     return (
                       <span
                         key={i}
+                        className="font-body font-light"
                         style={{
                           fontWeight: child.bold ? "bold" : "normal",
                           fontStyle: child.italic ? "italic" : "normal",
@@ -215,18 +222,17 @@ async function Page({ params }) {
         Subtitulo={post.data?.attributes?.Subtitulo}
       >
         <h1
-          className={`${open_Sans.className} text-[#404041] text-[18px] font-light`}
+          className={`${montserrat.className} text-[#333334] text-[18px] font-light`}
         >
           INEA Ciudad de México |{" "}
           {post.data?.attributes?.Fecha
             ? fechaFun(post.data?.attributes?.Fecha)
             : ""}
         </h1>
-        <div className="m-auto my-6 rounded-lg max-h-[392px]">
+        <div className="m-auto my-6 rounded-lg">
           <Image
             src={
-              post.data.attributes?.Imagen?.data?.attributes?.formats?.large
-                ?.url
+              post.data.attributes?.Imagen?.data?.attributes?.url
             }
             alt={
               post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"
@@ -236,7 +242,7 @@ async function Page({ params }) {
             height={700}
           />
         </div>
-        <div className="mb-6 mt-12 leading-loose">{renderContenido(contenido)}</div>
+        <div className="mb-6 mt-12 leading-7">{renderContenido(contenido)}</div>
       </PagSec>
     </div>
   );
