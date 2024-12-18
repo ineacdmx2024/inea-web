@@ -1,26 +1,25 @@
 "use client"
 import Swal from 'sweetalert2'
-import React,{ useState } from 'react'
+import React,{ useState,useEffect } from 'react'
 import PagSec from "@/components/PlantillaPagSec";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useForm, Controller } from "react-hook-form";
 import "./Duplicados.css";
 import "react-datepicker/dist/react-datepicker.css";
+// import { API_URL } from "../../config";
+
+
+
+
+
 
 
 function Solicitud_duplicados() {
 
-
-
-
-
+  const [datos, setDatos] = useState([]);
   const [file, setFile] = useState(null); 
   const [captcha, setCaptcha] = React.useState("");
   
-  
-
-
-
   const cards = [
     {
       title: "¿Qué modalidad elijo?",
@@ -66,25 +65,72 @@ function Solicitud_duplicados() {
   };
 
 
+  const fetchData = async  () => {
+    try {
+          const res = await fetch(`http://localhost:1337/api/correos?populate=%2A`)
+          
+          if(!res.ok){ 
+          throw new Error('Something went wrong')
+    }
+     const { data } = await res.json()
+  
+      setDatos(data);
+  
+  
+    } catch (error) {
+      console.error("Error al obtener los datos:", error);
+    }
+  }
+  
+  
+    // useEffect para llamar a `fetchData` una vez que el componente se monta
+    useEffect(() => {
+      fetchData();
+    }, []);
+
 
 const onSubmit = async(data) =>{
+ 
+  if (Array.isArray(datos)) {
+    const Datos_obtenidos = datos.map(item => {
+      // Aseguramos que item.attributes existe y tiene las propiedades 'Correo' y 'Lugar_de_nacimiento'
+      return item.attributes ? {
+        Correo: item.attributes.Correo,
+        Lugar_de_nacimiento: item.attributes.Lugar_de_nacimiento
+      } : null;
+    });
+  
+    // Usamos un array para almacenar los correos de las personas nacidas en ejemplo "Campeche"
+    var  Obt_Correos = [];
+    var  Obt_Correo_Generico = [];
+    
+    // Ahora accedemos a los correos de cada objeto dentro del array
+    Datos_obtenidos.forEach(item => {
+      if (item) {
+          // Verificamos si el lugar de nacimiento 
+        if (item.Lugar_de_nacimiento.trim() === data.LugarNacimiento.trim()) {
+          // Si es así, agregamos el correo a la lista de Obt_Correos
+          Obt_Correos.push(item.Correo);
+        }
+        if (item.Lugar_de_nacimiento === "Genérico"  ) {
+          // Si es así, agregamos el correo a la lista de Obt_Correos
+          Obt_Correo_Generico.push(item.Correo);
+        }
+      }
+    });
+  
+  }
+
 
 
    if(captcha)
    {
       try {
-  
-        const Correo_Campeche = "recapchaeder@gmail.com";
 
 
-        if(data.LugarNacimiento == "Campeche"){
-          Correo_Campeche
-        }
-
-     
 
         const formDataToSend = new FormData();
-        formDataToSend.append("to", Correo_Campeche + ',' + data.Correo);
+        formDataToSend.append("to", Obt_Correos[0] + ',' + Obt_Correo_Generico[0]+',' + data.Correo);
         formDataToSend.append("subject", formData.subject);
         formDataToSend.append("text", `
             Nombre: ${data.Nombre} <br> 
@@ -152,6 +198,11 @@ const onSubmit = async(data) =>{
 }
 
 
+
+  
+
+
+
 return (
   <div>
     Duplicado de certificado de estudios
@@ -160,6 +211,7 @@ return (
       <div className="mx-auto w-full">
         <h1 className="text-3xl font-medium text-[#404041] mb-2 letras:text-4xl ">
         Duplicado de certificado de estudios
+      
         </h1>
       </div>
       <div className="flex items-center">
