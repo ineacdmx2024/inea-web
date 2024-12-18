@@ -1,5 +1,5 @@
 import React from "react";
-import { Open_Sans } from "@next/font/google";
+import { Open_Sans, Montserrat } from "@next/font/google";
 import CarouselBlog from "@/components/CarouselBlog";
 import CarouselOfertEdu from "@/components/CarouselOfertEdu";
 import SeccionLigasInte from "@/components/SeccionLigasInte";
@@ -9,9 +9,13 @@ const open_Sans = Open_Sans({
   subsets: ["latin"],
 });
 
+const montserrat = Montserrat({
+  subsets: ["latin"],
+});
+
 function page() {
   return (
-    <main className={`mx-auto ${open_Sans.className} bg-white pt-[100px]`}>
+    <main className={`mx-auto ${montserrat.className} bg-white pt-[100px]`}>
       <div>
         <img
           src="/Banner_INEA_CDMX_EducacionMovilnueva.webp"

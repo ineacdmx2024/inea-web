@@ -87,7 +87,7 @@ const CarouselEL = ({ cards }) => {
                 </div>
                 <button
                   className=" 
-                  focus:border-[#611232] focus:bg-[#ffffff] focus:border-[5px] 
+                  focus:border-[#611232] focus:bg-[#ffffff] 
                   bg-[#611232] text-white 
                   hover:border-[#611232] hover:border-2 hover:bg-white hover:text-[#611232] 
                     text-xs  py-2 px-4 rounded-full mx-auto block"
