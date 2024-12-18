@@ -47,7 +47,7 @@ export default function Banner() {
             <Image
               src={data.Banner.data[0]?.attributes?.url}
               alt={data.Nombre_de_la_Imagen || "Imagen sin título"}
-              className="w-full h-full object-contain bg-purple-800 hidden medida3:block"
+              className="w-full h-full object-contain hidden medida3:block"
               width={2500}
               height={500}
             />

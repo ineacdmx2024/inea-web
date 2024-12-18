@@ -6,7 +6,7 @@ const nextConfig = {
         protocol: 'https',           // Define el protocolo (http/https)
         hostname: 'res.cloudinary.com', // El dominio o subdominio permitido
         port: '',                    // Si hay algún puerto específico (normalmente se deja vacío)
-        pathname: '/m43g0r/**',      // Define un patrón para los path (aquí permite todas las rutas)
+        pathname: '/dce9xqd1e/**',      // Define un patrón para los path (aquí permite todas las rutas)
       },
       {
         protocol: 'https',

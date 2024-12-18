@@ -2,28 +2,28 @@ import { Open_Sans, Montserrat } from "next/font/google";
 import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
 import React from "react";
-import Link from 'next/link'
-
+import Link from "next/link";
 
 const open_Sans = Open_Sans({
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
 });
 
 const montserrat = Montserrat({
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
 });
 
-async function loadPost(slug) {
+async function loadPost(id) {
   const res = await fetch(
-    `https://inea-web-backend.onrender.com/api/blogs/${slug}?populate=%2A`, {
-      cache: 'no-store',
+    `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales/${id}?populate=%2A`,
+    {
+      cache: "no-store",
       headers: {
-        'Cache-Control': 'no-cache'
-      }
+        "Cache-Control": "no-cache",
+      },
     }
   );
   const data = await res.json();
@@ -33,11 +33,12 @@ async function loadPost(slug) {
 
 async function loadEnlaces() {
   const res = await fetch(
-    `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
-      cache: 'no-store',
+    `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`,
+    {
+      cache: "no-store",
       headers: {
-        'Cache-Control': 'no-cache'
-      }
+        "Cache-Control": "no-cache",
+      },
     }
   );
   const data = await res.json();
@@ -46,7 +47,7 @@ async function loadEnlaces() {
 }
 
 async function Page({ params }) {
-  const post = await loadPost(params.noticiasAntiguasId);
+  const post = await loadPost(params["enlace-interesId"]);
 
   const enlaces = await loadEnlaces();
 
@@ -93,69 +94,68 @@ async function Page({ params }) {
             `h${item.level}`,
             {
               key: index,
-              className: `${montserrat.className} text-[#333334] font-bold text-[${
-                21 - item.level
-              }px]`,
+              className: `font-body font-bold text-[#333334] text-[${21 - item.level}px]`,
             },
             item.children[0]?.text || ""
           );
-          case "paragraph":
-            const textContent = item.children
-              .map((child) => (child.type === "text" ? child.text : ""))
-              .join("");
-          
-            if (textContent.trim() === "") {
-              // Manejo de párrafos vacíos: agrega un salto de línea visual
-              return <br key={index} />;
-            }
-          
-            return (
-              <p
-                key={index}
-                className={` text-[#333334] text-[18px] font-light`}
-              >
-                {item.children.map((child, i) => {
-                  if (child.type === "link" && child.url) {
-                    return (
-                      <a
-                        key={i}
-                        href={child.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-500 underline hover:text-blue-700"
-                      >
-                        {child.children?.map((linkChild, j) =>
-                          linkChild.type === "text" ? (
-                            <span key={j}>{linkChild.text}</span>
-                          ) : null
-                        )}
-                      </a>
-                    );
-                  }
-          
-                  if (child.type === "text") {
-                    return (
-                      <span
-                        key={i}
-                        className="font-body font-light"
-                        style={{
-                          fontWeight: child.bold ? "bold" : "normal",
-                          fontStyle: child.italic ? "italic" : "normal",
-                          textDecoration: `${child.underline ? "underline" : ""} ${
-                            child.strikethrough ? "line-through" : ""
-                          }`,
-                        }}
-                      >
-                        {child.text}
-                      </span>
-                    );
-                  }
-          
-                  return null; // Manejo para tipos inesperados
-                })}
-              </p>
-            );
-          
+        case "paragraph":
+          const textContent = item.children
+            .map((child) => (child.type === "text" ? child.text : ""))
+            .join("");
+
+          if (textContent.trim() === "") {
+            // Manejo de párrafos vacíos: agrega un salto de línea visual
+            return <br key={index} />;
+          }
+
+          return (
+            <p
+              key={index}
+              style={{ fontFamily: "IBM Plex Serif, serif" }}
+              className={`font-body text-[#333334] text-[18px] font-thin tracking-wider`}
+            >
+              {item.children.map((child, i) => {
+                if (child.type === "link" && child.url) {
+                  return (
+                    <a
+                      key={i}
+                      href={child.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 underline hover:text-blue-700"
+                    >
+                      {child.children?.map((linkChild, j) =>
+                        linkChild.type === "text" ? (
+                          <span key={j}>{linkChild.text}</span>
+                        ) : null
+                      )}
+                    </a>
+                  );
+                }
+
+                if (child.type === "text") {
+                  return (
+                    <span
+                      key={i}
+                      className="font-body font-light"
+                      style={{
+                        fontWeight: child.bold ? "normal" : "thin",
+                        fontStyle: child.italic ? "italic" : "normal",
+                        textDecoration: `${
+                          child.underline ? "underline" : ""
+                        } ${child.strikethrough ? "line-through" : ""}`,
+                      }}
+                    >
+                      {child.text}
+                    </span>
+                  );
+                }
+
+                return null; // Manejo para tipos inesperados
+              })}
+            </p>
+          );
+
         case "image":
           return (
             <Image
@@ -171,7 +171,7 @@ async function Page({ params }) {
           return (
             <ol
               key={index}
-              className={`${open_Sans.className} list-decimal pl-6 mb-4`}
+              className={`${ibm_plex_serif.className} list-decimal pl-6 mb-4`}
             >
               {item.children.map((listItem, liIndex) => (
                 <li key={liIndex}>{listItem.children[0]?.text || ""}</li>
@@ -187,26 +187,25 @@ async function Page({ params }) {
               {item.children[0]?.text || ""}
             </blockquote>
           );
-          case "link":
-            return (
-              <Link
-                key={index}
-                href={item.url || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 underline hover:text-blue-700"
-              >
-                {item.children[0]?.text || "Enlace"}
-              </Link>
-            );
+        case "link":
+          return (
+            <Link
+              key={index}
+              href={item.url || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 underline hover:text-blue-700"
+            >
+              {item.children[0]?.text || "Enlace"}
+            </Link>
+          );
         default:
           return null;
       }
     });
   };
 
-  const noticias = enlaces.data.map((item) => (
-    {
+  const noticias = enlaces.data.map((item) => ({
     title: item.attributes.Titulo,
     imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
     buttonText: "Ir al sitio",
@@ -222,7 +221,7 @@ async function Page({ params }) {
         Subtitulo={post.data?.attributes?.Subtitulo}
       >
         <h1
-          className={`${montserrat.className} text-[#333334] text-[18px] font-light`}
+          className={`${montserrat.className} text-[#272727] text-[18px] font-light`}
         >
           INEA Ciudad de México |{" "}
           {post.data?.attributes?.Fecha
@@ -231,9 +230,7 @@ async function Page({ params }) {
         </h1>
         <div className="m-auto my-6 rounded-lg">
           <Image
-            src={
-              post.data.attributes?.Imagen?.data?.attributes?.url
-            }
+            src={post.data.attributes?.Imagen?.data[0]?.attributes?.url}
             alt={
               post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"
             }
@@ -242,7 +239,9 @@ async function Page({ params }) {
             height={700}
           />
         </div>
-        <div className="mb-6 mt-12 leading-7">{renderContenido(contenido)}</div>
+        <div className={`mb-6 mt-12 leading-7 font-serif font-thin`}>
+          {renderContenido(contenido)}
+        </div>
       </PagSec>
     </div>
   );

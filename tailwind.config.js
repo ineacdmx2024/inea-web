@@ -1,3 +1,4 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
 module.exports = {
   content: [
     "./node_modules/flowbite-react/**/*.js",
@@ -30,7 +31,9 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        sans: ['"Open Sans"', "sans-serif"], // Definimos Open Sans como la fuente sans-serif
+        sans: ['"Open Sans"', "sans-serif"],
+        serif: ['IBM Plex Serif', ...fontFamily.serif],
+        body: ['Montserrat' ],
       },
     },
   },

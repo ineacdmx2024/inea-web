@@ -27,15 +27,13 @@ const Ubicacion = () => {
           <p>Horario de atención de 9:00 a 16:00 horas.</p>
           <br />
 
-          <a href="/ubicacion">Detalles de ubicaciones</a>
+          <a className="w-44 letras:ml-auto bg-[#611232] text-white py-3  hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232]" href="/ubicacion">Detalles de ubicaciones</a>
         </div>
         <div className="relative w-full h-[45vh]  md:h-[45vh]">
           <iframe
             src="https://www.google.com/maps/d/u/1/embed?mid=11LVXyU_3QKH1JkOXIMVba2bEkN8f_iY&ehbc=2E312F&noprof=1"
             className="w-full h-full border-none rounded-lg"
           />
-          {/* Div para ocultar la barra superior */}
-          {/* <div className="absolute top-[-1vh] left-0 w-full h-[7.8vh] bg-white" /> */}
         </div>
       </div>
     </div>

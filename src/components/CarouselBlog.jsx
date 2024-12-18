@@ -138,7 +138,7 @@ const CarouselBlog = ({ item }) => {
       const result = await response.json();
       setData(result.data);
     } catch (error) {
-      console.error("Error al obtener los datos:", error);
+      console.error("Error al obtener los datos");
     }
   };
 
@@ -222,7 +222,7 @@ const CarouselBlog = ({ item }) => {
           transition: all 0.3s ease;
         }
         .custom-dots li.slick-active button:before {
-          color: #360a1c; // Color verde para el punto activo
+          color: #611232; // Color verde para el punto activo
           transform: scale(1.2);
         }
       `}</style>
@@ -232,46 +232,59 @@ const CarouselBlog = ({ item }) => {
             <div key={index} className="px-4">
               <div className="w-full letras:w-full arrow:w-[750px] medida3:w-4/5 h-auto mx-auto flex flex-col tablet:flex-row tablet:w-[1142px] tablet:h-[390px] justify-between bg-white rounded-xl ">
                 {/* Div de la imagen */}
-                <div className=" m-auto w-auto arrow:w-[750px] rounded-xl max-h-[392px] overflow-hidden">
-                  <Image
-                    src={
-                      item.attributes.Imagen?.data?.attributes?.formats?.large
-                        ?.url
-                    }
-                    alt={
-                      item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
-                    }
-                    className="w-full h-full object-contain rounded-xl "
-                    width={950}
-                    height={500}
-                  />
+                <div className=" m-auto w-auto arrow:w-[750px] rounded-xl max-h-[200px] blog:max-h-[392px] overflow-hidden">
+                  <Link
+                    key={index}
+                    href={`/blog/noticias-antiguas/${item.attributes.slug}`}
+                    className="bg-slate-800"
+                  >
+                    <Image
+                      src={
+                        item.attributes.Imagen?.data?.attributes?.url
+                      }
+                      alt={
+                        item.attributes.Nombre_de_la_Imagen ||
+                        "Imagen sin título"
+                      }
+                      className="h-[200px] w-[500px] blog:w-full blog:h-full object-contain letras:object-fill rounded-xl"
+                      width={950}
+                      height={500}
+                    />
+                  </Link>
                 </div>
 
                 {/* Div del texto */}
-                <article
-                  className={`${open_Sans.className} flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] px-5 py-2 m-auto arrow:w-[750px]`}
+                <Link
+                  key={index}
+                  href={`/blog/noticias-antiguas/${item.attributes.slug}`}
                 >
-                  <p className="letras:text-base text-gray-700 text-sm mb-2 ">
-                    {item.attributes.Fecha
-                      ? fechaFun(item.attributes.Fecha)
-                      : "No hay"}
-                  </p>
-                  <h2 className="letras:text-[28px] text-[20px] leading-tight font-medium mb-4 uppercase">
-                    {truncateText(item.attributes.Titulo, 10)}
-                  </h2>
-                  <p className="letras:text-[17px] text-gray-900 font-light text-[14px] mb-4 uppercase">
-                    {truncateText(item.attributes.Subtitulo, 20)}
-                  </p>
+                  <article
+                    className={`${open_Sans.className} h-auto blog:h-[390px] letras:h-auto flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] px-5 py-2 m-auto arrow:w-[750px]`}
+                  >
+                    <p className="letras:text-base text-gray-700 text-sm mb-2 ">
+                      {item.attributes.Fecha
+                        ? fechaFun(item.attributes.Fecha)
+                        : "No hay"}
+                    </p>
+                    <h2 className="letras:text-[28px] text-[20px] leading-tight font-medium mb-4 uppercase">
+                      {truncateText(item.attributes.Titulo, 9)}
+                    </h2>
+                    <p className="letras:text-[17px] text-gray-900 font-light text-[14px] mb-4 uppercase">
+                      {truncateText(item.attributes.Subtitulo, 18)}
+                    </p>
 
-                  <div className="overflow-visible !z-10">
-                    <Link className="text-center m-auto w-44 letras:ml-auto bg-[#611232] text-white py-3  hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] block" href={`/blog/noticias-antiguas/${ item.attributes.slug}`}>
-                    {console.log(item.attributes.slug)}
-                      <p className="text-xs letras:text-[14.5px] font-light">
-                        Continuar leyendo
-                      </p>
-                    </Link>
-                  </div>
-                </article>
+                    <div className="overflow-visible !z-10 ">
+                      <Link
+                        className="text-center m-auto w-44 letras:ml-auto bg-[#611232] text-white py-3  hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] block"
+                        href={`/blog/noticias-antiguas/${item.attributes.slug}`}
+                      >
+                        <p className="text-xs letras:text-[14.5px] font-light">
+                          Continuar leyendo
+                        </p>
+                      </Link>
+                    </div>
+                  </article>
+                </Link>
               </div>
             </div>
           ))

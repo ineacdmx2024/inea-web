@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Link from 'next/link'
+import Link from "next/link";
 
 function PrevArrow(props) {
   const { className, style, onClick } = props;
@@ -65,8 +65,31 @@ const NextArrow = (props) => {
   );
 };
 
+const truncateText = (text, maxLetters) => {
+  if (text.length > maxLetters) {
+    return text.slice(0, maxLetters) + "...";
+  }
+  return text;
+};
+
 function CarouselOfertEdu() {
   const [slidesToShow, setSlidesToShow] = useState(3);
+
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    // Esta lógica solo se ejecutará en el cliente.
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 500);
+    };
+
+    handleResize(); // Ejecuta una vez para establecer el estado inicial.
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -86,12 +109,12 @@ function CarouselOfertEdu() {
     {
       name: "Alfabetización, primaria y secundaria presencial",
       image: "/Modalidad1.jpg",
-      url: "/que-modalidad-elijo"
+      url: "/que-modalidad-elijo",
     },
     {
       name: "Primaria y secundaria en línea",
       image: "/Modalidad2.jpg",
-      url: "/enlinea"
+      url: "/enlinea",
     },
     {
       name: "Examen único",
@@ -148,7 +171,7 @@ function CarouselOfertEdu() {
           transition: all 0.3s ease;
         }
         .custom-dots li.slick-active button:before {
-          color: #790101; // Color verde para el punto activo
+          color: #611232; // Color rojo para el punto activo
           transform: scale(1.2);
         }
       `}</style>
@@ -160,21 +183,27 @@ function CarouselOfertEdu() {
           >
             {modalidades.map((noticia, index) => (
               <div key={index} className="px-4">
-                <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[420px] p-8 flex flex-col justify-between">
+                <Link
+                  href={`/oferta-educativa${noticia.url}`}
+                  className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[420px] p-8 flex flex-col justify-between"
+                >
                   <div className="flex flex-col items-center">
                     <img
                       className="bg-blue-700 w-full h-auto object-cover rounded-lg"
                       src={noticia.image}
                       alt={noticia.name}
                     />
-                    <h3 className="my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-slate-500 font-medium ">
-                      {noticia.name}
+                    <h3 className="my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-[#333334] font-medium ">
+                      {isSmallScreen ? truncateText(noticia.name, 35) : noticia.name}
                     </h3>
                   </div>
-                  <Link className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light" href={`/oferta-educativa${noticia.url}`}>
+                  <div
+                    className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light"
+                    href={`/oferta-educativa${noticia.url}`}
+                  >
                     Ir al sitio
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               </div>
             ))}
           </Slider>
