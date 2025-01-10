@@ -107,16 +107,10 @@ function DetalleEnlace(slug) {
   const [noti, setNoti] = useState([]);
   useEffect(() => {
     const noiticas = async () => {
-      const res = await fetch(
-        `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`,
-        {
-          cache: "no-store",
-          headers: {
-            "Cache-Control": "no-cache",
-          },
-        }
+      const res1 = await fetch(
+        `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
-      const enlaces = await res.json();
+      const enlaces = await res1.json();
       const Noti = enlaces.data.map((item) => ({
         title: item.attributes.Titulo,
         imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,

@@ -19,7 +19,7 @@ function Modalidad() {
     },
     {
       title: "Examen único",
-      imageSrc: "/Modalidad/Examenunico2.webp",
+      imageSrc: "/Modalidad/examen_unico2024.jpg",
       buttonText: "Ir al sitio",
       link: "/oferta-educativa/examen-unico",
     },
@@ -201,7 +201,7 @@ function Modalidad() {
                   </div>
                 </div>
               }
-              imageSrc="/Modalidad/Examenunico2.webp"
+              imageSrc="/Modalidad/examen_unico2024.jpg"
             />
             <CollapsiblePanel
               title="¿Deseas estudiar con el uso de dispositivos móviles o computadora desde casa?  "

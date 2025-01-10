@@ -109,7 +109,7 @@ const Plazas = ({ datos }) => {
     const columns =
       items.length > 10
         ? "md:grid-cols-3  md:text-lg"
-        : "md:grid-cols-2  md:text-xl";
+        : "md:grid-cols-2  md:text-lg";
 
     return (
       <div
@@ -128,9 +128,9 @@ const Plazas = ({ datos }) => {
               {
                 //step} {arreglo}
               }
-              <div className="flex mt-[20px] mb-1 mx-[20px] justify-center">
-                <div className="flex m-[0%] uppercase justify-center text-center">
-                  <div className="flex h-auto w-auto ml-1">
+              <div className="flex mt-[20px] mb-1 mx-[20px] justify-normal">
+                <div className="flex m-[0%] uppercase justify-normal text-left">
+                  <div className="flex h-auto w-auto mr-1">
                     <svg
                       className={`h-6 w-6 ml-1 ${
                         arreglo[(index * 1) % arreglo.length]
@@ -155,7 +155,7 @@ const Plazas = ({ datos }) => {
                   {item.alcaldia}
                 </div>
               </div>
-              <div className="justify-center items-center text-center mb-[20px] mx--[20px]">
+              <div className="justify-normal text-left mb-[20px] mx-[20px]">
                 {item.dir && <p>{item.dir}</p>}
                 {item.atel && <p>Tel: {item.atel}</p>}
               </div>

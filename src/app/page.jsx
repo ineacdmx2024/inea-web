@@ -61,8 +61,11 @@ function page() {
       </div>
       <SeccionLigasInte />
 
+    <div style={{marginTop: -50 + 'px', visibility:'hidden'}} id="ubicacion">
+    </div>
+    <div style={{marginTop: 170 + 'px', visibility:'hidden'}} id="ubicacion">
+    </div>
       <div
-        id="ubicacion"
         className="my-20 mx-auto mt-32 mb-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]"
       >
         <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl ">
@@ -73,7 +76,9 @@ function page() {
           <div className="flex-grow h-px bg-gray-300"></div>
         </div>
       </div>
+     
       <Ubicacion />
+       
     </main>
   );
 }

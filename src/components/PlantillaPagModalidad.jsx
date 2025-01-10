@@ -156,7 +156,7 @@ function PagMod({ info }) {
           </div>
         </div>
       </div>
-      <div className="my-3">
+      <div className="my-2 ">
         <CardComponent items={info.celdas} />
       </div>
     </div>

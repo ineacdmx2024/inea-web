@@ -25,7 +25,7 @@ function Ubicacion() {
     },
     {
       title: "Examen único",
-      imageSrc: "/Modalidad/Examenunico2.webp",
+      imageSrc: "/Modalidad/examen_unico2024.jpg",
       buttonText: "Ir al sitio",
       link: "/oferta-educativa/examen-unico",
     },
@@ -1211,11 +1211,10 @@ function Ubicacion() {
                 Ubica tu plaza comunitaria dependiendo de tu delegación.
               </strong>
               <p>
-                Las Plazas Comunitarias INEA son espacios educativos abiertos a
-                la comunidad, donde personas de diferentes edades y niveles de
-                educación pueden acudir para aprender a leer, escribir, terminar
-                su educación primaria y secundaria, completar su bachillerato o
-                tomar cursos de capacitación para la vida y el trabajo.
+              Las Plazas Comunitarias del INEA son espacios educativos abiertos a la comunidad, 
+              donde personas de diferentes edades, preferentemente mayores de 15 años, 
+              pueden acudir para aprender a leer, escribir, terminar su educación primaria y 
+              secundaria, o tomar cursos de capacitación para la vida y el trabajo 
               </p>
             </div>
           </div>

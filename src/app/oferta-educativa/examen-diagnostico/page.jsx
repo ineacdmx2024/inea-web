@@ -67,7 +67,7 @@ function Examen_unico() {
     },
     {
       title: "Examen único",
-      imageSrc: "/Modalidad/Examenunico2.webp",
+      imageSrc: "/Modalidad/examen_unico2024.jpg",
       buttonText: "Ir al sitio",
       link: "/oferta-educativa/examen-unico",
     },

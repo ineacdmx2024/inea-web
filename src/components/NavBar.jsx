@@ -76,7 +76,7 @@ const Navbar = () => {
                   passHref
                 >
                   <img
-                    src="/LogoEducacion.svg"
+                    src="/SEP_Logo_2024_blanco.svg"
                     alt="Educacion"
                     className=" hover:text-[#8B6C41]  rounded inline-block py-[0.3rem] mr-[1rem]"
                   />
@@ -93,7 +93,7 @@ const Navbar = () => {
                       passHref
                       className="hover:text-[#D3C09B] p-1 rounded"
                     >
-                      ¿Qué es el INEA?
+                      Sobre el INEA
                     </Link>
                     <Link
                       href="/#ubicacion"
@@ -183,7 +183,7 @@ const Navbar = () => {
                   passHref
                   className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
                 >
-                  ¿Qué es el INEA?
+                  Sobre el INEA
                 </Link>
                 <Link
                   href="/#ubicacion"
@@ -225,10 +225,10 @@ const Navbar = () => {
         </nav>
 
         {/* Menú inferior */}
-        <nav className="bg-[#A57F2C] lg:h-8">
-          <div className="flex items-center justify-between py-[0.06rem] px-auto lg:h-8">
+        <nav className="bg-[#A57F2C] lg:h-37px">
+          <div className="flex items-center justify-between py-[0.06rem] px-auto h-37px">
             <div
-              className="flex items-end justify-end lg:h-8"
+              className="flex items-end justify-end"
               id="Minf"
             >
               <div className="flex items-end space-x-10">
@@ -312,7 +312,7 @@ const Navbar = () => {
                           onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
-                          Examen Único
+                          Examen único
                         </Link>
                         <Link
                           href="/oferta-educativa/examen-diagnostico"
@@ -725,7 +725,7 @@ const Navbar = () => {
                         href="/oferta-educativa/examen-unico"
                         className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
-                        Examen Único
+                        Examen único
                       </Link>
                       <Link
                         onClick={closeAllMenus && closeMobileMenu}

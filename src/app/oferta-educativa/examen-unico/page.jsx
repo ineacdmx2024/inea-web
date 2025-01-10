@@ -2,7 +2,7 @@ import React from "react";
 import PagSec from "@/components/PlantillaPagSec";
 import PagMod from "@/components/PlantillaPagModalidad";
 const examen = {
-  bannerImage: "/Modalidad/Examenunico2.webp",
+  bannerImage: "/Modalidad/examen_unico2024.jpg",
   title: "Examen de Reconocimiento de Saberes ",
   description: "(Examen Único)",
   paragraphs: [

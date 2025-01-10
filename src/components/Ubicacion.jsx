@@ -3,6 +3,7 @@ import "./Ubicacion.css";
 
 const Ubicacion = () => {
   return (
+    
     <div
       id="UbicacionDivP"
       className="container w-auto mx-auto px-4 py-0 "

@@ -14,7 +14,7 @@ const CollapsiblePanel = ({ title, content, imageSrc }) => {
   return (
     <div className="w-full mb-5">
       <div
-        className="flex justify-between items-center w-full p-3 text-xl font-medium text-left bg-gray-200 rounded-lg cursor-pointer"
+        className="flex justify-between items-center w-full p-3 text-lg font-medium text-left bg-gray-200 rounded-lg cursor-pointer"
         onClick={togglePanel}
       >
         {/* Usamos grid para dividir en 1/3 y 2/3 */}

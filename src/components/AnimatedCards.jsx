@@ -8,13 +8,12 @@ const CardComponent = ({ items }) => {
   const renderSubtitle = (subtitle) => {
     if (Array.isArray(subtitle)) {
       return (
-        <ul className="list-disc list-inside text-gray-600">
+        <ul className="list-disc list-outsite text-gray-600 ml-2 md:text-base sm:text-sm">
           {subtitle.map((item, index) => (
             <li
               key={index}
               className="list-disc"
-            >
-              {item}
+            > {item}
             </li>
           ))}
         </ul>

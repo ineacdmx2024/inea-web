@@ -6,9 +6,9 @@ const regular = {
   title: "Programa regular presencial",
   description: "(Alfabetización, Primaria o Secundaria)",
   paragraphs: [
-    "El Programa regular presencial, o Modelo de Educación para la Vida (MEV) AprendeINEA, es una opción educativa gratuita diseñada para personas de 15 años o más que nunca han asistido a la escuela Primaria o Secundaria, o no la concluyeron, y desean obtener el certificado correspondiente.",
-    "En este Programa las personas tienen la oportunidad de estudiar en un lugar fijo, utilizando materiales educativos impresos y recibiendo el apoyo directo de un asesor del INEA, quien los guiará a lo largo de su proceso educativo.",
-    "La estructura curricular de este Programa varía según el nivel educativo que se esté cursando. Para Primaria, comprende cinco módulos básicos y uno diversificado. En el caso de Secundaria, incluye siete módulos básicos y dos diversificados. Estos módulos abarcan temas de lectura, escritura, matemáticas, ciencias sociales y naturales.",
+    "El Programa regular presencial, o Modelo de Educación para la Vida (MEV) AprendeINEA, es una opción educativa gratuita diseñada para personas de 15 años o más que desean alfabetizarse, aprender a leer y escribir, o completar sus estudios de Primaria o Secundaria y obtener el certificado correspondiente. Esta modalidad es la única que ofrece alfabetización, ya que quienes inician este proceso requieren una asesoría más puntual y personalizada.",
+    "En este Programa, las personas tienen la oportunidad de estudiar en un lugar fijo, utilizando materiales educativos impresos y recibiendo el apoyo directo de un asesor del INEA, quien los guía a lo largo de su proceso educativo, atendiendo sus necesidades particulares.",
+    "La estructura curricular varía según el nivel educativo que se esté cursando. Para alfabetización, se utilizan materiales específicos que enseñan habilidades básicas de lectura y escritura. En el nivel de Primaria, comprende cinco módulos básicos y uno diversificado, mientras que para Secundaria incluye siete módulos básicos y dos diversificados. Estos módulos abarcan temas de lectura, escritura, matemáticas, ciencias sociales y naturales.",
   ],
   time: " 3 a 6 meses dedicando, 4 horas por semana.",
   requirements: [
@@ -70,7 +70,7 @@ function Presencial() {
     },
     {
       title: "Examen único",
-      imageSrc: "/Modalidad/Examenunico2.webp",
+      imageSrc: "/Modalidad/examen_unico2024.jpg",
       buttonText: "Ir al sitio",
       link: "/oferta-educativa/examen-unico",
     },
