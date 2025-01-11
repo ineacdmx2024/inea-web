@@ -77,9 +77,12 @@ function SeccionLigasInte() {
   const [slidesToShow, setSlidesToShow] = useState(3);
   const router = useRouter(); // Hook de Next.js para navegación dinámica
 
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
       setSlidesToShow(window.innerWidth < 1210 ? 1 : 3);
+      setIsSmallScreen(window.innerWidth <= 500);
     };
 
     handleResize();
@@ -200,26 +203,28 @@ function SeccionLigasInte() {
         }
       `}</style>
 
-      <div className="p-2">
+      <div className="p-2 pt-0">
         {/* Div de noticias fijas */}
         <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex">
           {fijos.map((fijos, index) => (
             <div
               key={index}
-              className="px-4 w-1/3 cursor-pointer"
+              className="px-4 cursor-pointer"
               onClick={() => handleButtonClick(fijos)}
             >
-              <div className="border border-slate-300 h-[420px] rounded-lg p-8 flex flex-col justify-between">
+              <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[420px] p-8 flex flex-col justify-between">
                 <div className="flex flex-col items-center">
                   <img
-                    className="w-60 h-auto object-cover rounded-lg"
+                    className="w-full h-auto object-cover rounded-lg"
                     src={fijos.imagen}
                     alt={fijos.titulo}
                   />
                   <h3
-                    className={`${montserrat.className} my-7 text-[#404041] px-4 text-center text-[22px] leading-[32px] font-medium capitalize`}
+                    className={`${montserrat.className} my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-[#333334] font-medium capitalize`}
                   >
-                    {fijos.titulo}
+                    {isSmallScreen
+                      ? truncateText(fijos.titulo, 35)
+                      : fijos.titulo}
                   </h3>
                 </div>
                 <button
@@ -234,25 +239,37 @@ function SeccionLigasInte() {
         </div>
 
         {/* Div de noticias fijas en carousel */}
-        <div className="border border-slate-300 rounded-lg bg-white w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto">
-          <Slider {...settings}>
+        <div className="carrusel tablet:hidden">
+          {/* 
+        border border-slate-300 rounded-lg bg-white w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto
+           */}
+          <Slider
+            {...settings}
+            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] mt-8"
+          >
             {fijos.map((fijos, index) => (
               <div
                 key={index}
-                className="px-2 cursor-pointer"
+                className="px-4 cursor-pointer"
                 onClick={() => handleButtonClick(fijos)}
               >
-                <div className="h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
+                <div
+                  className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg 
+                h-[400px] letras:h-[420px] p-8 flex flex-col justify-between
+                "
+                >
                   <div className="flex flex-col items-center">
                     <img
-                      className="w-60 h-auto object-cover rounded-lg"
+                      className="w-full h-auto object-cover rounded-lg"
                       src={fijos.imagen}
                       alt={fijos.titulo}
                     />
                     <h3
-                      className={`${montserrat.className} my-7 text-[#404041] px-4 text-center text-[22px] leading-[32px] font-medium capitalize`}
+                      className={`${montserrat.className} my-7 text-[#333334] letras:px-2 px-5  text-center text-[18px]  letras:text-[22px] leading-[32px] font-medium normal-case`}
                     >
-                      {fijos.titulo}
+                      {isSmallScreen
+                        ? truncateText(fijos.titulo, 35)
+                        : fijos.titulo}
                     </h3>
                   </div>
                   <button
@@ -282,14 +299,16 @@ function SeccionLigasInte() {
                 <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
                   <div className="flex flex-col items-center">
                     <img
-                      className="w-60 h-auto object-cover rounded-lg"
+                      className="w-full h-auto object-cover rounded-lg"
                       src={restantes.imagen}
                       alt={restantes.titulo}
                     />
                     <h3
-                      className={`${montserrat.className} my-7 text-[#404041] px-4 text-center text-[22px] leading-[32px] font-medium capitalize`}
+                      className={`${montserrat.className} my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-[#333334] font-medium`}
                     >
-                      {restantes.titulo}
+                      {isSmallScreen
+                        ? truncateText(restantes.titulo, 35)
+                        : restantes.titulo}
                     </h3>
                   </div>
                   <button
