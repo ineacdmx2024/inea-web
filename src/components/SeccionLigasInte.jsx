@@ -79,6 +79,13 @@ function SeccionLigasInte() {
 
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
+  const truncateText = (text, maxLength) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + "...";
+    }
+    return text;
+  };
+
   useEffect(() => {
     const handleResize = () => {
       setSlidesToShow(window.innerWidth < 1210 ? 1 : 3);
@@ -215,16 +222,14 @@ function SeccionLigasInte() {
               <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[420px] p-8 flex flex-col justify-between">
                 <div className="flex flex-col items-center">
                   <img
-                    className="w-full h-auto object-cover rounded-lg"
+                    className="w-full aspect-[360/300] object-cover rounded-lg"
                     src={fijos.imagen}
                     alt={fijos.titulo}
                   />
                   <h3
                     className={`${montserrat.className} my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-[#333334] font-medium capitalize`}
                   >
-                    {isSmallScreen
-                      ? truncateText(fijos.titulo, 35)
-                      : fijos.titulo}
+                    {truncateText(fijos.titulo, 21)}
                   </h3>
                 </div>
                 <button
@@ -260,16 +265,17 @@ function SeccionLigasInte() {
                 >
                   <div className="flex flex-col items-center">
                     <img
-                      className="w-full h-auto object-cover rounded-lg"
+                      className="w-full aspect-[360/300] object-cover rounded-lg"
                       src={fijos.imagen}
                       alt={fijos.titulo}
                     />
                     <h3
                       className={`${montserrat.className} my-7 text-[#333334] letras:px-2 px-5  text-center text-[18px]  letras:text-[22px] leading-[32px] font-medium normal-case`}
                     >
-                      {isSmallScreen
-                        ? truncateText(fijos.titulo, 35)
-                        : fijos.titulo}
+                      {/* {isSmallScreen
+                        ? truncateText(fijos.titulo, 20)
+                        : fijos.titulo} */}
+                      {truncateText(fijos.titulo, 21)}
                     </h3>
                   </div>
                   <button
@@ -296,19 +302,20 @@ function SeccionLigasInte() {
                 className="px-4 cursor-pointer"
                 onClick={() => handleButtonClick(restantes)}
               >
-                <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[440px] p-8 flex flex-col justify-between">
+                <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[420px] p-8 flex flex-col justify-between">
                   <div className="flex flex-col items-center">
                     <img
-                      className="w-full h-auto object-cover rounded-lg"
+                      className="bg-blue-700 w-full aspect-[360/300] object-cover rounded-lg"
                       src={restantes.imagen}
                       alt={restantes.titulo}
-                    />
+                    />{" "}
                     <h3
                       className={`${montserrat.className} my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-[#333334] font-medium`}
                     >
-                      {isSmallScreen
-                        ? truncateText(restantes.titulo, 35)
-                        : restantes.titulo}
+                      {/* {isSmallScreen
+                        ? truncateText(restantes.titulo, 20)
+                        : restantes.titulo} */}
+                      {truncateText(restantes.titulo, 21)}
                     </h3>
                   </div>
                   <button

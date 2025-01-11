@@ -1193,8 +1193,8 @@ function Ubicacion() {
                   aria-current="page"
                   className={`inline-block p-4 ${
                     opcionSeleccionada === "coordinaciones"
-                      ? "text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500"
-                      : "rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                      ? "text-[#A57F2C] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C]"
+                      : "text-[#333334] rounded-t-lg hover:text-[#611232] hover:font-bold hover:bg-slate-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
                   }`}
                   onClick={() => handleOpcionSeleccionada("coordinaciones")}
                 >
@@ -1203,11 +1203,11 @@ function Ubicacion() {
               </li>
               <li className="me-2">
                 <a
-                  href="#"
+                  // href="#"
                   className={`inline-block p-4 ${
                     opcionSeleccionada === "plazas"
-                      ? "text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500"
-                      : "rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                      ? "text-[#A57F2C] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C]"
+                      : "text-[#333334] rounded-t-lg hover:text-[#611232] hover:font-bold hover:bg-slate-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
                   }`}
                   onClick={() => handleOpcionSeleccionada("plazas")}
                 >
@@ -1216,11 +1216,11 @@ function Ubicacion() {
               </li>
               <li className="me-2">
                 <a
-                  href="#"
+                  // href=""
                   className={`inline-block p-4 ${
                     opcionSeleccionada === "pilares"
-                      ? "text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500"
-                      : "rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                      ? "text-[#A57F2C] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C]"
+                      : "text-[#333334] rounded-t-lg hover:text-[#611232] hover:font-bold hover:bg-slate-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
                   }`}
                   onClick={() => handleOpcionSeleccionada("pilares")}
                 >
@@ -1232,8 +1232,8 @@ function Ubicacion() {
           <div id="contenedorUbicacion">
             {opcionSeleccionada === "coordinaciones" && (
               <div className="mx-auto mb-32 w-full grid grid-cols-1 gap-2 row-span-1">
-                <div className="mx-auto mt-2 mb-4 w-full max-w-full md:max-w-[1140px]">
-                  <div className="mx-auto mt-24 mb-16 md:mb-8">
+                <div className="mx-auto mb-4 w-full max-w-full md:max-w-[1140px]">
+                  <div className="mx-auto mt-6 mb-16 md:mb-8">
                     <h2 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
                       Coordinaciones de zona
                     </h2>
@@ -1264,8 +1264,8 @@ function Ubicacion() {
             )}
             {opcionSeleccionada === "plazas" && (
               <div className="row-span-1">
-                <div className="mx-auto mt-2 mb-4 w-full max-w-full ">
-                  <div className="mx-auto mt-24 mb-16 md:mb-8 ">
+                <div className="mx-auto mb-4 w-full max-w-full ">
+                  <div className="mx-auto mt-6 mb-16 md:mb-8 ">
                     <h2 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
                       Plazas comunitarias
                     </h2>
@@ -1295,9 +1295,37 @@ function Ubicacion() {
               </div>
             )}
             {opcionSeleccionada === "pilares" && (
-              <Plazas datos={plazasData} />
               // Luego implementamos lo de pulares ahorita puse las plazas
-              // <Pilares datos={pilaresData} />
+              <div className="row-span-1">
+                <div className="mx-auto mb-4 w-full max-w-full ">
+                  <div className="mx-auto mt-6 mb-16 md:mb-8 ">
+                    <h2 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
+                      Pilares
+                    </h2>
+                    <div className="flex items-center mb-2">
+                      <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+                      <div className="flex-grow h-px bg-gray-300"></div>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 text-lg text-gray-700 leading-tight justify-start">
+                    <strong>
+                      Ubica tu plaza comunitaria dependiendo de tu alcaldía.
+                    </strong>
+                    <p>
+                      Las Plazas Comunitarias del INEA son espacios educativos
+                      abiertos a la comunidad, donde personas de diferentes
+                      edades, preferentemente mayores de 15 años, pueden acudir
+                      para aprender a leer, escribir, terminar su educación
+                      primaria y secundaria, o tomar cursos de capacitación para
+                      la vida y el trabajo
+                    </p>
+                  </div>
+                </div>
+                <div className="w-full flex-col">
+                  <Plazas datos={plazasData}></Plazas>
+                </div>
+              </div>
             )}
           </div>
         </div>
