@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import "./NavBar.css";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -12,6 +12,8 @@ const Navbar = () => {
   const [isClickS, setisClickS] = useState(false);
   const [isClickCE, setisClickCE] = useState(false);
   const [isClickI, setisClickI] = useState(false);
+
+  const navRef = useRef(null); // Referencia para el Navbar
 
   const toggleOE = () => {
     setisClickOE(!isClickOE);
@@ -58,10 +60,26 @@ const Navbar = () => {
     setisClickINEA(false);
     setisClick(false);
   };
+  // Detecta clics fuera del navbar
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        closeAllMenus();
+        closeMobileMenu();
+      }
+    };
 
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     // <div className="navBar text-white ">
-    <div className="navBar">
+    <div
+      ref={navRef}
+      className="navBar"
+    >
       <div className="bg-[#611232] w-full">
         {/* Menú gobierno */}
         <nav className="bg-[#611232]">
@@ -281,7 +299,7 @@ const Navbar = () => {
                         </svg>
                       </Link>
                       <div
-                        className={`absolute left-0 mt-2 ${
+                        className={`absolute left-0 mt-0.5  ${
                           // isClickOE ? "opacity-100" : "opacity-0"
                           isClickOE ? "block" : "hidden"
                         } bg-gray-100 text-black rounded shadow-lg transition-opacity duration-300 ease-in-out delay-200 z-50`}
@@ -350,7 +368,7 @@ const Navbar = () => {
                       </Link>
 
                       <div
-                        className={`absolute left-0 mt-2 ${
+                        className={`absolute left-0 mt-0.5  ${
                           isClickS ? "block" : "hidden"
                         } bg-gray-100 text-black rounded shadow-lg transition-opacity duration-300 ease-in-out delay-200 z-50`}
                       >
@@ -443,7 +461,7 @@ const Navbar = () => {
                         </svg>
                       </Link>
                       <div
-                        className={`absolute left-0 mt-2 ${
+                        className={`absolute left-0 mt-0.5  ${
                           isClickCE ? "block" : "hidden"
                         } bg-gray-100 text-black rounded shadow-lg transition-opacity duration-300 ease-in-out delay-200 z-50`}
                       >
@@ -513,7 +531,7 @@ const Navbar = () => {
                       </Link>
 
                       <div
-                        className={`absolute left-0 mt-2 ${
+                        className={`absolute left-0 mt-0.5  ${
                           isClickI ? "block" : "hidden"
                         } bg-gray-100 text-black rounded shadow-lg transition-opacity duration-300 ease-in-out delay-200 z-50`}
                       >

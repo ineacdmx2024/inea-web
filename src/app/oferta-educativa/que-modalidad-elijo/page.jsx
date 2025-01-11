@@ -1,9 +1,14 @@
+"use client";
 import React from "react";
+// import { useRouter } from "next/router";
+import Link from "next/link";
 import CollapsiblePanel from "@/components/PanelColapsable";
 import PagSec from "@/components/PlantillaPagSec";
+import { motion } from "framer-motion";
 import "../../../../src/app/globals.css";
 import CarouselEL from "@/components/CarouselEL";
 function Modalidad() {
+  // const router = useRouter();
   const cards = [
     {
       title: "Modalidad presencial",
@@ -117,6 +122,15 @@ function Modalidad() {
                       </ul>
                     </div>
                   </div>
+                  <Link href="/">
+                    <motion.button
+                      className="mt-4 px-4 py-2 bg-[#611232] text-white rounded-lg mx-auto block border-2 hover:bg-white hover:text-[#611232] hover:border-[#611232] focus:bg-[#A57F2C]"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Regístrate
+                    </motion.button>
+                  </Link>
                 </div>
               }
               imageSrc="/Modalidad/programa_regular2.webp"
@@ -159,7 +173,6 @@ function Modalidad() {
                   <p className="mt-2 mb-9">
                     <strong>Tiempo estimado de conclusión: </strong> Inmediato
                   </p>
-
                   <div
                     id="alert-additional-content-4"
                     className="p-4 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
@@ -199,6 +212,15 @@ function Modalidad() {
                       </ul>
                     </div>
                   </div>
+                  <Link href="/">
+                    <motion.button
+                      className="mt-4 px-4 py-2 bg-[#611232] text-white rounded-lg mx-auto block border-2 hover:bg-white hover:text-[#611232] hover:border-[#611232] focus:bg-[#A57F2C]"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Regístrate
+                    </motion.button>
+                  </Link>
                 </div>
               }
               imageSrc="/Modalidad/examen_unico2024.jpg"
@@ -276,6 +298,15 @@ function Modalidad() {
                       </ul>
                     </div>
                   </div>
+                  <Link href="/">
+                    <motion.button
+                      className="mt-4 px-4 py-2 bg-[#611232] text-white rounded-lg mx-auto block border-2 hover:bg-white hover:text-[#611232] hover:border-[#611232] focus:bg-[#A57F2C]"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Regístrate
+                    </motion.button>
+                  </Link>
                 </div>
               }
               imageSrc="/Modalidad/aprendeINEAenlinea2.webp"
@@ -357,6 +388,15 @@ function Modalidad() {
                       </ul>
                     </div>
                   </div>
+                  <Link href="/">
+                    <motion.button
+                      className="mt-4 px-4 py-2 bg-[#611232] text-white rounded-lg mx-auto block border-2 hover:bg-white hover:text-[#611232] hover:border-[#611232] focus:bg-[#A57F2C]"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Regístrate
+                    </motion.button>
+                  </Link>
                 </div>
               }
               imageSrc="/Modalidad/examenes_diagnostico.jpg"

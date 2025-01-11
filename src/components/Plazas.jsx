@@ -122,7 +122,7 @@ const Plazas = ({ datos }) => {
           return (
             <div
               key={index}
-              className={`${montserrat.className}  text-[#333334] mb-4  text-start leading-tight justify-start cursor-pointer`}
+              className={`${montserrat.className}  text-[#333334] mb-4  text-start leading-none justify-start cursor-pointer`}
               onClick={() => window.open(item.url, "_blank")}
             >
               {

@@ -132,7 +132,7 @@ function DetalleEnlace(slug) {
               key: index,
               className: `${montserrat.className} font-bold text-[${
                 21 - item.level
-              }px]`,
+              }px justify-start]`,
             },
             item.children[0]?.text || ""
           );
@@ -149,7 +149,7 @@ function DetalleEnlace(slug) {
           return (
             <p
               key={index}
-              className={`${montserrat.className} text-[#333334] text-[18px] leading-[32px]`}
+              className={`${montserrat.className} text-[#333334] text-[18px] leading-none`}
               //className={`${open_Sans.className} text-[#404041] text-[16px] font-light`}
             >
               {item.children.map((child, i) => {

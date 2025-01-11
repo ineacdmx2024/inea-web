@@ -7,6 +7,15 @@ import Plazas from "@/components/Plazas";
 // import "../../../../src/app/globals.css";
 import "../../app/globals.css";
 import { dir } from "console";
+
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  weight: ["300", "400", "500", "600", "700", "800"],
+  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
+  subsets: ["latin"],
+});
+
 function Ubicacion() {
   // const [currentPage, setCurrentPage] = useState(1);
 
@@ -1163,24 +1172,26 @@ function Ubicacion() {
   ];
 
   return (
-    <div>
+    <div className={`${montserrat.className}  text-[#333334]  text-start `}>
       <PagSec
         Enlaces={cards}
         Titulo={"Ubicación de oficinas de trámites y espacios de estudio"}
       >
         <div className="mx-auto mb-32 w-full grid grid-cols-1 gap-2 row-span-1">
           <div className="mx-auto mt-2 mb-4 w-full max-w-full md:max-w-[1140px]">
-            <br />
-            <h2 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
-              Coordinaciones de zona
-            </h2>
-            <div className="flex items-center mb-2">
-              <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
-              <div className="flex-grow h-px bg-gray-300"></div>
+            <div className="mx-auto mt-24 mb-16 md:mb-8">
+              <h2 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
+                Coordinaciones de zona
+              </h2>
+              <div className="flex items-center mb-2">
+                <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+                <div className="flex-grow h-px bg-gray-300"></div>
+              </div>
             </div>
-            <div className="px-4 pt-4 pb-2 text-lg text-gray-700">
+
+            <div className="pt-4 text-lg text-gray-700  leading-tight justify-start">
               <strong>
-                Ubica tu coordinación de zona dependiendo de tu delegación
+                Ubica tu coordinación de zona dependiendo de tu alcaldía
               </strong>
               <p>
                 Las coordinaciones de zona son unidades geográficas responsables
@@ -1198,23 +1209,26 @@ function Ubicacion() {
         </div>
         <div className="row-span-1">
           <div className="mx-auto mt-2 mb-4 w-full max-w-full ">
-            <h2 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
-              Plazas comunitarias
-            </h2>
-            <div className="flex items-center mb-2">
-              <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
-              <div className="flex-grow h-px bg-gray-300"></div>
+            <div className="mx-auto mt-24 mb-16 md:mb-8 ">
+              <h2 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
+                Plazas comunitarias
+              </h2>
+              <div className="flex items-center mb-2">
+                <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+                <div className="flex-grow h-px bg-gray-300"></div>
+              </div>
             </div>
-            <br />
-            <div className="px-4 pt-4 pb-2 text-lg text-gray-700">
+
+            <div className="pt-4 text-lg text-gray-700 leading-tight justify-start">
               <strong>
-                Ubica tu plaza comunitaria dependiendo de tu delegación.
+                Ubica tu plaza comunitaria dependiendo de tu alcaldía.
               </strong>
               <p>
-              Las Plazas Comunitarias del INEA son espacios educativos abiertos a la comunidad, 
-              donde personas de diferentes edades, preferentemente mayores de 15 años, 
-              pueden acudir para aprender a leer, escribir, terminar su educación primaria y 
-              secundaria, o tomar cursos de capacitación para la vida y el trabajo 
+                Las Plazas Comunitarias del INEA son espacios educativos
+                abiertos a la comunidad, donde personas de diferentes edades,
+                preferentemente mayores de 15 años, pueden acudir para aprender
+                a leer, escribir, terminar su educación primaria y secundaria, o
+                tomar cursos de capacitación para la vida y el trabajo
               </p>
             </div>
           </div>

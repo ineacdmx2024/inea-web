@@ -101,9 +101,7 @@ const SkewedPagesResponsive = ({ datos }) => {
                 </h1>
                 <div>
                   <p className="text-[18px] text-center">{pageData.nom}</p>
-                  <p className="text-[18px] text-center">
-                    Teléfono: {pageData.tel}
-                  </p>
+
                   <p className="text-[18px] text-center">
                     Email: {pageData.email}
                   </p>
@@ -149,11 +147,11 @@ const SkewedPagesResponsive = ({ datos }) => {
                       </div>
                     </div>
                     <div className="px-2 uppercase text-normal text-center">
-                    {item.dir}
-                    <br />
-                    Tel: {item.atel}
-                    <br />
-                    {item.aemail}
+                      {item.dir}
+                      <br />
+                      Tel: {item.atel}
+                      <br />
+                      {item.aemail}
                     </div>
                     <br />
                   </div>
