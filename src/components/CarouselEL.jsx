@@ -67,15 +67,11 @@ const CarouselEL = ({ cards }) => {
         }
       `}</style>
       <div className="border border-slate-300 rounded-lg bg-white w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto ">
-        <Slider
-          {...settings}
-          className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] mt-8"
-        >
+        <Slider {...settings}>
           {cards.map((card, index) => (
             <Link
               key={index}
               href={card.link}
-              className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[420px] p-8 flex flex-col justify-between"
             >
               <div
                 key={index}
@@ -89,7 +85,7 @@ const CarouselEL = ({ cards }) => {
                   alt={card.title}
                 />
                 <h3 className="my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-[#333334] font-medium">
-                  {isSmallScreen ? truncateText(card.title, 35) : card.title}
+                  {card.title}
                 </h3>
               </div>
               {/* <div className="h-[400px] letras:h-[440px] p-8 flex flex-col justify-between"> */}

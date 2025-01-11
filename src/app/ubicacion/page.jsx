@@ -1,12 +1,11 @@
-// "use client";
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import SkewedPages from "@/components/SkewedPages";
 import SkewedPagesResponsive from "@/components/SkewedPagesResponsive";
 import PagSec from "@/components/PlantillaPagSec";
 import Plazas from "@/components/Plazas";
 // import "../../../../src/app/globals.css";
 import "../../app/globals.css";
-import { dir } from "console";
 
 import { Montserrat } from "next/font/google";
 
@@ -1171,13 +1170,138 @@ function Ubicacion() {
     },
   ];
 
+  const [isClickCZ, setisClickCZ] = useState(false);
+  const [isClickPC, setisClickPC] = useState(false);
+  const [isClickP, setisClickP] = useState(false);
+  const [opcionSeleccionada, setOpcionSeleccionada] =
+    useState("coordinaciones");
+  const handleOpcionSeleccionada = (opcion) => {
+    setOpcionSeleccionada(opcion);
+  };
+
   return (
     <div className={`${montserrat.className}  text-[#333334]  text-start `}>
       <PagSec
         Enlaces={cards}
         Titulo={"Ubicación de oficinas de trámites y espacios de estudio"}
       >
-        <div className="mx-auto mb-32 w-full grid grid-cols-1 gap-2 row-span-1">
+        <div className="row-span-1">
+          <div id="pestañas">
+            <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
+              <li className="me-2">
+                <a
+                  aria-current="page"
+                  className={`inline-block p-4 ${
+                    opcionSeleccionada === "coordinaciones"
+                      ? "text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500"
+                      : "rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                  }`}
+                  onClick={() => handleOpcionSeleccionada("coordinaciones")}
+                >
+                  Coordinaciones de zona
+                </a>
+              </li>
+              <li className="me-2">
+                <a
+                  href="#"
+                  className={`inline-block p-4 ${
+                    opcionSeleccionada === "plazas"
+                      ? "text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500"
+                      : "rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                  }`}
+                  onClick={() => handleOpcionSeleccionada("plazas")}
+                >
+                  Plazas comunitarias
+                </a>
+              </li>
+              <li className="me-2">
+                <a
+                  href="#"
+                  className={`inline-block p-4 ${
+                    opcionSeleccionada === "pilares"
+                      ? "text-blue-600 bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-blue-500"
+                      : "rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                  }`}
+                  onClick={() => handleOpcionSeleccionada("pilares")}
+                >
+                  Pilares
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div id="contenedorUbicacion">
+            {opcionSeleccionada === "coordinaciones" && (
+              <div className="mx-auto mb-32 w-full grid grid-cols-1 gap-2 row-span-1">
+                <div className="mx-auto mt-2 mb-4 w-full max-w-full md:max-w-[1140px]">
+                  <div className="mx-auto mt-24 mb-16 md:mb-8">
+                    <h2 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
+                      Coordinaciones de zona
+                    </h2>
+                    <div className="flex items-center mb-2">
+                      <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+                      <div className="flex-grow h-px bg-gray-300"></div>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 text-lg text-gray-700  leading-tight justify-start">
+                    <strong>
+                      Ubica tu coordinación de zona dependiendo de tu alcaldía
+                    </strong>
+                    <p>
+                      Las coordinaciones de zona son unidades geográficas
+                      responsables de promover, organizar y diagnosticar los
+                      servicios de educación para jóvenes y adultos no
+                      escolarizados. Dentro de las coordinaciones de zona podrás
+                      realizar tus trámites.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="w-full flex-col">
+                  <SkewedPagesResponsive datos={pageData} />
+                </div>
+              </div>
+            )}
+            {opcionSeleccionada === "plazas" && (
+              <div className="row-span-1">
+                <div className="mx-auto mt-2 mb-4 w-full max-w-full ">
+                  <div className="mx-auto mt-24 mb-16 md:mb-8 ">
+                    <h2 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
+                      Plazas comunitarias
+                    </h2>
+                    <div className="flex items-center mb-2">
+                      <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+                      <div className="flex-grow h-px bg-gray-300"></div>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 text-lg text-gray-700 leading-tight justify-start">
+                    <strong>
+                      Ubica tu plaza comunitaria dependiendo de tu alcaldía.
+                    </strong>
+                    <p>
+                      Las Plazas Comunitarias del INEA son espacios educativos
+                      abiertos a la comunidad, donde personas de diferentes
+                      edades, preferentemente mayores de 15 años, pueden acudir
+                      para aprender a leer, escribir, terminar su educación
+                      primaria y secundaria, o tomar cursos de capacitación para
+                      la vida y el trabajo
+                    </p>
+                  </div>
+                </div>
+                <div className="w-full flex-col">
+                  <Plazas datos={plazasData}></Plazas>
+                </div>
+              </div>
+            )}
+            {opcionSeleccionada === "pilares" && (
+              <Plazas datos={plazasData} />
+              // Luego implementamos lo de pulares ahorita puse las plazas
+              // <Pilares datos={pilaresData} />
+            )}
+          </div>
+        </div>
+        {/* <div className="mx-auto mb-32 w-full grid grid-cols-1 gap-2 row-span-1">
           <div className="mx-auto mt-2 mb-4 w-full max-w-full md:max-w-[1140px]">
             <div className="mx-auto mt-24 mb-16 md:mb-8">
               <h2 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
@@ -1203,7 +1327,6 @@ function Ubicacion() {
           </div>
 
           <div className="w-full flex-col">
-            {/* <SkewedPages datos={pageData} /> */}
             <SkewedPagesResponsive datos={pageData} />
           </div>
         </div>
@@ -1235,7 +1358,7 @@ function Ubicacion() {
           <div className="w-full flex-col">
             <Plazas datos={plazasData}></Plazas>
           </div>
-        </div>
+        </div> */}
       </PagSec>
     </div>
   );
