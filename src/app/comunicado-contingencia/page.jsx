@@ -69,12 +69,13 @@ async function ComunicadoContingencia() {
     return `${dia + 1} de ${mes} de ${año}`;
   };
 
-  const noticias = enlaces.data.map((item) => (
-    {
+  const noticias = enlaces.data.map((item) => ({
     title: item.attributes.Titulo,
     imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
     buttonText: "Ir al sitio",
-    link: `/enlaces-de-interes/${item.id}`,
+    link: item.attributes.URL_Externo 
+      ? item.attributes.URL_Externo 
+      : `/enlaces-de-interes/${item.attributes.slug}`,
   }));
 
   const renderContenido = (contenido) => {

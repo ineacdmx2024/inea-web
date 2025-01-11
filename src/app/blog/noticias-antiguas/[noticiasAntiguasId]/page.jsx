@@ -32,7 +32,7 @@ async function loadPost(slug) {
 }
 
 async function loadEnlaces() {
-  const res = await fetch(
+  const resPineados = await fetch(
     `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
       cache: 'no-store',
       headers: {
@@ -40,9 +40,27 @@ async function loadEnlaces() {
       }
     }
   );
-  const data = await res.json();
+  const { data: enlacesPineados } = await resPineados.json();
+  if (enlacesPineados.length < 3) {
+    const resNoPineados = await fetch(
+      `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`,
+      {
+        cache: "no-store",
+        headers: {
+          "Cache-Control": "no-cache",
+        },
+      }
+    );
+    const { data: enlacesNoPineados } = await resNoPineados.json();
 
-  return data;
+    const enlacesCompletados = [
+      ...enlacesPineados,
+      ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
+    ];
+
+    return enlacesCompletados;
+  }
+  return enlacesPineados;
 }
 
 async function Page({ params }) {
@@ -199,20 +217,22 @@ async function Page({ params }) {
                 {item.children[0]?.text || "Enlace"}
               </Link>
             );
-        default:
+            default:
           return null;
       }
     });
   };
 
-  const noticias = enlaces.data.map((item) => (
+  const noticias = enlaces.map((item) => (
     {
-    title: item.attributes.Titulo,
-    imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
-    buttonText: "Ir al sitio",
-    link: `/enlaces-de-interes/${item.id}`,
+      title: item.attributes.Titulo,
+      imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
+      buttonText: "Ir al sitio",
+    link: item.attributes.URL_Externo 
+    ? item.attributes.URL_Externo 
+      : `/enlaces-de-interes/${item.attributes.slug}`,
   }));
-
+  
   return (
     <div>
       <div className="ml-[26rem] mb-10"></div>
@@ -220,10 +240,10 @@ async function Page({ params }) {
         Enlaces={noticias}
         Titulo={post.data?.attributes?.Titulo}
         Subtitulo={post.data?.attributes?.Subtitulo}
-      >
+        >
         <h1
           className={`${montserrat.className} text-[#333334] text-[18px] font-light`}
-        >
+          >
           INEA Ciudad de México |{" "}
           {post.data?.attributes?.Fecha
             ? fechaFun(post.data?.attributes?.Fecha)

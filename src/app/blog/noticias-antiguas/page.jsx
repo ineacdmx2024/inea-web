@@ -106,19 +106,19 @@ function NoticiasAntiguas({ item }) {
   return (
     <main>
       {/* Barra separadora */}
-      <div className="mx-auto mt-40 mb-16 w-11/12 medida3:w-11/12 arrow:w-11/12 tablet:w-[1140px]">
-        <div className="ml-10 mb-10">
+      <div className="mx-auto mt-40  w-11/12 medida3:w-full arrow:w-11/12 tablet:w-[1140px]">
+        <div className="ml-0 mb-10">
           <Breadcrumb />
         </div>
         <h1
-          className={`${montserrat.className} text-4xl font-semibold text-[#333334] mb-2 letras:text-[38px] uppercase`}
+          className={`${montserrat.className} text-4xl font-semibold text-[#333334] letras:text-[38px] uppercase`}
         >
           Noticias Antiguas
         </h1>
       </div>
 
       {/* Contenido principal */}
-      <div className="mx-auto mt-20 mb-16 w-11/12 medida3:w-11/12 arrow:w-11/12 tablet:w-[1140px] flex flex-col justify-center items-end gap-8">
+      <div className="mx-auto mt-14 mb-16 w-11/12 medida3:w-11/12 arrow:w-11/12 tablet:w-[1140px] flex flex-col justify-center items-end gap-8">
         {/* Todas las Noticias */}
         <div className="w-full grid grid-cols-1 grid-flow-row gap-4 arrow:grid-cols-3 ofertaEdu:grid-cols-2 ">
           {datos ? (

@@ -16,9 +16,9 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
-async function loadPost(id) {
+async function loadPost(slug) {
   const res = await fetch(
-    `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales/${id}?populate=%2A`,
+    `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales/${slug}?populate=%2A`,
     {
       cache: "no-store",
       headers: {
@@ -209,9 +209,10 @@ async function Page({ params }) {
     title: item.attributes.Titulo,
     imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
     buttonText: "Ir al sitio",
-    link: `/enlaces-de-interes/${item.id}`,
+    link: item.attributes.URL_Externo 
+      ? item.attributes.URL_Externo 
+      : `/enlaces-de-interes/${item.attributes.slug}`,
   }));
-
   return (
     <div>
       <div className="ml-[26rem] mb-10"></div>
