@@ -88,7 +88,7 @@ function DetalleEnlace(slug) {
   useEffect(() => {
     const Contenido = async () => {
       const res = await fetch(
-        `http://localhost:1337/api/i-enlaces?filters[slug][$eq]=${slug.params["home-enlace-interesId"]}&populate=*`
+        `https://inea-web-backend.onrender.com/api/i-enlaces?filters[slug][$eq]=${slug.params["home-enlace-interesId"]}&populate=*`
       );
       const data = await res.json();
       const enlacesData = data.data.map((item) => ({
