@@ -254,7 +254,7 @@ function DetalleEnlace(slug) {
     </div>*/
     <div>
       {cont.map((cont, index) => (
-        <div>
+        <div key={index}>
           <div className="ml-[26rem] mb-10"></div>
           <PagSec
             Enlaces={noti}
