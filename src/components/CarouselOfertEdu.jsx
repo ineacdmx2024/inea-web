@@ -109,7 +109,7 @@ function CarouselOfertEdu() {
     {
       name: "Alfabetización, primaria y secundaria presencial",
       image: "/Modalidad1.jpg",
-      url: "/oferta-educativa/presencial",
+      url: "/presencial",
     },
     {
       name: "Primaria y secundaria en línea",
