@@ -1,5 +1,5 @@
 "use client";
-import DetalleEnlace from "@/app/home-enlaces-de-interes/[home-enlace-interesId]/page";
+import DetalleEnlace from "@/app/home-enlaces-de-interes/[homeEnlaceInteresId]/page";
 import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -222,7 +222,7 @@ function SeccionLigasInte() {
               <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[420px] p-8 flex flex-col justify-between">
                 <div className="flex flex-col items-center">
                   <img
-                    className="w-full aspect-[360/300] object-cover rounded-lg"
+                    className="w-full aspect-[385/285] object-cover rounded-lg"
                     src={fijos.imagen}
                     alt={fijos.titulo}
                   />
@@ -265,7 +265,7 @@ function SeccionLigasInte() {
                 >
                   <div className="flex flex-col items-center">
                     <img
-                      className="w-full aspect-[360/300] object-cover rounded-lg"
+                      className="w-full aspect-[385/285] object-cover rounded-lg"
                       src={fijos.imagen}
                       alt={fijos.titulo}
                     />
@@ -305,7 +305,7 @@ function SeccionLigasInte() {
                 <div className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[420px] p-8 flex flex-col justify-between">
                   <div className="flex flex-col items-center">
                     <img
-                      className="bg-blue-700 w-full aspect-[360/300] object-cover rounded-lg"
+                      className="bg-blue-700 w-full aspect-[385/285] object-cover rounded-lg"
                       src={restantes.imagen}
                       alt={restantes.titulo}
                     />{" "}
