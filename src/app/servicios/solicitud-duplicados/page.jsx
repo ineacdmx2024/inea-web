@@ -9,17 +9,13 @@ import "react-datepicker/dist/react-datepicker.css";
 // import { API_URL } from "../../config";
 
 
-
-
-
-
-
 function Solicitud_duplicados() {
 
   const [datos, setDatos] = useState([]);
   const [file, setFile] = useState(null); 
   const [captcha, setCaptcha] = React.useState("");
-  
+
+
   const cards = [
     {
       title: "¿Qué modalidad elijo?",
@@ -57,17 +53,18 @@ function Solicitud_duplicados() {
   const handleFileChange = (event) => {
 
     const selectedFile = event.target.files[0];
+
     if (selectedFile) {
+
       setFile(selectedFile);
-    } else {
-     // console.log("No se seleccionó ningún archivo.");
+
     }
   };
 
 
   const fetchData = async  () => {
     try {
-          const res = await fetch(`http://localhost:1337/api/correos?populate=%2A`)
+          const res = await fetch(`http://localhost:1337/api/Envio_Correos?populate=%2A`)
           
           if(!res.ok){ 
           throw new Error('Something went wrong')
@@ -90,7 +87,7 @@ function Solicitud_duplicados() {
 
 
 const onSubmit = async(data) =>{
- 
+
   if (Array.isArray(datos)) {
     const Datos_obtenidos = datos.map(item => {
       // Aseguramos que item.attributes existe y tiene las propiedades 'Correo' y 'Lugar_de_nacimiento'
@@ -107,6 +104,8 @@ const onSubmit = async(data) =>{
     // Ahora accedemos a los correos de cada objeto dentro del array
     Datos_obtenidos.forEach(item => {
       if (item) {
+
+      
           // Verificamos si el lugar de nacimiento 
         if (item.Lugar_de_nacimiento.trim() === data.LugarNacimiento.trim()) {
           // Si es así, agregamos el correo a la lista de Obt_Correos
@@ -118,7 +117,7 @@ const onSubmit = async(data) =>{
         }
       }
     });
-  
+
   }
 
 
@@ -126,31 +125,89 @@ const onSubmit = async(data) =>{
    if(captcha)
    {
       try {
+       
+
+        const formDate = new FormData()
+        //formDate.set('file', data.Curp[0])
+        // Agregar los archivos con diferentes nombres de campo
+         formDate.append('Curp', data.Curp[0]); // Campo 'Curp'
+         formDate.append('Identificacion', data.Identificacion[0]); // Campo 'Identificacion'
+         formDate.append('Fotografia', data.Fotografia[0]); // Campo 'fotografia'
+         formDate.append('Certificado', data.Certificado[0]); // Campo 'certificado'
+
+      
+        //sending file to server
+        const res = await fetch('/api/upload', {
+          method:"POST",
+          body: formDate,
+        })
+
+
+        const RESDATA = await res.json()
 
 
 
-        const formDataToSend = new FormData();
-        formDataToSend.append("to", Obt_Correos[0] + ',' + Obt_Correo_Generico[0]+',' + data.Correo);
-        formDataToSend.append("subject", formData.subject);
-        formDataToSend.append("text", `
-            Nombre: ${data.Nombre} <br> 
-            Apellido materno: ${data.ApellidoMaterno} <br> 
-            Apellido paterno: ${data.ApellidoPaterno} <br>
-            Fecha de nacimiento: ${data.FechaNacimiento} <br>
-            Lugar de nacimiento: ${data.LugarNacimiento} <br>
-            Correo: ${data.Correo} <br>
-            Teléfono: ${data.Telefono} <br>
-            Comentarios: ${data.Comentarios} <br>
-            Nivel del duplicado: ${data.NivelEducativo} <br>
-            Año: ${data.Año} <br>
-        `);
+        // const formDataToSend = new FormData();
+        // formDataToSend.append("to", Obt_Correos[0] + ',' + Obt_Correo_Generico[0]+',' + data.Correo);
+        // formDataToSend.append("subject", formData.subject);
+        // formDataToSend.append("text", `
+        //     Nombre: ${data.Nombre} <br> 
+        //     Apellido materno: ${data.ApellidoMaterno} <br> from
+        //     Apellido paterno: ${data.ApellidoPaterno} <br>
+        //     Fecha de nacimiento: ${data.FechaNacimiento} <br>
+        //     Lugar de nacimiento: ${data.LugarNacimiento} <br>
+        //     Correo: ${data.Correo} <br>
+        //     Teléfono: ${data.Telefono} <br>
+        //     Comentarios: ${data.Comentarios} <br>
+        //     Nivel del duplicado: ${data.NivelEducativo} <br>
+        //     Año: ${data.Año} <br>
+        // `);
 
-        if (file) {
-           formDataToSend.append("file", file);
-        }
-          const response = await fetch('http://localhost:1337/api/email/', { 
+
+        const Form_Img = new FormData()
+        Form_Img.append('Curp', data.Curp[0]); // Campo 'Curp'
+        Form_Img.append('Identificacion', data.Identificacion[0]); // Campo 'Curp'
+
+
+
+        const emailData = {
+          data: {
+              to: `${Obt_Correos[0]},${Obt_Correo_Generico[0]},${data.Correo}`,
+              subject: formData.subject,
+              Mensaje: `
+                  Nombre: ${data.Nombre} <br>
+                  Apellido materno: ${data.ApellidoMaterno} <br>
+                  Apellido paterno: ${data.ApellidoPaterno} <br>
+                  Fecha de nacimiento: ${data.FechaNacimiento} <br>
+                  Lugar de nacimiento: ${data.LugarNacimiento} <br>
+                  Correo: ${data.Correo} <br>
+                  Teléfono: ${data.Telefono} <br>
+                  Comentarios: ${data.Comentarios} <br>
+                  Nivel del duplicado: ${data.NivelEducativo} <br>
+                  Año: ${data.Año} <br>
+              `,
+
+     
+             imagen: [
+                ...(data.Curp ? [data.Curp[0].name] : []), 
+                ...(data.Identificacion ? [data.Identificacion[0].name] : []),
+                ...(data.Fotografia ? [data.Fotografia[0].name] : []),
+              ].join(', ')  // Unir los nombres de los archivos con una coma
+            
+          }
+      };
+      
+
+ 
+
+
+         // const response = await fetch('http://localhost:1337/api/email/', { 
+            const response = await fetch('http://localhost:1337/api/correoineas', { 
             method: 'POST',
-            body: formDataToSend,
+            headers: {
+              'Content-Type': 'application/json',
+          },
+            body: JSON.stringify(emailData),
         });
          
        const datas = await response.json();
@@ -474,35 +531,38 @@ return (
 
             <div className="pt-3 grid grid-cols-1  sm:grid-cols-2 gap-5">
               <div class="">
-                <label class="control-label" for="curp">
+                <label class="control-label" htmlFor="curp">
                   Curp:
                 </label>
                 <input
-                  id="curp"
+                  id="Curp"
                   type="file"
                   accept="image/jpeg,image/jpg,application/pdf"
                   className="w-full"
                   name="file"
-                  onChange={(e) => handleFileChange(e, setFile)}
+                  //onChange={(e) => handleFileChange(e, setFile)}
+                  onChange={handleFileChange}
                   {...register("Curp",{required:true})}
                 />
-                {file && <p>Archivo seleccionado: {file.name}</p>}
-                {errors?.Curp?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>} 
+               {/* {file && <p>Archivo seleccionado: {file.name}</p>} */}
+                 {errors?.Curp?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>} 
+         
               </div>
               <div className="">
-                <label className="w-full" for="INE">
+                <label className="w-full" for="ine">
                   Identificación oficial INE con fotografía por ambos lados:
                 </label>
                 <input
                   id="INE"
                   name="INE"
                   type="file"
-                  accept="image/jpeg,image/jpg/application/pdf"
+                 accept="image/jpeg,image/jpg,application/pdf"
                   className="w-full"
+                  onChange={handleFileChange}
                   {...register("Identificacion",{required:true})}
                 />
-                 {file && <p>Archivo seleccionado: {file.name}</p>}
-                 {errors?.Identificacion?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>} 
+                 {/* {file && <p>Archivo seleccionado: {file.name}</p>}*/}
+                 {errors?.Identificacion?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>}  
               </div>
 
               <div class="pt-3">
@@ -510,14 +570,15 @@ return (
                   Fotografía tamaño infantil, con fondo blanco y camisa clara
                 </label>
                 <input
-                  id="fotografia"
+                  id="foto"
+                  name="foto"
                   type="file"
-                  accept="image/jpeg,image/jpg/application/pdf"
+                  accept="image/jpeg,image/jpg,application/pdf"
                   className="w-full"
-                  name="Fotografía"
-                   {...register("Fotografia",{required:true})}
+                  onChange={handleFileChange}
+                  {...register("Fotografia",{required:true})}
                 />
-                {errors?.Fotografia?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>} 
+                 {errors?.Fotografia?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>}  
               </div>
             </div>
 
@@ -537,14 +598,15 @@ return (
                   Certificado
                 </label>
                 <input
-                  id="certificado"
+                  id="certi"
                   type="file"
-                  accept="image/jpeg,image/jpg/application/pdf"
+                  accept="image/jpeg,image/jpg,application/pdf"
                   className="w-full"
-                  name="Certificado"
+                  name="certi"
+                  onChange={handleFileChange}
                  {...register("Certificado",{required:true})}
                 />
-                 {errors?.Certificado?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>} 
+                  {errors?.Certificado?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>}  
               </div>
 
               <div class="">
