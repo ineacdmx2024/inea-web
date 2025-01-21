@@ -1,5 +1,5 @@
 "use client";
-import DetalleEnlace from "@/app/home-enlaces-de-interes/[homeEnlaceInteresId]/page";
+import DetalleEnlace from "@/app/home-enlaces-de-interes/[home-enlace-interesId]/page";
 import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -233,7 +233,7 @@ function SeccionLigasInte() {
                   </h3>
                 </div>
                 <button
-                  className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-[#8a1b39] mx-auto block"
+                  className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light"
                   onClick={() => handleButtonClick(fijos)}
                 >
                   Ir al sitio
@@ -280,7 +280,7 @@ function SeccionLigasInte() {
                   </div>
                   <button
                     onClick={() => handleButtonClick(fijos)}
-                    className="text-xs letras:text-[13.5px] bg-[#611232] text-white py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block"
+                    className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light"
                   >
                     Ir al sitio
                   </button>
@@ -319,7 +319,7 @@ function SeccionLigasInte() {
                     </h3>
                   </div>
                   <button
-                    className="text-xs letras:text-[13.5px] bg-[#611232] text-white py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block"
+                    className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light"
                     onClick={() => handleButtonClick(restantes)}
                   >
                     Ir al sitio
