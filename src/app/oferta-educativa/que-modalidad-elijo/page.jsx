@@ -5,7 +5,6 @@ import CollapsiblePanel from "@/components/PanelColapsable";
 import PagSec from "@/components/PlantillaPagSec";
 import { motion } from "framer-motion";
 import "../../../../src/app/globals.css";
-import CarouselEL from "@/components/CarouselEL";
 function Modalidad() {
   //enlaces laterales
   const [enlacesL, setenlacesL] = useState([]);
