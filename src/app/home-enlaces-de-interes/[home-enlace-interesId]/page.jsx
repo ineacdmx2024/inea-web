@@ -51,37 +51,6 @@ function DetalleEnlace(slug) {
     return `${dia} de ${mes} de ${año}`;
   };
 
-  async function loadPost(slug) {
-    const res = await fetch(
-      `https://inea-web-backend.onrender.com/api/blogs/${slug}?populate=%2A`,
-      {
-        cache: "no-store",
-        headers: {
-          "Cache-Control": "no-cache",
-        },
-      }
-    );
-    const data = await res.json();
-
-    return data;
-  }
-
-  async function loadEnlaces() {
-    const res = await fetch(
-      `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`,
-      {
-        cache: "no-store",
-        headers: {
-          "Cache-Control": "no-cache",
-        },
-      }
-    );
-    const data = await res.json();
-
-    return data;
-  }
-
-  // Modificación en renderContenido
 
   const [cont, setCont] = useState([]);
   console.log(slug.params["home-enlace-interesId"]);
@@ -104,23 +73,44 @@ function DetalleEnlace(slug) {
     };
     Contenido();
   }, []);
-  const [noti, setNoti] = useState([]);
+
+  //enlaces laterales
+  const [enlacesL, setenlacesL] = useState([]);
+
   useEffect(() => {
-    const noiticas = async () => {
-      const res1 = await fetch(
+    let enlaces = [];
+    const fetchEnlacesL = async () => {
+      const resPineados = await fetch(
         `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
-      const enlaces = await res1.json();
-      const Noti = enlaces.data.map((item) => ({
+      const { data: enlacesPineados } = await resPineados.json();
+      if (enlacesPineados.length < 3) {
+        const resNoPineados = await fetch(
+          `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+        );
+        const { data: enlacesNoPineados } = await resNoPineados.json();
+
+        const enlacesCompletados = [
+          ...enlacesPineados,
+          ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
+        ];
+        enlaces = enlacesCompletados;
+      }else{
+        enlaces = enlacesPineados;
+      }
+      const enlacesLData = enlaces.map((item) => ({
         title: item.attributes.Titulo,
         imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
         buttonText: "Ir al sitio",
-        link: `/enlaces-de-interes/${item.id}`,
+        link: item.attributes.URL_Externo
+          ? item.attributes.URL_Externo
+          : `/enlaces-de-interes/${item.attributes.slug}`,
       }));
-      setNoti(Noti);
+      setenlacesL(enlacesLData);
     };
-    noiticas();
+    fetchEnlacesL();
   }, []);
+  // Modificación en renderContenido
 
   const renderContenido = (contenido) => {
     return contenido.map((item, index) => {
@@ -130,9 +120,8 @@ function DetalleEnlace(slug) {
             `h${item.level}`,
             {
               key: index,
-              className: `${
-                montserrat.className
-              } text-[#333334] font-bold text-[${21 - item.level}px]`,
+              className: `${montserrat.className
+                } text-[#333334] font-bold text-[${21 - item.level}px]`,
             },
             item.children[0]?.text || ""
           );
@@ -150,7 +139,7 @@ function DetalleEnlace(slug) {
             <p
               key={index}
               className={` text-[#333334] text-[18px] font-light leading-[28px]`}
-              //className={`${open_Sans.className} text-[#404041] text-[16px] font-light`}
+            //className={`${open_Sans.className} text-[#404041] text-[16px] font-light`}
             >
               {item.children.map((child, i) => {
                 if (child.type === "link" && child.url) {
@@ -178,9 +167,8 @@ function DetalleEnlace(slug) {
                       style={{
                         fontWeight: child.bold ? "bold" : "normal",
                         fontStyle: child.italic ? "italic" : "normal",
-                        textDecoration: `${
-                          child.underline ? "underline" : ""
-                        } ${child.strikethrough ? "line-through" : ""}`,
+                        textDecoration: `${child.underline ? "underline" : ""
+                          } ${child.strikethrough ? "line-through" : ""}`,
                       }}
                     >
                       {child.text}
@@ -257,7 +245,7 @@ function DetalleEnlace(slug) {
         <div key={index}>
           <div className="ml-[26rem] mb-10"></div>
           <PagSec
-            Enlaces={noti}
+            Enlaces={enlacesL}
             Titulo={cont.titulo}
             Subtitulo={cont.subtitulo}
           >
