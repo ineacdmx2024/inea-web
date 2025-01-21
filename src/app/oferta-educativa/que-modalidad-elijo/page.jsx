@@ -1,6 +1,5 @@
 "use client";
-import React from "react";
-// import { useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import CollapsiblePanel from "@/components/PanelColapsable";
 import PagSec from "@/components/PlantillaPagSec";
@@ -8,32 +7,47 @@ import { motion } from "framer-motion";
 import "../../../../src/app/globals.css";
 import CarouselEL from "@/components/CarouselEL";
 function Modalidad() {
-  // const router = useRouter();
-  const cards = [
-    {
-      title: "Modalidad presencial",
-      imageSrc: "/Modalidad/programa_regular2.webp",
-      buttonText: "Ir al sitio",
-      link: "/oferta-educativa/presencial",
-    },
-    {
-      title: "Modalidad en linea",
-      imageSrc: "/Modalidad/aprendeINEAenlinea2.webp",
-      buttonText: "Ir al sitio",
-      link: "/oferta-educativa/enlinea",
-    },
-    {
-      title: "Examen único",
-      imageSrc: "/Modalidad/examen_unico2024.jpg",
-      buttonText: "Ir al sitio",
-      link: "/oferta-educativa/examen-unico",
-    },
-  ];
+  //enlaces laterales
+  const [enlacesL, setenlacesL] = useState([]);
+
+  useEffect(() => {
+    let enlaces = [];
+    const fetchEnlacesL = async () => {
+      const resPineados = await fetch(
+        `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+      );
+      const { data: enlacesPineados } = await resPineados.json();
+      if (enlacesPineados.length < 3) {
+        const resNoPineados = await fetch(
+          `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+        );
+        const { data: enlacesNoPineados } = await resNoPineados.json();
+
+        const enlacesCompletados = [
+          ...enlacesPineados,
+          ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
+        ];
+        enlaces = enlacesCompletados;
+      } else {
+        enlaces = enlacesPineados;
+      }
+      const enlacesLData = enlaces.map((item) => ({
+        title: item.attributes.Titulo,
+        imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
+        buttonText: "Ir al sitio",
+        link: item.attributes.URL_Externo
+          ? item.attributes.URL_Externo
+          : `/enlaces-de-interes/${item.attributes.slug}`,
+      }));
+      setenlacesL(enlacesLData);
+    };
+    fetchEnlacesL();
+  }, []);
 
   return (
     <div>
       <PagSec
-        Enlaces={cards}
+        Enlaces={enlacesL}
         Titulo={
           "¿Qué opción del INEA me conviene para certificar mi Primaria y/o Secundaria?"
         }

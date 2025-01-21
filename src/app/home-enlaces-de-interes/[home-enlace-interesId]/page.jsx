@@ -51,7 +51,6 @@ function DetalleEnlace(slug) {
     return `${dia} de ${mes} de ${año}`;
   };
 
-
   const [cont, setCont] = useState([]);
   console.log(slug.params["home-enlace-interesId"]);
   useEffect(() => {
@@ -95,7 +94,7 @@ function DetalleEnlace(slug) {
           ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
         ];
         enlaces = enlacesCompletados;
-      }else{
+      } else {
         enlaces = enlacesPineados;
       }
       const enlacesLData = enlaces.map((item) => ({
@@ -120,8 +119,9 @@ function DetalleEnlace(slug) {
             `h${item.level}`,
             {
               key: index,
-              className: `${montserrat.className
-                } text-[#333334] font-bold text-[${21 - item.level}px]`,
+              className: `${
+                montserrat.className
+              } text-[#333334] font-bold text-[${21 - item.level}px]`,
             },
             item.children[0]?.text || ""
           );
@@ -139,7 +139,7 @@ function DetalleEnlace(slug) {
             <p
               key={index}
               className={` text-[#333334] text-[18px] font-light leading-[28px]`}
-            //className={`${open_Sans.className} text-[#404041] text-[16px] font-light`}
+              //className={`${open_Sans.className} text-[#404041] text-[16px] font-light`}
             >
               {item.children.map((child, i) => {
                 if (child.type === "link" && child.url) {
@@ -167,8 +167,9 @@ function DetalleEnlace(slug) {
                       style={{
                         fontWeight: child.bold ? "bold" : "normal",
                         fontStyle: child.italic ? "italic" : "normal",
-                        textDecoration: `${child.underline ? "underline" : ""
-                          } ${child.strikethrough ? "line-through" : ""}`,
+                        textDecoration: `${
+                          child.underline ? "underline" : ""
+                        } ${child.strikethrough ? "line-through" : ""}`,
                       }}
                     >
                       {child.text}
@@ -231,15 +232,6 @@ function DetalleEnlace(slug) {
   };
 
   return (
-    /*<div>
-      {cont.map((cont,index)=>(
-        <div>
-            <h1>{cont.titulo}</h1>
-           <h2>{cont.subtitulo}</h2>
-           <p>{cont.contenido}</p>
-        </div>
-      )) }
-    </div>*/
     <div>
       {cont.map((cont, index) => (
         <div key={index}>

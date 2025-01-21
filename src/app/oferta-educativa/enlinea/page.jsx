@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import PagSec from "@/components/PlantillaPagSec";
 import PagMod from "@/components/PlantillaPagModalidad";
 const linea = {
@@ -58,30 +59,45 @@ const linea = {
   ],
 };
 function Aprende_Inea() {
-  const cards = [
-    {
-      title: "¿Qué modalidad elijo?",
-      imageSrc:
-        "https://imgs.search.brave.com/RAPyqA9Q7HK7hP22bJsUZyXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc",
-      buttonText: "Ir al sitio",
-      link: "/oferta-educativa/que-modalidad-elijo",
-    },
-    {
-      title: "Modalidad presencial",
-      imageSrc: "/Modalidad/programa_regular2.webp",
-      buttonText: "Ir al sitio",
-      link: "/oferta-educativa/presencial",
-    },
-    {
-      title: "Examen único",
-      imageSrc: "/Modalidad/examen_unico2024.jpg",
-      buttonText: "Ir al sitio",
-      link: "/oferta-educativa/examen-unico",
-    },
-  ];
+  //enlaces laterales
+  const [enlacesL, setenlacesL] = useState([]);
+
+  useEffect(() => {
+    let enlaces = [];
+    const fetchEnlacesL = async () => {
+      const resPineados = await fetch(
+        `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+      );
+      const { data: enlacesPineados } = await resPineados.json();
+      if (enlacesPineados.length < 3) {
+        const resNoPineados = await fetch(
+          `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+        );
+        const { data: enlacesNoPineados } = await resNoPineados.json();
+
+        const enlacesCompletados = [
+          ...enlacesPineados,
+          ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
+        ];
+        enlaces = enlacesCompletados;
+      } else {
+        enlaces = enlacesPineados;
+      }
+      const enlacesLData = enlaces.map((item) => ({
+        title: item.attributes.Titulo,
+        imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
+        buttonText: "Ir al sitio",
+        link: item.attributes.URL_Externo
+          ? item.attributes.URL_Externo
+          : `/enlaces-de-interes/${item.attributes.slug}`,
+      }));
+      setenlacesL(enlacesLData);
+    };
+    fetchEnlacesL();
+  }, []);
   return (
     <div className="">
-      <PagSec Enlaces={cards}>
+      <PagSec Enlaces={enlacesL}>
         <PagMod info={linea}></PagMod>
       </PagSec>
     </div>
