@@ -6,6 +6,14 @@ import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
 
 // Recibimos un arreglo de objetos (las cards que se pondrán en el carrusel)
+
+const truncateText = (text, maxLength) => {
+  if (text.length > maxLength) {
+    return text.substring(0, maxLength) + "...";
+  }
+  return text;
+};
+
 const CarouselEL = ({ cards }) => {
   const [slidesToShow, setSlidesToShow] = useState(3);
 
@@ -32,7 +40,7 @@ const CarouselEL = ({ cards }) => {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: (dots) => (
-      <div style={{ bottom: "-25px" }}>
+      <div style={{ bottom: "-60px" }}>
         <ul style={{ margin: "0" }}> {dots} </ul>
       </div>
     ),
@@ -66,7 +74,7 @@ const CarouselEL = ({ cards }) => {
           transform: scale(1.2);
         }
       `}</style>
-      <div className="border border-slate-300 rounded-lg bg-white w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto ">
+      <div className="p-8 border border-slate-300 rounded-lg bg-white w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto ">
         <Slider {...settings}>
           {cards.map((card, index) => (
             <Link
@@ -76,25 +84,25 @@ const CarouselEL = ({ cards }) => {
               <div
                 key={index}
                 className="
-              flex flex-col items-center
+              flex flex-col items-center 
               "
               >
                 <img
-                  className="w-full h-auto object-cover rounded-lg"
+                  className="w-full aspect-[385/285] object-cover rounded-lg"
                   src={card.imageSrc}
                   alt={card.title}
                 />
                 <h3 className="my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-[#333334] font-medium">
-                  {card.title}
+                  {truncateText(card.title, 21)}
                 </h3>
               </div>
               {/* <div className="h-[400px] letras:h-[440px] p-8 flex flex-col justify-between"> */}
               <button
-                className=" 
+                className="
                   focus:border-[#611232] focus:bg-[#ffffff] 
                   bg-[#611232] text-white 
                   hover:border-[#611232] hover:border-2 hover:bg-white hover:text-[#611232] 
-                    text-xs  py-2 px-4 rounded-full mx-auto block"
+                    text-xs py-2 px-4 rounded-full mx-auto block"
               >
                 {card.buttonText}
               </button>
