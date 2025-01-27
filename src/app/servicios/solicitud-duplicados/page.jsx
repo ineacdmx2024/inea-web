@@ -6,14 +6,17 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useForm, Controller } from "react-hook-form";
 import "./Duplicados.css";
 import "react-datepicker/dist/react-datepicker.css";
-// import { API_URL } from "../../config";
+
 
 
 function Solicitud_duplicados() {
 
   const [datos, setDatos] = useState([]);
-  const [file, setFile] = useState(null); 
+  const [file, setFile] = useState(null);
   const [captcha, setCaptcha] = React.useState("");
+
+ 
+
 
 
   const cards = [
@@ -38,7 +41,7 @@ function Solicitud_duplicados() {
     },
   ];
 
-  
+
 
   const [formData, setFormData] = React.useState({
     to: '',//correo
@@ -62,24 +65,25 @@ function Solicitud_duplicados() {
   };
 
 
+
   const fetchData = async  () => {
     try {
-          const res = await fetch(`http://localhost:1337/api/Envio_Correos?populate=%2A`)
-          
-          if(!res.ok){ 
+          const res = await fetch(`http://localhost:1337/api/correos?populate=%2A`)
+
+          if(!res.ok){
           throw new Error('Something went wrong')
     }
      const { data } = await res.json()
-  
+
       setDatos(data);
-  
-  
+
+
     } catch (error) {
       console.error("Error al obtener los datos:", error);
     }
   }
-  
-  
+
+
     // useEffect para llamar a `fetchData` una vez que el componente se monta
     useEffect(() => {
       fetchData();
@@ -87,6 +91,7 @@ function Solicitud_duplicados() {
 
 
 const onSubmit = async(data) =>{
+
 
   if (Array.isArray(datos)) {
     const Datos_obtenidos = datos.map(item => {
@@ -96,83 +101,120 @@ const onSubmit = async(data) =>{
         Lugar_de_nacimiento: item.attributes.Lugar_de_nacimiento
       } : null;
     });
-  
+
     // Usamos un array para almacenar los correos de las personas nacidas en ejemplo "Campeche"
     var  Obt_Correos = [];
     var  Obt_Correo_Generico = [];
-    
+
     // Ahora accedemos a los correos de cada objeto dentro del array
     Datos_obtenidos.forEach(item => {
+
+
       if (item) {
 
-      
-          // Verificamos si el lugar de nacimiento 
-        if (item.Lugar_de_nacimiento.trim() === data.LugarNacimiento.trim()) {
-          // Si es así, agregamos el correo a la lista de Obt_Correos
-          Obt_Correos.push(item.Correo);
-        }
-        if (item.Lugar_de_nacimiento === "Genérico"  ) {
-          // Si es así, agregamos el correo a la lista de Obt_Correos
-          Obt_Correo_Generico.push(item.Correo);
+        if (item.Lugar_de_nacimiento === "Genérico" || item.Lugar_de_nacimiento === "Generico" ) {
+            // Si es así, agregamos el correo a la lista de Obt_Correos
+            Obt_Correo_Generico.push(item.Correo);
         }
       }
     });
-
   }
-
-
 
    if(captcha)
    {
-      try {
-       
+      Swal.fire({
+        title: '',
+        text: '¡Datos capturados correctamente!',
+        icon: 'warning',
+        showCancelButton: true,  // Muestra el botón de Cancelar
+        confirmButtonColor: '#3085d6',  // Color del botón de Confirmar
+        cancelButtonColor: '#d33',  // Color del botón de Cancelar
+        confirmButtonText: 'OK',  // Texto del botón de Confirmar
+        cancelButtonText: 'Cancelar',  // Texto del botón de Cancelar
+        allowOutsideClick: false,  // Deshabilitar el clic fuera para cerrar
+        allowEscapeKey: false,  // Deshabilitar la tecla Esc para cerrar
+      }).then(async (result) => {  // Asegúrate de usar async aquí para poder usar await
+      if (result.isConfirmed) {
+        // El usuario hizo clic en 'OK'
+        console.log('El usuario aceptó.');
 
-        const formDate = new FormData()
-        //formDate.set('file', data.Curp[0])
-        // Agregar los archivos con diferentes nombres de campo
-         formDate.append('Curp', data.Curp[0]); // Campo 'Curp'
-         formDate.append('Identificacion', data.Identificacion[0]); // Campo 'Identificacion'
-         formDate.append('Fotografia', data.Fotografia[0]); // Campo 'fotografia'
-         formDate.append('Certificado', data.Certificado[0]); // Campo 'certificado'
+   // Mostrar el indicador de carga (loading)
+    Swal.fire({
+      title: 'Cargando...',
+      text: 'Estamos procesando tus datos.',
+      icon: 'info',
+      allowOutsideClick: false,  // Deshabilitar el clic fuera para cerrar
+      allowEscapeKey: false,  // Deshabilitar la tecla Esc para cerrar
+      showConfirmButton: false,
+      willOpen: () => {
+        Swal.showLoading();  // Mostrar el spinner de carga
+      }
+    });
 
-      
-        //sending file to server
-        const res = await fetch('/api/upload', {
-          method:"POST",
-          body: formDate,
-        })
+        // Creación del FormData para enviar archivos
+        const formData = new FormData();
+        formData.append('Curp', data.Curp[0]); // Campo 'Curp'
+        formData.append('Identificacion', data.Identificacion[0]); // Campo 'Identificacion'
+        formData.append('Fotografia', data.Fotografia[0]); // Campo 'Fotografía'
+        formData.append('Certificado', data.Certificado[0]); // Campo 'Certificado'
 
+        try {
+          // Enviar los archivos al servidor usando fetch
+          const res = await fetch('/api/upload', {
+            method: 'POST',
+            body: formData,  // FormData se encarga del tipo de contenido automáticamente
+          });
 
-        const RESDATA = await res.json()
+          // Verifica si la respuesta fue exitosa
+          if (!res.ok) {
+            throw new Error('Error al enviar los datos');
+          }
 
+          const RESDATA = await res.json();  // Parsear la respuesta JSON
 
+          // Imprimir los resultados de la respuesta
+          console.log(RESDATA);
 
-        // const formDataToSend = new FormData();
-        // formDataToSend.append("to", Obt_Correos[0] + ',' + Obt_Correo_Generico[0]+',' + data.Correo);
-        // formDataToSend.append("subject", formData.subject);
-        // formDataToSend.append("text", `
-        //     Nombre: ${data.Nombre} <br> 
-        //     Apellido materno: ${data.ApellidoMaterno} <br> from
-        //     Apellido paterno: ${data.ApellidoPaterno} <br>
-        //     Fecha de nacimiento: ${data.FechaNacimiento} <br>
-        //     Lugar de nacimiento: ${data.LugarNacimiento} <br>
-        //     Correo: ${data.Correo} <br>
-        //     Teléfono: ${data.Telefono} <br>
-        //     Comentarios: ${data.Comentarios} <br>
-        //     Nivel del duplicado: ${data.NivelEducativo} <br>
-        //     Año: ${data.Año} <br>
-        // `);
+          var emailData='';
 
+          if(RESDATA.URL_Certificado){
+            console.log("true")
+            
+            emailData = {
+              data: {
+                  Para: `${Obt_Correo_Generico[0]},${data.Correo}`,
+                  subject: formData.subject,
+                  Mensaje: `
+                      Nombre: ${data.Nombre} <br>
+                      Apellido materno: ${data.ApellidoMaterno} <br>
+                      Apellido paterno: ${data.ApellidoPaterno} <br>
+                      Fecha de nacimiento: ${data.FechaNacimiento} <br>
+                      Lugar de nacimiento: ${data.LugarNacimiento} <br>
+                      Correo: ${data.Correo} <br>
+                      Teléfono: ${data.Telefono} <br>
+                      Comentarios: ${data.Comentarios} <br>
+                      Nivel del duplicado: ${data.NivelEducativo} <br>
+                      Año: ${data.Año} <br>
+                  `,
+                
+  
+                 imagen: [
+                    ...(RESDATA.URL_Curp ? [RESDATA.URL_Curp] : []),
+                    ...(RESDATA.URL_Identificacion ? [RESDATA.URL_Identificacion] : []),
+                    ...(RESDATA.URL_Fotografia ? [RESDATA.URL_Fotografia] : []),
+                    ...(RESDATA.URL_Certificado ? [RESDATA.URL_Certificado] : []),
+                  ].join('|')  // Unir los nombres de los archivos con una coma
+  
+              }
+          };
 
-        const Form_Img = new FormData()
-        Form_Img.append('Curp', data.Curp[0]); // Campo 'Curp'
-        Form_Img.append('Identificacion', data.Identificacion[0]); // Campo 'Curp'
-
-
-
-        const emailData = {
+       }else{
+console.log("else")
+        
+            
+        emailData = {
           data: {
-              to: `${Obt_Correos[0]},${Obt_Correo_Generico[0]},${data.Correo}`,
+              Para: `${Obt_Correo_Generico[0]},${data.Correo}`,
               subject: formData.subject,
               Mensaje: `
                   Nombre: ${data.Nombre} <br>
@@ -187,76 +229,75 @@ const onSubmit = async(data) =>{
                   Año: ${data.Año} <br>
               `,
 
-     
+              Para: `${Obt_Correos[0]},${Obt_Correo_Generico[0]},${data.Correo}`,
              imagen: [
-                ...(data.Curp ? [data.Curp[0].name] : []), 
-                ...(data.Identificacion ? [data.Identificacion[0].name] : []),
-                ...(data.Fotografia ? [data.Fotografia[0].name] : []),
-              ].join(', ')  // Unir los nombres de los archivos con una coma
-            
+                ...(RESDATA.URL_Curp ? [RESDATA.URL_Curp] : []),
+                ...(RESDATA.URL_Identificacion ? [RESDATA.URL_Identificacion] : []),
+                ...(RESDATA.URL_Fotografia ? [RESDATA.URL_Fotografia] : []),
+              ].join('|')  // Unir los nombres de los archivos con una coma
+
           }
       };
-      
 
- 
+       }
 
 
-         // const response = await fetch('http://localhost:1337/api/email/', { 
-            const response = await fetch('http://localhost:1337/api/correoineas', { 
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-          },
-            body: JSON.stringify(emailData),
-        });
-         
-       const datas = await response.json();
-     
-        if(response.ok)
-        {
-          Swal.fire({
-            title: "Correcto!",
-            text: "Correo enviado de forma correcta!",
-            icon: "success",
-            confirmButtonColor: "#3085d6",
+        
+
+        const response = await fetch('http://localhost:1337/api/correoineas', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            },
+              body: JSON.stringify(emailData),
           });
-      
-            
-        }else{
-          Swal.fire({
-            title: 'Ups...!',
-            text: `Error al enviar correo: ${datas.error.message || 'Error desconocido'}`,
-            icon: 'error',
-            confirmButtonColor: "#3085d6",
-      
-          })
-          
+
+          const datas = await response.json();
+
+          if(response.ok)
+          {
+              Swal.fire({
+                title: "Correcto!",
+                text: "Correo enviado de forma correcta!",
+                icon: "success",
+                confirmButtonColor: "#3085d6",
+                allowOutsideClick: false,  // Deshabilitar el clic fuera para cerrar
+                allowEscapeKey: false,  // Deshabilitar la tecla Esc para cerrar
+              });
+
+          }else{
+            Swal.fire({
+              title: 'Ups...!',
+              text: `Error al enviar correo: ${datas.error.message || 'Error desconocido'}`,
+              icon: 'error',
+              confirmButtonColor: "#3085d6",
+              allowOutsideClick: false,  // Deshabilitar el clic fuera para cerrar
+              allowEscapeKey: false,  // Deshabilitar la tecla Esc para cerrar
+            })
+          }
+
+        } catch (error) {
+          console.error('Error en la solicitud:', error);
         }
-      } 
-       catch (error)
-      {
-        Swal.fire({
-          title: 'Ups...!',
-          text: `Hubo un problema al enviar el correo. ${error.message || 'Error desconocido'}`,
-          icon: 'error',
-          confirmButtonColor: "#3085d6",
-    
-        })
-      } 
+      } else if (result.isDismissed) {
+        // El usuario hizo clic en 'Cancelar' o cerró el modal
+        console.log('El usuario canceló la acción.');
+      }
+    });
+
    }else{
       Swal.fire({
         title: 'Ups...!',
         text: '¡por favor capture recaphca!',
         icon: 'error',
         confirmButtonColor: "#3085d6",
+        allowOutsideClick: false,  // Deshabilitar el clic fuera para cerrar
+        allowEscapeKey: false,  // Deshabilitar la tecla Esc para cerrar
 
       })
   }
 }
 
-
-
-  
 
 
 
@@ -268,7 +309,7 @@ return (
       <div className="mx-auto w-full">
         <h1 className="text-3xl font-medium text-[#404041] mb-2 letras:text-4xl ">
         Duplicado de certificado de estudios
-      
+
         </h1>
       </div>
       <div className="flex items-center">
@@ -319,7 +360,7 @@ return (
 
             <div className="pt-3 grid grid-cols-1  sm:grid-cols-3">
               <div className="sm:mr-7">
-                <label className="block">Apellido Paterno</label>
+                <label className="block">Apellido Paterno<spam className="red"> (*)</spam></label>
                 <input
                   type="text"
                   name="ApellidoPaterno"
@@ -334,7 +375,7 @@ return (
               </div>
 
               <div clclassNameass="">
-                <label className="pt-3 sm:pt-0 block">Apellido Materno</label>
+                <label className="pt-3 sm:pt-0 block">Apellido Materno<spam className="red"> (*)</spam></label>
                 <input
                   type="text"
                   name="ApellidoMaterno"
@@ -349,7 +390,7 @@ return (
               </div>
 
               <div clclassNameass="sm:ml-5">
-                <label className="pt-3 sm:pt-0 block">Nombre(S)</label>
+                <label className="pt-3 sm:pt-0 block">Nombre(S)<spam className="red"> (*)</spam></label>
                 <input
                   id="Nombre"
                   type="text"
@@ -367,7 +408,7 @@ return (
             <div className="pt-3  grid grid-cols-1  sm:grid-cols-2">
               <div className="sm:mr-5">
                 <label className="block" for="calendarYear">
-                  Fecha de nacimiento
+                  Fecha de nacimiento<spam className="red"> (*)</spam>
                 </label>
                 <input
                   type="text"
@@ -384,7 +425,7 @@ return (
 
               <div className="">
                 <label className="pt-3 sm:pt-0 block">
-                  Lugar de nacimiento
+                  Lugar de nacimiento<spam className="red"> (*)</spam>
                 </label>
                 <select
                   className="border rounded  w-full"
@@ -428,7 +469,7 @@ return (
                   for="email"
                   htmlFor="email"
                 >
-                  Correo
+                  Correo<spam className="red"> (*)</spam>
                 </label>
                 <input
                   id="email"
@@ -455,7 +496,7 @@ return (
 
               <div className="pt-3 sm:pt-0">
                 <label className="pt-0 sm:pt-3 block" for="teléfono">
-                  Teléfono
+                  Teléfono<spam className="red"> (*)</spam>
                 </label>
                 <input
                   type="text"
@@ -471,7 +512,7 @@ return (
               </div>
 
               <div className="pt-3 sm:pt-0 sm:mr-5">
-                <label className="pt-0 sm:pt-3 block">Confirmar correo</label>
+                <label className="pt-0 sm:pt-3 block">Confirmar correo<spam className="red"> (*)</spam></label>
                 <input
                   id="confirmEmail"
                   type="email"
@@ -510,7 +551,7 @@ return (
 
               <div className="pt-3 sm:pt-0 sm:mr-5">
                 <label className="pt-0 sm:pt-3  block" for="niveleducativo">
-                  Nivel educativo del duplicado
+                  Nivel educativo del duplicado<spam className="red"> (*)</spam>
                 </label>
                 <select
                   id="NivelEducativo"
@@ -532,7 +573,7 @@ return (
             <div className="pt-3 grid grid-cols-1  sm:grid-cols-2 gap-5">
               <div class="">
                 <label class="control-label" htmlFor="curp">
-                  Curp:
+                  Curp:<spam className="red"> (*)</spam>
                 </label>
                 <input
                   id="Curp"
@@ -545,12 +586,12 @@ return (
                   {...register("Curp",{required:true})}
                 />
                {/* {file && <p>Archivo seleccionado: {file.name}</p>} */}
-                 {errors?.Curp?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>} 
-         
+                 {errors?.Curp?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>}
+
               </div>
               <div className="">
                 <label className="w-full" for="ine">
-                  Identificación oficial INE con fotografía por ambos lados:
+                  Identificación oficial INE con fotografía por ambos lados:<spam className="red"> (*)</spam>
                 </label>
                 <input
                   id="INE"
@@ -562,12 +603,12 @@ return (
                   {...register("Identificacion",{required:true})}
                 />
                  {/* {file && <p>Archivo seleccionado: {file.name}</p>}*/}
-                 {errors?.Identificacion?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>}  
+                 {errors?.Identificacion?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>}
               </div>
 
               <div class="pt-3">
                 <label class="control-label" for="fotografia">
-                  Fotografía tamaño infantil, con fondo blanco y camisa clara
+                  Fotografía tamaño infantil, con fondo blanco y camisa clara<spam className="red"> (*)</spam>
                 </label>
                 <input
                   id="foto"
@@ -578,7 +619,7 @@ return (
                   onChange={handleFileChange}
                   {...register("Fotografia",{required:true})}
                 />
-                 {errors?.Fotografia?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>}  
+                 {errors?.Fotografia?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>}
               </div>
             </div>
 
@@ -604,11 +645,10 @@ return (
                   className="w-full"
                   name="certi"
                   onChange={handleFileChange}
-                 {...register("Certificado",{required:true})}
+                {...register("Certificado",{required:false})}
                 />
-                  {errors?.Certificado?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>}  
               </div>
-
+              {errors?.Certificado?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>}
               <div class="">
                 <label class="control-label" for="anio">
                   Año
@@ -635,6 +675,7 @@ return (
                     type="checkbox"
                     {...register("Terminos", { required: true })}
                   />
+                  <spam className="red"> (*)</spam>
                   {errors?.Terminos?.type === "required" && (
                     <p className="AlertaCampo">
                       Por favor acepte el manifiesto
@@ -710,7 +751,7 @@ return (
     </PagSec>
   </div>
 );
-  
+
 }
 
 
