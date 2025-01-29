@@ -101,9 +101,7 @@ const SkewedPagesResponsive = ({ datos }) => {
                 </h1>
                 <div>
                   <p className="text-[18px] text-center">{pageData.nom}</p>
-                  <p className="text-[18px] text-center">
-                    Teléfono: {pageData.tel}
-                  </p>
+
                   <p className="text-[18px] text-center">
                     Email: {pageData.email}
                   </p>
@@ -129,6 +127,7 @@ const SkewedPagesResponsive = ({ datos }) => {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
+                        strokeWidth="2.5"
                       >
                         <path
                           strokelinecap="round"
@@ -143,13 +142,17 @@ const SkewedPagesResponsive = ({ datos }) => {
                           d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                         />
                       </svg>
-                      <div className="m-[0%] uppercase text-2xl text-center">
+                      <div className="m-[0%] uppercase text-xl text-center">
                         {item.alcaldia}
                       </div>
                     </div>
-                    <p>Direccion: {item.dir}</p>
-                    <p>Tel: {item.atel}</p>
-                    <p>{item.aemail}</p>
+                    <div className="px-2 uppercase text-normal text-center">
+                      {item.dir}
+                      <br />
+                      Tel: {item.atel}
+                      <br />
+                      {item.aemail}
+                    </div>
                     <br />
                   </div>
                 ))}

@@ -2,6 +2,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import CardComponent from "./AnimatedCards";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  weight: ["300", "400", "500", "600", "700", "800"],
+  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
+  subsets: ["latin"],
+});
 
 function PagMod({ info }) {
   // Asumiendo que `info.bannerImage` es la URL de la imagen que quieres usar
@@ -78,7 +85,7 @@ function PagMod({ info }) {
         {info.paragraphs.map((paragraph, index) => (
           <p
             key={index}
-            className="mb-7 text-lg"
+            className={`${montserrat.className} text-[18px] font-normal text-[#333334] mb-7 leading-7`}
           >
             {paragraph}
           </p>
@@ -149,7 +156,7 @@ function PagMod({ info }) {
           </div>
         </div>
       </div>
-      <div className="my-3">
+      <div className="my-2 ">
         <CardComponent items={info.celdas} />
       </div>
     </div>

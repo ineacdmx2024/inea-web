@@ -12,11 +12,11 @@ const Footer = () => {
           <div className="md:flex justify-between">
             <div className="mb-6 md:mb-0">
               <a
-                href="https://flowbite.com"
+                href="https://www.gob.mx/sep"
                 className="flex items-center "
               >
                 <img
-                  src="/LogoEducacion.svg"
+                  src="/SEP_Logo_2024_blanco.svg"
                   className="mr-3 h-12"
                   alt="Logo Educacion"
                 />
@@ -43,7 +43,7 @@ const Footer = () => {
                     <a href="https://datos.gob.mx/">Trámites y Servicios</a>
                   </li>
                   <li className="hover:text-[#A57F2C]">
-                    <a href="/">¿Quiénes Somos?</a>
+                    <a href="/">Sobre el INEA</a>
                   </li>
                   <li className="hover:text-[#A57F2C]">
                     <a href="/">Aviso de privacidad</a>

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import PagSec from "@/components/PlantillaPagSec";
 import PagMod from "@/components/PlantillaPagModalidad";
 const regular = {
@@ -6,9 +7,9 @@ const regular = {
   title: "Programa regular presencial",
   description: "(Alfabetización, Primaria o Secundaria)",
   paragraphs: [
-    "El Programa regular presencial, o Modelo de Educación para la Vida (MEV) AprendeINEA, es una opción educativa gratuita diseñada para personas de 15 años o más que nunca han asistido a la escuela Primaria o Secundaria, o no la concluyeron, y desean obtener el certificado correspondiente.",
-    "En este Programa las personas tienen la oportunidad de estudiar en un lugar fijo, utilizando materiales educativos impresos y recibiendo el apoyo directo de un asesor del INEA, quien los guiará a lo largo de su proceso educativo.",
-    "La estructura curricular de este Programa varía según el nivel educativo que se esté cursando. Para Primaria, comprende cinco módulos básicos y uno diversificado. En el caso de Secundaria, incluye siete módulos básicos y dos diversificados. Estos módulos abarcan temas de lectura, escritura, matemáticas, ciencias sociales y naturales.",
+    "El Programa regular presencial, o Modelo de Educación para la Vida (MEV) AprendeINEA, es una opción educativa gratuita diseñada para personas de 15 años o más que desean alfabetizarse, aprender a leer y escribir, o completar sus estudios de Primaria o Secundaria y obtener el certificado correspondiente. Esta modalidad es la única que ofrece alfabetización, ya que quienes inician este proceso requieren una asesoría más puntual y personalizada.",
+    "En este Programa, las personas tienen la oportunidad de estudiar en un lugar fijo, utilizando materiales educativos impresos y recibiendo el apoyo directo de un asesor del INEA, quien los guía a lo largo de su proceso educativo, atendiendo sus necesidades particulares.",
+    "La estructura curricular varía según el nivel educativo que se esté cursando. Para alfabetización, se utilizan materiales específicos que enseñan habilidades básicas de lectura y escritura. En el nivel de Primaria, comprende cinco módulos básicos y uno diversificado, mientras que para Secundaria incluye siete módulos básicos y dos diversificados. Estos módulos abarcan temas de lectura, escritura, matemáticas, ciencias sociales y naturales.",
   ],
   time: " 3 a 6 meses dedicando, 4 horas por semana.",
   requirements: [
@@ -54,31 +55,46 @@ const regular = {
   ],
 };
 function Presencial() {
-  const cards = [
-    {
-      title: "¿Qué modalidad elijo?",
-      imageSrc:
-        "https://imgs.search.brave.com/RAPyqA9Q7HK7hP22bJsUZyXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc",
-      buttonText: "Ir al sitio",
-      link: "/oferta-educativa/que-modalidad-elijo",
-    },
-    {
-      title: "Modalidad en linea",
-      imageSrc: "/Modalidad/aprendeINEAenlinea2.webp",
-      buttonText: "Ir al sitio",
-      link: "/oferta-educativa/enlinea",
-    },
-    {
-      title: "Examen único",
-      imageSrc: "/Modalidad/Examenunico2.webp",
-      buttonText: "Ir al sitio",
-      link: "/oferta-educativa/examen-unico",
-    },
-  ];
+  //enlaces laterales
+  const [enlacesL, setenlacesL] = useState([]);
+
+  useEffect(() => {
+    let enlaces = [];
+    const fetchEnlacesL = async () => {
+      const resPineados = await fetch(
+        `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+      );
+      const { data: enlacesPineados } = await resPineados.json();
+      if (enlacesPineados.length < 3) {
+        const resNoPineados = await fetch(
+          `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+        );
+        const { data: enlacesNoPineados } = await resNoPineados.json();
+
+        const enlacesCompletados = [
+          ...enlacesPineados,
+          ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
+        ];
+        enlaces = enlacesCompletados;
+      } else {
+        enlaces = enlacesPineados;
+      }
+      const enlacesLData = enlaces.map((item) => ({
+        title: item.attributes.Titulo,
+        imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
+        buttonText: "Ir al sitio",
+        link: item.attributes.URL_Externo
+          ? item.attributes.URL_Externo
+          : `/enlaces-de-interes/${item.attributes.slug}`,
+      }));
+      setenlacesL(enlacesLData);
+    };
+    fetchEnlacesL();
+  }, []);
 
   return (
     <div className="">
-      <PagSec Enlaces={cards}>
+      <PagSec Enlaces={enlacesL}>
         <PagMod info={regular}></PagMod>
       </PagSec>
     </div>

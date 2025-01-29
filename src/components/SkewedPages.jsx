@@ -133,7 +133,7 @@ const SkewedPages = ({ datos }) => {
                   </div>
                   <p>Dirección: {item.dir}</p>
                   <p>Tel: {item.atel}</p>
-                  <p>{item.aemail}</p>
+                  <p>{item.email}</p>
                   <br />
                 </div>
               ))}

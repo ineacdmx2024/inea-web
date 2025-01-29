@@ -35,7 +35,7 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children }) {
           )}
           {Subtitulo && (
             <h2
-              className={`${montserrat.className} text-[27px] font-normal text-[#333334] mb-4 leading-9`}
+              className={`${montserrat.className} text-[27px] font-light text-[#333334] mb-4 leading-9`}
             >
               {Subtitulo}
             </h2>

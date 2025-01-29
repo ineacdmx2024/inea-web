@@ -1,58 +1,24 @@
-import { Open_Sans, Montserrat } from "next/font/google";
+"use client";
+import { Open_Sans } from "next/font/google";
 import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
-import React from "react";
 import Link from "next/link";
-
+import { useEffect } from "react";
+import { useState } from "react";
 const open_Sans = Open_Sans({
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
 });
+
+import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-async function loadPost(slug) {
-  const res = await fetch(
-    `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales/${slug}?populate=%2A`,
-    {
-      cache: "no-store",
-      headers: {
-        "Cache-Control": "no-cache",
-      },
-    }
-  );
-  const data = await res.json();
-
-  return data;
-}
-
-async function loadEnlaces() {
-  const res = await fetch(
-    `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`,
-    {
-      cache: "no-store",
-      headers: {
-        "Cache-Control": "no-cache",
-      },
-    }
-  );
-  const data = await res.json();
-
-  return data;
-}
-
-async function Page({ params }) {
-  const post = await loadPost(params["enlace-interesId"]);
-
-  const enlaces = await loadEnlaces();
-
-  const contenido = post.data.attributes.Contenido;
-
+function DetalleEnlace(slug) {
   const fechaFun = (fechaAPI) => {
     const diasSemana = [
       "domingo",
@@ -85,7 +51,66 @@ async function Page({ params }) {
     return `${dia} de ${mes} de ${año}`;
   };
 
+  const [cont, setCont] = useState([]);
+  console.log(slug.params["home-enlace-interesId"]);
+  useEffect(() => {
+    const Contenido = async () => {
+      const res = await fetch(
+        `https://inea-web-backend.onrender.com/api/i-enlaces?filters[slug][$eq]=${slug.params["home-enlace-interesId"]}&populate=*`
+      );
+      const data = await res.json();
+      const enlacesData = data.data.map((item) => ({
+        titulo: item.attributes.Titulo,
+        subtitulo: item.attributes.Subtitulo, // Verifica si 'Subtitulo' existe
+        contenido: item.attributes.Contenido, // Verifica si 'Contenido' existe
+        slug: item.attributes.slug, // Asegúrate de que 'slug' esté presente
+        fecha: item.attributes?.Fecha,
+        imagen: item.attributes.Imagen?.data?.attributes?.formats?.large?.url,
+        NomImg: item.attributes.Imagen?.data?.attributes?.name,
+      }));
+      setCont(enlacesData);
+    };
+    Contenido();
+  }, []);
+
+  //enlaces laterales
+  const [enlacesL, setenlacesL] = useState([]);
+
+  useEffect(() => {
+    let enlaces = [];
+    const fetchEnlacesL = async () => {
+      const resPineados = await fetch(
+        `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+      );
+      const { data: enlacesPineados } = await resPineados.json();
+      if (enlacesPineados.length < 3) {
+        const resNoPineados = await fetch(
+          `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+        );
+        const { data: enlacesNoPineados } = await resNoPineados.json();
+
+        const enlacesCompletados = [
+          ...enlacesPineados,
+          ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
+        ];
+        enlaces = enlacesCompletados;
+      } else {
+        enlaces = enlacesPineados;
+      }
+      const enlacesLData = enlaces.map((item) => ({
+        title: item.attributes.Titulo,
+        imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
+        buttonText: "Ir al sitio",
+        link: item.attributes.URL_Externo
+          ? item.attributes.URL_Externo
+          : `/enlaces-de-interes/${item.attributes.slug}`,
+      }));
+      setenlacesL(enlacesLData);
+    };
+    fetchEnlacesL();
+  }, []);
   // Modificación en renderContenido
+
   const renderContenido = (contenido) => {
     return contenido.map((item, index) => {
       switch (item.type) {
@@ -94,7 +119,9 @@ async function Page({ params }) {
             `h${item.level}`,
             {
               key: index,
-              className: `font-body font-bold text-[#333334] text-[${21 - item.level}px]`,
+              className: `${
+                montserrat.className
+              } text-[#333334] font-bold text-[${21 - item.level}px]`,
             },
             item.children[0]?.text || ""
           );
@@ -111,8 +138,8 @@ async function Page({ params }) {
           return (
             <p
               key={index}
-              style={{ fontFamily: "IBM Plex Serif, serif" }}
-              className={`font-body text-[#333334] text-[18px] font-thin tracking-wider`}
+              className={` text-[#333334] text-[18px] font-light leading-[28px]`}
+              //className={`${open_Sans.className} text-[#404041] text-[16px] font-light`}
             >
               {item.children.map((child, i) => {
                 if (child.type === "link" && child.url) {
@@ -137,9 +164,8 @@ async function Page({ params }) {
                   return (
                     <span
                       key={i}
-                      className="font-body font-light"
                       style={{
-                        fontWeight: child.bold ? "normal" : "thin",
+                        fontWeight: child.bold ? "bold" : "normal",
                         fontStyle: child.italic ? "italic" : "normal",
                         textDecoration: `${
                           child.underline ? "underline" : ""
@@ -171,7 +197,7 @@ async function Page({ params }) {
           return (
             <ol
               key={index}
-              className={`${ibm_plex_serif.className} list-decimal pl-6 mb-4`}
+              className={`${montserrat.className} list-decimal pl-6 mb-4`}
             >
               {item.children.map((listItem, liIndex) => (
                 <li key={liIndex}>{listItem.children[0]?.text || ""}</li>
@@ -205,47 +231,39 @@ async function Page({ params }) {
     });
   };
 
-  const noticias = enlaces.data.map((item) => ({
-    title: item.attributes.Titulo,
-    imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
-    buttonText: "Ir al sitio",
-    link: item.attributes.URL_Externo 
-      ? item.attributes.URL_Externo 
-      : `/enlaces-de-interes/${item.attributes.slug}`,
-  }));
   return (
     <div>
-      <div className="ml-[26rem] mb-10"></div>
-      <PagSec
-        Enlaces={noticias}
-        Titulo={post.data?.attributes?.Titulo}
-        Subtitulo={post.data?.attributes?.Subtitulo}
-      >
-        <h1
-          className={`${montserrat.className} text-[#272727] text-[18px] font-light`}
-        >
-          INEA Ciudad de México |{" "}
-          {post.data?.attributes?.Fecha
-            ? fechaFun(post.data?.attributes?.Fecha)
-            : ""}
-        </h1>
-        <div className="m-auto my-6 rounded-lg">
-          <Image
-            src={post.data.attributes?.Imagen?.data[0]?.attributes?.url}
-            alt={
-              post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"
-            }
-            className="w-full rounded-lg"
-            width={1000}
-            height={700}
-          />
+      {cont.map((cont, index) => (
+        <div key={index}>
+          <div className="ml-[26rem] mb-10"></div>
+          <PagSec
+            Enlaces={enlacesL}
+            Titulo={cont.titulo}
+            Subtitulo={cont.subtitulo}
+          >
+            <h1
+              className={`${montserrat.className} text-[#404041] text-[18px] font-light`}
+            >
+              INEA Ciudad de México | {cont.fecha ? fechaFun(cont.fecha) : ""}
+            </h1>
+            <div className="m-auto my-6 rounded-lg max-h-[392px]">
+              <Image
+                src={cont.imagen}
+                alt={cont.NomImg || "Imagen sin título"}
+                className="w-full rounded-lg"
+                width={1000}
+                height={700}
+              />
+            </div>
+            <div className="mb-6 mt-12 leading-loose">
+              {renderContenido(cont.contenido)}
+            </div>
+          </PagSec>
         </div>
-        <div className={`mb-6 mt-12 leading-7 font-serif font-thin`}>
-          {renderContenido(contenido)}
-        </div>
-      </PagSec>
+      ))}
     </div>
   );
+  // Accede a los parámetros
 }
 
-export default Page;
+export default DetalleEnlace;

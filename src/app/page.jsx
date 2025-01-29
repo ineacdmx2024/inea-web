@@ -1,5 +1,5 @@
 import React from "react";
-import { Open_Sans } from "@next/font/google";
+import { Open_Sans, Montserrat } from "@next/font/google";
 import CarouselBlog from "@/components/CarouselBlog";
 import CarouselOfertEdu from "@/components/CarouselOfertEdu";
 import SeccionLigasInte from "@/components/SeccionLigasInte";
@@ -9,9 +9,13 @@ const open_Sans = Open_Sans({
   subsets: ["latin"],
 });
 
+const montserrat = Montserrat({
+  subsets: ["latin"],
+});
+
 function page() {
   return (
-    <main className={`mx-auto ${open_Sans.className} bg-white pt-[100px]`}>
+    <main className={`mx-auto ${montserrat.className} bg-white pt-[100px]`}>
       <div>
         <img
           src="/Banner_INEA_CDMX_EducacionMovilnueva.webp"
@@ -61,9 +65,14 @@ function page() {
       <SeccionLigasInte />
 
       <div
+        style={{ marginTop: -50 + "px", visibility: "hidden" }}
         id="ubicacion"
-        className="my-20 mx-auto mt-32 mb-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]"
-      >
+      ></div>
+      <div
+        style={{ marginTop: 170 + "px", visibility: "hidden" }}
+        id="ubicacion"
+      ></div>
+      <div className="my-20 mx-auto mt-32 mb-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
         <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl ">
           Ubicación
         </h1>
@@ -72,6 +81,7 @@ function page() {
           <div className="flex-grow h-px bg-gray-300"></div>
         </div>
       </div>
+
       <Ubicacion />
     </main>
   );

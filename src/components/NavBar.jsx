@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import "./NavBar.css";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -12,6 +12,8 @@ const Navbar = () => {
   const [isClickS, setisClickS] = useState(false);
   const [isClickCE, setisClickCE] = useState(false);
   const [isClickI, setisClickI] = useState(false);
+
+  const navRef = useRef(null); // Referencia para el Navbar
 
   const toggleOE = () => {
     setisClickOE(!isClickOE);
@@ -58,10 +60,26 @@ const Navbar = () => {
     setisClickINEA(false);
     setisClick(false);
   };
+  // Detecta clics fuera del navbar
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        closeAllMenus();
+        closeMobileMenu();
+      }
+    };
 
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     // <div className="navBar text-white ">
-    <div className="navBar">
+    <div
+      ref={navRef}
+      className="navBar"
+    >
       <div className="bg-[#611232] w-full">
         {/* Menú gobierno */}
         <nav className="bg-[#611232]">
@@ -76,7 +94,7 @@ const Navbar = () => {
                   passHref
                 >
                   <img
-                    src="/LogoEducacion.svg"
+                    src="/SEP_Logo_2024_blanco.svg"
                     alt="Educacion"
                     className=" hover:text-[#8B6C41]  rounded inline-block py-[0.3rem] mr-[1rem]"
                   />
@@ -93,7 +111,7 @@ const Navbar = () => {
                       passHref
                       className="hover:text-[#D3C09B] p-1 rounded"
                     >
-                      ¿Qué es el INEA?
+                      Sobre el INEA
                     </Link>
                     <Link
                       href="/#ubicacion"
@@ -183,7 +201,7 @@ const Navbar = () => {
                   passHref
                   className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
                 >
-                  ¿Qué es el INEA?
+                  Sobre el INEA
                 </Link>
                 <Link
                   href="/#ubicacion"
@@ -225,10 +243,10 @@ const Navbar = () => {
         </nav>
 
         {/* Menú inferior */}
-        <nav className="bg-[#A57F2C] lg:h-8">
-          <div className="flex items-center justify-between py-[0.06rem] px-auto lg:h-8">
+        <nav className="bg-[#A57F2C] lg:h-37px">
+          <div className="flex items-center justify-between py-[0.06rem] px-auto h-37px">
             <div
-              className="flex items-end justify-end lg:h-8"
+              className="flex items-end justify-end"
               id="Minf"
             >
               <div className="flex items-end space-x-10">
@@ -281,7 +299,7 @@ const Navbar = () => {
                         </svg>
                       </Link>
                       <div
-                        className={`absolute left-0 mt-2 ${
+                        className={`absolute left-0 mt-0.5  ${
                           // isClickOE ? "opacity-100" : "opacity-0"
                           isClickOE ? "block" : "hidden"
                         } bg-gray-100 text-black rounded shadow-lg transition-opacity duration-300 ease-in-out delay-200 z-50`}
@@ -312,7 +330,7 @@ const Navbar = () => {
                           onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
-                          Examen Único
+                          Examen único
                         </Link>
                         <Link
                           href="/oferta-educativa/examen-diagnostico"
@@ -350,7 +368,7 @@ const Navbar = () => {
                       </Link>
 
                       <div
-                        className={`absolute left-0 mt-2 ${
+                        className={`absolute left-0 mt-0.5  ${
                           isClickS ? "block" : "hidden"
                         } bg-gray-100 text-black rounded shadow-lg transition-opacity duration-300 ease-in-out delay-200 z-50`}
                       >
@@ -362,7 +380,7 @@ const Navbar = () => {
                           Descarga tu certificado
                         </Link>
                         <Link
-                          href="/servicios/solicitud-duplicados"
+                          href="/servicios/solicitud-duplicados/"
                           onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
                         >
@@ -443,7 +461,7 @@ const Navbar = () => {
                         </svg>
                       </Link>
                       <div
-                        className={`absolute left-0 mt-2 ${
+                        className={`absolute left-0 mt-0.5  ${
                           isClickCE ? "block" : "hidden"
                         } bg-gray-100 text-black rounded shadow-lg transition-opacity duration-300 ease-in-out delay-200 z-50`}
                       >
@@ -513,7 +531,7 @@ const Navbar = () => {
                       </Link>
 
                       <div
-                        className={`absolute left-0 mt-2 ${
+                        className={`absolute left-0 mt-0.5  ${
                           isClickI ? "block" : "hidden"
                         } bg-gray-100 text-black rounded shadow-lg transition-opacity duration-300 ease-in-out delay-200 z-50`}
                       >
@@ -725,7 +743,7 @@ const Navbar = () => {
                         href="/oferta-educativa/examen-unico"
                         className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
-                        Examen Único
+                        Examen único
                       </Link>
                       <Link
                         onClick={closeAllMenus && closeMobileMenu}

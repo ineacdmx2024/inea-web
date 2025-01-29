@@ -37,7 +37,7 @@ const Card = ({ title, imageSrc, buttonText, link }) => {
         </div>
         <button
           onClick={handleButtonClick}
-          className="focus:border-[#611232] focus:border-[5px] 
+          className="focus:border-[#611232]
           bg-[#611232] text-white 
           hover:border-[#611232] hover:border-2 hover:bg-white hover:text-[#611232] 
           text-xs 
