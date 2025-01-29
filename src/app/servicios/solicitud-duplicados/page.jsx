@@ -7,6 +7,14 @@ import { useForm, Controller } from "react-hook-form";
 import "./Duplicados.css";
 import "react-datepicker/dist/react-datepicker.css";
 
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  weight: ["300", "400", "500", "600", "700", "800"],
+  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
+  subsets: ["latin"],
+});
+
 
 
 function Solicitud_duplicados() {
@@ -302,21 +310,14 @@ console.log("else")
 
 
 return (
-  <div>
-    Duplicado de certificado de estudios
-    <br />
-    <PagSec Enlaces={cards}>
-      <div className="mx-auto w-full">
-        <h1 className="text-3xl font-medium text-[#404041] mb-2 letras:text-4xl ">
-        Duplicado de certificado de estudios
 
-        </h1>
-      </div>
-      <div className="flex items-center">
-        <div className="w-12 h-2 bg-[#af8900] mt-1"></div>
-        <div className="flex-grow h-px bg-gray-300"></div>
-      </div>
-      <br />
+  <div className={`${montserrat.className}  text-[#333334]  text-start `}>
+
+    <PagSec
+        Enlaces={cards}
+        Titulo={"Duplicado de certificado de estudios"}
+      >
+
 
       <div className="container mx-auto flex">
         <div className="w-full md:w-auto">
