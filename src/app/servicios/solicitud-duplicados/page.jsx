@@ -78,6 +78,8 @@ function Solicitud_duplicados() {
     try {
           const res = await fetch(`http://localhost:1337/api/correos?populate=%2A`)
 
+          console.log(res)
+
           if(!res.ok){
           throw new Error('Something went wrong')
     }
@@ -114,15 +116,21 @@ const onSubmit = async(data) =>{
     var  Obt_Correos = [];
     var  Obt_Correo_Generico = [];
 
+    console.log("Datos_obtenidos")
+    console.log(Datos_obtenidos)
+    console.log("Datos_obtenidos")
     // Ahora accedemos a los correos de cada objeto dentro del array
     Datos_obtenidos.forEach(item => {
 
-
+      console.log("----------")
+      console.log(item.Correo)
+      console.log("----------")
       if (item) {
-
+        console.log(item)
         if (item.Lugar_de_nacimiento === "Genérico" || item.Lugar_de_nacimiento === "Generico" ) {
             // Si es así, agregamos el correo a la lista de Obt_Correos
             Obt_Correo_Generico.push(item.Correo);
+            console.log(item.Correo)
         }
       }
     });
@@ -144,7 +152,7 @@ const onSubmit = async(data) =>{
       }).then(async (result) => {  // Asegúrate de usar async aquí para poder usar await
       if (result.isConfirmed) {
         // El usuario hizo clic en 'OK'
-        console.log('El usuario aceptó.');
+
 
    // Mostrar el indicador de carga (loading)
     Swal.fire({
@@ -181,12 +189,12 @@ const onSubmit = async(data) =>{
           const RESDATA = await res.json();  // Parsear la respuesta JSON
 
           // Imprimir los resultados de la respuesta
-          console.log(RESDATA);
+          //console.log(RESDATA);
 
           var emailData='';
 
           if(RESDATA.URL_Certificado){
-            console.log("true")
+   
             
             emailData = {
               data: {
@@ -217,7 +225,7 @@ const onSubmit = async(data) =>{
           };
 
        }else{
-console.log("else")
+
         
             
         emailData = {
@@ -348,7 +356,7 @@ return (
               </label>
               <div className="border rounded">
                 <select
-                  className="w-full border rounded bg-neutral-200	"
+                  className={`${montserrat.className} text-[#333334] cursor-no-drop input-personalizado color-gris`}
                   name="Estado de la Republica"
                   id="Estado_Republica"
                   readonly
@@ -365,7 +373,7 @@ return (
                 <input
                   type="text"
                   name="ApellidoPaterno"
-                  className="border rounded p-2  w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   id="AppellidoPaterno"
                   placeholder="Apellido Paterno"
                   {...register("ApellidoPaterno", { required: true })}
@@ -375,12 +383,12 @@ return (
                 )}
               </div>
 
-              <div clclassNameass="">
+              <div clclassNameass="sm:ml-3">
                 <label className="pt-3 sm:pt-0 block">Apellido Materno<spam className="red"> (*)</spam></label>
                 <input
                   type="text"
                   name="ApellidoMaterno"
-                  className="border rounded p-2 w-full sm:w-11/12"
+                  className="border rounded p-2 w-full sm:w-11/12 input-apellidopaterno"
                   id="title"
                   placeholder="Apellido Materno"
                   {...register("ApellidoMaterno", { required: true })}
@@ -390,13 +398,13 @@ return (
                 )}
               </div>
 
-              <div clclassNameass="sm:ml-5">
+              <div clclassNameass="sm:ml-3">
                 <label className="pt-3 sm:pt-0 block">Nombre(S)<spam className="red"> (*)</spam></label>
                 <input
                   id="Nombre"
                   type="text"
                   name="text"
-                  className="border rounded w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   placeholder="Nombre(S)"
                   {...register("Nombre", { required: true })}
                 />
@@ -414,7 +422,7 @@ return (
                 <input
                   type="text"
                   id="calendarYear"
-                  className="border rounded w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   placeholder="DD/MM/AAAA"
                   name="Fecha de nacimiento"
                   {...register("FechaNacimiento", { required: true })}
@@ -429,7 +437,7 @@ return (
                   Lugar de nacimiento<spam className="red"> (*)</spam>
                 </label>
                 <select
-                  className="border rounded  w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   name="Lugar de nacimiento"
                   id="LugarNacimiento"
                   {...register("LugarNacimiento", { required: true })}
@@ -477,7 +485,7 @@ return (
                   type="email"
                   name="to"
                   // name="email"
-                  className="border rounded  w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   placeholder="Correo@correo.com"
                   {...register("Correo", {
                     required: "El correo es obligatorio",
@@ -501,7 +509,7 @@ return (
                 </label>
                 <input
                   type="text"
-                  className="border rounded w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   id="telefono"
                   name="Teléfono"
                   placeholder="Teléfono"
@@ -517,7 +525,7 @@ return (
                 <input
                   id="confirmEmail"
                   type="email"
-                  className="border rounded  w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   placeholder="Correo@correo.com"
                   {...register("confirmEmail", {
                     required: "Confirma tu correo",
@@ -542,7 +550,7 @@ return (
                   type="text"
                   name="text"
                   placeholder="Comentarios"
-                  className="border rounded w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   {...register("Comentarios", { required: false })}
                 />
                 {errors?.Comentarios?.type === "required" && (
@@ -558,7 +566,7 @@ return (
                   id="NivelEducativo"
                   type="text"
                   name="text"
-                  className="border rounded  w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   {...register("NivelEducativo", { required: true })}
                 >
                   <option value="">Seleccione..</option>
@@ -637,7 +645,7 @@ return (
             <div className="pt-3 grid grid-cols-1  sm:grid-cols-2 gap-5">
               <div class="">
                 <label class="control-label" for="certificado">
-                  Certificado
+                  Certificado (opcional)
                 </label>
                 <input
                   id="certi"
@@ -652,14 +660,14 @@ return (
               {errors?.Certificado?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>}
               <div class="">
                 <label class="control-label" for="anio">
-                  Año
+                  Año (opcional)
                 </label>
                 <input
                   id="anio"
                   type="text"
                   name="text"
                   placeholder="Año"
-                  className="border rounded  w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   {...register("Año", { required: false })}
                 />
                 {errors?.Año?.type === "required" && (
@@ -670,6 +678,8 @@ return (
 
             <div class="pt-4 form-group">
               <div class="checkbox">
+                Acepto términos y condiciones 
+                <br />
                 <label>
                   <input
                     name="Terminos"
