@@ -78,7 +78,7 @@ function Solicitud_duplicados() {
     try {
           const res = await fetch(`http://localhost:1337/api/correos?populate=%2A`)
 
-          console.log(res)
+        
 
           if(!res.ok){
           throw new Error('Something went wrong')
@@ -116,21 +116,17 @@ const onSubmit = async(data) =>{
     var  Obt_Correos = [];
     var  Obt_Correo_Generico = [];
 
-    console.log("Datos_obtenidos")
-    console.log(Datos_obtenidos)
-    console.log("Datos_obtenidos")
+
     // Ahora accedemos a los correos de cada objeto dentro del array
     Datos_obtenidos.forEach(item => {
 
-      console.log("----------")
-      console.log(item.Correo)
-      console.log("----------")
+
       if (item) {
-        console.log(item)
+     
         if (item.Lugar_de_nacimiento === "Genérico" || item.Lugar_de_nacimiento === "Generico" ) {
             // Si es así, agregamos el correo a la lista de Obt_Correos
             Obt_Correo_Generico.push(item.Correo);
-            console.log(item.Correo)
+          
         }
       }
     });
@@ -193,24 +189,50 @@ const onSubmit = async(data) =>{
 
           var emailData='';
 
+          const maxLengthNombre = 70;
+          const truncatedName = data.Nombre.length > maxLengthNombre ? `${data.Nombre.substring(0, maxLengthNombre)}` : data.Nombre;
+         
+          const maxLengthApellidoMaterno = 70;
+          const truncatedApellidoMaterno = data.ApellidoMaterno.length > maxLengthApellidoMaterno ? `${data.ApellidoMaterno.substring(0, maxLengthApellidoMaterno)}` : data.ApellidoMaterno;
+         
+          const maxLengthApellidoPaterno = 70;
+          const truncatedApellidoPaterno = data.ApellidoPaterno.length > maxLengthApellidoPaterno ? `${data.ApellidoPaterno.substring(0, maxLengthApellidoPaterno)}` : data.ApellidoPaterno;
+         
+
+          const maxLengthFechaNacimiento = 10;
+          const truncatedFechaNacimiento = data.FechaNacimiento.length > maxLengthFechaNacimiento ? `${data.FechaNacimiento.substring(0, maxLengthFechaNacimiento)}` : data.FechaNacimiento;
+         
+          const maxLengthCorreo= 250;
+          const truncatedCorreo = data.Correo.length > maxLengthCorreo ? `${data.Correo.substring(0, maxLengthCorreo)}` : data.Correo;
+         
+          const maxLengthTelefono= 50;
+          const truncatedTelefono = data.Telefono.length > maxLengthTelefono ? `${data.Telefono.substring(0, maxLengthTelefono)}` : data.Telefono;
+         
+          const maxLengthComentarios= 450;
+          const truncatedComentarios = data.Comentarios.length > maxLengthComentarios ? `${data.Comentarios.substring(0, maxLengthComentarios)}` : data.Comentarios;
+         
+          const maxLengthAño = 5;
+          const truncatedAño = data.Año.length > maxLengthAño ? `${data.Año.substring(0, maxLengthAño)}` : data.Año;
+
+
           if(RESDATA.URL_Certificado){
    
-            
+         
             emailData = {
               data: {
                   Para: `${Obt_Correo_Generico[0]},${data.Correo}`,
                   subject: formData.subject,
                   Mensaje: `
-                      Nombre: ${data.Nombre} <br>
-                      Apellido materno: ${data.ApellidoMaterno} <br>
-                      Apellido paterno: ${data.ApellidoPaterno} <br>
-                      Fecha de nacimiento: ${data.FechaNacimiento} <br>
+                      Nombre: ${truncatedName} <br>
+                      Apellido materno: ${truncatedApellidoMaterno} <br>
+                      Apellido paterno: ${truncatedApellidoPaterno} <br>
+                      Fecha de nacimiento: ${truncatedFechaNacimiento} <br>
                       Lugar de nacimiento: ${data.LugarNacimiento} <br>
-                      Correo: ${data.Correo} <br>
-                      Teléfono: ${data.Telefono} <br>
-                      Comentarios: ${data.Comentarios} <br>
+                      Correo: ${truncatedCorreo} <br>
+                      Teléfono: ${truncatedTelefono} <br>
+                      Comentarios: ${truncatedComentarios} <br>
                       Nivel del duplicado: ${data.NivelEducativo} <br>
-                      Año: ${data.Año} <br>
+                      Año: ${truncatedAño} <br>
                   `,
                 
   
@@ -226,23 +248,22 @@ const onSubmit = async(data) =>{
 
        }else{
 
-        
-            
+  
         emailData = {
           data: {
               Para: `${Obt_Correo_Generico[0]},${data.Correo}`,
               subject: formData.subject,
               Mensaje: `
-                  Nombre: ${data.Nombre} <br>
-                  Apellido materno: ${data.ApellidoMaterno} <br>
-                  Apellido paterno: ${data.ApellidoPaterno} <br>
-                  Fecha de nacimiento: ${data.FechaNacimiento} <br>
+                  Nombre: ${truncatedName} <br>
+                  Apellido materno: ${truncatedApellidoMaterno} <br>
+                  Apellido paterno: ${truncatedApellidoPaterno} <br>
+                  Fecha de nacimiento: ${truncatedFechaNacimiento} <br>
                   Lugar de nacimiento: ${data.LugarNacimiento} <br>
-                  Correo: ${data.Correo} <br>
-                  Teléfono: ${data.Telefono} <br>
-                  Comentarios: ${data.Comentarios} <br>
+                  Correo: ${truncatedCorreo} <br>
+                  Teléfono: ${truncatedTelefono} <br>
+                  Comentarios: ${truncatedComentarios} <br>
                   Nivel del duplicado: ${data.NivelEducativo} <br>
-                  Año: ${data.Año} <br>
+                  Año: ${truncatedAño} <br>
               `,
 
               Para: `${Obt_Correos[0]},${Obt_Correo_Generico[0]},${data.Correo}`,
@@ -376,11 +397,24 @@ return (
                   className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   id="AppellidoPaterno"
                   placeholder="Apellido Paterno"
-                  {...register("ApellidoPaterno", { required: true })}
+                  maxLength={70}  
+                  {...register("ApellidoPaterno", { 
+                    required: true, 
+                    pattern: {
+                      value: /^[A-Za-z\s]+$/,  // Solo letras y espacios
+                      message: "El apellido solo puede contener letras"
+                    }
+                  })}
                 />
                 {errors?.ApellidoPaterno?.type === "required" && (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
                 )}
+
+                {errors?.ApellidoPaterno && (
+                      <p className="AlertaCampo">
+                        {errors.ApellidoPaterno.message}
+                      </p>
+                    )}
               </div>
 
               <div clclassNameass="sm:ml-3">
@@ -391,11 +425,26 @@ return (
                   className="border rounded p-2 w-full sm:w-11/12 input-apellidopaterno"
                   id="title"
                   placeholder="Apellido Materno"
-                  {...register("ApellidoMaterno", { required: true })}
+                  maxLength={70}  
+
+                  {...register("ApellidoMaterno", { 
+                    required: true, 
+                    pattern: {
+                      value: /^[A-Za-z\s]+$/,  // Solo letras y espacios
+                      message: "El apellido solo puede contener letras"
+                    }
+                  })}
+
                 />
                 {errors?.ApellidoMaterno?.type === "required" && (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
                 )}
+
+                {errors?.ApellidoMaterno && (
+                      <p className="AlertaCampo">
+                        {errors.ApellidoMaterno.message}
+                      </p>
+                    )}
               </div>
 
               <div clclassNameass="sm:ml-3">
@@ -406,11 +455,25 @@ return (
                   name="text"
                   className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   placeholder="Nombre(S)"
-                  {...register("Nombre", { required: true })}
+                  maxLength={70}  
+              
+                  {...register("Nombre", { 
+                    required: true, 
+                    pattern: {
+                      value: /^[A-Za-z\s]+$/,  // Solo letras y espacios
+                      message: "El apellido solo puede contener letras"
+                    }
+                  })}
                 />
                 {errors?.Nombre?.type === "required" && (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
                 )}
+
+               {errors?.Nombre && (
+                      <p className="AlertaCampo">
+                        {errors.Nombre.message}
+                      </p>
+                    )}
               </div>
             </div>
 
@@ -425,6 +488,7 @@ return (
                   className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   placeholder="DD/MM/AAAA"
                   name="Fecha de nacimiento"
+                  maxLength={10}  
                   {...register("FechaNacimiento", { required: true })}
                 />
                 {errors?.FechaNacimiento?.type === "required" && (
@@ -487,6 +551,7 @@ return (
                   // name="email"
                   className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   placeholder="Correo@correo.com"
+                  maxLength={250}  
                   {...register("Correo", {
                     required: "El correo es obligatorio",
                     pattern: {
@@ -495,10 +560,7 @@ return (
                     },
                   })}
                 />
-                {errors?.Correo?.type === "required" && (
-                  <p className="AlertaCampo">Este campo es obligatorio</p>
-                )}
-                {errors?.Correo?.type === "pattern" && (
+               {errors?.Correo && (
                   <p className="AlertaCampo">{errors.Correo.message}</p>
                 )}
               </div>
@@ -513,10 +575,24 @@ return (
                   id="telefono"
                   name="Teléfono"
                   placeholder="Teléfono"
-                  {...register("Telefono", { required: true })}
+                  maxLength={50}  
+
+                  {...register("Telefono", { 
+                    required: true, 
+                    pattern: {
+                      value: /^[0-9]+$/,  // Solo números
+                        message: "El Teléfono debe contener solo números"  // Mensaje para el 'pattern'
+                    }
+                  })}
+
+
                 />
                 {errors?.Telefono?.type === "required" && (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
+                )}
+
+                {errors?.Telefono?.type === "pattern" && (
+                  <p className="AlertaCampo">{errors.Telefono.message}</p>
                 )}
               </div>
 
@@ -527,29 +603,28 @@ return (
                   type="email"
                   className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   placeholder="Correo@correo.com"
+                  maxLength={250}  
                   {...register("confirmEmail", {
                     required: "Confirma tu correo",
                     validate: (value) =>
                       value === watch("Correo") || "Los correos no coinciden",
                   })}
                 />
-                {errors?.confirmEmail?.type === "required" && (
-                  <p className="AlertaCampo">{errors.confirmEmail.message}</p>
-                )}
-                {errors?.confirmEmail?.type === "validate" && (
+                  {errors?.confirmEmail && (
                   <p className="AlertaCampo">{errors.confirmEmail.message}</p>
                 )}
               </div>
 
               <div className="pt-3 sm:pt-0 sm:mr-0">
                 <label className="pt-0 sm:pt-3  block" for="comentarios">
-                  Comentarios(opcional)
+                  Comentarios (opcional)
                 </label>
                 <textarea
                   id="comentarios"
                   type="text"
                   name="text"
                   placeholder="Comentarios"
+                  maxLength={450}  
                   className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   {...register("Comentarios", { required: false })}
                 />
@@ -667,6 +742,7 @@ return (
                   type="text"
                   name="text"
                   placeholder="Año"
+                  maxLength={5}  
                   className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   {...register("Año", { required: false })}
                 />

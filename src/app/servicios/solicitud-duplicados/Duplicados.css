@@ -32,7 +32,7 @@
 /* Estilo para cuando el input está en foco */
 .input-personalizado:hover,.input-apellidopaterno:hover {
   border-color: #611432; /* Color de borde azul cuando está en foco */
-  border-width: 2px;
+  border-width: 3px;
  
 }
 
