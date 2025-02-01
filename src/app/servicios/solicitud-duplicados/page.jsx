@@ -134,34 +134,20 @@ const onSubmit = async(data) =>{
 
    if(captcha)
    {
+
+
+    // Mostrar el indicador de carga (loading)
       Swal.fire({
-        title: '',
-        text: '¡Datos capturados correctamente!',
-        icon: 'warning',
-        showCancelButton: true,  // Muestra el botón de Cancelar
-        confirmButtonColor: '#3085d6',  // Color del botón de Confirmar
-        cancelButtonColor: '#d33',  // Color del botón de Cancelar
-        confirmButtonText: 'OK',  // Texto del botón de Confirmar
-        cancelButtonText: 'Cancelar',  // Texto del botón de Cancelar
+        title: 'Cargando...',
+        text: 'Estamos procesando tus datos.',
+        icon: 'info',
         allowOutsideClick: false,  // Deshabilitar el clic fuera para cerrar
         allowEscapeKey: false,  // Deshabilitar la tecla Esc para cerrar
-      }).then(async (result) => {  // Asegúrate de usar async aquí para poder usar await
-      if (result.isConfirmed) {
-        // El usuario hizo clic en 'OK'
-
-
-   // Mostrar el indicador de carga (loading)
-    Swal.fire({
-      title: 'Cargando...',
-      text: 'Estamos procesando tus datos.',
-      icon: 'info',
-      allowOutsideClick: false,  // Deshabilitar el clic fuera para cerrar
-      allowEscapeKey: false,  // Deshabilitar la tecla Esc para cerrar
-      showConfirmButton: false,
-      willOpen: () => {
-        Swal.showLoading();  // Mostrar el spinner de carga
-      }
-    });
+        showConfirmButton: false,
+        willOpen: () => {
+          Swal.showLoading();  // Mostrar el spinner de carga
+        }
+      });
 
         // Creación del FormData para enviar archivos
         const formData = new FormData();
@@ -316,11 +302,7 @@ const onSubmit = async(data) =>{
         } catch (error) {
           console.error('Error en la solicitud:', error);
         }
-      } else if (result.isDismissed) {
-        // El usuario hizo clic en 'Cancelar' o cerró el modal
-        console.log('El usuario canceló la acción.');
-      }
-    });
+      
 
    }else{
       Swal.fire({
