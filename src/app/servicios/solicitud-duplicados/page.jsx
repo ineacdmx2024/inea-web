@@ -1,23 +1,29 @@
 "use client"
 import Swal from 'sweetalert2'
-import React,{ useState } from 'react'
+import React,{ useState,useEffect } from 'react'
 import PagSec from "@/components/PlantillaPagSec";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useForm, Controller } from "react-hook-form";
 import "./Duplicados.css";
 import "react-datepicker/dist/react-datepicker.css";
 
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  weight: ["300", "400", "500", "600", "700", "800"],
+  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
+  subsets: ["latin"],
+});
+
+
 
 function Solicitud_duplicados() {
 
-
-
-
-
-  const [file, setFile] = useState(null); 
+  const [datos, setDatos] = useState([]);
+  const [file, setFile] = useState(null);
   const [captcha, setCaptcha] = React.useState("");
-  
-  
+
+ 
 
 
 
@@ -43,7 +49,7 @@ function Solicitud_duplicados() {
     },
   ];
 
-  
+
 
   const [formData, setFormData] = React.useState({
     to: '',//correo
@@ -58,124 +64,279 @@ function Solicitud_duplicados() {
   const handleFileChange = (event) => {
 
     const selectedFile = event.target.files[0];
+
     if (selectedFile) {
+
       setFile(selectedFile);
-    } else {
-     // console.log("No se seleccionó ningún archivo.");
+
     }
   };
 
 
 
+  const fetchData = async  () => {
+    try {
+          const res = await fetch(`http://localhost:1337/api/correos?populate=%2A`)
+
+        
+
+          if(!res.ok){
+          throw new Error('Something went wrong')
+    }
+     const { data } = await res.json()
+
+      setDatos(data);
+
+
+    } catch (error) {
+      console.error("Error al obtener los datos:", error);
+    }
+  }
+
+
+    // useEffect para llamar a `fetchData` una vez que el componente se monta
+    useEffect(() => {
+      fetchData();
+    }, []);
+
+
 const onSubmit = async(data) =>{
 
 
-   if(captcha)
-   {
-      try {
-  
-        const Correo_Campeche = "recapchaeder@gmail.com";
+  if (Array.isArray(datos)) {
+    const Datos_obtenidos = datos.map(item => {
+      // Aseguramos que item.attributes existe y tiene las propiedades 'Correo' y 'Lugar_de_nacimiento'
+      return item.attributes ? {
+        Correo: item.attributes.Correo,
+        Lugar_de_nacimiento: item.attributes.Lugar_de_nacimiento
+      } : null;
+    });
+
+    // Usamos un array para almacenar los correos de las personas nacidas en ejemplo "Campeche"
+    var  Obt_Correos = [];
+    var  Obt_Correo_Generico = [];
 
 
-        if(data.LugarNacimiento == "Campeche"){
-          Correo_Campeche
-        }
+    // Ahora accedemos a los correos de cada objeto dentro del array
+    Datos_obtenidos.forEach(item => {
 
+
+      if (item) {
      
-
-        const formDataToSend = new FormData();
-        formDataToSend.append("to", Correo_Campeche + ',' + data.Correo);
-        formDataToSend.append("subject", formData.subject);
-        formDataToSend.append("text", `
-            Nombre: ${data.Nombre} <br> 
-            Apellido materno: ${data.ApellidoMaterno} <br> 
-            Apellido paterno: ${data.ApellidoPaterno} <br>
-            Fecha de nacimiento: ${data.FechaNacimiento} <br>
-            Lugar de nacimiento: ${data.LugarNacimiento} <br>
-            Correo: ${data.Correo} <br>
-            Teléfono: ${data.Telefono} <br>
-            Comentarios: ${data.Comentarios} <br>
-            Nivel del duplicado: ${data.NivelEducativo} <br>
-            Año: ${data.Año} <br>
-        `);
-
-        if (file) {
-           formDataToSend.append("file", file);
-        }
-          const response = await fetch('http://localhost:1337/api/email/', { 
-            method: 'POST',
-            body: formDataToSend,
-        });
-         
-       const datas = await response.json();
-     
-        if(response.ok)
-        {
-          Swal.fire({
-            title: "Correcto!",
-            text: "Correo enviado de forma correcta!",
-            icon: "success",
-            confirmButtonColor: "#3085d6",
-          });
-      
-            
-        }else{
-          Swal.fire({
-            title: 'Ups...!',
-            text: `Error al enviar correo: ${datas.error.message || 'Error desconocido'}`,
-            icon: 'error',
-            confirmButtonColor: "#3085d6",
-      
-          })
+        if (item.Lugar_de_nacimiento === "Genérico" || item.Lugar_de_nacimiento === "Generico" ) {
+            // Si es así, agregamos el correo a la lista de Obt_Correos
+            Obt_Correo_Generico.push(item.Correo);
           
         }
-      } 
-       catch (error)
-      {
-        Swal.fire({
-          title: 'Ups...!',
-          text: `Hubo un problema al enviar el correo. ${error.message || 'Error desconocido'}`,
-          icon: 'error',
-          confirmButtonColor: "#3085d6",
-    
-        })
-      } 
+      }
+    });
+  }
+
+   if(captcha)
+   {
+
+
+    // Mostrar el indicador de carga (loading)
+      Swal.fire({
+        title: 'Cargando...',
+        text: 'Estamos procesando tus datos.',
+        icon: 'info',
+        allowOutsideClick: false,  // Deshabilitar el clic fuera para cerrar
+        allowEscapeKey: false,  // Deshabilitar la tecla Esc para cerrar
+        showConfirmButton: false,
+        willOpen: () => {
+          Swal.showLoading();  // Mostrar el spinner de carga
+        }
+      });
+
+        // Creación del FormData para enviar archivos
+        const formData = new FormData();
+        formData.append('Curp', data.Curp[0]); // Campo 'Curp'
+        formData.append('Identificacion', data.Identificacion[0]); // Campo 'Identificacion'
+        formData.append('Fotografia', data.Fotografia[0]); // Campo 'Fotografía'
+        formData.append('Certificado', data.Certificado[0]); // Campo 'Certificado'
+
+        try {
+          // Enviar los archivos al servidor usando fetch
+          const res = await fetch('/api/upload', {
+            method: 'POST',
+            body: formData,  // FormData se encarga del tipo de contenido automáticamente
+          });
+
+          // Verifica si la respuesta fue exitosa
+          if (!res.ok) {
+            throw new Error('Error al enviar los datos');
+          }
+
+          const RESDATA = await res.json();  // Parsear la respuesta JSON
+
+          // Imprimir los resultados de la respuesta
+          //console.log(RESDATA);
+
+          var emailData='';
+
+          const maxLengthNombre = 70;
+          const truncatedName = data.Nombre.length > maxLengthNombre ? `${data.Nombre.substring(0, maxLengthNombre)}` : data.Nombre;
+         
+          const maxLengthApellidoMaterno = 70;
+          const truncatedApellidoMaterno = data.ApellidoMaterno.length > maxLengthApellidoMaterno ? `${data.ApellidoMaterno.substring(0, maxLengthApellidoMaterno)}` : data.ApellidoMaterno;
+         
+          const maxLengthApellidoPaterno = 70;
+          const truncatedApellidoPaterno = data.ApellidoPaterno.length > maxLengthApellidoPaterno ? `${data.ApellidoPaterno.substring(0, maxLengthApellidoPaterno)}` : data.ApellidoPaterno;
+         
+
+          const maxLengthFechaNacimiento = 10;
+          const truncatedFechaNacimiento = data.FechaNacimiento.length > maxLengthFechaNacimiento ? `${data.FechaNacimiento.substring(0, maxLengthFechaNacimiento)}` : data.FechaNacimiento;
+         
+          const maxLengthCorreo= 250;
+          const truncatedCorreo = data.Correo.length > maxLengthCorreo ? `${data.Correo.substring(0, maxLengthCorreo)}` : data.Correo;
+         
+          const maxLengthTelefono= 50;
+          const truncatedTelefono = data.Telefono.length > maxLengthTelefono ? `${data.Telefono.substring(0, maxLengthTelefono)}` : data.Telefono;
+         
+          const maxLengthComentarios= 450;
+          const truncatedComentarios = data.Comentarios.length > maxLengthComentarios ? `${data.Comentarios.substring(0, maxLengthComentarios)}` : data.Comentarios;
+         
+          const maxLengthAño = 5;
+          const truncatedAño = data.Año.length > maxLengthAño ? `${data.Año.substring(0, maxLengthAño)}` : data.Año;
+
+
+          if(RESDATA.URL_Certificado){
+   
+         
+            emailData = {
+              data: {
+                  Para: `${Obt_Correo_Generico[0]},${data.Correo}`,
+                  subject: formData.subject,
+                  Mensaje: `
+                      Nombre: ${truncatedName} <br>
+                      Apellido materno: ${truncatedApellidoMaterno} <br>
+                      Apellido paterno: ${truncatedApellidoPaterno} <br>
+                      Fecha de nacimiento: ${truncatedFechaNacimiento} <br>
+                      Lugar de nacimiento: ${data.LugarNacimiento} <br>
+                      Correo: ${truncatedCorreo} <br>
+                      Teléfono: ${truncatedTelefono} <br>
+                      Comentarios: ${truncatedComentarios} <br>
+                      Nivel del duplicado: ${data.NivelEducativo} <br>
+                      Año: ${truncatedAño} <br>
+                  `,
+                
+  
+                 imagen: [
+                    ...(RESDATA.URL_Curp ? [RESDATA.URL_Curp] : []),
+                    ...(RESDATA.URL_Identificacion ? [RESDATA.URL_Identificacion] : []),
+                    ...(RESDATA.URL_Fotografia ? [RESDATA.URL_Fotografia] : []),
+                    ...(RESDATA.URL_Certificado ? [RESDATA.URL_Certificado] : []),
+                  ].join('|')  // Unir los nombres de los archivos con una coma
+  
+              }
+          };
+
+       }else{
+
+  
+        emailData = {
+          data: {
+              Para: `${Obt_Correo_Generico[0]},${data.Correo}`,
+              subject: formData.subject,
+              Mensaje: `
+                  Nombre: ${truncatedName} <br>
+                  Apellido materno: ${truncatedApellidoMaterno} <br>
+                  Apellido paterno: ${truncatedApellidoPaterno} <br>
+                  Fecha de nacimiento: ${truncatedFechaNacimiento} <br>
+                  Lugar de nacimiento: ${data.LugarNacimiento} <br>
+                  Correo: ${truncatedCorreo} <br>
+                  Teléfono: ${truncatedTelefono} <br>
+                  Comentarios: ${truncatedComentarios} <br>
+                  Nivel del duplicado: ${data.NivelEducativo} <br>
+                  Año: ${truncatedAño} <br>
+              `,
+
+              Para: `${Obt_Correos[0]},${Obt_Correo_Generico[0]},${data.Correo}`,
+             imagen: [
+                ...(RESDATA.URL_Curp ? [RESDATA.URL_Curp] : []),
+                ...(RESDATA.URL_Identificacion ? [RESDATA.URL_Identificacion] : []),
+                ...(RESDATA.URL_Fotografia ? [RESDATA.URL_Fotografia] : []),
+              ].join('|')  // Unir los nombres de los archivos con una coma
+
+          }
+      };
+
+       }
+
+
+        
+
+        const response = await fetch('http://localhost:1337/api/correoineas', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            },
+              body: JSON.stringify(emailData),
+          });
+
+          const datas = await response.json();
+
+          if(response.ok)
+          {
+              Swal.fire({
+                title: "Correcto!",
+                text: "Correo enviado de forma correcta!",
+                icon: "success",
+                confirmButtonColor: "#3085d6",
+                allowOutsideClick: false,  // Deshabilitar el clic fuera para cerrar
+                allowEscapeKey: false,  // Deshabilitar la tecla Esc para cerrar
+              });
+
+          }else{
+            Swal.fire({
+              title: 'Ups...!',
+              text: `Error al enviar correo: ${datas.error.message || 'Error desconocido'}`,
+              icon: 'error',
+              confirmButtonColor: "#3085d6",
+              allowOutsideClick: false,  // Deshabilitar el clic fuera para cerrar
+              allowEscapeKey: false,  // Deshabilitar la tecla Esc para cerrar
+            })
+          }
+
+        } catch (error) {
+          console.error('Error en la solicitud:', error);
+        }
+      
+
    }else{
       Swal.fire({
         title: 'Ups...!',
         text: '¡por favor capture recaphca!',
         icon: 'error',
         confirmButtonColor: "#3085d6",
+        allowOutsideClick: false,  // Deshabilitar el clic fuera para cerrar
+        allowEscapeKey: false,  // Deshabilitar la tecla Esc para cerrar
 
       })
   }
 }
 
 
+
+
 return (
-  <div>
-    Solicitud de duplicados
-    <br />
-    <PagSec Enlaces={cards}>
-      <div className="mx-auto w-full">
-        <h1 className="text-3xl font-medium text-[#404041] mb-2 letras:text-4xl ">
-          Solicitud de duplicados
-        </h1>
-      </div>
-      <div className="flex items-center">
-        <div className="w-12 h-2 bg-[#af8900] mt-1"></div>
-        <div className="flex-grow h-px bg-gray-300"></div>
-      </div>
-      <br />
+
+  <div className={`${montserrat.className}  text-[#333334]  text-start `}>
+
+    <PagSec
+        Enlaces={cards}
+        Titulo={"Duplicado de certificado de estudios"}
+      >
+
 
       <div className="container mx-auto flex">
         <div className="w-full md:w-auto">
           <p className="text-justify">
-            La siguinte información será enviada a la Unidad de Operación del
-            INEA Ciudad de México, por eso, es importante que llenes
-            correctamente los campos que se solicitan. Si tiene alguna duda
-            sobre el proceso de llenado, le invitamos a ver el siguiente
-            tutorila dando clic en este enlace.Gracias.
+            La siguiente información será enviada a la Unidad de Operación del INEA
+            Ciudad de México para tramitar el duplicado de un certificado de primaria
+            o secundaria expedido por es institucióon. Por eso, es importante que llenes
+            correctamente los campos que se solicitan.
           </p>
 
           <label class="pt-3 control-label flex justify-center">
@@ -198,7 +359,7 @@ return (
               </label>
               <div className="border rounded">
                 <select
-                  className="w-full border rounded bg-neutral-200	"
+                  className={`${montserrat.className} text-[#333334] cursor-no-drop input-personalizado color-gris`}
                   name="Estado de la Republica"
                   id="Estado_Republica"
                   readonly
@@ -211,62 +372,105 @@ return (
 
             <div className="pt-3 grid grid-cols-1  sm:grid-cols-3">
               <div className="sm:mr-7">
-                <label className="block">Apellido Paterno</label>
+                <label className="block">Apellido Paterno<spam className="red"> (*)</spam></label>
                 <input
                   type="text"
                   name="ApellidoPaterno"
-                  className="border rounded p-2  w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   id="AppellidoPaterno"
                   placeholder="Apellido Paterno"
-                  {...register("ApellidoPaterno", { required: true })}
+                  maxLength={70}  
+                  {...register("ApellidoPaterno", { 
+                    required: true, 
+                    pattern: {
+                      value: /^[A-Za-z\s]+$/,  // Solo letras y espacios
+                      message: "El apellido solo puede contener letras"
+                    }
+                  })}
                 />
                 {errors?.ApellidoPaterno?.type === "required" && (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
                 )}
+
+                {errors?.ApellidoPaterno && (
+                      <p className="AlertaCampo">
+                        {errors.ApellidoPaterno.message}
+                      </p>
+                    )}
               </div>
 
-              <div clclassNameass="">
-                <label className="pt-3 sm:pt-0 block">Apellido Materno</label>
+              <div clclassNameass="sm:ml-3">
+                <label className="pt-3 sm:pt-0 block">Apellido Materno<spam className="red"> (*)</spam></label>
                 <input
                   type="text"
                   name="ApellidoMaterno"
-                  className="border rounded p-2 w-full sm:w-11/12"
+                  className="border rounded p-2 w-full sm:w-11/12 input-apellidopaterno"
                   id="title"
                   placeholder="Apellido Materno"
-                  {...register("ApellidoMaterno", { required: true })}
+                  maxLength={70}  
+
+                  {...register("ApellidoMaterno", { 
+                    required: true, 
+                    pattern: {
+                      value: /^[A-Za-z\s]+$/,  // Solo letras y espacios
+                      message: "El apellido solo puede contener letras"
+                    }
+                  })}
+
                 />
                 {errors?.ApellidoMaterno?.type === "required" && (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
                 )}
+
+                {errors?.ApellidoMaterno && (
+                      <p className="AlertaCampo">
+                        {errors.ApellidoMaterno.message}
+                      </p>
+                    )}
               </div>
 
-              <div clclassNameass="sm:ml-5">
-                <label className="pt-3 sm:pt-0 block">Nombre(S)</label>
+              <div clclassNameass="sm:ml-3">
+                <label className="pt-3 sm:pt-0 block">Nombre(S)<spam className="red"> (*)</spam></label>
                 <input
                   id="Nombre"
                   type="text"
                   name="text"
-                  className="border rounded w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   placeholder="Nombre(S)"
-                  {...register("Nombre", { required: true })}
+                  maxLength={70}  
+              
+                  {...register("Nombre", { 
+                    required: true, 
+                    pattern: {
+                      value: /^[A-Za-z\s]+$/,  // Solo letras y espacios
+                      message: "El apellido solo puede contener letras"
+                    }
+                  })}
                 />
                 {errors?.Nombre?.type === "required" && (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
                 )}
+
+               {errors?.Nombre && (
+                      <p className="AlertaCampo">
+                        {errors.Nombre.message}
+                      </p>
+                    )}
               </div>
             </div>
 
             <div className="pt-3  grid grid-cols-1  sm:grid-cols-2">
               <div className="sm:mr-5">
                 <label className="block" for="calendarYear">
-                  Fecha de nacimiento
+                  Fecha de nacimiento<spam className="red"> (*)</spam>
                 </label>
                 <input
                   type="text"
                   id="calendarYear"
-                  className="border rounded w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   placeholder="DD/MM/AAAA"
                   name="Fecha de nacimiento"
+                  maxLength={10}  
                   {...register("FechaNacimiento", { required: true })}
                 />
                 {errors?.FechaNacimiento?.type === "required" && (
@@ -276,10 +480,10 @@ return (
 
               <div className="">
                 <label className="pt-3 sm:pt-0 block">
-                  Lugar de nacimiento
+                  Lugar de nacimiento<spam className="red"> (*)</spam>
                 </label>
                 <select
-                  className="border rounded  w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   name="Lugar de nacimiento"
                   id="LugarNacimiento"
                   {...register("LugarNacimiento", { required: true })}
@@ -320,15 +524,16 @@ return (
                   for="email"
                   htmlFor="email"
                 >
-                  Correo
+                  Correo<spam className="red"> (*)</spam>
                 </label>
                 <input
                   id="email"
                   type="email"
                   name="to"
                   // name="email"
-                  className="border rounded  w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   placeholder="Correo@correo.com"
+                  maxLength={250}  
                   {...register("Correo", {
                     required: "El correo es obligatorio",
                     pattern: {
@@ -337,62 +542,72 @@ return (
                     },
                   })}
                 />
-                {errors?.Correo?.type === "required" && (
-                  <p className="AlertaCampo">Este campo es obligatorio</p>
-                )}
-                {errors?.Correo?.type === "pattern" && (
+               {errors?.Correo && (
                   <p className="AlertaCampo">{errors.Correo.message}</p>
                 )}
               </div>
 
               <div className="pt-3 sm:pt-0">
                 <label className="pt-0 sm:pt-3 block" for="teléfono">
-                  Teléfono
+                  Teléfono<spam className="red"> (*)</spam>
                 </label>
                 <input
                   type="text"
-                  className="border rounded w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   id="telefono"
                   name="Teléfono"
                   placeholder="Teléfono"
-                  {...register("Telefono", { required: true })}
+                  maxLength={50}  
+
+                  {...register("Telefono", { 
+                    required: true, 
+                    pattern: {
+                      value: /^[0-9]+$/,  // Solo números
+                        message: "El Teléfono debe contener solo números"  // Mensaje para el 'pattern'
+                    }
+                  })}
+
+
                 />
                 {errors?.Telefono?.type === "required" && (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
                 )}
+
+                {errors?.Telefono?.type === "pattern" && (
+                  <p className="AlertaCampo">{errors.Telefono.message}</p>
+                )}
               </div>
 
               <div className="pt-3 sm:pt-0 sm:mr-5">
-                <label className="pt-0 sm:pt-3 block">Confirmar correo</label>
+                <label className="pt-0 sm:pt-3 block">Confirmar correo<spam className="red"> (*)</spam></label>
                 <input
                   id="confirmEmail"
                   type="email"
-                  className="border rounded  w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   placeholder="Correo@correo.com"
+                  maxLength={250}  
                   {...register("confirmEmail", {
                     required: "Confirma tu correo",
                     validate: (value) =>
                       value === watch("Correo") || "Los correos no coinciden",
                   })}
                 />
-                {errors?.confirmEmail?.type === "required" && (
-                  <p className="AlertaCampo">{errors.confirmEmail.message}</p>
-                )}
-                {errors?.confirmEmail?.type === "validate" && (
+                  {errors?.confirmEmail && (
                   <p className="AlertaCampo">{errors.confirmEmail.message}</p>
                 )}
               </div>
 
               <div className="pt-3 sm:pt-0 sm:mr-0">
                 <label className="pt-0 sm:pt-3  block" for="comentarios">
-                  Comentarios(opcional)
+                  Comentarios (opcional)
                 </label>
                 <textarea
                   id="comentarios"
                   type="text"
                   name="text"
                   placeholder="Comentarios"
-                  className="border rounded w-full"
+                  maxLength={450}  
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   {...register("Comentarios", { required: false })}
                 />
                 {errors?.Comentarios?.type === "required" && (
@@ -402,13 +617,13 @@ return (
 
               <div className="pt-3 sm:pt-0 sm:mr-5">
                 <label className="pt-0 sm:pt-3  block" for="niveleducativo">
-                  Nivel educativo del duplicado
+                  Nivel educativo del duplicado<spam className="red"> (*)</spam>
                 </label>
                 <select
                   id="NivelEducativo"
                   type="text"
                   name="text"
-                  className="border rounded  w-full"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   {...register("NivelEducativo", { required: true })}
                 >
                   <option value="">Seleccione..</option>
@@ -423,50 +638,54 @@ return (
 
             <div className="pt-3 grid grid-cols-1  sm:grid-cols-2 gap-5">
               <div class="">
-                <label class="control-label" for="curp">
-                  Curp:
+                <label class="control-label" htmlFor="curp">
+                  Curp:<spam className="red"> (*)</spam>
                 </label>
                 <input
-                  id="curp"
+                  id="Curp"
                   type="file"
                   accept="image/jpeg,image/jpg,application/pdf"
                   className="w-full"
                   name="file"
-                  onChange={(e) => handleFileChange(e, setFile)}
+                  //onChange={(e) => handleFileChange(e, setFile)}
+                  onChange={handleFileChange}
                   {...register("Curp",{required:true})}
                 />
-                {file && <p>Archivo seleccionado: {file.name}</p>}
-                {errors?.Curp?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>} 
+               {/* {file && <p>Archivo seleccionado: {file.name}</p>} */}
+                 {errors?.Curp?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>}
+
               </div>
               <div className="">
-                <label className="w-full" for="INE">
-                  Identificación oficial INE con fotografía por ambos lados:
+                <label className="w-full" for="ine">
+                  Identificación oficial INE con fotografía por ambos lados:<spam className="red"> (*)</spam>
                 </label>
                 <input
                   id="INE"
                   name="INE"
                   type="file"
-                  accept="image/jpeg,image/jpg/application/pdf"
+                 accept="image/jpeg,image/jpg,application/pdf"
                   className="w-full"
+                  onChange={handleFileChange}
                   {...register("Identificacion",{required:true})}
                 />
-                 {file && <p>Archivo seleccionado: {file.name}</p>}
-                 {errors?.Identificacion?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>} 
+                 {/* {file && <p>Archivo seleccionado: {file.name}</p>}*/}
+                 {errors?.Identificacion?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>}
               </div>
 
               <div class="pt-3">
                 <label class="control-label" for="fotografia">
-                  Fotografía tamaño infantil, con fondo blanco y camisa clara
+                  Fotografía tamaño infantil, con fondo blanco y camisa clara<spam className="red"> (*)</spam>
                 </label>
                 <input
-                  id="fotografia"
+                  id="foto"
+                  name="foto"
                   type="file"
-                  accept="image/jpeg,image/jpg/application/pdf"
+                  accept="image/jpeg,image/jpg,application/pdf"
                   className="w-full"
-                  name="Fotografía"
-                   {...register("Fotografia",{required:true})}
+                  onChange={handleFileChange}
+                  {...register("Fotografia",{required:true})}
                 />
-                {errors?.Fotografia?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>} 
+                 {errors?.Fotografia?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>}
               </div>
             </div>
 
@@ -483,29 +702,30 @@ return (
             <div className="pt-3 grid grid-cols-1  sm:grid-cols-2 gap-5">
               <div class="">
                 <label class="control-label" for="certificado">
-                  Certificado
+                  Certificado (opcional)
                 </label>
                 <input
-                  id="certificado"
+                  id="certi"
                   type="file"
-                  accept="image/jpeg,image/jpg/application/pdf"
+                  accept="image/jpeg,image/jpg,application/pdf"
                   className="w-full"
-                  name="Certificado"
-                 {...register("Certificado",{required:true})}
+                  name="certi"
+                  onChange={handleFileChange}
+                {...register("Certificado",{required:false})}
                 />
-                 {errors?.Certificado?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>} 
               </div>
-
+              {errors?.Certificado?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>}
               <div class="">
                 <label class="control-label" for="anio">
-                  Año
+                  Año (opcional)
                 </label>
                 <input
                   id="anio"
                   type="text"
                   name="text"
                   placeholder="Año"
-                  className="border rounded  w-full"
+                  maxLength={5}  
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                   {...register("Año", { required: false })}
                 />
                 {errors?.Año?.type === "required" && (
@@ -516,12 +736,15 @@ return (
 
             <div class="pt-4 form-group">
               <div class="checkbox">
+                Acepto términos y condiciones 
+                <br />
                 <label>
                   <input
                     name="Terminos"
                     type="checkbox"
                     {...register("Terminos", { required: true })}
                   />
+                  <spam className="red"> (*)</spam>
                   {errors?.Terminos?.type === "required" && (
                     <p className="AlertaCampo">
                       Por favor acepte el manifiesto
@@ -597,7 +820,7 @@ return (
     </PagSec>
   </div>
 );
-  
+
 }
 
 
