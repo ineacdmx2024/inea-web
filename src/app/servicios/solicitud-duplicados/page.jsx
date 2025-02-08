@@ -493,16 +493,12 @@ return (
                   <option value="">Seleccione..</option>
                   <option value="Aguascalientes">Aguascalientes</option>
                   <option value="Baja California">Baja California</option>
-                  <option value="Baja California Sur">
-                    Baja California Sur
-                  </option>
+                  <option value="Baja California Sur">Baja California Sur</option>
                   <option value="Campeche">Campeche</option>
                   <option value="Ciudad de México">Ciudad de México</option>
                   <option value="Chiapas">Chiapas</option>
                   <option value="Chihuahua">Chihuahua</option>
-                  <option value="Coahuila de Zaragoza">
-                    Coahuila de Zaragoza
-                  </option>
+                  <option value="Coahuila de Zaragoza"> Coahuila de Zaragoza</option>
                   <option value="Colima">Colima</option>
                   <option value="Durango">Durango</option>
                   <option value="Estado de México">Estado de México</option>
@@ -510,10 +506,24 @@ return (
                   <option value="Guerrero">Guerrero</option>
                   <option value="Hidalgo">Hidalgo</option>
                   <option value="Jalisco">Jalisco</option>
-                  <option value="Michuacan de Ocampo">
-                    Michuacan de Ocampo
-                  </option>
+                  <option value="Michuacan de Ocampo"> Michuacan de Ocampo</option>
                   <option value="Morelos">Morelos</option>
+                  <option value="Nayarit">Nayarit</option>
+                  <option value="Nuevo León">Nuevo León</option>
+                  <option value="Oaxaca">Oaxaca</option>
+                  <option value="Puebla">Puebla</option>
+                  <option value="Querétaro">Querétaro</option>
+                  <option value="Quintana Roo">Quintana Roo</option>
+                  <option value="San luis Potosí">San luis Potosí</option>
+                  <option value="Sonora">Sonora</option>
+                  <option value="Tabasco">Tabasco</option>
+                  <option value="Tamaulipas">Tamaulipas</option>
+                  <option value="Tlaxcala">Tlaxcala</option>
+                  <option value="Veracruz de Ignacio de la Llave">Veracruz de Ignacio de la Llave</option>
+                  <option value="Yucatán">Yucatán</option>
+                  <option value="Zacatecas">Zacatecas</option>
+                  <option value="Estados Unidos">Estados Unidos</option>
+                  <option value="Otro">Otro</option>
                 </select>
                 {errors?.LugarNacimiento?.type === "required" && (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
