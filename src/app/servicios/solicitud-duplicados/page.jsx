@@ -334,12 +334,16 @@ return (
 
       <div className="container mx-auto flex">
         <div className="w-full md:w-auto">
-          <p className="text-justify">
-            La siguiente información será enviada a la Unidad de Operación del INEA
-            Ciudad de México para tramitar el duplicado de un certificado de primaria
-            o secundaria expedido por es institucióon. Por eso, es importante que llenes
-            correctamente los campos que se solicitan.
-          </p>
+        <div className="mx-auto mb-4 w-full max-w-full md:max-w-[1140px]">
+        <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px] ">
+            <p className="text-justify font-light">
+              La siguiente información será enviada a la Unidad de Operación del INEA
+              Ciudad de México para tramitar el duplicado de un certificado de primaria
+              o secundaria expedido por es institucióon. Por eso, es importante que llenes
+              correctamente los campos que se solicitan.
+            </p>
+          </div>
+          </div>
 
           <label class="pt-3 control-label flex justify-center">
             <strong>
@@ -792,40 +796,43 @@ return (
                 Enviar
               </button>
             </div>
-            <p className="pt-3 text-justify">
-              En la cuenta{" "}
-              <strong>
-                <a className="text-blue-700" href="mailto:inea@inea.gob.mx">
-                  inea@inea.gob.mx
-                </a>
-              </strong>{" "}
-              puedes enviar cualquier duda o comentario tanto del envío,
-              descarga o impresión de tu certificado, como de los servicios que
-              te ofrecimos.
-              <br />
-              <br />
-              Si te condicionaron o pidieron algo a cambio de la entrega de tu
-              certificado o de cualquier otro servicio, DENÚNCIALO al:{" "}
-              <strong>
-                <a className="text-blue-700" href="tel:+558000060300">
-                  {" "}
-                  800-0060-300.
-                </a>
-              </strong>{" "}
-              Tu denuncia es confidencial y nos permitirá ofrecerte un mejor
-              servicio.
-              <br />
-              <br />
-              <strong>Aviso de Privacidad:</strong> Los datos personales
-              recabados serán protegidos y serán incorporados y tratados, según
-              corresponda, en los sistemas institucionales del INEA que han sido
-              debidamente inscrito en el Listado de Sistemas de Datos Personales
-              ante el Instituto Nacional de Transparencia, Acceso a la
-              Información y Protección de Datos Personales (INAI). Los datos
-              recabados en este registro consideran lo establecido en los
-              Artículos 16, 17 y 18 de la Ley General de Protección de Datos
-              Personales en Posesión de sujetos obligados.
-            </p>
+
+            <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
+              <p className="pt-3 text-justify font-light">
+                En la cuenta{" "}
+                <strong>
+                  <a className="text-blue-700" href="mailto:inea@inea.gob.mx">
+                    inea@inea.gob.mx
+                  </a>
+                </strong>{" "}
+                puedes enviar cualquier duda o comentario tanto del envío,
+                descarga o impresión de tu certificado, como de los servicios que
+                te ofrecimos.
+                <br />
+                <br />
+                Si te condicionaron o pidieron algo a cambio de la entrega de tu
+                certificado o de cualquier otro servicio, DENÚNCIALO al:{" "}
+                <strong>
+                  <a className="text-blue-700" href="tel:+558000060300">
+                    {" "}
+                    800-0060-300.
+                  </a>
+                </strong>{" "}
+                Tu denuncia es confidencial y nos permitirá ofrecerte un mejor
+                servicio.
+                <br />
+                <br />
+                <strong>Aviso de Privacidad:</strong> Los datos personales
+                recabados serán protegidos y serán incorporados y tratados, según
+                corresponda, en los sistemas institucionales del INEA que han sido
+                debidamente inscrito en el Listado de Sistemas de Datos Personales
+                ante el Instituto Nacional de Transparencia, Acceso a la
+                Información y Protección de Datos Personales (INAI). Los datos
+                recabados en este registro consideran lo establecido en los
+                Artículos 16, 17 y 18 de la Ley General de Protección de Datos
+                Personales en Posesión de sujetos obligados.
+              </p>
+            </div>
           </form>
         </div>
       </div>
