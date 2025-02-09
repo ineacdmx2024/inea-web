@@ -12,43 +12,42 @@
 }
 
 
-.input-personalizado {
-  box-sizing: border-box; /* Asegura que el borde no expanda el tamaño de la caja */
-  border: 1px solid #ccc; /* Color de borde por defecto */  
-  border-radius: 4px; /* Bordes redondeados */
-  padding: 0.5rem; /* Espaciado interno */
-  width: 100%; /* Ancho completo */
-  /*transition: border-color 0.3s, background-color 0.3s, border-width 0.3s; /* Transición suave */
-  outline: none !important; 
-}
+  .input-personalizado {
+    box-sizing: border-box; /* Asegura que el borde no expanda el tamaño de la caja */
+    border: 1px solid #ccc; /* Color de borde por defecto */  
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 0.5rem; /* Espaciado interno */
+    width: 100%; /* Ancho completo */
+    /*transition: border-color 0.3s, background-color 0.3s, border-width 0.3s; /* Transición suave */
+    outline: none !important; 
+  }
 
-.input-apellidopaterno{
-  box-sizing: border-box; 
-  border: 1px solid #ccc; /* Color de borde por defecto */  
-  border-radius: 4px; /* Bordes redondeados */
-  padding: 0.5rem; /* Espaciado interno */
-  /*transition: border-color 0.3s, background-color 0.3s, border-width 0.3s; *//* Transición suave */
-  outline: none !important; 
-}
+  .input-apellidopaterno{
+    box-sizing: border-box; 
+    border: 1px solid #ccc; /* Color de borde por defecto */  
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 0.5rem; /* Espaciado interno */
+    /*transition: border-color 0.3s, background-color 0.3s, border-width 0.3s; *//* Transición suave */
+    outline: none !important; 
+  }
 
-/* Estilo para cuando el input está en foco */
-.input-personalizado:hover,.input-apellidopaterno:hover {
-  border-color: #611432; /* Color de borde azul cuando está en foco */
-  border-width: 1.4px;
- 
-}
+  /* Estilo para cuando el input está en foco */
+  /* .input-personalizado:hover,.input-apellidopaterno:hover {
+    border-color: #611432; 
+    border-width: 1px;
+  
+  } */
 
-/* Estilo para cuando el input está en foco */
- .input-personalizado:focus, .input-apellidopaterno:focus{ 
-  outline: none !important; 
-  border-color: #611432 !important;  /* Color de borde azul cuando está en foco */
-   box-shadow: none !important; /* Eliminar cualquier sombra o resplandor extra */
-  /*background-color: #611432; *//* Fondo claro cuando está en foco }*/
- }  
+  /* Estilo para cuando el input está en foco */
+   .input-personalizado:focus, .input-apellidopaterno:focus{ 
+    outline: none !important; 
+    border-color: #496cec !important;
+  box-shadow: 0 0 10px rgba(173, 216, 230, 0.7) !important; /* Difuminado azul claro */
+  }   
 
-.input-personalizado:active, .input-apellidopaterno:active{
-  outline: none; /* Eliminar el contorno azul predeterminado en estado activo */
-}
+  /* .input-personalizado:active, .input-apellidopaterno:active{
+    outline: none;
+  } */
 
 .color-gris{
   background-color: #d3d3d3;

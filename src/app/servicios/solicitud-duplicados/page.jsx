@@ -212,8 +212,8 @@ const onSubmit = async(data) =>{
                   subject: formData.subject,
                   Mensaje: `
                       Nombre: ${truncatedName} <br>
-                      Apellido materno: ${truncatedApellidoMaterno} <br>
                       Apellido paterno: ${truncatedApellidoPaterno} <br>
+                      Apellido materno: ${truncatedApellidoMaterno} <br>
                       Fecha de nacimiento: ${truncatedFechaNacimiento} <br>
                       Lugar de nacimiento: ${data.LugarNacimiento} <br>
                       Correo: ${truncatedCorreo} <br>
@@ -243,8 +243,8 @@ const onSubmit = async(data) =>{
               subject: formData.subject,
               Mensaje: `
                   Nombre: ${truncatedName} <br>
-                  Apellido materno: ${truncatedApellidoMaterno} <br>
                   Apellido paterno: ${truncatedApellidoPaterno} <br>
+                  Apellido materno: ${truncatedApellidoMaterno} <br>
                   Fecha de nacimiento: ${truncatedFechaNacimiento} <br>
                   Lugar de nacimiento: ${data.LugarNacimiento} <br>
                   Correo: ${truncatedCorreo} <br>
@@ -339,7 +339,7 @@ return (
             <p className="text-justify font-light">
               La siguiente información será enviada a la Unidad de Operación del INEA
               Ciudad de México para tramitar el duplicado de un certificado de primaria
-              o secundaria expedido por es institucióon. Por eso, es importante que llenes
+              o secundaria expedido por esta institución. Por eso, es importante que llenes
               correctamente los campos que se solicitan.
             </p>
           </div>
@@ -347,7 +347,7 @@ return (
 
           <label class="pt-3 control-label flex justify-center">
             <strong>
-              Todos los servicios que proporciona el INEA son gratuitos.
+              Todos los servicios que proporciona el INEA son gratuitos
             </strong>
           </label>
 
@@ -377,9 +377,10 @@ return (
             </div>
 
             <div className="pt-3 grid grid-cols-1  sm:grid-cols-3">
-              <div className="sm:mr-7">
+              <div className="sm:mr-7 " >
                 <label className="block">Apellido Paterno<spam className="red"> (*)</spam></label>
                 <input
+       
                   type="text"
                   name="ApellidoPaterno"
                   className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
@@ -389,7 +390,7 @@ return (
                   {...register("ApellidoPaterno", { 
                     required: true, 
                     pattern: {
-                      value: /^[A-Za-z\s]+$/,  // Solo letras y espacios
+                      value: /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/,  // Solo letras y espacios
                       message: "El apellido solo puede contener letras"
                     }
                   })}
@@ -418,7 +419,7 @@ return (
                   {...register("ApellidoMaterno", { 
                     required: true, 
                     pattern: {
-                      value: /^[A-Za-z\s]+$/,  // Solo letras y espacios
+                      value: /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/,  // Solo letras y espacios
                       message: "El apellido solo puede contener letras"
                     }
                   })}
@@ -448,7 +449,7 @@ return (
                   {...register("Nombre", { 
                     required: true, 
                     pattern: {
-                      value: /^[A-Za-z\s]+$/,  // Solo letras y espacios
+                      value:/^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/,  // Solo letras y espacios
                       message: "El apellido solo puede contener letras"
                     }
                   })}
