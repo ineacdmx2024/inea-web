@@ -129,7 +129,8 @@ const Plazas = ({ datos }) => {
                 //step} {arreglo}
               }
               <div className="flex mt-[20px] mb-1 mx-[20px] justify-normal">
-                <div className="flex m-[0%] uppercase justify-normal text-left">
+                {/* <div className="flex m-[0%] uppercase justify-normal text-left"> */}
+                 <div className="flex m-[0%]  justify-normal text-left"> 
                   <div className="flex h-auto w-auto mr-1">
                     <svg
                       className={`h-6 w-6 ml-1 ${
