@@ -308,7 +308,8 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1GLZ_yu1v0d_ReD9eQTP9S5z5XfOS77M&ehbc=2E312F"
+    
+          src="https://www.google.com/maps/d/embed?mid=1KUG8-R8CmUpVRp3E-nIXuzz06p1wNlw&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -383,7 +384,8 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1OpDsI4wB82GhT1H24u5RPISvOZn7wPc&ehbc=2E312F"
+
+          src="https://www.google.com/maps/d/embed?mid=1tvi1UH-veWd6uDbiO3qqnEjuNgnYEtg&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -430,7 +432,7 @@ function Ubicacion() {
       title: "Benito Juárez",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=11TxF0-Xr_zMdOm3JohqipE9ULyNeVyE&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1x2BWSPci6dXVLQRGMJqYPlX9j7_o6Io&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -446,7 +448,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1sBBkdZDsa_VAHhVpQHMPNzmD840E_sc&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1ITyGlGxzE2bOtY_Nvn3ZpQuGsIETQh0&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -482,7 +484,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1pRhCdjAb3bGbYXk59bzElVfrvzxyib4&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1BwTQcdqppGITq9b3FiZlElmMmrK-DQk&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -514,7 +516,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1QeQuu8mT6f2UGhEMEPPzUKpfFpJAD38&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1QQ9E05nybLWo3xQ-ghjhRN0v3ltjSdI&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -566,7 +568,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1eCfaAhwI_yQASenCJukusXFzawGqr9I&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1lAOkYsB99LTW8e_TOnjY9Scs3o-jjjc&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -826,7 +828,7 @@ function Ubicacion() {
       title: "Iztacalco",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1Ba0DuI4nZyUHQJeM9ICUqwcBd3goN2s&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1iLy4t7C7rHAzzMdZNQ2CRV6p7BnYhSg&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -905,7 +907,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1hfbIhr2v6I2MUr0OKcH3FAHv7jYZlL4&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1OznqZCbiP9RCZsItgJ4A5VtHJqVn3bY&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -1047,7 +1049,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1lOqAixDT8dKi2x_QV3Ya8prcg3y0Bck&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1ncVqwipRDOxyw_QgeNRzQ6fsqe5vXks&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -1079,7 +1081,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=16fPqTuB8v8TY7fMcTs4xp6CafHTz29g&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1zXfA0ytyAY7vwUiaZ_yoBwBYNe-Tc9s&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -1115,7 +1117,7 @@ function Ubicacion() {
       title: "Milpa Alta",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1W-f09zlUlMIutaNVR7GYCYlOLuWKN2c&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1IO2-asrRxv8fBvR6vfsQOqjohy2pIIw&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -1146,7 +1148,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=18MvNS2u4wLcz6z9sUDxPeTzEKvZptXA&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1KyEsuAGClb9AJaB_132IGHOkDQTtHww&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         />
       ),
@@ -1194,7 +1196,7 @@ function Ubicacion() {
       title: "Tlalpan",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1_DlpyIry4s8cb6iZnr76O6-uD1T-W4E&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1WMzcmG_cP0QEkJqPQUttqSVSRDo-UR8&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -1251,7 +1253,7 @@ function Ubicacion() {
       title: "Venustiano Carranza",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1Z-CZEd0zxdnDZWghgIOxlrOaA9wpMf4&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1-IH5YXtPfckdLJzkRCoXXVEGmXYIk5s&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -1284,7 +1286,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1gDIObMv2mNjoF5xMGtf6TIhxdEW5qFw&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1WuZvjTjaWd_2I6IAG7D7DVXqgYHEL_4&ehbc=2E312F&noprof=1"
           className="  md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
