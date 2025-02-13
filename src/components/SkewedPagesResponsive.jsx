@@ -49,17 +49,21 @@ const SkewedPagesResponsive = ({ datos }) => {
   ];
 
   return (
-    <div>
-      <div className="flex flex-wrap bg-white p-3 top-0 w-full">
+    <div  className="h-auto">
+      
+      
+
+      <div className="flex flex-wrap top-0">
+      {/* <div className="flex flex-wrap bg-white p-3 top-0 w-full"> */}
         {alcaldias.map((elemento) => (
           <button
             key={elemento.IndexSlides}
             type="button"
-            className="text-[#611232] hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-[white] font-medium rounded-lg px-5 py-2.5 text-center me-2 mb-2 text-md flex"
-            onClick={() => handleAlcaldiaClick(elemento.IndexSlides)}
+               className="text-[#611232] rounded-lg top-0 hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-[white] font-medium px-5 py-2.5 text-center me-2 mb-2  text-lg flex"
+               onClick={() => handleAlcaldiaClick(elemento.IndexSlides)}
           >
             <svg
-              className="w-4 h-4"
+              className="w-5 h-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

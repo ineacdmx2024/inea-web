@@ -1855,8 +1855,8 @@ function Ubicacion() {
           </div>
           <div id="contenedorUbicacion">
             {opcionSeleccionada === "coordinaciones" && (
-              <div className="mx-auto mb-32 w-full grid grid-cols-1 gap-2 row-span-1">
-                <div className="mx-auto mb-4 w-full max-w-full md:max-w-[1140px]">
+              <div className="row-span-1">
+                <div className="mx-auto mb-4 w-full max-w-full ">
                   <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px] ">
                     <strong>
                       Ubica tu coordinación de zona dependiendo de tu alcaldía
