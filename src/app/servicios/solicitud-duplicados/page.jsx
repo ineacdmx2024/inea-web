@@ -511,7 +511,7 @@ return (
                   <option value="Guerrero">Guerrero</option>
                   <option value="Hidalgo">Hidalgo</option>
                   <option value="Jalisco">Jalisco</option>
-                  <option value="Michuacan de Ocampo"> Michuacan de Ocampo</option>
+                  <option value="Michoacán de Ocampo"> Michoacán de Ocampo</option>
                   <option value="Morelos">Morelos</option>
                   <option value="Nayarit">Nayarit</option>
                   <option value="Nuevo León">Nuevo León</option>

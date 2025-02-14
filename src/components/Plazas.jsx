@@ -108,7 +108,7 @@ const Plazas = ({ datos }) => {
 
     const columns =
       items.length > 10
-        ? "md:grid-cols-3  md:text-lg"
+        ? "md:grid-cols-2  md:text-lg"
         : "md:grid-cols-2  md:text-lg";
 
     return (
@@ -219,7 +219,7 @@ const Plazas = ({ datos }) => {
                 index === currentPage ? "translate-x-0" : "translate-x-full"
               } transition duration-500`}
             >
-              <h1 className="mb-4 uppercase text-2xl text-center">
+              <h1 className="mb-3 uppercase text-2xl text-center">
                 {pageData.title}
               </h1>
               <p className="w-[100%]">{pageData.map}</p>
