@@ -7,6 +7,18 @@ import { useForm, Controller } from "react-hook-form";
 import "./Duplicados.css";
 import "react-datepicker/dist/react-datepicker.css";
 
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
+import { registerLocale, setDefaultLocale } from  "react-datepicker";
+import { es } from 'date-fns/locale/es';
+registerLocale('es', es)
+
+
+
+
+
+
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -19,9 +31,46 @@ const montserrat = Montserrat({
 
 function Solicitud_duplicados() {
 
+  const [startDate, setStartDate] = useState(null);
+  // const [errors, setErrors] = useState(null);
+  
+
   const [datos, setDatos] = useState([]);
   const [file, setFile] = useState(null);
   const [captcha, setCaptcha] = React.useState("");
+
+  function range(start, end, step) {
+    const result = [];
+    for (let i = start; i < end; i += step) {
+      result.push(i);
+    }
+    return result;
+  }
+
+  //-----------------------
+//const [startDate, setStartDate] = useState(new Date());
+// const years = range(1990, new Date().getFullYear() + 1, 1);
+
+const years = [2020, 2021, 2022, 2023, 2024]; // Agrega más años si es necesario
+
+// const years = range(1990, getYear(new Date()) + 1, 1);
+const months = [
+  "e ",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+
+//-------------------
 
  
 
@@ -57,9 +106,16 @@ function Solicitud_duplicados() {
     text: '',
   });
 
-  const {register,handleSubmit,watch, formState: { errors }} = useForm();
+  const {register,handleSubmit,watch, control,formState: { errors }} = useForm();
 
 
+
+  const maxDate = new Date();
+  maxDate.setFullYear(maxDate.getFullYear() + 100); // Agregar 100 años
+
+  // Calculando la fecha mínima (100 años atrás)
+  const minDate = new Date();
+  minDate.setFullYear(minDate.getFullYear() - 100); // Restar 100 años
 //Recuperar archivos adjunto
   const handleFileChange = (event) => {
 
@@ -77,8 +133,9 @@ function Solicitud_duplicados() {
   const fetchData = async  () => {
     try {
 
-      //http://localhost:1337/api/correos?populate=%2A
-          const res = await fetch(`https://inea-web-backend.onrender.com/api/correos?populate=%2A`)
+      //
+          const res = await fetch(`http://localhost:1337/api/correos?populate=%2A`)
+          //const res = await fetch(`https://inea-web-backend.onrender.com/api/correos?populate=%2A`)
 
         
 
@@ -268,8 +325,9 @@ const onSubmit = async(data) =>{
 
 
       
-//http://localhost:1337/api/correoineas
-        const response = await fetch('https://inea-web-backend.onrender.com/api/correoineas', {
+        
+          const response = await fetch('http://localhost:1337/api/correoineas', {
+         //const response = await fetch('https://inea-web-backend.onrender.com/api/correoineas', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -466,8 +524,8 @@ return (
               </div>
             </div>
 
-            <div className="pt-3  grid grid-cols-1  sm:grid-cols-2">
-              <div className="sm:mr-5">
+            {/* <div className="pt-3  grid grid-cols-1  sm:grid-cols-2"> */}
+              {/* <div className="sm:mr-5">
                 <label className="block" for="calendarYear">
                   Fecha de nacimiento<spam className="red"> (*)</spam>
                 </label>
@@ -483,7 +541,179 @@ return (
                 {errors?.FechaNacimiento?.type === "required" && (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
                 )}
-              </div>
+              </div> */}
+      {/* <div className="sm:mr-5">
+        <label className="block" htmlFor="calendarYear">
+          Fecha de nacimiento<spam className="red"> (*)</spam>
+        </label>
+        
+        {/* Usamos el 'Controller' para integrar DatePicker con react-hook-form 
+        <Controller
+          control={control}  // Asegúrate de pasar 'control' aquí
+          name="FechaNacimiento"
+          rules={{ required: true }} // Validación de campo obligatorio
+          render={({ field }) => (
+            <DatePicker
+              {...field}  // Pasamos 'field' para manejar el valor y los cambios
+              locale="es"
+              type="text"
+              id="calendarYear"
+              className="text-[#333334] cursor-pointer input-personalizado"
+              placeholder="DD/MM/AAAA"
+              selected={startDate}
+              //selected={startDate}
+              onChange={(date) => setStartDate(date)} // Actualizamos el valor de startDate
+              minDate={minDate} // Fecha mínima (100 años atrás)
+              maxDate={maxDate} // Fecha máxima (100 años adelante)
+              // showMonthYearPicker // Permite seleccionar solo mes y año
+              dateFormat="dd/MM/yyyy" // Formato de fecha con día, mes y año
+            />
+          )}
+        />
+        
+        {errors?.FechaNacimiento?.type === "required" && (
+          <p className="AlertaCampo">Este campo es obligatorio</p>
+        )}
+      </div> */}
+{/* 
+<DatePicker
+
+      renderCustomHeader={({
+
+        
+        date,
+        changeYear,
+        changeMonth,
+        decreaseMonth,
+        increaseMonth,
+        prevMonthButtonDisabled,
+        nextMonthButtonDisabled,
+      }) => (
+        <div
+          style={{
+            margin: 10,
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
+            {"<"}
+          </button>
+
+          <select
+            value={date.getFullYear()}
+            onChange={({ target: { value } }) => changeYear(Number(value))}
+          >
+            {years.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+
+          <select
+            value={months[date.getMonth()]}
+            onChange={({ target: { value } }) =>
+              changeMonth(months.indexOf(value))
+            }
+          >
+            {months.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+
+          <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
+            {">"}
+          </button>
+        </div>
+      )}
+      name="Fecha de nacimiento"
+      selected={startDate}
+      onChange={(date) => setStartDate(date)}
+
+
+
+      
+    /> */}
+             <div className="pt-3  grid grid-cols-1  sm:grid-cols-2">
+              <div className="sm:mr-5">
+              <label className="block" for="calendarYear">
+                                Fecha de nacimiento<spam className="red"> (*)</spam>
+                              </label>
+              <Controller
+
+
+          control={control}  // Se pasa el 'control' para integrar con react-hook-form
+          name="FechaNacimiento"
+          rules={{ required: "Este campo es obligatorio" }} // Validación obligatoria
+          render={({ field }) => (
+            <DatePicker
+              {...field}  // Pasamos 'field' para manejar el valor y los cambios
+              renderCustomHeader={({
+                date,
+                changeYear,
+                changeMonth,
+                decreaseMonth,
+                increaseMonth,
+                prevMonthButtonDisabled,
+                nextMonthButtonDisabled,
+              }) => (
+                <div
+                  style={{
+                    margin: 10,
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
+                    {"<"}
+                  </button>
+
+                  <select
+                    value={date.getFullYear()}
+                    onChange={({ target: { value } }) => changeYear(Number(value))}
+                  >
+                    {years.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+
+                  <select
+                    value={months[date.getMonth()]}
+                    onChange={({ target: { value } }) =>
+                      changeMonth(months.indexOf(value))
+                    }
+                  >
+                    {months.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+
+                  <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
+                    {">"}
+                  </button>
+                </div>
+              )}
+              selected={field.value} // Aquí tomamos el valor del campo controlado por react-hook-form
+              onChange={field.onChange}  // Asegúrate de manejar el cambio usando field.onChange
+              dateFormat="dd/MM/yyyy" // Formato de fecha (día, mes, año)
+              placeholderText="DD/MM/AAAA" // Texto de marcador
+              className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
+            />
+          )}
+        />
+
+        {/* Mostrar mensaje de error si no se selecciona la fecha */}
+        {errors?.FechaNacimiento && (
+          <p className="AlertaCampo">{errors.FechaNacimiento.message}</p>
+        )}
+        </div>
 
               <div className="">
                 <label className="pt-3 sm:pt-0 block">
