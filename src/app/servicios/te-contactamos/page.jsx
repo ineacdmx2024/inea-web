@@ -20,13 +20,9 @@ const montserrat = Montserrat({
 function Te_Contactamos() {
 
   const [datos, setDatos] = useState([]);
-  const [file, setFile] = useState(null);
   const [captcha, setCaptcha] = React.useState("");
 
  
-
-
-
   const cards = [
     {
       title: "¿Qué modalidad elijo?",
@@ -60,17 +56,6 @@ function Te_Contactamos() {
   const {register,handleSubmit,watch, formState: { errors }} = useForm();
 
 
-//Recuperar archivos adjunto
-  const handleFileChange = (event) => {
-
-    const selectedFile = event.target.files[0];
-
-    if (selectedFile) {
-
-      setFile(selectedFile);
-
-    }
-  };
 
 
 
@@ -78,8 +63,8 @@ function Te_Contactamos() {
     try {
 
       
-           ///const res = await fetch(`https://inea-web-backend.onrender.com/api/correos?populate=%2A`)
-          const res = await fetch(`http://localhost:1337/api/correos?populate=%2A`)
+           const res = await fetch(`https://inea-web-backend.onrender.com/api/correo-pre-registros?populate=%2A`)
+          //const res = await fetch(`http://localhost:1337/api/correo-pre-registros?populate=%2A`)
 
         
 
@@ -126,10 +111,11 @@ const onSubmit = async(data) =>{
 
       if (item) {
      
+
         if (item.Lugar_de_nacimiento === "Genérico" || item.Lugar_de_nacimiento === "Generico" ) {
             // Si es así, agregamos el correo a la lista de Obt_Correos
             Obt_Correo_Generico.push(item.Correo);
-          
+         
         }
       }
     });
@@ -168,23 +154,20 @@ const onSubmit = async(data) =>{
           const maxLengthFechaNacimiento = 10;
           const truncatedFechaNacimiento = data.FechaNacimiento.length > maxLengthFechaNacimiento ? `${data.FechaNacimiento.substring(0, maxLengthFechaNacimiento)}` : data.FechaNacimiento;
          
-       
-          // const maxLengthLugardeResidencia= 250;
-          // const truncatedLugardeResidencia = data.LugardeResidencia.length > maxLengthLugardeResidencia ? `${data.LugardeResidencia.substring(0, maxLengthLugardeResidencia)}` : data.LugardeResidencia;
-         
-
-
+      
           const maxLengthCorreo= 250;
           const truncatedCorreo = data.Correo.length > maxLengthCorreo ? `${data.Correo.substring(0, maxLengthCorreo)}` : data.Correo;
          
           const maxLengthTelefono= 50;
           const truncatedTelefono = data.Telefono.length > maxLengthTelefono ? `${data.Telefono.substring(0, maxLengthTelefono)}` : data.Telefono;
          
-          const maxLengthColonia= 450;
+          const maxLengthColonia= 250;
           const truncatedColonia = data.Colonia.length > maxLengthColonia ? `${data.Colonia.substring(0, maxLengthColonia)}` : data.Colonia;
          
-          const maxLengthAño = 5;
-          const truncatedAño = data.Año.length > maxLengthAño ? `${data.Año.substring(0, maxLengthAño)}` : data.Año;
+ 
+
+// console.log(Obt_Correo_Generico)
+//console.log(Obt_Correo_Generico[0])
 
 
    
@@ -203,15 +186,11 @@ const onSubmit = async(data) =>{
                   Teléfono de contacto: ${truncatedTelefono} <br>
                   Correo: ${truncatedCorreo} <br>
                   Nivel que desea cursar: ${data.NivelEducativo} <br>
-                  Oferta Educativa: ${data,OfertaEducativa} <br>
+                  Oferta educativa: ${data.OfertaEducativa} <br>
               `,
 
-              Para: `${Obt_Correos[0]},${Obt_Correo_Generico[0]},${data.Correo}`,
-             imagen: [
-     
 
-              ].join('|')  // Unir los nombres de los archivos con una coma
-
+              Para: `${Obt_Correos[0]},${Obt_Correo_Generico[0]},${data.Correo}`
           }
       };
 
@@ -220,8 +199,8 @@ const onSubmit = async(data) =>{
 
       
 
-        //const response = await fetch('https://inea-web-backend.onrender.com/api/correoineas', {
-          const response = await fetch('http://localhost:1337/api/correoineas', {
+         const response = await fetch('https://inea-web-backend.onrender.com/api/historialde-pre-registros', {
+         //const response = await fetch('http://localhost:1337/api/historialde-pre-registros', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -597,7 +576,7 @@ return (
                   placeholder="Colonia"
                   maxLength={450}  
                   className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
-                  {...register("Colonia", { required: false })}
+                  {...register("Colonia", { required: true })}
                 />
                 {errors?.Colonia?.type === "required" && (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
