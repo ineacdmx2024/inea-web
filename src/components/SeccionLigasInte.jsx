@@ -130,13 +130,6 @@ function SeccionLigasInte() {
     fetchEnlaces()
   }, [])
 
-  /*const handleButtonClick = (item) => {
-    if (item.link) {
-      window.open(item.link, "_blank"); // Abre en una nueva pestaña
-    } else if (item.slug) {
-      router.push(`/home-enlaces-de-interes/${item.slug}`); // Navega internamente
-    }
-  };*/
   const handleButtonClick = (item) => {
     if (item && item.link) {
       window.open(item.link, "_blank") // Abre en una nueva pestaña
@@ -192,6 +185,25 @@ function SeccionLigasInte() {
           color: #611232;
           transform: scale(1.2);
         }
+        
+        /* Estilos solo para desktop que igualan el gap */
+        @media (min-width: 768px) {
+          .desktop-carousel .slick-slide {
+            padding: 0 16px;  /* Mitad del gap-8 (32px) */
+          }
+          
+          .desktop-carousel .slick-list {
+            margin: 0 -16px;  /* Negativo del padding */
+          }
+          
+          /* Aseguramos que la card tiene las mismas dimensiones */
+          .desktop-carousel .carousel-card {
+            height: 450px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+          }
+        }
       `}</style>
 
       <div className="p-2 pt-0">
@@ -216,7 +228,10 @@ function SeccionLigasInte() {
                 </div>
                 <button
                   className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light mt-auto"
-                  onClick={() => handleButtonClick(fijos)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleButtonClick(fijos);
+                  }}
                 >
                   Ir al sitio
                 </button>
@@ -225,7 +240,7 @@ function SeccionLigasInte() {
           ))}
         </div>
 
-        {/* Mobile fixed links carousel */}
+        {/* Mobile fixed links carousel - EXACTAMENTE IGUAL AL CÓDIGO ORIGINAL */}
         <div className="carrusel tablet:hidden">
           <Slider
             {...settings}
@@ -250,7 +265,10 @@ function SeccionLigasInte() {
                   </div>
                   <button
                     className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light"
-                    onClick={() => handleButtonClick(fijos)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleButtonClick(fijos);
+                    }}
                   >
                     Ir al sitio
                   </button>
@@ -261,14 +279,14 @@ function SeccionLigasInte() {
         </div>
 
         {/* Remaining links carousel */}
-        <div className="carrusel">
+        <div className="carrusel desktop-carousel">
           <Slider
             {...settings}
             className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[260px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {restantes.map((restantes, index) => (
-              <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""} tablet:px-8`}>
-                <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-8 flex flex-col justify-between">
+              <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""}`}>
+                <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-8 flex flex-col justify-between carousel-card">
                   <div className="flex flex-col items-center w-full h-full">
                     <div className="w-full aspect-[4/3] relative mb-4">
                       <img
@@ -285,7 +303,10 @@ function SeccionLigasInte() {
                   </div>
                   <button
                     className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light"
-                    onClick={() => handleButtonClick(restantes)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleButtonClick(restantes);
+                    }}
                   >
                     Ir al sitio
                   </button>
@@ -300,4 +321,3 @@ function SeccionLigasInte() {
 }
 
 export default SeccionLigasInte
-
