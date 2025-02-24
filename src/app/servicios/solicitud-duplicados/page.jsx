@@ -769,7 +769,7 @@ return (
                   )}
                 </label>
               </div>
-              <p class="text-justify" for="file-01">
+              <p class="text-justify  text-[12px]"  for="file-01">
                 Manifiesto bajo protesta de decir verdad que la información y
                 los datos aquí asentados son verdaderos, reconosco que en caso
                 de faltar a la verdad, estaré incurrriendo en el delito de
@@ -798,7 +798,7 @@ return (
               </button>
             </div>
 
-            <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
+            <div className="pt-4 leading-7 justify-start text-[#333334] text-[12px]">
               <p className="pt-3 text-justify font-light">
                 En la cuenta{" "}
                 <strong>
@@ -809,8 +809,7 @@ return (
                 puedes enviar cualquier duda o comentario tanto del envío,
                 descarga o impresión de tu certificado, como de los servicios que
                 te ofrecimos.
-                <br />
-                <br />
+
                 Si te condicionaron o pidieron algo a cambio de la entrega de tu
                 certificado o de cualquier otro servicio, DENÚNCIALO al:{" "}
                 <strong>
@@ -821,8 +820,6 @@ return (
                 </strong>{" "}
                 Tu denuncia es confidencial y nos permitirá ofrecerte un mejor
                 servicio.
-                <br />
-                <br />
                 <strong>Aviso de Privacidad:</strong> Los datos personales
                 recabados serán protegidos y serán incorporados y tratados, según
                 corresponda, en los sistemas institucionales del INEA que han sido

@@ -558,14 +558,53 @@ return (
                     required: false,
                     validate: (value) =>
                       value === watch("Correo") || "Los correos no coinciden",
-                  })}
+                  })
+                }
                 />
                   {errors?.confirmEmail && (
                   <p className="AlertaCampo">{errors.confirmEmail.message}</p>
                 )}
               </div>
+              
+              <div className="pt-3 sm:pt-0">
+                <label className="pt-0 sm:pt-3 block" for="teléfono">
+                  Confirmar teléfono de contacto<spam className="red"> (*)</spam>
+                </label>
+                <input
+                  type="text"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
+                  id="Confirmartelefono"
+                  name="Teléfono"
+                  placeholder="Teléfono"
+                  maxLength={50}  
 
-              <div className="pt-3 sm:pt-0 sm:mr-0">
+                  {...register("Confirmartelefono", { 
+                    required: true, 
+                    validate: (value) =>
+                      value === watch("Telefono") || "Los teléfonos no coinciden",
+                
+                    pattern: {
+                      value: /^[0-9]+$/,  // Solo números
+                        message: "El Teléfono debe contener solo números"  // Mensaje para el 'pattern'
+                    }
+               })}
+
+
+                />
+                 {errors?.Confirmartelefono?.type === "required" && (
+                  <p className="AlertaCampo">Este campo es obligatorio</p>
+                )}
+
+                {errors?.Confirmartelefono?.type === "pattern" && (
+                  <p className="AlertaCampo">{errors.Confirmartelefono.message}</p>
+                )}
+
+               {errors?.Confirmartelefono && (
+                  <p className="AlertaCampo">{errors.Confirmartelefono.message}</p>
+                )}
+              </div>
+
+              <div className="pt-3 sm:pt-0 sm:mr-5">
                 <label className="pt-0 sm:pt-3  block" for="colonia">
                   Colonia
                 </label>
@@ -645,7 +684,7 @@ return (
                   )}
                 </label>
               </div>
-              <p class="text-justify" for="file-01">
+              <p class="text-justify text-[12px]" for="file-01">
                 Manifiesto bajo protesta de decir verdad que la información y
                 los datos aquí asentados son verdaderos, reconosco que en caso
                 de faltar a la verdad, estaré incurrriendo en el delito de
@@ -674,7 +713,7 @@ return (
               </button>
             </div>
 
-            <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
+            <div className="pt-4 leading-7 justify-start text-[#333334] text-[12px]">
               <p className="pt-3 text-justify font-light">
                 En la cuenta{" "}
                 <strong>
@@ -685,8 +724,6 @@ return (
                 puedes enviar cualquier duda o comentario tanto del envío,
                 descarga o impresión de tu certificado, como de los servicios que
                 te ofrecimos.
-                <br />
-                <br />
                 Si te condicionaron o pidieron algo a cambio de la entrega de tu
                 certificado o de cualquier otro servicio, DENÚNCIALO al:{" "}
                 <strong>
@@ -697,8 +734,6 @@ return (
                 </strong>{" "}
                 Tu denuncia es confidencial y nos permitirá ofrecerte un mejor
                 servicio.
-                <br />
-                <br />
                 <strong>Aviso de Privacidad:</strong> Los datos personales
                 recabados serán protegidos y serán incorporados y tratados, según
                 corresponda, en los sistemas institucionales del INEA que han sido
