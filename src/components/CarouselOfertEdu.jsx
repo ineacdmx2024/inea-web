@@ -187,7 +187,7 @@ function CarouselOfertEdu() {
                         alt={noticia.name}
                       />
                     </div>
-                    <h3 className={`my-4 tablet:my-7 ${noticia.name.length > 35 ? 'tablet:my-2' : ''} px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}>
+                    <h3 className={`my-4 tablet:my-7 ${noticia.name.length > 35 ? 'tablet:my-3' : ''} px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}>
                       {isSmallScreen || noticia.name.length > 35 ? truncateText(noticia.name, 35) : noticia.name}
                     </h3>
                   </div>
