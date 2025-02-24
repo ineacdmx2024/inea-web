@@ -240,7 +240,7 @@ function SeccionLigasInte() {
           ))}
         </div>
 
-        {/* Mobile fixed links carousel - EXACTAMENTE IGUAL AL CÓDIGO ORIGINAL */}
+        {/* Mobile fixed links carousel*/}
         <div className="carrusel tablet:hidden">
           <Slider
             {...settings}
