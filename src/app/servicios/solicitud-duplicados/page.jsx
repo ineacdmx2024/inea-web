@@ -790,7 +790,7 @@ return (
             )}
             <div className="pt-3 pb-3">
               <button
-                className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] block flex w-full justify-center"
+                className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] flex w-full justify-center"
                 type="submit"
                 value="Enviar"
               >

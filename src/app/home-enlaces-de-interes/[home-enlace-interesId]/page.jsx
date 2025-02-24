@@ -232,38 +232,38 @@ function DetalleEnlace(slug) {
   };
 
   return (
-    <div>
-      {cont.map((cont, index) => (
-        <div key={index}>
-          <div className="ml-[26rem] mb-10"></div>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {cont.map((post, index) => (
+        <div key={index} className="mb-10">
           <PagSec
             Enlaces={enlacesL}
-            Titulo={cont.titulo}
-            Subtitulo={cont.subtitulo}
+            Titulo={post.titulo}
+            Subtitulo={post.subtitulo}
+            className="flex flex-col items-center space-y-6"
           >
-            <h1
-              className={`${montserrat.className} text-[#404041] text-[18px] font-light`}
-            >
-              INEA Ciudad de México | {cont.fecha ? fechaFun(cont.fecha) : ""}
-            </h1>
-            <div className="m-auto my-6 rounded-lg max-h-[392px]">
+            <div className="text-base font-medium text-gray-900">
+              INEA Ciudad de México | {fechaFun(post.fecha)}
+            </div>
+            
+            <div className="m-auto my-6 rounded-lg">
               <Image
-                src={cont.imagen}
-                alt={cont.NomImg || "Imagen sin título"}
-                className="w-full rounded-lg"
+                src={post.imagen || "/placeholder-image.jpg"}
+                alt={post.NomImg || "Imagen de artículo"}
                 width={1000}
                 height={700}
+                className="w-full h-[500px] object-cover rounded-lg shadow-md"
+                priority
               />
             </div>
-            <div className="mb-6 mt-12 leading-loose">
-              {renderContenido(cont.contenido)}
+
+            <div className="prose lg:prose-xl max-w-3xl text-gray-800">
+              {renderContenido(post.contenido)}
             </div>
           </PagSec>
         </div>
       ))}
     </div>
   );
-  // Accede a los parámetros
 }
 
 export default DetalleEnlace;
