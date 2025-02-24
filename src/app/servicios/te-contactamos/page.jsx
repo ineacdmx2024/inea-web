@@ -4,20 +4,8 @@ import React,{ useState,useEffect } from 'react'
 import PagSec from "@/components/PlantillaPagSec";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useForm, Controller } from "react-hook-form";
-import "./Duplicados.css";
+import "./TeContactamos.css";
 import "react-datepicker/dist/react-datepicker.css";
-
-import DatePicker from "react-datepicker";
-
-import "react-datepicker/dist/react-datepicker.css";
-import { registerLocale, setDefaultLocale } from  "react-datepicker";
-import { es } from 'date-fns/locale/es';
-registerLocale('es', es)
-
-
-
-
-
 
 import { Montserrat } from "next/font/google";
 
@@ -29,53 +17,12 @@ const montserrat = Montserrat({
 
 
 
-function Solicitud_duplicados() {
-
-  const [startDate, setStartDate] = useState(null);
-  // const [errors, setErrors] = useState(null);
-  
+function Te_Contactamos() {
 
   const [datos, setDatos] = useState([]);
-  const [file, setFile] = useState(null);
   const [captcha, setCaptcha] = React.useState("");
 
-  function range(start, end, step) {
-    const result = [];
-    for (let i = start; i < end; i += step) {
-      result.push(i);
-    }
-    return result;
-  }
-
-  //-----------------------
-//const [startDate, setStartDate] = useState(new Date());
-// const years = range(1990, new Date().getFullYear() + 1, 1);
-
-const years = [2020, 2021, 2022, 2023, 2024]; // Agrega más años si es necesario
-
-// const years = range(1990, getYear(new Date()) + 1, 1);
-const months = [
-  "e ",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
-
-//-------------------
-
  
-
-
-
   const cards = [
     {
       title: "¿Qué modalidad elijo?",
@@ -106,36 +53,18 @@ const months = [
     text: '',
   });
 
-  const {register,handleSubmit,watch, control,formState: { errors }} = useForm();
+  const {register,handleSubmit,watch, formState: { errors }} = useForm();
 
 
-
-  const maxDate = new Date();
-  maxDate.setFullYear(maxDate.getFullYear() + 100); // Agregar 100 años
-
-  // Calculando la fecha mínima (100 años atrás)
-  const minDate = new Date();
-  minDate.setFullYear(minDate.getFullYear() - 100); // Restar 100 años
-//Recuperar archivos adjunto
-  const handleFileChange = (event) => {
-
-    const selectedFile = event.target.files[0];
-
-    if (selectedFile) {
-
-      setFile(selectedFile);
-
-    }
-  };
 
 
 
   const fetchData = async  () => {
     try {
 
-      //
-          const res = await fetch(`http://localhost:1337/api/correos?populate=%2A`)
-          //const res = await fetch(`https://inea-web-backend.onrender.com/api/correos?populate=%2A`)
+      
+           const res = await fetch(`https://inea-web-backend.onrender.com/api/correo-pre-registros?populate=%2A`)
+          //const res = await fetch(`http://localhost:1337/api/correo-pre-registros?populate=%2A`)
 
         
 
@@ -182,10 +111,11 @@ const onSubmit = async(data) =>{
 
       if (item) {
      
+
         if (item.Lugar_de_nacimiento === "Genérico" || item.Lugar_de_nacimiento === "Generico" ) {
             // Si es así, agregamos el correo a la lista de Obt_Correos
             Obt_Correo_Generico.push(item.Correo);
-          
+         
         }
       }
     });
@@ -208,29 +138,6 @@ const onSubmit = async(data) =>{
         }
       });
 
-        // Creación del FormData para enviar archivos
-        const formData = new FormData();
-        formData.append('Curp', data.Curp[0]); // Campo 'Curp'
-        formData.append('Identificacion', data.Identificacion[0]); // Campo 'Identificacion'
-        formData.append('Fotografia', data.Fotografia[0]); // Campo 'Fotografía'
-        formData.append('Certificado', data.Certificado[0]); // Campo 'Certificado'
-
-        try {
-          // Enviar los archivos al servidor usando fetch
-          const res = await fetch('/api/upload', {
-            method: 'POST',
-            body: formData,  // FormData se encarga del tipo de contenido automáticamente
-          });
-
-          // Verifica si la respuesta fue exitosa
-          if (!res.ok) {
-            throw new Error('Error al enviar los datos');
-          }
-
-          const RESDATA = await res.json();  // Parsear la respuesta JSON
-
-          // Imprimir los resultados de la respuesta
-          //console.log(RESDATA);
 
           var emailData='';
 
@@ -247,52 +154,23 @@ const onSubmit = async(data) =>{
           const maxLengthFechaNacimiento = 10;
           const truncatedFechaNacimiento = data.FechaNacimiento.length > maxLengthFechaNacimiento ? `${data.FechaNacimiento.substring(0, maxLengthFechaNacimiento)}` : data.FechaNacimiento;
          
+      
           const maxLengthCorreo= 250;
           const truncatedCorreo = data.Correo.length > maxLengthCorreo ? `${data.Correo.substring(0, maxLengthCorreo)}` : data.Correo;
          
           const maxLengthTelefono= 50;
           const truncatedTelefono = data.Telefono.length > maxLengthTelefono ? `${data.Telefono.substring(0, maxLengthTelefono)}` : data.Telefono;
          
-          const maxLengthComentarios= 450;
-          const truncatedComentarios = data.Comentarios.length > maxLengthComentarios ? `${data.Comentarios.substring(0, maxLengthComentarios)}` : data.Comentarios;
+          const maxLengthColonia= 250;
+          const truncatedColonia = data.Colonia.length > maxLengthColonia ? `${data.Colonia.substring(0, maxLengthColonia)}` : data.Colonia;
          
-          const maxLengthAño = 5;
-          const truncatedAño = data.Año.length > maxLengthAño ? `${data.Año.substring(0, maxLengthAño)}` : data.Año;
+ 
+
+// console.log(Obt_Correo_Generico)
+//console.log(Obt_Correo_Generico[0])
 
 
-          if(RESDATA.URL_Certificado){
    
-         
-            emailData = {
-              data: {
-                  Para: `${Obt_Correo_Generico[0]},${data.Correo}`,
-                  subject: formData.subject,
-                  Mensaje: `
-                      Nombre: ${truncatedName} <br>
-                      Apellido paterno: ${truncatedApellidoPaterno} <br>
-                      Apellido materno: ${truncatedApellidoMaterno} <br>
-                      Fecha de nacimiento: ${truncatedFechaNacimiento} <br>
-                      Lugar de nacimiento: ${data.LugarNacimiento} <br>
-                      Correo: ${truncatedCorreo} <br>
-                      Teléfono: ${truncatedTelefono} <br>
-                      Comentarios: ${truncatedComentarios} <br>
-                      Nivel del duplicado: ${data.NivelEducativo} <br>
-                      Año: ${truncatedAño} <br>
-                  `,
-                
-  
-                 imagen: [
-                    ...(RESDATA.URL_Curp ? [RESDATA.URL_Curp] : []),
-                    ...(RESDATA.URL_Identificacion ? [RESDATA.URL_Identificacion] : []),
-                    ...(RESDATA.URL_Fotografia ? [RESDATA.URL_Fotografia] : []),
-                    ...(RESDATA.URL_Certificado ? [RESDATA.URL_Certificado] : []),
-                  ].join('|')  // Unir los nombres de los archivos con una coma
-  
-              }
-          };
-
-       }else{
-
   
         emailData = {
           data: {
@@ -303,31 +181,26 @@ const onSubmit = async(data) =>{
                   Apellido paterno: ${truncatedApellidoPaterno} <br>
                   Apellido materno: ${truncatedApellidoMaterno} <br>
                   Fecha de nacimiento: ${truncatedFechaNacimiento} <br>
-                  Lugar de nacimiento: ${data.LugarNacimiento} <br>
+                  Lugar de residencia: ${data.LugardeResidencia} <br>
+                  Colonia: ${truncatedColonia} <br>
+                  Teléfono de contacto: ${truncatedTelefono} <br>
                   Correo: ${truncatedCorreo} <br>
-                  Teléfono: ${truncatedTelefono} <br>
-                  Comentarios: ${truncatedComentarios} <br>
-                  Nivel del duplicado: ${data.NivelEducativo} <br>
-                  Año: ${truncatedAño} <br>
+                  Nivel que desea cursar: ${data.NivelEducativo} <br>
+                  Oferta educativa: ${data.OfertaEducativa} <br>
               `,
 
-              Para: `${Obt_Correos[0]},${Obt_Correo_Generico[0]},${data.Correo}`,
-             imagen: [
-                ...(RESDATA.URL_Curp ? [RESDATA.URL_Curp] : []),
-                ...(RESDATA.URL_Identificacion ? [RESDATA.URL_Identificacion] : []),
-                ...(RESDATA.URL_Fotografia ? [RESDATA.URL_Fotografia] : []),
-              ].join('|')  // Unir los nombres de los archivos con una coma
 
+              Para: `${Obt_Correos[0]},${Obt_Correo_Generico[0]},${data.Correo}`
           }
       };
 
-       }
+       
 
 
       
-        
-          const response = await fetch('http://localhost:1337/api/correoineas', {
-         //const response = await fetch('https://inea-web-backend.onrender.com/api/correoineas', {
+
+         const response = await fetch('https://inea-web-backend.onrender.com/api/historialde-pre-registros', {
+         //const response = await fetch('http://localhost:1337/api/historialde-pre-registros', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -359,9 +232,7 @@ const onSubmit = async(data) =>{
             })
           }
 
-        } catch (error) {
-          console.error('Error en la solicitud:', error);
-        }
+     
       
 
    }else{
@@ -386,7 +257,7 @@ return (
 
     <PagSec
         Enlaces={cards}
-        Titulo={"Duplicado de certificado de estudios"}
+        Titulo={"Te contactamos"}
       >
 
 
@@ -395,10 +266,12 @@ return (
         <div className="mx-auto mb-4 w-full max-w-full md:max-w-[1140px]">
         <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px] ">
             <p className="text-justify font-light">
-              La siguiente información será enviada a la Unidad de Operación del INEA
-              Ciudad de México para tramitar el duplicado de un certificado de primaria
-              o secundaria expedido por esta institución. Por eso, es importante que llenes
-              correctamente los campos que se solicitan.
+            Si estás interesado en aprender o terminar tu educación básica, en el INEA Ciudad de México
+             queremos ayudarte. Llena el formulario con tus datos y elige la opción educativa que más te 
+             interese. Esto no es un registro, solo una forma para que podamos comunicarnos contigo y
+              brindarte información. Una vez que envíes el formulario, alguien del INEA te contactará 
+              para explicarte cómo puedes estudiar de manera presencial o en línea, así como las opciones
+               de exámenes disponibles. ¡Queremos apoyarte en tu camino educativo!
             </p>
           </div>
           </div>
@@ -419,18 +292,38 @@ return (
           >
             <div class="pt-3">
               <label className="">
-                Estado de la República donde concluyó su primaria y/o secundario
+                Lugar de residencia
               </label>
               <div className="border rounded">
                 <select
-                  className={`${montserrat.className} text-[#333334] cursor-no-drop input-personalizado color-gris`}
-                  name="Estado de la Republica"
-                  id="Estado_Republica"
-                  readonly
-                  disabled
+                  className={`${montserrat.className} text-[#333334]  input-personalizado`}
+                  name="LugardeResidencia"
+                  id="LugardeResidencia"
+
+                  {...register("LugardeResidencia", { required: true })}
+     
                 >
-                  <option value="Ciudad de Mexico">Ciudad de México</option>
+                  <option value="Álvaro Obreón">Álvaro Obreón</option>
+                  <option value="Ázcapotzalco">Azcapotzalco</option>
+                  <option value="Benito Juárez">Benito Juárez</option>
+                  <option value="Coyoacán">Coyoacán</option>
+                  <option value="Cuajimalpa">Cuajimalpa</option>
+                  <option value="Cuauhtémoc">Cuauhtémoc</option>
+                  <option value="Gustavo A.Madero">Gustavo A.Madero</option>
+                  <option value="Iztacalco">Iztacalco</option>
+                  <option value="Iztapalapa">Iztapalapa</option>
+                  <option value="La Magdalena Contreras">La Magdalena Contreras</option>
+                  <option value="Miguel Hidalgo">Miguel Hidalgo</option>
+                  <option value="Milpa Alta">Milpa Alta</option>
+                  <option value="Tláhuac">Tláhuac</option>
+                  <option value="Talpan">Talpan</option>
+                  <option value="Venustiano Caranza">Venustiano Caranza</option>
+                  <option value="Xochimilco">Xochimilco</option>
                 </select>
+
+                {errors?.LugardeResidencia?.type === "required" && (
+                  <p className="AlertaCampo">Este campo es obligatorio</p>
+                )}
               </div>
             </div>
 
@@ -524,8 +417,8 @@ return (
               </div>
             </div>
 
-            {/* <div className="pt-3  grid grid-cols-1  sm:grid-cols-2"> */}
-              {/* <div className="sm:mr-5">
+            <div className="pt-3  grid grid-cols-1  sm:grid-cols-2">
+              <div className="sm:mr-5">
                 <label className="block" for="calendarYear">
                   Fecha de nacimiento<spam className="red"> (*)</spam>
                 </label>
@@ -541,179 +434,7 @@ return (
                 {errors?.FechaNacimiento?.type === "required" && (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
                 )}
-              </div> */}
-      {/* <div className="sm:mr-5">
-        <label className="block" htmlFor="calendarYear">
-          Fecha de nacimiento<spam className="red"> (*)</spam>
-        </label>
-        
-        {/* Usamos el 'Controller' para integrar DatePicker con react-hook-form 
-        <Controller
-          control={control}  // Asegúrate de pasar 'control' aquí
-          name="FechaNacimiento"
-          rules={{ required: true }} // Validación de campo obligatorio
-          render={({ field }) => (
-            <DatePicker
-              {...field}  // Pasamos 'field' para manejar el valor y los cambios
-              locale="es"
-              type="text"
-              id="calendarYear"
-              className="text-[#333334] cursor-pointer input-personalizado"
-              placeholder="DD/MM/AAAA"
-              selected={startDate}
-              //selected={startDate}
-              onChange={(date) => setStartDate(date)} // Actualizamos el valor de startDate
-              minDate={minDate} // Fecha mínima (100 años atrás)
-              maxDate={maxDate} // Fecha máxima (100 años adelante)
-              // showMonthYearPicker // Permite seleccionar solo mes y año
-              dateFormat="dd/MM/yyyy" // Formato de fecha con día, mes y año
-            />
-          )}
-        />
-        
-        {errors?.FechaNacimiento?.type === "required" && (
-          <p className="AlertaCampo">Este campo es obligatorio</p>
-        )}
-      </div> */}
-{/* 
-<DatePicker
-
-      renderCustomHeader={({
-
-        
-        date,
-        changeYear,
-        changeMonth,
-        decreaseMonth,
-        increaseMonth,
-        prevMonthButtonDisabled,
-        nextMonthButtonDisabled,
-      }) => (
-        <div
-          style={{
-            margin: 10,
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
-            {"<"}
-          </button>
-
-          <select
-            value={date.getFullYear()}
-            onChange={({ target: { value } }) => changeYear(Number(value))}
-          >
-            {years.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-
-          <select
-            value={months[date.getMonth()]}
-            onChange={({ target: { value } }) =>
-              changeMonth(months.indexOf(value))
-            }
-          >
-            {months.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-
-          <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
-            {">"}
-          </button>
-        </div>
-      )}
-      name="Fecha de nacimiento"
-      selected={startDate}
-      onChange={(date) => setStartDate(date)}
-
-
-
-      
-    /> */}
-             <div className="pt-3  grid grid-cols-1  sm:grid-cols-2">
-              <div className="sm:mr-5">
-              <label className="block" for="calendarYear">
-                                Fecha de nacimiento<spam className="red"> (*)</spam>
-                              </label>
-              <Controller
-
-
-          control={control}  // Se pasa el 'control' para integrar con react-hook-form
-          name="FechaNacimiento"
-          rules={{ required: "Este campo es obligatorio" }} // Validación obligatoria
-          render={({ field }) => (
-            <DatePicker
-              {...field}  // Pasamos 'field' para manejar el valor y los cambios
-              renderCustomHeader={({
-                date,
-                changeYear,
-                changeMonth,
-                decreaseMonth,
-                increaseMonth,
-                prevMonthButtonDisabled,
-                nextMonthButtonDisabled,
-              }) => (
-                <div
-                  style={{
-                    margin: 10,
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
-                    {"<"}
-                  </button>
-
-                  <select
-                    value={date.getFullYear()}
-                    onChange={({ target: { value } }) => changeYear(Number(value))}
-                  >
-                    {years.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-
-                  <select
-                    value={months[date.getMonth()]}
-                    onChange={({ target: { value } }) =>
-                      changeMonth(months.indexOf(value))
-                    }
-                  >
-                    {months.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-
-                  <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
-                    {">"}
-                  </button>
-                </div>
-              )}
-              selected={field.value} // Aquí tomamos el valor del campo controlado por react-hook-form
-              onChange={field.onChange}  // Asegúrate de manejar el cambio usando field.onChange
-              dateFormat="dd/MM/yyyy" // Formato de fecha (día, mes, año)
-              placeholderText="DD/MM/AAAA" // Texto de marcador
-              className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
-            />
-          )}
-        />
-
-        {/* Mostrar mensaje de error si no se selecciona la fecha */}
-        {errors?.FechaNacimiento && (
-          <p className="AlertaCampo">{errors.FechaNacimiento.message}</p>
-        )}
-        </div>
+              </div>
 
               <div className="">
                 <label className="pt-3 sm:pt-0 block">
@@ -771,7 +492,7 @@ return (
                   for="email"
                   htmlFor="email"
                 >
-                  Correo<spam className="red"> (*)</spam>
+                  Correo
                 </label>
                 <input
                   id="email"
@@ -782,7 +503,7 @@ return (
                   placeholder="Correo@correo.com"
                   maxLength={250}  
                   {...register("Correo", {
-                    required: "El correo es obligatorio",
+                    required: false,
                     pattern: {
                       value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
                       message: "Formato de correo no válido",
@@ -796,7 +517,7 @@ return (
 
               <div className="pt-3 sm:pt-0">
                 <label className="pt-0 sm:pt-3 block" for="teléfono">
-                  Teléfono<spam className="red"> (*)</spam>
+                  Teléfono de contacto<spam className="red"> (*)</spam>
                 </label>
                 <input
                   type="text"
@@ -826,7 +547,7 @@ return (
               </div>
 
               <div className="pt-3 sm:pt-0 sm:mr-5">
-                <label className="pt-0 sm:pt-3 block">Confirmar correo<spam className="red"> (*)</spam></label>
+                <label className="pt-0 sm:pt-3 block">Confirmar correo</label>
                 <input
                   id="confirmEmail"
                   type="email"
@@ -834,37 +555,76 @@ return (
                   placeholder="Correo@correo.com"
                   maxLength={250}  
                   {...register("confirmEmail", {
-                    required: "Confirma tu correo",
+                    required: false,
                     validate: (value) =>
                       value === watch("Correo") || "Los correos no coinciden",
-                  })}
+                  })
+                }
                 />
                   {errors?.confirmEmail && (
                   <p className="AlertaCampo">{errors.confirmEmail.message}</p>
                 )}
               </div>
-
-              <div className="pt-3 sm:pt-0 sm:mr-0">
-                <label className="pt-0 sm:pt-3  block" for="comentarios">
-                  Comentarios (opcional)
+              
+              <div className="pt-3 sm:pt-0">
+                <label className="pt-0 sm:pt-3 block" for="teléfono">
+                  Confirmar teléfono de contacto<spam className="red"> (*)</spam>
                 </label>
-                <textarea
-                  id="comentarios"
+                <input
+                  type="text"
+                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
+                  id="Confirmartelefono"
+                  name="Teléfono"
+                  placeholder="Teléfono"
+                  maxLength={50}  
+
+                  {...register("Confirmartelefono", { 
+                    required: true, 
+                    validate: (value) =>
+                      value === watch("Telefono") || "Los teléfonos no coinciden",
+                
+                    pattern: {
+                      value: /^[0-9]+$/,  // Solo números
+                        message: "El Teléfono debe contener solo números"  // Mensaje para el 'pattern'
+                    }
+               })}
+
+
+                />
+                 {errors?.Confirmartelefono?.type === "required" && (
+                  <p className="AlertaCampo">Este campo es obligatorio</p>
+                )}
+
+                {errors?.Confirmartelefono?.type === "pattern" && (
+                  <p className="AlertaCampo">{errors.Confirmartelefono.message}</p>
+                )}
+
+               {errors?.Confirmartelefono && (
+                  <p className="AlertaCampo">{errors.Confirmartelefono.message}</p>
+                )}
+              </div>
+
+              <div className="pt-3 sm:pt-0 sm:mr-5">
+                <label className="pt-0 sm:pt-3  block" for="colonia">
+                  Colonia
+                </label>
+                <input
+                  id="colonia"
                   type="text"
                   name="text"
-                  placeholder="Comentarios"
+                  placeholder="Colonia"
                   maxLength={450}  
                   className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
-                  {...register("Comentarios", { required: false })}
+                  {...register("Colonia", { required: true })}
                 />
-                {errors?.Comentarios?.type === "required" && (
+                {errors?.Colonia?.type === "required" && (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
                 )}
               </div>
 
               <div className="pt-3 sm:pt-0 sm:mr-5">
                 <label className="pt-0 sm:pt-3  block" for="niveleducativo">
-                  Nivel educativo del duplicado<spam className="red"> (*)</spam>
+                 Nivel que desea cursar<spam className="red"> (*)</spam>
                 </label>
                 <select
                   id="NivelEducativo"
@@ -874,108 +634,33 @@ return (
                   {...register("NivelEducativo", { required: true })}
                 >
                   <option value="">Seleccione..</option>
+                  <option value="Alfabetización">Alfabetización</option>
                   <option value="Primaria">Primaria</option>
                   <option value="Secundaria">Secundaria</option>
+
                 </select>
                 {errors?.NivelEducativo?.type === "required" && (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
                 )}
               </div>
-            </div>
-
-            <div className="pt-3 grid grid-cols-1  sm:grid-cols-2 gap-5">
-              <div class="">
-                <label class="control-label" htmlFor="curp">
-                  Curp:<spam className="red"> (*)</spam>
+              <div className="pt-3 sm:pt-0 sm:mr-5">
+                <label className="pt-0 sm:pt-3  block" for="niveleducativo">
+                   Oferta educativa de interés<spam className="red"> (*)</spam>
                 </label>
-                <input
-                  id="Curp"
-                  type="file"
-                  accept="image/jpeg,image/jpg,application/pdf"
-                  className="w-full"
-                  name="file"
-                  //onChange={(e) => handleFileChange(e, setFile)}
-                  onChange={handleFileChange}
-                  {...register("Curp",{required:true})}
-                />
-               {/* {file && <p>Archivo seleccionado: {file.name}</p>} */}
-                 {errors?.Curp?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>}
-
-              </div>
-              <div className="">
-                <label className="w-full" for="ine">
-                  Identificación oficial INE con fotografía por ambos lados:<spam className="red"> (*)</spam>
-                </label>
-                <input
-                  id="INE"
-                  name="INE"
-                  type="file"
-                 accept="image/jpeg,image/jpg,application/pdf"
-                  className="w-full"
-                  onChange={handleFileChange}
-                  {...register("Identificacion",{required:true})}
-                />
-                 {/* {file && <p>Archivo seleccionado: {file.name}</p>}*/}
-                 {errors?.Identificacion?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>}
-              </div>
-
-              <div class="pt-3">
-                <label class="control-label" for="fotografia">
-                  Fotografía tamaño infantil, con fondo blanco y camisa clara<spam className="red"> (*)</spam>
-                </label>
-                <input
-                  id="foto"
-                  name="foto"
-                  type="file"
-                  accept="image/jpeg,image/jpg,application/pdf"
-                  className="w-full"
-                  onChange={handleFileChange}
-                  {...register("Fotografia",{required:true})}
-                />
-                 {errors?.Fotografia?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>}
-              </div>
-            </div>
-
-            <div className="pt-4">
-              <label class="control-">
-                <strong>
-                  Si usted cuenta con una copia del certificado, favor de
-                  incluirlo o mencione el año en el que terminó su primaria y/o
-                  secudnaria
-                </strong>
-              </label>
-            </div>
-
-            <div className="pt-3 grid grid-cols-1  sm:grid-cols-2 gap-5">
-              <div class="">
-                <label class="control-label" for="certificado">
-                  Certificado (opcional)
-                </label>
-                <input
-                  id="certi"
-                  type="file"
-                  accept="image/jpeg,image/jpg,application/pdf"
-                  className="w-full"
-                  name="certi"
-                  onChange={handleFileChange}
-                {...register("Certificado",{required:false})}
-                />
-              </div>
-              {errors?.Certificado?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>}
-              <div class="">
-                <label class="control-label" for="anio">
-                  Año (opcional)
-                </label>
-                <input
-                  id="anio"
+                <select
+                  id="OfertaEducativa"
                   type="text"
                   name="text"
-                  placeholder="Año"
-                  maxLength={5}  
                   className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
-                  {...register("Año", { required: false })}
-                />
-                {errors?.Año?.type === "required" && (
+                  {...register("OfertaEducativa", { required: true })}
+                >
+                  <option value="">Seleccione..</option>
+                  <option value="Presencial (Alfabetización, Primaria y Secundaria)">Presencial (Alfabetización, Primaria y Secundaria)</option>
+                  <option value="En línea (Primaria y Secundaria)">En línea (Primaria y Secundaria)</option>
+                  <option value="Exámenes diagnósticos (Primaria y Secundaria)">Exámenes diagnósticos (Primaria y Secundaria)</option>
+                  <option value="Examen único (Primaria y Secundaria)">Examen único (Primaria y Secundaria)</option>
+                </select>
+                {errors?.OfertaEducativa?.type === "required" && (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
                 )}
               </div>
@@ -983,7 +668,7 @@ return (
 
             <div class="pt-4 form-group">
               <div class="checkbox">
-                Acepto términos y condiciones 
+                  Aceptación uso de datos
                 <br />
                 <label>
                   <input
@@ -999,7 +684,7 @@ return (
                   )}
                 </label>
               </div>
-              <p class="text-justify  text-[12px]"  for="file-01">
+              <p class="text-justify text-[12px]" for="file-01">
                 Manifiesto bajo protesta de decir verdad que la información y
                 los datos aquí asentados son verdaderos, reconosco que en caso
                 de faltar a la verdad, estaré incurrriendo en el delito de
@@ -1024,7 +709,7 @@ return (
                 type="submit"
                 value="Enviar"
               >
-                Enviar
+                Enviar información
               </button>
             </div>
 
@@ -1039,7 +724,6 @@ return (
                 puedes enviar cualquier duda o comentario tanto del envío,
                 descarga o impresión de tu certificado, como de los servicios que
                 te ofrecimos.
-
                 Si te condicionaron o pidieron algo a cambio de la entrega de tu
                 certificado o de cualquier otro servicio, DENÚNCIALO al:{" "}
                 <strong>
@@ -1071,4 +755,4 @@ return (
 }
 
 
-export default Solicitud_duplicados
+export default Te_Contactamos
