@@ -51,22 +51,112 @@ function Solicitud_duplicados() {
 //const [startDate, setStartDate] = useState(new Date());
 // const years = range(1990, new Date().getFullYear() + 1, 1);
 
-const years = [2020, 2021, 2022, 2023, 2024]; // Agrega más años si es necesario
+const years = [
+1935,
+1936,
+1937,
+1938,
+1939,
+1940,
+1941,
+1942,
+1943,
+1944,
+1945,
+1946,
+1947,
+1948,
+1949,
+1950,
+1951,
+1952,
+1953,
+1954,
+1955,
+1956,
+1957,
+1958,
+1959,
+1960,
+1961,
+1962,
+1963,
+1964,
+1965,
+1966,
+1967,
+1968,
+1969,
+1970,
+1971,
+1972,
+1973,
+1974,
+1975,
+1976,
+1977,
+1978,
+1979,
+1980,
+1981,
+1982,
+1983,
+1984,
+1985,
+1986,
+1987,
+1988,
+1989,
+1990,
+1991,
+1992,
+1993,
+1994,
+1995,
+1996,
+1997,
+1998,
+1999,
+2000,
+2001,
+2002,
+2003,
+2004,
+2005,
+2006,
+2007,
+2008,
+2009,
+2010,
+2011,
+2012,
+2013,
+2014,
+2015,
+2016,
+2017,
+2018,
+2019,
+2020,
+2021,
+2022,
+2023,
+]; // Agrega más años si es necesario
 
 // const years = range(1990, getYear(new Date()) + 1, 1);
 const months = [
-  "e ",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Ocubre",
+  "Noviembre",
+  "Diciembre",
 ];
 
 
@@ -133,9 +223,9 @@ const months = [
   const fetchData = async  () => {
     try {
 
-      //
-          const res = await fetch(`http://localhost:1337/api/correos?populate=%2A`)
-          //const res = await fetch(`https://inea-web-backend.onrender.com/api/correos?populate=%2A`)
+      
+          //const res = await fetch(`http://localhost:1337/api/correos?populate=%2A`)
+           const res = await fetch(`https://inea-web-backend.onrender.com/api/correos?populate=%2A`)
 
         
 
@@ -326,8 +416,8 @@ const onSubmit = async(data) =>{
 
       
         
-          const response = await fetch('http://localhost:1337/api/correoineas', {
-         //const response = await fetch('https://inea-web-backend.onrender.com/api/correoineas', {
+         // const response = await fetch('http://localhost:1337/api/correoineas', {
+          const response = await fetch('https://inea-web-backend.onrender.com/api/correoineas', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
