@@ -14,6 +14,11 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale, setDefaultLocale } from  "react-datepicker";
 import { es } from 'date-fns/locale/es';
+import { format } from "date-fns"; // Para formatear la fecha
+
+
+
+
 registerLocale('es', es)
 
 
@@ -269,8 +274,12 @@ const onSubmit = async(data) =>{
           const truncatedApellidoPaterno = data.ApellidoPaterno.length > maxLengthApellidoPaterno ? `${data.ApellidoPaterno.substring(0, maxLengthApellidoPaterno)}` : data.ApellidoPaterno;
          
 
-          const maxLengthFechaNacimiento = 10;
-          const truncatedFechaNacimiento = data.FechaNacimiento.length > maxLengthFechaNacimiento ? `${data.FechaNacimiento.substring(0, maxLengthFechaNacimiento)}` : data.FechaNacimiento;
+            // Formatear la fecha a español
+            const formattedDate = format(data.FechaNacimiento, "dd 'de' MMMM 'de' yyyy", { locale: es });
+
+
+          const maxLengthFechaNacimiento = 90;
+          const truncatedFechaNacimiento = formattedDate.length > maxLengthFechaNacimiento ? `${formattedDate.substring(0, maxLengthFechaNacimiento)}` : formattedDate;
          
       
           const maxLengthCorreo= 250;
@@ -284,8 +293,10 @@ const onSubmit = async(data) =>{
          
  
 
-// console.log(Obt_Correo_Generico)
-//console.log(Obt_Correo_Generico[0])
+ 
+
+    // console.log(truncatedFechaNacimiento)
+    //console.log(Obt_Correo_Generico[0])
 
 
    
@@ -600,6 +611,7 @@ return (
                          onChange={field.onChange}  // Asegúrate de manejar el cambio usando field.onChange
                          dateFormat="dd/MM/yyyy" // Formato de fecha (día, mes, año)
                          placeholderText="DD/MM/AAAA" // Texto de marcador
+                          locale={es} // Configurar el idioma a español
                          className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
                        />
                      )}
@@ -905,7 +917,8 @@ return (
               </button>
             </div>
 
-            <div className="pt-4 leading-7 justify-start text-[#333334] text-[12px]">
+            {/* <div className="pt-4 leading-7 justify-start text-[#333334] text-[12px]"> */}
+            <div className="pt-4  justify-start text-[#333334] text-[12px]">
               <p className="pt-3 text-justify font-light">
                 En la cuenta{" "}
                 <strong>

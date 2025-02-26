@@ -8,7 +8,7 @@ import "./Duplicados.css";
 import "react-datepicker/dist/react-datepicker.css";
 
 import DatePicker from "react-datepicker";
-
+import { format } from "date-fns"; // Para formatear la fecha
 import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale, setDefaultLocale } from  "react-datepicker";
 import { es } from 'date-fns/locale/es';
@@ -145,6 +145,22 @@ const years = [
 
 // const years = range(1990, getYear(new Date()) + 1, 1);
 const months = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Ocubre",
+  "Noviembre",
+  "Diciembre",
+];
+
+
+const day = [
   "Enero",
   "Febrero",
   "Marzo",
@@ -333,9 +349,13 @@ const onSubmit = async(data) =>{
           const maxLengthApellidoPaterno = 70;
           const truncatedApellidoPaterno = data.ApellidoPaterno.length > maxLengthApellidoPaterno ? `${data.ApellidoPaterno.substring(0, maxLengthApellidoPaterno)}` : data.ApellidoPaterno;
          
+          // Formatear la fecha a español
+          const formattedDate = format(data.FechaNacimiento, "dd 'de' MMMM 'de' yyyy", { locale: es });
 
-          const maxLengthFechaNacimiento = 10;
-          const truncatedFechaNacimiento = data.FechaNacimiento.length > maxLengthFechaNacimiento ? `${data.FechaNacimiento.substring(0, maxLengthFechaNacimiento)}` : data.FechaNacimiento;
+          
+
+          const maxLengthFechaNacimiento = 90;
+          const truncatedFechaNacimiento = formattedDate.length > maxLengthFechaNacimiento ? `${formattedDate.substring(0, maxLengthFechaNacimiento)}` :formattedDate;
          
           const maxLengthCorreo= 250;
           const truncatedCorreo = data.Correo.length > maxLengthCorreo ? `${data.Correo.substring(0, maxLengthCorreo)}` : data.Correo;
@@ -632,109 +652,14 @@ return (
                   <p className="AlertaCampo">Este campo es obligatorio</p>
                 )}
               </div> */}
-      {/* <div className="sm:mr-5">
-        <label className="block" htmlFor="calendarYear">
-          Fecha de nacimiento<spam className="red"> (*)</spam>
-        </label>
-        
-        {/* Usamos el 'Controller' para integrar DatePicker con react-hook-form 
+   
+
+        <div className="pt-3  grid grid-cols-1  sm:grid-cols-2">
+        <div className="sm:mr-5">
+        <label className="block" for="calendarYear">
+              Fecha de nacimiento<spam className="red"> (*)</spam>
+            </label>
         <Controller
-          control={control}  // Asegúrate de pasar 'control' aquí
-          name="FechaNacimiento"
-          rules={{ required: true }} // Validación de campo obligatorio
-          render={({ field }) => (
-            <DatePicker
-              {...field}  // Pasamos 'field' para manejar el valor y los cambios
-              locale="es"
-              type="text"
-              id="calendarYear"
-              className="text-[#333334] cursor-pointer input-personalizado"
-              placeholder="DD/MM/AAAA"
-              selected={startDate}
-              //selected={startDate}
-              onChange={(date) => setStartDate(date)} // Actualizamos el valor de startDate
-              minDate={minDate} // Fecha mínima (100 años atrás)
-              maxDate={maxDate} // Fecha máxima (100 años adelante)
-              // showMonthYearPicker // Permite seleccionar solo mes y año
-              dateFormat="dd/MM/yyyy" // Formato de fecha con día, mes y año
-            />
-          )}
-        />
-        
-        {errors?.FechaNacimiento?.type === "required" && (
-          <p className="AlertaCampo">Este campo es obligatorio</p>
-        )}
-      </div> */}
-{/* 
-<DatePicker
-
-      renderCustomHeader={({
-
-        
-        date,
-        changeYear,
-        changeMonth,
-        decreaseMonth,
-        increaseMonth,
-        prevMonthButtonDisabled,
-        nextMonthButtonDisabled,
-      }) => (
-        <div
-          style={{
-            margin: 10,
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
-            {"<"}
-          </button>
-
-          <select
-            value={date.getFullYear()}
-            onChange={({ target: { value } }) => changeYear(Number(value))}
-          >
-            {years.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-
-          <select
-            value={months[date.getMonth()]}
-            onChange={({ target: { value } }) =>
-              changeMonth(months.indexOf(value))
-            }
-          >
-            {months.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-
-          <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
-            {">"}
-          </button>
-        </div>
-      )}
-      name="Fecha de nacimiento"
-      selected={startDate}
-      onChange={(date) => setStartDate(date)}
-
-
-
-      
-    /> */}
-             <div className="pt-3  grid grid-cols-1  sm:grid-cols-2">
-              <div className="sm:mr-5">
-              <label className="block" for="calendarYear">
-                                Fecha de nacimiento<spam className="red"> (*)</spam>
-                              </label>
-              <Controller
-
-
           control={control}  // Se pasa el 'control' para integrar con react-hook-form
           name="FechaNacimiento"
           rules={{ required: "Este campo es obligatorio" }} // Validación obligatoria
@@ -794,7 +719,9 @@ return (
               onChange={field.onChange}  // Asegúrate de manejar el cambio usando field.onChange
               dateFormat="dd/MM/yyyy" // Formato de fecha (día, mes, año)
               placeholderText="DD/MM/AAAA" // Texto de marcador
+              locale={es} // Configurar el idioma a español
               className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
+     
             />
           )}
         />
@@ -1118,7 +1045,8 @@ return (
               </button>
             </div>
 
-            <div className="pt-4 leading-7 justify-start text-[#333334] text-[12px]">
+            {/* <div className="pt-4 leading-7 justify-start text-[#333334] text-[12px]"> */}
+            <div className="pt-4 justify-start text-[#333334] text-[12px]">
               <p className="pt-3 text-justify font-light">
                 En la cuenta{" "}
                 <strong>
