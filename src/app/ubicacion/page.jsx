@@ -895,8 +895,8 @@ function Ubicacion() {
         },
         {
           alcaldia: "PILARES Iztlaccihuatl",
-          url: "Playa Erizo Num S/N, Col. Reforma Iztlaccihuatl, C.P. 8810",
-          dir: "https://maps.app.goo.gl/HpBe7Pkv9wY2m8p69",
+          url: "https://maps.app.goo.gl/HpBe7Pkv9wY2m8p69",
+          dir: "Playa Erizo Num S/N, Col. Reforma Iztlaccihuatl, C.P. 8810",
           atel: "",
         },
        
@@ -1864,11 +1864,10 @@ function Ubicacion() {
                       Ubica tu coordinación de zona dependiendo de tu alcaldía
                     </strong>
                     <p className="font-light">
-                      Las coordinaciones de zona son unidades geográficas
-                      responsables de promover, organizar y diagnosticar los
-                      servicios de educación para jóvenes y adultos no
-                      escolarizados. Dentro de las coordinaciones de zona podrás
-                      realizar tus trámites.
+                    Una Coordinación de Zona del INEA es la unidad operativa encargada de 
+                    implementar y supervisar los servicios de alfabetización, primaria y secundaria 
+                    para jóvenes y adultos mayores de 15 años en una región específica, como las alcaldías. 
+                    Dentro de las oficinas de las Coordinaciones de Zona podrás realizar tus trámites.
                     </p>
                   </div>
                 </div>
@@ -1891,7 +1890,7 @@ function Ubicacion() {
                       edades, preferentemente mayores de 15 años, pueden acudir
                       para aprender a leer, escribir, terminar su educación
                       primaria y secundaria, o tomar cursos de capacitación para
-                      la vida y el trabajo
+                      la vida y el trabajo.
                     </p>
                   </div>
                 </div>
