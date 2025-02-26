@@ -251,7 +251,7 @@ function DetalleEnlace(slug) {
                 alt={post.NomImg || "Imagen de artículo"}
                 width={1000}
                 height={700}
-                className="w-full h-[500px] object-cover rounded-lg shadow-md"
+                className="w-full h-[500px] object-cover rounded-lg shadow-none"
                 priority
               />
             </div>
