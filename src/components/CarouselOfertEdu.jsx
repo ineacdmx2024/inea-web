@@ -174,30 +174,32 @@ function CarouselOfertEdu() {
             className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[260px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {modalidades.map((noticia, index) => (
-              <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? 'pt-4' : ''} tablet:px-8`}>
-                <Link
-                  href={`/oferta-educativa${noticia.url}`}
-                  className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-8 flex flex-col justify-between"
-                >
+              <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""} px-3 tablet:px-6`}>
+                <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-8 flex flex-col justify-between carousel-card">
                   <div className="flex flex-col items-center w-full h-full">
                     <div className="w-full aspect-[4/3] relative mb-4">
                       <img
-                        className="w-full h-full tablet:h-auto object-cover rounded-lg"
+                        className="w-full h-full object-cover rounded-lg"
                         src={noticia.image || "/placeholder.svg"}
                         alt={noticia.name}
                       />
                     </div>
-                    <h3 className={`my-4 tablet:my-7 ${noticia.name.length > 35 ? 'tablet:my-3' : ''} px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}>
-                      {isSmallScreen || noticia.name.length > 35 ? truncateText(noticia.name, 35) : noticia.name}
+                    <h3
+                      className="my-4 tablet:my-7 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium"
+                    >
+                      {truncateText(noticia.name, 25)}
                     </h3>
                   </div>
-                  <div
+                  <button
                     className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light"
-                    href={`/oferta-educativa${noticia.url}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleButtonClick(noticia);
+                    }}
                   >
                     Ir al sitio
-                  </div>
-                </Link>
+                  </button>
+                </div>
               </div>
             ))}
           </Slider>
