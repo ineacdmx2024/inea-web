@@ -25,14 +25,10 @@ function PrevArrow(props) {
         stroke="currentColor"
         className="hidden arrow:block w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M15.75 19.5L8.25 12l7.5-7.5"
-        />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
       </svg>
     </div>
-  );
+  )
 }
 
 const NextArrow = (props) => {
@@ -55,11 +51,7 @@ const NextArrow = (props) => {
         stroke="currentColor"
         className="hidden arrow:block w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M8.25 4.5l7.5 7.5-7.5 7.5"
-        />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
       </svg>
     </div>
   );
@@ -73,9 +65,9 @@ const truncateText = (text, maxLetters) => {
 };
 
 function CarouselOfertEdu() {
-  const [slidesToShow, setSlidesToShow] = useState(3);
+  const [slidesToShow, setSlidesToShow] = useState(3)
 
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
 
   useEffect(() => {
     // Esta lógica solo se ejecutará en el cliente.
@@ -85,53 +77,53 @@ function CarouselOfertEdu() {
 
     handleResize(); // Ejecuta una vez para establecer el estado inicial.
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize)
     return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
 
   useEffect(() => {
     const handleResize = () => {
-      setSlidesToShow(window.innerWidth < 1210 ? 1 : 3);
-    };
+      setSlidesToShow(window.innerWidth < 1210 ? 1 : 3)
+    }
 
-    handleResize();
+    handleResize()
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize)
 
     return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
 
   const modalidades = [
     {
       name: "Alfabetización, primaria y secundaria presencial",
-      image: "/Modalidad1.jpg",
+      image: "/presencial.png",
       url: "/presencial",
     },
     {
       name: "Primaria y secundaria en línea",
-      image: "/Modalidad2.jpg",
+      image: "/aprendeenlinea.png",
       url: "/enlinea",
     },
     {
       name: "Examen único",
-      image: "/Modalidad3.jpg",
+      image: "/examenUnico.png",
       url: "/examen-unico",
     },
     {
-      name: "¿Qué opcion me conviene?",
-      image: "/Modalidad4.jpg",
+      name: "¿Qué opción me conviene?",
+      image: "/queMeConviene.png",
       url: "/que-modalidad-elijo",
     },
     {
-      name: "Examenes diagnostico",
-      image: "/Modalidad5.jpg",
+      name: "Exámenes diagnóstico",
+      image: "/examenDiagnostico.png",
       url: "/examen-diagnostico",
     },
-  ];
+  ]
 
   const settings = {
     dots: true,
@@ -149,7 +141,7 @@ function CarouselOfertEdu() {
     ),
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
-  };
+  }
   return (
     <>
       <style jsx global>{`
@@ -179,22 +171,24 @@ function CarouselOfertEdu() {
         <div className="carrusel">
           <Slider
             {...settings}
-            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] mt-8"
+            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[260px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {modalidades.map((noticia, index) => (
-              <div key={index} className="px-4">
+              <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? 'pt-4' : ''} tablet:px-8`}>
                 <Link
                   href={`/oferta-educativa${noticia.url}`}
-                  className="border-0 tablet:border border-slate-300 tablet:shadow-lg rounded-none tablet:rounded-lg h-[400px] letras:h-[420px] p-8 flex flex-col justify-between"
+                  className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-8 flex flex-col justify-between"
                 >
-                  <div className="flex flex-col items-center">
-                    <img
-                      className="bg-blue-700 w-full h-auto object-cover rounded-lg"
-                      src={noticia.image}
-                      alt={noticia.name}
-                    />
-                    <h3 className="my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-[#333334] font-medium ">
-                      {isSmallScreen ? truncateText(noticia.name, 35) : noticia.name}
+                  <div className="flex flex-col items-center w-full h-full">
+                    <div className="w-full aspect-[4/3] relative mb-4">
+                      <img
+                        className="w-full h-full tablet:h-auto object-cover rounded-lg"
+                        src={noticia.image || "/placeholder.svg"}
+                        alt={noticia.name}
+                      />
+                    </div>
+                    <h3 className={`my-4 tablet:my-7 ${noticia.name.length > 35 ? 'tablet:my-3' : ''} px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}>
+                      {isSmallScreen || noticia.name.length > 35 ? truncateText(noticia.name, 35) : noticia.name}
                     </h3>
                   </div>
                   <div
@@ -210,7 +204,8 @@ function CarouselOfertEdu() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default CarouselOfertEdu;
+export default CarouselOfertEdu
+
