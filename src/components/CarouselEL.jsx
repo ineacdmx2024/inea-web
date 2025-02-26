@@ -68,39 +68,35 @@ const CarouselEL = ({ cards }) => {
       `}</style>
       <div className="border border-slate-300 rounded-lg bg-white w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto ">
         <Slider {...settings}>
-          {cards.map((card, index) => (
-            <Link
-              key={index}
-              href={card.link}
-            >
-              <div
-                key={index}
-                className="
-              flex flex-col items-center
-              "
-              >
-                <img
-                  className="w-full h-auto object-cover rounded-lg"
-                  src={card.imageSrc}
-                  alt={card.title}
-                />
-                <h3 className="my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-[#333334] font-medium">
-                  {card.title}
-                </h3>
-              </div>
-              {/* <div className="h-[400px] letras:h-[440px] p-8 flex flex-col justify-between"> */}
-              <button
-                className=" 
-                  focus:border-[#611232] focus:bg-[#ffffff] 
-                  bg-[#611232] text-white 
-                  hover:border-[#611232] hover:border-2 hover:bg-white hover:text-[#611232] 
-                    text-xs  py-2 px-4 rounded-full mx-auto block"
-              >
-                {card.buttonText}
-              </button>
-              {/* </div> */}
-            </Link>
-          ))}
+        {cards.map((card, index) => (
+  <Link key={index} href={card.link}>
+    <div
+      className="flex flex-col items-center min-h-[350px] justify-between pb-8"
+    >
+      <img
+        className="rounded-lg mx-auto max-w-[85%] w-full object-cover mt-8"
+        src={card.imageSrc}
+        alt={card.title}
+      />
+      <div className="flex flex-col items-center flex-grow">
+        <h3 className="px-6 text-center text-[18px] sm:text-[18px] text-[#333334] font-little h-15 overflow-hidden">
+          {card.title}
+        </h3>
+      </div>
+      <button
+        className="
+          focus:border-[#611232] focus:bg-[#ffffff] 
+          bg-[#611232] text-white 
+          hover:border-[#611232] hover:border-0 hover:bg-white hover:text-[#611232] 
+          text-xs py-2 px-4 rounded-full mt-5
+        "
+      >
+        {card.buttonText}
+      </button>
+    </div>
+  </Link>
+))}
+
         </Slider>
       </div>
     </>
