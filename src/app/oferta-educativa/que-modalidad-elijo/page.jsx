@@ -54,7 +54,7 @@ function Modalidad() {
         {/* Contenido principal en pantallas medianas y grandes */}
         <div
           className="ml-auto content-start justify-end"
-        // id="animation"
+          // id="animation"
         >
           {" "}
           <div className="mx-auto w-full">
@@ -78,7 +78,9 @@ function Modalidad() {
                     asistido a la escuela o no han concluido sus estudios.
                   </p>
                   <p className="mt-2">
-                    <strong>Modalidad de atención: </strong> Presencial (en una de nuestras 50 Plazas Comunitarias o en los más de 230 PILARES).
+                    <strong>Modalidad de atención: </strong> Presencial (en una
+                    de las 120 Plazas Comunitarias del INEA en Ciudad de
+                    México).
                   </p>
                   <p className="mt-2">
                     <strong>Material de estudio: </strong> Módulos impresos.
@@ -119,7 +121,8 @@ function Modalidad() {
                         <li>Tener 15 años o más</li>
                         <li>Acta de nacimiento</li>
                         <li>CURP</li>
-                        <li>Certificado de primaria (en caso de comenzar Secundaria)</li>
+                        <li>Certificado</li>
+                        <li>Primaria (en caso de comenzar Secundaria)</li>
                         <li>
                           Documento binacional (para personas provenientes del
                           extranjero)
@@ -261,7 +264,9 @@ function Modalidad() {
                     con teléfono o computadora con acceso a internet).
                   </p>
                   <p className="mt-2">
-                    <strong>Estructura curricular: </strong>5 módulos básicos y 1 diversificado para Primaria y 7 módulos básicos y 2 diversificados para Secundaria
+                    <strong>Estructura curricular: </strong>Un propedéutico y 5
+                    módulos para Primaria y un propedéutico y 7 módulos para
+                    Secundaria.
                   </p>
                   <p className="mt-2 mb-9">
                     <strong>Tiempo estimado de conclusión: </strong> 2 a 3

@@ -55,7 +55,7 @@ function Ubicacion() {
 
   const pageData = [
     {
-      title: "EuLALIA GUZMÁN",
+      title: "EULALIA GUZMÁN",
       nom: "Nicolas Mario Sánchez y FLores",
       tel: "56 2130 5489/ 55 4043 5310",
       email: "nmsanchez@inea.gob.mx",
@@ -67,7 +67,7 @@ function Ubicacion() {
       ),
       items: [
         {
-          alcaldia: "Tláhuac",
+          alcaldia: "TLAHUAC",
           dir: "Hidalgo # 1, Col. Barrio San Juan, Alcaldía Tláhuac, CP 13060, CDMX",
           atel: "55 5842 1618",
           aemail: "cztlahuac@inea.gob.mx",
@@ -123,7 +123,7 @@ function Ubicacion() {
       ),
       items: [
         {
-          alcaldia: "Coyoacán / XOCHIMILCO",
+          alcaldia: "COYOACÁN / XOCHIMILCO",
           dir: "Pedro Ramírez del Castillo S/N, Colonia Centro de Xochimilco, Alcaldía Xochimilco CP 16000, CDMX",
           atel: "55 56 76 66 60",
           aemail: "czxochimilco@inea.gob.mx",
@@ -132,7 +132,7 @@ function Ubicacion() {
       ],
     },
     {
-      title: "justo sierra",
+      title: "JUSTO SIERRA",
       nom: "Laura Merlos Sedeño",
       tel: "55 79 46 79 55",
       email: "lmerlos@inea.gob.mx",
@@ -243,7 +243,7 @@ function Ubicacion() {
       ),
       items: [
         {
-          alcaldia: "Azcapotzalco",
+          alcaldia: "AZCAPOTZALCO",
           dir: "Calle 22 # 17, Col. Pro-Hogar, Alcaldía Azcapotzalco, CP 02600, CDMX.",
           atel: "55 53 56 30 38/55 53 68 19 13",
           aemail: "czazcapotzalco@inea.gob.mx",
@@ -895,8 +895,8 @@ function Ubicacion() {
         },
         {
           alcaldia: "PILARES Iztlaccihuatl",
-          url: "https://maps.app.goo.gl/HpBe7Pkv9wY2m8p69",
-          dir: "Playa Erizo Num S/N, Col. Reforma Iztlaccihuatl, C.P. 8810",
+          url: "Playa Erizo Num S/N, Col. Reforma Iztlaccihuatl, C.P. 8810",
+          dir: "https://maps.app.goo.gl/HpBe7Pkv9wY2m8p69",
           atel: "",
         },
        
@@ -1864,10 +1864,11 @@ function Ubicacion() {
                       Ubica tu coordinación de zona dependiendo de tu alcaldía
                     </strong>
                     <p className="font-light">
-                    Una Coordinación de Zona del INEA es la unidad operativa encargada de 
-                    implementar y supervisar los servicios de alfabetización, primaria y secundaria 
-                    para jóvenes y adultos mayores de 15 años en una región específica, como las alcaldías. 
-                    Dentro de las oficinas de las Coordinaciones de Zona podrás realizar tus trámites.
+                      Las coordinaciones de zona son unidades geográficas
+                      responsables de promover, organizar y diagnosticar los
+                      servicios de educación para jóvenes y adultos no
+                      escolarizados. Dentro de las coordinaciones de zona podrás
+                      realizar tus trámites.
                     </p>
                   </div>
                 </div>
@@ -1890,7 +1891,7 @@ function Ubicacion() {
                       edades, preferentemente mayores de 15 años, pueden acudir
                       para aprender a leer, escribir, terminar su educación
                       primaria y secundaria, o tomar cursos de capacitación para
-                      la vida y el trabajo.
+                      la vida y el trabajo
                     </p>
                   </div>
                 </div>

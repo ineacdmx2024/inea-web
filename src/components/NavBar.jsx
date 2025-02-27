@@ -94,7 +94,7 @@ const Navbar = () => {
                   passHref
                 >
                   <img
-                    src="/Logo_educacion_white_2025.svg"
+                    src="/SEP_Logo_2024_blanco.svg"
                     alt="Educacion"
                     className=" hover:text-[#8B6C41]  rounded inline-block py-[0.3rem] mr-[1rem]"
                   />
@@ -419,14 +419,7 @@ const Navbar = () => {
                           onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
                         >
-                        Revalidación a extranjeros
-                        </Link>
-                        <Link
-                          href="/servicios/te-contactamos"
-                          onClick={closeAllMenus}
-                          className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
-                        >
-                         Te contactamos
+                          Revalidación a extranjeros
                         </Link>
                       </div>
                     </div>
