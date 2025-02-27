@@ -47,7 +47,7 @@ const CarouselEL = ({ cards }) => {
         }
 
         .custom-dots {
-          bottom: -30px;
+          bottom: 25px;
         }
 
         .custom-dots li {
@@ -68,28 +68,39 @@ const CarouselEL = ({ cards }) => {
         }
 
         .custom-dots li.slick-active button:before {
-          color: #611232; // Color verde para el punto activo
+          color: #611232;
           transform: scale(1.2);
         }
+
+        /* Estilo para limitar el texto a una sola línea */
+        .card-title {
+          display: -webkit-box;
+          -webkit-line-clamp: 1; /* Limita a 1 línea */
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis; /* Muestra '...' si el texto es largo */
+        }
       `}</style>
-      <div className="border border-slate-300 rounded-lg bg-white w-[320px] letras:w-[420px] ofertaEdu:w-[500px] tablet:w-[1100px] block tablet:hidden mx-auto">
+      <div className="border border-slate-300 rounded-lg bg-white mx-auto w-[613.59px] h-[560.8px] tablet:w-[613.59px] tablet:h-[605.64px] block tablet:hidden">
         <Slider {...settings}>
           {cards.map((card, index) => (
             <Link key={index} href={card.link}>
-              <div className="flex flex-col items-center min-h-[350px] justify-between pb-8">
+              <div className="flex flex-col justify-between h-full pb-8">
                 <img
                   className="rounded-lg mx-auto max-w-[85%] w-full object-cover mt-8"
                   src={card.imageSrc}
                   alt={card.title}
                 />
                 <div className="flex flex-col items-center flex-grow">
-                  <h3 className="px-6 text-center text-[18px] text-[#333334] font-little h-15 overflow-hidden">
+                  <h3 className="px-7 text-center text-[18px] text-[#333334] font-little h-15 card-title mt-4 mb-2">
                     {card.title}
                   </h3>
                 </div>
-                <button className="focus:border-[#611232] focus:bg-[#ffffff] bg-[#611232] text-white hover:border-[#611232] hover:border-0 hover:bg-white hover:text-[#611232] text-xs py-2 px-4 rounded-full mt-5">
-                  {card.buttonText}
-                </button>
+                <div className="flex justify-center mt-auto mb-5">
+                  <button className="focus:border-[#611232] focus:bg-[#ffffff] bg-[#611232] text-white hover:border-[#611232] hover:border-0 hover:bg-white hover:text-[#611232] text-xs py-2 px-4 rounded-full">
+                    {card.buttonText}
+                  </button>
+                </div>
               </div>
             </Link>
           ))}
