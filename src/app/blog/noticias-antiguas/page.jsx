@@ -29,20 +29,16 @@ function NoticiasAntiguas({ item }) {
   const [totalNoticias, setTotalNoticias] = useState(0);
   const [paginaActual, setPaginaActual] = useState(1);
   const noticiasPorPagina = 9;
-  //const router = useRouter();
 
   const fetchData = async (page = 1) => {
     const start = (page - 1) * noticiasPorPagina;
 
     try {
-      // Fetch de las noticias paginadas
       const response = await fetch(
         `https://inea-web-backend.onrender.com/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
       );
       const result = await response.json();
       setDatos(result.data);
-
-      // Fetch del total de noticias
       const total = result.meta.pagination.total;
       setTotalNoticias(total);
     } catch (error) {
@@ -51,7 +47,7 @@ function NoticiasAntiguas({ item }) {
   };
 
   useEffect(() => {
-    fetchData(paginaActual); // Cargar la página actual
+    fetchData(paginaActual);
   }, [paginaActual]);
 
   const fechaFun = (fechaAPI) => {
@@ -86,7 +82,6 @@ function NoticiasAntiguas({ item }) {
     return `${diaSemana}, ${dia} de ${mes} de ${año}`;
   };
 
-  // Cambiar página al hacer clic en un botón
   const handlePageChange = (newPage) => {
     setPaginaActual(newPage);
   };
@@ -101,11 +96,10 @@ function NoticiasAntiguas({ item }) {
     if (paginaActual > 1) setPaginaActual(paginaActual - 1);
   };
 
-
   return (
     <main>
       {/* Barra separadora */}
-      <div className="mx-auto mt-40  w-11/12 medida3:w-full arrow:w-11/12 tablet:w-[1140px]">
+      <div className="mx-auto mt-40 w-11/12 medida3:w-full arrow:w-11/12 tablet:w-[1140px]">
         <div className="ml-0 mb-10">
           <Breadcrumb />
         </div>
@@ -117,19 +111,16 @@ function NoticiasAntiguas({ item }) {
       </div>
 
       {/* Contenido principal */}
-      <div className="mx-auto mt-14 mb-16 w-11/12 medida3:w-11/12 arrow:w-11/12 tablet:w-[1140px] flex flex-col justify-center items-end gap-8">
+      <div className="mx-auto mt-14 mb-16 w-11/12 medida3:w-11/12 arrow:w-11/12 tablet:w-[1140px] flex flex-col justify-center items-center gap-8">
         {/* Todas las Noticias */}
-        <div className="w-full grid grid-cols-1 grid-flow-row gap-4 arrow:grid-cols-3 ofertaEdu:grid-cols-2 ">
+        <div className="w-full grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {datos ? (
             datos.map((item, index) => (
-              <div key={index} className="px-0">
-                <div className="overflow-hidden w-full h-auto tablet:h-[450px] rounded-xl border border-slate-300 ">
-                  <Link
-                    rel="stylesheet"
-                    href={`/blog/noticias-antiguas/${item.attributes.slug}`}
-                  >
+              <div key={index} className="px-0 flex flex-col h-full">
+                <div className="overflow-hidden w-full h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between">
+                  <Link href={`/blog/noticias-antiguas/${item.attributes.slug}`}>
                     {/* Div de la imagen */}
-                    <div className="m-auto rounded-t-xl max-h-[392px]">
+                    <div className="rounded-xl max-h-[250px] h-[250px] w-full overflow-hidden">
                       <Image
                         src={
                           item.attributes.Imagen?.data?.attributes?.formats
@@ -139,36 +130,38 @@ function NoticiasAntiguas({ item }) {
                           item.attributes.Nombre_de_la_Imagen ||
                           "Imagen sin título"
                         }
-                        className="w-full h-[208px] rounded-t-xl"
+                        className="object-cover w-full h-full"
                         width={350}
-                        height={258}
+                        height={250}
                       />
                     </div>
 
                     {/* Div del texto */}
                     <article
-                      className={`${open_Sans.className} h-[240px] flex flex-col justify-between letras:mt-0 pt-4 mt-2 tablet:m-0 w-full tablet:w-[375px] px-5 py-2 m-auto arrow:w-full`}
+                      className={`${open_Sans.className} mt-4 w-full px-4 py-2 flex flex-col justify-between flex-grow`}
                     >
-                      <p className="letras:text-base text-gray-700 text-sm mb-2 ">
+                      <p className="text-sm text-gray-700 mb-2">
                         {item.attributes.Fecha
                           ? fechaFun(item.attributes.Fecha)
                           : "No hay"}
                       </p>
-                      <h2 className="letras:text-[21px] text-[20px] leading-tight font-medium mb-4 uppercase arrow:text-[21px] text-[#333334]">
+                      <h2 className="text-xl font-medium text-[#333334] mb-4">
                         {truncateText(item.attributes.Titulo, 45)}
                       </h2>
-                      <div className="overflow-visible !z-10 w-full h-auto">
-                        <Link
-                          href={`/blog/noticias-antiguas/${item.attributes.slug}`}
-                          className="m-auto letras:ml-auto bg-[#611232] text-white text-center py-3 px-2 w-40 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block"
-                        >
-                          <p className="text-xs letras:text-[14.5px] font-light">
-                            Continuar leyendo
-                          </p>
-                        </Link>
-                      </div>
                     </article>
                   </Link>
+
+                  {/* Botón */}
+                  <div className="w-full mt-auto">
+                    <Link
+                      href={`/blog/noticias-antiguas/${item.attributes.slug}`}
+                      className="m-auto bg-[#611232] text-white text-center py-3 px-2 w-40 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block mb-4"
+                    >
+                      <p className="text-xs font-light">
+                        Continuar leyendo
+                      </p>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))
@@ -178,13 +171,15 @@ function NoticiasAntiguas({ item }) {
         </div>
 
         {/* Paginación */}
-        <div className=" mt-8 ">
+        <div className="mt-8 flex justify-center gap-4">
           <button
             onClick={handlePrevPage}
             disabled={paginaActual === 1}
-            className={`rounded-l py-1 px-1 text-[16px] ${
-              paginaActual === 1 ? "bg-white" : "bg-[#ffffff] hover:bg-gray-200"
-            } text-lg border border-slate-300 font-light`}
+            className={`rounded-l py-2 px-4 text-lg ${
+              paginaActual === 1
+                ? "bg-gray-300 cursor-not-allowed"
+                : "bg-[#611232] text-white hover:bg-[#360a1c]"
+            }`}
           >
             {"<<"}
           </button>
@@ -193,11 +188,11 @@ function NoticiasAntiguas({ item }) {
               key={i}
               onClick={() => handlePageChange(i + 1)}
               disabled={paginaActual === i + 1}
-              className={`py-1 px-3  ${
+              className={`py-2 px-4 text-lg ${
                 paginaActual === i + 1
                   ? "bg-[#360a1c] text-white"
-                  : "bg-white hover:bg-gray-200 hover:text-[#360a1c] "
-              } text-lg border border-slate-300 font-light`}
+                  : "bg-white hover:bg-gray-200 hover:text-[#360a1c]"
+              } border border-slate-300`}
             >
               {i + 1}
             </button>
@@ -205,11 +200,11 @@ function NoticiasAntiguas({ item }) {
           <button
             onClick={handleNextPage}
             disabled={paginaActual === totalPaginas}
-            className={`rounded-r py-1 px-1 text-[18px] ${
+            className={`rounded-r py-2 px-4 text-lg ${
               paginaActual === totalPaginas
-                ? "bg-white"
-                : "bg-white hover:bg-gray-200"
-            } text-lg border border-slate-300`}
+                ? "bg-gray-300 cursor-not-allowed"
+                : "bg-[#611232] text-white hover:bg-[#360a1c]"
+            }`}
           >
             {">>"}
           </button>
