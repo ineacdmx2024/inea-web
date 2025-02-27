@@ -55,7 +55,7 @@ function Ubicacion() {
 
   const pageData = [
     {
-      title: "EULALIA GUZMÁN",
+      title: "EuLALIA GUZMÁN",
       nom: "Nicolas Mario Sánchez y FLores",
       tel: "56 2130 5489/ 55 4043 5310",
       email: "nmsanchez@inea.gob.mx",
@@ -67,7 +67,7 @@ function Ubicacion() {
       ),
       items: [
         {
-          alcaldia: "TLAHUAC",
+          alcaldia: "Tláhuac",
           dir: "Hidalgo # 1, Col. Barrio San Juan, Alcaldía Tláhuac, CP 13060, CDMX",
           atel: "55 5842 1618",
           aemail: "cztlahuac@inea.gob.mx",
@@ -123,7 +123,7 @@ function Ubicacion() {
       ),
       items: [
         {
-          alcaldia: "COYOACÁN / XOCHIMILCO",
+          alcaldia: "Coyoacán / XOCHIMILCO",
           dir: "Pedro Ramírez del Castillo S/N, Colonia Centro de Xochimilco, Alcaldía Xochimilco CP 16000, CDMX",
           atel: "55 56 76 66 60",
           aemail: "czxochimilco@inea.gob.mx",
@@ -132,7 +132,7 @@ function Ubicacion() {
       ],
     },
     {
-      title: "JUSTO SIERRA",
+      title: "justo sierra",
       nom: "Laura Merlos Sedeño",
       tel: "55 79 46 79 55",
       email: "lmerlos@inea.gob.mx",
@@ -243,7 +243,7 @@ function Ubicacion() {
       ),
       items: [
         {
-          alcaldia: "AZCAPOTZALCO",
+          alcaldia: "Azcapotzalco",
           dir: "Calle 22 # 17, Col. Pro-Hogar, Alcaldía Azcapotzalco, CP 02600, CDMX.",
           atel: "55 53 56 30 38/55 53 68 19 13",
           aemail: "czazcapotzalco@inea.gob.mx",

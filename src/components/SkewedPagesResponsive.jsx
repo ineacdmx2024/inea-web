@@ -100,7 +100,8 @@ const SkewedPagesResponsive = ({ datos }) => {
             {/* Lado izquierdo- Arriba */}
             <div className="left-0 top-0">
               <div className="flex-column items-center justify-center text-center p-2 h-full bg-cover bg-[#611232] rounded-t-lg text-white">
-                <h1 className="mt-3 uppercase text-[25px] text-center">
+                {/* <h1 className="mt-3 uppercase text-[25px] text-center"> */}
+                 <h1 className="mt-3 capitalize  text-[25px] text-center">
                   {pageData.title}
                 </h1>
                 <div>
@@ -146,11 +147,12 @@ const SkewedPagesResponsive = ({ datos }) => {
                           d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                         />
                       </svg>
-                      <div className="m-[0%] uppercase text-xl text-center">
+                      {/* <div className="m-[0%] uppercase text-xl text-center"> */}
+                       <div className="m-[0%]  capitalize  text-xl text-center">
                         {item.alcaldia}
                       </div>
                     </div>
-                    <div className="px-2 uppercase text-normal text-center">
+                    <div className="px-2  text-normal text-center">
                       {item.dir}
                       <br />
                       Tel: {item.atel}
