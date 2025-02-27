@@ -43,7 +43,6 @@ function NoticiasAntiguas({ item }) {
       setDatos(result.data);
 
       // Fetch del total de noticias
-
       const total = result.meta.pagination.total;
       setTotalNoticias(total);
     } catch (error) {
@@ -102,11 +101,46 @@ function NoticiasAntiguas({ item }) {
     if (paginaActual > 1) setPaginaActual(paginaActual - 1);
   };
 
-
   return (
     <main>
+      <style jsx global>{`
+        /* Card styling based on provided images */
+        .news-card {
+          background-color: white;
+          border-radius: 8px;
+          overflow: hidden;
+          border: 1px solid #e5e7eb;
+          transition: transform 0.2s, box-shadow 0.2s;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .news-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .news-card-button {
+          background-color: #611232;
+          color: white;
+          border-radius: 999px;
+          padding: 0.75rem 1rem;
+          display: inline-block;
+          font-weight: 400;
+          text-align: center;
+          transition: all 0.2s;
+          width: auto;
+          min-width: 140px;
+        }
+        
+        .news-card-button:hover {
+          background-color: #4e0e29;
+        }
+      `}</style>
+
       {/* Barra separadora */}
-      <div className="mx-auto mt-40  w-11/12 medida3:w-full arrow:w-11/12 tablet:w-[1140px]">
+      <div className="mx-auto mt-40 w-11/12 medida3:w-full arrow:w-11/12 tablet:w-[1140px]">
         <div className="ml-0 mb-10">
           <Breadcrumb />
         </div>
@@ -118,102 +152,95 @@ function NoticiasAntiguas({ item }) {
       </div>
 
       {/* Contenido principal */}
-      <div className="mx-auto mt-14 mb-16 w-11/12 medida3:w-11/12 arrow:w-11/12 tablet:w-[1140px] flex flex-col justify-center items-end gap-8">
+      <div className="mx-auto mt-14 mb-16 w-11/12 medida3:w-11/12 arrow:w-11/12 tablet:w-[1140px]">
         {/* Todas las Noticias */}
-        <div className="w-full grid grid-cols-1 grid-flow-row gap-4 arrow:grid-cols-3 ofertaEdu:grid-cols-2 ">
+        <div className="w-full grid grid-cols-1 gap-6 ofertaEdu:grid-cols-2 arrow:grid-cols-3">
           {datos ? (
             datos.map((item, index) => (
-              <div key={index} className="px-0">
-                <div className="overflow-hidden w-full h-auto tablet:h-[450px] rounded-xl border border-slate-300 ">
-                  <Link
-                    rel="stylesheet"
-                    href={`/blog/noticias-antiguas/${item.attributes.slug}`}
-                  >
-                    {/* Div de la imagen */}
-                    <div className="m-auto rounded-t-xl max-h-[392px]">
+              <div key={index} className="p-1">
+                <div className="news-card">
+                  <Link href={`/blog/noticias-antiguas/${item.attributes.slug}`}>
+                    {/* Imagen */}
+                    <div className="w-full">
                       <Image
                         src={
-                          item.attributes.Imagen?.data?.attributes?.formats
-                            ?.small?.url
+                          item.attributes.Imagen?.data?.attributes?.formats?.small?.url
                         }
                         alt={
-                          item.attributes.Nombre_de_la_Imagen ||
-                          "Imagen sin título"
+                          item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
                         }
-                        className="w-full h-[208px] rounded-t-xl"
+                        className="w-full h-[208px] object-cover"
                         width={350}
-                        height={258}
+                        height={208}
                       />
                     </div>
-
-                    {/* Div del texto */}
-                    <article
-                      className={`${open_Sans.className} h-[240px] flex flex-col justify-between letras:mt-0 pt-4 mt-2 tablet:m-0 w-full tablet:w-[375px] px-5 py-2 m-auto arrow:w-full`}
-                    >
-                      <p className="letras:text-base text-gray-700 text-sm mb-2 ">
+                    
+                    {/* Contenido */}
+                    <div className={`${open_Sans.className} p-5 flex flex-col flex-grow`}>
+                      <p className="text-sm text-gray-700 mb-2">
                         {item.attributes.Fecha
                           ? fechaFun(item.attributes.Fecha)
                           : "No hay"}
                       </p>
-                      <h2 className="letras:text-[21px] text-[20px] leading-tight font-medium mb-4 uppercase arrow:text-[21px] text-[#333334]">
+                      <h2 className="text-[20px] leading-tight font-medium mb-6 uppercase text-[#333334]">
                         {truncateText(item.attributes.Titulo, 45)}
                       </h2>
-                      <div className="overflow-visible !z-10 w-full h-auto">
-                        <Link
-                          href={`/blog/noticias-antiguas/${item.attributes.slug}`}
-                          className="m-auto letras:ml-auto bg-[#611232] text-white text-center py-3 px-2 w-40 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block"
-                        >
-                          <p className="text-xs letras:text-[14.5px] font-light">
+                      
+                      <div className="mt-auto pt-3 flex justify-center">
+                        <span className="news-card-button">
+                          <p className="text-xs letras:text-sm font-light">
                             Continuar leyendo
                           </p>
-                        </Link>
+                        </span>
                       </div>
-                    </article>
+                    </div>
                   </Link>
                 </div>
               </div>
             ))
           ) : (
-            <p className="text-center">Cargando noticias...</p>
+            <p className="text-center col-span-full">Cargando noticias...</p>
           )}
         </div>
 
         {/* Paginación */}
-        <div className=" mt-8 ">
-          <button
-            onClick={handlePrevPage}
-            disabled={paginaActual === 1}
-            className={`rounded-l py-1 px-1 text-[16px] ${
-              paginaActual === 1 ? "bg-white" : "bg-[#ffffff] hover:bg-gray-200"
-            } text-lg border border-slate-300 font-light`}
-          >
-            {"<<"}
-          </button>
-          {Array.from({ length: totalPaginas }, (_, i) => (
+        <div className="flex justify-end mt-8">
+          <div>
             <button
-              key={i}
-              onClick={() => handlePageChange(i + 1)}
-              disabled={paginaActual === i + 1}
-              className={`py-1 px-3  ${
-                paginaActual === i + 1
-                  ? "bg-[#360a1c] text-white"
-                  : "bg-white hover:bg-gray-200 hover:text-[#360a1c] "
+              onClick={handlePrevPage}
+              disabled={paginaActual === 1}
+              className={`rounded-l py-1 px-1 text-[16px] ${
+                paginaActual === 1 ? "bg-white" : "bg-[#ffffff] hover:bg-gray-200"
               } text-lg border border-slate-300 font-light`}
             >
-              {i + 1}
+              {"<<"}
             </button>
-          ))}
-          <button
-            onClick={handleNextPage}
-            disabled={paginaActual === totalPaginas}
-            className={`rounded-r py-1 px-1 text-[18px] ${
-              paginaActual === totalPaginas
-                ? "bg-white"
-                : "bg-white hover:bg-gray-200"
-            } text-lg border border-slate-300`}
-          >
-            {">>"}
-          </button>
+            {Array.from({ length: totalPaginas }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => handlePageChange(i + 1)}
+                disabled={paginaActual === i + 1}
+                className={`py-1 px-3  ${
+                  paginaActual === i + 1
+                    ? "bg-[#360a1c] text-white"
+                    : "bg-white hover:bg-gray-200 hover:text-[#360a1c] "
+                } text-lg border border-slate-300 font-light`}
+              >
+                {i + 1}
+              </button>
+            ))}
+            <button
+              onClick={handleNextPage}
+              disabled={paginaActual === totalPaginas}
+              className={`rounded-r py-1 px-1 text-[18px] ${
+                paginaActual === totalPaginas
+                  ? "bg-white"
+                  : "bg-white hover:bg-gray-200"
+              } text-lg border border-slate-300`}
+            >
+              {">>"}
+            </button>
+          </div>
         </div>
       </div>
     </main>
