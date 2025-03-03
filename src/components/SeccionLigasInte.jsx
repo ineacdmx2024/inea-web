@@ -199,7 +199,6 @@ function SeccionLigasInte() {
           /* Aseguramos que la card tiene las mismas dimensiones */
           .desktop-carousel .carousel-card {
             height: 450px;
-            
             display: flex;
             flex-direction: column;
           }
@@ -250,7 +249,7 @@ function SeccionLigasInte() {
               <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""} pt-4 tablet:px-8 tablet:pt-0`}>
                 <div className={`border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full ${isSmallScreen ? "p-2" : "p-3"} flex flex-col justify-between`}>
                   <div className="flex flex-col items-center w-full h-full">
-                    <div className="w-full aspect-[4/3] relative mb-4">
+                    <div className="w-full aspect-[4/3] relative mb-2">
                       <img
                         className="w-full h-full object-cover rounded-lg"
                         src={fijos.imagen || "/placeholder.svg"}
@@ -286,7 +285,7 @@ function SeccionLigasInte() {
           >
             {restantes.map((restantes, index) => (
               <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""}`}>
-                <div className={`border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none ${isSmallScreen ? "p-2" : "p-8"} tablet:rounded-lg h-full p-2 flex flex-col justify-between carousel-card`}>
+                <div className={`border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none ${isSmallScreen ? "p-2" : "pt-8 px-5 tablet:p-8"} tablet:rounded-lg h-full p-2 flex flex-col justify-between carousel-card`}>
                   <div className="flex flex-col items-center w-full h-full">
                     <div className="w-full aspect-[4/3] relative mb-4">
                       <img

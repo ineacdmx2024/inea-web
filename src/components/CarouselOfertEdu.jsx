@@ -182,8 +182,20 @@ function CarouselOfertEdu() {
             display: flex;
             flex-direction: column;
           }
+        .carousel-card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .button-container {
+          width: 100%;
+          display: flex;
+          justify-content: center;
         }
       `}</style>
+
       <div className="p-2 pt-0">
         <div className="carrusel desktop-carousel">
           <Slider
@@ -192,31 +204,32 @@ function CarouselOfertEdu() {
           >
             {modalidades.map((noticia, index) => (
               <Link
-              href={`/oferta-educativa${noticia.url}`}>
-              <div key={index*36} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""}`}>
-                <div className={`border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full ${isSmallScreen ? "p-2" : "p-8"} flex flex-col justify-between carousel-card`}>
-                  <div className="flex flex-col items-center w-full h-full">
-                    <div className="w-full aspect-[4/3] relative mb-4">
+                href={`/oferta-educativa${noticia.url}`}
+                key={index*36}
+              >
+                <div className="tablet:h-[450px]">
+                  <div className={`border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full ${isSmallScreen ? "p-2" : "p-8"} flex flex-col justify-between carousel-card`}>
+                    <div className="flex flex-col items-center w-full">
                       <img
                         className="w-full h-full object-cover rounded-lg"
                         src={noticia.image || "/placeholder.svg"}
                         alt={noticia.name}
                       />
+                      <h3
+                        className="mb-4 tablet:my-7 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium"
+                      >
+                        {truncateText(noticia.name, 25)}
+                      </h3>
                     </div>
-                    <h3
-                      className="my-4 tablet:my-7 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium"
-                    >
-                      {truncateText(noticia.name, 25)}
-                    </h3>
-                  </div>
-                  <div
-                    className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light"
-                    href={`/oferta-educativa${noticia.url}`}
-                  >
-                    Ir al sitio
+                    <div className={`button-container ${isSmallScreen ? 'pb-2' : ''}`}>
+                      <button
+                        className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
+                      >
+                        Ir al sitio
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
               </Link>
             ))}
           </Slider>
