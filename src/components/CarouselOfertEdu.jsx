@@ -13,7 +13,7 @@ function PrevArrow(props) {
       style={{
         ...style,
         display: "block",
-        left: "-25px",
+        left: "-45px",
       }}
       onClick={onClick}
     >
@@ -39,7 +39,7 @@ const NextArrow = (props) => {
       style={{
         ...style,
         display: "block",
-        right: "-15px",
+        right: "-35px",
       }}
       onClick={onClick}
     >
@@ -122,7 +122,7 @@ function CarouselOfertEdu() {
       name: "Exámenes diagnóstico",
       image: "/examenDiagnostico.png",
       url: "/examen-diagnostico",
-    },
+    }
   ]
 
   const settings = {
@@ -166,16 +166,35 @@ function CarouselOfertEdu() {
           color: #611232; // Color rojo para el punto activo
           transform: scale(1.2);
         }
+
+        * Estilos solo para desktop que igualan el gap */
+        @media (min-width: 768px) {
+          .desktop-carousel .slick-slide {
+            padding: 0 16px;  /* Mitad del gap-8 (32px) */
+          }
+          
+          .desktop-carousel .slick-list {
+            margin: 0 -16px;  /* Negativo del padding */
+          }
+          
+          /* Aseguramos que la card tiene las mismas dimensiones */
+          .desktop-carousel .carousel-card {
+            display: flex;
+            flex-direction: column;
+          }
+        }
       `}</style>
       <div className="p-2 pt-0">
-        <div className="carrusel">
+        <div className="carrusel desktop-carousel">
           <Slider
             {...settings}
             className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[260px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {modalidades.map((noticia, index) => (
-              <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""} px-3 tablet:px-6`}>
-                <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-8 flex flex-col justify-between carousel-card">
+              <Link
+              href={`/oferta-educativa${noticia.url}`}>
+              <div key={index*36} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""}`}>
+                <div className={`border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full ${isSmallScreen ? "p-2" : "p-8"} flex flex-col justify-between carousel-card`}>
                   <div className="flex flex-col items-center w-full h-full">
                     <div className="w-full aspect-[4/3] relative mb-4">
                       <img
@@ -190,14 +209,15 @@ function CarouselOfertEdu() {
                       {truncateText(noticia.name, 25)}
                     </h3>
                   </div>
-                  <Link
+                  <div
                     className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light"
                     href={`/oferta-educativa${noticia.url}`}
                   >
                     Ir al sitio
-                  </Link>
+                  </div>
                 </div>
               </div>
+              </Link>
             ))}
           </Slider>
         </div>

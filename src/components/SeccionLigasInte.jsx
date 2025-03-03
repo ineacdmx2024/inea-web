@@ -20,7 +20,7 @@ function PrevArrow(props) {
       style={{
         ...style,
         display: "block",
-        left: "-25px",
+        left: "-45px",
       }}
       onClick={onClick}
     >
@@ -30,7 +30,7 @@ function PrevArrow(props) {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="hidden arrow:block w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
+        className="hidden arrow:block w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75 mr-5"
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
       </svg>
@@ -42,11 +42,11 @@ const NextArrow = (props) => {
   const { className, style, onClick } = props
   return (
     <div
-      className={`${className} !z-10 before:!content-none`}
+      className={`${className} !z-10 before:!content-none ml-5`}
       style={{
         ...style,
         display: "block",
-        right: "-15px",
+        right: "-35px",
       }}
       onClick={onClick}
     >
@@ -199,7 +199,7 @@ function SeccionLigasInte() {
           /* Aseguramos que la card tiene las mismas dimensiones */
           .desktop-carousel .carousel-card {
             height: 450px;
-            padding: 2rem;
+            
             display: flex;
             flex-direction: column;
           }
@@ -211,7 +211,7 @@ function SeccionLigasInte() {
         <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex gap-8">
           {fijos.map((fijos, index) => (
             <div key={index} className="w-1/3 cursor-pointer" onClick={() => handleButtonClick(fijos)}>
-              <div className="border border-slate-300 shadow-none rounded-lg h-[450px] p-8 flex flex-col">
+              <div className={`border border-slate-300 shadow-none rounded-lg h-[450px] ${isSmallScreen ? "p-2" : "p-8"} flex flex-col`}>
                 <div className="flex-1 flex flex-col items-center">
                   <div className="w-full aspect-[4/3] relative mb-4">
                     <img
@@ -221,7 +221,7 @@ function SeccionLigasInte() {
                     />
                   </div>
                   <h3
-                    className={`${montserrat.className} my-4 px-2 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
+                    className={` my-4 px-2 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
                   >
                     {truncateText(fijos.titulo, 21)}
                   </h3>
@@ -247,8 +247,8 @@ function SeccionLigasInte() {
             className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[260px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {fijos.map((fijos, index) => (
-              <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""} tablet:px-8`}>
-                <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-8 flex flex-col justify-between">
+              <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""} pt-4 tablet:px-8 tablet:pt-0`}>
+                <div className={`border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full ${isSmallScreen ? "p-2" : "p-3"} flex flex-col justify-between`}>
                   <div className="flex flex-col items-center w-full h-full">
                     <div className="w-full aspect-[4/3] relative mb-4">
                       <img
@@ -258,7 +258,7 @@ function SeccionLigasInte() {
                       />
                     </div>
                     <h3
-                      className={`${montserrat.className} my-4 tablet:my-7 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
+                      className={` my-4 tablet:my-7 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
                     >
                       {truncateText(fijos.titulo, 21)}
                     </h3>
@@ -286,7 +286,7 @@ function SeccionLigasInte() {
           >
             {restantes.map((restantes, index) => (
               <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""}`}>
-                <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-8 flex flex-col justify-between carousel-card">
+                <div className={`border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none ${isSmallScreen ? "p-2" : "p-8"} tablet:rounded-lg h-full p-2 flex flex-col justify-between carousel-card`}>
                   <div className="flex flex-col items-center w-full h-full">
                     <div className="w-full aspect-[4/3] relative mb-4">
                       <img
@@ -296,7 +296,7 @@ function SeccionLigasInte() {
                       />
                     </div>
                     <h3
-                      className={`${montserrat.className} my-4 tablet:my-7 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
+                      className={` my-4 tablet:my-7 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
                     >
                       {truncateText(restantes.titulo, 21)}
                     </h3>

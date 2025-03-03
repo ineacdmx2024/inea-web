@@ -256,7 +256,7 @@ function DetalleEnlace(slug) {
               />
             </div>
 
-            <div className="prose lg:prose-xl max-w-3xl text-gray-800">
+            <div className="prose lg:prose-xl mt-12 max-w-3xl text-gray-800">
               {renderContenido(post.contenido)}
             </div>
           </PagSec>

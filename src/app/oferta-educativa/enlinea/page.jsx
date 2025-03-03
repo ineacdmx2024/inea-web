@@ -96,7 +96,7 @@ function Aprende_Inea() {
     fetchEnlacesL();
   }, []);
   return (
-    <div className="">
+    <div>
       <PagSec Enlaces={enlacesL}>
         <PagMod info={linea}></PagMod>
       </PagSec>
