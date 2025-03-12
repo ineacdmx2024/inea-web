@@ -78,7 +78,8 @@ function Solicitud_duplicados() {
     try {
 
       //http://localhost:1337/api/correos?populate=%2A
-          const res = await fetch(`https://inea-web-backend.onrender.com/api/correos?populate=%2A`)
+     // const res = await fetch(`https://inea-web-backend.onrender.com/api/correos?populate=%2A`)
+     const res = await fetch(`http://104.248.229.55:1337/api/correos?populate=%2A`)
 
         
 
@@ -268,8 +269,9 @@ const onSubmit = async(data) =>{
 
 
       
-//http://localhost:1337/api/correoineas
-        const response = await fetch('https://inea-web-backend.onrender.com/api/correoineas', {
+        //http://localhost:1337/api/correoineas
+        //const response = await fetch('https://inea-web-backend.onrender.com/api/correoineas', {
+          const response = await fetch('http://104.248.229.55:1337/api/correoineas', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
