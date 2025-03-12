@@ -13,7 +13,7 @@ const linea = {
   ],
   Boton: [
     {
-      description: "Accede a la plataforma APRENDE INEA para tomar el curso:",
+      description: "Regístrate en la plataforma APRENDEINEA e inicia tus estudios:",
       buttonLabel: "Plataforma",
       link: "https://aprendeinea.inea.gob.mx/cursos_2023/index_todos.html",
     },
