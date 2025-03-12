@@ -1,6 +1,8 @@
 import React from "react";
 import { Open_Sans, Montserrat } from "@next/font/google";
 import CarouselBlog from "@/components/CarouselBlog";
+
+import CarouselInicio from "@/components/CarouselInicio";
 import CarouselOfertEdu from "@/components/CarouselOfertEdu";
 import SeccionLigasInte from "@/components/SeccionLigasInte";
 import Ubicacion from "@/components/Ubicacion";
@@ -28,8 +30,8 @@ function page() {
           className="w-full h-auto hidden medida3:block"
         />
       </div>
-
-      <BannerContingencia />
+      {/* <BannerContingencia /> */}
+      <CarouselInicio />
 
       <div className="mx-auto mt-20 mb-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
         <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl ">
