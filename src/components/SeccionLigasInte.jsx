@@ -97,7 +97,8 @@ function SeccionLigasInte() {
 
   useEffect(() => {
     const fetchFijos = async () => {
-      const res = await fetch("https://inea-web-backend.onrender.com/api/i-enlaces?filters[Fijo][$eq]=true&populate=*")
+      //const res = await fetch("https://inea-web-backend.onrender.com/api/i-enlaces?filters[Fijo][$eq]=true&populate=*")
+      const res = await fetch("http://104.248.229.55:1337/api/i-enlaces?filters[Fijo][$eq]=true&populate=*")
       const data = await res.json()
       const enlacesData = data.data.map((item) => ({
         id: item.id,
@@ -112,7 +113,8 @@ function SeccionLigasInte() {
     }
 
     const fetchEnlaces = async () => {
-      const res = await fetch("https://inea-web-backend.onrender.com/api/i-enlaces?filters[Fijo][$eq]=false&populate=*")
+      //const res = await fetch("https://inea-web-backend.onrender.com/api/i-enlaces?filters[Fijo][$eq]=false&populate=*")
+      const res = await fetch("http://104.248.229.55:1337/api/i-enlaces?filters[Fijo][$eq]=false&populate=*")
       const data = await res.json()
       const enlacesData2 = data.data.map((item) => ({
         id: item.id,
