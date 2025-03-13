@@ -19,6 +19,13 @@ const examen = {
     "Documento binacional (para personas provenientes del extranjero).",
     " En caso de haber cursado en grados escolarizados (Primaria o Secundaria) se deben presentar las boletas correspondientes.",
   ],
+  Boton: [
+    {
+      description: "Regístrate en la plataforma APRENDEINEA e inicia tus estudios:",
+      buttonLabel: "Plataforma",
+      link: "https://aprendeinea.inea.gob.mx/cursos_2023/index_todos.html",
+    },
+  ],
   celdas: [
     {
       id: "1",

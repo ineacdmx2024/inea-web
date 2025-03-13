@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import PagSec from "@/components/PlantillaPagSec";
 import PagMod from "@/components/PlantillaPagModalidad";
+
 const regular = {
   bannerImage: "/Modalidad/programa_regular2.webp",
   title: "Programa regular presencial",
@@ -11,13 +12,19 @@ const regular = {
     "En este Programa, las personas tienen la oportunidad de estudiar en un lugar fijo, utilizando materiales educativos impresos y recibiendo el apoyo directo de un asesor del INEA, quien los guía a lo largo de su proceso educativo, atendiendo sus necesidades particulares.",
     "La estructura curricular varía según el nivel educativo que se esté cursando. Para alfabetización, se utilizan materiales específicos que enseñan habilidades básicas de lectura y escritura. En el nivel de Primaria, comprende cinco módulos básicos y uno diversificado, mientras que para Secundaria incluye siete módulos básicos y dos diversificados. Estos módulos abarcan temas de lectura, escritura, matemáticas, ciencias sociales y naturales.",
   ],
-  time: " 3 a 6 meses dedicando, 4 horas por semana.",
+  Boton: [
+    {
+      description: "Regístrate en la modalidad presencial y comienza tus estudios:",
+      buttonLabel: "Quiero que me contacten",
+      link: "https://inea-web-frontend.vercel.app/servicios/te-contactamos",
+    },
+  ],
+  time: "3 a 6 meses dedicando 4 horas por semana.",
   requirements: [
     "Tener 15 años o más.",
     "Acta de nacimiento",
     "CURP",
     "Certificado de Primaria (en caso de comenzar Secundaria)",
-    "Primaria (en caso de comenzar Secundaria)",
     "Documento binacional (para personas provenientes del extranjero).",
     "En caso de haber cursado en grados escolarizados (Primaria o Secundaria) se deben presentar las boletas correspondientes.",
   ],
@@ -32,8 +39,8 @@ const regular = {
       id: "2",
       title: "Niveles",
       subtitle: [
-        "Alfabetización: Hispano hablante 3 módulos. ",
-        "Alfabetización: Indígena bilingüe 5 módulos. ",
+        "Alfabetización: Hispano hablante 3 módulos.",
+        "Alfabetización: Indígena bilingüe 5 módulos.",
         "Primaria: 6 módulos.",
         "Secundaria: 9 módulos.",
       ],
@@ -42,9 +49,9 @@ const regular = {
       id: "3",
       title: "Características",
       subtitle: [
-        "Sesiones de estudio presencial con asesoría. ",
+        "Sesiones de estudio presencial con asesoría.",
         "Examen por módulo.",
-        "Materiales: Módulos impresos ",
+        "Materiales: Módulos impresos",
       ],
     },
     {
@@ -54,6 +61,7 @@ const regular = {
     },
   ],
 };
+
 function Presencial() {
   //enlaces laterales
   const [enlacesL, setenlacesL] = useState([]);
