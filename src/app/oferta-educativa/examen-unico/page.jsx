@@ -15,7 +15,7 @@ const examen = {
     {
       description:
         "Regístrate en la modalidad de Examen Único y obtén tu certificado:",
-      buttonLabel: "Más información",
+      buttonLabel: "Quiero que me contacten",
       link: "https://inea-web-frontend.vercel.app/servicios/te-contactamos",
     },
   ],

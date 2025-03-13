@@ -21,7 +21,6 @@ async function loadPost(slug) {
   const res = await fetch(
    // `https://inea-web-backend.onrender.com/api/blogs/${slug}?populate=%2A`, {
     `http://104.248.229.55:1337/api/blogs/${slug}?populate=%2A`, {
-   
       cache: 'no-store',
       headers: {
         'Cache-Control': 'no-cache'
