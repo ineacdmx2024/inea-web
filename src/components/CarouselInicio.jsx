@@ -6,25 +6,19 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { useRouter } from "next/navigation"
 
-
-
-
 function CarouselInicio() {
-  const [slidesToShow, setSlidesToShow] = useState(3)
-  const router = useRouter() // Hook de Next.js para navegación dinámica
+  const [slidesToShow, setSlidesToShow] = useState(1)  // Mostrar solo 1 imagen en pantalla pequeña
+  const router = useRouter()
 
   const [isSmallScreen, setIsSmallScreen] = useState(false)
 
-
-
   useEffect(() => {
     const handleResize = () => {
-      setSlidesToShow(window.innerWidth < 1210 ? 1 : 3)
-      setIsSmallScreen(window.innerWidth <= 500)
+      setSlidesToShow(window.innerWidth < 1210 ? 1 : 1)  // Ajustar para tamaños grandes
+      setIsSmallScreen(window.innerWidth <= 500)  // Detectar pantallas pequeñas
     }
 
     handleResize()
-
     window.addEventListener("resize", handleResize)
 
     return () => {
@@ -36,36 +30,28 @@ function CarouselInicio() {
   const [restantes, setRestantes] = useState([])
 
   useEffect(() => {
-     const fetchFijos = async () => {
-      const res = await fetch("http://localhost:1337/api/baner-principals?filters[Fijo][$eq]=true&populate=*") 
-     //const res = await fetch("http://localhost:1337/api/i-enlaces?filters[Fijo][$eq]=true&populate=*")
-     //const res = await fetch("https://inea-web-backend.onrender.com/api/i-enlaces?filters[Fijo][$eq]=true&populate=*")
+    const fetchFijos = async () => {
+      const res = await fetch("http://localhost:1337/api/baner-principals?filters[Fijo][$eq]=true&populate=*")
       const data = await res.json()
       const enlacesData = data.data.map((item) => ({
         id: item.id,
-        contenido: item.attributes.Contenido, // Verifica si 'Contenido' existe
+        contenido: item.attributes.Contenido,
         link: item.attributes.Link,
-        slug: item.attributes.slug, // Asegúrate de que 'slug' esté presente
+        slug: item.attributes.slug,
         imagen: item.attributes.Imagen?.data?.attributes?.formats?.large?.url,
       }))
       setFijos(enlacesData)
     }
 
-
-
-
-     const fetchEnlaces = async () => {
+    const fetchEnlaces = async () => {
       const res = await fetch("http://localhost:1337/api/baner-principals?filters[Fijo][$eq]=false&populate=*")
-     //const res = await fetch("http://localhost:1337/api/i-enlaces?filters[Fijo][$eq]=false&populate=*")
-     //const res = await fetch("https://inea-web-backend.onrender.com/api/i-enlaces?filters[Fijo][$eq]=false&populate=*")
       const data = await res.json()
       const enlacesData2 = data.data.map((item) => ({
         id: item.id,
-        // titulo: item.attributes.Titulo,
-        subtitulo: item.attributes.Subtitulo, // Verifica si 'Subtitulo' existe
-        contenido: item.attributes.Contenido, // Verifica si 'Contenido' existe
+        subtitulo: item.attributes.Subtitulo,
+        contenido: item.attributes.Contenido,
         link: item.attributes.Link,
-        slug: item.attributes.slug, // Asegúrate de que 'slug' esté presente
+        slug: item.attributes.slug,
         imagen: item.attributes.Imagen?.data?.attributes?.formats?.large?.url,
       }))
       setRestantes(enlacesData2)
@@ -77,14 +63,9 @@ function CarouselInicio() {
 
   const handleButtonClick = (item) => {
     if (item && item.link) {
-      window.open(item.link, "_blank") // Abre en una nueva pestaña
+      window.open(item.link, "_blank")
     } else if (item && item.slug) {
-      ;<DetalleEnlace slug={item.slug} />
       router.push(`/home-enlaces-de-interes/${item.slug}`)
-
-      console.log(item.slug.toString())
-    } else {
-      console.log("El objeto 'item' no está bien definido:", item)
     }
   }
 
@@ -102,123 +83,104 @@ function CarouselInicio() {
         <ul style={{ margin: "0" }}> {dots} </ul>
       </div>
     ),
-    // prevArrow: <PrevArrow />,
-    // nextArrow: <NextArrow />,
   }
 
   return (
     <>
       <style jsx global>{`
-        .custom-dots {
-          bottom: -30px;
-        }
-        .custom-dots li {
-          margin: 0 4px;
-        }
-        .custom-dots li button {
-          border: none;
-          background: none;
-          padding: 0;
-        }
-        .custom-dots li button:before {
-          font-size: 12px;
-          color: #000000;
-          opacity: 1;
-          transition: all 0.3s ease;
-        }
-        .custom-dots li.slick-active button:before {
-          color:rgb(99, 189, 51);
-          transform: scale(1.2);
-        }
-        
-        /* Estilos solo para desktop que igualan el gap */
-        @media (min-width: 768px) {
-          .desktop-carousel .slick-slide {
-            padding: 0 16px;  /* Mitad del gap-8 (32px) */
-          }
-          
-          .desktop-carousel .slick-list {
-            margin: 0 -16px;  /* Negativo del padding */
-          }
-          
-          /* Aseguramos que la card tiene las mismas dimensiones */
-          .desktop-carousel .carousel-card {
-            height: 0px;
-            padding: 1rem;
+  .custom-dots {
+    bottom: -30px;
+  }
+  .custom-dots li {
+    margin: 0 4px;
+  }
+  .custom-dots li button {
+    border: none;
+    background: none;
+    padding: 0;
+  }
+  .custom-dots li button:before {
+    font-size: 12px;
+    color: #000000;
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+  .custom-dots li.slick-active button:before {
+    color: #61232;
+    transform: scale(1.2);
+  }
 
-          }
-        }
-      `}</style>
+  /* Estilos para hacer que las imágenes sean responsivas */
+  .carousel-image {
+    width: 100%;  /* La imagen ocupa todo el ancho del contenedor */
+    height: auto;  /* Ajusta la altura de la imagen proporcionalmente */
+    object-fit: cover;  /* Mantiene la proporción y cubre el contenedor */
+  }
 
-      <div>
-   
+  /* Asegurar que el contenedor tenga una relación de aspecto */
+  .carousel-container {
+    width: 100%;
+    max-width: 100%;
+  }
 
-        {/* Mobile fixed links carousel*/}
-        <div className="carrusel ">
-          <Slider
-            {...settings}
-           className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[260px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
+  /* Opcional: Un contenedor con una relación de aspecto para un estilo específico */
+  .aspect-ratio-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect ratio (altura = 56.25% del ancho) */
+  }
+  .aspect-ratio-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Asegura que la imagen cubra el contenedor sin distorsión */
+  }
+`}</style>
 
-            // className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[260px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
-          >
-            {fijos.map((fijos, index) => (
-              // <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""} tablet:px-8`}>
-               <div key={index} >
-                <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-8 flex flex-col justify-between">
-                  <div className="flex flex-col items-center w-full h-full">
+      <div className="carousel-container">
+        <Slider {...settings} className="w-full">
+          {fijos.map((fijos, index) => (
+            <div key={index}>
+              <div className="h-full p-8 flex flex-col justify-between">
+                <div className="flex flex-col items-center w-full h-full">
                   <div className="w-full aspect-[4/3] relative mb-4">
+                    <img
+                      className="carousel-image"
+                      src={fijos.imagen || "/placeholder.svg"}
+                      alt={fijos.titulo}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleButtonClick(fijos);
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+
+        <Slider {...settings} className="w-full">
+          {restantes.map((restantes, index) => (
+            <div key={index}>
+              <div className="carousel-card">
+                <div>
                   <img
-                    className="w-full h-full object-cover rounded-lg"
-                    src={fijos.imagen || "/placeholder.svg"}
-                    alt={fijos.titulo}
+                    className="carousel-image"
+                    src={restantes.imagen || "/placeholder.svg"}
+                    alt={restantes.titulo}
                     onClick={(e) => {
                       e.stopPropagation();
-                      handleButtonClick(fijos);
+                      handleButtonClick(restantes);
                     }}
                   />
                 </div>
-                  </div>
-                </div>
               </div>
-            ))}
-          </Slider>
-        </div>
-
-        {/* Remaining links carousel */}
-        <div className="carrusel desktop-carousel">
-          <Slider
-            {...settings}
-             //className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[260px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
-            // className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[260px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
-          >
-            {restantes.map((restantes, index) => (
-              // <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? "pt-1" : ""}`}>
-              <div key={index}>                
-               < div className="carousel-card">
-
-                {/* <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-8 flex flex-col justify-between carousel-card"> */}
-                  {/* <div className="flex flex-col items-center w-full h-full"> */}
-                   <div className=" ">
-                    {/* <div className="w-full aspect-[4/3] relative mb-4"> */}
-                    <div>
-                      <img
-                        // className="w-full h-full object-cover rounded-lg"
-                        className="object-cover"
-                        src={restantes.imagen || "/placeholder.svg"}
-                        alt={restantes.titulo}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleButtonClick(restantes);
-                        }}
-
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </>
   )
