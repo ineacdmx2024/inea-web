@@ -56,7 +56,8 @@ function DetalleEnlace(slug) {
   useEffect(() => {
     const Contenido = async () => {
       const res = await fetch(
-        `https://inea-web-backend.onrender.com/api/i-enlaces?filters[slug][$eq]=${slug.params["home-enlace-interesId"]}&populate=*`
+       // `https://inea-web-backend.onrender.com/api/i-enlaces?filters[slug][$eq]=${slug.params["home-enlace-interesId"]}&populate=*`
+        `https://104.248.229.55:1337/api/i-enlaces?filters[slug][$eq]=${slug.params["home-enlace-interesId"]}&populate=*`
       );
       const data = await res.json();
       const enlacesData = data.data.map((item) => ({
@@ -80,12 +81,14 @@ function DetalleEnlace(slug) {
     let enlaces = [];
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
-        `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+        //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+        `https://104.248.229.55:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
         const resNoPineados = await fetch(
-          `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+         // `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+          `https://104.248.229.55:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
         );
         const { data: enlacesNoPineados } = await resNoPineados.json();
 
@@ -232,38 +235,38 @@ function DetalleEnlace(slug) {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {cont.map((post, index) => (
-        <div key={index} className="mb-10">
+    <div>
+      {cont.map((cont, index) => (
+        <div key={index}>
+          <div className="ml-[26rem] mb-10"></div>
           <PagSec
             Enlaces={enlacesL}
-            Titulo={post.titulo}
-            Subtitulo={post.subtitulo}
-            className="flex flex-col items-center space-y-6"
+            Titulo={cont.titulo}
+            Subtitulo={cont.subtitulo}
           >
-            <div className="text-base font-medium text-gray-900">
-              INEA Ciudad de México | {fechaFun(post.fecha)}
-            </div>
-            
-            <div className="m-auto my-6 rounded-lg">
+            <h1
+              className={`${montserrat.className} text-[#404041] text-[18px] font-light`}
+            >
+              INEA Ciudad de México | {cont.fecha ? fechaFun(cont.fecha) : ""}
+            </h1>
+            <div className="m-auto my-6 rounded-lg max-h-[392px]">
               <Image
-                src={post.imagen || "/placeholder-image.jpg"}
-                alt={post.NomImg || "Imagen de artículo"}
+                src={cont.imagen}
+                alt={cont.NomImg || "Imagen sin título"}
+                className="w-full rounded-lg"
                 width={1000}
                 height={700}
-                className="w-full h-[500px] object-cover rounded-lg shadow-md"
-                priority
               />
             </div>
-
-            <div className="prose lg:prose-xl max-w-3xl text-gray-800">
-              {renderContenido(post.contenido)}
+            <div className="mb-6 mt-12 leading-loose">
+              {renderContenido(cont.contenido)}
             </div>
           </PagSec>
         </div>
       ))}
     </div>
   );
+  // Accede a los parámetros
 }
 
 export default DetalleEnlace;

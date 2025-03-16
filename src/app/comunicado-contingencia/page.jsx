@@ -17,7 +17,8 @@ const montserrat = Montserrat({
 
 async function loadPost() {
   const res = await fetch(
-    `https://inea-web-backend.onrender.com/api/banner-contingencia?populate=%2A`,
+    //`https://inea-web-backend.onrender.com/api/banner-contingencia?populate=%2A`,
+    `https://104.248.229.55:1337/api/banner-contingencia?populate=%2A`,
     {
       cache: "no-store",
       headers: {
@@ -31,7 +32,8 @@ async function loadPost() {
 
 async function loadEnlaces() {
   const res = await fetch(
-    `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
+    //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
+    `https://104.248.229.55:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
       cache: 'no-store',
       headers: {
         'Cache-Control': 'no-cache'

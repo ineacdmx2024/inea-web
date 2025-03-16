@@ -13,8 +13,8 @@ const linea = {
   ],
   Boton: [
     {
-      description: "Accede a la plataforma APRENDE INEA para tomar el curso:",
-      buttonLabel: "Plataforma",
+      description: "Regístrate en la plataforma APRENDEINEA e inicia tus estudios:",
+      buttonLabel: "Quiero que me contacten",
       link: "https://aprendeinea.inea.gob.mx/cursos_2023/index_todos.html",
     },
   ],
@@ -66,12 +66,14 @@ function Aprende_Inea() {
     let enlaces = [];
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
-        `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+        // `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+         `https://104.248.229.55:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
         const resNoPineados = await fetch(
-          `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+          //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+          `https://104.248.229.55:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
         );
         const { data: enlacesNoPineados } = await resNoPineados.json();
 

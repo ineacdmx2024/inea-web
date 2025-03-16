@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,18 +9,19 @@ import Link from "next/link";
 const CarouselEL = ({ cards }) => {
   const [slidesToShow, setSlidesToShow] = useState(3);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setSlidesToShow(window.innerWidth < 768 ? 1 : 4);
-    };
+  // Usar useCallback para memorizar la función
+  const handleResize = useCallback(() => {
+    setSlidesToShow(window.innerWidth < 768 ? 1 : 4);
+  }, []);
 
+  useEffect(() => {
     window.addEventListener("resize", handleResize);
     handleResize(); // Ejecutar al cargar por primera vez
 
     return () => {
       window.removeEventListener("resize", handleResize); // Limpiar evento
     };
-  }, []);
+  }, [handleResize]);
 
   const settings = {
     dots: true,
@@ -32,73 +33,75 @@ const CarouselEL = ({ cards }) => {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: (dots) => (
-      <div style={{ bottom: "-25px" }}>
-        <ul style={{ margin: "0" }}> {dots} </ul>
+      <div className="custom-dots-container">
+        <ul className="m-0"> {dots} </ul>
       </div>
     ),
   };
 
   return (
     <>
-      <style
-        jsx
-        global
-      >{`
-        .custom-dots {
-          bottom: -30px;
+      <style jsx global>{`
+        .custom-dots-container {
+          bottom: -25px;
         }
+
+        .custom-dots {
+          bottom: 25px;
+        }
+
         .custom-dots li {
           margin: 0 4px;
         }
+
         .custom-dots li button {
           border: none;
           background: none;
           padding: 0;
         }
+
         .custom-dots li button:before {
           font-size: 12px;
           color: #ccc;
           opacity: 1;
           transition: all 0.3s ease;
         }
+
         .custom-dots li.slick-active button:before {
-          color: #611232; // Color verde para el punto activo
+          color: #611232;
           transform: scale(1.2);
         }
+
+        /* Estilo para limitar el texto a una sola línea */
+        .card-title {
+          display: -webkit-box;
+          -webkit-line-clamp: 1; /* Limita a 1 línea */
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis; /* Muestra '...' si el texto es largo */
+        }
       `}</style>
-      <div className="border border-slate-300 rounded-lg bg-white w-[260px] letras:w-[360px] ofertaEdu:w-[400px] tablet:w-[1150px] block tablet:hidden mx-auto ">
+      <div className="border border-slate-300 rounded-lg bg-white mx-auto w-[613.59px] h-[560.8px] tablet:w-[613.59px] tablet:h-[605.64px] block tablet:hidden">
         <Slider {...settings}>
           {cards.map((card, index) => (
-            <Link
-              key={index}
-              href={card.link}
-            >
-              <div
-                key={index}
-                className="
-              flex flex-col items-center
-              "
-              >
+            <Link key={index} href={card.link}>
+              <div className="flex flex-col justify-between h-full pb-8">
                 <img
-                  className="w-full h-auto object-cover rounded-lg"
+                  className="rounded-lg mx-auto max-w-[85%] w-full object-cover mt-8"
                   src={card.imageSrc}
                   alt={card.title}
                 />
-                <h3 className="my-7 letras:px-2 px-5 text-center text-[18px] letras:text-[22px] text-[#333334] font-medium">
-                  {card.title}
-                </h3>
+                <div className="flex flex-col items-center flex-grow">
+                  <h3 className="px-7 text-center text-[18px] text-[#333334] font-little h-15 card-title mt-4 mb-2">
+                    {card.title}
+                  </h3>
+                </div>
+                <div className="flex justify-center mt-auto mb-5">
+                  <button className="focus:border-[#611232] focus:bg-[#ffffff] bg-[#611232] text-white hover:border-[#611232] hover:border-0 hover:bg-white hover:text-[#611232] text-xs py-2 px-4 rounded-full">
+                    {card.buttonText}
+                  </button>
+                </div>
               </div>
-              {/* <div className="h-[400px] letras:h-[440px] p-8 flex flex-col justify-between"> */}
-              <button
-                className=" 
-                  focus:border-[#611232] focus:bg-[#ffffff] 
-                  bg-[#611232] text-white 
-                  hover:border-[#611232] hover:border-2 hover:bg-white hover:text-[#611232] 
-                    text-xs  py-2 px-4 rounded-full mx-auto block"
-              >
-                {card.buttonText}
-              </button>
-              {/* </div> */}
             </Link>
           ))}
         </Slider>

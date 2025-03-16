@@ -19,7 +19,8 @@ const montserrat = Montserrat({
 
 async function loadPost(slug) {
   const res = await fetch(
-    `https://inea-web-backend.onrender.com/api/blogs/${slug}?populate=%2A`, {
+   // `https://inea-web-backend.onrender.com/api/blogs/${slug}?populate=%2A`, {
+    `https://104.248.229.55:1337/api/blogs/${slug}?populate=%2A`, {
       cache: 'no-store',
       headers: {
         'Cache-Control': 'no-cache'
@@ -33,7 +34,8 @@ async function loadPost(slug) {
 
 async function loadEnlaces() {
   const resPineados = await fetch(
-    `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
+    //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
+    `https://104.248.229.55:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
       cache: 'no-store',
       headers: {
         'Cache-Control': 'no-cache'
@@ -43,7 +45,8 @@ async function loadEnlaces() {
   const { data: enlacesPineados } = await resPineados.json();
   if (enlacesPineados.length < 3) {
     const resNoPineados = await fetch(
-      `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`,
+      //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`,
+      `https://104.248.229.55:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`,
       {
         cache: "no-store",
         headers: {

@@ -23,12 +23,14 @@ function Ubicacion() {
     let enlaces = [];
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
-        `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+       // `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+        `https://104.248.229.55:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
         const resNoPineados = await fetch(
-          `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+          //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+         `https://104.248.229.55:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
         );
         const { data: enlacesNoPineados } = await resNoPineados.json();
 
@@ -895,8 +897,8 @@ function Ubicacion() {
         },
         {
           alcaldia: "PILARES Iztlaccihuatl",
-          url: "https://maps.app.goo.gl/HpBe7Pkv9wY2m8p69",
-          dir: "Playa Erizo Num S/N, Col. Reforma Iztlaccihuatl, C.P. 8810",
+          url: "Playa Erizo Num S/N, Col. Reforma Iztlaccihuatl, C.P. 8810",
+          dir: "https://maps.app.goo.gl/HpBe7Pkv9wY2m8p69",
           atel: "",
         },
        
@@ -1864,10 +1866,11 @@ function Ubicacion() {
                       Ubica tu coordinación de zona dependiendo de tu alcaldía
                     </strong>
                     <p className="font-light">
-                    Una Coordinación de Zona del INEA es la unidad operativa encargada de 
-                    implementar y supervisar los servicios de alfabetización, primaria y secundaria 
-                    para jóvenes y adultos mayores de 15 años en una región específica, como las alcaldías. 
-                    Dentro de las oficinas de las Coordinaciones de Zona podrás realizar tus trámites.
+                      Las coordinaciones de zona son unidades geográficas
+                      responsables de promover, organizar y diagnosticar los
+                      servicios de educación para jóvenes y adultos no
+                      escolarizados. Dentro de las coordinaciones de zona podrás
+                      realizar tus trámites.
                     </p>
                   </div>
                 </div>
@@ -1890,7 +1893,7 @@ function Ubicacion() {
                       edades, preferentemente mayores de 15 años, pueden acudir
                       para aprender a leer, escribir, terminar su educación
                       primaria y secundaria, o tomar cursos de capacitación para
-                      la vida y el trabajo.
+                      la vida y el trabajo
                     </p>
                   </div>
                 </div>
