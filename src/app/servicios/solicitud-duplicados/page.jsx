@@ -6,7 +6,12 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useForm, Controller } from "react-hook-form";
 import "./Duplicados.css";
 import "react-datepicker/dist/react-datepicker.css";
-
+import DatePicker from "react-datepicker";
+import { format } from "date-fns"; // Para formatear la fecha
+import "react-datepicker/dist/react-datepicker.css";
+import { registerLocale, setDefaultLocale } from  "react-datepicker";
+import { es } from 'date-fns/locale/es';
+registerLocale('es', es)
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -18,13 +23,66 @@ const montserrat = Montserrat({
 
 
 function Solicitud_duplicados() {
-
+  const [startDate, setStartDate] = useState(null);
   const [datos, setDatos] = useState([]);
   const [file, setFile] = useState(null);
   const [captcha, setCaptcha] = React.useState("");
 
  
+  function range(start, end, step) {
+    const result = [];
+    for (let i = start; i < end; i += step) {
+      result.push(i);
+    }
+    return result;
+  }
 
+//-----------------------
+
+function generarAnios(inicio, fin) {
+  const years = [];
+  for (let i = inicio; i <= fin; i++) {
+    years.push(i);
+  }
+  return years;
+}
+
+const years = generarAnios(1935, new Date().getFullYear());
+
+
+const months = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Ocubre",
+  "Noviembre",
+  "Diciembre",
+];
+
+
+const day = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Ocubre",
+  "Noviembre",
+  "Diciembre",
+];
+
+
+//------------------
 
 
   const cards = [
@@ -57,7 +115,14 @@ function Solicitud_duplicados() {
     text: '',
   });
 
-  const {register,handleSubmit,watch, formState: { errors }} = useForm();
+  const {register,handleSubmit,watch, control,formState: { errors }} = useForm();
+
+  const maxDate = new Date();
+  maxDate.setFullYear(maxDate.getFullYear() + 100); // Agregar 100 años
+
+  // Calculando la fecha mínima (100 años atrás)
+  const minDate = new Date();
+  minDate.setFullYear(minDate.getFullYear() - 100); // Restar 100 años
 
 
 //Recuperar archivos adjunto
@@ -79,7 +144,8 @@ function Solicitud_duplicados() {
 
 
 
-      //http://localhost:1337/api/correos?populate=%2A
+     
+      //const res = await fetch(`http://localhost:1337/api/correos?populate=%2A`)
       //const res = await fetch(`https://inea-web-backend.onrender.com/api/correos?populate=%2A`)
       const res = await fetch(`http://104.248.229.55:1337/api/correos?populate=%2A`)
 
@@ -188,11 +254,15 @@ const onSubmit = async(data) =>{
           const maxLengthApellidoPaterno = 70;
           const truncatedApellidoPaterno = data.ApellidoPaterno.length > maxLengthApellidoPaterno ? `${data.ApellidoPaterno.substring(0, maxLengthApellidoPaterno)}` : data.ApellidoPaterno;
          
+          // Formatear la fecha a español
+          const formattedDate = format(data.FechaNacimiento, "dd 'de' MMMM 'de' yyyy", { locale: es });
 
-          const maxLengthFechaNacimiento = 10;
-          const truncatedFechaNacimiento = data.FechaNacimiento.length > maxLengthFechaNacimiento ? `${data.FechaNacimiento.substring(0, maxLengthFechaNacimiento)}` : data.FechaNacimiento;
-         
-          const maxLengthCorreo= 250;
+
+
+           const maxLengthFechaNacimiento = 10;
+           const truncatedFechaNacimiento = data.FechaNacimiento.length > maxLengthFechaNacimiento ? `${data.FechaNacimiento.substring(0, maxLengthFechaNacimiento)}` : data.FechaNacimiento;
+          
+           const maxLengthCorreo= 250;
           const truncatedCorreo = data.Correo.length > maxLengthCorreo ? `${data.Correo.substring(0, maxLengthCorreo)}` : data.Correo;
          
           const maxLengthTelefono= 50;
@@ -271,8 +341,9 @@ const onSubmit = async(data) =>{
 
       
 
-           //http://localhost:1337/api/correoineas
+
           //const response = await fetch('https://inea-web-backend.onrender.com/api/correoineas', {
+          //const response = await fetch('http://localhost:1337/api/correoineas', {
           const response = await fetch('http://104.248.229.55:1337/api/correoineas', {
           method: 'POST',
 
@@ -342,10 +413,16 @@ return (
         <div className="mx-auto mb-4 w-full max-w-full md:max-w-[1140px]">
         <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px] ">
             <p className="text-justify font-light">
-              La siguiente información será enviada a la Unidad de Operación del INEA
-              Ciudad de México para tramitar el duplicado de un certificado de primaria
-              o secundaria expedido por esta institución. Por eso, es importante que llenes
-              correctamente los campos que se solicitan.
+               Si recibiste tu certificado en formato impreso antes de 2018 y lo has extraviado, completa el siguiente
+               formulario con la información correcta. Ésta será enviada a la Unidad de Operación del INEA en la Ciudad
+               de México para solicitar un duplicado o la digitalización de tu certificado de primaria o secundaria 
+               expedido por esta institución. Si concluiste en el 2018 o en adelante, accede a  
+               En la cuenta{" "}
+                 <strong>
+                   <a className="text-blue-700" href="https://certificacion.inea.gob.mx/DescCertificado.aspx">
+                   este sitio para descargar tu certificado.
+                   </a>
+                </strong>{" "}
             </p>
           </div>
           </div>
@@ -472,23 +549,82 @@ return (
             </div>
 
             <div className="pt-3  grid grid-cols-1  sm:grid-cols-2">
-              <div className="sm:mr-5">
-                <label className="block" for="calendarYear">
-                  Fecha de nacimiento<spam className="red"> (*)</spam>
-                </label>
-                <input
-                  type="text"
-                  id="calendarYear"
-                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
-                  placeholder="DD/MM/AAAA"
-                  name="Fecha de nacimiento"
-                  maxLength={10}  
-                  {...register("FechaNacimiento", { required: true })}
-                />
-                {errors?.FechaNacimiento?.type === "required" && (
-                  <p className="AlertaCampo">Este campo es obligatorio</p>
-                )}
-              </div>
+         <div className="sm:mr-5">
+         <label className="block" for="calendarYear">
+               Fecha de nacimiento<spam className="red"> (*)</spam>
+             </label>
+         <Controller
+           control={control}  // Se pasa el 'control' para integrar con react-hook-form
+           name="FechaNacimiento"
+           rules={{ required: "Este campo es obligatorio" }} // Validación obligatoria
+           render={({ field }) => (
+             <DatePicker
+               {...field}  // Pasamos 'field' para manejar el valor y los cambios
+               renderCustomHeader={({
+                 date,
+                 changeYear,
+                 changeMonth,
+                 decreaseMonth,
+                 increaseMonth,
+                 prevMonthButtonDisabled,
+                 nextMonthButtonDisabled,
+               }) => (
+                 <div
+                   style={{
+                     margin: 10,
+                     display: "flex",
+                     justifyContent: "center",
+                   }}
+                 >
+                   <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
+                     {"<"}
+                   </button>
+ 
+                   <select
+                     value={date.getFullYear()}
+                     onChange={({ target: { value } }) => changeYear(Number(value))}
+                   >
+                     {years.map((option) => (
+                       <option key={option} value={option}>
+                         {option}
+                       </option>
+                     ))}
+                   </select>
+ 
+                   <select
+                     value={months[date.getMonth()]}
+                     onChange={({ target: { value } }) =>
+                       changeMonth(months.indexOf(value))
+                     }
+                   >
+                     {months.map((option) => (
+                       <option key={option} value={option}>
+                         {option}
+                       </option>
+                     ))}
+                   </select>
+ 
+                   <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
+                     {">"}
+                   </button>
+                 </div>
+               )}
+               selected={field.value} // Aquí tomamos el valor del campo controlado por react-hook-form
+               onChange={field.onChange}  // Asegúrate de manejar el cambio usando field.onChange
+               dateFormat="dd/MM/yyyy" // Formato de fecha (día, mes, año)
+               placeholderText="DD/MM/AAAA" // Texto de marcador
+               locale={es} // Configurar el idioma a español
+               className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
+      
+             />
+           )}
+         />
+ 
+         {/* Mostrar mensaje de error si no se selecciona la fecha */}
+         {errors?.FechaNacimiento && (
+           <p className="AlertaCampo">{errors.FechaNacimiento.message}</p>
+         )}
+         </div>
 
               <div className="">
                 <label className="pt-3 sm:pt-0 block">
@@ -774,7 +910,7 @@ return (
                   )}
                 </label>
               </div>
-              <p class="text-justify" for="file-01">
+              <p class="text-justify  text-[12px]"  for="file-01">
                 Manifiesto bajo protesta de decir verdad que la información y
                 los datos aquí asentados son verdaderos, reconosco que en caso
                 de faltar a la verdad, estaré incurrriendo en el delito de
@@ -795,15 +931,14 @@ return (
             )}
             <div className="pt-3 pb-3">
               <button
-                className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] block flex w-full justify-center"
-                type="submit"
+                className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] flex w-full justify-center"                type="submit"
                 value="Enviar"
               >
                 Enviar
               </button>
             </div>
 
-            <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
+            <div className="pt-4 justify-start text-[#333334] text-[12px]">
               <p className="pt-3 text-justify font-light">
                 En la cuenta{" "}
                 <strong>
@@ -814,8 +949,6 @@ return (
                 puedes enviar cualquier duda o comentario tanto del envío,
                 descarga o impresión de tu certificado, como de los servicios que
                 te ofrecimos.
-                <br />
-                <br />
                 Si te condicionaron o pidieron algo a cambio de la entrega de tu
                 certificado o de cualquier otro servicio, DENÚNCIALO al:{" "}
                 <strong>
@@ -826,8 +959,6 @@ return (
                 </strong>{" "}
                 Tu denuncia es confidencial y nos permitirá ofrecerte un mejor
                 servicio.
-                <br />
-                <br />
                 <strong>Aviso de Privacidad:</strong> Los datos personales
                 recabados serán protegidos y serán incorporados y tratados, según
                 corresponda, en los sistemas institucionales del INEA que han sido
