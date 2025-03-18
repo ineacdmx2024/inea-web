@@ -69,15 +69,15 @@ function Ubicacion() {
       ),
       items: [
         {
-          alcaldia: "TLAHUAC",
+          alcaldia: "Tláhuac",
           dir: "Hidalgo # 1, Col. Barrio San Juan, Alcaldía Tláhuac, CP 13060, CDMX",
           atel: "55 5842 1618",
           aemail: "cztlahuac@inea.gob.mx",
           url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
         },
         {
-          alcaldia: "MILPA ALTA",
-          dir: "Av. Chiapas # 2, Col. Barrio de Santa Martha, Alcaldía Milpa Alta, CP 12000,CDMX",
+          alcaldia: "Milpa Alta",
+          dir: "Av. Chiapas # 2, Col. Barrio de Santa Martha, Alcaldía Milpa Alta, CP 12000CDMX",
           atel: "55 5844 4886",
           aemail: "czmilpaalta@inea.gob.mX",
           url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
@@ -85,7 +85,7 @@ function Ubicacion() {
       ],
     },
     {
-      title: "ELENA GARRO",
+      title: "Elena Garro",
       nom: "Mitzi Martínez Pérez",
       tel: " 55 25 20 46 76",
       email: "",
@@ -97,14 +97,14 @@ function Ubicacion() {
       ),
       items: [
         {
-          alcaldia: "TLÁLPAN",
+          alcaldia: "Tlálpan",
           dir: "Periférico Sur # 5290, Col. Isidro Fabela, Alcaldía Tlalpan, CP 01403, CDMX ",
           atel: "55 56 66 17 50",
           aemail: "cztlalpan@inea.gob.mx",
           url: "https://maps.app.goo.gl/cc5DzfS5bnXHnneM6",
         },
         {
-          alcaldia: "CUAJIMALPA",
+          alcaldia: "Cuajimalpa",
           dir: "Av. Luis Castillo Ledón # 17, Col. Cuajimalpa, Alcaldía Cuajimalpa, CP 05000, CDMX",
           atel: "55 58 12 35 91",
           aemail: "czcuajimalpa@inea.gob.mx",
@@ -113,7 +113,7 @@ function Ubicacion() {
       ],
     },
     {
-      title: "FERNANDO SOLANA MORALES",
+      title: "Fernando Solana Morales ",
       nom: "Paola Angélica Avalos Jiménez",
       tel: "55 76 06 72 05",
       email: "",
@@ -125,7 +125,7 @@ function Ubicacion() {
       ),
       items: [
         {
-          alcaldia: "COYOACÁN / XOCHIMILCO",
+          alcaldia: "Coyoacán / Xochimilco ",
           dir: "Pedro Ramírez del Castillo S/N, Colonia Centro de Xochimilco, Alcaldía Xochimilco CP 16000, CDMX",
           atel: "55 56 76 66 60",
           aemail: "czxochimilco@inea.gob.mx",
@@ -134,7 +134,7 @@ function Ubicacion() {
       ],
     },
     {
-      title: "JUSTO SIERRA",
+      title: "Justo Sierra",
       nom: "Laura Merlos Sedeño",
       tel: "55 79 46 79 55",
       email: "lmerlos@inea.gob.mx",
@@ -146,7 +146,7 @@ function Ubicacion() {
       ),
       items: [
         {
-          alcaldia: "ÁLVARO OBREGÓN NORTE",
+          alcaldia: "Álvaro Obregón Norte ",
           dir: "Santa Lucía S/N, Col. Molino de Santo Domingo, Alcaldía Álvaro Obregón, CP 01130, CDMX ",
           atel: "55 52 71 14 43 / 55 26 14 02 78",
           aemail: "czobregonn@inea.gob.mx",
