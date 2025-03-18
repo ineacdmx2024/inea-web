@@ -174,9 +174,8 @@ const SkewedPagesResponsive = ({ datos }) => {
                       {item.dir}
                       <br />
                       Tel: {item.atel}
-                      <br />
-                      {item.aemail}
                     </div>
+                    {item.aemail}
                     <br />
                   </div>
                 ))}
