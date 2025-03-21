@@ -140,7 +140,7 @@ const CarouselBlog = ({ item }) => {
     try {
       const response = await fetch(
         //"https://inea-web-backend.onrender.com/api/blogs?populate=*&pagination[limit]=4&sort[0]=Fecha:desc"
-        "https://104.248.229.55:1337/api/blogs?populate=*&pagination[limit]=4&sort[0]=Fecha:desc"
+        "https://habitya.life/api/blogs?populate=*&pagination[limit]=4&sort[0]=Fecha:desc"
       );
       const result = await response.json();
       setData(result.data);
