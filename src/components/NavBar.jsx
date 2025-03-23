@@ -837,6 +837,13 @@ const Navbar = () => {
                       >
                         Revalidación a extranjeros
                       </Link>
+                      <Link
+                        onClick={closeAllMenus && closeMobileMenu}
+                        href="/servicios/te-contactamos"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded truncate"
+                      >
+                        Te contactamos
+                      </Link>
                     </div>
                   )}
                 </div>

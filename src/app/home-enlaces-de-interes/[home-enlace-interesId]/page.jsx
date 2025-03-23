@@ -56,7 +56,7 @@ function DetalleEnlace(slug) {
   useEffect(() => {
     const Contenido = async () => {
       const res = await fetch(
-        `https://inea-web-backend.onrender.com/api/i-enlaces?filters[slug][$eq]=${slug.params["home-enlace-interesId"]}&populate=*`
+        `http://localhost:1337/api/i-enlaces?filters[slug][$eq]=${slug.params["home-enlace-interesId"]}&populate=*`
       );
       const data = await res.json();
       const enlacesData = data.data.map((item) => ({
@@ -65,7 +65,7 @@ function DetalleEnlace(slug) {
         contenido: item.attributes.Contenido, // Verifica si 'Contenido' existe
         slug: item.attributes.slug, // Asegúrate de que 'slug' esté presente
         fecha: item.attributes?.Fecha,
-        imagen: item.attributes.Imagen?.data?.attributes?.formats?.large?.url,
+        imagen: item.attributes.Imagen?.data?.attributes?.url,
         NomImg: item.attributes.Imagen?.data?.attributes?.name,
       }));
       setCont(enlacesData);
@@ -80,12 +80,12 @@ function DetalleEnlace(slug) {
     let enlaces = [];
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
-        `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+        `http://localhost:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
         const resNoPineados = await fetch(
-          `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+          `http://localhost:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
         );
         const { data: enlacesNoPineados } = await resNoPineados.json();
 
@@ -256,7 +256,7 @@ function DetalleEnlace(slug) {
               />
             </div>
 
-            <div className="prose lg:prose-xl mt-12 max-w-3xl text-gray-800">
+            <div className="prose lg:prose-xl mt-12 max-w-3xl text-gray-800 overflow-hidden" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', wordBreak: 'break-word', textAlign: 'justify' }}>
               {renderContenido(post.contenido)}
             </div>
           </PagSec>

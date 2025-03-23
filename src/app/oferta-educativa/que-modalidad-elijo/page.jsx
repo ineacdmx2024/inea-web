@@ -13,12 +13,12 @@ function Modalidad() {
     let enlaces = [];
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
-        `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+        `http://localhost:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
         const resNoPineados = await fetch(
-          `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+          `http://localhost:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
         );
         const { data: enlacesNoPineados } = await resNoPineados.json();
 
@@ -328,34 +328,22 @@ function Modalidad() {
                     Te convienen los Exámenes Diagnóstico{" "}
                   </p>
                   <p className="mt-2">
-                    <strong>Descripción: </strong>Modalidad para evaluar y
-                    certificar conocimientos de personas de 15 años o más,
-                    permitiendo acreditar Primaria o Secundaria a través de
-                    exámenes divididos en dos módulos, reconociendo
-                    progresivamente lo aprendido.
+                    <strong>Descripción: </strong>Modalidad para evaluar y certificar conocimientos de personas de 15 años o más, permitiendo acreditar Primaria o Secundaria a través de dos exámenes por nivel, reconociendo progresivamente lo aprendido.
                   </p>
                   <p className="mt-2">
-                    <strong>Objetivo: </strong>Certificar conocimientos
-                    adquiridos y, si es necesario, ofrecer retroalimentación y
-                    orientación en los módulos de estudio requeridos para
-                    obtener el certificado de Primario y/o Secundaria.
+                    <strong>Objetivo: </strong>Certificar conocimientos adquiridos y, si es necesario, ofrecer retroalimentación y orientación en los módulos de estudio requeridos en los que se divide cada examen para obtener el certificado de Primario y/o Secundaria.
                   </p>
                   <p className="mt-2">
-                    <strong>Modalidad de atención: </strong>Sesiones de estudio
-                    presencial y asesoría opcional.
+                    <strong>Modalidad de atención: </strong>Sesiones de estudio presencial y asesoría a distancia opcional.
                   </p>
                   <p className="mt-2">
-                    <strong>Material de estudio: </strong>Guías de Aprendizaje
-                    impresas, organizadas en unidades de aprendizaje.
+                    <strong>Material de estudio: </strong>Guías de Aprendizaje impresas o digitales, organizadas en unidades de aprendizaje.
                   </p>
                   <p className="mt-2">
-                    <strong>Estructura curricular: </strong>Dos unidades de
-                    aprendizaje que abarcan lengua y comunicación, pensamiento
-                    matemático, y vida y comunidad.
+                    <strong>Estructura curricular: </strong>Dos unidades de aprendizaje por nivel que abarcan lengua y comunicación, pensamiento matemático, y vida y comunidad.
                   </p>
                   <p className="mt-2 mb-9">
-                    <strong>Tiempo estimado de conclusión: </strong>2 a 3 meses
-                    dedicando 2 horas por semana.
+                    <strong>Tiempo estimado de conclusión: </strong>2 a 3 meses dedicando 2 horas por semana.
                   </p>
                   <div
                     id="alert-additional-content-4"

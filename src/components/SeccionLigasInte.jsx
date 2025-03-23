@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { useRouter } from "next/navigation"
 import { Montserrat } from "next/font/google"
+import Link from "next/link"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -97,7 +98,7 @@ function SeccionLigasInte() {
 
   useEffect(() => {
     const fetchFijos = async () => {
-      const res = await fetch("https://inea-web-backend.onrender.com/api/i-enlaces?filters[Fijo][$eq]=true&populate=*")
+      const res = await fetch("http://localhost:1337/api/i-enlaces?filters[Fijo][$eq]=true&populate=*")
       const data = await res.json()
       const enlacesData = data.data.map((item) => ({
         id: item.id,
@@ -112,7 +113,7 @@ function SeccionLigasInte() {
     }
 
     const fetchEnlaces = async () => {
-      const res = await fetch("https://inea-web-backend.onrender.com/api/i-enlaces?filters[Fijo][$eq]=false&populate=*")
+      const res = await fetch("http://localhost:1337/api/i-enlaces?filters[Fijo][$eq]=false&populate=*")
       const data = await res.json()
       const enlacesData2 = data.data.map((item) => ({
         id: item.id,
@@ -121,7 +122,7 @@ function SeccionLigasInte() {
         contenido: item.attributes.Contenido, // Verifica si 'Contenido' existe
         link: item.attributes.Link,
         slug: item.attributes.slug, // Asegúrate de que 'slug' esté presente
-        imagen: item.attributes.Imagen?.data?.attributes?.formats?.large?.url,
+        imagen: item.attributes.Imagen?.data?.attributes?.url,
       }))
       setRestantes(enlacesData2)
     }
@@ -205,36 +206,39 @@ function SeccionLigasInte() {
         }
       `}</style>
 
+
       <div className="p-2 pt-0">
         {/* Desktop fixed links */}
         <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex gap-8">
           {fijos.map((fijos, index) => (
-            <div key={index} className="w-1/3 cursor-pointer" onClick={() => handleButtonClick(fijos)}>
-              <div className={`border border-slate-300 shadow-none rounded-lg h-[450px] ${isSmallScreen ? "p-2" : "p-8"} flex flex-col`}>
-                <div className="flex-1 flex flex-col items-center">
-                  <div className="w-full aspect-[4/3] relative mb-4">
-                    <img
-                      className="w-full h-full object-cover rounded-lg"
-                      src={fijos.imagen || "/placeholder.svg"}
-                      alt={fijos.titulo}
-                    />
+            <div className="w-1/3 cursor-pointer" key={index}>
+              <Link
+                href={`/home-enlaces-de-interes/${fijos.slug}`}
+                target="_self"
+                className="block h-full"
+              >
+                <div className={`border border-slate-300 shadow-none rounded-lg h-[450px] ${isSmallScreen ? "p-2" : "p-8"} flex flex-col`}>
+                  <div className="flex-1 flex flex-col items-center">
+                    <div className="w-full aspect-[4/3] relative mb-4">
+                      <img
+                        className="w-full h-full object-cover rounded-lg"
+                        src={fijos.imagen || "/placeholder.svg"}
+                        alt={fijos.titulo}
+                      />
+                    </div>
+                    <h3
+                      className={` my-4 px-2 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
+                    >
+                      {truncateText(fijos.titulo, 21)}
+                    </h3>
                   </div>
-                  <h3
-                    className={` my-4 px-2 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
+                  <button
+                    className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light mt-auto"
                   >
-                    {truncateText(fijos.titulo, 21)}
-                  </h3>
+                    Ir al sitio
+                  </button>
                 </div>
-                <button
-                  className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light mt-auto"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleButtonClick(fijos);
-                  }}
-                >
-                  Ir al sitio
-                </button>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
@@ -247,31 +251,33 @@ function SeccionLigasInte() {
           >
             {fijos.map((fijos, index) => (
               <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""} pt-4 tablet:px-8 tablet:pt-0`}>
-                <div className={`border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full ${isSmallScreen ? "p-2" : "p-3"} flex flex-col justify-between`}>
-                  <div className="flex flex-col items-center w-full h-full">
-                    <div className="w-full aspect-[4/3] relative mb-2">
-                      <img
-                        className="w-full h-full object-cover rounded-lg"
-                        src={fijos.imagen || "/placeholder.svg"}
-                        alt={fijos.titulo}
-                      />
+                <Link
+                  href={`/home-enlaces-de-interes/${fijos.slug}`}
+                  target="_self"
+                  className="block h-full"
+                >
+                  <div className={`border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full ${isSmallScreen ? "p-2" : "p-3"} flex flex-col justify-between`}>
+                    <div className="flex flex-col items-center w-full h-full">
+                      <div className="w-full aspect-[4/3] relative mb-2">
+                        <img
+                          className="w-full h-full object-cover rounded-lg"
+                          src={fijos.imagen || "/placeholder.svg"}
+                          alt={fijos.titulo}
+                        />
+                      </div>
+                      <h3
+                        className={` my-4 tablet:my-7 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
+                      >
+                        {truncateText(fijos.titulo, 21)}
+                      </h3>
                     </div>
-                    <h3
-                      className={` my-4 tablet:my-7 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
+                    <button
+                      className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light"
                     >
-                      {truncateText(fijos.titulo, 21)}
-                    </h3>
+                      Ir al sitio
+                    </button>
                   </div>
-                  <button
-                    className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleButtonClick(fijos);
-                    }}
-                  >
-                    Ir al sitio
-                  </button>
-                </div>
+                </Link>
               </div>
             ))}
           </Slider>
@@ -285,31 +291,33 @@ function SeccionLigasInte() {
           >
             {restantes.map((restantes, index) => (
               <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""}`}>
-                <div className={`border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none ${isSmallScreen ? "p-2" : "pt-8 px-5 tablet:p-8"} tablet:rounded-lg h-full p-2 flex flex-col justify-between carousel-card`}>
-                  <div className="flex flex-col items-center w-full h-full">
-                    <div className="w-full aspect-[4/3] relative mb-4">
-                      <img
-                        className="w-full h-full object-cover rounded-lg"
-                        src={restantes.imagen || "/placeholder.svg"}
-                        alt={restantes.titulo}
-                      />
+                <Link
+                  href={`/home-enlaces-de-interes/${restantes.slug}`}
+                  target="_self"
+                  className="block h-full"
+                >
+                  <div className={`border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none ${isSmallScreen ? "p-2" : "pt-8 px-5 tablet:p-8"} tablet:rounded-lg h-full p-2 flex flex-col justify-between carousel-card`}>
+                    <div className="flex flex-col items-center w-full h-full">
+                      <div className="w-full aspect-[4/3] relative mb-4">
+                        <img
+                          className="w-full h-full object-cover rounded-lg"
+                          src={restantes.imagen || "/placeholder.svg"}
+                          alt={restantes.titulo}
+                        />
+                      </div>
+                      <h3
+                        className={` my-4 tablet:my-7 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
+                      >
+                        {truncateText(restantes.titulo, 21)}
+                      </h3>
                     </div>
-                    <h3
-                      className={` my-4 tablet:my-7 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
+                    <button
+                      className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light"
                     >
-                      {truncateText(restantes.titulo, 21)}
-                    </h3>
+                      Ir al sitio
+                    </button>
                   </div>
-                  <button
-                    className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleButtonClick(restantes);
-                    }}
-                  >
-                    Ir al sitio
-                  </button>
-                </div>
+                </Link>
               </div>
             ))}
           </Slider>

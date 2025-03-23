@@ -186,7 +186,7 @@ function Te_Contactamos() {
     try {
 
       
-           const res = await fetch(`https://inea-web-backend.onrender.com/api/correo-pre-registros?populate=%2A`)
+           const res = await fetch(`http://localhost:1337/api/correo-pre-registros?populate=%2A`)
           //const res = await fetch(`http://localhost:1337/api/correo-pre-registros?populate=%2A`)
 
         
@@ -328,7 +328,7 @@ const onSubmit = async(data) =>{
 
       
 
-         const response = await fetch('https://inea-web-backend.onrender.com/api/historialde-pre-registros', {
+         const response = await fetch('http://localhost:1337/api/historialde-pre-registros', {
          //const response = await fetch('http://localhost:1337/api/historialde-pre-registros', {
           method: 'POST',
           headers: {

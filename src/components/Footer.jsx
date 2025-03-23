@@ -17,7 +17,7 @@ const Footer = () => {
               >
                 <img
                   src="/SEP_Logo_2024_blanco.svg"
-                  className="mr-3 h-12"
+                  className="mr-3 h-16"
                   alt="Logo Educacion"
                 />
               </a>
@@ -28,7 +28,7 @@ const Footer = () => {
               >
                 <img
                   src="/LogoINEACDMX_withe.svg"
-                  className="mr-3 h-[70px]"
+                  className="mr-3 h-[60px]"
                   alt="Logo INEA"
                 />
               </a>

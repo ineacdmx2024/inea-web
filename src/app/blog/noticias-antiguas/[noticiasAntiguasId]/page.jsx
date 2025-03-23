@@ -19,7 +19,7 @@ const montserrat = Montserrat({
 
 async function loadPost(slug) {
   const res = await fetch(
-    `https://inea-web-backend.onrender.com/api/blogs/${slug}?populate=%2A`, {
+    `http://localhost:1337/api/blogs/${slug}?populate=%2A`, {
       cache: 'no-store',
       headers: {
         'Cache-Control': 'no-cache'
@@ -33,7 +33,7 @@ async function loadPost(slug) {
 
 async function loadEnlaces() {
   const resPineados = await fetch(
-    `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
+    `http://localhost:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
       cache: 'no-store',
       headers: {
         'Cache-Control': 'no-cache'
@@ -43,7 +43,7 @@ async function loadEnlaces() {
   const { data: enlacesPineados } = await resPineados.json();
   if (enlacesPineados.length < 3) {
     const resNoPineados = await fetch(
-      `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`,
+      `http://localhost:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`,
       {
         cache: "no-store",
         headers: {
@@ -57,7 +57,6 @@ async function loadEnlaces() {
       ...enlacesPineados,
       ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
     ];
-
     return enlacesCompletados;
   }
   return enlacesPineados;
@@ -182,6 +181,7 @@ async function Page({ params }) {
               alt={item.image.alternativeText || "Imagen de la noticia"}
               width={item.image.width}
               height={item.image.height}
+              priority={true}
               className="my-4"
             />
           );
@@ -262,7 +262,7 @@ async function Page({ params }) {
             height={700}
           />
         </div>
-        <div className="mb-6 mt-12 leading-7">{renderContenido(contenido)}</div>
+        <div className="mb-6 mt-12 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-justify">{renderContenido(contenido)}</div>
       </PagSec>
     </div>
   );

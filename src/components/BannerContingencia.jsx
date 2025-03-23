@@ -12,7 +12,7 @@ export default function Banner() {
     async function fetchData() {
       try {
         const res = await fetch(
-          "https://inea-web-backend.onrender.com/api/banner-contingencia?populate=*"
+          "http://localhost:1337/api/banner-contingencia?populate=*"
         );
         const json = await res.json();
 
