@@ -19,6 +19,13 @@ const examen = {
     "Documento binacional (para personas provenientes del extranjero).",
     " En caso de haber cursado en grados escolarizados (Primaria o Secundaria) se deben presentar las boletas correspondientes.",
   ],
+  Boton: [
+    {
+      description: "Regístrate en la plataforma APRENDEINEA e inicia tus estudios:",
+      buttonLabel: "Quiero que me contacten",
+      link: "https://aprendeinea.inea.gob.mx/cursos_2023/index_todos.html",
+    },
+  ],
   celdas: [
     {
       id: "1",
@@ -60,12 +67,14 @@ function Examen_unico() {
     let enlaces = [];
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
-        `http://localhost:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+        //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+        `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
         const resNoPineados = await fetch(
-          `http://localhost:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+          //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+          `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
         );
         const { data: enlacesNoPineados } = await resNoPineados.json();
 

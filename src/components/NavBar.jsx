@@ -419,15 +419,14 @@ const Navbar = () => {
                           onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
                         >
-                        Revalidación a extranjeros
+                          Revalidación a extranjeros
                         </Link>
                         <Link
                           href="/servicios/te-contactamos"
                           onClick={closeAllMenus}
-                          className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
-                        >
+                          className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate">
                          Te contactamos
-                        </Link>
+                         </Link>
                       </div>
                     </div>
 

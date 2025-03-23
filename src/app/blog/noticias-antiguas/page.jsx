@@ -29,20 +29,21 @@ function NoticiasAntiguas({ item }) {
   const [totalNoticias, setTotalNoticias] = useState(0);
   const [paginaActual, setPaginaActual] = useState(1);
   const noticiasPorPagina = 9;
-  //const router = useRouter();
 
   const fetchData = async (page = 1) => {
     const start = (page - 1) * noticiasPorPagina;
 
     try {
-      // Fetch de las noticias paginadas
       const response = await fetch(
+<<<<<<< HEAD
         `http://localhost:1337/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
+=======
+        `https://habitya.life/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
+        //`https://inea-web-backend.onrender.com/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
+>>>>>>> 38d237eeb80ea40c3a40c6b3d291927663c19ede
       );
       const result = await response.json();
       setDatos(result.data);
-
-      // Fetch del total de noticias
       const total = result.meta.pagination.total;
       setTotalNoticias(total);
     } catch (error) {
@@ -51,7 +52,7 @@ function NoticiasAntiguas({ item }) {
   };
 
   useEffect(() => {
-    fetchData(paginaActual); // Cargar la página actual
+    fetchData(paginaActual);
   }, [paginaActual]);
 
   const fechaFun = (fechaAPI) => {
@@ -86,7 +87,6 @@ function NoticiasAntiguas({ item }) {
     return `${diaSemana}, ${dia} de ${mes} de ${año}`;
   };
 
-  // Cambiar página al hacer clic en un botón
   const handlePageChange = (newPage) => {
     setPaginaActual(newPage);
   };
@@ -103,144 +103,116 @@ function NoticiasAntiguas({ item }) {
 
   return (
     <main>
-      <style jsx global>{`
-        /* Card styling based on provided images */
-        .news-card {
-          background-color: white;
-          border-radius: 8px;
-          overflow: hidden;
-          border: 1px solid #e5e7eb;
-          transition: transform 0.2s, box-shadow 0.2s;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-        }
-        
-        .news-card:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .news-card-button {
-          background-color: #611232;
-          color: white;
-          border-radius: 999px;
-          padding: 0.75rem 1rem;
-          display: inline-block;
-          font-weight: 400;
-          text-align: center;
-          transition: all 0.2s;
-          width: auto;
-          min-width: 140px;
-        }
-        
-        .news-card-button:hover {
-          background-color: #4e0e29;
-        }
-      `}</style>
-
       {/* Barra separadora */}
       <div className="mx-auto mt-40 w-11/12 medida3:w-full arrow:w-11/12 tablet:w-[1140px]">
         <div className="ml-0 mb-10">
           <Breadcrumb />
         </div>
         <h1
-          className={`${montserrat.className} text-4xl font-semibold text-[#333334] letras:text-[38px] uppercase`}
+          className={`${montserrat.className} text-4xl font-semibold text-[#333334] letras:text-[38px]`}
         >
-          Noticias Antiguas
+          Noticias antiguas
         </h1>
       </div>
 
       {/* Contenido principal */}
-      <div className="mx-auto mt-14 mb-16 w-11/12 medida3:w-11/12 arrow:w-11/12 tablet:w-[1140px]">
+      <div className="mx-auto mt-14 mb-16 w-11/12 medida3:w-11/12 arrow:w-11/12 tablet:w-[1140px] flex flex-col justify-center items-center gap-8">
         {/* Todas las Noticias */}
-        <div className="w-full grid grid-cols-1 gap-6 ofertaEdu:grid-cols-2 arrow:grid-cols-3">
+        <div className="w-full grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {datos ? (
             datos.map((item, index) => (
-              <div key={index} className="p-1">
-                <div className="news-card">
+              <div key={index} className="px-0 flex flex-col h-full">
+                <div className="overflow-hidden w-full h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between">
                   <Link href={`/blog/noticias-antiguas/${item.attributes.slug}`}>
-                    {/* Imagen */}
-                    <div className="w-full">
+                    {/* Div de la imagen */}
+                    <div className="rounded-xl max-h-[250px] h-[250px] w-full overflow-hidden">
                       <Image
                         src={
-                          item.attributes.Imagen?.data?.attributes?.formats?.small?.url
+                          item.attributes.Imagen?.data?.attributes?.formats
+                            ?.small?.url
                         }
                         alt={
-                          item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
+                          item.attributes.Nombre_de_la_Imagen ||
+                          "Imagen sin título"
                         }
-                        className="w-full h-[208px] object-cover"
+                        className="object-cover w-full h-full"
                         width={350}
-                        height={208}
+                        height={250}
                       />
                     </div>
-                    
-                    {/* Contenido */}
-                    <div className={`${open_Sans.className} p-5 flex flex-col flex-grow`}>
+
+                    {/* Div del texto */}
+                    <article
+                      className={`${open_Sans.className} mt-4 w-full px-4 py-2 flex flex-col justify-between flex-grow`}
+                    >
                       <p className="text-sm text-gray-700 mb-2">
                         {item.attributes.Fecha
                           ? fechaFun(item.attributes.Fecha)
                           : "No hay"}
                       </p>
-                      <h2 className="text-[20px] leading-tight font-medium mb-6 uppercase text-[#333334]">
+                      <h2 className="text-xl font-medium text-[#333334] mb-4">
                         {truncateText(item.attributes.Titulo, 45)}
                       </h2>
-                      
-                      <div className="mt-auto pt-3 flex justify-center">
-                        <span className="news-card-button">
-                          <p className="text-xs letras:text-sm font-light">
-                            Continuar leyendo
-                          </p>
-                        </span>
-                      </div>
-                    </div>
+                    </article>
                   </Link>
+
+                  {/* Botón */}
+                  <div className="w-full mt-auto">
+                    <Link
+                      href={`/blog/noticias-antiguas/${item.attributes.slug}`}
+                      className="m-auto bg-[#611232] text-white text-center py-3 px-2 w-40 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block mb-4"
+                    >
+                      <p className="text-xs font-light">
+                        Continuar leyendo
+                      </p>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))
           ) : (
-            <p className="text-center col-span-full">Cargando noticias...</p>
+            <p className="text-center">Cargando noticias...</p>
           )}
         </div>
 
         {/* Paginación */}
-        <div className="flex justify-end mt-8">
-          <div>
+        <div className="mt-8 flex justify-center gap-4">
+          <button
+            onClick={handlePrevPage}
+            disabled={paginaActual === 1}
+            className={`rounded-l py-2 px-4 text-lg ${
+              paginaActual === 1
+                ? "bg-gray-300 cursor-not-allowed"
+                : "bg-[#611232] text-white hover:bg-[#360a1c]"
+            }`}
+          >
+            {"<<"}
+          </button>
+          {Array.from({ length: totalPaginas }, (_, i) => (
             <button
-              onClick={handlePrevPage}
-              disabled={paginaActual === 1}
-              className={`rounded-l py-1 px-1 text-[16px] ${
-                paginaActual === 1 ? "bg-white" : "bg-[#ffffff] hover:bg-gray-200"
-              } text-lg border border-slate-300 font-light`}
+              key={i}
+              onClick={() => handlePageChange(i + 1)}
+              disabled={paginaActual === i + 1}
+              className={`py-2 px-4 text-lg ${
+                paginaActual === i + 1
+                  ? "bg-[#360a1c] text-white"
+                  : "bg-white hover:bg-gray-200 hover:text-[#360a1c]"
+              } border border-slate-300`}
             >
-              {"<<"}
+              {i + 1}
             </button>
-            {Array.from({ length: totalPaginas }, (_, i) => (
-              <button
-                key={i}
-                onClick={() => handlePageChange(i + 1)}
-                disabled={paginaActual === i + 1}
-                className={`py-1 px-3  ${
-                  paginaActual === i + 1
-                    ? "bg-[#360a1c] text-white"
-                    : "bg-white hover:bg-gray-200 hover:text-[#360a1c] "
-                } text-lg border border-slate-300 font-light`}
-              >
-                {i + 1}
-              </button>
-            ))}
-            <button
-              onClick={handleNextPage}
-              disabled={paginaActual === totalPaginas}
-              className={`rounded-r py-1 px-1 text-[18px] ${
-                paginaActual === totalPaginas
-                  ? "bg-white"
-                  : "bg-white hover:bg-gray-200"
-              } text-lg border border-slate-300`}
-            >
-              {">>"}
-            </button>
-          </div>
+          ))}
+          <button
+            onClick={handleNextPage}
+            disabled={paginaActual === totalPaginas}
+            className={`rounded-r py-2 px-4 text-lg ${
+              paginaActual === totalPaginas
+                ? "bg-gray-300 cursor-not-allowed"
+                : "bg-[#611232] text-white hover:bg-[#360a1c]"
+            }`}
+          >
+            {">>"}
+          </button>
         </div>
       </div>
     </main>

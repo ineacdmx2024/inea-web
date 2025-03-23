@@ -16,7 +16,7 @@ const Footer = () => {
                 className="flex items-center "
               >
                 <img
-                  src="/SEP_Logo_2024_blanco.svg"
+                  src="/Logo_educacion_white_2025.svg"
                   className="mr-3 h-16"
                   alt="Logo Educacion"
                 />

@@ -19,7 +19,12 @@ const montserrat = Montserrat({
 
 async function loadPost(slug) {
   const res = await fetch(
+<<<<<<< HEAD
     `http://localhost:1337/api/blogs/${slug}?populate=%2A`, {
+=======
+   // `https://inea-web-backend.onrender.com/api/blogs/${slug}?populate=%2A`, {
+    `https://habitya.life/api/blogs/${slug}?populate=%2A`, {
+>>>>>>> 38d237eeb80ea40c3a40c6b3d291927663c19ede
       cache: 'no-store',
       headers: {
         'Cache-Control': 'no-cache'
@@ -33,7 +38,12 @@ async function loadPost(slug) {
 
 async function loadEnlaces() {
   const resPineados = await fetch(
+<<<<<<< HEAD
     `http://localhost:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
+=======
+    //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
+    `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
+>>>>>>> 38d237eeb80ea40c3a40c6b3d291927663c19ede
       cache: 'no-store',
       headers: {
         'Cache-Control': 'no-cache'
@@ -43,7 +53,12 @@ async function loadEnlaces() {
   const { data: enlacesPineados } = await resPineados.json();
   if (enlacesPineados.length < 3) {
     const resNoPineados = await fetch(
+<<<<<<< HEAD
       `http://localhost:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`,
+=======
+      //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`,
+      `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`,
+>>>>>>> 38d237eeb80ea40c3a40c6b3d291927663c19ede
       {
         cache: "no-store",
         headers: {

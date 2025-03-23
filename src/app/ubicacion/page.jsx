@@ -23,12 +23,14 @@ function Ubicacion() {
     let enlaces = [];
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
-        `http://localhost:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+       // `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+        `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
         const resNoPineados = await fetch(
-          `http://localhost:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+          //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+         `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
         );
         const { data: enlacesNoPineados } = await resNoPineados.json();
 
@@ -67,15 +69,15 @@ function Ubicacion() {
       ),
       items: [
         {
-          alcaldia: "TLAHUAC",
+          alcaldia: "Tláhuac",
           dir: "Hidalgo # 1, Col. Barrio San Juan, Alcaldía Tláhuac, CP 13060, CDMX",
           atel: "55 5842 1618",
           aemail: "cztlahuac@inea.gob.mx",
           url: "https://maps.app.goo.gl/SCxmZRsNCUyJj4MJA",
         },
         {
-          alcaldia: "MILPA ALTA",
-          dir: "Av. Chiapas # 2, Col. Barrio de Santa Martha, Alcaldía Milpa Alta, CP 12000,CDMX",
+          alcaldia: "Milpa Alta",
+          dir: "Av. Chiapas # 2, Col. Barrio de Santa Martha, Alcaldía Milpa Alta, CP 12000CDMX",
           atel: "55 5844 4886",
           aemail: "czmilpaalta@inea.gob.mX",
           url: "https://maps.app.goo.gl/YVCdzbUGW1w17w2u5",
@@ -83,7 +85,7 @@ function Ubicacion() {
       ],
     },
     {
-      title: "ELENA GARRO",
+      title: "Elena Garro",
       nom: "Mitzi Martínez Pérez",
       tel: " 55 25 20 46 76",
       email: "",
@@ -95,14 +97,14 @@ function Ubicacion() {
       ),
       items: [
         {
-          alcaldia: "TLÁLPAN",
+          alcaldia: "Tlálpan",
           dir: "Periférico Sur # 5290, Col. Isidro Fabela, Alcaldía Tlalpan, CP 01403, CDMX ",
           atel: "55 56 66 17 50",
           aemail: "cztlalpan@inea.gob.mx",
           url: "https://maps.app.goo.gl/cc5DzfS5bnXHnneM6",
         },
         {
-          alcaldia: "CUAJIMALPA",
+          alcaldia: "Cuajimalpa",
           dir: "Av. Luis Castillo Ledón # 17, Col. Cuajimalpa, Alcaldía Cuajimalpa, CP 05000, CDMX",
           atel: "55 58 12 35 91",
           aemail: "czcuajimalpa@inea.gob.mx",
@@ -111,7 +113,7 @@ function Ubicacion() {
       ],
     },
     {
-      title: "FERNANDO SOLANA MORALES",
+      title: "Fernando Solana Morales ",
       nom: "Paola Angélica Avalos Jiménez",
       tel: "55 76 06 72 05",
       email: "",
@@ -123,7 +125,7 @@ function Ubicacion() {
       ),
       items: [
         {
-          alcaldia: "COYOACÁN / XOCHIMILCO",
+          alcaldia: "Coyoacán / Xochimilco ",
           dir: "Pedro Ramírez del Castillo S/N, Colonia Centro de Xochimilco, Alcaldía Xochimilco CP 16000, CDMX",
           atel: "55 56 76 66 60",
           aemail: "czxochimilco@inea.gob.mx",
@@ -132,7 +134,7 @@ function Ubicacion() {
       ],
     },
     {
-      title: "JUSTO SIERRA",
+      title: "Justo Sierra",
       nom: "Laura Merlos Sedeño",
       tel: "55 79 46 79 55",
       email: "lmerlos@inea.gob.mx",
@@ -144,7 +146,7 @@ function Ubicacion() {
       ),
       items: [
         {
-          alcaldia: "ÁLVARO OBREGÓN NORTE",
+          alcaldia: "Álvaro Obregón Norte ",
           dir: "Santa Lucía S/N, Col. Molino de Santo Domingo, Alcaldía Álvaro Obregón, CP 01130, CDMX ",
           atel: "55 52 71 14 43 / 55 26 14 02 78",
           aemail: "czobregonn@inea.gob.mx",
@@ -895,8 +897,8 @@ function Ubicacion() {
         },
         {
           alcaldia: "PILARES Iztlaccihuatl",
-          url: "https://maps.app.goo.gl/HpBe7Pkv9wY2m8p69",
-          dir: "Playa Erizo Num S/N, Col. Reforma Iztlaccihuatl, C.P. 8810",
+          url: "Playa Erizo Num S/N, Col. Reforma Iztlaccihuatl, C.P. 8810",
+          dir: "https://maps.app.goo.gl/HpBe7Pkv9wY2m8p69",
           atel: "",
         },
        
@@ -1864,10 +1866,11 @@ function Ubicacion() {
                       Ubica tu coordinación de zona dependiendo de tu alcaldía
                     </strong>
                     <p className="font-light">
-                    Una Coordinación de Zona del INEA es la unidad operativa encargada de 
-                    implementar y supervisar los servicios de alfabetización, primaria y secundaria 
-                    para jóvenes y adultos mayores de 15 años en una región específica, como las alcaldías. 
-                    Dentro de las oficinas de las Coordinaciones de Zona podrás realizar tus trámites.
+                      Las coordinaciones de zona son unidades geográficas
+                      responsables de promover, organizar y diagnosticar los
+                      servicios de educación para jóvenes y adultos no
+                      escolarizados. Dentro de las coordinaciones de zona podrás
+                      realizar tus trámites.
                     </p>
                   </div>
                 </div>
@@ -1890,7 +1893,7 @@ function Ubicacion() {
                       edades, preferentemente mayores de 15 años, pueden acudir
                       para aprender a leer, escribir, terminar su educación
                       primaria y secundaria, o tomar cursos de capacitación para
-                      la vida y el trabajo.
+                      la vida y el trabajo
                     </p>
                   </div>
                 </div>

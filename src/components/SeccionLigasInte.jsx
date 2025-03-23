@@ -98,7 +98,8 @@ function SeccionLigasInte() {
 
   useEffect(() => {
     const fetchFijos = async () => {
-      const res = await fetch("http://localhost:1337/api/i-enlaces?filters[Fijo][$eq]=true&populate=*")
+      //const res = await fetch("https://inea-web-backend.onrender.com/api/i-enlaces?filters[Fijo][$eq]=true&populate=*")
+      const res = await fetch("https://habitya.life/api/i-enlaces?filters[Fijo][$eq]=true&populate=*")
       const data = await res.json()
       const enlacesData = data.data.map((item) => ({
         id: item.id,
@@ -113,7 +114,8 @@ function SeccionLigasInte() {
     }
 
     const fetchEnlaces = async () => {
-      const res = await fetch("http://localhost:1337/api/i-enlaces?filters[Fijo][$eq]=false&populate=*")
+      //const res = await fetch("https://inea-web-backend.onrender.com/api/i-enlaces?filters[Fijo][$eq]=false&populate=*")
+      const res = await fetch("https://habitya.life/api/i-enlaces?filters[Fijo][$eq]=false&populate=*")
       const data = await res.json()
       const enlacesData2 = data.data.map((item) => ({
         id: item.id,
@@ -154,8 +156,8 @@ function SeccionLigasInte() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: (dots) => (
-      <div style={{ bottom: "-25px" }}>
-        <ul style={{ margin: "0" }}> {dots} </ul>
+      <div style={{ bottom: "-25px", display: "flex", justifyContent: "center" }}>
+        <ul style={{ margin: "0", padding: "0", display: "flex", justifyContent: "center" }}> {dots} </ul>
       </div>
     ),
     prevArrow: <PrevArrow />,
@@ -167,9 +169,15 @@ function SeccionLigasInte() {
       <style jsx global>{`
         .custom-dots {
           bottom: -30px;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          padding: 0;
+          margin: 0;
         }
         .custom-dots li {
           margin: 0 4px;
+          display: inline-block;
         }
         .custom-dots li button {
           border: none;
@@ -202,6 +210,13 @@ function SeccionLigasInte() {
             height: 450px;
             display: flex;
             flex-direction: column;
+          }
+        }
+        
+        /* Estilos para mobile */
+        @media (max-width: 767px) {
+          .slick-slider {
+            padding-bottom: 30px;
           }
         }
       `}</style>
@@ -247,35 +262,36 @@ function SeccionLigasInte() {
         <div className="carrusel tablet:hidden">
           <Slider
             {...settings}
-            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[260px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
+            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {fijos.map((fijos, index) => (
-              <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""} pt-4 tablet:px-8 tablet:pt-0`}>
+              <div key={index} className="pt-4 tablet:px-8 tablet:pt-0">
                 <Link
                   href={`/home-enlaces-de-interes/${fijos.slug}`}
                   target="_self"
                   className="block h-full"
                 >
-                  <div className={`border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full ${isSmallScreen ? "p-2" : "p-3"} flex flex-col justify-between`}>
-                    <div className="flex flex-col items-center w-full h-full">
-                      <div className="w-full aspect-[4/3] relative mb-2">
-                        <img
-                          className="w-full h-full object-cover rounded-lg"
-                          src={fijos.imagen || "/placeholder.svg"}
-                          alt={fijos.titulo}
-                        />
-                      </div>
+                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 flex flex-col">
+                    <div className="w-full aspect-square relative mb-2">
+                      <img
+                        className="w-full h-full object-cover rounded-lg"
+                        src={fijos.imagen || "/placeholder.svg"}
+                        alt={fijos.titulo}
+                      />
+                    </div>
+                    <div className="flex flex-col flex-grow">
                       <h3
-                        className={` my-4 tablet:my-7 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
+                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium"
                       >
                         {truncateText(fijos.titulo, 21)}
                       </h3>
+                      <div className="flex-grow min-h-[30px]"></div>
+                      <button
+                        className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light mb-2"
+                      >
+                        Ir al sitio
+                      </button>
                     </div>
-                    <button
-                      className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light"
-                    >
-                      Ir al sitio
-                    </button>
                   </div>
                 </Link>
               </div>
@@ -287,35 +303,36 @@ function SeccionLigasInte() {
         <div className="carrusel desktop-carousel">
           <Slider
             {...settings}
-            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[260px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
+            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {restantes.map((restantes, index) => (
-              <div key={index} className={`tablet:h-[450px] ${isSmallScreen ? "pt-4" : ""}`}>
+              <div key={index} className="tablet:h-[450px] pt-4 tablet:pt-0">
                 <Link
                   href={`/home-enlaces-de-interes/${restantes.slug}`}
                   target="_self"
                   className="block h-full"
                 >
-                  <div className={`border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none ${isSmallScreen ? "p-2" : "pt-8 px-5 tablet:p-8"} tablet:rounded-lg h-full p-2 flex flex-col justify-between carousel-card`}>
-                    <div className="flex flex-col items-center w-full h-full">
-                      <div className="w-full aspect-[4/3] relative mb-4">
-                        <img
-                          className="w-full h-full object-cover rounded-lg"
-                          src={restantes.imagen || "/placeholder.svg"}
-                          alt={restantes.titulo}
-                        />
-                      </div>
+                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 tablet:p-8 flex flex-col carousel-card">
+                    <div className="w-full aspect-square tablet:aspect-[4/3] relative mb-4">
+                      <img
+                        className="w-full h-full object-cover rounded-lg"
+                        src={restantes.imagen || "/placeholder.svg"}
+                        alt={restantes.titulo}
+                      />
+                    </div>
+                    <div className="flex flex-col flex-grow">
                       <h3
-                        className={` my-4 tablet:my-7 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
+                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium"
                       >
                         {truncateText(restantes.titulo, 21)}
                       </h3>
+                      <div className="flex-grow min-h-[30px]"></div>
+                      <button
+                        className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light mb-2"
+                      >
+                        Ir al sitio
+                      </button>
                     </div>
-                    <button
-                      className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light"
-                    >
-                      Ir al sitio
-                    </button>
                   </div>
                 </Link>
               </div>

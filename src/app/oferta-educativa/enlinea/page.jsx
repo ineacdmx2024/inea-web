@@ -8,13 +8,13 @@ const linea = {
   description: "",
   paragraphs: [
     "Aprende INEA es una plataforma educativa en línea y gratuita, accesible para cualquier persona. Su objetivo principal es proporcionar una vía flexible y conveniente para que los adultos de 15 años o más completen su educación Primaria o Secundaria y obtengan el certificado correspondiente.",
-    "Una vez registrado, cada estudiante tiene la libertad de estudiar a su ritmo a través de su teléfono o computadora, sin restricciones de tiempo para completar los módulos. Sin embargo, se espera que mantengan una participación activa en la plataforma. El nivel primaria comprende cinco módulos básicos y un diversificado. Mientras secundaria consta de siete módulos básicos y dos diversificados.",
+    "Una vez registrado, cada estudiante tiene la libertad de estudiar a su ritmo a través de su teléfono o computadora, sin restricciones de tiempo para completar los módulos. Sin embargo, se espera que mantengan una participación activa en la plataforma. El nivel Primaria comprende un propedéutico y cinco módulos. Mientras Secundaria consta de un propedéutico y siete módulos.",
     "El proceso de aprendizaje implica estudiar los materiales digitales, realizar actividades y aprobar una evaluación final por módulo con una calificación mínima. Los estudiantes tienen la oportunidad de mejorar sus calificaciones a través de múltiples intentos en las actividades y evaluaciones.",
   ],
   Boton: [
     {
-      description: "Accede a la plataforma APRENDE INEA para tomar el curso:",
-      buttonLabel: "Plataforma",
+      description: "Regístrate en la plataforma APRENDEINEA e inicia tus estudios:",
+      buttonLabel: "Quiero que me contacten",
       link: "https://aprendeinea.inea.gob.mx/cursos_2023/index_todos.html",
     },
   ],
@@ -66,12 +66,14 @@ function Aprende_Inea() {
     let enlaces = [];
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
-        `http://localhost:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+        // `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+         `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
         const resNoPineados = await fetch(
-          `http://localhost:1337/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+          //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+          `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
         );
         const { data: enlacesNoPineados } = await resNoPineados.json();
 

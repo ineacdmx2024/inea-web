@@ -1,6 +1,25 @@
+
 "use client";
 
+
+
 import React, { useState } from "react";
+
+
+// Función para capitalizar el texto
+const capitalizarTexto = (texto) => {
+  return texto
+  .toLowerCase() // Convierte todo el texto a minúsculas
+  .split(' ') // Divide el texto en palabras
+  .map((palabra) => {
+    // Capitaliza la primera letra y deja el resto en minúsculas
+    return palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase();
+  })
+  .join(' '); // Vuelve a juntar las palabras
+};
+
+
+  
 
 const SkewedPagesResponsive = ({ datos }) => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -146,17 +165,17 @@ const SkewedPagesResponsive = ({ datos }) => {
                           d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                         />
                       </svg>
-                      <div className="m-[0%] uppercase text-xl text-center">
-                        {item.alcaldia}
+                      <div className="m-[0%] capitalize textoAlcaldia  text-xl text-center">
+                        {capitalizarTexto(item.alcaldia)} 
+                         {/* {item.alcaldia}  */}
                       </div>
                     </div>
-                    <div className="px-2 uppercase text-normal text-center">
+                    <div className="px-2 capitalize text-normal text-center">
                       {item.dir}
                       <br />
                       Tel: {item.atel}
-                      <br />
-                      {item.aemail}
                     </div>
+                    {item.aemail}
                     <br />
                   </div>
                 ))}

@@ -14,52 +14,39 @@ const montserrat = Montserrat({
 function PagSec({ Enlaces, Titulo, Subtitulo, children }) {
   return (
     <div className="mt-[10.5vh]">
-      <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-x-[4vh]">
-        <br />
+      <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-4">
+        
         {/* Breadcrumb */}
-        <div className="col-span-1 md:col-span-12 ">
+        <div className="col-span-12">
           <div className="mx-auto py-1 px-0">
-
             <Breadcrumb />
           </div>
         </div>
 
-        {/* Contenido principal*/}
-        <div className="col-span-1 md:col-span-8 ">
+        {/* Contenido principal (alineado con la derecha) */}
+        <div className="col-span-12 md:col-span-8">
           {Titulo && (
-            <h1
-              className={`${montserrat.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight`}
-            >
+            <h1 className={`${montserrat.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight`}>
               {Titulo}
             </h1>
           )}
           {Subtitulo && (
-            <h2
-              className={`${montserrat.className} text-[27px] font-light text-[#333334] mb-4 leading-9`}
-            >
+            <h2 className={`${montserrat.className} text-[27px] font-light text-[#333334] mb-4 leading-9`}>
               {Subtitulo}
             </h2>
           )}
           {children}
         </div>
 
-        {/* Enlaces laterales  */}
-        <div className="hidden md:block md:col-span-4 mt-3">
-          <div className="flex flex-col">
-            {Enlaces.map((enlace) => (
-              <Card
-                key={enlace.title}
-                title={enlace.title}
-                imageSrc={enlace.imageSrc}
-                buttonText={enlace.buttonText}
-                link={enlace.link}
-              />
-            ))}
-          </div>
+        {/* Enlaces laterales */}
+        <div className="col-span-12 md:col-span-4 flex flex-col">
+          {Enlaces.map((enlace) => (
+            <Card key={enlace.title} title={enlace.title} imageSrc={enlace.imageSrc} buttonText={enlace.buttonText} link={enlace.link} />
+          ))}
         </div>
 
         {/* Carrusel de Cards (visible en pantallas pequeñas) */}
-        <div className="md:hidden w-full mt-20 ">
+        <div className="md:hidden w-full">
           <CarouselEL cards={Enlaces} />
         </div>
       </div>
