@@ -135,8 +135,8 @@ function CarouselOfertEdu() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: (dots) => (
-      <div style={{ bottom: "-25px" }}>
-        <ul style={{ margin: "0" }}> {dots} </ul>
+      <div style={{ bottom: "-25px", display: "flex", justifyContent: "center" }}>
+        <ul style={{ margin: "0", padding: "0", display: "flex", justifyContent: "center" }}> {dots} </ul>
       </div>
     ),
     prevArrow: <PrevArrow />,
@@ -147,9 +147,15 @@ function CarouselOfertEdu() {
       <style jsx global>{`
         .custom-dots {
           bottom: -30px;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          padding: 0;
+          margin: 0;
         }
         .custom-dots li {
           margin: 0 4px;
+          display: inline-block;
         }
         .custom-dots li button {
           border: none;
@@ -163,11 +169,11 @@ function CarouselOfertEdu() {
           transition: all 0.3s ease;
         }
         .custom-dots li.slick-active button:before {
-          color: #611232; // Color rojo para el punto activo
+          color: #611232; /* Color rojo para el punto activo */
           transform: scale(1.2);
         }
 
-        * Estilos solo para desktop que igualan el gap */
+        /* Estilos solo para desktop que igualan el gap */
         @media (min-width: 768px) {
           .desktop-carousel .slick-slide {
             padding: 0 16px;  /* Mitad del gap-8 (32px) */
@@ -179,9 +185,19 @@ function CarouselOfertEdu() {
           
           /* Aseguramos que la card tiene las mismas dimensiones */
           .desktop-carousel .carousel-card {
+            height: 450px;
             display: flex;
             flex-direction: column;
           }
+        }
+        
+        /* Estilos para mobile */
+        @media (max-width: 767px) {
+          .slick-slider {
+            padding-bottom: 30px;
+          }
+        }
+        
         .carousel-card {
           display: flex;
           flex-direction: column;
@@ -200,37 +216,39 @@ function CarouselOfertEdu() {
         <div className="carrusel desktop-carousel">
           <Slider
             {...settings}
-            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[260px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
+            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {modalidades.map((noticia, index) => (
-              <Link
-                href={`/oferta-educativa${noticia.url}`}
-                key={index*36}
-              >
-                <div className="tablet:h-[450px]">
-                  <div className={`border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full ${isSmallScreen ? "p-2" : "p-8"} flex flex-col justify-between carousel-card`}>
-                    <div className="flex flex-col items-center w-full">
+              <div key={index*36} className="tablet:h-[450px] pt-4 tablet:pt-0">
+                <Link
+                  href={`/oferta-educativa${noticia.url}`}
+                  className="block h-full"
+                >
+                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 tablet:p-8 flex flex-col carousel-card">
+                    <div className="w-full aspect-square tablet:aspect-[4/3] relative mb-4">
                       <img
                         className="w-full h-full object-cover rounded-lg"
                         src={noticia.image || "/placeholder.svg"}
                         alt={noticia.name}
                       />
+                    </div>
+                    <div className="flex flex-col justify-between flex-grow">
                       <h3
-                        className="mb-4 tablet:my-7 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium"
+                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium"
                       >
                         {truncateText(noticia.name, 25)}
                       </h3>
-                    </div>
-                    <div className={`button-container ${isSmallScreen ? 'pb-2' : ''}`}>
-                      <button
-                        className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
-                      >
-                        Ir al sitio
-                      </button>
+                      <div className="flex justify-center mt-10 tablet:mt-4">
+                        <button
+                          className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
+                        >
+                          Ir al sitio
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             ))}
           </Slider>
         </div>

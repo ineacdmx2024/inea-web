@@ -211,6 +211,15 @@ function SeccionLigasInte() {
             display: flex;
             flex-direction: column;
           }
+          
+          /* Dimensiones fijas para imágenes en desktop */
+          @media (min-width: 768px) {
+            .image-container {
+              width: 295.5px;
+              height: 221.81px;
+              margin: 0 auto;
+            }
+          }
         }
         
         /* Estilos para mobile */
@@ -234,7 +243,7 @@ function SeccionLigasInte() {
               >
                 <div className={`border border-slate-300 shadow-none rounded-lg h-[450px] ${isSmallScreen ? "p-2" : "p-8"} flex flex-col`}>
                   <div className="flex-1 flex flex-col items-center">
-                    <div className="w-full aspect-[4/3] relative mb-4">
+                    <div className="w-full aspect-[4/3] relative mb-4 image-container">
                       <img
                         className="w-full h-full object-cover rounded-lg"
                         src={fijos.imagen || "/placeholder.svg"}
@@ -313,7 +322,7 @@ function SeccionLigasInte() {
                   className="block h-full"
                 >
                   <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 tablet:p-8 flex flex-col carousel-card">
-                    <div className="w-full aspect-square tablet:aspect-[4/3] relative mb-4">
+                    <div className="w-full aspect-square tablet:aspect-[4/3] relative mb-4 image-container">
                       <img
                         className="w-full h-full object-cover rounded-lg"
                         src={restantes.imagen || "/placeholder.svg"}
