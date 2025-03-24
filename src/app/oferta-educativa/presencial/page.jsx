@@ -14,7 +14,7 @@ const regular = {
   ],
   Boton: [
     {
-      description: "Regístrate en la modalidad presencial y comienza tus estudios:",
+      description: "Para obtener más información sobre la modalidad presencial y comenzar tus estudios, llena el siguiente formulario:",
       buttonLabel: "Quiero que me contacten",
       link: "https://inea-web-frontend.vercel.app/servicios/te-contactamos",
     },
