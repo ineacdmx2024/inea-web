@@ -35,12 +35,8 @@ function NoticiasAntiguas({ item }) {
 
     try {
       const response = await fetch(
-<<<<<<< HEAD
-        `http://localhost:1337/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
-=======
         `https://habitya.life/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
         //`https://inea-web-backend.onrender.com/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
->>>>>>> 38d237eeb80ea40c3a40c6b3d291927663c19ede
       );
       const result = await response.json();
       setDatos(result.data);
