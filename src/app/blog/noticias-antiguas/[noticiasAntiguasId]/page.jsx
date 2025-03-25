@@ -265,7 +265,7 @@ async function Page({ params }) {
             height={700}
           />
         </div>
-        <div className="mb-6 mt-12 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-justify">{renderContenido(contenido)}</div>
+        <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-justify">{renderContenido(contenido)}</div>
       </PagSec>
     </div>
   );
