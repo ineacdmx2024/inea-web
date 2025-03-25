@@ -242,7 +242,7 @@ async function Page({ params }) {
             height={700}
           />
         </div>
-        <div className={`mb-6 mt-12 leading-7 font-serif font-thin`}>
+        <div className={`mb-6 mt-8 leading-7 font-serif font-thin`}>
           {renderContenido(contenido)}
         </div>
       </PagSec>

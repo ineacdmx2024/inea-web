@@ -214,7 +214,7 @@ async function ComunicadoContingencia() {
           </div>
         )}
 
-        <div className="mb-6 mt-12 leading-7">
+        <div className="mb-6 mt-8 leading-7">
           {renderContenido(post.data.attributes.Contenido)}
         </div>
       </PagSec>
