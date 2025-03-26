@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import PagSec from "@/components/PlantillaPagSec";
 import PagMod from "@/components/PlantillaPagModalidad";
+import Breadcrumb from "@/components/Breadcrumb"; // Importa el Breadcrumb
 
 const examen = {
   bannerImage: "/Modalidad/examen_unico2024.jpg",
@@ -65,13 +66,11 @@ function Examen_unico() {
     let enlaces = [];
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
-       // `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
         `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
         const resNoPineados = await fetch(
-         // `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
           `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
         );
         const { data: enlacesNoPineados } = await resNoPineados.json();
@@ -99,6 +98,7 @@ function Examen_unico() {
 
   return (
     <PagSec Enlaces={enlacesL}>
+      <Breadcrumb /> {/* Aquí se incluye el breadcrumb */}
       <PagMod info={examen}></PagMod>
     </PagSec>
   );

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import PagSec from "@/components/PlantillaPagSec";
 import PagMod from "@/components/PlantillaPagModalidad";
+import Breadcrumb from "@/components/Breadcrumb"; // Importa Breadcrumb
 
 const regular = {
   bannerImage: "/Modalidad/programa_regular2.webp",
@@ -63,20 +64,18 @@ const regular = {
 };
 
 function Presencial() {
-  //enlaces laterales
+  // Enlaces laterales
   const [enlacesL, setenlacesL] = useState([]);
 
   useEffect(() => {
     let enlaces = [];
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
-        //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
         `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
         const resNoPineados = await fetch(
-          //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
           `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
         );
         const { data: enlacesNoPineados } = await resNoPineados.json();
@@ -105,6 +104,8 @@ function Presencial() {
   return (
     <div className="">
       <PagSec Enlaces={enlacesL}>
+        {/* Aquí agregamos el Breadcrumb */}
+        <Breadcrumb />
         <PagMod info={regular}></PagMod>
       </PagSec>
     </div>
