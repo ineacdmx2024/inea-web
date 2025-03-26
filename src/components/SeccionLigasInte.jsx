@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css"
 import { useRouter } from "next/navigation"
 import { Montserrat } from "next/font/google"
 import Link from "next/link"
+import Image from "next/image"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -244,11 +245,18 @@ function SeccionLigasInte() {
                 <div className={`border border-slate-300 shadow-none rounded-lg h-[450px] ${isSmallScreen ? "p-2" : "p-8"} flex flex-col`}>
                   <div className="flex-1 flex flex-col items-center">
                     <div className="w-full aspect-[4/3] relative mb-4 image-container">
-                      <img
-                        className="w-full h-full object-cover rounded-lg"
-                        src={fijos.imagen || "/placeholder.svg"}
-                        alt={fijos.titulo}
-                      />
+                      <div className="w-full h-full relative rounded-lg overflow-hidden">
+                        <Image
+                          src={fijos.imagen || "/placeholder.svg"}
+                          alt={fijos.titulo}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          quality={90}
+                          priority
+                          className="object-cover"
+                          style={{ transform: 'translate3d(0, 0, 0)' }}
+                        />
+                      </div>
                     </div>
                     <h3
                       className={` my-4 px-2 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
@@ -282,11 +290,18 @@ function SeccionLigasInte() {
                 >
                   <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 flex flex-col">
                     <div className="w-full aspect-square relative mb-2">
-                      <img
-                        className="w-full h-full object-cover rounded-lg"
-                        src={fijos.imagen || "/placeholder.svg"}
-                        alt={fijos.titulo}
-                      />
+                      <div className="w-full h-full relative rounded-lg overflow-hidden">
+                        <Image
+                          src={fijos.imagen || "/placeholder.svg"}
+                          alt={fijos.titulo}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          quality={90}
+                          priority
+                          className="object-cover"
+                          style={{ transform: 'translate3d(0, 0, 0)' }}
+                        />
+                      </div>
                     </div>
                     <div className="flex flex-col flex-grow">
                       <h3
@@ -323,11 +338,17 @@ function SeccionLigasInte() {
                 >
                   <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 tablet:p-8 flex flex-col carousel-card">
                     <div className="w-full aspect-square tablet:aspect-[4/3] relative mb-4 image-container">
-                      <img
-                        className="w-full h-full object-cover rounded-lg"
-                        src={restantes.imagen || "/placeholder.svg"}
-                        alt={restantes.titulo}
-                      />
+                      <div className="w-full h-full relative rounded-lg overflow-hidden">
+                        <Image
+                          src={restantes.imagen || "/placeholder.svg"}
+                          alt={restantes.titulo}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          quality={90}
+                          className="object-cover"
+                          style={{ transform: 'translate3d(0, 0, 0)' }}
+                        />
+                      </div>
                     </div>
                     <div className="flex flex-col flex-grow">
                       <h3

@@ -68,3 +68,17 @@
     @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded;
   }
 
+/* Improved image rendering quality */
+img {
+  image-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.image-smooth {
+  image-rendering: auto;
+  -webkit-image-smoothing: antialiased;
+  image-smoothing: high;
+  transform: translateZ(0);
+}
+

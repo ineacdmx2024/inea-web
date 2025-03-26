@@ -249,17 +249,18 @@ function DetalleEnlace(slug) {
             >
               INEA Ciudad de México | {cont.fecha ? fechaFun(cont.fecha) : ""}
             </h1>
-            <div className="m-auto my-6 rounded-lg max-h-[392px]">
+            <div className="m-auto my-6 rounded-lg relative">
               <Image
                 src={cont.imagen}
                 alt={cont.NomImg || "Imagen sin título"}
-                className="w-full rounded-lg"
+                className="w-full rounded-lg object-cover"
                 width={1000}
                 height={700}
+                style={{ maxHeight: '392px' }}
               />
             </div>
 
-            <div className="prose lg:prose-xl mt-8 max-w-3xl text-gray-800 overflow-hidden" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', wordBreak: 'break-word', textAlign: 'justify' }}>
+            <div className="prose lg:prose-xl mt-8 max-w-3xl text-gray-800 overflow-hidden clear-both" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', wordBreak: 'break-word', textAlign: 'justify' }}>
               {renderContenido(cont.contenido)}
             </div>
           </PagSec>

@@ -35,7 +35,7 @@ async function loadPost(slug) {
 async function loadEnlaces() {
   const res = await fetch(
    // `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`,
-   `https://habitya.lifeapi/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`,
+   `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`,
     {
       cache: "no-store",
       headers: {
