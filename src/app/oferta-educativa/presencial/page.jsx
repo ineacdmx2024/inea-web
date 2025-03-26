@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import PagSec from "@/components/PlantillaPagSec";
 import PagMod from "@/components/PlantillaPagModalidad";
-import Breadcrumb from "@/components/Breadcrumb"; // Importa Breadcrumb
+
 
 const regular = {
   bannerImage: "/Modalidad/programa_regular2.webp",
@@ -104,8 +104,6 @@ function Presencial() {
   return (
     <div className="">
       <PagSec Enlaces={enlacesL}>
-        {/* Aquí agregamos el Breadcrumb */}
-        <Breadcrumb />
         <PagMod info={regular}></PagMod>
       </PagSec>
     </div>

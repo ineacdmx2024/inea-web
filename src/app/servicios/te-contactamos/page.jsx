@@ -6,7 +6,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useForm, Controller } from "react-hook-form";
 import "./TeContactamos.css";
 import "react-datepicker/dist/react-datepicker.css";
-import Breadcrumb from "@/components/Breadcrumb"; // Importa Breadcrumb
 
 import { Montserrat } from "next/font/google";
 
@@ -954,7 +953,6 @@ return (
           </form>
         </div>
       </div>
-      <Breadcrumb />
     </PagSec>
   </div>
 );
