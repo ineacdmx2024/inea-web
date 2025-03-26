@@ -18,7 +18,7 @@ const montserrat = Montserrat({
 
 function Page() {
   return (
-    <main className={`mx-auto ${montserrat.className} bg-white pt-[100px]`}>
+    <main className={`mx-auto ${montserrat.className} bg-white pt-[100px] w-full overflow-x-hidden`}>
       <div>
         <img
           src="/Banner_INEA_CDMX_EducacionMovilnueva.webp"

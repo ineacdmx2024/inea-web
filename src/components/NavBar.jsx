@@ -78,7 +78,7 @@ const Navbar = () => {
     // <div className="navBar text-white ">
     <div
       ref={navRef}
-      className="navBar"
+      className="navBar w-screen max-w-full"
     >
       <div className="bg-[#611232] w-full">
         {/* Menú gobierno */}
