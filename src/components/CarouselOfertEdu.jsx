@@ -210,6 +210,39 @@ function CarouselOfertEdu() {
           display: flex;
           justify-content: center;
         }
+        
+        /* Dimensiones fijas para imágenes */
+        .image-container {
+          width: 100%;
+          max-width: 296px; /* Ancho fijo de 296px */
+          height: 236.8px; /* Alto fijo de 236.8px */
+          position: relative;
+          overflow: hidden;
+          border-radius: 0.5rem;
+          margin: 0 auto;
+        }
+        
+        .image-container img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        
+        /* Medidas responsivas para dispositivos móviles */
+        @media (max-width: 767px) {
+          .image-container {
+            width: 100%;
+            height: 0;
+            padding-bottom: 80%; /* Mantiene proporción similar en móviles */
+            max-width: none;
+          }
+          
+          .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
       `}</style>
 
       <div className="p-2 pt-0">
@@ -225,9 +258,8 @@ function CarouselOfertEdu() {
                   className="block h-full"
                 >
                   <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 tablet:p-8 flex flex-col carousel-card">
-                    <div className="w-full aspect-square tablet:aspect-[4/3] relative mb-4">
+                    <div className="image-container mb-4">
                       <img
-                        className="w-full h-full object-cover rounded-lg"
                         src={noticia.image || "/placeholder.svg"}
                         alt={noticia.name}
                       />

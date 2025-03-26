@@ -212,21 +212,58 @@ function SeccionLigasInte() {
             display: flex;
             flex-direction: column;
           }
-          
-          /* Dimensiones fijas para imágenes en desktop */
-          @media (min-width: 768px) {
-            .image-container {
-              width: 295.5px;
-              height: 221.81px;
-              margin: 0 auto;
-            }
-          }
         }
         
         /* Estilos para mobile */
         @media (max-width: 767px) {
           .slick-slider {
             padding-bottom: 30px;
+          }
+        }
+        
+        .carousel-card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .button-container {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+        
+        /* Dimensiones fijas para imágenes */
+        .image-container {
+          width: 100%;
+          max-width: 296px; /* Ancho fijo de 296px */
+          height: 236.8px; /* Alto fijo de 236.8px */
+          position: relative;
+          overflow: hidden;
+          border-radius: 0.5rem;
+          margin: 0 auto;
+        }
+        
+        .image-container img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        
+        /* Medidas responsivas para dispositivos móviles */
+        @media (max-width: 767px) {
+          .image-container {
+            width: 100%;
+            height: 0;
+            padding-bottom: 80%; /* Mantiene proporción similar en móviles */
+            max-width: none;
+          }
+          
+          .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
           }
         }
       `}</style>
@@ -242,33 +279,27 @@ function SeccionLigasInte() {
                 target="_self"
                 className="block h-full"
               >
-                <div className={`border border-slate-300 shadow-none rounded-lg h-[450px] ${isSmallScreen ? "p-2" : "p-8"} flex flex-col`}>
-                  <div className="flex-1 flex flex-col items-center">
-                    <div className="w-full aspect-[4/3] relative mb-4 image-container">
-                      <div className="w-full h-full relative rounded-lg overflow-hidden">
-                        <Image
-                          src={fijos.imagen || "/placeholder.svg"}
-                          alt={fijos.titulo}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          quality={90}
-                          priority
-                          className="object-cover"
-                          style={{ transform: 'translate3d(0, 0, 0)' }}
-                        />
-                      </div>
-                    </div>
+                <div className="border border-slate-300 shadow-none rounded-lg h-[450px] p-2 tablet:p-8 flex flex-col carousel-card">
+                  <div className="image-container mb-4">
+                    <img
+                      src={fijos.imagen || "/placeholder.svg"}
+                      alt={fijos.titulo}
+                    />
+                  </div>
+                  <div className="flex flex-col justify-between flex-grow">
                     <h3
-                      className={` my-4 px-2 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium`}
+                      className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium"
                     >
                       {truncateText(fijos.titulo, 21)}
                     </h3>
+                    <div className="flex justify-center mt-10 tablet:mt-4">
+                      <button
+                        className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
+                      >
+                        Ir al sitio
+                      </button>
+                    </div>
                   </div>
-                  <button
-                    className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light mt-auto"
-                  >
-                    Ir al sitio
-                  </button>
                 </div>
               </Link>
             </div>
@@ -282,39 +313,32 @@ function SeccionLigasInte() {
             className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {fijos.map((fijos, index) => (
-              <div key={index} className="pt-4 tablet:px-8 tablet:pt-0">
+              <div key={index} className="pt-4 tablet:pt-0">
                 <Link
                   href={`/home-enlaces-de-interes/${fijos.slug}`}
                   target="_self"
                   className="block h-full"
                 >
-                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 flex flex-col">
-                    <div className="w-full aspect-square relative mb-2">
-                      <div className="w-full h-full relative rounded-lg overflow-hidden">
-                        <Image
-                          src={fijos.imagen || "/placeholder.svg"}
-                          alt={fijos.titulo}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          quality={90}
-                          priority
-                          className="object-cover"
-                          style={{ transform: 'translate3d(0, 0, 0)' }}
-                        />
-                      </div>
+                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 tablet:p-8 flex flex-col carousel-card">
+                    <div className="image-container mb-4">
+                      <img
+                        src={fijos.imagen || "/placeholder.svg"}
+                        alt={fijos.titulo}
+                      />
                     </div>
-                    <div className="flex flex-col flex-grow">
+                    <div className="flex flex-col justify-between flex-grow">
                       <h3
                         className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium"
                       >
                         {truncateText(fijos.titulo, 21)}
                       </h3>
-                      <div className="flex-grow min-h-[30px]"></div>
-                      <button
-                        className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light mb-2"
-                      >
-                        Ir al sitio
-                      </button>
+                      <div className="flex justify-center mt-10 tablet:mt-4">
+                        <button
+                          className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
+                        >
+                          Ir al sitio
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </Link>
@@ -337,31 +361,25 @@ function SeccionLigasInte() {
                   className="block h-full"
                 >
                   <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 tablet:p-8 flex flex-col carousel-card">
-                    <div className="w-full aspect-square tablet:aspect-[4/3] relative mb-4 image-container">
-                      <div className="w-full h-full relative rounded-lg overflow-hidden">
-                        <Image
-                          src={restantes.imagen || "/placeholder.svg"}
-                          alt={restantes.titulo}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                          quality={90}
-                          className="object-cover"
-                          style={{ transform: 'translate3d(0, 0, 0)' }}
-                        />
-                      </div>
+                    <div className="image-container mb-4">
+                      <img
+                        src={restantes.imagen || "/placeholder.svg"}
+                        alt={restantes.titulo}
+                      />
                     </div>
-                    <div className="flex flex-col flex-grow">
+                    <div className="flex flex-col justify-between flex-grow">
                       <h3
                         className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium"
                       >
                         {truncateText(restantes.titulo, 21)}
                       </h3>
-                      <div className="flex-grow min-h-[30px]"></div>
-                      <button
-                        className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] mx-auto block font-light mb-2"
-                      >
-                        Ir al sitio
-                      </button>
+                      <div className="flex justify-center mt-10 tablet:mt-4">
+                        <button
+                          className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
+                        >
+                          Ir al sitio
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </Link>
