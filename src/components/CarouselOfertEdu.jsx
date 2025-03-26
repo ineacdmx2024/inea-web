@@ -100,27 +100,27 @@ function CarouselOfertEdu() {
   const modalidades = [
     {
       name: "Alfabetización, primaria y secundaria presencial",
-      image: "/presencial.png",
+      image: "/presencial.webp",
       url: "/presencial",
     },
     {
       name: "Primaria y secundaria en línea",
-      image: "/aprendeenlinea.png",
+      image: "/aprendeenlinea.webp",
       url: "/enlinea",
     },
     {
       name: "Examen único",
-      image: "/examenUnico.png",
+      image: "/examenunico.webp",
       url: "/examen-unico",
     },
     {
       name: "¿Qué opción me conviene?",
-      image: "/queMeConviene.png",
+      image: "/queMeConviene.webp",
       url: "/que-modalidad-elijo",
     },
     {
       name: "Exámenes diagnóstico",
-      image: "/examenDiagnostico.png",
+      image: "/examenDiagnostico.webp",
       url: "/examen-diagnostico",
     }
   ]
