@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import PagSec from "@/components/PlantillaPagSec";
 import PagMod from "@/components/PlantillaPagModalidad";
 
+
 const regular = {
   bannerImage: "/Modalidad/programa_regular2.webp",
   title: "Programa regular presencial",
@@ -14,7 +15,7 @@ const regular = {
   ],
   Boton: [
     {
-      description: "Regístrate en la modalidad presencial y comienza tus estudios:",
+      description: "Para obtener más información sobre la modalidad presencial y comenzar tus estudios, llena el siguiente formulario:",
       buttonLabel: "Quiero que me contacten",
       link: "https://inea-web-frontend.vercel.app/servicios/te-contactamos",
     },
@@ -63,20 +64,18 @@ const regular = {
 };
 
 function Presencial() {
-  //enlaces laterales
+  // Enlaces laterales
   const [enlacesL, setenlacesL] = useState([]);
 
   useEffect(() => {
     let enlaces = [];
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
-        //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
         `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
         const resNoPineados = await fetch(
-          //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
           `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
         );
         const { data: enlacesNoPineados } = await resNoPineados.json();

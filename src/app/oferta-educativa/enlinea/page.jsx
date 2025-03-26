@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import PagSec from "@/components/PlantillaPagSec";
 import PagMod from "@/components/PlantillaPagModalidad";
+import Breadcrumb from "@/components/Breadcrumb"; // Importa el Breadcrumb
+
 const linea = {
   bannerImage: "/Modalidad/aprendeINEAenlinea2.webp",
   title: "AprendeINEA en línea",
@@ -14,11 +16,10 @@ const linea = {
   Boton: [
     {
       description: "Regístrate en la plataforma APRENDEINEA e inicia tus estudios:",
-      buttonLabel: "Quiero que me contacten",
+      buttonLabel: "Regístrate",
       link: "https://aprendeinea.inea.gob.mx/cursos_2023/index_todos.html",
     },
   ],
-
   time: " 3 a 6 meses dedicando 4 horas por semana.",
   requirements: [
     "Tener 15 años o más.",
@@ -58,21 +59,20 @@ const linea = {
     },
   ],
 };
+
 function Aprende_Inea() {
-  //enlaces laterales
+  // Enlaces laterales
   const [enlacesL, setenlacesL] = useState([]);
 
   useEffect(() => {
     let enlaces = [];
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
-        // `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
-         `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+        `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
         const resNoPineados = await fetch(
-          //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
           `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
         );
         const { data: enlacesNoPineados } = await resNoPineados.json();
@@ -97,10 +97,13 @@ function Aprende_Inea() {
     };
     fetchEnlacesL();
   }, []);
+
   return (
     <div>
+      {/* El Breadcrumb ahora solo se muestra dentro del componente PagSec */}
       <PagSec Enlaces={enlacesL}>
-        <PagMod info={linea}></PagMod>
+        <Breadcrumb /> {/* Aquí se incluye el breadcrumb */}
+        <PagMod info={linea} />
       </PagSec>
     </div>
   );
