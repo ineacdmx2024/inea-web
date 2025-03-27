@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import PagSec from "@/components/PlantillaPagSec";
 import PagMod from "@/components/PlantillaPagModalidad";
-import Breadcrumb from "@/components/Breadcrumb"; // Importa el Breadcrumb
 
 const linea = {
   bannerImage: "/Modalidad/aprendeINEAenlinea2.webp",
@@ -102,7 +101,6 @@ function Aprende_Inea() {
     <div>
       {/* El Breadcrumb ahora solo se muestra dentro del componente PagSec */}
       <PagSec Enlaces={enlacesL}>
-        <Breadcrumb /> {/* Aquí se incluye el breadcrumb */}
         <PagMod info={linea} />
       </PagSec>
     </div>

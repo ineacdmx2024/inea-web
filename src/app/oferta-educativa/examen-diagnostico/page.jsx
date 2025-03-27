@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import PagSec from "@/components/PlantillaPagSec";
 import PagMod from "@/components/PlantillaPagModalidad";
-import Breadcrumb from "@/components/Breadcrumb"; // Importa el Breadcrumb
 
 const examen = {
   bannerImage: "/Modalidad/examenes_diagnostico.jpg",
@@ -101,7 +100,6 @@ function Examen_unico() {
 
   return (
     <PagSec Enlaces={enlacesL}>
-      <Breadcrumb /> {/* Aquí se incluye el breadcrumb */}
       <PagMod info={examen}></PagMod>
     </PagSec>
   );

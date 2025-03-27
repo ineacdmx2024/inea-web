@@ -91,7 +91,7 @@ function Presencial() {
       const enlacesLData = enlaces.map((item) => ({
         title: item.attributes.Titulo,
         imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
-        buttonText: "Ir al sitio",
+        buttonText: "Ir al siti",
         link: item.attributes.URL_Externo
           ? item.attributes.URL_Externo
           : `/enlaces-de-interes/${item.attributes.slug}`,
