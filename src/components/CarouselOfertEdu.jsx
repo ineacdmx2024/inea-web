@@ -128,7 +128,7 @@ function CarouselOfertEdu() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,

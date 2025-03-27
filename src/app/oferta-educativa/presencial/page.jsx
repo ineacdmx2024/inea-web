@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import PagSec from "@/components/PlantillaPagSec";
 import PagMod from "@/components/PlantillaPagModalidad";
 
-
 const regular = {
   bannerImage: "/Modalidad/programa_regular2.webp",
   title: "Programa regular presencial",
@@ -33,8 +32,7 @@ const regular = {
     {
       id: "1",
       title: "Quienes",
-      subtitle:
-        "Quieren aprender a leer y escribir y estudiar primaria o secundaria con materiales impresos en un lugar fijo.",
+      subtitle: "Quieren aprender a leer y escribir y estudiar primaria o secundaria con materiales impresos en un lugar fijo.",
     },
     {
       id: "2",
@@ -64,12 +62,23 @@ const regular = {
 };
 
 function Presencial() {
-  // Enlaces laterales
-  const [enlacesL, setenlacesL] = useState([]);
+  const [enlacesL, setEnlacesL] = useState([]);
+  const [isMobile, setIsMobile] = useState(false); // Estado para la vista móvil
 
   useEffect(() => {
-    let enlaces = [];
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Si el ancho es menor o igual a 768px, es móvil
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Verificamos el tamaño cuando se carga la página
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
     const fetchEnlacesL = async () => {
+      let enlaces = [];
       const resPineados = await fetch(
         `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
@@ -91,19 +100,19 @@ function Presencial() {
       const enlacesLData = enlaces.map((item) => ({
         title: item.attributes.Titulo,
         imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
-        buttonText: "Ir al siti",
+        buttonText: "Ir al sitio",
         link: item.attributes.URL_Externo
           ? item.attributes.URL_Externo
           : `/enlaces-de-interes/${item.attributes.slug}`,
       }));
-      setenlacesL(enlacesLData);
+      setEnlacesL(enlacesLData);
     };
     fetchEnlacesL();
   }, []);
 
   return (
     <div className="">
-      <PagSec Enlaces={enlacesL}>
+      <PagSec Enlaces={enlacesL} isMobile={isMobile}>
         <PagMod info={regular}></PagMod>
       </PagSec>
     </div>
