@@ -416,8 +416,7 @@ return (
                Si recibiste tu certificado en formato impreso antes de 2018 y lo has extraviado, completa el siguiente
                formulario con la información correcta. Ésta será enviada a la Unidad de Operación del INEA en la Ciudad
                de México para solicitar un duplicado o la digitalización de tu certificado de primaria o secundaria 
-               expedido por esta institución. Si concluiste en el 2018 o en adelante, accede a  
-               En la cuenta{" "}
+               expedido por esta institución. Si concluiste en el 2018 o en adelante, accede a 
                  <strong>
                    <a className="text-blue-700" href="https://certificacion.inea.gob.mx/DescCertificado.aspx">
                    este sitio para descargar tu certificado.

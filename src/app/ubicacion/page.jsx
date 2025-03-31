@@ -1875,7 +1875,7 @@ function Ubicacion() {
                   </div>
                 </div>
 
-                <div className="w-full flex-col">
+                <div className="w-full flex-col mb-40">
                   <SkewedPagesResponsive datos={pageData} />
                 </div>
               </div>
@@ -1885,7 +1885,7 @@ function Ubicacion() {
                 <div className="mx-auto mb-4 w-full max-w-full ">
                   <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
                     <strong>
-                      Ubica tu plaza comunitaria dependiendo de tu alcaldía.
+                      Ubica tu plaza comunitaria dependiendo de tu alcaldía
                     </strong>
                     <p className="font-light">
                       Las Plazas Comunitarias del INEA son espacios educativos
@@ -1893,7 +1893,7 @@ function Ubicacion() {
                       edades, preferentemente mayores de 15 años, pueden acudir
                       para aprender a leer, escribir, terminar su educación
                       primaria y secundaria, o tomar cursos de capacitación para
-                      la vida y el trabajo
+                      la vida y el trabajo.
                     </p>
                   </div>
                 </div>
@@ -1908,7 +1908,7 @@ function Ubicacion() {
                 <div className="mx-auto mb-4 w-full max-w-full ">
                   <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px] ">
                     <strong>
-                      Ubica tu PILARES más cercano dependiendo de tu alcaldía.
+                      Ubica tu PILARES más cercano dependiendo de tu alcaldía
                     </strong>
                     <p className="font-light">
                       Los PILARES (Puntos de Innovación, Libertad, Arte,
