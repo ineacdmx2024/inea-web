@@ -288,9 +288,9 @@ function SeccionLigasInte() {
                   </div>
                   <div className="flex flex-col justify-between flex-grow">
                     <h3
-                      className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium"
+                      className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium  w-[17ch] break-normal h-[32px]"
                     >
-                      {truncateText(fijos.titulo, 21)}
+                      {truncateText(fijos.titulo, 37)}
                     </h3>
                     <div className="flex justify-center mt-10 tablet:mt-4">
                       <button
@@ -328,9 +328,9 @@ function SeccionLigasInte() {
                     </div>
                     <div className="flex flex-col justify-between flex-grow">
                       <h3
-                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium"
+                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium  w-[17ch] break-normal h-[32px]"
                       >
-                        {truncateText(fijos.titulo, 21)}
+                        {truncateText(fijos.titulo, 37)}
                       </h3>
                       <div className="flex justify-center mt-10 tablet:mt-4">
                         <button
@@ -369,9 +369,9 @@ function SeccionLigasInte() {
                     </div>
                     <div className="flex flex-col justify-between flex-grow">
                       <h3
-                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium"
+                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium w-[17ch] break-normal h-[32px]"
                       >
-                        {truncateText(restantes.titulo, 21)}
+                        {truncateText(restantes.titulo, 37)}
                       </h3>
                       <div className="flex justify-center mt-10 tablet:mt-4">
                         <button
