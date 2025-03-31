@@ -20,7 +20,7 @@ function Page() {
   return (
     <main className={`mx-auto ${montserrat.className} bg-white pt-[100px] w-full overflow-x-hidden`}>
       <div>
-        <img
+        {/* <img
           src="/Banner_INEA_CDMX_EducacionMovilnueva.webp"
           alt="BannerMovil"
           className="w-full h-auto block medida3:hidden"
@@ -29,9 +29,9 @@ function Page() {
           src="/Banner_INEA_CDMX_Educacion_nueva.webp"
           alt="Banner"
           className="w-full h-auto hidden medida3:block"
-        />
+        /> */}
       </div>
-      {/* <BannerContingencia /> */}
+      <BannerContingencia /> 
       <CarouselInicio />
 
       {/* Nuevo texto agregado después del Banner de Contingencia y antes del Blog */}
