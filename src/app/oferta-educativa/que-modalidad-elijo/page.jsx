@@ -201,7 +201,7 @@ function Modalidad() {
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                        <path d="M10 .5a9.5 9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
                       </svg>
                       <span className="sr-only">Info</span>
                       <h3 className="text-lg font-medium">
@@ -287,7 +287,7 @@ function Modalidad() {
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                        <path d="M10 .5a9.5 9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
                       </svg>
                       <span className="sr-only">Info</span>
                       <h3 className="text-lg font-medium">
@@ -365,7 +365,7 @@ function Modalidad() {
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                        <path d="M10 .5a9.5 9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
                       </svg>
                       <span className="sr-only">Info</span>
                       <h3 className="text-lg font-medium">
@@ -404,6 +404,26 @@ function Modalidad() {
               }
               imageSrc="/Modalidad/examenes_diagnostico.jpg"
             />
+          </div>
+          <div className="mt-8 text-center">
+            {/* Descripción del botón */}
+            <p className="text-[22px] font-semibold mb-4">
+              Para obtener más información sobre nuestras diferentes modalidades y comenzar tus estudios, llena el siguiente formulario:
+            </p>
+            {/* Botón */}
+            <motion.button
+              className="mt-4 px-4 py-2 bg-[#611232] text-white rounded-lg mx-auto block border-2 hover:bg-white hover:text-[#611232] hover:border-[#611232] focus:bg-[#A57F2C]"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() =>
+                window.open(
+                  "https://inea-web-frontend.vercel.app/servicios/te-contactamos",
+                  "_blank"
+                )
+              }
+            >
+              Regístrate
+            </motion.button>
           </div>
         </div>
       </PagSec>
