@@ -1,79 +1,61 @@
 "use client"
-import DetalleEnlace from "@/app/home-enlaces-de-interes/[home-enlace-interesId]/page"
-import { useState, useEffect } from "react"
+import DetalleEnlace from "@/app/enlaces-carrusel/[home-enlace-carruselid]/page"
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { useRouter } from "next/navigation"
+import Image from "next/image";
 
 function CarouselInicio() {
-  const [slidesToShow, setSlidesToShow] = useState(1)  // Mostrar solo 1 imagen en pantalla pequeña
   const router = useRouter()
 
-  const [isSmallScreen, setIsSmallScreen] = useState(false)
-
-  useEffect(() => {
-    const handleResize = () => {
-      setSlidesToShow(window.innerWidth < 1210 ? 1 : 1)  // Ajustar para tamaños grandes
-      setIsSmallScreen(window.innerWidth <= 500)  // Detectar pantallas pequeñas
-    }
-
-    handleResize()
-    window.addEventListener("resize", handleResize)
-
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  }, [])
-
-  const [fijos, setFijos] = useState([])
   const [restantes, setRestantes] = useState([])
 
   useEffect(() => {
-    const fetchFijos = async () => {
-      const res = await fetch("https://habitya.life/api/baner-principals?filters[Fijo][$eq]=true&populate=*")
-      const data = await res.json()
-      const enlacesData = data.data.map((item) => ({
-        id: item.id,
-        contenido: item.attributes.Contenido,
-        link: item.attributes.Link,
-        slug: item.attributes.slug,
-        imagen: item.attributes.Imagen?.data?.attributes?.formats?.large?.url,
-      }))
-      setFijos(enlacesData)
-    }
-
     const fetchEnlaces = async () => {
-      const res = await fetch("https://habitya.life/api/baner-principals?filters[Fijo][$eq]=false&populate=*")
+     
+      //const res = await fetch("http://localhost:1337/api/baner-principals?populate=*")
+      const res = await fetch(" https://habitya.life/api/api/baner-principals?populate=*")
       const data = await res.json()
+
       const enlacesData2 = data.data.map((item) => ({
         id: item.id,
+        titulo: item.attributes.Titulo,
         subtitulo: item.attributes.Subtitulo,
         contenido: item.attributes.Contenido,
         link: item.attributes.Link,
         slug: item.attributes.slug,
-        imagen: item.attributes.Imagen?.data?.attributes?.formats?.large?.url,
+        imagenMovil: item.attributes.Banner_movile?.data?.attributes?.formats?.small?.url,  // Imagen para móvil
+        imagenEscritorio: item.attributes.Imagen?.data?.attributes?.formats?.large?.url,
       }))
       setRestantes(enlacesData2)
     }
 
-    fetchFijos()
     fetchEnlaces()
   }, [])
 
   const handleButtonClick = (item) => {
+
+    console.log("Hola")
     if (item && item.link) {
-      window.open(item.link, "_blank")
+      window.open(item.link, "_blank") // Abre en una nueva pestaña
     } else if (item && item.slug) {
-      router.push(`/home-enlaces-de-interes/${item.slug}`)
+      ;<DetalleEnlace slug={item.slug} />
+      router.push(`/enlaces-carrusel/${item.slug}`)
+
+      console.log(item.slug.toString())
+    } else {
+      console.log("El objeto 'item' no está bien definido:", item)
     }
   }
+    
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: slidesToShow,
+    slidesToShow: 1, // Aseguramos que solo se vea un "slide" a la vez
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
@@ -83,100 +65,70 @@ function CarouselInicio() {
         <ul style={{ margin: "0" }}> {dots} </ul>
       </div>
     ),
+    responsive: [
+      {
+        breakpoint: 768,  // Dispositivos pequeños (móviles)
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          customPaging: () => (
+            <div className="dot-style">
+              <span className="dot"></span>
+            </div>
+          ),
+        }
+      },
+      {
+        breakpoint: 1024, // Dispositivos medianos (tabletas y escritorios)
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          customPaging: () => (
+            <div className="dot-style">
+              <span className="dot"></span>
+            </div>
+          ),
+        }
+      }
+    ]
   }
 
   return (
     <>
-      <style jsx global>{`
-  .custom-dots {
-    bottom: -30px;
-  }
-  .custom-dots li {
-    margin: 0 4px;
-  }
-  .custom-dots li button {
-    border: none;
-    background: none;
-    padding: 0;
-  }
-  .custom-dots li button:before {
-    font-size: 12px;
-    color: #000000;
-    opacity: 1;
-    transition: all 0.3s ease;
-  }
-  .custom-dots li.slick-active button:before {
-    color: #61232;
-    transform: scale(1.2);
-  }
-
-  /* Estilos para hacer que las imágenes sean responsivas */
-  .carousel-image {
-    width: 100%;  /* La imagen ocupa todo el ancho del contenedor */
-    height: auto;  /* Ajusta la altura de la imagen proporcionalmente */
-    object-fit: cover;  /* Mantiene la proporción y cubre el contenedor */
-  }
-
-  /* Asegurar que el contenedor tenga una relación de aspecto */
-  .carousel-container {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* Opcional: Un contenedor con una relación de aspecto para un estilo específico */
-  .aspect-ratio-container {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect ratio (altura = 56.25% del ancho) */
-  }
-  .aspect-ratio-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* Asegura que la imagen cubra el contenedor sin distorsión */
-  }
-`}</style>
-
-      <div className="carousel-container">
-        <Slider {...settings} className="w-full">
-          {fijos.map((fijos, index) => (
-            <div key={index}>
-              <div className="h-full p-8 flex flex-col justify-between">
-                <div className="flex flex-col items-center w-full h-full">
-                  <div className="w-full aspect-[4/3] relative mb-4">
-                    <img
-                      className="carousel-image"
-                      src={fijos.imagen || "/placeholder.svg"}
-                      alt={fijos.titulo}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleButtonClick(fijos);
-                      }}
-                    />
-                  </div>
-                </div>
+      <div>
+        <Slider {...settings}>
+          {restantes.map((restante, index) => (
+            <div key={index} className="w-full m-auto">
+              {/* Imagen para dispositivos de escritorio */}
+              <div className="w-full h-full hidden md:block">
+                <Image
+                  className="w-full h-full object-contain  p-4"
+                  src={restante.imagenEscritorio || "/placeholder.svg"}
+                  alt={restante.subtitulo || "Imagen de banner"}
+                  width={544}
+                  height={500}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleButtonClick(restante);
+                  }}
+                />
               </div>
-            </div>
-          ))}
-        </Slider>
 
-        <Slider {...settings} className="w-full">
-          {restantes.map((restantes, index) => (
-            <div key={index}>
-              <div className="carousel-card">
-                <div>
-                  <img
-                    className="carousel-image"
-                    src={restantes.imagen || "/placeholder.svg"}
-                    alt={restantes.titulo}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleButtonClick(restantes);
-                    }}
-                  />
-                </div>
+              {/* Imagen para dispositivos móviles */}
+              <div className="w-full h-full block md:hidden">
+                <Image
+                  className="w-full h-full object-contain bg-purple-800"
+                  src={restante.imagenMovil || "/placeholder.svg"}
+                  alt={restante.subtitulo || "Imagen de banner móvil"}
+                  width={900}
+                  height={200}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleButtonClick(restante);
+                  }}
+                />
               </div>
             </div>
           ))}
@@ -186,4 +138,4 @@ function CarouselInicio() {
   )
 }
 
-export default CarouselInicio
+export default CarouselInicio;

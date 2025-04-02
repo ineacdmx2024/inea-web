@@ -98,13 +98,13 @@ function Ubicacion() {
       items: [
         {
           alcaldia: "Tlálpan",
-          dir: "Periférico Sur # 5290, Col. Isidro Fabela, Alcaldía Tlalpan, CP 01403, CDMX ",
-          atel: "55 56 66 17 50",
-          aemail: "cztlalpan@inea.gob.mx",
-          url: "https://maps.app.goo.gl/cc5DzfS5bnXHnneM6",
+          dir: "Av. México # 985, Col. Héroes de Padierna, Alcaldía Magdalena Contreras, CP 10700, CDMX",
+          atel: "55 56 52 72 87",
+          aemail: "czmcontreras@inea.gob.mx",
+          url: "https://maps.app.goo.gl/Dh7uZbSH1rDHnXSb8",
         },
         {
-          alcaldia: "Cuajimalpa",
+          alcaldia: "Magdalena Contreras",
           dir: "Av. Luis Castillo Ledón # 17, Col. Cuajimalpa, Alcaldía Cuajimalpa, CP 05000, CDMX",
           atel: "55 58 12 35 91",
           aemail: "czcuajimalpa@inea.gob.mx",
@@ -160,11 +160,11 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/gxEYgfWfWUkEz4hGA",
         },
         {
-          alcaldia: "MAGDALENA CONTRERAS",
-          dir: "Av. México # 985, Col. Héroes de Padierna,  Alcaldía Magdalena Contreras, CP 10700, CDMX",
-          atel: "55 56 52 72 87",
-          aemail: "czmcontreras@inea.gob.mx",
-          url: "https://maps.app.goo.gl/ktTcibPfD4cdxyeq6",
+          alcaldia: "Cuajimalpa",
+          dir: "Av. Luis Castillo Ledón # 17, Col. Cuajimalpa, Alcaldía Cuajimalpa, CP 05000, CDMX",
+          atel: "55 58 12 35 91",
+          aemail: "czcuajimalpa@inea.gob.mx",
+          url: "https://maps.app.goo.gl/SvyTLG8zawHd5zCj6",
         },
       ],
     },
@@ -1875,7 +1875,7 @@ function Ubicacion() {
                   </div>
                 </div>
 
-                <div className="w-full flex-col">
+                <div className="w-full flex-col mb-40">
                   <SkewedPagesResponsive datos={pageData} />
                 </div>
               </div>
@@ -1885,7 +1885,7 @@ function Ubicacion() {
                 <div className="mx-auto mb-4 w-full max-w-full ">
                   <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
                     <strong>
-                      Ubica tu plaza comunitaria dependiendo de tu alcaldía.
+                      Ubica tu plaza comunitaria dependiendo de tu alcaldía
                     </strong>
                     <p className="font-light">
                       Las Plazas Comunitarias del INEA son espacios educativos
@@ -1893,7 +1893,7 @@ function Ubicacion() {
                       edades, preferentemente mayores de 15 años, pueden acudir
                       para aprender a leer, escribir, terminar su educación
                       primaria y secundaria, o tomar cursos de capacitación para
-                      la vida y el trabajo
+                      la vida y el trabajo.
                     </p>
                   </div>
                 </div>
@@ -1908,7 +1908,7 @@ function Ubicacion() {
                 <div className="mx-auto mb-4 w-full max-w-full ">
                   <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px] ">
                     <strong>
-                      Ubica tu PILARES más cercano dependiendo de tu alcaldía.
+                      Ubica tu PILARES más cercano dependiendo de tu alcaldía
                     </strong>
                     <p className="font-light">
                       Los PILARES (Puntos de Innovación, Libertad, Arte,

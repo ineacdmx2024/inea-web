@@ -1,0 +1,23 @@
+[33m5027a81[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33m0e44aef[m HEAD@{1}: reset: moving to HEAD~1
+[33m90c0b79[m HEAD@{2}: reset: moving to HEAD~1
+[33m7a106d5[m HEAD@{3}: reset: moving to HEAD
+[33m7a106d5[m HEAD@{4}: commit: Dimension del breadcrum y boton modalidad
+[33m90c0b79[m HEAD@{5}: commit: corrección de botón enlacesl
+[33m0e44aef[m HEAD@{6}: checkout: moving from master to master
+[33m0e44aef[m HEAD@{7}: pull origin master --rebase (finish): returning to refs/heads/master
+[33m0e44aef[m HEAD@{8}: pull origin master --rebase (pick): ajuste de barra superior
+[33m5027a81[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m HEAD@{9}: pull origin master --rebase (start): checkout 5027a818439c909732a885b3c4d6d36c1855ce9c
+[33ma35e600[m HEAD@{10}: commit: ajuste de barra superior
+[33m2bc79d9[m HEAD@{11}: checkout: moving from master to master
+[33m2bc79d9[m HEAD@{12}: commit: Ajuste de breadcrumb
+[33m1888e2b[m HEAD@{13}: commit: Agregado breadcrumb a varias páginas
+[33ma239009[m HEAD@{14}: commit: alineaciión de texto
+[33m4fbf4fe[m HEAD@{15}: commit (merge): Merge branch 'master' of https://github.com/ineacdmx2024/inea-web
+[33m5c95959[m HEAD@{16}: reset: moving to HEAD
+[33m5c95959[m HEAD@{17}: reset: moving to HEAD
+[33m5c95959[m HEAD@{18}: reset: moving to HEAD
+[33m5c95959[m HEAD@{19}: pull origin master: Merge made by the 'ort' strategy.
+[33mec3ce34[m HEAD@{20}: commit: Ajustes de texto página principal y secundarias
+[33mf3761f6[m HEAD@{21}: checkout: moving from master to master
+[33mf3761f6[m HEAD@{22}: clone: from https://github.com/ineacdmx2024/inea-web.git

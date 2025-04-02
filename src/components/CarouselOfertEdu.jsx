@@ -266,9 +266,9 @@ function CarouselOfertEdu() {
                     </div>
                     <div className="flex flex-col justify-between flex-grow">
                       <h3
-                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium"
+                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium h-[32px]"
                       >
-                        {truncateText(noticia.name, 25)}
+                        {truncateText(noticia.name, 37)}
                       </h3>
                       <div className="flex justify-center mt-10 tablet:mt-4">
                         <button
