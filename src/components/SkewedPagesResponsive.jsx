@@ -137,7 +137,7 @@ const SkewedPagesResponsive = ({ datos }) => {
 
             {/* Lado derecho- abajo */}
             <div className="right-0 bottom-0">
-              <div className="flex-column items-center justify-center text-center p-2 h-full bg-cover bg-[#f6f6f6] rounded-t-lg mb-7">
+              <div className="flex-column items-center justify-center text-center p-2 h-full bg-cover bg-[#f6f6f6] rounded-t-lg p-7">
                 {pageData.items.map((item, idx) => (
                   <div
                     key={idx}
