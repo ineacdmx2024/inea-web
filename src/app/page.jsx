@@ -5,6 +5,7 @@ import CarouselInicio from "@/components/CarouselInicio";
 import CarouselOfertEdu from "@/components/CarouselOfertEdu";
 import SeccionLigasInte from "@/components/SeccionLigasInte";
 import Ubicacion from "@/components/Ubicacion";
+import BannerContingencia from "@/components/BannerContingencia";
 
 const open_Sans = Open_Sans({ subsets: ["latin"] });
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -24,10 +25,7 @@ function Page() {
           className="w-full h-auto hidden medida3:block"
         /> */}
       </div>
-<<<<<<< HEAD
-=======
-      <BannerContingencia /> 
->>>>>>> e5b5fcbbd4787f7e754a6a74e13713b7d6eb8f19
+      <BannerContingencia />
       <CarouselInicio />
 
       <div className="mx-auto my-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px] text-center">
