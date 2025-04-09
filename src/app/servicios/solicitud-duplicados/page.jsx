@@ -145,9 +145,9 @@ const day = [
 
 
      
-      //const res = await fetch(`http://localhost:1337/api/correos?populate=%2A`)
+      //const res = await fetch(`https://inea-web-backend-cg20.onrender.com/api/correos?populate=%2A`)
       //const res = await fetch(`https://inea-web-backend.onrender.com/api/correos?populate=%2A`)
-      const res = await fetch(`https://habitya.life/api/correos?populate=%2A`)
+      const res = await fetch(`https://inea-web-backend-cg20.onrender.com/api/correos?populate=%2A`)
 
 
           if(!res.ok){
@@ -343,8 +343,8 @@ const onSubmit = async(data) =>{
 
 
           //const response = await fetch('https://inea-web-backend.onrender.com/api/correoineas', {
-          //const response = await fetch('http://localhost:1337/api/correoineas', {
-          const response = await fetch('http://habitya.life/api/correoineas', {
+          //const response = await fetch('https://inea-web-backend-cg20.onrender.com/api/correoineas', {
+          const response = await fetch('https://inea-web-backend-cg20.onrender.com/api/correoineas', {
           method: 'POST',
 
           headers: {

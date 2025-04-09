@@ -15,7 +15,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'habitya.life',
+        hostname: 'localhost:1337',
         pathname: '/**',
       },
       {

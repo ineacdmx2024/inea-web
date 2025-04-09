@@ -17,7 +17,7 @@ const montserrat = Montserrat({
 
 async function loadPost() {
   const res = await fetch(
-    `https://habitya.life/api/banner-contingencia?populate=%2A`,
+    `https://inea-web-backend-cg20.onrender.com/api/banner-contingencia?populate=%2A`,
     {
       cache: "no-store",
       headers: {
@@ -31,7 +31,7 @@ async function loadPost() {
 
 async function loadEnlaces() {
   const res = await fetch(
-    `https://habitya.life/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
+    `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
       cache: 'no-store',
       headers: {
         'Cache-Control': 'no-cache'

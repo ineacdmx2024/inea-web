@@ -13,7 +13,7 @@ export default function Banner() {
       try {
         const res = await fetch(
           //"https://inea-web-backend.onrender.com/api/banner-contingencia?populate=*"
-          "https://habitya.life/api/banner-contingencia?populate=*"
+          "https://inea-web-backend-cg20.onrender.com/api/banner-contingencia?populate=*"
         );
         const json = await res.json();
 
