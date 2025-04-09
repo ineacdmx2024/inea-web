@@ -2,8 +2,8 @@
 import { Open_Sans, Montserrat } from "next/font/google";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
+import PagSec from "@/components/PlantillaPagSec"; // Nuevo componente importado
 
 const open_Sans = Open_Sans({
   weight: ["300", "400", "500", "700"],
@@ -76,11 +76,7 @@ function NoticiasAntiguas({ item }) {
       "diciembre",
     ];
     const fecha = new Date(fechaAPI);
-    const diaSemana = diasSemana[fecha.getDay() + 1];
-    const dia = fecha.getDate() + 1;
-    const mes = meses[fecha.getMonth()];
-    const año = fecha.getFullYear();
-    return `${diaSemana}, ${dia} de ${mes} de ${año}`;
+    return `${diasSemana[fecha.getDay()]}, ${fecha.getDate()} de ${meses[fecha.getMonth()]} de ${fecha.getFullYear()}`;
   };
 
   const handlePageChange = (newPage) => {
@@ -99,118 +95,112 @@ function NoticiasAntiguas({ item }) {
 
   return (
     <main>
-      {/* Barra separadora */}
-      <div className="mx-auto mt-40 w-11/12 medida3:w-full arrow:w-11/12 tablet:w-[1140px]">
-        <div className="ml-0 mb-10">
-          <Breadcrumb />
-        </div>
-        <h1
-          className={`${montserrat.className} text-4xl font-semibold text-[#333334] letras:text-[38px]`}
-        >
-          Noticias antiguas
-        </h1>
-      </div>
+      <PagSec Enlaces={[]}> {/* Pasamos un array vacío para evitar errores */}
+        <div className="mx-auto w-11/12 medida3:w-full arrow:w-11/12 tablet:w-[1140px]">
+          <h1
+            className={`${montserrat.className} text-4xl font-semibold text-[#333334] letras:text-[38px] mt-8 mb-6`}
+          >
+            Noticias antiguas
+          </h1>
 
-      {/* Contenido principal */}
-      <div className="mx-auto mt-14 mb-16 w-11/12 medida3:w-11/12 arrow:w-11/12 tablet:w-[1140px] flex flex-col justify-center items-center gap-8">
-        {/* Todas las Noticias */}
-        <div className="w-full grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {datos ? (
-            datos.map((item, index) => (
-              <div key={index} className="px-0 flex flex-col h-full">
-                <div className="overflow-hidden w-full h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between">
-                  <Link href={`/blog/noticias-antiguas/${item.attributes.slug}`}>
-                    {/* Div de la imagen */}
-                    <div className="rounded-xl max-h-[250px] h-[250px] w-full overflow-hidden">
-                      <Image
-                        src={
-                          item.attributes.Imagen?.data?.attributes?.formats
-                            ?.small?.url
-                        }
-                        alt={
-                          item.attributes.Nombre_de_la_Imagen ||
-                          "Imagen sin título"
-                        }
-                        className="object-cover w-full h-full"
-                        width={350}
-                        height={250}
-                      />
+          <div className="mb-16 flex flex-col justify-center items-center gap-8">
+            <div className="w-full grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {datos ? (
+                datos.map((item, index) => (
+                  <div key={index} className="px-0 flex flex-col h-full">
+                    <div className="overflow-hidden w-full h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between">
+                      <Link
+                        href={`/blog/noticias-antiguas/${item.attributes.slug}`}
+                      >
+                        <div className="rounded-xl max-h-[250px] h-[250px] w-full overflow-hidden">
+                          <Image
+                            src={
+                              item.attributes.Imagen?.data?.attributes?.formats
+                                ?.small?.url
+                            }
+                            alt={
+                              item.attributes.Nombre_de_la_Imagen ||
+                              "Imagen sin título"
+                            }
+                            className="object-cover w-full h-full"
+                            width={350}
+                            height={250}
+                          />
+                        </div>
+
+                        <article
+                          className={`${open_Sans.className} mt-4 w-full px-4 py-2 flex flex-col justify-between flex-grow`}
+                        >
+                          <p className="text-sm text-gray-700 mb-2">
+                            {item.attributes.Fecha
+                              ? fechaFun(item.attributes.Fecha)
+                              : "No hay fecha"}
+                          </p>
+                          <h2 className="text-xl font-medium text-[#333334] mb-4">
+                            {truncateText(item.attributes.Titulo, 45)}
+                          </h2>
+                        </article>
+                      </Link>
+
+                      <div className="w-full mt-auto">
+                        <Link
+                          href={`/blog/noticias-antiguas/${item.attributes.slug}`}
+                          className="m-auto bg-[#611232] text-white text-center py-3 px-2 w-40 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block mb-4"
+                        >
+                          <p className="text-xs font-light">
+                            Continuar leyendo
+                          </p>
+                        </Link>
+                      </div>
                     </div>
-
-                    {/* Div del texto */}
-                    <article
-                      className={`${open_Sans.className} mt-4 w-full px-4 py-2 flex flex-col justify-between flex-grow`}
-                    >
-                      <p className="text-sm text-gray-700 mb-2">
-                        {item.attributes.Fecha
-                          ? fechaFun(item.attributes.Fecha)
-                          : "No hay"}
-                      </p>
-                      <h2 className="text-xl font-medium text-[#333334] mb-4">
-                        {truncateText(item.attributes.Titulo, 45)}
-                      </h2>
-                    </article>
-                  </Link>
-
-                  {/* Botón */}
-                  <div className="w-full mt-auto">
-                    <Link
-                      href={`/blog/noticias-antiguas/${item.attributes.slug}`}
-                      className="m-auto bg-[#611232] text-white text-center py-3 px-2 w-40 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block mb-4"
-                    >
-                      <p className="text-xs font-light">
-                        Continuar leyendo
-                      </p>
-                    </Link>
                   </div>
-                </div>
-              </div>
-            ))
-          ) : (
-            <p className="text-center">Cargando noticias...</p>
-          )}
-        </div>
+                ))
+              ) : (
+                <p className="text-center">Cargando noticias...</p>
+              )}
+            </div>
 
-        {/* Paginación */}
-        <div className="mt-8 flex justify-center gap-4">
-          <button
-            onClick={handlePrevPage}
-            disabled={paginaActual === 1}
-            className={`rounded-l py-2 px-4 text-lg ${
-              paginaActual === 1
-                ? "bg-gray-300 cursor-not-allowed"
-                : "bg-[#611232] text-white hover:bg-[#360a1c]"
-            }`}
-          >
-            {"<<"}
-          </button>
-          {Array.from({ length: totalPaginas }, (_, i) => (
-            <button
-              key={i}
-              onClick={() => handlePageChange(i + 1)}
-              disabled={paginaActual === i + 1}
-              className={`py-2 px-4 text-lg ${
-                paginaActual === i + 1
-                  ? "bg-[#360a1c] text-white"
-                  : "bg-white hover:bg-gray-200 hover:text-[#360a1c]"
-              } border border-slate-300`}
-            >
-              {i + 1}
-            </button>
-          ))}
-          <button
-            onClick={handleNextPage}
-            disabled={paginaActual === totalPaginas}
-            className={`rounded-r py-2 px-4 text-lg ${
-              paginaActual === totalPaginas
-                ? "bg-gray-300 cursor-not-allowed"
-                : "bg-[#611232] text-white hover:bg-[#360a1c]"
-            }`}
-          >
-            {">>"}
-          </button>
+            <div className="mt-8 flex justify-center gap-4">
+              <button
+                onClick={handlePrevPage}
+                disabled={paginaActual === 1}
+                className={`rounded-l py-2 px-4 text-[22px] ${
+                  paginaActual === 1
+                    ? "bg-gray-300 cursor-not-allowed"
+                    : "bg-[#611232] text-white hover:bg-[#360a1c]"
+                }`}
+              >
+                {"<<"}
+              </button>
+              {Array.from({ length: totalPaginas }, (_, i) => (
+                <button
+                  key={i}
+                  onClick={() => handlePageChange(i + 1)}
+                  disabled={paginaActual === i + 1}
+                  className={`py-2 px-4 text-[22px] ${
+                    paginaActual === i + 1
+                      ? "bg-[#360a1c] text-white"
+                      : "bg-white hover:bg-gray-200 hover:text-[#360a1c]"
+                  } border border-slate-300`}
+                >
+                  {i + 1}
+                </button>
+              ))}
+              <button
+                onClick={handleNextPage}
+                disabled={paginaActual === totalPaginas}
+                className={`rounded-r py-2 px-4 text-[22px] ${
+                  paginaActual === totalPaginas
+                    ? "bg-gray-300 cursor-not-allowed"
+                    : "bg-[#611232] text-white hover:bg-[#360a1c]"
+                }`}
+              >
+                {">>"}
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
+      </PagSec>
     </main>
   );
 }

@@ -104,7 +104,7 @@ function PagMod({ info }) {
                 key={index}
                 className="mb-2"
               >
-                <p className="text-xl text-center font-bold">
+                <p style={{ fontSize: "22px", fontWeight: "bold", textAlign: "center" }}>
                   {paragraph.description}
                 </p>
                 <motion.button

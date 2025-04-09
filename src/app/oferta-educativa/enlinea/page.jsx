@@ -102,7 +102,7 @@ function Aprende_Inea() {
       {/* El Breadcrumb ahora solo se muestra dentro del componente PagSec */}
       <PagSec Enlaces={enlacesL}>
         <PagMod info={linea} />
-      </PagSec>
+              </PagSec>
     </div>
   );
 }
