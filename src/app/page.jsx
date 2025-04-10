@@ -74,16 +74,15 @@ function Page() {
       </div>
       <SeccionLigasInte />
 
-      <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
+      <div className="my-12 md:my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px] pt-0">
         <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
-          Ubicación
+              Ubicación
         </h1>
         <div className="flex items-center">
           <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
-          <div className="flex-grow h-px bg-gray-300"></div>
+              <div className="flex-grow h-px bg-gray-300"></div>
         </div>
-      </div>
-
+      </div>  
       <Ubicacion />
     </main>
   );
