@@ -28,7 +28,8 @@ function Page() {
       <BannerContingencia />
       <CarouselInicio />
 
-      <div className="mx-auto my-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px] text-center">
+      {/* Sección de presentación de INEA CDMX */}
+      <div className="mx-auto my-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1142px] text-center">
         <h1 className="text-[33px] font-bold text-[#333334]">
           INEA en la Ciudad de México
         </h1>
@@ -41,16 +42,18 @@ function Page() {
         </div>
       </div>
 
-      <div className="mx-auto my-20 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
+      {/* Sección del blog con CarouselBlog */}
+      <div className="mx-auto my-20 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1142px]">
         <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
           Blog
         </h1>
-        <div className="flex items-center">
+        <div className="flex items-center mb-6">
           <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
           <div className="flex-grow h-px bg-gray-300"></div>
         </div>
+        <CarouselBlog />
       </div>
-      <CarouselBlog />
+
 
       <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
         <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
