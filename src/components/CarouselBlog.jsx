@@ -9,15 +9,16 @@ import Link from "next/link";
 
 const open_Sans = Open_Sans({
   weight: ["300", "400", "500", "700"],
-  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
+  style: ["italic", "normal"],
   subsets: ["latin"],
 });
 
 const montserrat = Montserrat({
   weight: ["300", "400", "500", "700"],
-  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
+  style: ["italic", "normal"],
   subsets: ["latin"],
 });
+
 
 const truncateText = (text, maxWords) => {
   const words = text.split(" ");
@@ -245,18 +246,13 @@ const CarouselBlog = ({ item }) => {
                     href={`/blog/noticias-antiguas/${item.attributes.slug}`}
                     className="bg-slate-800"
                   >
-                    <Image
-                      src={
-                        item.attributes.Imagen?.data?.attributes?.url
-                      }
-                      alt={
-                        item.attributes.Nombre_de_la_Imagen ||
-                        "Imagen sin título"
-                      }
-                      className="h-[200px] w-[500px] blog:w-full blog:h-full object-contain letras:object-fill rounded-xl"
+                    <Image 
+                      src={item.attributes.Imagen?.data?.attributes?.url}
+                      alt={ item.attributes.Nombre_de_la_Imagen || "Imagen sin título"}
+                      className="h-[200px] w-[500px] blog:w-full blog:h-full object-cover blog:object-fill rounded-xl"
                       width={950}
                       height={500}
-                    />
+                      />
                   </Link>
                 </div>
 
