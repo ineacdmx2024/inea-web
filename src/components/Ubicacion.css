@@ -13,14 +13,14 @@
 
 #UbicacionDivP a:hover {
   color: #611232;
-  /* text-decoration: underline; */
 }
 
 #direccion {
-  margin-top: 0; /* Quitar el -5% para evitar espacio excesivo */
-  padding-top: 1rem; /* Espacio controlado arriba del contenido */
+  margin-top: 0;           /* Se ha eliminado el empuje hacia abajo */
+  padding-top: 1rem;       /* Espaciado controlado */
 }
 
+/* Ajustes responsivos */
 @media screen and (max-width: 1200px) and (min-width: 430px) {
   #direccion {
     padding-top: 1rem;
