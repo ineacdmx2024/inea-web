@@ -16,22 +16,21 @@
 }
 
 #direccion {
-  margin-top: 0;           /* Se ha eliminado el empuje hacia abajo */
-  padding-top: 1rem;       /* Espaciado controlado */
+  margin-top: 0;
+  padding-top: 1rem;
 }
 
-/* Ajustes responsivos */
+/* Responsivo - Se han eliminado márgenes verticales, solo se controlan desde JSX */
 @media screen and (max-width: 1200px) and (min-width: 430px) {
   #direccion {
     padding-top: 1rem;
-    margin-bottom: 10%;
+    margin-bottom: 0;
     width: auto;
     height: auto;
   }
 
   #UbicacionDivP {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 0;
     width: auto;
     height: auto;
   }
@@ -40,14 +39,13 @@
 @media screen and (max-width: 430px) {
   #direccion {
     padding-top: 1rem;
-    margin-bottom: 10%;
+    margin-bottom: 0;
     width: auto;
     height: auto;
   }
 
   #UbicacionDivP {
-    margin-left: 2%;
-    margin-right: 2%;
+    margin: 0;
     width: auto;
     height: auto;
   }
