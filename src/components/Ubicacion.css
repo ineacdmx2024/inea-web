@@ -13,27 +13,30 @@
 
 #UbicacionDivP a:hover {
   color: #611232;
+  /* text-decoration: underline; */
 }
 
 #direccion {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+  /* Eliminacion margin-top negativo para evitar traslapes */
+  margin-bottom: 10%;
+  width: auto;
+  height: auto;
 }
 
-/* Responsivo */
 @media screen and (max-width: 1200px) and (min-width: 430px) {
   #UbicacionDivP {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: calc(5% + 5px);
+    margin-right: calc(5% + 5px);
     width: auto;
+    height: auto;
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 430px) and (min-width: 300px) {
   #UbicacionDivP {
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: calc(1% + 0px);
+    margin-right: calc(1% + 0px);
     width: auto;
+    height: auto;
   }
 }
