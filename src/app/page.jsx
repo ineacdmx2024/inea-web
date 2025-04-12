@@ -66,7 +66,7 @@ function Page() {
       </div>
       <CarouselOfertEdu />
 
-      <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
+      <div className="mb-[97px] mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
         <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
           Enlaces de interés
         </h1>
@@ -76,19 +76,19 @@ function Page() {
         </div>
       </div>
       <SeccionLigasInte />
-
-        <div className="mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px] mt-4 mb-2">
-          <div className="mb-6">
-            <h1 className="text-2xl font-medium text-slate-700 letras:text-3xl">
-              Ubicación
-            </h1>
-            <div className="flex items-center mt-1">
-              <div className="w-9 h-[5px] bg-[#b38e61]"></div>
-              <div className="flex-grow h-px bg-gray-300"></div>
-            </div>
+      
+      <div className="mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px] mb-2">
+        <div className="mb-6">
+          <h1 className="text-2xl font-medium text-slate-700 letras:text-3xl">
+            Ubicación
+          </h1>
+          <div className="flex items-center mt-1">
+            <div className="w-9 h-[5px] bg-[#b38e61]"></div>
+            <div className="flex-grow h-px bg-gray-300"></div>
           </div>
-          <Ubicacion />
         </div>
+        <Ubicacion />
+      </div>
     </main>
   );
 }
