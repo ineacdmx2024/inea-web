@@ -16,34 +16,24 @@
 }
 
 #direccion {
-  margin-bottom: 10%;
-  width: auto;
-  height: auto;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-/* RESPONSIVE */
+/* Responsivo */
 @media screen and (max-width: 1200px) and (min-width: 430px) {
   #UbicacionDivP {
-    margin-left: calc(5% + 5px);
-    margin-right: calc(5% + 5px);
+    margin-left: 5%;
+    margin-right: 5%;
     width: auto;
-    height: auto;
-  }
-
-  #direccion {
-    margin-top: 20px;
   }
 }
 
-@media screen and (max-width: 430px) and (min-width: 300px) {
+@media screen and (max-width: 430px) {
   #UbicacionDivP {
-    margin-left: calc(1% + 0px);
-    margin-right: calc(1% + 0px);
+    margin-left: 2%;
+    margin-right: 2%;
     width: auto;
-    height: auto;
-  }
-
-  #direccion {
-    margin-top: 16px;
   }
 }
