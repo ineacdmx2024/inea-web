@@ -7,8 +7,11 @@ const Ubicacion = () => {
       id="UbicacionDivP"
       className="container w-auto mx-auto px-4 mt-4 mb-2"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div id="direccion" className="text-s text-zinc-800 space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        <div
+          id="direccion"
+          className="text-s text-zinc-800 flex flex-col justify-center space-y-4 h-full"
+        >
           <p className="font-semibold">Dirección INEA Ciudad de México:</p>
           <p className="text-s text-zinc-700">
             Francisco Márquez 160 Planta Baja, Col. Condesa, Alcaldía
