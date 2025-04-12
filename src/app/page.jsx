@@ -25,7 +25,7 @@ function Page() {
           className="w-full h-auto hidden medida3:block"
         /> */}
       </div>
-      <BannerContingencia />
+      {/* <BannerContingencia />  */}
       <CarouselInicio />
 
       {/* Sección de presentación de INEA CDMX */}
