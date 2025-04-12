@@ -9,11 +9,11 @@ export default function Banner() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       try {
-        const res = await fetch(
+        const response = await fetch(
           //"https://inea-web-backend.onrender.com/api/banner-contingencia?populate=*"
-          "https://inea-web-backend-cg20.onrender.com/api/banner-contingencia?populate=*"
+          "https://inea-web-backend-cg20.onrender.com/api/comunicado-contingencias?populate=*"
         );
         const json = await res.json();
 

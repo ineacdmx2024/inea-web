@@ -16,7 +16,7 @@ function CarouselInicio() {
     const fetchEnlaces = async () => {
      
       //const res = await fetch("https://inea-web-backend-cg20.onrender.com/api/baner-principals?populate=*")
-      const res = await fetch(" https://inea-web-backend-cg20.onrender.com/api/api/baner-principals?populate=*")
+      const res = await fetch("https://inea-web-backend-cg20.onrender.com/api/baner-principals?populate=*")
       const data = await res.json()
 
       const enlacesData2 = data.data.map((item) => ({
