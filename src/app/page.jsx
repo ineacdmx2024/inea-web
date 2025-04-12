@@ -77,16 +77,18 @@ function Page() {
       </div>
       <SeccionLigasInte />
 
-        <div className="mt-4 mb-2 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-          <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
-            Ubicación
-          </h1>
-          <div className="flex items-center">
-            <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
-            <div className="flex-grow h-px bg-gray-300"></div>
+        <div className="mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px] mt-4 mb-2">
+          <div className="mb-6">
+            <h1 className="text-2xl font-medium text-slate-700 letras:text-3xl">
+              Ubicación
+            </h1>
+            <div className="flex items-center mt-1">
+              <div className="w-9 h-[5px] bg-[#b38e61]"></div>
+              <div className="flex-grow h-px bg-gray-300"></div>
+            </div>
           </div>
+          <Ubicacion />
         </div>
-      <Ubicacion />
     </main>
   );
 }
