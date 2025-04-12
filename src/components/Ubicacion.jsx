@@ -10,7 +10,7 @@ const Ubicacion = () => {
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div
           id="direccion"
-          className="text-s text-zinc-800"
+          className="text-s text-zinc-800 mt-[20px] md:mt-[30px]"
         >
           <p>Dirección INEA Ciudad de México:</p>
           <p className="text-s text-zinc-700">
@@ -25,7 +25,6 @@ const Ubicacion = () => {
           <br />
           <p>Horario de atención de 9:00 a 16:00 horas.</p>
           <br />
-
           <a
             className="w-44 letras:ml-auto bg-[#611232] text-white py-3 hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232]"
             href="/ubicacion"
@@ -33,6 +32,7 @@ const Ubicacion = () => {
             Detalles de ubicaciones
           </a>
         </div>
+
         <div className="relative w-full h-[45vh] md:h-[45vh] mt-6 md:mt-0">
           <iframe
             src="https://www.google.com/maps/d/u/1/embed?mid=11LVXyU_3QKH1JkOXIMVba2bEkN8f_iY&ehbc=2E312F&noprof=1"
