@@ -13,22 +13,25 @@
 
 #UbicacionDivP a:hover {
   color: #611232;
-  /* text-decoration: underline; */
 }
 
 #direccion {
-  /* Eliminacion margin-top negativo para evitar traslapes */
   margin-bottom: 10%;
   width: auto;
   height: auto;
 }
 
+/* RESPONSIVE */
 @media screen and (max-width: 1200px) and (min-width: 430px) {
   #UbicacionDivP {
     margin-left: calc(5% + 5px);
     margin-right: calc(5% + 5px);
     width: auto;
     height: auto;
+  }
+
+  #direccion {
+    margin-top: 20px;
   }
 }
 
@@ -38,5 +41,9 @@
     margin-right: calc(1% + 0px);
     width: auto;
     height: auto;
+  }
+
+  #direccion {
+    margin-top: 16px;
   }
 }
