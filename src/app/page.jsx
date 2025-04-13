@@ -77,7 +77,7 @@ function Page() {
       </div>
       <SeccionLigasInte />
 
-        <div className="mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px] mt-4 mb-2">
+        <div className="mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px] mt-[97px] mb-2">
           <div className="mb-6">
             <h1 className="text-2xl font-medium text-slate-700 letras:text-3xl">
               Ubicación
