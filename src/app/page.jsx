@@ -1,5 +1,6 @@
 import React from "react";
-import { Open_Sans, Montserrat } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import CarouselBlog from "@/components/CarouselBlog";
 import CarouselInicio from "@/components/CarouselInicio";
 import CarouselOfertEdu from "@/components/CarouselOfertEdu";
