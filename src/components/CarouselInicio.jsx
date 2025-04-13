@@ -110,7 +110,7 @@ function CarouselInicio() {
               {/* Imagen para dispositivos de escritorio */}
               <div className="w-full h-full hidden md:block">
                 <Image
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover cursor-pointer"
                   src={restante.imagenEscritorio || "/placeholder.svg"}
                   alt={restante.subtitulo || "Imagen de banner"}
                   width={1920}
