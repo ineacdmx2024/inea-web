@@ -12,7 +12,7 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 function Page() {
   return (
-    <main className={`mx-auto ${montserrat.className} bg-white pt-[150px] pb-[100px] w-full overflow-x-hidden`}>
+    <main className={`mx-auto ${montserrat.className} bg-white pt-[94px] pb-[100px] w-full overflow-x-hidden`}>
       <div>
         {/* <img
           src="/Banner_INEA_CDMX_EducacionMovilnueva.webp"

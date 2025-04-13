@@ -15,7 +15,6 @@ function CarouselInicio() {
   useEffect(() => {
     const fetchEnlaces = async () => {
      
-      //const res = await fetch("https://inea-web-backend-cg20.onrender.com/api/baner-principals?populate=*")
       const res = await fetch("https://inea-web-backend-cg20.onrender.com/api/baner-principals?populate=*")
       const data = await res.json()
 
@@ -104,11 +103,13 @@ function CarouselInicio() {
               {/* Imagen para dispositivos de escritorio */}
               <div className="w-full h-full hidden md:block">
                 <Image
-                  className="w-full h-full object-contain  p-4"
+                  className="w-full h-full object-cover"
                   src={restante.imagenEscritorio || "/placeholder.svg"}
                   alt={restante.subtitulo || "Imagen de banner"}
-                  width={544}
-                  height={500}
+                  width={1920}
+                  height={544}
+                  quality={100}
+                  priority
                   onClick={(e) => {
                     e.stopPropagation();
                     handleButtonClick(restante);
@@ -116,10 +117,12 @@ function CarouselInicio() {
                 />
               </div>
 
+              
+
               {/* Imagen para dispositivos móviles */}
               <div className="w-full h-full block md:hidden">
                 <Image
-                  className="w-full h-full object-contain bg-purple-800"
+                  className="w-full h-full object-contain"
                   src={restante.imagenMovil || "/placeholder.svg"}
                   alt={restante.subtitulo || "Imagen de banner móvil"}
                   width={900}
