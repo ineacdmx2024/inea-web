@@ -11,8 +11,8 @@ const notoSans = Noto_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
 function Page() {
   return (
-    <main className={`mx-auto ${notoSans.className} bg-white pt-[94px] pb-[100px] w-full overflow-x-hidden`}
-      <div>
+    <main className={`mx-auto ${notoSans.className} bg-white pt-[94px] pb-[100px] w-full overflow-x-hidden`}>
+
         {/* <img
           src="/Banner_INEA_CDMX_EducacionMovilnueva.webp"
           alt="BannerMovil"
@@ -23,7 +23,7 @@ function Page() {
           alt="Banner"
           className="w-full h-auto hidden medida3:block"
         /> */}
-      </div>
+
       {/* <BannerContingencia />  */}
       <CarouselInicio />
 
