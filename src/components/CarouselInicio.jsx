@@ -67,13 +67,20 @@ function CarouselInicio() {
     responsive: [
       {
         breakpoint: 768,  // Dispositivos pequeños (móviles)
+        dots: true,
         settings: {
-          slidesToShow: 1,
+          dots: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 1, // Aseguramos que solo se vea un "slide" a la vez
           slidesToScroll: 1,
-          arrows: false,
-          customPaging: () => (
-            <div className="dot-style">
-              <span className="dot"></span>
+          autoplay: true,
+          autoplaySpeed: 5000,
+          // arrows: false,
+          dotsClass: "slick-dots custom-dots",
+          appendDots: (dots) => (
+            <div style={{ bottom: "-25px" }}>
+              <ul style={{ margin: "0" }}> {dots} </ul>
             </div>
           ),
         }
