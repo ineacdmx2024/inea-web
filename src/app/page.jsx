@@ -11,9 +11,9 @@ import BannerContingencia from "@/components/BannerContingencia";
 const open_Sans = Open_Sans({ subsets: ["latin"] });
 const montserrat = Montserrat({ subsets: ["latin"] });
 
-// Patria desde fuente local
+// Fuente Patria desde archivo local
 const patria = localFont({
-  src: "../public/Patria_Regular.otf.ttf", // ruta de fuente
+  src: "../public/Patria_Regular.otf.ttf",
   display: "swap",
 });
 
@@ -21,21 +21,9 @@ function Page() {
   return (
     <main className={`mx-auto ${montserrat.className} bg-white pt-[94px] pb-[100px] w-full overflow-x-hidden`}>
 
-        {/* <img
-          src="/Banner_INEA_CDMX_EducacionMovilnueva.webp"
-          alt="BannerMovil"
-          className="w-full h-auto block medida3:hidden"
-        />
-        <img
-          src="/Banner_INEA_CDMX_Educacion_nueva.webp"
-          alt="Banner"
-          className="w-full h-auto hidden medida3:block"
-        /> */}
-
-      {/* <BannerContingencia />  */}
+      {/* Banner y presentación */}
       <CarouselInicio />
 
-      {/* Sección de presentación */}
       <div className="mx-auto my-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1142px] text-center">
         <h1 className="text-[33px] font-bold text-[#333334]">
           INEA en la Ciudad de México
@@ -49,9 +37,9 @@ function Page() {
         </div>
       </div>
 
-      {/* Sección Blog */}
+      {/* Blog */}
       <div className="mx-auto my-20 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1142px]">
-        <h1 className="text-2xl font-medium text-[#333334] mb-2 letras:text-3xl ${patria.className}">
+        <h1 className={`text-2xl font-medium text-[#333334] mb-2 letras:text-3xl ${patria.className}`}>
           Blog
         </h1>
         <div className="flex items-center mb-6">
@@ -63,7 +51,7 @@ function Page() {
 
       {/* Oferta educativa */}
       <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-        <h1 className="text-2xl font-medium text-[#333334] mb-2 letras:text-3xl ${patria.className}">
+        <h1 className={`text-2xl font-medium text-[#333334] mb-2 letras:text-3xl ${patria.className}`}>
           Oferta educativa
         </h1>
         <div className="flex items-center">
@@ -75,7 +63,7 @@ function Page() {
 
       {/* Enlaces de interés */}
       <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-        <h1 className="text-2xl font-medium text-[#333334] mb-2 letras:text-3xl ${patria.className}">
+        <h1 className={`text-2xl font-medium text-[#333334] mb-2 letras:text-3xl ${patria.className}`}>
           Enlaces de interés
         </h1>
         <div className="flex items-center">
@@ -85,10 +73,10 @@ function Page() {
       </div>
       <SeccionLigasInte />
 
-      {/*Sección Ubicación dentro del <main>*/}
+      {/* Ubicación */}
       <section className="mt-[97px] mb-2 px-4 flex flex-col items-center">
         <div className="mb-6 max-w-[1170px] w-full">
-          <h1 className="text-2xl font-medium text-[#333334] letras:text-3xl ${patria.className}">
+          <h1 className={`text-2xl font-medium text-[#333334] letras:text-3xl ${patria.className}`}>
             Ubicación
           </h1>
           <div className="flex items-center mt-1">
