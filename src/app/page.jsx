@@ -13,7 +13,7 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 
 // Fuente Patria desde archivo local
 const patria = localFont({
-  src: "../public/Patria_Regular.otf.ttf",
+  src: "../public/Patria_Regular.otf",
   display: "swap",
 });
 
