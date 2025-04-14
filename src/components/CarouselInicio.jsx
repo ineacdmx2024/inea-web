@@ -108,7 +108,8 @@ function CarouselInicio() {
           {restantes.map((restante, index) => (
             <div key={index} className="w-full m-auto">
               {/* Imagen para dispositivos de escritorio */}
-              <div className="w-full h-full hidden md:block">
+              {/* <div className="w-full h-full hidden md:block"> */}
+              <div className=" hidden md:block relative">
                 <Image
                   className="w-full h-full object-cover cursor-pointer"
                   src={restante.imagenEscritorio || "/placeholder.svg"}
