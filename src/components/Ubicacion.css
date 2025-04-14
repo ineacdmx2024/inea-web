@@ -3,30 +3,31 @@
 #UbicacionDivP {
   font-family: 'Montserrat', sans-serif;
   width: 100%;
-  max-width: 1142px;
   height: auto;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 }
 
-#UbicacionDivP iframe {
-  min-height: 300px;
-  width: 100%;
+#direccion {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-/* Enlace de ubicación */
 #UbicacionDivP a {
-  padding: 10px;
   color: #ffffff;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 #UbicacionDivP a:hover {
   color: #611232;
-  background-color: #ffffff;
 }
 
-/* Eliminado: reglas duplicadas o sobrescritas por Tailwind */
+/* Ajustes responsivos para evitar sobreposición o separación excesiva */
+@media screen and (max-width: 768px) {
+  #UbicacionDivP {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #direccion {
+    text-align: center;
+  }
+}
