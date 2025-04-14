@@ -78,8 +78,8 @@ function Page() {
       <SeccionLigasInte />
 
       {/* Ubicación */}
-      <div className="mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px] mt-[97px] mb-2">
-        <div className="mb-6">
+      <section className="mt-[97px] mb-2 px-4 flex flex-col items-center">
+        <div className="mb-6 max-w-[1170px] w-full">
           <h1 className="text-2xl font-medium titulo-seccion text-[#333334] letras:text-3xl">
             Ubicación
           </h1>
@@ -89,7 +89,7 @@ function Page() {
           </div>
         </div>
         <Ubicacion />
-      </div>
+      </section>
     </main>
   );
 }
