@@ -35,12 +35,12 @@ const Ubicacion = () => {
         </div>
 
         {/* Mapa */}
-        <div className="relative w-full h-[45vh]">
+        <div className="w-full h-[45vh] md:h-[400px]">
           <iframe
             src="https://www.google.com/maps/d/u/1/embed?mid=11LVXyU_3QKH1JkOXIMVba2bEkN8f_iY&ehbc=2E312F&noprof=1"
             className="w-full h-full border-none rounded-lg"
             title="Mapa de ubicaciones"
-          />
+            />
         </div>
       </div>
     </div>
