@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 #UbicacionDivP {
-  /* Se usa Tailwind para el ancho y márgenes, no es necesario forzarlo aquí */
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  max-width: 1142px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 /* Enlace de ubicación */
