@@ -78,9 +78,9 @@ function Page() {
       <SeccionLigasInte />
 
       {/* Ubicación */}
-      <section className="mt-[97px] mb-4 px-6 flex flex-col items-center">
+      <section className="mt-[97px] mb-2 px-4 flex flex-col items-center">
         <div className="w-full max-w-[1142px]">
-          <div className="mb-3">
+          <div className="mb-6">
             <h1 className="text-2xl font-medium titulo-seccion text-[#333334] letras:text-3xl">
               Ubicación
             </h1>
