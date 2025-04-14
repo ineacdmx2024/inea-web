@@ -1,39 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 #UbicacionDivP {
-  font-family: 'Montserrat', sans-serif;
-  width: 1142px;
-  height: auto;
+  /* Se usa Tailwind para el ancho y márgenes, no es necesario forzarlo aquí */
+  font-family: 'Noto Sans', sans-serif;
 }
 
+/* Enlace de ubicación */
 #UbicacionDivP a {
   padding: 10px;
   color: #ffffff;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 #UbicacionDivP a:hover {
   color: #611232;
+  background-color: #ffffff;
 }
 
-#direccion {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-/* Responsivo */
-@media screen and (max-width: 1200px) and (min-width: 430px) {
-  #UbicacionDivP {
-    margin-left: 5%;
-    margin-right: 5%;
-    width: auto;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  #UbicacionDivP {
-    margin-left: 2%;
-    margin-right: 2%;
-    width: auto;
-  }
-}
+/* Eliminado: reglas duplicadas o sobrescritas por Tailwind */
