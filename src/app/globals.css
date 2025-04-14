@@ -17,12 +17,6 @@ html, body, #__next, main {
     box-sizing: border-box;
 }
 
-/* Fuente Patria para títulos de sección */
-.titulo-seccion {
-    font-family: 'Patria', serif;
-    color: #333334;
-}
-
 #animation{
   animation: fadeIn 1.5s;
 }
