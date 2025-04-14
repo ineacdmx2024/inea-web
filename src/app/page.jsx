@@ -51,7 +51,7 @@ function Page() {
 
       {/* Sección Blog */}
       <div className="mx-auto my-20 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1142px]">
-        <h1 className="text-2xl font-medium titulo-seccion text-[#333334] mb-2 letras:text-3xl ${patria.className}">
+        <h1 className="text-2xl font-medium text-[#333334] mb-2 letras:text-3xl ${patria.className}">
           Blog
         </h1>
         <div className="flex items-center mb-6">
@@ -63,7 +63,7 @@ function Page() {
 
       {/* Oferta educativa */}
       <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-        <h1 className="text-2xl font-medium titulo-seccion text-[#333334] mb-2 letras:text-3xl ${patria.className}">
+        <h1 className="text-2xl font-medium text-[#333334] mb-2 letras:text-3xl ${patria.className}">
           Oferta educativa
         </h1>
         <div className="flex items-center">
@@ -75,7 +75,7 @@ function Page() {
 
       {/* Enlaces de interés */}
       <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-        <h1 className="text-2xl font-medium titulo-seccion text-[#333334] mb-2 letras:text-3xl ${patria.className}">
+        <h1 className="text-2xl font-medium text-[#333334] mb-2 letras:text-3xl ${patria.className}">
           Enlaces de interés
         </h1>
         <div className="flex items-center">
@@ -88,7 +88,7 @@ function Page() {
       {/*Sección Ubicación dentro del <main>*/}
       <section className="mt-[97px] mb-2 px-4 flex flex-col items-center">
         <div className="mb-6 max-w-[1170px] w-full">
-          <h1 className="text-2xl font-medium titulo-seccion text-[#333334] letras:text-3xl ${patria.className}">
+          <h1 className="text-2xl font-medium text-[#333334] letras:text-3xl ${patria.className}">
             Ubicación
           </h1>
           <div className="flex items-center mt-1">
