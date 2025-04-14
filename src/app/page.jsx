@@ -1,5 +1,5 @@
 import React from "react";
-import { Noto_Sans } from "next/font/google";
+import { Open_Sans, Montserrat } from "next/font/google";
 import CarouselBlog from "@/components/CarouselBlog";
 import CarouselInicio from "@/components/CarouselInicio";
 import CarouselOfertEdu from "@/components/CarouselOfertEdu";
@@ -7,11 +7,12 @@ import SeccionLigasInte from "@/components/SeccionLigasInte";
 import Ubicacion from "@/components/Ubicacion";
 import BannerContingencia from "@/components/BannerContingencia";
 
-const notoSans = Noto_Sans({ subsets: ["latin"], weight: ["400", "700"] });
+const open_Sans = Open_Sans({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 function Page() {
   return (
-    <main className={`mx-auto ${notoSans.className} bg-white pt-[94px] pb-[100px] w-full overflow-x-hidden`}>
+    <main className={`mx-auto ${montserrat.className} bg-white pt-[94px] pb-[100px] w-full overflow-x-hidden`}>
 
         {/* <img
           src="/Banner_INEA_CDMX_EducacionMovilnueva.webp"
