@@ -5,7 +5,7 @@ const Ubicacion = () => {
   return (
     <div
       id="UbicacionDivP"
-      className="container w-full max-w-[1170px] mx-auto px-4 mt-4 mb-2"
+      className="container w-full max-w-[1170px] mx-auto px-4 mt-10 mb-2"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
         {/* Dirección */}
