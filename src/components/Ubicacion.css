@@ -12,6 +12,11 @@
   gap: 1.5rem;
 }
 
+#UbicacionDivP iframe {
+  min-height: 300px;
+  width: 100%;
+}
+
 /* Enlace de ubicación */
 #UbicacionDivP a {
   padding: 10px;
