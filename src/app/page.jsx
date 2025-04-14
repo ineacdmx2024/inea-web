@@ -1,5 +1,6 @@
 import React from "react";
 import { Open_Sans, Montserrat } from "next/font/google";
+import localFont from "next/font/local";
 import CarouselBlog from "@/components/CarouselBlog";
 import CarouselInicio from "@/components/CarouselInicio";
 import CarouselOfertEdu from "@/components/CarouselOfertEdu";
@@ -9,6 +10,12 @@ import BannerContingencia from "@/components/BannerContingencia";
 
 const open_Sans = Open_Sans({ subsets: ["latin"] });
 const montserrat = Montserrat({ subsets: ["latin"] });
+
+// Patria desde fuente local
+const patria = localFont({
+  src: "../public/Patria_Regular.otf.ttf", // ruta de fuente
+  display: "swap",
+});
 
 function Page() {
   return (
@@ -30,7 +37,7 @@ function Page() {
 
       {/* Sección de presentación */}
       <div className="mx-auto my-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1142px] text-center">
-        <h1 className="text-[33px] font-bold titulo-seccion text-[#333334]">
+        <h1 className="text-[33px] font-bold text-[#333334]">
           INEA en la Ciudad de México
         </h1>
         <div className="max-w-[1130px] mx-auto px-4">
@@ -44,7 +51,7 @@ function Page() {
 
       {/* Sección Blog */}
       <div className="mx-auto my-20 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1142px]">
-        <h1 className="text-2xl font-medium titulo-seccion text-[#333334] mb-2 letras:text-3xl">
+        <h1 className="text-2xl font-medium titulo-seccion text-[#333334] mb-2 letras:text-3xl ${patria.className}">
           Blog
         </h1>
         <div className="flex items-center mb-6">
@@ -56,7 +63,7 @@ function Page() {
 
       {/* Oferta educativa */}
       <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-        <h1 className="text-2xl font-medium titulo-seccion text-[#333334] mb-2 letras:text-3xl">
+        <h1 className="text-2xl font-medium titulo-seccion text-[#333334] mb-2 letras:text-3xl ${patria.className}">
           Oferta educativa
         </h1>
         <div className="flex items-center">
@@ -68,7 +75,7 @@ function Page() {
 
       {/* Enlaces de interés */}
       <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-        <h1 className="text-2xl font-medium titulo-seccion text-[#333334] mb-2 letras:text-3xl">
+        <h1 className="text-2xl font-medium titulo-seccion text-[#333334] mb-2 letras:text-3xl ${patria.className}">
           Enlaces de interés
         </h1>
         <div className="flex items-center">
@@ -81,7 +88,7 @@ function Page() {
       {/*Sección Ubicación dentro del <main>*/}
       <section className="mt-[97px] mb-2 px-4 flex flex-col items-center">
         <div className="mb-6 max-w-[1170px] w-full">
-          <h1 className="text-2xl font-medium titulo-seccion text-[#333334] letras:text-3xl">
+          <h1 className="text-2xl font-medium titulo-seccion text-[#333334] letras:text-3xl ${patria.className}">
             Ubicación
           </h1>
           <div className="flex items-center mt-1">
