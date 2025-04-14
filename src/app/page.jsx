@@ -20,8 +20,18 @@ const patria = localFont({
 function Page() {
   return (
     <main className={`mx-auto ${montserrat.className} bg-white pt-[94px] pb-[100px] w-full overflow-x-hidden`}>
+      {/* <img
+          src="/Banner_INEA_CDMX_EducacionMovilnueva.webp"
+          alt="BannerMovil"
+          className="w-full h-auto block medida3:hidden"
+        />
+        <img
+          src="/Banner_INEA_CDMX_Educacion_nueva.webp"
+          alt="Banner"
+          className="w-full h-auto hidden medida3:block"
+        /> */}
 
-      {/* Banner y presentación */}
+      {/* <BannerContingencia />  */}
       <CarouselInicio />
 
       <div className="mx-auto my-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1142px] text-center">
