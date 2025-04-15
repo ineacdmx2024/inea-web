@@ -34,7 +34,7 @@ module.exports = {
       fontFamily: {
         // Montserrat como base (esto afecta `font-sans`)
         sans: ['Montserrat', ...fontFamily.sans],
-        // Open Sans disponible si lo usas manualmente
+        // Open Sans disponible para forma manual
         opensans: ['"Open Sans"', ...fontFamily.sans],
         // Clase personalizada "patria"
         patria: ['patria', 'serif'],
