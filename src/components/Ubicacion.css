@@ -12,6 +12,19 @@
   height: 100%;
 }
 
+#ubicacion-texto {
+  text-align: left;
+  font-size: 18px;
+}
+
+@media (min-width: 750px) {
+  #ubicacion-texto {
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+
 #UbicacionDivP a {
   color: #ffffff;
 }
