@@ -1,5 +1,4 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
-
 module.exports = {
   content: [
     "./node_modules/flowbite-react/**/*.js",
@@ -21,7 +20,7 @@ module.exports = {
         "2xl2": "75rem",
       },
       width: {
-        46: "750px", // agregué px para evitar problemas
+        46: "750",
       },
       padding: {
         88: "22rem",
@@ -34,7 +33,7 @@ module.exports = {
       fontFamily: {
         sans: ['"Open Sans"', "sans-serif"],
         serif: ['IBM Plex Serif', ...fontFamily.serif],
-        body: ['Montserrat'],
+        body: ['Montserrat' ],
       },
     },
   },
