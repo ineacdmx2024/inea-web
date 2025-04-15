@@ -6,24 +6,22 @@
   height: auto;
 }
 
+/* Contenedor de texto */
 #direccion {
   margin: 0;
   padding: 0;
   height: 100%;
-}
-
-#ubicacion-texto {
   text-align: left;
   font-size: 18px;
 }
 
+/* Ajuste para pantallas más grandes */
 @media (min-width: 750px) {
-  #ubicacion-texto {
+  #direccion {
     text-align: center;
     font-size: 16px;
   }
 }
-
 
 #UbicacionDivP a {
   color: #ffffff;
@@ -33,14 +31,10 @@
   color: #611232;
 }
 
-/* Ajustes responsivos para evitar sobreposición o separación excesiva */
+/* Responsivo móvil: espaciado general */
 @media screen and (max-width: 768px) {
   #UbicacionDivP {
     padding-left: 1rem;
     padding-right: 1rem;
-  }
-
-  #direccion {
-    text-align: center;
   }
 }
