@@ -41,7 +41,7 @@ function Page() {
       </div>
 
       {/* Blog */}
-      <div className="mx-auto my-20 w-full px-4 tablet:px-0">
+      <div className="w-full px-4 tablet:px-0 my-20">
         <div className="max-w-[1142px] mx-auto">
           <h1 className="patria text-2xl font-medium text-[#333334] mb-2 letras:text-3xl">
             Blog
@@ -50,8 +50,8 @@ function Page() {
             <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
             <div className="flex-grow h-px bg-gray-300"></div>
           </div>
-          <CarouselBlog />
         </div>
+        <CarouselBlog />
       </div>
 
 
