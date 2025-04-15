@@ -3,7 +3,6 @@
 @tailwind utilities;
 @import "flowbite";
 
-/* Fuente Montserrat aplicada globalmente */
 html, body, #__next, main {
     overflow-x: hidden !important;
     width: 100% !important;
@@ -11,28 +10,23 @@ html, body, #__next, main {
     position: relative;
     margin: 0 !important;
     padding-right: 0 !important;
+    font-family: 'Montserrat', sans-serif;
 }
 
 * {
     box-sizing: border-box;
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* Fuente local Patria solo para títulos de sección */
 @font-face {
-    font-family: 'patria';
+    font-family: patria;
     src: url("/Patria_Regular.otf");
 }
 
-.patria {
-    font-family: 'patria';
+.patria{
+    font-family: patria;
 }
 
-/* Animación fadeIn */
-#animation {
+#animation{
   animation: fadeIn 1.5s;
 }
 
@@ -40,13 +34,12 @@ body {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
-
-/* Estilos generales */
-#principal {
+#principal{
     justify-content: space-evenly;
+    
 }
 
-#contenido {
+#contenido{
     border: 0;
     margin: 0;
     width: 100%;
@@ -54,59 +47,56 @@ body {
     height: auto;
     justify-content: center;
 }
-
-#enlaces {
+#enlaces{
     flex-direction: column;
     float: right;
 }
-
-#migajas {
+#migajas{
     justify-content: center;
+
 }
 
-#main-content {
-    padding-top: 115px; /* espacio del navbar */
+#main-content{
+  padding-top: 115px; /*espacio del navbar*/
+  
 }
 
-/* Carousel styles */
 .carousel {
     @apply flex justify-center;
-}
-
-.carousel-inner {
+  }
+  
+  .carousel-inner {
     @apply flex overflow-x-hidden;
-}
-
-.carousel-item {
+  }
+  
+  .carousel-item {
     @apply w-full h-full;
-}
-
-.carousel-item.active {
+  }
+  
+  .carousel-item.active {
     @apply opacity-100;
-}
-
-.carousel-item:not(.active) {
+  }
+  
+  .carousel-item:not(.active) {
     @apply opacity-50;
-}
-
-.carousel-item.hidden {
+  }
+  .carousel-item.hidden {
     display: none;
-}
-
-#buttonCarousel {
+  }
+  #buttonCarousel {
     @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded;
-}
+  }
 
-/* Image rendering */
+/* Improved image rendering quality */
 img {
-    image-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  image-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .image-smooth {
-    image-rendering: auto;
-    -webkit-image-smoothing: antialiased;
-    image-smoothing: high;
-    transform: translateZ(0);
+  image-rendering: auto;
+  -webkit-image-smoothing: antialiased;
+  image-smoothing: high;
+  transform: translateZ(0);
 }
