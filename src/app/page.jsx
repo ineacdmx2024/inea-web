@@ -76,18 +76,18 @@ function Page() {
       <SeccionLigasInte />
 
       {/* Ubicación */}
-      <section className="mt-[97px] mb-2 px-4 flex flex-col items-center">
-        <div className="mb-6 max-w-[1170px] w-full">
-          <h1 className="patria text-2xl font-medium text-[#333334] letras:text-3xl">
-            Ubicación
-          </h1>
-          <div className="flex items-center mt-1">
-            <div className="w-9 h-[5px] bg-[#b38e61]"></div>
-            <div className="flex-grow h-px bg-gray-300"></div>
-          </div>
-        </div>
-        <Ubicacion />
-      </section>
+     <section className="mt-[97px] mb-2 px-4 flex flex-col items-center">
+       <div className="mb-6 max-w-[1170px] w-full text-left medida3:text-center">
+         <h1 className="patria text-2xl font-medium text-[#333334] letras:text-3xl">
+           Ubicación
+         </h1>
+         <div className="flex items-center mt-1">
+           <div className="w-9 h-[5px] bg-[#b38e61]"></div>
+           <div className="flex-grow h-px bg-gray-300"></div>
+         </div>
+       </div>
+       <Ubicacion />
+     </section>
     </main>
   );
 }
