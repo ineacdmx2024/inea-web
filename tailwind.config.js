@@ -1,4 +1,5 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: [
     "./node_modules/flowbite-react/**/*.js",
@@ -20,7 +21,7 @@ module.exports = {
         "2xl2": "75rem",
       },
       width: {
-        46: "750",
+        46: "750px", // agregué px para evitar problemas
       },
       padding: {
         88: "22rem",
@@ -31,9 +32,12 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        sans: ['"Open Sans"', "sans-serif"],
-        serif: ['IBM Plex Serif', ...fontFamily.serif],
-        body: ['Montserrat' ],
+        // Montserrat como base (esto afecta `font-sans`)
+        sans: ['Montserrat', ...fontFamily.sans],
+        // Open Sans disponible si lo usas manualmente
+        opensans: ['"Open Sans"', ...fontFamily.sans],
+        // Clase personalizada "patria"
+        patria: ['patria', 'serif'],
       },
     },
   },
