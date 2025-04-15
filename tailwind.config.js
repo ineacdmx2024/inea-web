@@ -36,8 +36,6 @@ module.exports = {
         sans: ['Montserrat', ...fontFamily.sans],
         // Open Sans disponible para forma manual
         opensans: ['"Open Sans"', ...fontFamily.sans],
-        // Clase personalizada "patria"
-        patria: ['patria', 'serif'],
       },
     },
   },
