@@ -1,6 +1,5 @@
 import React from "react";
 import { Open_Sans, Montserrat } from "next/font/google";
-import localFont from "next/font/local";
 import CarouselBlog from "@/components/CarouselBlog";
 import CarouselInicio from "@/components/CarouselInicio";
 import CarouselOfertEdu from "@/components/CarouselOfertEdu";
@@ -10,12 +9,6 @@ import BannerContingencia from "@/components/BannerContingencia";
 
 const open_Sans = Open_Sans({ subsets: ["latin"] });
 const montserrat = Montserrat({ subsets: ["latin"] });
-
-// Fuente Patria desde archivo local
-const patria = localFont({
-  src: "../public/Patria_Regular.otf",
-  display: "swap",
-});
 
 function Page() {
   return (
@@ -49,7 +42,7 @@ function Page() {
 
       {/* Blog */}
       <div className="mx-auto my-20 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1142px]">
-        <h1 className={`text-2xl font-medium text-[#333334] mb-2 letras:text-3xl ${patria.className}`}>
+        <h1 className="patria text-2xl font-medium text-[#333334] mb-2 letras:text-3xl">
           Blog
         </h1>
         <div className="flex items-center mb-6">
@@ -61,7 +54,7 @@ function Page() {
 
       {/* Oferta educativa */}
       <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-        <h1 className={`text-2xl font-medium text-[#333334] mb-2 letras:text-3xl ${patria.className}`}>
+        <h1 className="patria text-2xl font-medium text-[#333334] mb-2 letras:text-3xl">
           Oferta educativa
         </h1>
         <div className="flex items-center">
@@ -73,7 +66,7 @@ function Page() {
 
       {/* Enlaces de interés */}
       <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-        <h1 className={`text-2xl font-medium text-[#333334] mb-2 letras:text-3xl ${patria.className}`}>
+        <h1 className="patria text-2xl font-medium text-[#333334] mb-2 letras:text-3xl">
           Enlaces de interés
         </h1>
         <div className="flex items-center">
@@ -86,7 +79,7 @@ function Page() {
       {/* Ubicación */}
       <section className="mt-[97px] mb-2 px-4 flex flex-col items-center">
         <div className="mb-6 max-w-[1170px] w-full">
-          <h1 className={`text-2xl font-medium text-[#333334] letras:text-3xl ${patria.className}`}>
+          <h1 className="patria text-2xl font-medium text-[#333334] letras:text-3xl">
             Ubicación
           </h1>
           <div className="flex items-center mt-1">
