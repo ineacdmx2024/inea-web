@@ -29,7 +29,7 @@ function Page() {
       <CarouselInicio />
 
       <div className="mx-auto my-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1142px] text-center">
-        <h1 className="text-[33px] font-bold text-[#333334]">
+        <h1 className={`text-[33px] ${montserrat.className} font-bold text-[#333334]`}>
           INEA en la Ciudad de México
         </h1>
         <div className="max-w-[1130px] mx-auto px-4">
