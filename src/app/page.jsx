@@ -1,5 +1,5 @@
 import React from "react";
-import { Open_Sans, Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google"
 import CarouselBlog from "@/components/CarouselBlog";
 import CarouselInicio from "@/components/CarouselInicio";
 import CarouselOfertEdu from "@/components/CarouselOfertEdu";
@@ -7,7 +7,6 @@ import SeccionLigasInte from "@/components/SeccionLigasInte";
 import Ubicacion from "@/components/Ubicacion";
 import BannerContingencia from "@/components/BannerContingencia";
 
-const open_Sans = Open_Sans({ subsets: ["latin"] });
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 function Page() {
