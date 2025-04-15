@@ -1,7 +1,13 @@
 import "./globals.css";
-import { Montserrat } from "next/font/google";
+import { Roboto, Montserrat } from "next/font/google";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-roboto",
+});
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -28,7 +34,7 @@ export default function RootLayout({ children }) {
         key="gob-mx-js"
         defer
       ></script> */}
-      <body className={`${montserrat.className} font-sans`}>
+      <body className={`${roboto.variable} ${montserrat.variable} font-body`}>
         <NavBar />
         {children}
         <Footer/>
