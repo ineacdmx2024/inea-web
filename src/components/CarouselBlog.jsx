@@ -231,6 +231,7 @@ const CarouselBlog = ({ item }) => {
           <p className="font-light">Noticias Anteriores</p>
         </Link>
       </div>
+    </>
   );
 };
 
