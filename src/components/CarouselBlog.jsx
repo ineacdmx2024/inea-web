@@ -224,15 +224,13 @@ const CarouselBlog = ({ item }) => {
       </Slider>
 
       {/* Botón Noticias Anteriores */}
-      <div className="w-full flex justify-end mt-20 pr-6 md:pr-12 xl:pr-32">
+      <div className="w-full flex justify-end mt-10 px-4 tablet:px-0">
         <Link
-          className="w-36 text-center bg-[#611232] text-white py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block letras:text-base text-xs letras:w-44"
-          href={`/blog/noticias-antiguas/`}
-        >
+          className="w-40 text-center bg-[#611232] text-white py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block text-sm letras:text-base"
+          href={`/blog/noticias-antiguas/`}>
           <p className="font-light">Noticias Anteriores</p>
         </Link>
       </div>
-    </>
   );
 };
 
