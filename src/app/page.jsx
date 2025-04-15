@@ -78,7 +78,7 @@ function Page() {
       {/* Ubicación */}
      <section className="mt-[97px] mb-2 px-4 flex flex-col items-center">
        <div className="mb-6 max-w-[1170px] w-full text-left">
-         <h1 className="patria text-2xl font-medium text-[#333334] letras:text-3xl">
+         <h1 className="patria text-left text-2xl font-medium text-[#333334] letras:text-3xl">
            Ubicación
          </h1>
          <div className="flex items-center mt-1">
