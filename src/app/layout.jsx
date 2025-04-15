@@ -1,22 +1,22 @@
-import "./globals.css";
 import { Roboto } from "next/font/google";
+import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
 const roboto = Roboto({
+  weight: ["300", "400", "500", "700"],
+  styles: ["italic", "normal"],
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-roboto",
 });
 
 export const metadata = {
-  title: "INEA CDMX",
-  description: "Educación para adultos en la Ciudad de México",
+  title: "INEA Ciudad de México",
+  description: "INEA de la Ciudad de Mexico",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es"> 
+    <html lang="en">
       {/* <link
         href="https://framework-gb.cdn.gob.mx/assets/styles/main.css"
         rel="stylesheet"
@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
         key="gob-mx-js"
         defer
       ></script> */}
-      <body className={`${roboto.variable}`}>
+      <body className={roboto.className}>
         <NavBar />
         {children}
         <Footer/>
