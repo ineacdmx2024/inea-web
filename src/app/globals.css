@@ -19,7 +19,7 @@ html, body, #__next, main {
 
 @font-face {
     font-family: patria;
-    src: url(../public/Patria_Regular.otf);
+    src: url("/Patria_Regular.otf");
 }
 
 .patria{
