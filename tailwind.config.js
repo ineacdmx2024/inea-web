@@ -32,10 +32,9 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        // Montserrat como base (esto afecta `font-sans`)
-        sans: ['Montserrat', ...fontFamily.sans],
-        // Open Sans disponible para forma manual
-        opensans: ['"Open Sans"', ...fontFamily.sans],
+        sans: ['"Open Sans"', "sans-serif"],
+        serif: ['IBM Plex Serif', ...fontFamily.serif],
+        body: ['Montserrat'],
       },
     },
   },
