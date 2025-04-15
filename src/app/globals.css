@@ -13,7 +13,7 @@ html, body, #__next, main {
 }
 
 * {
-    font-family: 'Monserrat', sans-serif;
+    font-family: 'Monserrat';
     box-sizing: border-box;
 }
 
