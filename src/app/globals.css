@@ -10,10 +10,10 @@ html, body, #__next, main {
     position: relative;
     margin: 0 !important;
     padding-right: 0 !important;
-    font-family: 'Montserrat', sans-serif;
 }
 
 * {
+    font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
 }
 
