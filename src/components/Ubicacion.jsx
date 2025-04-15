@@ -7,7 +7,7 @@ const Ubicacion = () => {
       <div className="flex flex-col md:flex-row gap-6 items-start md:items-stretch">
         <div
           id="direccion"
-          className="text-sm text-zinc-800 flex flex-col justify-center space-y-4 md:w-1/2"
+          className="text-base text-zinc-800 flex flex-col justify-center space-y-4 md:w-1/2 text-left md:text-center"
         >
           <p className="font-semibold">Dirección INEA Ciudad de México:</p>
           <p className="text-zinc-700">
