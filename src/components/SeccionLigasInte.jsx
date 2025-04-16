@@ -1,4 +1,4 @@
-"use client"
+ "use client"
 import DetalleEnlace from "@/app/home-enlaces-de-interes/[home-enlace-interesId]/page"
 import { useState, useEffect } from "react"
 import Slider from "react-slick"
@@ -147,7 +147,7 @@ function SeccionLigasInte() {
     }
   }
 
-    const settings = {
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -157,17 +157,17 @@ function SeccionLigasInte() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: (dots) => (
-      <div className="dots-wrapper">
-        <ul className="dots-list"> {dots} </ul>
+      <div style={{ bottom: "-25px", display: "flex", justifyContent: "center" }}>
+        <ul style={{ margin: "0", padding: "0", display: "flex", justifyContent: "center" }}> {dots} </ul>
       </div>
     ),
     prevArrow: <PrevArrow />,
-  nextArrow: <NextArrow />,
-};
+    nextArrow: <NextArrow />,
+  }
 
   return (
     <>
-      <style jsx global>{
+      <style jsx global>{'
         .custom-dots {
           bottom: -30px;
           display: flex;
