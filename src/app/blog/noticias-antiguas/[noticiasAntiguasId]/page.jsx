@@ -142,7 +142,7 @@ async function Page({ params }) {
                         href={child.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-500 underline hover:text-blue-700"
+                        className="text-[#333334] underline hover:text-[#611232]"
                       >
                         {child.children?.map((linkChild, j) =>
                           linkChild.type === "text" ? (
@@ -203,7 +203,7 @@ async function Page({ params }) {
           return (
             <blockquote
               key={index}
-              className="border-l-4 border-gray-500 pl-4 italic text-gray-600 my-4"
+              className="border-l-4 border-gray-500 pl-4 italic text-[#333334] my-4"
             >
               {item.children[0]?.text || ""}
             </blockquote>
@@ -215,7 +215,7 @@ async function Page({ params }) {
                 href={item.url || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-500 underline hover:text-blue-700"
+                className="text-[#333334] underline hover:text-[#611232]"
               >
                 {item.children[0]?.text || "Enlace"}
               </Link>
