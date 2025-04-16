@@ -134,11 +134,7 @@ function CarouselOfertEdu() {
     autoplay: true,
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
-    appendDots: dots => (
-      <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-        <ul style={{ margin: 0, padding: 0, display: "flex" }}>{dots}</ul>
-      </div>
-    ),
+    appendDots: dots => <ul className="custom-dots">{dots}</ul>,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   }
