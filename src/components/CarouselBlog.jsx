@@ -29,15 +29,15 @@ const truncateText = (text, maxWords) => {
 
 function PrevArrow(props) {
   const { className, style, onClick } = props;
-
   return (
     <div
       className={`${className} !z-10 before:!content-none`}
       style={{
         ...style,
         display: "block",
-        left: "10px",
-        transform: "none",
+        left: "-20px", // MÁS CERCA DEL CONTENIDO
+        top: "50%",
+        transform: "translateY(-50%)",
       }}
       onClick={onClick}
     >
@@ -57,15 +57,15 @@ function PrevArrow(props) {
 
 function NextArrow(props) {
   const { className, style, onClick } = props;
-
   return (
     <div
       className={`${className} !z-10 before:!content-none`}
       style={{
         ...style,
         display: "block",
-        right: "10px",
-        transform: "none",
+        right: "-20px", // MÁS CERCA DEL CONTENIDO
+        top: "50%",
+        transform: "translateY(-50%)",
       }}
       onClick={onClick}
     >
@@ -174,7 +174,7 @@ const CarouselBlog = ({ item }) => {
                     key={index}
                     href={`/blog/noticias-antiguas/${item.attributes.slug}`}
                   >
-                    <Image 
+                    <Image
                       src={item.attributes.Imagen?.data?.attributes?.url}
                       alt={item.attributes.Nombre_de_la_Imagen || "Imagen sin título"}
                       className="h-[200px] w-[500px] blog:w-full blog:h-full object-cover blog:object-fill rounded-xl"
@@ -223,11 +223,12 @@ const CarouselBlog = ({ item }) => {
         )}
       </Slider>
 
-     {/* Botón Noticias Anteriores alineado a la derecha, más cercano al blog */}
-      <div className="w-full flex justify-end mt-4 px-4 tablet:px-0 max-w-[1142px] mx-auto">
+      {/* Botón Noticias Anteriores */}
+      <div className="w-full flex justify-end mt-12 px-4 tablet:px-0 mb-12 tablet:mb-16">
         <Link
           className="w-40 text-center bg-[#611232] text-white py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block text-sm letras:text-base"
-          href={`/blog/noticias-antiguas/`}>
+          href={`/blog/noticias-antiguas/`}
+        >
           <p className="font-light">Noticias Anteriores</p>
         </Link>
       </div>
