@@ -134,9 +134,9 @@ function CarouselOfertEdu() {
     autoplay: true,
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
-    appendDots: (dots) => (
-      <div style={{ bottom: "-25px", display: "flex", justifyContent: "center" }}>
-        <ul style={{ margin: "0", padding: "0", display: "flex", justifyContent: "center" }}> {dots} </ul>
+    appendDots: dots => (
+      <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+        <ul style={{ margin: 0, padding: 0, display: "flex" }}>{dots}</ul>
       </div>
     ),
     prevArrow: <PrevArrow />,
@@ -146,32 +146,38 @@ function CarouselOfertEdu() {
     <>
       <style jsx global>{`
         .custom-dots {
-          bottom: -30px;
-          display: flex;
-          justify-content: center;
-          width: 100%;
-          padding: 0;
-          margin: 0;
-        }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+            padding: 0;
+            position: relative;
+          }
+
         .custom-dots li {
           margin: 0 4px;
           display: inline-block;
         }
+        
         .custom-dots li button {
           border: none;
           background: none;
           padding: 0;
         }
+        
         .custom-dots li button:before {
           font-size: 12px;
           color: #ccc;
           opacity: 1;
           transition: all 0.3s ease;
         }
+        
         .custom-dots li.slick-active button:before {
-          color: #611232; /* Color rojo para el punto activo */
+          color: #611232;
           transform: scale(1.2);
         }
+
 
         /* Estilos solo para desktop que igualan el gap */
         @media (min-width: 768px) {
