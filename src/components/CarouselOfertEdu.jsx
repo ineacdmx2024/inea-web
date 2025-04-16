@@ -1,20 +1,16 @@
-"use client";
-import { useState, useEffect } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Link from "next/link";
+"use client"
+import { useState, useEffect } from "react"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import Link from "next/link"
 
 function PrevArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, style, onClick } = props
   return (
     <div
       className={`${className} !z-10 before:!content-none`}
-      style={{
-        ...style,
-        display: "block",
-        left: "-45px",
-      }}
+      style={{ ...style, display: "block", left: "-45px" }}
       onClick={onClick}
     >
       <svg
@@ -31,16 +27,12 @@ function PrevArrow(props) {
   )
 }
 
-const NextArrow = (props) => {
-  const { className, style, onClick } = props;
+function NextArrow(props) {
+  const { className, style, onClick } = props
   return (
     <div
       className={`${className} !z-10 before:!content-none`}
-      style={{
-        ...style,
-        display: "block",
-        right: "-35px",
-      }}
+      style={{ ...style, display: "block", right: "-35px" }}
       onClick={onClick}
     >
       <svg
@@ -54,34 +46,15 @@ const NextArrow = (props) => {
         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
       </svg>
     </div>
-  );
-};
+  )
+}
 
 const truncateText = (text, maxLetters) => {
-  if (text.length > maxLetters) {
-    return text.slice(0, maxLetters) + "...";
-  }
-  return text;
-};
+  return text.length > maxLetters ? text.slice(0, maxLetters) + "..." : text
+}
 
 function CarouselOfertEdu() {
   const [slidesToShow, setSlidesToShow] = useState(3)
-
-  const [isSmallScreen, setIsSmallScreen] = useState(false)
-
-  useEffect(() => {
-    // Esta lógica solo se ejecutará en el cliente.
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 500);
-    };
-
-    handleResize(); // Ejecuta una vez para establecer el estado inicial.
-
-    window.addEventListener("resize", handleResize)
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  }, [])
 
   useEffect(() => {
     const handleResize = () => {
@@ -89,12 +62,8 @@ function CarouselOfertEdu() {
     }
 
     handleResize()
-
     window.addEventListener("resize", handleResize)
-
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
+    return () => window.removeEventListener("resize", handleResize)
   }, [])
 
   const modalidades = [
@@ -134,116 +103,49 @@ function CarouselOfertEdu() {
     autoplay: true,
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
-    appendDots: dots => <ul className="custom-dots">{dots}</ul>,
+    appendDots: dots => (
+      <div className="custom-dots-wrapper mt-4">
+        <ul className="slick-dots custom-dots">{dots}</ul>
+      </div>
+    ),
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   }
+
   return (
     <>
       <style jsx global>{`
         .custom-dots {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin-top: 20px;
-            padding: 0;
-            position: relative;
-          }
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          margin-top: 20px;
+          padding: 0;
+          position: relative;
+        }
 
         .custom-dots li {
           margin: 0 4px;
           display: inline-block;
         }
-        
+
         .custom-dots li button {
           border: none;
           background: none;
           padding: 0;
         }
-        
+
         .custom-dots li button:before {
           font-size: 12px;
           color: #ccc;
           opacity: 1;
           transition: all 0.3s ease;
         }
-        
+
         .custom-dots li.slick-active button:before {
           color: #611232;
           transform: scale(1.2);
-        }
-
-
-        /* Estilos solo para desktop que igualan el gap */
-        @media (min-width: 768px) {
-          .desktop-carousel .slick-slide {
-            padding: 0 16px;  /* Mitad del gap-8 (32px) */
-          }
-          
-          .desktop-carousel .slick-list {
-            margin: 0 -16px;  /* Negativo del padding */
-          }
-          
-          /* Aseguramos que la card tiene las mismas dimensiones */
-          .desktop-carousel .carousel-card {
-            height: 450px;
-            display: flex;
-            flex-direction: column;
-          }
-        }
-        
-        /* Estilos para mobile */
-        @media (max-width: 767px) {
-          .slick-slider {
-            padding-bottom: 30px;
-          }
-        }
-        
-        .carousel-card {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .button-container {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-        }
-        
-        /* Dimensiones fijas para imágenes */
-        .image-container {
-          width: 100%;
-          max-width: 296px; /* Ancho fijo de 296px */
-          height: 236.8px; /* Alto fijo de 236.8px */
-          position: relative;
-          overflow: hidden;
-          border-radius: 0.5rem;
-          margin: 0 auto;
-        }
-        
-        .image-container img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-        
-        /* Medidas responsivas para dispositivos móviles */
-        @media (max-width: 767px) {
-          .image-container {
-            width: 100%;
-            height: 0;
-            padding-bottom: 80%; /* Mantiene proporción similar en móviles */
-            max-width: none;
-          }
-          
-          .image-container img {
-            position: absolute;
-            top: 0;
-            left: 0;
-          }
         }
       `}</style>
 
@@ -254,28 +156,18 @@ function CarouselOfertEdu() {
             className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {modalidades.map((noticia, index) => (
-              <div key={index*36} className="tablet:h-[450px] pt-4 tablet:pt-0">
-                <Link
-                  href={`/oferta-educativa${noticia.url}`}
-                  className="block h-full"
-                >
+              <div key={index * 36} className="tablet:h-[450px] pt-4 tablet:pt-0">
+                <Link href={`/oferta-educativa${noticia.url}`} className="block h-full">
                   <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 tablet:p-8 flex flex-col carousel-card">
                     <div className="image-container mb-4">
-                      <img
-                        src={noticia.image || "/placeholder.svg"}
-                        alt={noticia.name}
-                      />
+                      <img src={noticia.image || "/placeholder.svg"} alt={noticia.name} />
                     </div>
                     <div className="flex flex-col justify-between flex-grow">
-                      <h3
-                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium h-[32px]"
-                      >
+                      <h3 className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium h-[32px]">
                         {truncateText(noticia.name, 37)}
                       </h3>
                       <div className="flex justify-center mt-10 tablet:mt-4">
-                        <button
-                          className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
-                        >
+                        <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
                           Ir al sitio
                         </button>
                       </div>
