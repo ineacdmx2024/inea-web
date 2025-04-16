@@ -194,7 +194,7 @@ function SeccionLigasInte() {
             {restantes.map((item, i) => (
               <div key={i} className="pt-4 px-4">
                 <Link href={`/home-enlaces-de-interes/${item.slug}`} className="block h-full">
-                  <div className="border border-slate-300 rounded-lg p-4 flex flex-col justify-between min-h-[450px] carousel-card">
+                  <div className="border border-slate-300 rounded-lg p-4 flex flex-col carousel-card tablet:h-[450px]">
                     <div className="image-container mb-4">
                       <img src={item.imagen || "/placeholder.svg"} alt={item.titulo} />
                     </div>
