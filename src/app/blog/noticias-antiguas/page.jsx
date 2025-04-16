@@ -116,7 +116,7 @@ function NoticiasAntiguas({ item }) {
                           <Image
                             src={
                               item.attributes.Imagen?.data?.attributes?.formats
-                                ?.small?.url
+                                ?.medium?.url || item.attributes.Imagen?.data?.attributes?.url
                             }
                             alt={
                               item.attributes.Nombre_de_la_Imagen ||
