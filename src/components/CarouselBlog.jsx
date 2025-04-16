@@ -35,7 +35,7 @@ function PrevArrow(props) {
       style={{
         ...style,
         display: "block",
-        left: "-20px", // MÁS CERCA DEL CONTENIDO
+        left: "-35px", // MÁS CERCA DEL CONTENIDO
         top: "50%",
         transform: "translateY(-50%)",
       }}
@@ -63,7 +63,7 @@ function NextArrow(props) {
       style={{
         ...style,
         display: "block",
-        right: "-20px", // MÁS CERCA DEL CONTENIDO
+        right: "-35px", // MÁS CERCA DEL CONTENIDO
         top: "50%",
         transform: "translateY(-50%)",
       }}
