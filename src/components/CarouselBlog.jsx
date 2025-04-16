@@ -35,7 +35,7 @@ function PrevArrow(props) {
       style={{
         ...style,
         display: "block",
-        left: "-35px", // MÁS CERCA DEL CONTENIDO
+        left: "-45px", // MÁS CERCA DEL CONTENIDO
         top: "50%",
         transform: "translateY(-50%)",
       }}
