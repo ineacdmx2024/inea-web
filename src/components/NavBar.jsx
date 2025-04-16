@@ -7,13 +7,12 @@ import Image from "next/image";
 const Navbar = () => {
   const [isClick, setisClick] = useState(false);
   const [isClickINEA, setisClickINEA] = useState(false);
-
   const [isClickOE, setisClickOE] = useState(false);
   const [isClickS, setisClickS] = useState(false);
   const [isClickCE, setisClickCE] = useState(false);
   const [isClickI, setisClickI] = useState(false);
 
-  const navRef = useRef(null); // Referencia para el Navbar
+  const navRef = useRef(null);
 
   const toggleOE = () => {
     setisClickOE(!isClickOE);
@@ -60,7 +59,7 @@ const Navbar = () => {
     setisClickINEA(false);
     setisClick(false);
   };
-  // Detecta clics fuera del navbar
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -74,57 +73,34 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+  
   return (
     // <div className="navBar text-white ">
-    <div
-      ref={navRef}
-      className="navBar w-screen max-w-full"
-    >
+    <div ref={navRef} className="navBar w-screen max-w-full">
       <div className="bg-[#611232] w-full">
-        {/* Menú gobierno */}
         <nav className="bg-[#611232]">
-          <div className="flex items-center justify-between py-[0.1rem] px-auto">
-            <div
-              className="flex items-center justify-between"
-              id="Msup"
-            >
+          {/* margen corregido aquí */}
+          <div className="flex items-center justify-between py-[0.1rem] px-4 md:px-[40px]">
+            <div className="flex items-center justify-between" id="Msup">
               <div className="flex items-center">
-                <Link
-                  href="https://www.gob.mx/sep"
-                  passHref
-                >
+                <Link href="https://www.gob.mx/sep" passHref>
                   <img
                     src="/Logo_educacion_white_2025.svg"
                     alt="Educacion"
-                    className=" hover:text-[#8B6C41]  rounded inline-block py-[0.3rem] mr-[1rem]"
+                    className="hover:text-[#8B6C41] rounded inline-block py-[0.3rem] mr-[1rem]"
                   />
                 </Link>
               </div>
-              <div
-                className="flex items-center space-x-7"
-                id="contenidoSup"
-              >
+              <div className="flex items-center space-x-7" id="contenidoSup">
                 <div className="hidden md:block">
                   <div className="ml-4 flex items-end space-x-5">
-                    <Link
-                      href="/"
-                      passHref
-                      className="hover:text-[#D3C09B] p-1 rounded"
-                    >
+                    <Link href="/" passHref className="hover:text-[#D3C09B] p-1 rounded">
                       Sobre el INEA
                     </Link>
-                    <Link
-                      href="/#ubicacion"
-                      passHref
-                      className="hover:text-[#D3C09B] p-1 rounded"
-                    >
+                    <Link href="/#ubicacion" passHref className="hover:text-[#D3C09B] p-1 rounded">
                       Contacto
                     </Link>
-                    <Link
-                      href="/"
-                      passHref
-                      className="hover:text-[#D3C09B] p-1 rounded"
-                    >
+                    <Link href="/" passHref className="hover:text-[#D3C09B] p-1 rounded">
                       Mapa del sitio
                     </Link>
                     <Link
@@ -151,70 +127,37 @@ const Navbar = () => {
                 </div>
               </div>
 
-              {/*Boton para desplegable hamburguesa */}
-              <div className="md:hidden flex items-end mr-[15px]">
+              {/* Botón hamburguesa con margen corregido */}
+              <div className="md:hidden flex items-end mr-0">
                 <button
                   className="inline-flex items-center w-auto h-auto rounded-md text-white hover:text-[#E4CDA7]
-                 focus:outline-none focus:ring-2 p-2 focus:ring-inset focus:ring-[#E4CDA7] px-auto"
+                    focus:outline-none focus:ring-2 p-2 focus:ring-inset focus:ring-[#E4CDA7]"
                   onClick={toggleNavBar}
                 >
                   {isClick ? (
-                    <svg
-                      className="h-6 w-6"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M6 18L18 6M6 6l12 12"
-                      />
+                    <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   ) : (
-                    <svg
-                      className="h-6 w-6"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 6h16M4 12h16m-7 6h7"
-                      />
+                    <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                   )}
                 </button>
               </div>
             </div>
           </div>
+
           {isClick && (
-            <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 w-full">
-                <Link
-                  href="/"
-                  passHref
-                  className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
-                >
+            <div className="md:hidden px-4 md:px-[40px]">
+              <div className="pt-2 pb-3 space-y-1 w-full">
+                <Link href="/" passHref className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start">
                   Sobre el INEA
                 </Link>
-                <Link
-                  href="/#ubicacion"
-                  passHref
-                  className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
-                >
+                <Link href="/#ubicacion" passHref className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start">
                   Contacto
                 </Link>
-                <Link
-                  href="/"
-                  passHref
-                  className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
-                >
+                <Link href="/" passHref className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start">
                   Mapa del sitio
                 </Link>
                 <Link
@@ -240,6 +183,41 @@ const Navbar = () => {
               </div>
             </div>
           )}
+        </nav>
+
+        {/* Menú inferior con margen corregido */}
+        <nav className="bg-[#A57F2C] lg:h-37px">
+          <div className="flex items-center justify-between py-[0.06rem] px-4 md:px-[40px] h-37px">
+            <div className="flex items-end justify-end" id="Minf">
+              <div className="flex items-end space-x-10">
+                <div className="hidden md:block">
+                  <div className="ml-4 flex items-end space-x-5">
+                    <Link
+                      href="/"
+                      passHref
+                      className="hover:text-[#CBB486] p-2 rounded grid grid-cols-2 grid-rows-1 gap-0 content-center "
+                    >
+                      <div>
+                        <svg
+                          fill="none"
+                          viewBox="0 0 4 24"
+                          stroke="currentColor"
+                          className="h-5 w-full m-0 mr-1 text-base items-end"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                          />
+                        </svg>
+                      </div>
+                      <div>Inicio</div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </nav>
 
         {/* Menú inferior */}
