@@ -31,10 +31,10 @@ function PrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className} hidden tablet:block !z-10 before:!content-none`}
+      className={`${className} !z-10 before:!content-none`}
       style={{
         ...style,
-        left: "-45px",
+        left: "-15px", // más cerca del carrusel en móvil
         top: "50%",
         transform: "translateY(-50%)",
       }}
@@ -42,7 +42,18 @@ function PrevArrow(props) {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
+        className="w-7 h-7 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75 hidden tablet:block sm:block"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+      {/* Icono visible solo en móvil */}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-6 h-6 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75 block tablet:hidden sm:hidden"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
@@ -58,10 +69,10 @@ function NextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className} hidden tablet:block !z-10 before:!content-none`}
+      className={`${className} !z-10 before:!content-none`}
       style={{
         ...style,
-        right: "-35px",
+        right: "-15px", // más cerca del carrusel en móvil
         top: "50%",
         transform: "translateY(-50%)",
       }}
@@ -69,7 +80,18 @@ function NextArrow(props) {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
+        className="w-7 h-7 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75 hidden tablet:block sm:block"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+      </svg>
+      {/* Icono visible solo en móvil */}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-6 h-6 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75 block tablet:hidden sm:hidden"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
