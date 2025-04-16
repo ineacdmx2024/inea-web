@@ -145,7 +145,7 @@ function SeccionLigasInte() {
           {fijos.map((fijo, i) => (
             <div key={i} className="w-1/3 cursor-pointer">
               <Link href={`/home-enlaces-de-interes/${fijo.slug}`} className="block h-full">
-                <div className="border border-slate-300 rounded-lg h-[450px] p-8 flex flex-col carousel-card">
+               <div className="border border-slate-300 rounded-lg p-4 flex flex-col carousel-card h-[450px]">
                   <div className="image-container mb-4">
                     <img src={fijo.imagen || "/placeholder.svg"} alt={fijo.titulo} />
                   </div>
