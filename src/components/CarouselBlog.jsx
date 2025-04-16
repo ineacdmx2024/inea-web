@@ -36,8 +36,8 @@ function PrevArrow(props) {
       style={{
         ...style,
         display: "block",
-        left: "0",
-        transform: "translateX(-50%)",
+        left: "10px",
+        transform: "none",
       }}
       onClick={onClick}
     >
@@ -64,8 +64,8 @@ function NextArrow(props) {
       style={{
         ...style,
         display: "block",
-        right: "0",
-        transform: "translateX(50%)",
+        right: "10px",
+        transform: "none",
       }}
       onClick={onClick}
     >
@@ -223,8 +223,8 @@ const CarouselBlog = ({ item }) => {
         )}
       </Slider>
 
-      {/* Botón Noticias Anteriores */}
-      <div className="w-full flex justify-end mt-10 px-4 tablet:px-0">
+     {/* Botón Noticias Anteriores alineado a la derecha, más cercano al blog */}
+      <div className="w-full flex justify-end mt-4 px-4 tablet:px-0 max-w-[1142px] mx-auto">
         <Link
           className="w-40 text-center bg-[#611232] text-white py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block text-sm letras:text-base"
           href={`/blog/noticias-antiguas/`}>
