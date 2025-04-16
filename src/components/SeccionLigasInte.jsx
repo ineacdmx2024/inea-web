@@ -167,7 +167,7 @@ function SeccionLigasInte() {
 
   return (
     <>
-      <style jsx global>{'
+      <style jsx global>{
         .custom-dots {
           bottom: -30px;
           display: flex;
