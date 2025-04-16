@@ -175,6 +175,7 @@ function SeccionLigasInte() {
           width: 100%;
           padding: 0;
           margin: 0;
+          text-align: center; /* AÑADIDO para asegurar centrado visual */
         }
         .custom-dots li {
           margin: 0 4px;
