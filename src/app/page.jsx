@@ -46,8 +46,9 @@ function Page() {
             <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
             <div className="flex-grow h-px bg-gray-300"></div>
           </div>
+          {/* CarouselBlog dentro del contenedor max-w */}
+          <CarouselBlog />
         </div>
-        <CarouselBlog />
       </div>
 
 
