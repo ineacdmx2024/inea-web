@@ -116,7 +116,7 @@ function SeccionLigasInte() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: (dots) => (
-      <div className="mt-6 flex justify-center w-full">
+      <div className="mt-2 flex justify-center w-full">
         <ul className="flex space-x-2">{dots}</ul>
       </div>
     ),
@@ -189,7 +189,7 @@ function SeccionLigasInte() {
         </div>
 
         {/* Carrusel restante */}
-        <div className="desktop-carousel">
+        <div className="max-w-[1150px] mx-auto mt-8">
           <Slider {...settings}>
             {restantes.map((item, i) => (
               <div key={i} className="pt-4 px-4">
