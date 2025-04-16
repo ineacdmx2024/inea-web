@@ -270,7 +270,7 @@ async function Page({ params }) {
             style={{ width: '46.875rem', height: '31.25rem' }} /* 750px x 500px en rem */
           />
         </div>
-        <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-justify">{renderContenido(contenido)}</div>
+        <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-left">{renderContenido(contenido)}</div>
       </PagSec>
     </div>
   );

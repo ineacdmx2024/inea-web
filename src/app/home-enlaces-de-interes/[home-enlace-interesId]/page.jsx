@@ -263,7 +263,7 @@ function DetalleEnlace(slug) {
               />
             </div>
 
-            <div className="prose lg:prose-xl mt-8 max-w-3xl text-[#333334] overflow-hidden clear-both" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', wordBreak: 'break-word', textAlign: 'justify' }}>
+            <div className="prose lg:prose-xl mt-8 max-w-3xl text-[#333334] overflow-hidden clear-both" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', wordBreak: 'break-word', textAlign: 'left' }}>
               {renderContenido(cont.contenido)}
             </div>
           </PagSec>

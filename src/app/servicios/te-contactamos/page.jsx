@@ -394,7 +394,7 @@ return (
         <div className="w-full md:w-auto">
         <div className="mx-auto mb-4 w-full max-w-full md:max-w-[1140px]">
         <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px] ">
-            <p className="text-justify font-light">
+            <p className="text-left font-light">
             Si estás interesado en aprender o terminar tu educación básica, en el INEA Ciudad de México
              queremos ayudarte. Llena el formulario con tus datos y elige la opción educativa que más te 
              interese. Esto no es un registro, solo una forma para que podamos comunicarnos contigo y
@@ -888,7 +888,7 @@ return (
                   )}
                 </label>
               </div>
-              <p class="text-justify text-[12px]" for="file-01">
+              <p class="text-left text-[12px]" for="file-01">
                 Manifiesto bajo protesta de decir verdad que la información y
                 los datos aquí asentados son verdaderos, reconosco que en caso
                 de faltar a la verdad, estaré incurrriendo en el delito de
@@ -919,7 +919,7 @@ return (
 
             {/* <div className="pt-4 leading-7 justify-start text-[#333334] text-[12px]"> */}
             <div className="pt-4  justify-start text-[#333334] text-[12px]">
-              <p className="pt-3 text-justify font-light">
+              <p className="pt-3 text-left font-light">
                 En la cuenta{" "}
                 <strong>
                   <a className="text-blue-700" href="mailto:inea@inea.gob.mx">
