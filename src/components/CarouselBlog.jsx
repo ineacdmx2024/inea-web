@@ -31,11 +31,10 @@ function PrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className} !z-10 before:!content-none`}
+      className={`${className} hidden tablet:block !z-10 before:!content-none`}
       style={{
         ...style,
-        display: "block",
-        left: "-45px", // MÁS CERCA DEL CONTENIDO
+        left: "-45px",
         top: "50%",
         transform: "translateY(-50%)",
       }}
@@ -43,7 +42,7 @@ function PrevArrow(props) {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="arrow:block w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
+        className="w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
@@ -59,11 +58,10 @@ function NextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className} !z-10 before:!content-none`}
+      className={`${className} hidden tablet:block !z-10 before:!content-none`}
       style={{
         ...style,
-        display: "block",
-        right: "-35px", // MÁS CERCA DEL CONTENIDO
+        right: "-35px",
         top: "50%",
         transform: "translateY(-50%)",
       }}
@@ -71,7 +69,7 @@ function NextArrow(props) {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="arrow:block w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
+        className="w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
