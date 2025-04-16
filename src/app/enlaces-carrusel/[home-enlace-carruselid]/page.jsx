@@ -56,9 +56,7 @@ function DetalleEnlace(slug) {
   useEffect(() => {
     const Contenido = async () => {
       const res = await fetch(
-       // `https://inea-web-backend.onrender.com/api/i-enlaces?filters[slug][$eq]=${slug.params["home-enlace-interesId"]}&populate=*`
-       `https://inea-web-backend-cg20.onrender.com/api/baner-principals-laterales?filters[slug][$eq]=${slug.params["home-enlace-carruselid"]}&populate=*`
-       //`https://inea-web-backend-cg20.onrender.com/api/baner-principals?filters[slug][$eq]=${slug.params["home-enlace-carruselid"]}&populate=*`
+       `https://inea-web-backend-cg20.onrender.com/api/baner-principals?filters[slug][$eq]=${slug.params["home-enlace-carruselid"]}&populate=*`
       );
       const data = await res.json();
       const enlacesData = data.data.map((item) => ({
@@ -82,17 +80,15 @@ function DetalleEnlace(slug) {
     let enlaces = [];
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
-        //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
-         `https://inea-web-backend-cg20.onrender.com/api/baner-principals-laterales?filters[Pinear][$eq]=true&populate=%2A`
-         //`https://inea-web-backend-cg20.onrender.com/api/baner-principals-laterales?filters[Pinear][$eq]=true&populate=%2A`
+
+         `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
        
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
         const resNoPineados = await fetch(
-         //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
-         `https://inea-web-backend-cg20.onrender.com/api/baner-principals-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
-        // `https://inea-web-backend-cg20.onrender.com/api/baner-principals-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+
+         `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
         );
         const { data: enlacesNoPineados } = await resNoPineados.json();
 
@@ -145,8 +141,8 @@ function DetalleEnlace(slug) {
           return (
             <p
               key={index}
-              className={` text-[#333334] text-[18px] font-light leading-[28px]`}
-              //className={`${open_Sans.className} text-[#333334] text-[16px] font-light`}
+              style={{ fontFamily: "IBM Plex Serif, serif" }}
+              className={`font-body text-[#333334] text-[18px] font-thin tracking-wider`}
             >
               {item.children.map((child, i) => {
                 if (child.type === "link" && child.url) {
@@ -215,7 +211,7 @@ function DetalleEnlace(slug) {
           return (
             <blockquote
               key={index}
-              className="border-l-4 border-gray-500 pl-4 italic text-gray-600 my-4"
+      className="border-l-4 border-gray-500 pl-4 italic text-gray-600 my-4"
             >
               {item.children[0]?.text || ""}
             </blockquote>
@@ -227,7 +223,7 @@ function DetalleEnlace(slug) {
               href={item.url || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 underline hover:text-blue-700"
+                className="text-blue-500 underline hover:text-blue-700"
             >
               {item.children[0]?.text || "Enlace"}
             </Link>
@@ -253,7 +249,7 @@ function DetalleEnlace(slug) {
             >
               INEA Ciudad de México | {cont.fecha ? fechaFun(cont.fecha) : ""}
             </h1>
-            <div className="m-auto my-6 rounded-lg max-h-[392px]">
+            <div className="m-auto my-6 rounded-lg">
               <Image
                 src={cont.imagen}
                 alt={cont.NomImg || "Imagen sin título"}
@@ -262,7 +258,7 @@ function DetalleEnlace(slug) {
                 height={700}
               />
             </div>
-            <div className="mb-6 mt-12 leading-loose">
+            <div className={`mb-6 mt-12 leading-7 font-serif font-thin`}>
               {renderContenido(cont.contenido)}
             </div>
           </PagSec>

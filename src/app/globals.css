@@ -17,6 +17,15 @@ html, body, #__next, main {
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: patria;
+    src: url("/Patria_Regular.otf");
+}
+
+.patria{
+    font-family: patria;
+}
+
 #animation{
   animation: fadeIn 1.5s;
 }
@@ -91,4 +100,3 @@ img {
   image-smoothing: high;
   transform: translateZ(0);
 }
-

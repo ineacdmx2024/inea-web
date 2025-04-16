@@ -34,38 +34,59 @@ const CarouselEL = ({ cards }) => {
     dotsClass: "slick-dots custom-dots",
     appendDots: (dots) => (
       <div className="custom-dots-container">
-        <ul className="m-0"> {dots} </ul>
+        <ul className="custom-dots-list"> {dots} </ul>
       </div>
     ),
   };
-
+  
   return (
     <>
       <style jsx global>{`
-        .custom-dots-container {
-          bottom: -25px;
-        }
+      .custom-dots-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      position: relative;
+      }
 
-        .custom-dots {
-          bottom: 25px;
-        }
+      .custom-dots-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+      }
 
-        .custom-dots li {
-          margin: 0 4px;
-        }
+      .custom-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .custom-dots li {
+        margin: 0 4px;
+        display: inline-block;
+      }
 
-        .custom-dots li button {
-          border: none;
-          background: none;
-          padding: 0;
-        }
-
-        .custom-dots li button:before {
-          font-size: 12px;
-          color: #ccc;
-          opacity: 1;
-          transition: all 0.3s ease;
-        }
+      .custom-dots li button {
+        border: none;
+        background: none;
+        padding: 0;
+      }
+      
+      .custom-dots li button:before {
+        font-size: 12px;
+        color: #ccc;
+        opacity: 1;
+        transition: all 0.3s ease;
+      }
+      
+      .custom-dots li.slick-active button:before {
+        color: #611232;
+        transform: scale(1.2);
+      }
 
         .custom-dots li.slick-active button:before {
           color: #611232;

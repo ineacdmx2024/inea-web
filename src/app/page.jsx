@@ -1,5 +1,4 @@
 import React from "react";
-import { Open_Sans, Montserrat } from "next/font/google";
 import CarouselBlog from "@/components/CarouselBlog";
 import CarouselInicio from "@/components/CarouselInicio";
 import CarouselOfertEdu from "@/components/CarouselOfertEdu";
@@ -7,14 +6,10 @@ import SeccionLigasInte from "@/components/SeccionLigasInte";
 import Ubicacion from "@/components/Ubicacion";
 import BannerContingencia from "@/components/BannerContingencia";
 
-const open_Sans = Open_Sans({ subsets: ["latin"] });
-const montserrat = Montserrat({ subsets: ["latin"] });
-
 function Page() {
   return (
-    <main className={`mx-auto ${montserrat.className} bg-white pt-[150px] pb-[100px] w-full overflow-x-hidden`}>
-      <div>
-        {/* <img
+    <main className={`mx-auto bg-white pt-[94px] pb-[100px] w-full overflow-x-hidden`}>
+      {/* <img
           src="/Banner_INEA_CDMX_EducacionMovilnueva.webp"
           alt="BannerMovil"
           className="w-full h-auto block medida3:hidden"
@@ -24,13 +19,12 @@ function Page() {
           alt="Banner"
           className="w-full h-auto hidden medida3:block"
         /> */}
-      </div>
-      <BannerContingencia />
+
+      {/* <BannerContingencia />  */}
       <CarouselInicio />
 
-      {/* Sección de presentación de INEA CDMX */}
       <div className="mx-auto my-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1142px] text-center">
-        <h1 className="text-[33px] font-bold text-[#333334]">
+        <h1 className={`text-[33px] font-bold text-[#333334]`}>
           INEA en la Ciudad de México
         </h1>
         <div className="max-w-[1130px] mx-auto px-4">
@@ -42,21 +36,25 @@ function Page() {
         </div>
       </div>
 
-      {/* Sección del blog con CarouselBlog */}
-      <div className="mx-auto my-20 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1142px]">
-        <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
-          Blog
-        </h1>
-        <div className="flex items-center mb-6">
-          <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
-          <div className="flex-grow h-px bg-gray-300"></div>
+      {/* Blog */}
+      <div className="w-full px-4 tablet:px-0 my-20">
+        <div className="max-w-[1142px] mx-auto">
+          <h1 className="patria text-2xl font-medium text-[#333334] mb-2 letras:text-3xl">
+            Blog
+          </h1>
+          <div className="flex items-center mb-6">
+            <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+            <div className="flex-grow h-px bg-gray-300"></div>
+          </div>
+          {/* CarouselBlog dentro del contenedor max-w */}
+          <CarouselBlog />
         </div>
-        <CarouselBlog />
       </div>
 
 
+      {/* Oferta educativa */}
       <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-        <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
+        <h1 className="patria text-2xl font-medium text-[#333334] mb-2 letras:text-3xl">
           Oferta educativa
         </h1>
         <div className="flex items-center">
@@ -66,8 +64,9 @@ function Page() {
       </div>
       <CarouselOfertEdu />
 
+      {/* Enlaces de interés */}
       <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-        <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
+        <h1 className="patria text-2xl font-medium text-[#333334] mb-2 letras:text-3xl">
           Enlaces de interés
         </h1>
         <div className="flex items-center">
@@ -77,16 +76,19 @@ function Page() {
       </div>
       <SeccionLigasInte />
 
-        <div className="mt-4 mb-2 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-          <h1 className="text-2xl font-medium text-slate-700 mb-2 letras:text-3xl">
-            Ubicación
-          </h1>
-          <div className="flex items-center">
-            <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
-            <div className="flex-grow h-px bg-gray-300"></div>
-          </div>
-        </div>
-      <Ubicacion />
+      {/* Ubicación */}
+     <section className="mt-[97px] mb-2 px-4 flex flex-col items-center">
+       <div className="mb-6 max-w-[1170px] w-full text-left">
+         <h1 className="patria text-left text-2xl font-medium text-[#333334] letras:text-3xl">
+           Ubicación
+         </h1>
+         <div className="flex items-center mt-1">
+           <div className="w-9 h-[5px] bg-[#b38e61]"></div>
+           <div className="flex-grow h-px bg-gray-300"></div>
+         </div>
+       </div>
+       <Ubicacion />
+     </section>
     </main>
   );
 }

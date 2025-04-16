@@ -19,7 +19,6 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
-
 const truncateText = (text, maxWords) => {
   const words = text.split(" ");
   if (words.length > maxWords) {
@@ -30,109 +29,57 @@ const truncateText = (text, maxWords) => {
 
 function PrevArrow(props) {
   const { className, style, onClick } = props;
-  const [leftValue, setLeftValue] = useState("20rem");
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 1850) {
-        setLeftValue("20rem");
-      } else if (window.innerWidth > 1630) {
-        setLeftValue("15rem");
-      } else if (window.innerWidth > 1500) {
-        setLeftValue("10rem");
-      } else if (window.innerWidth > 1330) {
-        setLeftValue("5rem");
-      } else {
-        setLeftValue("1rem");
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <div
-      className={`${className} !z-10 before:!content-none`}
+      className={`${className} hidden tablet:block !z-10 before:!content-none`}
       style={{
         ...style,
-        display: "block",
-        left: leftValue,
+        left: "-45px",
+        top: "50%",
+        transform: "translateY(-50%)",
       }}
       onClick={onClick}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
+        className="w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="hidden arrow:block w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M15.75 19.5L8.25 12l7.5-7.5"
-        />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
       </svg>
     </div>
   );
 }
 
-const NextArrow = (props) => {
+function NextArrow(props) {
   const { className, style, onClick } = props;
-  const [rightValue, setRightValue] = useState("22rem");
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 1850) {
-        setRightValue("22rem");
-      } else if (window.innerWidth > 1630) {
-        setRightValue("15rem");
-      } else if (window.innerWidth > 1500) {
-        setRightValue("10rem");
-      } else if (window.innerWidth > 1330) {
-        setRightValue("5rem");
-      } else {
-        setRightValue("1rem");
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <div
-      className={`${className} !z-10 before:!content-none`}
+      className={`${className} hidden tablet:block !z-10 before:!content-none`}
       style={{
         ...style,
-        display: "block",
-        right: rightValue,
+        right: "-35px",
+        top: "50%",
+        transform: "translateY(-50%)",
       }}
       onClick={onClick}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
+        className="w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-8 h-8 text-white bg-gray-700 bg-opacity-60 rounded-full hover:bg-opacity-75 hidden arrow:block "
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M8.25 4.5l7.5 7.5-7.5 7.5"
-        />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
       </svg>
     </div>
   );
-};
+}
 
 const CarouselBlog = ({ item }) => {
   const [datos, setData] = useState(null);
@@ -140,7 +87,6 @@ const CarouselBlog = ({ item }) => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        //"https://inea-web-backend.onrender.com/api/blogs?populate=*&pagination[limit]=4&sort[0]=Fecha:desc"
         "https://inea-web-backend-cg20.onrender.com/api/blogs?populate=*&pagination[limit]=4&sort[0]=Fecha:desc"
       );
       const result = await response.json();
@@ -154,7 +100,6 @@ const CarouselBlog = ({ item }) => {
     fetchData();
   }, []);
 
-  // Configuracion del   carousel
   const settings = {
     dots: true,
     infinite: true,
@@ -174,35 +119,16 @@ const CarouselBlog = ({ item }) => {
   };
 
   const fechaFun = (fechaAPI) => {
-    const fechaApi = fechaAPI;
-
     const diasSemana = [
-      "domingo",
-      "lunes",
-      "martes",
-      "miércoles",
-      "jueves",
-      "viernes",
-      "sábado",
+      "domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado",
     ];
     const meses = [
-      "enero",
-      "febrero",
-      "marzo",
-      "abril",
-      "mayo",
-      "junio",
-      "julio",
-      "agosto",
-      "septiembre",
-      "octubre",
-      "noviembre",
-      "diciembre",
+      "enero", "febrero", "marzo", "abril", "mayo", "junio",
+      "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
     ];
-    const fecha = new Date(fechaApi);
-
-    const diaSemana = diasSemana[fecha.getDay() + 1];
-    const dia = fecha.getDate() + 1;
+    const fecha = new Date(fechaAPI);
+    const diaSemana = diasSemana[fecha.getDay()];
+    const dia = fecha.getDate();
     const mes = meses[fecha.getMonth()];
     const año = fecha.getFullYear();
 
@@ -230,33 +156,33 @@ const CarouselBlog = ({ item }) => {
           transition: all 0.3s ease;
         }
         .custom-dots li.slick-active button:before {
-          color: #611232; // Color verde para el punto activo
+          color: #611232;
           transform: scale(1.2);
         }
       `}</style>
+
       <Slider {...settings} className="mx-auto !z-5">
         {datos ? (
           datos.map((item, index) => (
             <div key={index} className="px-4">
               <div className="w-full letras:w-full arrow:w-[750px] medida3:w-4/5 h-auto mx-auto flex flex-col tablet:flex-row tablet:w-[1142px] tablet:h-[390px] justify-between bg-white rounded-xl ">
-                {/* Div de la imagen */}
-                <div className=" m-auto w-auto arrow:w-[750px] rounded-xl max-h-[200px] blog:max-h-[392px] overflow-hidden">
+                {/* Imagen */}
+                <div className="m-auto w-auto arrow:w-[750px] rounded-xl max-h-[200px] blog:max-h-[392px] overflow-hidden">
                   <Link
                     key={index}
                     href={`/blog/noticias-antiguas/${item.attributes.slug}`}
-                    className="bg-slate-800"
                   >
-                    <Image 
+                    <Image
                       src={item.attributes.Imagen?.data?.attributes?.url}
-                      alt={ item.attributes.Nombre_de_la_Imagen || "Imagen sin título"}
+                      alt={item.attributes.Nombre_de_la_Imagen || "Imagen sin título"}
                       className="h-[200px] w-[500px] blog:w-full blog:h-full object-cover blog:object-fill rounded-xl"
                       width={950}
                       height={500}
-                      />
+                    />
                   </Link>
                 </div>
 
-                {/* Div del texto */}
+                {/* Texto */}
                 <Link
                   key={index}
                   href={`/blog/noticias-antiguas/${item.attributes.slug}`}
@@ -264,7 +190,7 @@ const CarouselBlog = ({ item }) => {
                   <article
                     className={`${montserrat.className} h-auto blog:h-[390px] letras:h-auto flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] tablet:px-5 px-0 py-2 m-auto arrow:w-[750px]`}
                   >
-                    <p className="letras:text-base text-gray-700 text-sm mb-2 ">
+                    <p className="letras:text-base text-gray-700 text-sm mb-2">
                       {item.attributes.Fecha
                         ? fechaFun(item.attributes.Fecha)
                         : "No hay"}
@@ -275,10 +201,9 @@ const CarouselBlog = ({ item }) => {
                     <p className="letras:text-[17px] text-gray-900 font-light text-[14px] mb-4 uppercase">
                       {truncateText(item.attributes.Subtitulo, 18)}
                     </p>
-
-                    <div className="overflow-visible !z-10 ">
+                    <div className="overflow-visible !z-10">
                       <Link
-                        className="text-center m-auto w-44 letras:ml-auto bg-[#611232] text-white py-3  hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] block"
+                        className="text-center m-auto w-44 letras:ml-auto bg-[#611232] text-white py-3 hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] block"
                         href={`/blog/noticias-antiguas/${item.attributes.slug}`}
                       >
                         <p className="text-xs letras:text-[14.5px] font-light">
@@ -295,9 +220,11 @@ const CarouselBlog = ({ item }) => {
           <p className="text-center">Cargando noticias...</p>
         )}
       </Slider>
-      <div className="flex justify-end m-auto">
+
+      {/* Botón Noticias Anteriores */}
+      <div className="w-full flex justify-end mt-12 px-4 tablet:px-0 mb-12 tablet:mb-16">
         <Link
-          className="mt-20 mr-[1rem] lg:mr-[5rem] xl:mr-[24rem] w-36 text-center bg-[#611232] text-white py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block letras:text-base text-xs letras:w-44"
+          className="w-40 text-center bg-[#611232] text-white py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block text-sm letras:text-base"
           href={`/blog/noticias-antiguas/`}
         >
           <p className="font-light">Noticias Anteriores</p>

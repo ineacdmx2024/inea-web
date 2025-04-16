@@ -15,7 +15,6 @@ function CarouselInicio() {
   useEffect(() => {
     const fetchEnlaces = async () => {
      
-      //const res = await fetch("https://inea-web-backend-cg20.onrender.com/api/baner-principals?populate=*")
       const res = await fetch("https://inea-web-backend-cg20.onrender.com/api/baner-principals?populate=*")
       const data = await res.json()
 
@@ -68,13 +67,20 @@ function CarouselInicio() {
     responsive: [
       {
         breakpoint: 768,  // Dispositivos pequeños (móviles)
+        dots: true,
         settings: {
-          slidesToShow: 1,
+          dots: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 1, // Aseguramos que solo se vea un "slide" a la vez
           slidesToScroll: 1,
-          arrows: false,
-          customPaging: () => (
-            <div className="dot-style">
-              <span className="dot"></span>
+          autoplay: true,
+          autoplaySpeed: 5000,
+          // arrows: false,
+          dotsClass: "slick-dots custom-dots",
+          appendDots: (dots) => (
+            <div style={{ bottom: "-25px" }}>
+              <ul style={{ margin: "0" }}> {dots} </ul>
             </div>
           ),
         }
@@ -102,13 +108,16 @@ function CarouselInicio() {
           {restantes.map((restante, index) => (
             <div key={index} className="w-full m-auto">
               {/* Imagen para dispositivos de escritorio */}
-              <div className="w-full h-full hidden md:block">
+              {/* <div className="w-full h-full hidden md:block"> */}
+              <div className=" hidden md:block relative">
                 <Image
-                  className="w-full h-full object-contain  p-4"
+                  className="w-full h-full object-cover cursor-pointer"
                   src={restante.imagenEscritorio || "/placeholder.svg"}
                   alt={restante.subtitulo || "Imagen de banner"}
-                  width={544}
-                  height={500}
+                  width={1920}
+                  height={544}
+                  quality={100}
+                  priority
                   onClick={(e) => {
                     e.stopPropagation();
                     handleButtonClick(restante);
@@ -116,10 +125,12 @@ function CarouselInicio() {
                 />
               </div>
 
+              
+
               {/* Imagen para dispositivos móviles */}
               <div className="w-full h-full block md:hidden">
                 <Image
-                  className="w-full h-full object-contain bg-purple-800"
+                  className="w-full h-full object-contain"
                   src={restante.imagenMovil || "/placeholder.svg"}
                   alt={restante.subtitulo || "Imagen de banner móvil"}
                   width={900}

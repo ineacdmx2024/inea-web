@@ -2,12 +2,26 @@
 
 #UbicacionDivP {
   font-family: 'Montserrat', sans-serif;
-  width: 1142px;
+  width: 100%;
   height: auto;
 }
 
+/* Contenedor de texto */
+#direccion {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  text-align: left;
+  font-size: 18px;
+}
+
+@media (min-width: 750px) {
+  #direccion {
+    font-size: 16px; 
+  }
+}
+
 #UbicacionDivP a {
-  padding: 10px;
   color: #ffffff;
 }
 
@@ -15,38 +29,10 @@
   color: #611232;
 }
 
-#direccion {
-  margin-top: 0;
-  padding-top: 1rem;
-}
-
-/* Responsivo - Se han eliminado márgenes verticales, solo se controlan desde JSX */
-@media screen and (max-width: 1200px) and (min-width: 430px) {
-  #direccion {
-    padding-top: 1rem;
-    margin-bottom: 0;
-    width: auto;
-    height: auto;
-  }
-
+/* Responsivo móvil: espaciado general */
+@media screen and (max-width: 768px) {
   #UbicacionDivP {
-    margin: 0;
-    width: auto;
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  #direccion {
-    padding-top: 1rem;
-    margin-bottom: 0;
-    width: auto;
-    height: auto;
-  }
-
-  #UbicacionDivP {
-    margin: 0;
-    width: auto;
-    height: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
