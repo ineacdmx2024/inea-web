@@ -31,7 +31,7 @@ function NextArrow(props) {
   const { className, style, onClick } = props
   return (
     <div
-      className={`${className} !z-10 before:!content-none`}
+      className={`${className} !z-10 before:!content-none ml-5`}
       style={{ ...style, display: "block", right: "-35px" }}
       onClick={onClick}
     >
@@ -97,14 +97,14 @@ function CarouselOfertEdu() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1,
+    speed: 500,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: dots => (
-      <div className="mt-[-20px] tablet:mt-[-20px] flex justify-center w-full">
+      <div className="mt-0 flex justify-center w-full">
         <ul className="flex space-x-2">{dots}</ul>
       </div>
     ),
@@ -116,24 +116,13 @@ function CarouselOfertEdu() {
     <>
       <style jsx global>{`
         .custom-dots {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          margin-top: 20px;
+          margin-top: 0 !important;
           padding: 0;
-          position: relative;
+          position: relative !important;
         }
 
         .custom-dots li {
           margin: 0 4px;
-          display: inline-block;
-        }
-
-        .custom-dots li button {
-          border: none;
-          background: none;
-          padding: 0;
         }
 
         .custom-dots li button:before {
