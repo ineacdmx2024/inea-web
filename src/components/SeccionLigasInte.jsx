@@ -116,7 +116,7 @@ function SeccionLigasInte() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: dots => (
-      <div className="!mb-0 mt-4 flex justify-center">
+      <div className="!mt-0 flex justify-center">
         <ul className="flex space-x-2">{dots}</ul>
       </div>
     ),
