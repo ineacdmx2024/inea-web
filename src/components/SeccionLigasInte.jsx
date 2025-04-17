@@ -116,7 +116,7 @@ function SeccionLigasInte() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: dots => (
-      <div className="!mt-0 flex justify-center">
+      <div className="w-full flex justify-center mt-4">
         <ul className="flex space-x-2">{dots}</ul>
       </div>
     ),
@@ -127,21 +127,30 @@ function SeccionLigasInte() {
   return (
     <>
       <style jsx global>{`
+        .custom-dots {
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center;
+          position: relative !important;
+          bottom: 0 !important;
+          padding: 0;
+          margin: 0;
+        }
+
+        .custom-dots li {
+          margin: 0 4px;
+        }
+
         .custom-dots li button:before {
           font-size: 12px;
           color: #aaa;
           opacity: 1;
           transition: all 0.3s ease;
         }
+
         .custom-dots li.slick-active button:before {
           color: #611232;
           transform: scale(1.3);
-        }
-        .slick-dots {
-          margin: 0 !important;
-          padding: 0 !important;
-          position: relative !important;
-          bottom: 0 !important;
         }
       `}</style>
 
