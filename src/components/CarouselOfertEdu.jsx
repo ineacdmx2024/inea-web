@@ -117,7 +117,7 @@ function CarouselOfertEdu() {
       <style jsx global>{`
         .custom-dots {
           position: absolute;
-          bottom: -30px; /* espacio ajustado para que no queden tan pegados */
+          bottom: -35px; /* espacio ajustado para que no queden tan pegados */
           left: 50%;
           transform: translateX(-50%);
           display: flex;
