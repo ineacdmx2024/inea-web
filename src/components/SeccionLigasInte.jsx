@@ -116,7 +116,7 @@ function SeccionLigasInte() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: dots => (
-      <div className="w-full flex justify-center mt-4">
+      <div className="!mt-4 flex justify-center">
         <ul className="flex space-x-2">{dots}</ul>
       </div>
     ),
@@ -127,30 +127,19 @@ function SeccionLigasInte() {
   return (
     <>
       <style jsx global>{`
-        .custom-dots {
-          display: flex !important;
-          justify-content: center !important;
-          align-items: center;
-          position: relative !important;
-          bottom: 0 !important;
-          padding: 0;
-          margin: 0;
-        }
-
-        .custom-dots li {
-          margin: 0 4px;
-        }
-
         .custom-dots li button:before {
           font-size: 12px;
           color: #aaa;
           opacity: 1;
           transition: all 0.3s ease;
         }
-
         .custom-dots li.slick-active button:before {
           color: #611232;
           transform: scale(1.3);
+        }
+        .slick-dots {
+          position: relative !important;
+          bottom: 0 !important;
         }
       `}</style>
 
@@ -181,7 +170,7 @@ function SeccionLigasInte() {
         </div>
 
         {/* Carrusel para móvil */}
-        <div className="tablet:hidden">
+        <div className="tablet:hidden relative">
           <Slider {...settings}>
             {fijos.map((fijo, i) => (
               <div key={i} className="pt-4 px-4">
@@ -208,7 +197,7 @@ function SeccionLigasInte() {
         </div>
 
         {/* Carrusel restante */}
-        <div className="max-w-[1150px] mx-auto mt-8">
+        <div className="max-w-[1150px] mx-auto mt-8 relative">
           <Slider {...settings}>
             {restantes.map((item, i) => (
               <div key={i} className="pt-4 px-4">
