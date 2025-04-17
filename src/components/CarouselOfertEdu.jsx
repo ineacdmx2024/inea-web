@@ -104,8 +104,8 @@ function CarouselOfertEdu() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: dots => (
-      <div className="custom-dots-wrapper mt-4">
-        <ul className="slick-dots custom-dots">{dots}</ul>
+      <div className="-mt-2 flex justify-center w-full">
+        <ul className="flex space-x-2">{dots}</ul>
       </div>
     ),
     prevArrow: <PrevArrow />,
