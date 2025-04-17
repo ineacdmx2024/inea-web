@@ -116,7 +116,7 @@ function SeccionLigasInte() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: dots => (
-      <div className="-mt-2 flex justify-center w-full">
+      <div className="-mt-6 tablet:-mt-8 flex justify-center w-full">
         <ul className="flex space-x-2">{dots}</ul>
       </div>
     ),
@@ -141,7 +141,7 @@ function SeccionLigasInte() {
 
       <div className="p-2 pt-0">
         {/* Carrusel fijo para desktop */}
-        <div className="hidden tablet:flex justify-center items-center w-full max-w-[1150px] mx-auto gap-8">
+        <div className="hidden tablet:flex justify-center items-center w-full max-w-[1150px] mx-auto gap-8 mb-6">
           {fijos.map((fijo, i) => (
             <div key={i} className="w-1/3 cursor-pointer">
               <Link href={`/home-enlaces-de-interes/${fijo.slug}`} className="block h-full">
