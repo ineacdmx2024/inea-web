@@ -116,7 +116,7 @@ function SeccionLigasInte() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: dots => (
-      <div className="-mt-6 tablet:-mt-8 flex justify-center w-full">
+      <div className="mt-4 flex justify-center w-full">
         <ul className="flex space-x-2">{dots}</ul>
       </div>
     ),
@@ -141,18 +141,18 @@ function SeccionLigasInte() {
 
       <div className="p-2 pt-0">
         {/* Carrusel fijo para desktop */}
-        <div className="hidden tablet:flex justify-center items-center w-full max-w-[1150px] mx-auto gap-8 mb-6">
+        <div className="hidden tablet:flex justify-center items-start w-full max-w-[1150px] mx-auto gap-8 mb-6">
           {fijos.map((fijo, i) => (
             <div key={i} className="w-1/3 cursor-pointer">
               <Link href={`/home-enlaces-de-interes/${fijo.slug}`} className="block h-full">
-               <div className="border border-slate-300 rounded-lg tablet:h-[450px] p-8 flex flex-col carousel-card">
-                  <div className="image-container mb-4">
-                    <img src={fijo.imagen || "/placeholder.svg"} alt={fijo.titulo} />
+                <div className="border border-slate-300 rounded-lg p-8 flex flex-col carousel-card min-h-[470px]">
+                  <div className="image-container mb-4 h-[180px] overflow-hidden flex justify-center items-center">
+                    <img src={fijo.imagen || "/placeholder.svg"} alt={fijo.titulo} className="max-h-full object-contain" />
                   </div>
                   <h3 className="mt-4 text-center text-[22px] text-[#333334] font-medium">
                     {truncateText(fijo.titulo, 37)}
                   </h3>
-                  <div className="flex justify-center mt-4">
+                  <div className="flex justify-center mt-auto">
                     <button className="bg-[#611232] text-white text-sm py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
                       Ir al sitio
                     </button>
@@ -169,14 +169,14 @@ function SeccionLigasInte() {
             {fijos.map((fijo, i) => (
               <div key={i} className="pt-4 px-4">
                 <Link href={`/home-enlaces-de-interes/${fijo.slug}`} className="block h-full">
-                  <div className="border border-slate-300 rounded-lg p-4 flex flex-col carousel-card">
-                    <div className="image-container mb-4">
-                      <img src={fijo.imagen || "/placeholder.svg"} alt={fijo.titulo} />
+                  <div className="border border-slate-300 rounded-lg p-4 flex flex-col carousel-card min-h-[470px]">
+                    <div className="image-container mb-4 h-[180px] overflow-hidden flex justify-center items-center">
+                      <img src={fijo.imagen || "/placeholder.svg"} alt={fijo.titulo} className="max-h-full object-contain" />
                     </div>
                     <h3 className="text-center text-[16px] text-[#333334] font-medium">
                       {truncateText(fijo.titulo, 37)}
                     </h3>
-                    <div className="flex justify-center mt-4">
+                    <div className="flex justify-center mt-auto">
                       <button className="bg-[#611232] text-white text-sm py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
                         Ir al sitio
                       </button>
@@ -194,14 +194,14 @@ function SeccionLigasInte() {
             {restantes.map((item, i) => (
               <div key={i} className="pt-4 px-4">
                 <Link href={`/home-enlaces-de-interes/${item.slug}`} className="block h-full">
-                  <div className="border border-slate-300 rounded-lg p-4 flex flex-col carousel-card tablet:h-[450px]">
-                    <div className="image-container mb-4">
-                      <img src={item.imagen || "/placeholder.svg"} alt={item.titulo} />
+                  <div className="border border-slate-300 rounded-lg p-4 flex flex-col carousel-card tablet:min-h-[470px] min-h-[470px]">
+                    <div className="image-container mb-4 h-[180px] overflow-hidden flex justify-center items-center">
+                      <img src={item.imagen || "/placeholder.svg"} alt={item.titulo} className="max-h-full object-contain" />
                     </div>
                     <h3 className="text-center text-[16px] text-[#333334] font-medium">
                       {truncateText(item.titulo, 37)}
                     </h3>
-                    <div className="flex justify-center mt-4">
+                    <div className="flex justify-center mt-auto">
                       <button className="bg-[#611232] text-white text-sm py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
                         Ir al sitio
                       </button>
