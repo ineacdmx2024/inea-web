@@ -1,3 +1,4 @@
+
 "use client"
 import { useState, useEffect } from "react"
 import Slider from "react-slick"
@@ -31,7 +32,7 @@ function NextArrow(props) {
   const { className, style, onClick } = props
   return (
     <div
-      className={`${className} !z-10 before:!content-none ml-5`}
+      className={`${className} !z-10 before:!content-none`}
       style={{ ...style, display: "block", right: "-35px" }}
       onClick={onClick}
     >
@@ -49,12 +50,12 @@ function NextArrow(props) {
   )
 }
 
-const truncateText = (text, maxLetters) =>
-  text.length > maxLetters ? text.slice(0, maxLetters) + "..." : text
+const truncateText = (text, maxLetters) => {
+  return text.length > maxLetters ? text.slice(0, maxLetters) + "..." : text
+}
 
 function CarouselOfertEdu() {
   const [slidesToShow, setSlidesToShow] = useState(3)
-  const [sliderRef, setSliderRef] = useState(null)
 
   useEffect(() => {
     const handleResize = () => {
@@ -97,16 +98,19 @@ function CarouselOfertEdu() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow,
+    speed: 1,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
-    arrows: true,
+    dotsClass: "slick-dots custom-dots",
+    appendDots: dots => (
+      <div className="custom-dots-wrapper mt-4">
+        <ul className="slick-dots custom-dots">{dots}</ul>
+      </div>
+    ),
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
-    appendDots: dots => <></>, // Evitamos renderizar los dots aquí
-    dotsClass: "hidden" // Ocultamos los dots por defecto del slider
   }
 
   return (
@@ -115,16 +119,31 @@ function CarouselOfertEdu() {
         .custom-dots {
           display: flex;
           justify-content: center;
-          margin-top: 1rem;
+          align-items: center;
+          width: 100%;
+          margin-top: 20px;
+          padding: 0;
+          position: relative;
         }
+
         .custom-dots li {
           margin: 0 4px;
+          display: inline-block;
         }
+
+        .custom-dots li button {
+          border: none;
+          background: none;
+          padding: 0;
+        }
+
         .custom-dots li button:before {
           font-size: 12px;
           color: #ccc;
           opacity: 1;
+          transition: all 0.3s ease;
         }
+
         .custom-dots li.slick-active button:before {
           color: #611232;
           transform: scale(1.2);
@@ -135,43 +154,30 @@ function CarouselOfertEdu() {
         <div className="carrusel desktop-carousel">
           <Slider
             {...settings}
-            ref={setSliderRef}
             className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {modalidades.map((noticia, index) => (
-              <div key={index} className="tablet:h-[450px] pt-4 tablet:pt-0">
+              <div key={index * 36} className="tablet:h-[450px] pt-4 tablet:pt-0">
                 <Link href={`/oferta-educativa${noticia.url}`} className="block h-full">
-                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 tablet:p-6 flex flex-col justify-between">
-                    <div className="image-container mb-2">
+                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 tablet:p-8 flex flex-col carousel-card">
+                    <div className="image-container mb-4">
                       <img src={noticia.image || "/placeholder.svg"} alt={noticia.name} />
                     </div>
-                    <h3 className="mt-2 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium">
-                      {truncateText(noticia.name, 37)}
-                    </h3>
-                    <div className="flex justify-center mt-4">
-                      <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
-                        Ir al sitio
-                      </button>
+                    <div className="flex flex-col justify-between flex-grow">
+                      <h3 className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium h-[32px]">
+                        {truncateText(noticia.name, 37)}
+                      </h3>
+                      <div className="flex justify-center mt-10 tablet:mt-4">
+                        <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
+                          Ir al sitio
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </Link>
               </div>
             ))}
           </Slider>
-          {/* Dots fuera del carrusel */}
-          <ul className="custom-dots">
-            {modalidades.map((_, i) => (
-              <li
-                key={i}
-                className={`mx-1 ${
-                  sliderRef?.innerSlider?.state.currentSlide === i ? "slick-active" : ""
-                }`}
-                onClick={() => sliderRef?.slickGoTo(i)}
-              >
-                <button className="w-3 h-3 rounded-full bg-[#ccc]"></button>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </>
