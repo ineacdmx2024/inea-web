@@ -116,7 +116,7 @@ function SeccionLigasInte() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: dots => (
-      <div className="mt-6 flex justify-center w-full">
+      <div className="!mb-0 mt-4 flex justify-center">
         <ul className="flex space-x-2">{dots}</ul>
       </div>
     ),
@@ -129,30 +129,38 @@ function SeccionLigasInte() {
       <style jsx global>{`
         .custom-dots li button:before {
           font-size: 12px;
-          color: #ccc;
+          color: #aaa;
           opacity: 1;
           transition: all 0.3s ease;
         }
         .custom-dots li.slick-active button:before {
           color: #611232;
-          transform: scale(1.2);
+          transform: scale(1.3);
+        }
+        .slick-dots {
+          margin: 0 !important;
+          padding: 0 !important;
+          position: relative !important;
+          bottom: 0 !important;
         }
       `}</style>
 
       <div className="p-2 pt-0">
         {/* Carrusel fijo para desktop */}
-        <div className="hidden tablet:flex justify-center items-start w-full max-w-[1150px] mx-auto gap-8 mb-6">
+        <div className="hidden tablet:flex justify-center items-start w-full max-w-[1150px] mx-auto gap-8">
           {fijos.map((fijo, i) => (
             <div key={i} className="w-1/3 cursor-pointer">
               <Link href={`/home-enlaces-de-interes/${fijo.slug}`} className="block h-full">
-                <div className="border border-slate-300 rounded-lg p-8 flex flex-col carousel-card min-h-[470px]">
-                  <div className="image-container mb-4 h-[180px] overflow-hidden flex justify-center items-center">
-                    <img src={fijo.imagen || "/placeholder.svg"} alt={fijo.titulo} className="max-h-full object-contain" />
+                <div className="border border-slate-300 rounded-lg tablet:h-[450px] p-6 flex flex-col justify-between carousel-card">
+                  <div>
+                    <div className="image-container mb-4">
+                      <img src={fijo.imagen || "/placeholder.svg"} alt={fijo.titulo} />
+                    </div>
+                    <h3 className="mt-2 text-center text-[22px] text-[#333334] font-medium">
+                      {truncateText(fijo.titulo, 37)}
+                    </h3>
                   </div>
-                  <h3 className="mt-4 text-center text-[22px] text-[#333334] font-medium">
-                    {truncateText(fijo.titulo, 37)}
-                  </h3>
-                  <div className="flex justify-center mt-auto">
+                  <div className="flex justify-center mt-4">
                     <button className="bg-[#611232] text-white text-sm py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
                       Ir al sitio
                     </button>
@@ -169,14 +177,16 @@ function SeccionLigasInte() {
             {fijos.map((fijo, i) => (
               <div key={i} className="pt-4 px-4">
                 <Link href={`/home-enlaces-de-interes/${fijo.slug}`} className="block h-full">
-                  <div className="border border-slate-300 rounded-lg p-4 flex flex-col carousel-card min-h-[470px]">
-                    <div className="image-container mb-4 h-[180px] overflow-hidden flex justify-center items-center">
-                      <img src={fijo.imagen || "/placeholder.svg"} alt={fijo.titulo} className="max-h-full object-contain" />
+                  <div className="border border-slate-300 rounded-lg p-4 flex flex-col justify-between h-full carousel-card">
+                    <div>
+                      <div className="image-container mb-4">
+                        <img src={fijo.imagen || "/placeholder.svg"} alt={fijo.titulo} />
+                      </div>
+                      <h3 className="text-center text-[16px] text-[#333334] font-medium">
+                        {truncateText(fijo.titulo, 37)}
+                      </h3>
                     </div>
-                    <h3 className="text-center text-[16px] text-[#333334] font-medium">
-                      {truncateText(fijo.titulo, 37)}
-                    </h3>
-                    <div className="flex justify-center mt-auto">
+                    <div className="flex justify-center mt-4">
                       <button className="bg-[#611232] text-white text-sm py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
                         Ir al sitio
                       </button>
@@ -194,14 +204,16 @@ function SeccionLigasInte() {
             {restantes.map((item, i) => (
               <div key={i} className="pt-4 px-4">
                 <Link href={`/home-enlaces-de-interes/${item.slug}`} className="block h-full">
-                  <div className="border border-slate-300 rounded-lg p-4 flex flex-col carousel-card tablet:min-h-[470px] min-h-[470px]">
-                    <div className="image-container mb-4 h-[180px] overflow-hidden flex justify-center items-center">
-                      <img src={item.imagen || "/placeholder.svg"} alt={item.titulo} className="max-h-full object-contain" />
+                  <div className="border border-slate-300 rounded-lg p-4 flex flex-col justify-between h-full tablet:h-[450px] carousel-card">
+                    <div>
+                      <div className="image-container mb-4">
+                        <img src={item.imagen || "/placeholder.svg"} alt={item.titulo} />
+                      </div>
+                      <h3 className="text-center text-[16px] text-[#333334] font-medium">
+                        {truncateText(item.titulo, 37)}
+                      </h3>
                     </div>
-                    <h3 className="text-center text-[16px] text-[#333334] font-medium">
-                      {truncateText(item.titulo, 37)}
-                    </h3>
-                    <div className="flex justify-center mt-auto">
+                    <div className="flex justify-center mt-4">
                       <button className="bg-[#611232] text-white text-sm py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
                         Ir al sitio
                       </button>
