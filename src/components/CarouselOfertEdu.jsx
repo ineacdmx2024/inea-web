@@ -104,8 +104,8 @@ function CarouselOfertEdu() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: dots => (
-      <div className="custom-dots-wrapper">
-        <ul className="slick-dots custom-dots">{dots}</ul>
+      <div>
+        <ul className="custom-dots">{dots}</ul>
       </div>
     ),
     prevArrow: <PrevArrow />,
@@ -115,22 +115,17 @@ function CarouselOfertEdu() {
   return (
     <>
       <style jsx global>{`
-        .custom-dots-wrapper {
-          margin-top: 0; /* Elimina el margen superior */
-          padding: 0;
-          position: absolute; /* Cambia a posición absoluta */
-          bottom: 0; /* Coloca los puntos justo abajo del carrusel */
-          left: 50%; /* Centra horizontalmente */
-          transform: translateX(-50%); /* Ajuste fino para centrar */
-        }
-
         .custom-dots {
+          position: absolute;
+          bottom: -16px;
+          left: 50%;
+          transform: translateX(-50%);
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 100%;
-          margin: 0; /* Elimina cualquier margen adicional */
           padding: 0;
+          margin: 0;
+          z-index: 20;
         }
 
         .custom-dots li {
@@ -155,20 +150,13 @@ function CarouselOfertEdu() {
           color: #611232;
           transform: scale(1.2);
         }
-
-        /* Media query para versión móvil */
-        @media (max-width: 768px) {
-          .custom-dots-wrapper {
-            bottom: -10px; /* Reduce la distancia con el carrusel en móviles */
-          }
-        }
       `}</style>
 
       <div className="p-2 pt-0">
-        <div className="carrusel desktop-carousel">
+        <div className="relative"> {/* <- Aquí hacemos que los dots se posicionen bien */}
           <Slider
             {...settings}
-            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
+            className="carousel-slider bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {modalidades.map((noticia, index) => (
               <div key={index * 36} className="tablet:h-[450px] pt-4 tablet:pt-0">
