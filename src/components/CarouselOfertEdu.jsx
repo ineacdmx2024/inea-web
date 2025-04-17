@@ -155,6 +155,13 @@ function CarouselOfertEdu() {
           color: #611232;
           transform: scale(1.2);
         }
+
+        /* Media query para versión móvil */
+        @media (max-width: 768px) {
+          .custom-dots-wrapper {
+            bottom: -10px; /* Reduce la distancia con el carrusel en móviles */
+          }
+        }
       `}</style>
 
       <div className="p-2 pt-0">
