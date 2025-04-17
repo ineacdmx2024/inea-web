@@ -104,7 +104,7 @@ function CarouselOfertEdu() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: dots => (
-      <div className="custom-dots-wrapper mt-4">
+      <div className="custom-dots-wrapper">
         <ul className="slick-dots custom-dots">{dots}</ul>
       </div>
     ),
@@ -115,14 +115,22 @@ function CarouselOfertEdu() {
   return (
     <>
       <style jsx global>{`
+        .custom-dots-wrapper {
+          margin-top: 0; /* Elimina el margen superior */
+          padding: 0;
+          position: absolute; /* Cambia a posición absoluta */
+          bottom: 0; /* Coloca los puntos justo abajo del carrusel */
+          left: 50%; /* Centra horizontalmente */
+          transform: translateX(-50%); /* Ajuste fino para centrar */
+        }
+
         .custom-dots {
           display: flex;
           justify-content: center;
           align-items: center;
           width: 100%;
-          margin-top: 20px;
+          margin: 0; /* Elimina cualquier margen adicional */
           padding: 0;
-          position: relative;
         }
 
         .custom-dots li {
