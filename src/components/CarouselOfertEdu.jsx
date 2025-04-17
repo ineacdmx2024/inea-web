@@ -141,7 +141,7 @@ function CarouselOfertEdu() {
       `}</style>
 
       <div className="p-2 pt-0">
-        <div className="carrusel desktop-carousel max-w-[1150px] mx-auto">
+        <div className="max-w-[1150px] mx-auto">
           <Slider
             {...settings}
             className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
@@ -166,6 +166,13 @@ function CarouselOfertEdu() {
               </div>
             ))}
           </Slider>
+
+          {/* Dots fuera del carrusel */}
+          <div className="dots-wrapper mt-4 flex justify-center">
+            <div className="w-full">
+              {/* Aquí es donde slick los inyecta con appendDots */}
+            </div>
+          </div>
         </div>
       </div>
     </>
