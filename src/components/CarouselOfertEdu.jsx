@@ -117,7 +117,7 @@ function CarouselOfertEdu() {
       <style jsx global>{`
         .custom-dots {
           position: absolute;
-          bottom: -16px;
+          bottom: -20px; /* espacio ajustado para que no queden tan pegados */
           left: 50%;
           transform: translateX(-50%);
           display: flex;
@@ -153,7 +153,7 @@ function CarouselOfertEdu() {
       `}</style>
 
       <div className="p-2 pt-0">
-        <div className="relative"> {/* <- Aquí hacemos que los dots se posicionen bien */}
+        <div className="relative">
           <Slider
             {...settings}
             className="carousel-slider bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
