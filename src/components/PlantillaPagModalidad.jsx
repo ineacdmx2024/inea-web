@@ -106,18 +106,21 @@ function PagMod({ info }) {
                     fontWeight: "bold",
                     textAlign: "center",
                   }}
+                  className="mb-4"
                 >
                   {paragraph.description}
                 </p>
-                <button
-                  className="mt-4 px-4 py-2 bg-[#611232] text-white rounded-lg mx-auto block border-2 hover:bg-white hover:text-[#611232] hover:border-[#611232] focus:bg-[#A57F2C]"
-                  onClick={() => {
-                    console.log("Redirigiendo a:", paragraph.link);
-                    window.location.href = paragraph.link;
-                  }}
-                >
-                  {paragraph.buttonLabel}
-                </button>
+                <div className="text-center">
+                  <button
+                    className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
+                    onClick={() => {
+                      console.log("Redirigiendo a:", paragraph.link);
+                      window.location.href = paragraph.link;
+                    }}
+                  >
+                    {paragraph.buttonLabel}
+                  </button>
+                </div>
               </div>
             ))}
             <br />
@@ -127,20 +130,23 @@ function PagMod({ info }) {
         {/* Requisitos */}
         <div
           id="alert-additional-content-4"
-          className="p-4 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
+          className="p-2 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
           role="alert"
         >
           <div className="flex items-center">
             <svg
-              className="flex-shrink-0 w-4 h-4 me-2"
-              aria-hidden="true"
+              className="w-5 h-5 mr-2 text-yellow-950"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
-              viewBox="0 0 20 20"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
             >
-              <path d="M10 .5a9.5 9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+              <circle cx="12" cy="12" r="10" fill="currentColor" />
+              <path
+                d="M12 7a1 1 0 011 1v4a1 1 0 01-2 0V8a1 1 0 011-1zm0 8a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"
+                fill="#fff"
+              />
             </svg>
-            <span className="sr-only">Info</span>
             <h3 className="text-lg font-medium">
               <strong>Requisitos:</strong>
             </h3>
