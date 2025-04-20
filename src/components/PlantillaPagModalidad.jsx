@@ -11,7 +11,6 @@ const montserrat = Montserrat({
 });
 
 function PagMod({ info }) {
-  // Asumiendo que `info.bannerImage` es la URL de la imagen que quieres usar
   const [bannerImage, setBannerImage] = useState(info.bannerImage);
   const [parallaxOffset, setParallaxOffset] = useState(0);
   const bannerRef = useRef(null);
@@ -49,7 +48,7 @@ function PagMod({ info }) {
 
   return (
     <div className="w-full">
-      {/* banner */}
+      {/* Banner */}
       <div
         ref={bannerRef}
         className="relative w-full overflow-hidden transition-all duration-300 ease-in-out cursor-pointer rounded-lg mb-2"
@@ -64,7 +63,6 @@ function PagMod({ info }) {
           className="absolute top-0 left-0 w-full h-full bg-cover bg-center transition-transform duration-300 ease-in-out"
           style={{
             backgroundImage: `url(${bannerImage})`,
-            // transform: `translateY(${parallaxOffset}px)`,
           }}
           aria-hidden="true"
         />
@@ -81,7 +79,7 @@ function PagMod({ info }) {
       </div>
 
       {/* Info */}
-      <div className=" py-4 mt-8">
+      <div className="py-4 mt-8">
         {info.paragraphs.map((paragraph, index) => (
           <p
             key={index}
@@ -91,40 +89,45 @@ function PagMod({ info }) {
           </p>
         ))}
 
-        {/* Colocar la sección de Tiempo estimado después de los párrafos de texto */}
+        {/* Tiempo estimado */}
         <p className="mt-2 text-lg">
           <strong>Tiempo estimado de conclusión:</strong> {info.time}
         </p>
         <br />
-        {/* Boton section - mostrar solo si Boton array tiene algo (o sea en linea)  */}
+
+        {/* Botón */}
         {info.Boton && info.Boton.length > 0 && (
           <div>
             {info.Boton.map((paragraph, index) => (
-              <div
-                key={index}
-                className="mb-2"
-              >
-                <p style={{ fontSize: "22px", fontWeight: "bold", textAlign: "center" }}>
+              <div key={index} className="mb-2">
+                <p
+                  style={{
+                    fontSize: "22px",
+                    fontWeight: "bold",
+                    textAlign: "center",
+                  }}
+                >
                   {paragraph.description}
                 </p>
-                <motion.button
+                <button
                   className="mt-4 px-4 py-2 bg-[#611232] text-white rounded-lg mx-auto block border-2 hover:bg-white hover:text-[#611232] hover:border-[#611232] focus:bg-[#A57F2C]"
-                  onClick={() => window.open(paragraph.link, "_blank")}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    console.log("Redirigiendo a:", paragraph.link);
+                    window.location.href = paragraph.link;
+                  }}
                 >
                   {paragraph.buttonLabel}
-                </motion.button>
+                </button>
               </div>
             ))}
             <br />
           </div>
         )}
 
-        {/* Requesitos */}
+        {/* Requisitos */}
         <div
           id="alert-additional-content-4"
-          className=" p-4 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
+          className="p-4 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
           role="alert"
         >
           <div className="flex items-center">
@@ -135,7 +138,7 @@ function PagMod({ info }) {
               fill="currentColor"
               viewBox="0 0 20 20"
             >
-              <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+              <path d="M10 .5a9.5 9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
             </svg>
             <span className="sr-only">Info</span>
             <h3 className="text-lg font-medium">
@@ -145,10 +148,7 @@ function PagMod({ info }) {
           <div className="mt-2 mb-4">
             <ul className="list-disc ml-8">
               {info.requirements.map((requirements, index) => (
-                <li
-                  className="text-lg"
-                  key={index}
-                >
+                <li className="text-lg" key={index}>
                   {requirements}
                 </li>
               ))}
@@ -156,7 +156,9 @@ function PagMod({ info }) {
           </div>
         </div>
       </div>
-      <div className="my-2 ">
+
+      {/* Celdas */}
+      <div className="my-2">
         <CardComponent items={info.celdas} />
       </div>
     </div>

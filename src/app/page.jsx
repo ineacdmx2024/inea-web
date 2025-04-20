@@ -24,7 +24,7 @@ function Page() {
       <CarouselInicio />
 
       <div className="mx-auto my-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1142px] text-center">
-        <h1 className={`text-[33px] font-bold text-[#333334]`}>
+        <h1 className={`text-[33px] font-bold text-[#333334] mb-3 whitespace-nowrap tablet:whitespace-normal`}>
           INEA en la Ciudad de México
         </h1>
         <div className="max-w-[1130px] mx-auto px-4">
@@ -46,8 +46,9 @@ function Page() {
             <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
             <div className="flex-grow h-px bg-gray-300"></div>
           </div>
+          {/* CarouselBlog dentro del contenedor max-w */}
+          <CarouselBlog />
         </div>
-        <CarouselBlog />
       </div>
 
 

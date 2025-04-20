@@ -407,22 +407,16 @@ function Modalidad() {
           </div>
           <div className="mt-8 text-center">
             {/* Descripción del botón */}
-            <p className="text-[22px] font-semibold mb-4">
-              Para obtener más información sobre nuestras diferentes modalidades y comenzar tus estudios, llena el siguiente formulario:
-            </p>
             {/* Botón */}
             <motion.button
               className="mt-4 px-4 py-2 bg-[#611232] text-white rounded-lg mx-auto block border-2 hover:bg-white hover:text-[#611232] hover:border-[#611232] focus:bg-[#A57F2C]"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() =>
-                window.open(
-                  "https://inea-web-frontend.vercel.app/servicios/te-contactamos",
-                  "_blank"
-                )
+                (window.location.href = "https://inea-web-frontend.vercel.app/servicios/te-contactamos")
               }
             >
-              Regístrate
+              Quiero que me contacten
             </motion.button>
           </div>
         </div>
