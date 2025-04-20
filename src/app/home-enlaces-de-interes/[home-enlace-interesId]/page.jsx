@@ -115,6 +115,9 @@ function DetalleEnlace(slug) {
   // Modificación en renderContenido
 
   const renderContenido = (contenido) => {
+    if (!contenido || !Array.isArray(contenido)) {
+      return null; // Or return a loading indicator or default content
+    }
     return contenido.map((item, index) => {
       switch (item.type) {
         case "heading":
@@ -152,7 +155,7 @@ function DetalleEnlace(slug) {
                       href={child.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-500 underline hover:text-blue-700"
+                      className="text-[#333334] underline hover:text-blue-700"
                     >
                       {child.children?.map((linkChild, j) =>
                         linkChild.type === "text" ? (
@@ -200,7 +203,7 @@ function DetalleEnlace(slug) {
           return (
             <ol
               key={index}
-              className={`${montserrat.className} list-decimal pl-6 mb-4`}
+              className={`${montserrat.className} text-[#333334] list-decimal pl-6 mb-4`}
             >
               {item.children.map((listItem, liIndex) => (
                 <li key={liIndex}>{listItem.children[0]?.text || ""}</li>
@@ -211,7 +214,7 @@ function DetalleEnlace(slug) {
           return (
             <blockquote
               key={index}
-              className="border-l-4 border-gray-500 pl-4 italic text-gray-600 my-4"
+              className="border-l-4 border-gray-500 pl-4 italic text-[#333334] my-4"
             >
               {item.children[0]?.text || ""}
             </blockquote>
@@ -223,7 +226,7 @@ function DetalleEnlace(slug) {
               href={item.url || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 underline hover:text-blue-700"
+              className="text-[#333334] underline hover:text-blue-700"
             >
               {item.children[0]?.text || "Enlace"}
             </Link>
@@ -245,7 +248,7 @@ function DetalleEnlace(slug) {
             Subtitulo={cont.subtitulo}
           >
             <h1
-              className={`${montserrat.className} text-[#404041] text-[18px] font-light`}
+              className={`${montserrat.className} text-[#333334] text-[18px] font-light`}
             >
               INEA Ciudad de México | {cont.fecha ? fechaFun(cont.fecha) : ""}
             </h1>
@@ -260,7 +263,7 @@ function DetalleEnlace(slug) {
               />
             </div>
 
-            <div className="prose lg:prose-xl mt-8 max-w-3xl text-gray-800 overflow-hidden clear-both" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', wordBreak: 'break-word', textAlign: 'justify' }}>
+            <div className="prose lg:prose-xl mt-8 max-w-3xl text-[#333334] overflow-hidden clear-both" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', wordBreak: 'break-word', textAlign: 'left' }}>
               {renderContenido(cont.contenido)}
             </div>
           </PagSec>
