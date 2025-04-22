@@ -134,55 +134,48 @@ function CarouselOfertEdu() {
     autoplay: true,
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
-    appendDots: (dots) => (
-      <div className="custom-dot-wrapper">
-        <ul className="custom-dots"> {dots} </ul>
+    appendDots: dots => (
+      <div style={{ bottom: "-20px", display: "flex", justifyContent: "center", width: "100%" }}>
+        <ul style={{ margin: 0, padding: 0, display: "flex" }}>{dots}</ul>
       </div>
     ),
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   }
-  
   return (
     <>
       <style jsx global>{`
-        .custom-dot-wrapper {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+         .custom-dots {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          display: flex !important;
+          justify-content: center !important;
           width: 100%;
-          margin-top: 1.5rem;
-          margin-bottom: 0;
-          position: relative;
-        }
-
-        .custom-dots {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          list-style: none;
-          margin: 0 auto;
           padding: 0;
+          margin: 0 auto;
+          z-index: 1;
         }
-
+      
         .custom-dots li {
-          margin: 0 6px;
+          margin: 0 4px;
           display: inline-block;
         }
-
+      
         .custom-dots li button {
           border: none;
           background: none;
           padding: 0;
         }
-
+      
         .custom-dots li button:before {
           font-size: 12px;
           color: #ccc;
           opacity: 1;
           transition: all 0.3s ease;
         }
-
+      
         .custom-dots li.slick-active button:before {
           color: #611232;
           transform: scale(1.2);
@@ -192,10 +185,6 @@ function CarouselOfertEdu() {
         @media (min-width: 768px) {
           .desktop-carousel .slick-slide {
             padding: 0 16px;  /* Mitad del gap-8 (32px) */
-          }
-          
-          .custom-dot-wrapper {
-          margin-top: 1.5rem;
           }
           
           .desktop-carousel .slick-list {
@@ -212,20 +201,9 @@ function CarouselOfertEdu() {
         
         /* Estilos para mobile */
         @media (max-width: 767px) {
-          .slick-slider {
-             padding-bottom: 0 !important;
-             margin-bottom: 2.25rem !important;
-          }
-          .custom-dot-wrapper {
-          margin-top: 1.25rem;
-          margin-bottom: -1rem;
-          }
-          .custom-dots {
-            justify-content: center;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 0.5rem; 
-          }
+        .slick-slider {
+          padding-bottom: 50px; 
+          position: relative; 
         }
         
         .carousel-card {
