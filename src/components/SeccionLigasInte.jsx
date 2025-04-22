@@ -247,7 +247,7 @@ function SeccionLigasInte() {
           .custom-dots{
           margin-left: auto;
           margin-right: auto;
-          padding-left: 0.5rem;
+          padding-left: 1rem;
           padding-right: 0.5rem;
           }
         }
