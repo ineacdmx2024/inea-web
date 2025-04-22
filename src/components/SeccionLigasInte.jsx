@@ -176,7 +176,7 @@ function SeccionLigasInte() {
           margin-top: 1.5rem;
           margin-bottom: 0;
           position: relative;
-          transform: translateX(-5%); /* LIGERO AJUSTE A LA IZQUIERDA */
+          transform: translateX(-1%); /* LIGERO AJUSTE A LA IZQUIERDA */
         }
 
         .custom-dots {
@@ -239,7 +239,7 @@ function SeccionLigasInte() {
           .slick-slider {
             padding-bottom: 0 !important;
             margin-bottom: 2.25rem !important;
-            transform: translateX(-5%); /* CENTRADO LIGERAMENTE AJUSTADO EN MÓVIL */
+            transform: translateX(-1%); /* CENTRADO LIGERAMENTE AJUSTADO EN MÓVIL */
           }
           
           .custom-dot-wrapper {
