@@ -135,7 +135,7 @@ function CarouselOfertEdu() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: dots => (
-      <div style={{ bottom: "-20px", display: "flex", justifyContent: "center", width: "100%" }}>
+      <div style={{ bottom: "-22px", display: "flex", justifyContent: "center", width: "100%" }}>
         <ul style={{ margin: 0, padding: 0, display: "flex" }}>{dots}</ul>
       </div>
     ),
