@@ -184,8 +184,8 @@ function SeccionLigasInte() {
           align-items: center;
           list-style: none;
           margin: 0 auto;
-          padding-left: 1rem;
-          padding-right: 0.5rem;
+          padding-left: -1rem;
+          padding: 0;
         }
 
         .custom-dots li {
