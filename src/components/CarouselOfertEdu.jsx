@@ -134,50 +134,70 @@ function CarouselOfertEdu() {
     autoplay: true,
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
-    appendDots: dots => (
-      <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-        <ul style={{ margin: 0, padding: 0, display: "flex" }}>{dots}</ul>
+    appendDots: (dots) => (
+      <div className="custom-dot-wrapper">
+        <ul> {dots} </ul>
       </div>
     ),
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   }
+  
   return (
     <>
       <style jsx global>{`
+        .custom-dot-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          margin-top: 1.5rem;
+          margin-bottom: 0;
+          position: relative;
+        }
+
         .custom-dots {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin-top: 20px;
-            padding: 0;
-            position: relative;
-          }
+          display: flex !important;
+          justify-content: center;
+          align-items: center;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
 
         .custom-dots li {
-          margin: 0 4px;
+          margin: 0 6px;
           display: inline-block;
         }
-        
+
         .custom-dots li button {
           border: none;
           background: none;
           padding: 0;
         }
-        
+
         .custom-dots li button:before {
           font-size: 12px;
           color: #ccc;
           opacity: 1;
           transition: all 0.3s ease;
         }
-        
+
         .custom-dots li.slick-active button:before {
           color: #611232;
           transform: scale(1.2);
         }
 
+        @media (max-width: 767px) {
+          .custom-dot-wrapper {
+            margin-top: 1.25rem;
+          }
+
+          .slick-slider {
+            padding-bottom: 0 !important;
+            margin-bottom: 2.5rem !important;
+          }
+        }
 
         /* Estilos solo para desktop que igualan el gap */
         @media (min-width: 768px) {
