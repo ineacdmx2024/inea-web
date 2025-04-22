@@ -248,7 +248,7 @@ function SeccionLigasInte() {
           justify-content: center;
           margin-left: auto;
           margin-right: auto;
-          padding: 0 1rem; 
+          padding: 0 0.5rem; 
           }
         }
         
