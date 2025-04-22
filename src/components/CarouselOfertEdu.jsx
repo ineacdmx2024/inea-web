@@ -136,7 +136,7 @@ function CarouselOfertEdu() {
     dotsClass: "slick-dots custom-dots",
     appendDots: (dots) => (
       <div className="custom-dot-wrapper">
-        <ul> {dots} </ul>
+        <ul className="custom-dots"> {dots} </ul>
       </div>
     ),
     prevArrow: <PrevArrow />,
@@ -157,11 +157,11 @@ function CarouselOfertEdu() {
         }
 
         .custom-dots {
-          display: flex !important;
+          display: flex;
           justify-content: center;
           align-items: center;
           list-style: none;
-          margin: 0;
+          margin: 0 auto;
           padding: 0;
         }
 
@@ -188,21 +188,14 @@ function CarouselOfertEdu() {
           transform: scale(1.2);
         }
 
-        @media (max-width: 767px) {
-          .custom-dot-wrapper {
-            margin-top: 1.25rem;
-          }
-
-          .slick-slider {
-            padding-bottom: 0 !important;
-            margin-bottom: 2.5rem !important;
-          }
-        }
-
         /* Estilos solo para desktop que igualan el gap */
         @media (min-width: 768px) {
           .desktop-carousel .slick-slide {
             padding: 0 16px;  /* Mitad del gap-8 (32px) */
+          }
+          
+          .custom-dot-wrapper {
+          margin-top: 1.5rem;
           }
           
           .desktop-carousel .slick-list {
@@ -220,7 +213,12 @@ function CarouselOfertEdu() {
         /* Estilos para mobile */
         @media (max-width: 767px) {
           .slick-slider {
-            padding-bottom: 30px;
+             padding-bottom: 0 !important;
+             margin-bottom: 2.25rem !important;
+          }
+          .custom-dot-wrapper {
+          margin-top: 1.25rem;
+          margin-bottom: -1rem;
           }
         }
         
