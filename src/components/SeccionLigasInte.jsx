@@ -245,12 +245,9 @@ function SeccionLigasInte() {
           }
 
           .custom-dots {
-          display: flex !important;
-          justify-content: center;
-          align-items: center;
           margin-left: auto;
           margin-right: auto;
-          padding: 0 0.5rem; 
+          transform: translateX(2%);
           }
         }
         
