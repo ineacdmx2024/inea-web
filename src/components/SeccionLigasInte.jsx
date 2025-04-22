@@ -184,7 +184,6 @@ function SeccionLigasInte() {
           align-items: center;
           list-style: none;
           margin: 0 auto;
-          padding-left: -1rem;
           padding: 0;
         }
 
@@ -245,11 +244,11 @@ function SeccionLigasInte() {
           margin-bottom: -1rem;
           }
 
-          .custom-dots{
+          .custom-dots {
+          justify-content: center;
           margin-left: auto;
           margin-right: auto;
-          padding-left: 1rem;
-          padding-right: 0.5rem;
+          padding: 0 1rem; 
           }
         }
         
