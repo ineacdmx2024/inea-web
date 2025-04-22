@@ -220,6 +220,12 @@ function CarouselOfertEdu() {
           margin-top: 1.25rem;
           margin-bottom: -1rem;
           }
+          .custom-dots {
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 0.5rem; 
+          }
         }
         
         .carousel-card {
