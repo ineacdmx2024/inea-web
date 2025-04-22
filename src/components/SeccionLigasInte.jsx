@@ -243,6 +243,13 @@ function SeccionLigasInte() {
           margin-top: 1.25rem;
           margin-bottom: -1rem;
           }
+
+          .custom-dots{
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          }
         }
         
         .carousel-card {
