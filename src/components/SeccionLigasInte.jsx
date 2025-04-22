@@ -247,7 +247,7 @@ function SeccionLigasInte() {
           .custom-dots {
           margin-left: auto;
           margin-right: auto;
-          transform: translateX(1%);
+          transform: translateX(0%);
           }
         }
         
