@@ -95,10 +95,10 @@ function NoticiasAntiguas({ item }) {
 
   return (
     <main>
-      <PagSec Enlaces={[]}> {/* Pasamos un array vacío para evitar errores */}
-        <div className="mx-auto w-11/12 medida3:w-full arrow:w-11/12 tablet:w-[1140px]">
+      <PagSec Enlaces={[]} mostrarCarrusel={false}> {/* Deshabilitamos el carrusel */}
+        <div className="mx-auto w-11/12 medida3:w-full arrow:w-11/12 tablet:w-[1140px] mt-[-10px] mb-0">
           <h1
-            className={`${montserrat.className} text-4xl font-semibold text-[#333334] letras:text-[38px] mt-8 mb-6`}
+            className={`${montserrat.className} text-4xl font-semibold text-[#333334] letras:text-[38px] mt-0 mb-4`}
           >
             Noticias antiguas
           </h1>
@@ -158,45 +158,6 @@ function NoticiasAntiguas({ item }) {
               ) : (
                 <p className="text-center">Cargando noticias...</p>
               )}
-            </div>
-
-            <div className="mt-8 flex justify-center gap-4">
-              <button
-                onClick={handlePrevPage}
-                disabled={paginaActual === 1}
-                className={`rounded-l py-2 px-4 text-[22px] ${
-                  paginaActual === 1
-                    ? "bg-gray-300 cursor-not-allowed"
-                    : "bg-[#611232] text-white hover:bg-[#360a1c]"
-                }`}
-              >
-                {"<<"}
-              </button>
-              {Array.from({ length: totalPaginas }, (_, i) => (
-                <button
-                  key={i}
-                  onClick={() => handlePageChange(i + 1)}
-                  disabled={paginaActual === i + 1}
-                  className={`py-2 px-4 text-[22px] ${
-                    paginaActual === i + 1
-                      ? "bg-[#360a1c] text-white"
-                      : "bg-white hover:bg-gray-200 hover:text-[#360a1c]"
-                  } border border-slate-300`}
-                >
-                  {i + 1}
-                </button>
-              ))}
-              <button
-                onClick={handleNextPage}
-                disabled={paginaActual === totalPaginas}
-                className={`rounded-r py-2 px-4 text-[22px] ${
-                  paginaActual === totalPaginas
-                    ? "bg-gray-300 cursor-not-allowed"
-                    : "bg-[#611232] text-white hover:bg-[#360a1c]"
-                }`}
-              >
-                {">>"}
-              </button>
             </div>
           </div>
         </div>

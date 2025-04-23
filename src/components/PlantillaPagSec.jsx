@@ -11,7 +11,7 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
-function PagSec({ Enlaces, Titulo, Subtitulo, children }) {
+function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }) {
   return (
     <div className="mt-[10.5vh]">
       <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
@@ -55,9 +55,11 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children }) {
         </div>
 
         {/* Carrusel de Cards (visible en pantallas pequeñas) */}
-        <div className="md:hidden w-full">
-          <CarouselEL cards={Enlaces} />
-        </div>
+        {mostrarCarrusel && (
+          <div className="md:hidden w-full">
+            <CarouselEL cards={Enlaces} />
+          </div>
+        )}
       </div>
     </div>
   );

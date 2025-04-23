@@ -23,7 +23,7 @@ const examen = {
   Boton: [
     {
       description: "Regístrate en la plataforma APRENDEINEA e inicia tus estudios:",
-      buttonLabel: "Regístrate",
+      buttonLabel: "Quiero que me contacten",
       link: "https://aprendeinea.inea.gob.mx/cursos_2023/index_todos.html",
     },
   ],
