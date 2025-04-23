@@ -18,7 +18,7 @@ const montserrat = Montserrat({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-function DetalleEnlace(slug) {
+function DetalleEnlace_CarruselBanner(slug) {
   const fechaFun = (fechaAPI) => {
     const diasSemana = [
       "domingo",
@@ -254,7 +254,7 @@ function DetalleEnlace(slug) {
                 src={cont.imagen}
                 alt={cont.NomImg || "Imagen sin título"}
                 className="w-full rounded-lg"
-                width={1000}
+                width={2880}
                 height={700}
               />
             </div>
@@ -269,4 +269,4 @@ function DetalleEnlace(slug) {
   // Accede a los parámetros
 }
 
-export default DetalleEnlace;
+export default DetalleEnlace_CarruselBanner;

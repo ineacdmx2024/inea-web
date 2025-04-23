@@ -15,7 +15,7 @@ function CarouselInicio() {
   useEffect(() => {
     const fetchEnlaces = async () => {
      
-      const res = await fetch("https://inea-web-backend-cg20.onrender.com/api/baner-principals?populate=*")
+      const res = await fetch("https://inea-web-backend-cg20.onrender.com/api/baner-principals?populate=*&pagination[limit]=4")
       const data = await res.json()
 
       const enlacesData2 = data.data.map((item) => ({
@@ -26,7 +26,7 @@ function CarouselInicio() {
         link: item.attributes.Link,
         slug: item.attributes.slug,
         imagenMovil: item.attributes.Banner_movile?.data?.attributes?.formats?.small?.url,  // Imagen para móvil
-        imagenEscritorio: item.attributes.Imagen?.data?.attributes?.formats?.large?.url,
+        imagenEscritorio: item.attributes.Imagen?.data?.attributes?.url,
       }))
       setRestantes(enlacesData2)
     }
@@ -111,10 +111,13 @@ function CarouselInicio() {
               {/* <div className="w-full h-full hidden md:block"> */}
               <div className=" hidden md:block relative">
                 <Image
-                  className="w-full h-full object-cover cursor-pointer"
+                  // className="w-full h-full object-cover cursor-pointer"
+                  // className="object-cover w-full h-full"
+                   className="h-[2880px] w-[500px] blog:w-full blog:h-full object-cover blog:object-fill rounded-xl"
                   src={restante.imagenEscritorio || "/placeholder.svg"}
                   alt={restante.subtitulo || "Imagen de banner"}
-                  width={1920}
+
+                  width={2880}
                   height={544}
                   quality={100}
                   priority
