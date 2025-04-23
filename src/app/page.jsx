@@ -24,13 +24,13 @@ function Page() {
       <CarouselInicio />
 
       <div className="mx-auto my-16 w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1142px] text-center">
-        <h1 className={`text-[33px] font-bold text-[#333334] mb-3 whitespace-nowrap tablet:whitespace-normal`}>
+        <h1 className="text-[28px] font-bold text-[#333334] mb-3 whitespace-normal tablet:text-[33px]">
           INEA en la Ciudad de México
         </h1>
         <div className="max-w-[1130px] mx-auto px-4">
           <p className="text-center text-[18px] text-[#333334]">
             El <strong>Instituto Nacional para la Educación de los Adultos en la Ciudad de México</strong> es una Unidad de Operación del Instituto en esta 
-            entidad federativa que coordina y brinda servicios de alfabetización, primaria y secundaria para jóvenes y adultos mayores de 15 años. Además, certifica la 
+            entidad federativa que coordina y brinda servicios gratuitos de alfabetización, primaria y secundaria para jóvenes y adultos mayores de 15 años. Además, certifica la 
             educación básica y distribuye materiales didácticos para facilitar el aprendizaje a esta población.
           </p>
         </div>
