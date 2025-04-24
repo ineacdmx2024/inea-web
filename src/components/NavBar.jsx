@@ -83,22 +83,16 @@ const Navbar = () => {
       <div className="bg-[#611232] w-full">
         {/* Menú gobierno */}
         <nav className="bg-[#611232]">
-          <div className="flex items-center justify-between py-[0.1rem] px-4 md:px-[40px]">
-            <div
-              className="flex items-center justify-between"
-              id="Msup"
-            >
-              <div className="flex items-center">
-                <Link
-                  href="https://www.gob.mx/sep"
-                  passHref
-                >
-                  <img
-                    src="/Logo_educacion_white_2025.svg"
-                    alt="Educacion"
-                    className=" hover:text-[#8B6C41]  rounded inline-block py-[0.3rem] mr-[1rem]"
-                  />
-                </Link>
+          <div className="flex items-center justify-between py-[0.1rem] px-4 md:px-[16px]">
+            <div className="flex items-center justify-between w-full">
+              <div className="pl-4 md:pl-6">
+                <Link href="https://www.gob.mx/sep" passHref>
+                <img
+                  src="/Logo_educacion_white_2025.svg"
+                  alt="Educacion"
+                  className="h-[3.5rem] w-auto md:h-[4rem]"
+                />
+              </Link>
               </div>
               <div
                 className="flex items-center space-x-7"
@@ -152,7 +146,7 @@ const Navbar = () => {
               </div>
 
               {/*Boton para desplegable hamburguesa */}
-              <div className="md:hidden flex items-end mr-[15px]">
+              <div className="md:hidden flex items-end mr-[3vw]">
                 <button
                   className="inline-flex items-center w-auto h-auto rounded-md text-white hover:text-[#E4CDA7]
                  focus:outline-none focus:ring-2 p-2 focus:ring-inset focus:ring-[#E4CDA7] px-auto"
@@ -626,7 +620,7 @@ const Navbar = () => {
               </div>
 
               {/* Boton hamburguesa */}
-              <div className="md:hidden flex mr-[15px]">
+              <div className="md:hidden flex mr-[3vw]">
                 <button
                   className="inline-flex items-center justify-center  p-2 rounded-md text-white hover:text-[#E4CDA7]
                  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#E4CDA7]"
