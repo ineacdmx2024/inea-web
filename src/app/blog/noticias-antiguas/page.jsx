@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import PagSec from "@/components/PlantillaPagSec"; // Nuevo componente importado
+import "./Noticias.css";
 
 const open_Sans = Open_Sans({
   weight: ["300", "400", "500", "700"],

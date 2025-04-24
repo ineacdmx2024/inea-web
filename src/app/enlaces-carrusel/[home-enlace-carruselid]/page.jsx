@@ -3,6 +3,7 @@ import { Open_Sans } from "next/font/google";
 import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
 import Link from "next/link";
+import "./BannerCarrusel.css";
 import { useEffect } from "react";
 import { useState } from "react";
 const open_Sans = Open_Sans({
@@ -167,11 +168,13 @@ function DetalleEnlace_CarruselBanner(slug) {
                       key={i}
                          className="font-body font-light"
                       style={{
-                        fontWeight: child.bold ? "normal" : "thin",
+                        textAlign: "left",
+                        fontWeight: child.bold ? "bold" : "normal",
                         fontStyle: child.italic ? "italic" : "normal",
-                        textDecoration: `${
-                          child.underline ? "underline" : ""
-                        } ${child.strikethrough ? "line-through" : ""}`,
+                        textDecoration: `${child.underline ? "underline" : ""} ${
+                          child.strikethrough ? "line-through" : ""
+
+                        }`,
                       }}
                     >
                       {child.text}

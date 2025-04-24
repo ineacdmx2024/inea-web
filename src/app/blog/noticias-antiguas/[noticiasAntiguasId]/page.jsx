@@ -3,6 +3,7 @@ import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
 import React from "react";
 import Link from 'next/link'
+import "./Noticias.css";
 
 
 const open_Sans = Open_Sans({
