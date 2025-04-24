@@ -122,9 +122,7 @@ function DetalleEnlace_CarruselBanner(slug) {
             `h${item.level}`,
             {
               key: index,
-              className: `${
-                montserrat.className
-              } text-[#333334] font-bold text-[${21 - item.level}px]`,
+              className: `font-body font-bold text-[#333334] text-[${21 - item.level}px]`,
             },
             item.children[0]?.text || ""
           );
@@ -167,8 +165,9 @@ function DetalleEnlace_CarruselBanner(slug) {
                   return (
                     <span
                       key={i}
+                         className="font-body font-light"
                       style={{
-                        fontWeight: child.bold ? "bold" : "normal",
+                        fontWeight: child.bold ? "normal" : "thin",
                         fontStyle: child.italic ? "italic" : "normal",
                         textDecoration: `${
                           child.underline ? "underline" : ""
