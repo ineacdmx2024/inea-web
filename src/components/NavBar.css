@@ -44,14 +44,13 @@
   align-items: center;
 }
 
-#Msup{
-  margin-left: auto;
-  margin-right: auto;
+#Msup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
-  max-width: 1142px;
-  height: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 #Minf{
