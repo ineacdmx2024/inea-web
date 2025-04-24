@@ -37,7 +37,7 @@ function NoticiasAntiguas({ item }) {
     try {
       const response = await fetch(
         `https://inea-web-backend-cg20.onrender.com/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
-        //`https://inea-web-backend.onrender.com/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
+
       );
       const result = await response.json();
       setDatos(result.data);

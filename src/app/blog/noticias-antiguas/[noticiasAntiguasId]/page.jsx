@@ -35,7 +35,7 @@ async function loadPost(slug) {
 
 async function loadEnlaces() {
   const resPineados = await fetch(
-    //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
+    
     `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
       cache: 'no-store',
       headers: {
