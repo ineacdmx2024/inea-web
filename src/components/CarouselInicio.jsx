@@ -107,7 +107,7 @@ function CarouselInicio() {
       <div>
         <Slider {...settings}>
           {restantes.map((restante, index) => (
-            <div key={index} className="w-full m-auto hover:cursor-pointer">
+            <div key={index} className="hover:cursor-pointer">
               {/* Imagen para dispositivos de escritorio */}
               {/* <div className="w-full h-full hidden md:block"> */}
               <div className=" hidden md:block relative">
