@@ -32,7 +32,7 @@
   background: #0C231E;
 }
 
-/* Imagen del logo - restaurado a tamaño original */
+/* Imagen del logo */
 .navBar img,
 .navBarINEA img {
   height: 64px;
@@ -42,7 +42,7 @@
   display: block;
 }
 
-/* Contenedor del contenido superior (navbar Gobierno) */
+/* Contenedor del contenido superior (Gobierno) */
 #Msup {
   display: flex;
   align-items: center;
@@ -58,10 +58,10 @@
 
 /* Contenedor del menú inferior (INEA) */
 #Minf {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 12rem;
+  margin-right: 8rem;
   width: 100%;
-  max-width: 1142px;
+  max-width: 1300px;
   height: auto;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -83,7 +83,7 @@
   height: 40px;
 }
 
-/* Estilos generales de toggle */
+/* Estilos generales del toggle */
 .navbar-toggle {
   position: relative;
   float: right;
@@ -93,7 +93,12 @@
   margin-bottom: 6px;
 }
 
-/* Mejoras responsivas */
+/* Clase personalizada para margin-left: 7rem */
+.ml-custom-7 {
+  margin-left: 6.5rem !important;
+}
+
+/* Mejoras responsivas en desktop */
 @media screen and (min-width: 768px) {
   #Msup {
     padding-left: 60px;
@@ -105,35 +110,31 @@
   }
 }
 
-/* Versión móvil: logo izquierda, hamburguesa derecha */
+/* Versión móvil */
 @media screen and (max-width: 767px) {
   #Msup {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-left: 0;
-    padding-right: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   #Msup > div:first-child {
     flex: none;
     margin-right: auto;
   }
-
-  #Msup .md\\:hidden {
-    flex: none;
-    margin-left: auto;
-  }
-
+  
   #contenidoSup {
     display: none !important;
   }
 
   .navBar img {
-    height: 56px; /* Opcionalmente para que en móviles no sea tan grande */
+    height: 56px;
     max-width: 12rem;
   }
 }
+
 
 /* Opcionales desactivados
 @media screen and (max-width: 1200px) and (min-width: 300px) {
