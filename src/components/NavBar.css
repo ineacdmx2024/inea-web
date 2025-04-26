@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 .navBar {
-  display: flex;
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
@@ -16,7 +15,6 @@
   top: 0px;
   z-index: 100;
   left: 0px;
-  flex-direction: column; /* Permite que los menús estén uno sobre otro */
 }
 
 .navBar ul {
@@ -35,18 +33,13 @@
 /* Imagen del logo */
 .navBar img,
 .navBarINEA img {
-  height: 64px;
-  width: auto;
-  max-width: 15rem;
-  object-fit: contain;
-  display: block;
+  height: 50px;
+  margin: 1px auto 0 -20px;
+  width: 150px;
 }
 
 /* Contenedor del contenido superior (Gobierno) */
 #Msup {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -58,12 +51,11 @@
 
 /* Contenedor del menú inferior (INEA) */
 #Minf {
-  margin-left: 12rem;
-  margin-right: 8rem;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 1300px;
   height: auto;
-  padding-left: 1rem;
+  padding-left: 2.5rem;
   padding-right: 1rem;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -71,16 +63,22 @@
 
 /* Botón hamburguesa superior (Gobierno) */
 .navBar .md\\:hidden button {
-  display: flex;
-  align-items: center;
-  height: 40px;
+  position: relative;
+  float: right;
+  margin-right: 0;
+  padding: 9px 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 /* Botón hamburguesa inferior (INEA) */
 .navBarINEA .md\\:hidden button {
-  display: flex;
-  align-items: center;
-  height: 40px;
+  position: relative;
+  float: right;
+  margin-right: 0;
+  padding: 9px 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 /* Estilos generales del toggle */
@@ -93,31 +91,50 @@
   margin-bottom: 6px;
 }
 
-/* Clase personalizada para margin-left: 7rem */
-.ml-custom-7 {
-  margin-left: 6.5rem !important;
-}
-
 /* Mejoras responsivas en desktop */
 @media screen and (min-width: 768px) {
   #Msup {
-    padding-left: 60px;
-    padding-right: 40px;
+    float: right !important;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 2.5rem;
+    padding-right: 1rem;
   }
   #Minf {
-    padding-left: 40px;
-    padding-right: 40px;
+    float: right !important;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 2.5rem;
+    padding-right: 1rem;
+  }
+  
+  .navBar img {
+    height: 64px;
+    width: auto;
+    max-width: 15rem;
+    object-fit: contain;
+    display: block;
   }
 }
 
 /* Versión móvil */
 @media screen and (max-width: 767px) {
   #Msup {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    position: relative;
+    float: right;
+    margin-right: 0px;
+    padding: 9px 10px;
+    margin-top: -6px;
+    margin-bottom: -10px;
+  }
+
+  #Minf {
+    position: relative;
+    float: right;
+    margin-right: 0px;
+    padding: 9px 10px;
+    margin-top: -15px;
+    margin-bottom: -15px;
   }
 
   #Msup > div:first-child {
@@ -130,11 +147,13 @@
   }
 
   .navBar img {
-    height: 56px;
-    max-width: 12rem;
+    height: 64px;
+    width: auto;
+    max-width: 15rem;
+    object-fit: contain;
+    display: block;
   }
 }
-
 
 /* Opcionales desactivados
 @media screen and (max-width: 1200px) and (min-width: 300px) {
