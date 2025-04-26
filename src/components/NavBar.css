@@ -1,62 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-.navBar{
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    /* background: #03281A; */
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    justify-content: space-between;
-    color: white;
-    width: 100%;
-    position: fixed;
-    top: 0px;
-    z-index: 100;
-    left: 0px;
+.navBar {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  justify-content: space-between;
+  color: white;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+  left: 0px;
+  flex-direction: column; /* Permite que los menús estén uno sobre otro */
 }
 
-.navBar ul{
-    display: flex;
-    gap: 1rem;
+.navBar ul {
+  display: flex;
+  gap: 1rem;
 }
 
-.navBar ul li{
-    list-style: none;
+.navBar ul li {
+  list-style: none;
 }
 
-.navBarGob{
-    background: #0C231E;
+.navBarGob {
+  background: #0C231E;
 }
 
-/* NavBar.css */
-.navBar img, .navBarINEA img {
-  height: 4rem; 
-  width: auto; /* Mantiene la proporción */
-  max-width: 12rem;
+/* Imagen del logo - restaurado a tamaño original */
+.navBar img,
+.navBarINEA img {
+  height: 64px;
+  width: auto;
+  max-width: 15rem;
+  object-fit: contain;
+  display: block;
 }
 
-.navBarINEA .flex.items-center {
+/* Contenedor del contenido superior (navbar Gobierno) */
+#Msup {
   display: flex;
   align-items: center;
-}
-
-#Msup {
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 1142px;
+  max-width: 1300px;
   height: auto;
-  padding-left: 2.5rem; /* más separación */
+  padding-left: 2.5rem;
   padding-right: 1rem;
 }
 
-#Minf{
-  /* flex-wrap: wrap; */
-  /* justify-content:flex-end; */
+/* Contenedor del menú inferior (INEA) */
+#Minf {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -64,12 +65,38 @@
   height: auto;
   padding-left: 1rem;
   padding-right: 1rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
-/* Aplica margen lateral de 40px desde pantallas medianas en adelante (768px+) */
+/* Botón hamburguesa superior (Gobierno) */
+.navBar .md\\:hidden button {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+/* Botón hamburguesa inferior (INEA) */
+.navBarINEA .md\\:hidden button {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+/* Estilos generales de toggle */
+.navbar-toggle {
+  position: relative;
+  float: right;
+  margin-right: 15px;
+  padding: 9px 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* Mejoras responsivas */
 @media screen and (min-width: 768px) {
   #Msup {
-    padding-left: 60px; /* más separación */
+    padding-left: 60px;
     padding-right: 40px;
   }
   #Minf {
@@ -78,27 +105,58 @@
   }
 }
 
-/*
-@media screen and (max-width: 1200px) and (min-width:300px) {
-  .navBar img, .navBarINEA img {
+/* Versión móvil: logo izquierda, hamburguesa derecha */
+@media screen and (max-width: 767px) {
+  #Msup {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0;
+    padding-right: 1rem;
+  }
+
+  #Msup > div:first-child {
+    flex: none;
+    margin-right: auto;
+  }
+
+  #Msup .md\\:hidden {
+    flex: none;
+    margin-left: auto;
+  }
+
+  #contenidoSup {
+    display: none !important;
+  }
+
+  .navBar img {
+    height: 56px; /* Opcionalmente para que en móviles no sea tan grande */
+    max-width: 12rem;
+  }
+}
+
+/* Opcionales desactivados
+@media screen and (max-width: 1200px) and (min-width: 300px) {
+  .navBar img,
+  .navBarINEA img {
     margin-left: 2rem;
     margin-right: 2rem;
   }
-  #contenidoSup{
+  #contenidoSup {
     margin-right: 1rem;
   }
 }
 
 @media screen and (min-width: 1500px) {
-  .navBar img, .navBarINEA img {
+  .navBar img,
+  .navBarINEA img {
     margin-left: 20rem;
   }
-  #contenidoSup{
+  #contenidoSup {
     margin-right: 20rem;
   }
 
-  #menubajo{
+  #menubajo {
     margin-right: 20rem;
   }
-}
-*/
+}*/
