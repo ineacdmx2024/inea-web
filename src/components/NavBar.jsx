@@ -98,7 +98,7 @@ const Navbar = () => {
             {/* Menú superior */}
               <div className="flex items-center space-x-7 h-[64px]" id="contenidoSup">
                 <div className="hidden md:block">
-                  <div className="ml-4 flex items-end space-x-5">
+                  <div className="flex items-end space-x-5">
                     <Link
                       href="/"
                       passHref
@@ -145,7 +145,7 @@ const Navbar = () => {
               </div>
 
               {/*Boton para desplegable hamburguesa */}
-              <div className="md:hidden flex items-center h-[64px] ml-7">
+              <div className="md:hidden flex items-center h-[64px] ml-custom-7">
                 <button
                   className="inline-flex items-center w-auto h-auto rounded-md text-white hover:text-[#E4CDA7]
                  focus:outline-none focus:ring-2 p-2 focus:ring-inset focus:ring-[#E4CDA7] px-auto"
@@ -244,7 +244,7 @@ const Navbar = () => {
             >
               <div className="flex items-end space-x-10">
                 <div className="hidden md:block">
-                  <div className="ml-4 flex items-end space-x-5">
+                  <div className="flex items-end space-x-5">
                     <Link
                       href="/"
                       passHref
@@ -619,7 +619,7 @@ const Navbar = () => {
               </div>
 
               {/* Boton hamburguesa */}
-              <div className="md:hidden flex items-center h-[64px] ml-7">
+              <div className="md:hidden flex items-center h-[64px]" style={{ marginLeft: "7rem" }}>
                 <button
                   className="inline-flex items-center justify-center  p-2 rounded-md text-white hover:text-[#E4CDA7]
                  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#E4CDA7]"
