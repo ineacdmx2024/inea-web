@@ -33,7 +33,7 @@
 /* Imagen del logo */
 .navBar img,
 .navBarINEA img {
-  height: 40px;
+  height: 50px;
   margin: 1px auto 0 -30px;
   width: 150px;
 }
@@ -109,7 +109,7 @@
   }
   
   .navBar img {
-    height: 40px;
+    height: 50px;
     width: auto;
     max-width: 15rem;
     object-fit: contain;
@@ -143,7 +143,7 @@
   }
 
   .navBar img {
-    height: 40px;
+    height: 45px;
     width: auto;
     max-width: 15rem;
     object-fit: contain;
