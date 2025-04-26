@@ -145,7 +145,7 @@ const Navbar = () => {
               </div>
 
               {/*Boton para desplegable hamburguesa */}
-              <div className="md:hidden flex items-center h-[64px] ml-4">
+              <div className="md:hidden flex items-center h-[64px] ml-7">
                 <button
                   className="inline-flex items-center w-auto h-auto rounded-md text-white hover:text-[#E4CDA7]
                  focus:outline-none focus:ring-2 p-2 focus:ring-inset focus:ring-[#E4CDA7] px-auto"
@@ -619,7 +619,7 @@ const Navbar = () => {
               </div>
 
               {/* Boton hamburguesa */}
-              <div className="md:hidden flex items-center h-[64px] ml-4">
+              <div className="md:hidden flex items-center h-[64px] ml-7">
                 <button
                   className="inline-flex items-center justify-center  p-2 rounded-md text-white hover:text-[#E4CDA7]
                  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#E4CDA7]"
