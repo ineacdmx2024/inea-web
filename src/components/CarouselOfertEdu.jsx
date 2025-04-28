@@ -149,6 +149,7 @@ function CarouselOfertEdu() {
             display: flex;
             justify-content: center;
             align-items: center;
+            bottom: -20px
             width: 100%;
             margin-top: 20px;
             padding: 0;
@@ -201,6 +202,16 @@ function CarouselOfertEdu() {
         @media (max-width: 767px) {
           .slick-slider {
             padding-bottom: 30px;
+          }
+            .custom-dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: -52px
+            width: 100%;
+            margin-top: 20px;
+            padding: 0;
+            position: relative;
           }
         }
         
