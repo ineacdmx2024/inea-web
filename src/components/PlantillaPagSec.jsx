@@ -14,7 +14,7 @@ const montserrat = Montserrat({
 function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }) {
   return (
     <div className="mt-[10.5vh]">
-      <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+      <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1200px] grid grid-cols-1 md:grid-cols-12 gap-8 items-start px-4 md:px-[2.5rem]">
         
         {/* Breadcrumb */}
         <div className="col-span-12">
@@ -39,8 +39,8 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
         </div>
 
         {/* Enlaces laterales */}
-        <div className="hidden md:block md:col-span-4 self-start">
-          <div className="flex flex-col">
+        <div className="hidden md:block md:col-span-4 self-start md:pl-8">
+          <div className="flex flex-col gap-6">
             {Enlaces.map((enlace) => (
               <Card
                 key={enlace.title}

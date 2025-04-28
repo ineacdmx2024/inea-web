@@ -31,7 +31,7 @@ const regular = {
   celdas: [
     {
       id: "1",
-      title: "Quienes",
+      title: "Quiénes",
       subtitle: "Quieren aprender a leer y escribir y estudiar primaria o secundaria con materiales impresos en un lugar fijo.",
     },
     {
