@@ -157,8 +157,8 @@ function SeccionLigasInte() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: (dots) => (
-      <div style={{ bottom: "-25px", display: "flex", justifyContent: "center" }}>
-        <ul style={{ margin: "0", padding: "0", display: "flex", justifyContent: "center" }}> {dots} </ul>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <ul style={{ margin: "0", padding: "0", display: "flex", justifyContent: "center", bottom: "-30px" }}> {dots} </ul>
       </div>
     ),
     prevArrow: <PrevArrow />,
@@ -169,7 +169,7 @@ function SeccionLigasInte() {
     <>
       <style jsx global>{`
         .custom-dots {
-          bottom: -30px;
+          bottom: -20px;
           display: flex;
           justify-content: center;
           width: 100%;
@@ -216,8 +216,16 @@ function SeccionLigasInte() {
         
         /* Estilos para mobile */
         @media (max-width: 767px) {
-          .slick-slider {
-            padding-bottom: 30px;
+            .slick-slider {
+              padding-bottom: 30px;
+            }
+            .custom-dots {
+            bottom: -52px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 0;
+            margin: 0;
           }
         }
         
