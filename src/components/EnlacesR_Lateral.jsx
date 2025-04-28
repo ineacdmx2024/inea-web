@@ -53,7 +53,7 @@ const Card = ({ title, imageSrc, buttonText, link }) => {
             />
           </div>
           <div className="flex flex-col justify-between flex-grow">
-            <h3 className="text-center text-[18px] tablet:text-[22px] text-[#333334] font-medium mb-6">
+            <h3 className="text-center text-[18px] tablet:text-[22px] text-[#333334] font-medium mt-4 mb-6">
               {truncateText(title, 37)}
             </h3>
             <div className="flex justify-center mt-4">
