@@ -25,7 +25,8 @@ function CarouselInicio() {
         contenido: item.attributes.Contenido,
         link: item.attributes.Link,
         slug: item.attributes.slug,
-        imagenMovil: item.attributes.Banner_movile?.data?.attributes?.formats?.small?.url,  // Imagen para móvil
+        //imagenMovil: item.attributes.Banner_movile?.data?.attributes?.formats?.small?.url,  // Imagen para móvil
+        imagenMovil: item.attributes.Banner_movile?.data?.attributes?.url,  // Imagen para móvil
         imagenEscritorio: item.attributes.Imagen?.data?.attributes?.url,
       }))
       setRestantes(enlacesData2)
@@ -106,14 +107,14 @@ function CarouselInicio() {
       <div>
         <Slider {...settings}>
           {restantes.map((restante, index) => (
-            <div key={index} className="w-full m-auto hover:cursor-pointer">
+            <div key={index} className="hover:cursor-pointer">
               {/* Imagen para dispositivos de escritorio */}
               {/* <div className="w-full h-full hidden md:block"> */}
               <div className=" hidden md:block relative">
                 <Image
                   // className="w-full h-full object-cover cursor-pointer"
                   // className="object-cover w-full h-full"
-                   className="h-[2880px] w-[500px] blog:w-full blog:h-full object-cover blog:object-fill rounded-xl"
+                   className="h-[2880px] w-[544px] blog:w-full blog:h-full object-cover blog:object-fill"
                   src={restante.imagenEscritorio || "/placeholder.svg"}
                   alt={restante.subtitulo || "Imagen de banner"}
 
@@ -131,19 +132,41 @@ function CarouselInicio() {
               
 
               {/* Imagen para dispositivos móviles */}
-              <div className="w-full h-full block md:hidden">
+              {/* <div className="w-full block md:hidden">
                 <Image
-                  className="w-full h-full object-contain"
+                  //className="w-full h-full object-contain"
+                  className="h-[460px] w-[544px] blog:w-full blog:h-full object-cover blog:object-fill rounded-xl"
                   src={restante.imagenMovil || "/placeholder.svg"}
                   alt={restante.subtitulo || "Imagen de banner móvil"}
-                  width={900}
-                  height={200}
+                  width={460}
+                  height={544}
+                  quality={100}
+                  priority
                   onClick={(e) => {
                     e.stopPropagation();
                     handleButtonClick(restante);
                   }}
                 />
-              </div>
+              </div> */}
+
+<div className="w-full block md:hidden">
+  <Image
+    // className="h-[460px] w-[544px] blog:w-full blog:h-full object-cover blog:object-fill"
+    src={restante.imagenMovil || "/placeholder.svg"}
+    alt={restante.subtitulo || "Imagen de banner móvil"}
+    width={544} // puedes ajustar esto o quitarlo y usar layout="responsive"
+    layout="responsive"
+    height={460}
+    quality={100}
+    priority
+    onClick={(e) => {
+      e.stopPropagation();
+      handleButtonClick(restante);
+    }}
+  />
+</div>
+
+
             </div>
           ))}
         </Slider>

@@ -76,146 +76,175 @@ const Navbar = () => {
   }, []);
   return (
     // <div className="navBar text-white ">
-        <div
-        ref={navRef}
-        className="navBar w-screen max-w-full"
-      >
-        <div className="bg-[#611232] w-full">
-          {/* Menú gobierno */}
-          <nav className="bg-[#611232]">
-            <div className="flex items-center justify-between w-full px-4 md:px-[40px]">
-              {/* Logo de Educación alineado a la izquierda */}
-              <div className="flex-shrink-0">
-                <Link href="https://www.gob.mx/sep" passHref>
+    <div
+      ref={navRef}
+      className="navBar w-screen max-w-full"
+    >
+      <div className="bg-[#611232] w-full">
+        {/* Menú gobierno */}
+        <nav className="bg-[#611232]">
+        <div className="flex items-center justify-between w-full px-4">
+          <div className="flex items-center justify-between w-full" id="Msup">
+            {/* Logo educación */}
+            <div className="flex items-center h-[64px]">
+            <Link href="https://www.gob.mx/sep" passHref>
                   <img
                     src="/Logo_educacion_white_2025.svg"
                     alt="Educacion"
-                    className="hover:text-[#8B6C41] rounded inline-block py-[0.3rem] h-[3.5rem] md:h-[4rem] w-auto ml-0"
+                    className="h-[64px] hover:text-[#8B6C41] rounded inline-block mr-[1rem]"
                   />
                 </Link>
-              </div>
-      
-              {/* Contenedor centrado del contenido desplazado un poco a la derecha */}
-              <div className="flex items-center justify-between w-full max-w-[1142px] ml-auto pl-6 md:pl-[60px]" id="Msup">
-                <div className="flex items-center space-x-7" id="contenidoSup">
-                  <div className="hidden md:block">
-                    <div className="ml-4 flex items-end space-x-5">
-                      <Link href="/" passHref className="hover:text-[#D3C09B] p-1 rounded">
-                        Sobre el INEA
-                      </Link>
-                      <Link href="/#ubicacion" passHref className="hover:text-[#D3C09B] p-1 rounded">
-                        Contacto
-                      </Link>
-                      <Link href="/" passHref className="hover:text-[#D3C09B] p-1 rounded">
-                        Mapa del sitio
-                      </Link>
-                      <Link href="https://www.gob.mx/busqueda?utf8=%E2%9C%93" passHref className="hover:text-[#D3C09B] p-1 rounded">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                          />
-                        </svg>
-                      </Link>
-                    </div>
+            </div>
+            {/* Menú superior */}
+              <div className="flex items-center space-x-7 h-[64px]" id="contenidoSup">
+                <div className="hidden md:block">
+                  <div className="flex items-end space-x-5">
+                    <Link
+                      href="/"
+                      passHref
+                      className="hover:text-[#D3C09B] p-1 rounded"
+                    >
+                      Sobre el INEA
+                    </Link>
+                    <Link
+                      href="/#ubicacion"
+                      passHref
+                      className="hover:text-[#D3C09B] p-1 rounded"
+                    >
+                      Contacto
+                    </Link>
+                    <Link
+                      href="/"
+                      passHref
+                      className="hover:text-[#D3C09B] p-1 rounded"
+                    >
+                      Mapa del sitio
+                    </Link>
+                    <Link
+                      href="https://www.gob.mx/busqueda?utf8=%E2%9C%93"
+                      passHref
+                      className="hover:text-[#D3C09B] p-1 rounded"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="h-5 w-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                        />
+                      </svg>
+                    </Link>
                   </div>
                 </div>
-      
-                {/* Botón hamburguesa alineado */}
-                <div className="md:hidden flex items-end mr-[3vw]">
-                  <button
-                    className="inline-flex items-center w-auto h-auto rounded-md text-white hover:text-[#E4CDA7]
-                    focus:outline-none focus:ring-2 p-2 focus:ring-inset focus:ring-[#E4CDA7] px-auto"
-                    onClick={toggleNavBar}
-                  >
-                    {isClick ? (
-                      <svg
-                        className="h-6 w-6"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
-                    ) : (
-                      <svg
-                        className="h-6 w-6"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M4 6h16M4 12h16m-7 6h7"
-                        />
-                      </svg>
-                    )}
-                  </button>
-                </div>
               </div>
-            </div>
-      
-            {/* Menú desplegable móvil */}
-            {isClick && (
-              <div className="md:hidden">
-                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 w-full">
-                  <Link href="/" passHref className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start">
-                    Sobre el INEA
-                  </Link>
-                  <Link href="/#ubicacion" passHref className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start">
-                    Contacto
-                  </Link>
-                  <Link href="/" passHref className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start">
-                    Mapa del sitio
-                  </Link>
-                  <Link href="https://www.gob.mx/busqueda?utf8=%E2%9C%93" passHref className="hover:text-[#D3C09B] hover:bg-[#611232] p-2 rounded flex items-center justify-between w-full">
+
+              {/*Boton para desplegable hamburguesa */}
+              <div className="md:hidden flex items-center h-[64px] ml-custom-7">
+                <button
+                  className="inline-flex items-center w-auto h-auto rounded-md text-white hover:text-[#E4CDA7]
+                 focus:outline-none focus:ring-2 p-2 focus:ring-inset focus:ring-[#E4CDA7] px-auto"
+                  onClick={toggleNavBar}
+                >
+                  {isClick ? (
                     <svg
+                      className="h-6 w-6"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      strokeWidth="1.5"
                       stroke="currentColor"
-                      className="h-6 w-6 m-1"
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
                       />
                     </svg>
-                  </Link>
-                </div>
+                  ) : (
+                    <svg
+                      className="h-6 w-6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 6h16M4 12h16m-7 6h7"
+                      />
+                    </svg>
+                  )}
+                </button>
               </div>
-            )}
-          </nav>
+            </div>
+          </div>
+          {isClick && (
+            <div className="md:hidden">
+              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 w-full">
+                <Link
+                  href="/"
+                  passHref
+                  className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
+                >
+                  Sobre el INEA
+                </Link>
+                <Link
+                  href="/#ubicacion"
+                  passHref
+                  className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
+                >
+                  Contacto
+                </Link>
+                <Link
+                  href="/"
+                  passHref
+                  className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
+                >
+                  Mapa del sitio
+                </Link>
+                <Link
+                  href="https://www.gob.mx/busqueda?utf8=%E2%9C%93"
+                  passHref
+                  className="hover:text-[#D3C09B] hover:bg-[#611232] p-2 rounded flex items-center justify-between w-full"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="h-6 w-6 m-1"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          )}
+        </nav>
 
         {/* Menú inferior */}
         <nav className="bg-[#A57F2C] lg:h-37px">
-          <div className="flex items-center justify-between py-[0.06rem] px-4 md:px-[40px] h-37px">
+          <div className="flex items-center justify-between py-[0.06rem] px-4 h-37px">
             <div
               className="flex items-end justify-end"
               id="Minf"
             >
               <div className="flex items-end space-x-10">
                 <div className="hidden md:block">
-                  <div className="ml-4 flex items-end space-x-5">
+                  <div className="flex items-end space-x-5">
                     <Link
                       href="/"
                       passHref
@@ -590,7 +619,7 @@ const Navbar = () => {
               </div>
 
               {/* Boton hamburguesa */}
-              <div className="md:hidden flex mr-[3vw]">
+              <div className="md:hidden flex items-center h-[64px]" style={{ marginLeft: "7rem" }}>
                 <button
                   className="inline-flex items-center justify-center  p-2 rounded-md text-white hover:text-[#E4CDA7]
                  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#E4CDA7]"

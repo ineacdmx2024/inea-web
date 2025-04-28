@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import PagSec from "@/components/PlantillaPagSec"; // Nuevo componente importado
+import "./Noticias.css";
 
 const open_Sans = Open_Sans({
   weight: ["300", "400", "500", "700"],
@@ -36,7 +37,7 @@ function NoticiasAntiguas({ item }) {
     try {
       const response = await fetch(
         `https://inea-web-backend-cg20.onrender.com/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
-        //`https://inea-web-backend.onrender.com/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
+
       );
       const result = await response.json();
       setDatos(result.data);
