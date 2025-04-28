@@ -140,8 +140,7 @@ function DetalleEnlace_CarruselBanner(slug) {
           return (
             <p
               key={index}
-              style={{ fontFamily: "IBM Plex Serif, serif" }}
-              className={`font-body text-[#333334] text-[18px] font-thin tracking-wider`}
+              className={`text-[#333334] text-[18px] font-light  leading-[28px]`}
             >
               {item.children.map((child, i) => {
                 if (child.type === "link" && child.url) {
@@ -166,10 +165,10 @@ function DetalleEnlace_CarruselBanner(slug) {
                   return (
                     <span
                       key={i}
-                         className="font-body font-light"
+                       //  className="font-weight"
                       style={{
-                        textAlign: "left",
-                        fontWeight: child.bold ? "bold" : "normal",
+                        //textAlign: "left",
+                        fontWeight: child.bold ? "normal" : "thin",
                         fontStyle: child.italic ? "italic" : "normal",
                         textDecoration: `${child.underline ? "underline" : ""} ${
                           child.strikethrough ? "line-through" : ""
