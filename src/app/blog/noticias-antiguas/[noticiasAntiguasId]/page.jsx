@@ -258,7 +258,7 @@ async function Page({ params }) {
             ? fechaFun(post.data?.attributes?.Fecha)
             : ""}
         </h1>
-          <div className="m-auto my-6 rounded-lg flex justify-center">
+          <div className="flex justify-center my-6">
             <div className="relative w-full max-w-4xl aspect-[3/2]">
               <Image
                 src={post.data.attributes?.Imagen?.data?.attributes?.url}
@@ -266,7 +266,7 @@ async function Page({ params }) {
                 fill
                 priority
                 className="rounded-lg object-contain"
-              />
+                />
             </div>
           </div>
         <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-left">{renderContenido(contenido)}</div>
