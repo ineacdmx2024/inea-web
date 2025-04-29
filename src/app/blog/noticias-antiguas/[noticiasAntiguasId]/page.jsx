@@ -181,7 +181,7 @@ async function Page({ params }) {
         case "image":
               return (
                 <div className="flex justify-center my-4">
-                  <div className="relative w-full max-w-4xl aspect-[16/9]">
+                  <div className="relative w-full max-w-4xl aspect-[3/2]">
                     <Image
                       key={index}
                       src={item.image.formats.large.url}
@@ -259,7 +259,7 @@ async function Page({ params }) {
             : ""}
         </h1>
           <div className="m-auto my-6 rounded-lg flex justify-center">
-            <div className="relative w-full max-w-4xl aspect-[16/9]">
+            <div className="relative w-full max-w-4xl aspect-[3/2]">
               <Image
                 src={post.data.attributes?.Imagen?.data?.attributes?.url}
                 alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
