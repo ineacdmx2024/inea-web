@@ -244,7 +244,7 @@ async function Page({ params }) {
   
   return (
     <div>
-      <div className="ml-[26rem] mb-10"></div>
+      <div className="mx-auto max-w-4xl px-4 mb-10"></div>
       <PagSec
         Enlaces={noticias}
         Titulo={post.data?.attributes?.Titulo}
