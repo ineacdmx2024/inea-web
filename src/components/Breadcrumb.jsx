@@ -8,27 +8,22 @@ const Breadcrumb = () => {
   const pathArray = pathname.split("/").filter((path) => path);
 
   const generateBreadcrumbTitle = (segment) => {
-    const maxLenght = 30;
+    const maxLength = 30;
 
-    const formatoSegment = segment
+    const formattedSegment = segment
       .replace(/-/g, " ")
       .toLowerCase()
       .replace(/^\w/, (l) => l.toUpperCase());
 
-    switch (segment) {
-      // Tu lógica para generar los títulos
-      // ...
-      default:
-        return formatoSegment.length > maxLenght
-          ? formatoSegment.slice(0, maxLenght) + "..."
-          : formatoSegment;
-    }
+    return formattedSegment.length > maxLength
+      ? formattedSegment.slice(0, maxLength) + "..."
+      : formattedSegment;
   };
 
   return (
-    <nav className="relative z-10 text-gray-700 text-[17px] mt-10"> {/* Moved up with margin-top */}
-      <ol className="list-none p-0 flex flex-wrap">
-        <li className="mx-0">
+    <nav className="relative z-10 text-gray-700 text-[17px] mt-10">
+      <ol className="flex flex-wrap items-center gap-x-2 gap-y-2 text-sm">
+        <li className="flex items-center">
           <Link
             href="/"
             className="flex items-center text-gray-500 hover:underline"
@@ -39,7 +34,7 @@ const Breadcrumb = () => {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-5 h-5 mr-2"
+              className="w-5 h-5 mr-1"
             >
               <path
                 strokeLinecap="round"
@@ -53,17 +48,14 @@ const Breadcrumb = () => {
         {pathArray.map((segment, index) => {
           const href = "/" + pathArray.slice(0, index + 1).join("/");
           return (
-            <li
-              key={index}
-              className="flex items-center"
-            >
+            <li key={index} className="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-5 h-5 mx-2"
+                className="w-4 h-4 mx-2"
               >
                 <path
                   strokeLinecap="round"
