@@ -16,9 +16,7 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
      <div className="mt-[10.5vh] overflow-x-hidden">
       {/* Breadcrumb */}
        <div className="col-span-12">
-        <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 md:px-10 mb-4">
           <Breadcrumb />
-        </div>
       </div>
     
      <div className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 md:px-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
