@@ -22,12 +22,9 @@ const Breadcrumb = () => {
 
   return (
     <nav className="relative z-10 text-gray-700 text-[18px] md:text-[20px] mt-10 font-medium">
-      <ol className="flex flex-wrap items-center gap-x-2 gap-y-2">
-        <li className="flex items-center">
-          <Link
-            href="/"
-            className="flex items-center text-gray-500 hover:underline"
-          >
+      <ol className="flex flex-row flex-wrap items-center gap-x-2 gap-y-1">
+        <li className="flex items-center space-x-1">
+          <Link href="/" className="flex items-center text-gray-500 hover:underline">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -48,14 +45,14 @@ const Breadcrumb = () => {
         {pathArray.map((segment, index) => {
           const href = "/" + pathArray.slice(0, index + 1).join("/");
           return (
-            <li key={index} className="flex items-center">
+            <li key={index} className="flex items-center space-x-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-4 h-4 mx-2"
+                className="w-5 h-5 text-gray-400"
               >
                 <path
                   strokeLinecap="round"
@@ -63,10 +60,7 @@ const Breadcrumb = () => {
                   d="m8.25 4.5 7.5 7.5-7.5 7.5"
                 />
               </svg>
-              <Link
-                href={href}
-                className="text-gray-500 hover:underline"
-              >
+              <Link href={href} className="text-gray-500 hover:underline">
                 {generateBreadcrumbTitle(segment)}
               </Link>
             </li>
