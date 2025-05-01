@@ -13,6 +13,7 @@ const montserrat = Montserrat({
 
 function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }) {
   return (
+    <>
     {/* Breadcrumb */}
     <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 md:px-10 mb-4">
       <Breadcrumb />
@@ -59,6 +60,7 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
         )}
       </div>
     </div>
+    </>
   );
 }
 
