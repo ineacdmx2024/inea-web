@@ -14,12 +14,12 @@ const montserrat = Montserrat({
 function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }) {
   return (
      <div className="mt-[10.5vh] overflow-x-hidden">
+       <div className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 md:px-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
       {/* Breadcrumb */}
        <div className="col-span-12">
           <Breadcrumb />
       </div>
     
-     <div className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 md:px-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
         {/* Contenido principal (alineado con la derecha) */}
         <div className="col-span-12 md:col-span-8">
           {Titulo && (
