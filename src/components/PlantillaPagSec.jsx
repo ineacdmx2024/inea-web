@@ -13,22 +13,23 @@ const montserrat = Montserrat({
 
 function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }) {
   return (
-     <div className="mt-[10.5vh] overflow-x-hidden">
-       <div className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 md:px-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-      {/* Breadcrumb */}
-       <div className="col-span-12">
+    <div className="mt-[10.5vh] overflow-x-hidden">
+      <div className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 md:px-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+        
+        {/* Breadcrumb ajustado */}
+        <div className="col-span-12 md:col-start-1 md:col-span-8 mb-4">
           <Breadcrumb />
-      </div>
-    
-        {/* Contenido principal (alineado con la derecha) */}
+        </div>
+
+        {/* Contenido principal */}
         <div className="col-span-12 md:col-span-8">
           {Titulo && (
-            <h1 className={`${montserrat.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight`}>
+            <h1 className="text-[38px] font-semibold text-[#333334] mb-5 leading-tight">
               {Titulo}
             </h1>
           )}
           {Subtitulo && (
-            <h2 className={`${montserrat.className} text-[27px] font-light text-[#333334] mb-4 leading-9`}>
+            <h2 className="text-[27px] font-light text-[#333334] mb-4 leading-9">
               {Subtitulo}
             </h2>
           )}
@@ -51,9 +52,9 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
           </div>
         </div>
 
-        {/* Carrusel de Cards (visible en pantallas pequeñas) */}
+        {/* Carrusel en móviles */}
         {mostrarCarrusel && (
-          <div className="md:hidden w-full">
+          <div className="md:hidden col-span-12 w-full">
             <CarouselEL cards={Enlaces} />
           </div>
         )}
@@ -61,5 +62,6 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
     </div>
   );
 }
+
 
 export default PagSec;
