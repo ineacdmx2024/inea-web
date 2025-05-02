@@ -179,20 +179,21 @@ async function Page({ params }) {
             );
           
         case "image":
-          return (
-            <div className="flex justify-center my-4">
-              <Image
-                key={index}
-                src={item.image.formats.large.url}
-                alt={item.image.alternativeText || "Imagen de la noticia"}
-                width={item.image.width}
-                height={item.image.height}
-                priority={true}
-                className="rounded-lg object-cover"
-                style={{ width: '46.875rem', height: '31.25rem' }} /* 750px x 500px en rem */
-              />
-            </div>
-          );
+              return (
+                <div className="flex justify-center my-4">
+                  <div className="relative w-full max-w-4xl aspect-[3/2]">
+                    <Image
+                      key={index}
+                      src={item.image.formats.large.url}
+                      alt={item.image.alternativeText || "Imagen de la noticia"}
+                      fill
+                      priority={true}
+                      className="rounded-lg object-contain"
+                    />
+                  </div>
+                </div>
+              );
+          
         case "list":
           return (
             <ol
@@ -243,7 +244,7 @@ async function Page({ params }) {
   
   return (
     <div>
-      <div className="ml-[26rem] mb-10"></div>
+      <div className="w-full max-w-screen-sm sm:max-w-2xl md:max-w-4xl px-4 mx-auto mb-10"></div>
       <PagSec
         Enlaces={noticias}
         Titulo={post.data?.attributes?.Titulo}
@@ -257,20 +258,17 @@ async function Page({ params }) {
             ? fechaFun(post.data?.attributes?.Fecha)
             : ""}
         </h1>
-        <div className="m-auto my-6 rounded-lg flex justify-center">
-          <Image
-            src={
-              post.data.attributes?.Imagen?.data?.attributes?.url
-            }
-            alt={
-              post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"
-            }
-            className="rounded-lg object-cover"
-            width={1000}
-            height={700}
-            style={{ width: '46.875rem', height: '31.25rem' }} /* 750px x 500px en rem */
-          />
-        </div>
+          <div className="flex justify-center my-6">
+            <div className="relative w-full max-w-4xl aspect-[3/2]">
+              <Image
+                src={post.data.attributes?.Imagen?.data?.attributes?.url}
+                alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
+                fill
+                priority
+                className="rounded-lg object-contain"
+                />
+            </div>
+          </div>
         <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-left">{renderContenido(contenido)}</div>
       </PagSec>
     </div>
