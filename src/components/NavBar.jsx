@@ -83,7 +83,7 @@ const Navbar = () => {
       <div className="bg-[#611232] w-full">
         {/* Menú gobierno */}
         <nav className="bg-[#611232]">
-          <div className="flex items-center justify-between ml-[2rem]">
+          <div className="flex items-center justify-between w-full md:ml-[1rem] px-4 md:px-0">
           <div className="flex items-center justify-between w-full" id="Msup">
             {/* Logo educación */}
             <div className="flex items-center h-[64px]">
