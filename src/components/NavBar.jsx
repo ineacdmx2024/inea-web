@@ -614,6 +614,17 @@ const Navbar = () => {
                         </Link>
                       </div>
                     </div>
+
+                     {/* Materiales */}
+                     <div className="group relative ">
+                            <Link
+                              href="/materiales"
+                              onClick={closeAllMenus}
+                              className="hover:text-[#CBB486] p-2 rounded flex items-center justify-between w-full "
+                            >
+                              Materiales
+                            </Link>
+                          </div>
                   </div>
                 </div>
               </div>
@@ -1019,6 +1030,16 @@ const Navbar = () => {
                       </Link>
                     </div>
                   )}
+                </div>
+                {/* Materiales */}
+                <div className="group relative">
+                  <Link
+                    onClick={closeAllMenus && closeMobileMenu}
+                    href="/materiales"
+                    className="hover:text-[#611232]  p-2 rounded"
+                  >
+                    Materiales
+                  </Link>
                 </div>
               </div>
             </div>
