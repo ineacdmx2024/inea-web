@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import PagSec from "@/components/PlantillaPagSec"; // Nuevo componente importado
-import "./Noticias.css";
 
 const open_Sans = Open_Sans({
   weight: ["300", "400", "500", "700"],
@@ -37,7 +36,7 @@ function NoticiasAntiguas({ item }) {
     try {
       const response = await fetch(
         `https://inea-web-backend-cg20.onrender.com/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
-
+        //`https://inea-web-backend.onrender.com/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
       );
       const result = await response.json();
       setDatos(result.data);
@@ -97,68 +96,92 @@ function NoticiasAntiguas({ item }) {
   return (
     <main>
       <PagSec Enlaces={[]} mostrarCarrusel={false}> {/* Deshabilitamos el carrusel */}
-        <div className="mx-auto w-11/12 medida3:w-full arrow:w-11/12 tablet:w-[1140px] mt-[-10px] mb-0">
-          <h1
-            className={`${montserrat.className} text-4xl font-semibold text-[#333334] letras:text-[38px] mt-0 mb-4`}
-          >
-            Noticias antiguas
-          </h1>
+        <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-4 items-start mt-0"> {/* Ajuste del margen superior */}
+          <div className="col-span-12 md:col-span-8">
+            <h1
+              className={`${montserrat.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight`}
+            >
+              Noticias antiguas
+            </h1>
 
-          <div className="mb-16 flex flex-col justify-center items-center gap-8">
-            <div className="w-full grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {datos ? (
-                datos.map((item, index) => (
-                  <div key={index} className="px-0 flex flex-col h-full">
-                    <div className="overflow-hidden w-full h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between">
-                      <Link
-                        href={`/blog/noticias-antiguas/${item.attributes.slug}`}
-                      >
-                        <div className="rounded-xl max-h-[250px] h-[250px] w-full overflow-hidden">
-                          <Image
-                            src={
-                              item.attributes.Imagen?.data?.attributes?.formats
-                                ?.medium?.url || item.attributes.Imagen?.data?.attributes?.url
-                            }
-                            alt={
-                              item.attributes.Nombre_de_la_Imagen ||
-                              "Imagen sin título"
-                            }
-                            className="object-cover w-full h-full"
-                            width={350}
-                            height={250}
-                          />
-                        </div>
+            <div className="mb-16 flex flex-col justify-center items-center gap-8">
+              <div className="w-full grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                {datos ? (
+                  datos.map((item, index) => (
+                    <div key={index} className="px-0 flex flex-col h-full">
+                      <div className="overflow-hidden w-full h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between">
+                        <Link href={`/blog/noticias-antiguas/${item.attributes.slug}`}>
+                          <div className="rounded-xl max-h-[250px] h-[250px] w-full overflow-hidden">
+                            <Image
+                              src={
+                                item.attributes.Imagen?.data?.attributes?.formats?.medium
+                                  ?.url || item.attributes.Imagen?.data?.attributes?.url
+                              }
+                              alt={
+                                item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
+                              }
+                              className="object-cover w-full h-full"
+                              width={350}
+                              height={250}
+                            />
+                          </div>
 
-                        <article
-                          className={`${open_Sans.className} mt-4 w-full px-4 py-2 flex flex-col justify-between flex-grow`}
-                        >
-                          <p className="text-sm text-gray-700 mb-2">
-                            {item.attributes.Fecha
-                              ? fechaFun(item.attributes.Fecha)
-                              : "No hay fecha"}
-                          </p>
-                          <h2 className="text-xl font-medium text-[#333334] mb-4">
-                            {truncateText(item.attributes.Titulo, 45)}
-                          </h2>
-                        </article>
-                      </Link>
-
-                      <div className="w-full mt-auto">
-                        <Link
-                          href={`/blog/noticias-antiguas/${item.attributes.slug}`}
-                          className="m-auto bg-[#611232] text-white text-center py-3 px-2 w-40 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block mb-4"
-                        >
-                          <p className="text-xs font-light">
-                            Continuar leyendo
-                          </p>
+                          <article
+                            className={`${open_Sans.className} mt-4 w-full px-4 py-2 flex flex-col justify-between flex-grow`}
+                          >
+                            <p className="text-sm text-gray-700 mb-2">
+                              {item.attributes.Fecha
+                                ? fechaFun(item.attributes.Fecha)
+                                : "No hay fecha"}
+                            </p>
+                            <h2 className="text-xl font-medium text-[#333334] mb-4">
+                              {truncateText(item.attributes.Titulo, 45)}
+                            </h2>
+                          </article>
                         </Link>
+
+                        <div className="w-full mt-auto">
+                          <Link
+                            href={`/blog/noticias-antiguas/${item.attributes.slug}`}
+                            className="m-auto bg-[#611232] text-white text-center py-3 px-2 w-40 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block mb-4"
+                          >
+                            <p className="text-xs font-light">Continuar leyendo</p>
+                          </Link>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))
-              ) : (
-                <p className="text-center">Cargando noticias...</p>
-              )}
+                  ))
+                ) : (
+                  <p className="text-center">Cargando noticias...</p>
+                )}
+              </div>
+
+              {/* Botones de navegación */}
+              <div className="flex justify-center items-center gap-4 mt-8">
+                <button
+                  onClick={handlePrevPage}
+                  disabled={paginaActual === 1}
+                  className={`px-4 py-2 bg-[#611232] text-white rounded-md ${
+                    paginaActual === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-[#8a1a4a]"
+                  }`}
+                >
+                  Anterior
+                </button>
+                <span className="text-gray-700">
+                  Página {paginaActual} de {totalPaginas}
+                </span>
+                <button
+                  onClick={handleNextPage}
+                  disabled={paginaActual === totalPaginas}
+                  className={`px-4 py-2 bg-[#611232] text-white rounded-md ${
+                    paginaActual === totalPaginas
+                      ? "opacity-50 cursor-not-allowed"
+                      : "hover:bg-[#8a1a4a]"
+                  }`}
+                >
+                  Siguiente
+                </button>
+              </div>
             </div>
           </div>
         </div>

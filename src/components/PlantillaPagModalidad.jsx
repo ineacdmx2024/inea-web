@@ -90,7 +90,13 @@ function PagMod({ info }) {
         ))}
 
         {/* Tiempo estimado */}
-        <p className="mt-2 text-lg">
+        <p
+          className="mt-2 text-lg"
+          style={{
+            color: "#333334",
+            fontSize: "18px",
+          }}
+        >
           <strong>Tiempo estimado de conclusión:</strong> {info.time}
         </p>
         <br />
@@ -102,9 +108,10 @@ function PagMod({ info }) {
               <div key={index} className="mb-2">
                 <p
                   style={{
-                    fontSize: "22px",
+                    fontSize: "18px",
                     fontWeight: "bold",
                     textAlign: "center",
+                    color: "#333334",
                   }}
                   className="mb-4"
                 >
