@@ -105,13 +105,13 @@ function Modalidad() {
                   >
                     <div className="flex items-center">
                       <svg
-                        className="flex-shrink-0 w-4 h-4 me-2"
+                        className="w-5 h-5 mr-2 text-yellow-950"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
-                        viewBox="0 0 20 20"
+                        viewBox="0 0 24 24"
                       >
-                        <path d="M10 .5a9.5 9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 15a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 12 17Zm1-4.5a1 1 0 0 1-2 0V7a1 1 0 0 1 2 0Z" />
                       </svg>
                       <span className="sr-only">Info</span>
                       <h3 className="text-lg font-medium">
@@ -195,13 +195,13 @@ function Modalidad() {
                   >
                     <div className="flex items-center">
                       <svg
-                        className="flex-shrink-0 w-4 h-4 me-2"
+                        className="w-5 h-5 mr-2 text-yellow-950"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
-                        viewBox="0 0 20 20"
+                        viewBox="0 0 24 24"
                       >
-                        <path d="M10 .5a9.5 9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 15a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 12 17Zm1-4.5a1 1 0 0 1-2 0V7a1 1 0 0 1 2 0Z" />
                       </svg>
                       <span className="sr-only">Info</span>
                       <h3 className="text-lg font-medium">
@@ -281,13 +281,13 @@ function Modalidad() {
                   >
                     <div className="flex items-center">
                       <svg
-                        className="flex-shrink-0 w-4 h-4 me-2"
+                        className="w-5 h-5 mr-2 text-yellow-950"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
-                        viewBox="0 0 20 20"
+                        viewBox="0 0 24 24"
                       >
-                        <path d="M10 .5a9.5 9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 15a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 12 17Zm1-4.5a1 1 0 0 1-2 0V7a1 1 0 0 1 2 0Z" />
                       </svg>
                       <span className="sr-only">Info</span>
                       <h3 className="text-lg font-medium">
@@ -359,13 +359,13 @@ function Modalidad() {
                   >
                     <div className="flex items-center">
                       <svg
-                        className="flex-shrink-0 w-4 h-4 me-2"
+                        className="w-5 h-5 mr-2 text-yellow-950"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
-                        viewBox="0 0 20 20"
+                        viewBox="0 0 24 24"
                       >
-                        <path d="M10 .5a9.5 9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 15a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 12 17Zm1-4.5a1 1 0 0 1-2 0V7a1 1 0 0 1 2 0Z" />
                       </svg>
                       <span className="sr-only">Info</span>
                       <h3 className="text-lg font-medium">

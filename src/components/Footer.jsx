@@ -17,7 +17,7 @@ const Footer = () => {
               >
                 <img
                   src="/Logo_educacion_white_2025.svg"
-                  className="mr-3 h-[63px]"
+                  className="mr-3 h-[56.7px]"
                   alt="Logo Educacion"
                 />
               </a>
