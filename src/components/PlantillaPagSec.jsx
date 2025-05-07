@@ -13,23 +13,22 @@ const montserrat = Montserrat({
 
 function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }) {
   return (
-    <div className="mt-[10.5vh] overflow-x-hidden">
-      <div className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 md:px-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+    <div className="mt-[8vh]"> {/* Reducir el margen superior */}
+      <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
         
         {/* Breadcrumb ajustado */}
-        <div className="col-span-12 md:col-start-1 md:col-span-8 mb-4">
+        <div className="col-span-12 md:col-start-1 md:col-span-8 mb-2 -mt-2">
           <Breadcrumb />
         </div>
 
-        {/* Contenido principal */}
-        <div className="col-span-12 md:col-span-8">
+        <div className="col-span-12 md:col-span-8 -mt-4"> {/* Ajuste del margen superior */}
           {Titulo && (
-            <h1 className="text-[38px] font-semibold text-[#333334] mb-5 leading-tight">
+            <h1 className={`${montserrat.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight`}>
               {Titulo}
             </h1>
           )}
           {Subtitulo && (
-            <h2 className="text-[27px] font-light text-[#333334] mb-4 leading-9">
+            <h2 className={`${montserrat.className} text-[27px] font-light text-[#333334] mb-4 leading-9`}>
               {Subtitulo}
             </h2>
           )}
@@ -37,8 +36,8 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
         </div>
 
         {/* Enlaces laterales */}
-        <div className="hidden md:block md:col-span-4 self-start md:pl-4">
-          <div className="flex flex-col gap-6">
+        <div className="hidden md:block md:col-span-4 self-start">
+          <div className="flex flex-col">
             {Enlaces.map((enlace) => (
               <Card
                 key={enlace.title}
@@ -52,9 +51,9 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
           </div>
         </div>
 
-        {/* Carrusel en móviles */}
+        {/* Carrusel de Cards (visible en pantallas pequeñas) */}
         {mostrarCarrusel && (
-          <div className="md:hidden col-span-12 w-full">
+          <div className="md:hidden w-full">
             <CarouselEL cards={Enlaces} />
           </div>
         )}
@@ -62,6 +61,5 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
     </div>
   );
 }
-
 
 export default PagSec;
