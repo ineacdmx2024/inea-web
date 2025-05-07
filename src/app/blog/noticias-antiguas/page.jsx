@@ -109,18 +109,15 @@ function NoticiasAntiguas({ item }) {
                 datos.map((item, index) => (
                   <div key={index} className="px-0 flex flex-col h-full">
                     <div className="overflow-hidden w-full h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between">
-                      <Link
-                        href={`/blog/noticias-antiguas/${item.attributes.slug}`}
-                      >
+                      <Link href={`/blog/noticias-antiguas/${item.attributes.slug}`}>
                         <div className="rounded-xl max-h-[250px] h-[250px] w-full overflow-hidden">
                           <Image
                             src={
-                              item.attributes.Imagen?.data?.attributes?.formats
-                                ?.medium?.url || item.attributes.Imagen?.data?.attributes?.url
+                              item.attributes.Imagen?.data?.attributes?.formats?.medium
+                                ?.url || item.attributes.Imagen?.data?.attributes?.url
                             }
                             alt={
-                              item.attributes.Nombre_de_la_Imagen ||
-                              "Imagen sin título"
+                              item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
                             }
                             className="object-cover w-full h-full"
                             width={350}
@@ -147,9 +144,7 @@ function NoticiasAntiguas({ item }) {
                           href={`/blog/noticias-antiguas/${item.attributes.slug}`}
                           className="m-auto bg-[#611232] text-white text-center py-3 px-2 w-40 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block mb-4"
                         >
-                          <p className="text-xs font-light">
-                            Continuar leyendo
-                          </p>
+                          <p className="text-xs font-light">Continuar leyendo</p>
                         </Link>
                       </div>
                     </div>
@@ -158,6 +153,33 @@ function NoticiasAntiguas({ item }) {
               ) : (
                 <p className="text-center">Cargando noticias...</p>
               )}
+            </div>
+
+            {/* Botones de navegación */}
+            <div className="flex justify-center items-center gap-4 mt-8">
+              <button
+                onClick={handlePrevPage}
+                disabled={paginaActual === 1}
+                className={`px-4 py-2 bg-[#611232] text-white rounded-md ${
+                  paginaActual === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-[#8a1a4a]"
+                }`}
+              >
+                Anterior
+              </button>
+              <span className="text-gray-700">
+                Página {paginaActual} de {totalPaginas}
+              </span>
+              <button
+                onClick={handleNextPage}
+                disabled={paginaActual === totalPaginas}
+                className={`px-4 py-2 bg-[#611232] text-white rounded-md ${
+                  paginaActual === totalPaginas
+                    ? "opacity-50 cursor-not-allowed"
+                    : "hover:bg-[#8a1a4a]"
+                }`}
+              >
+                Siguiente
+              </button>
             </div>
           </div>
         </div>
