@@ -135,7 +135,7 @@ function CarouselOfertEdu() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: dots => (
-      <div style={{ bottom: "-25px", display: "flex", justifyContent: "center", width: "100%" }}>
+      <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
         <ul style={{ margin: 0, padding: 0, display: "flex" }}>{dots}</ul>
       </div>
     ),
@@ -145,41 +145,40 @@ function CarouselOfertEdu() {
   return (
     <>
       <style jsx global>{`
-         .custom-dots {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          display: flex !important;
-          justify-content: center !important;
-          width: 100%;
-          padding: 0;
-          margin: 0 auto;
-          z-index: 1;
-        }
-      
+        .custom-dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: -20px
+            width: 100%;
+            margin-top: 20px;
+            padding: 0;
+            position: relative;
+          }
+
         .custom-dots li {
           margin: 0 4px;
           display: inline-block;
         }
-      
+        
         .custom-dots li button {
           border: none;
           background: none;
           padding: 0;
         }
-      
+        
         .custom-dots li button:before {
           font-size: 12px;
           color: #ccc;
           opacity: 1;
           transition: all 0.3s ease;
         }
-      
+        
         .custom-dots li.slick-active button:before {
           color: #611232;
           transform: scale(1.2);
         }
+
 
         /* Estilos solo para desktop que igualan el gap */
         @media (min-width: 768px) {
@@ -201,9 +200,19 @@ function CarouselOfertEdu() {
         
         /* Estilos para mobile */
         @media (max-width: 767px) {
-        .slick-slider {
-          padding-bottom: 50px; 
-          position: relative; 
+          .slick-slider {
+            padding-bottom: 30px;
+          }
+            .custom-dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: -52px
+            width: 100%;
+            margin-top: 20px;
+            padding: 0;
+            position: relative;
+          }
         }
         
         .carousel-card {

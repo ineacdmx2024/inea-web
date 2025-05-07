@@ -83,29 +83,22 @@ const Navbar = () => {
       <div className="bg-[#611232] w-full">
         {/* Menú gobierno */}
         <nav className="bg-[#611232]">
-          <div className="flex items-center justify-between py-[0.1rem] px-4 md:px-[40px]">
-            <div
-              className="flex items-center justify-between"
-              id="Msup"
-            >
-              <div className="flex items-center">
-                <Link
-                  href="https://www.gob.mx/sep"
-                  passHref
-                >
+          <div className="flex items-center justify-between w-full md:ml-[1rem] px-4 md:px-0">
+          <div className="flex items-center justify-between w-full" id="Msup">
+            {/* Logo educación */}
+            <div className="flex items-center h-[64px]">
+            <Link href="https://www.gob.mx/sep" passHref>
                   <img
                     src="/Logo_educacion_white_2025.svg"
                     alt="Educacion"
-                    className=" hover:text-[#8B6C41]  rounded inline-block py-[0.3rem] mr-[1rem]"
+                    className="h-[64px] hover:text-[#8B6C41] rounded inline-block mr-[1rem]"
                   />
                 </Link>
-              </div>
-              <div
-                className="flex items-center space-x-7"
-                id="contenidoSup"
-              >
+            </div>
+            {/* Menú superior */}
+              <div className="flex items-center space-x-7 h-[64px]" id="contenidoSup">
                 <div className="hidden md:block">
-                  <div className="ml-4 flex items-end space-x-5">
+                  <div className="flex items-end space-x-5">
                     <Link
                       href="/"
                       passHref
@@ -152,7 +145,7 @@ const Navbar = () => {
               </div>
 
               {/*Boton para desplegable hamburguesa */}
-              <div className="md:hidden flex items-end mr-[15px]">
+              <div className="md:hidden flex items-center h-[64px] ml-custom-7">
                 <button
                   className="inline-flex items-center w-auto h-auto rounded-md text-white hover:text-[#E4CDA7]
                  focus:outline-none focus:ring-2 p-2 focus:ring-inset focus:ring-[#E4CDA7] px-auto"
@@ -244,14 +237,14 @@ const Navbar = () => {
 
         {/* Menú inferior */}
         <nav className="bg-[#A57F2C] lg:h-37px">
-          <div className="flex items-center justify-between py-[0.06rem] px-4 md:px-[40px] h-37px">
+          <div className="flex items-center justify-between py-[0.06rem] px-4 h-37px sm:ml-[17rem] md:ml-[21rem]">
             <div
               className="flex items-end justify-end"
               id="Minf"
             >
               <div className="flex items-end space-x-10">
                 <div className="hidden md:block">
-                  <div className="ml-4 flex items-end space-x-5">
+                  <div className="flex items-end space-x-5">
                     <Link
                       href="/"
                       passHref
@@ -626,7 +619,7 @@ const Navbar = () => {
               </div>
 
               {/* Boton hamburguesa */}
-              <div className="md:hidden flex mr-[15px]">
+              <div className="md:hidden flex items-center h-[64px]" style={{ marginLeft: "7rem" }}>
                 <button
                   className="inline-flex items-center justify-center  p-2 rounded-md text-white hover:text-[#E4CDA7]
                  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#E4CDA7]"

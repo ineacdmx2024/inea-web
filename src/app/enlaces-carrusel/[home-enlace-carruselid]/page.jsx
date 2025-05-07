@@ -3,6 +3,7 @@ import { Open_Sans } from "next/font/google";
 import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
 import Link from "next/link";
+import "./BannerCarrusel.css";
 import { useEffect } from "react";
 import { useState } from "react";
 const open_Sans = Open_Sans({
@@ -122,9 +123,7 @@ function DetalleEnlace_CarruselBanner(slug) {
             `h${item.level}`,
             {
               key: index,
-              className: `${
-                montserrat.className
-              } text-[#333334] font-bold text-[${21 - item.level}px]`,
+              className: `font-body font-bold text-[#333334] text-[${21 - item.level}px]`,
             },
             item.children[0]?.text || ""
           );
@@ -141,8 +140,7 @@ function DetalleEnlace_CarruselBanner(slug) {
           return (
             <p
               key={index}
-              style={{ fontFamily: "IBM Plex Serif, serif" }}
-              className={`font-body text-[#333334] text-[18px] font-thin tracking-wider`}
+              className={`text-[#333334] text-[18px] font-light  leading-[28px]`}
             >
               {item.children.map((child, i) => {
                 if (child.type === "link" && child.url) {
@@ -167,12 +165,15 @@ function DetalleEnlace_CarruselBanner(slug) {
                   return (
                     <span
                       key={i}
+                       //  className="font-weight"
                       style={{
-                        fontWeight: child.bold ? "bold" : "normal",
+                        //textAlign: "left",
+                        fontWeight: child.bold ? "normal" : "thin",
                         fontStyle: child.italic ? "italic" : "normal",
-                        textDecoration: `${
-                          child.underline ? "underline" : ""
-                        } ${child.strikethrough ? "line-through" : ""}`,
+                        textDecoration: `${child.underline ? "underline" : ""} ${
+                          child.strikethrough ? "line-through" : ""
+
+                        }`,
                       }}
                     >
                       {child.text}

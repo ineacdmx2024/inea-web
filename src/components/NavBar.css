@@ -1,101 +1,178 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-.navBar{
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    /* background: #03281A; */
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    justify-content: space-between;
-    color: white;
-    width: 100%;
-    position: fixed;
-    top: 0px;
-    z-index: 100;
-    left: 0px;
+.navBar {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  justify-content: space-between;
+  color: white;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+  left: 0px;
 }
 
-.navBar ul{
-    display: flex;
-    gap: 1rem;
-}
-
-.navBar ul li{
-    list-style: none;
-}
-
-.navBarGob{
-    background: #0C231E;
-}
-
-/* NavBar.css */
-.navBar img, .navBarINEA img {
-  height: 4rem; 
-  width: auto; /* Mantiene la proporción */
-  max-width: 12rem;
-}
-
-.navBarINEA .flex.items-center {
+.navBar ul {
   display: flex;
-  align-items: center;
+  gap: 1rem;
 }
 
-#Msup{
+.navBar ul li {
+  list-style: none;
+}
+
+.navBarGob {
+  background: #0C231E;
+}
+
+/* Imagen del logo */
+.navBar img,
+.navBarINEA img {
+  height: 50px;
+  margin: 1px auto 0 -30px;
+  width: 150px;
+}
+
+/* Contenedor del contenido superior (Gobierno) */
+#Msup {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 1142px;
+  max-width: 1200px;
   height: auto;
-  padding-left: 1rem;
+  padding-left: 2.5rem;
   padding-right: 1rem;
 }
 
-#Minf{
-  /* flex-wrap: wrap; */
-  /* justify-content:flex-end; */
+/* Contenedor del menú inferior (INEA) */
+#Minf {
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
-  max-width: 1142px;
+  max-width: 1200px;
   height: auto;
-  padding-left: 1rem;
+  padding-left: 2.5rem;
   padding-right: 1rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
-/* Aplica margen lateral de 40px desde pantallas medianas en adelante (768px+) */
+/* Botón hamburguesa superior (Gobierno) */
+.navBar .md\\:hidden button {
+  position: relative;
+  float: right;
+  margin-right: 0;
+  padding: 9px 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* Botón hamburguesa inferior (INEA) */
+.navBarINEA .md\\:hidden button {
+  position: relative;
+  float: right;
+  margin-right: 0;
+  padding: 9px 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* Estilos generales del toggle */
+.navbar-toggle {
+  position: relative;
+  float: right;
+  margin-right: 15px;
+  padding: 9px 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* Mejoras responsivas en desktop */
 @media screen and (min-width: 768px) {
-  #Msup,
+  #Msup {
+    float: right !important;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 2.5rem;
+    padding-right: 1rem;
+  }
   #Minf {
-    padding-left: 40px;
-    padding-right: 40px;
+    float: right !important;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 2.5rem;
+    padding-right: 1rem;
+  }
+  
+  .navBar img {
+    height: 50px;
+    width: auto;
+    max-width: 15rem;
+    object-fit: contain;
+    display: block;
   }
 }
 
-/*
-@media screen and (max-width: 1200px) and (min-width:300px) {
-  .navBar img, .navBarINEA img {
+/* Versión móvil */
+@media screen and (max-width: 767px) {
+  #Msup {
+    position: relative;
+    float: right;
+    margin-right: -12px;
+    padding: 9px 10px;
+    margin-top: -6px;
+    margin-bottom: -10px;
+  }
+
+  #Minf {
+    position: relative;
+    float: right;
+    margin-right: -12px;
+    padding: 9px 10px;
+    margin-top: -15px;
+    margin-bottom: -15px;
+  }
+
+  #Msup > div:first-child {
+    flex: none;
+    margin-right: auto;
+  }
+
+  .navBar img {
+    height: 45px;
+    width: auto;
+    max-width: 15rem;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+/* Opcionales desactivados
+@media screen and (max-width: 1200px) and (min-width: 300px) {
+  .navBar img,
+  .navBarINEA img {
     margin-left: 2rem;
     margin-right: 2rem;
   }
-  #contenidoSup{
+  #contenidoSup {
     margin-right: 1rem;
   }
 }
 
 @media screen and (min-width: 1500px) {
-  .navBar img, .navBarINEA img {
+  .navBar img,
+  .navBarINEA img {
     margin-left: 20rem;
   }
-  #contenidoSup{
+  #contenidoSup {
     margin-right: 20rem;
   }
 
-  #menubajo{
+  #menubajo {
     margin-right: 20rem;
   }
-}
-*/
+}*/
