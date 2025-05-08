@@ -236,8 +236,8 @@ const Navbar = () => {
         </nav>
 
         {/* Menú inferior */}
-        <nav className="bg-[#A57F2C] lg:h-37px">
-          <div className="flex items-center justify-between py-[0.06rem] px-4 h-37px sm:ml-[17rem] md:ml-[21rem]">
+        <nav className="bg-[#A57F2C] lg:h-[37px]">
+          <div className="flex items-center justify-between py-[0.06rem] px-4 h-37px sm:ml-[17rem] md:ml-[13.5rem]">
             <div
               className="flex items-end justify-end"
               id="Minf"
