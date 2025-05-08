@@ -48,7 +48,7 @@ function Page() {
             <div className="flex-grow h-px bg-gray-300"></div>
           </div>
           {/* CarouselBlog dentro del contenedor max-w */}
-          <ScrollLoadSection delay={3000}>
+          <ScrollLoadSection delay={5000}>
             <CarouselBlog />
           </ScrollLoadSection>
         </div>
@@ -65,7 +65,7 @@ function Page() {
           <div className="flex-grow h-px bg-gray-300"></div>
         </div>
       </div>
-      <ScrollLoadSection delay={3000}>
+      <ScrollLoadSection delay={5000}>
         <CarouselOfertEdu />
       </ScrollLoadSection>
 
@@ -79,7 +79,7 @@ function Page() {
           <div className="flex-grow h-px bg-gray-300"></div>
         </div>
       </div>
-      <ScrollLoadSection delay={3000}>
+      <ScrollLoadSection delay={5000}>
         <SeccionLigasInte />
       </ScrollLoadSection>
 
@@ -94,7 +94,7 @@ function Page() {
            <div className="flex-grow h-px bg-gray-300"></div>
          </div>
        </div>
-      <ScrollLoadSection delay={3000}>
+      <ScrollLoadSection delay={5000}>
         <Ubicacion />
       </ScrollLoadSection>
      </section>
