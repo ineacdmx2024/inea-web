@@ -53,13 +53,13 @@ function NoticiasAntiguas({ item }) {
 
   const fechaFun = (fechaAPI) => {
     const diasSemana = [
-      "domingo",
-      "lunes",
-      "martes",
-      "miércoles",
-      "jueves",
-      "viernes",
-      "sábado",
+      "Domingo",
+      "Lunes",
+      "Martes",
+      "Miércoles",
+      "Jueves",
+      "Viernes",
+      "Sábado",
     ];
     const meses = [
       "enero",
@@ -99,55 +99,56 @@ function NoticiasAntiguas({ item }) {
         <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-4 items-start mt-0"> {/* Ajuste del margen superior */}
           <div className="col-span-12 md:col-span-8">
             <h1
-              className={`${montserrat.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight`}
+              className={`${montserrat.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight gap-8 ml-[-20px] md:ml-0.5`}
             >
               Noticias antiguas
             </h1>
 
-            <div className="mb-16 flex flex-col justify-center items-center gap-8">
-              <div className="w-full grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mb-16 flex flex-col items-start gap-8 ml-[-20px] md:ml-1 md:mr-30"> {/* Ajuste de márgenes izquierdo y derecho */}
+              <div className="w-full grid gap-6 grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"> {/* Ajuste del diseño de las fichas */}
                 {datos ? (
                   datos.map((item, index) => (
-                    <div key={index} className="px-0 flex flex-col h-full">
-                      <div className="overflow-hidden w-full h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between">
+                    <div
+                      key={index}
+                      className="overflow-hidden w-full h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
+                    >
+                      <div>
                         <Link href={`/blog/noticias-antiguas/${item.attributes.slug}`}>
-                          <div className="rounded-xl max-h-[250px] h-[250px] w-full overflow-hidden">
+                          <div className="rounded-xl max-h-[220px] h-[220px] w-full overflow-hidden">
                             <Image
                               src={
-                                item.attributes.Imagen?.data?.attributes?.formats?.medium
-                                  ?.url || item.attributes.Imagen?.data?.attributes?.url
+                                item.attributes.Imagen?.data?.attributes?.formats?.medium?.url ||
+                                item.attributes.Imagen?.data?.attributes?.url
                               }
                               alt={
                                 item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
                               }
                               className="object-cover w-full h-full"
-                              width={350}
-                              height={250}
+                              width={300}
+                              height={220}
                             />
                           </div>
-
-                          <article
-                            className={`${open_Sans.className} mt-4 w-full px-4 py-2 flex flex-col justify-between flex-grow`}
-                          >
-                            <p className="text-sm text-gray-700 mb-2">
-                              {item.attributes.Fecha
-                                ? fechaFun(item.attributes.Fecha)
-                                : "No hay fecha"}
-                            </p>
-                            <h2 className="text-xl font-medium text-[#333334] mb-4">
-                              {truncateText(item.attributes.Titulo, 45)}
-                            </h2>
-                          </article>
                         </Link>
-
-                        <div className="w-full mt-auto">
-                          <Link
-                            href={`/blog/noticias-antiguas/${item.attributes.slug}`}
-                            className="m-auto bg-[#611232] text-white text-center py-3 px-2 w-40 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block mb-4"
-                          >
-                            <p className="text-xs font-light">Continuar leyendo</p>
-                          </Link>
-                        </div>
+                        <article
+                          className={`${open_Sans.className} mt-4 w-full px-2 sm:px-4 py-2`}
+                        >
+                          <p className="text-sm text-gray-700 mb-2">
+                            {item.attributes.Fecha
+                              ? fechaFun(item.attributes.Fecha)
+                              : "No hay fecha"}
+                          </p>
+                          <h2 className="text-lg font-medium text-[#333334] mb-4">
+                            {truncateText(item.attributes.Titulo, 50)}
+                          </h2>
+                        </article>
+                      </div>
+                      <div className="flex justify-end mt-4">
+                        <Link
+                          href={`/blog/noticias-antiguas/${item.attributes.slug}`}
+                          className="bg-[#611232] text-white text-center py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full"
+                        >
+                          Continuar leyendo
+                        </Link>
                       </div>
                     </div>
                   ))
@@ -155,6 +156,7 @@ function NoticiasAntiguas({ item }) {
                   <p className="text-center">Cargando noticias...</p>
                 )}
               </div>
+            </div>
 
               {/* Botones de navegación */}
               <div className="flex justify-center items-center gap-4 mt-8">
@@ -182,7 +184,6 @@ function NoticiasAntiguas({ item }) {
                   Siguiente
                 </button>
               </div>
-            </div>
           </div>
         </div>
       </PagSec>
