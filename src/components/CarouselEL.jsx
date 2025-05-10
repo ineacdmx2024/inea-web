@@ -103,7 +103,7 @@ const CarouselEL = ({ cards }) => {
         }
       `}</style>
       <div className="md:hidden w-full">
-        <div className="border border-slate-300 rounded-lg bg-white w-full max-w-[95%] mx-auto pb-8 overflow-visible px-2">
+        <div className="border border-slate-300 rounded-lg bg-white mx-auto w-[340px] pb-8 overflow-visible ml-4">
           <Slider {...settings}>
             {cards.map((card, index) => (
               <div key={index} className="pt-6 px-6 outline-none">
