@@ -33,7 +33,7 @@ const CarouselEL = ({ cards }) => {
     <>
       <style jsx global>{`
         .custom-dots {
-          bottom: -30px;
+          bottom: -56px; //custom dots fuera del carrusel
           display: flex;
           justify-content: center;
           width: 100%;
@@ -103,7 +103,7 @@ const CarouselEL = ({ cards }) => {
         }
       `}</style>
       <div className="md:hidden w-full">
-        <div className="border border-slate-300 rounded-lg bg-white mx-auto w-[340px] pb-8 overflow-visible ml-4">
+        <div className="border border-slate-300 rounded-lg bg-white w-full pb-8 overflow-visible px-4">
           <Slider {...settings}>
             {cards.map((card, index) => (
               <div key={index} className="pt-6 px-6 outline-none">
