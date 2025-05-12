@@ -5,6 +5,7 @@ import CarouselOfertEdu from "@/components/CarouselOfertEdu";
 import SeccionLigasInte from "@/components/SeccionLigasInte";
 import Ubicacion from "@/components/Ubicacion";
 import BannerContingencia from "@/components/BannerContingencia";
+import ScrollLoadSection from "@/components/ScrollLoadSection";
 
 function Page() {
   return (
@@ -47,7 +48,9 @@ function Page() {
             <div className="flex-grow h-px bg-gray-300"></div>
           </div>
           {/* CarouselBlog dentro del contenedor max-w */}
-          <CarouselBlog />
+          <ScrollLoadSection delay={3000}>
+            <CarouselBlog />
+          </ScrollLoadSection>
         </div>
       </div>
 
@@ -62,7 +65,9 @@ function Page() {
           <div className="flex-grow h-px bg-gray-300"></div>
         </div>
       </div>
-      <CarouselOfertEdu />
+      <ScrollLoadSection delay={3000}>
+        <CarouselOfertEdu />
+      </ScrollLoadSection>
 
       {/* Enlaces de interés */}
       <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
@@ -74,7 +79,9 @@ function Page() {
           <div className="flex-grow h-px bg-gray-300"></div>
         </div>
       </div>
-      <SeccionLigasInte />
+      <ScrollLoadSection delay={3000}>
+        <SeccionLigasInte />
+      </ScrollLoadSection>
 
       {/* Ubicación */}
      <section className="mt-[97px] mb-2 px-4 flex flex-col items-center">
@@ -87,7 +94,9 @@ function Page() {
            <div className="flex-grow h-px bg-gray-300"></div>
          </div>
        </div>
-       <Ubicacion />
+      <ScrollLoadSection delay={3000}>
+        <Ubicacion />
+      </ScrollLoadSection>
      </section>
     </main>
   );
