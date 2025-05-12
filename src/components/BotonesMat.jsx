@@ -10,12 +10,12 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
-const Plazas = ({ datos }) => {
+const BotonesMat = ({ datos }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const handleAlcaldiaClick = (indexSlides) => {
+  const handleMaterialClick = (indexSlides) => {
     setCurrentPage(indexSlides); // Cambia la página actual usando IndexSlides
     //Centrar en los mapas
-    const datosMapa = document.getElementById("datosMapaPlazas");
+    const datosMapa = document.getElementById("datosMapaBotonesMat");
     if (datosMapa) {
       // datosMapa.scrollIntoView({ behavior: "smooth", block: "start" });
       const offset = 115; // Espacio de 115 píxeles arriba del top del div para que no lo cubra el navbar
@@ -84,9 +84,9 @@ const Plazas = ({ datos }) => {
     "text-[#424242]", //28
   ];
 
-  const alcaldias = [
-    { alcaldia: "Estudiante", IndexSlides: 0 },
-    { alcaldia: "Profesor", IndexSlides: 1 }, //v
+  const materiales = [
+    { material: "Estudiante", IndexSlides: 0 },
+    { material: "Profesor", IndexSlides: 1 }, //v
   ];
 
   const ColContent = ({ items }) => {
@@ -139,7 +139,7 @@ const Plazas = ({ datos }) => {
                       />
                     </svg>
                   </div>
-                  {item.alcaldia}
+                  {item.material}
                 </div>
               </div>
               <div className="justify-normal text-left mb-[20px] mx-[20px]">
@@ -157,39 +157,34 @@ const Plazas = ({ datos }) => {
     <div className="h-auto">
       {/* botones */}
       <div className="flex flex-wrap">
-        {alcaldias.map((elemento) => (
+        {materiales.map((elemento) => (
           <button
-            key={elemento.IndexSlides}
-            type="button"
-            className="text-[#611232] rounded-lg hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-[white] font-medium px-5 py-2.5 text-center me-2 mb-2  text-lg flex"
-            onClick={() => handleAlcaldiaClick(elemento.IndexSlides)}
+          key={elemento.IndexSlides}
+          type="button"
+          className="text-[#611232] rounded-lg hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-white font-medium px-5 py-2.5 text-center me-2 mb-2 text-lg flex items-center justify-center gap-2"
+          onClick={() => handleMaterialClick(elemento.IndexSlides)}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-5 h-5"
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokelinecap="round"
-                strokelinejoin="round"
-                strokewidth="{2}"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-              <path
-                strokelinecap="round"
-                strokelinejoin="round"
-                strokewidth="{2}"
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-            {elemento.alcaldia}
-          </button>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.5 16.5v1.125c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V16.5M7.5 12l4.5 4.5m0 0l4.5-4.5m-4.5 4.5V3"
+            />
+          </svg>
+          {elemento.material}
+        </button>
         ))}
       </div>
       {/* Contenido principal */}
       <div
-        id="datosMapaPlazas"
+        id="datosMapaBotonesMat"
         className="container mx-auto flex-column h-full bg-white mt-8"
       >
         {datos.map((pageData, index) => (
@@ -225,4 +220,4 @@ const Plazas = ({ datos }) => {
   );
 };
 
-export default Plazas;
+export default BotonesMat;

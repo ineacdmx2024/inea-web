@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import Breadcrumb from "@/components/Breadcrumb";
-import Card from "@/components/EnlacesR_Lateral";
-import CarouselEL from "@/components/CarouselEL";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({

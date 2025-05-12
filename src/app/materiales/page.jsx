@@ -14,8 +14,14 @@ const montserrat = Montserrat({
 
 function Materiales() {
   // const [currentPage, setCurrentPage] = useState(1);
-  const plazasData = [
-    
+  const primariaData = [
+    {
+      titulo: "Lengua y comunicación 1",
+      imagen: "/Modalidad1.jpg", // ruta pública en /public
+      descarga: "/Modalidad1.jpg",
+      vista: "/Modalidad1.jpg", // ruta para previsualización si aplica
+    },
+
   ];
 
   const [opcionSeleccionada, setOpcionSeleccionada] =
@@ -110,7 +116,7 @@ function Materiales() {
                 </div>
                 
                  <div className="w-full flex-col">
-                  <BotonesMat datos={plazasData}></BotonesMat>
+                  <BotonesMat datos={primariaData}></BotonesMat>
                 </div>
                 
               </div>
