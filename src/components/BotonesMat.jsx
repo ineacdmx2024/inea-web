@@ -12,205 +12,221 @@ const montserrat = Montserrat({
 
 const BotonesMat = ({ datos }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [iframeVisible, setIframeVisible] = useState(false);
+  const [iframeUrl, setIframeUrl] = useState("");
+
   const handleMaterialClick = (indexSlides) => {
-    setCurrentPage(indexSlides); // Cambia la página actual usando IndexSlides
-    //Centrar en los mapas
+    setCurrentPage(indexSlides);
     const datosMapa = document.getElementById("datosMapaBotonesMat");
     if (datosMapa) {
-      // datosMapa.scrollIntoView({ behavior: "smooth", block: "start" });
-      const offset = 115; // Espacio de 115 píxeles arriba del top del div para que no lo cubra el navbar
-      const elementPosition =
-        datosMapa.getBoundingClientRect().top + window.scrollY;
+      const offset = 115;
+      const elementPosition = datosMapa.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
   };
-  const colors = [
-    "text-[#880D4F]", //1
-    "text-[#A52714]", //2
-    "text-[#E55100]", //3
-    "text-[#F57C02]", // Cyan 4
-    "text-[#FFD603]", // Bright green 5
-    "text-[#817717]", // Magenta 6
-    "text-[#548B2F]", // Dark Turquoise 7
-    "text-[#0A7138]", // Medium Spring Green  8
-    "text-[#006064]", // Bright pink 9
-    "text-[#00579B]", // Orange 10
-    "text-[#1A237E]", // Indigo 11
-    "text-[#673AB7]", // Gold 12
-    "text-[#4E342E]", // Orange Red 13
-    "text-[#C2185B]", // Blue Violet 14
-    "text-[#FF5252]", // Deep Pink 15
-    //"text-[#F57C02]", // Green Yellow 16
-    //"text-[#FBC02D]", // Tomato 17
-    //"text-[#FFEA00]", // Peach Puff 18
-    //"text-[#AFB42C]", // Dark Orange 19
-    "text-[#7CB342]", // Chartreuse 20
-    "text-[#0097A6]", // Crimson 21
-    //"text-[#0F9D58]",//22
-    //"text-[#0097A7]",//23
-    "text-[#0288D1]", //24
-    "text-[#3949AB]", //25
-    "text-[#9C27B0]", //26
-    "text-[#795548]", //27
-    "text-[#BDBDBD]", //28
-    "text-[#757575]", //29
-    "text-[#424242]", //30
-    "text-[#000000]", //31
-  ];
-
-  // Array de colores
-  const color = [
-    "text-[#880D4F]", //1
-    "text-[#F57C02]", //4
-    "text-[#FFD603]", //5
-    "text-[#548B2F]", //7
-    "text-[#00579B]", //10
-    "text-[#673AB7]", //12
-    "text-[#C2185B]", //14
-    "text-[#FF5252]", //15
-    "text-[#7CB342]", // Chartreuse 20
-    "text-[#0097A6]", // Crimson 21
-    "text-[#0F9D58]", //22
-    "text-[#0097A7]", //23
-    "text-[#0288D1]", //24
-    "text-[#3949AB]", //25
-    "text-[#9C27B0]", //26
-    "text-[#795548]", //27
-    "text-[#424242]", //28
-  ];
 
   const materiales = [
     { material: "Estudiante", IndexSlides: 0 },
-    { material: "Profesor", IndexSlides: 1 }, //v
+    { material: "Profesor", IndexSlides: 1 },
   ];
 
   const ColContent = ({ items }) => {
-    if (!items) return null;
+    const scrollRef = React.useRef(null);
+    const [activeIndex, setActiveIndex] = React.useState(0);
+    const [isMobile, setIsMobile] = React.useState(false);
+    const touchStartX = React.useRef(0);
+    const touchEndX = React.useRef(0);
 
-    const columns =
-      items.length > 10
-        ? "md:grid-cols-2  md:text-lg"
-        : "md:grid-cols-2  md:text-lg";
+    React.useEffect(() => {
+      const checkIsMobile = () => setIsMobile(window.innerWidth < 768);
+      checkIsMobile();
+      window.addEventListener("resize", checkIsMobile);
+      return () => window.removeEventListener("resize", checkIsMobile);
+    }, []);
 
-    return (
-      <div
-        className={`grid grid-cols-1 ${columns} text-xl flex flex-col justify-center`}
-        style={{ alignItems: "baseline" }}
-      >
-        {items.map((item, index) => {
-          // Determina el paso dinámicamente
-          const arreglo = items.length < 10 ? color : colors;
-          return (
+    if (!items || items.length === 0) return null;
+    const esFormatoRecurso = items[0]?.portada && items[0]?.linkDescarga;
+
+    const scrollToCard = (index) => {
+      const container = scrollRef.current;
+      if (!container) return;
+      const cardWidth = container.children[1]?.offsetWidth || 0;
+      container.scrollTo({ left: index * cardWidth, behavior: "smooth" });
+      setActiveIndex(index);
+    };
+
+    const handleTouchStart = (e) => {
+      touchStartX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchMove = (e) => {
+      touchEndX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+      const diff = touchStartX.current - touchEndX.current;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0 && activeIndex < items.length - 1) {
+          scrollToCard(activeIndex + 1);
+        } else if (diff < 0 && activeIndex > 0) {
+          scrollToCard(activeIndex - 1);
+        }
+      }
+    };
+
+    if (esFormatoRecurso) {
+      return (
+        <div className="w-full">
+          <div className="relative w-full overflow-hidden">
             <div
-              key={index}
-              className={`${montserrat.className}  text-[#333334] mb-4  text-start leading-none justify-start cursor-pointer`}
-              onClick={() => window.open(item.url, "_blank")}
+              ref={scrollRef}
+              onTouchStart={isMobile ? handleTouchStart : undefined}
+              onTouchMove={isMobile ? handleTouchMove : undefined}
+              onTouchEnd={isMobile ? handleTouchEnd : undefined}
+              className={`${isMobile ? "flex overflow-x-auto snap-x snap-mandatory scroll-smooth space-x-20" : "md:grid md:grid-cols-3 gap-6"}`}
             >
-              {
-                //step} {arreglo}
-              }
-              <div className="flex mt-[20px] mb-1 mx-[20px] justify-normal">
-                {/* <div className="flex m-[0%] uppercase justify-normal text-left"> */}
-                 <div className="flex m-[0%]  justify-normal text-left"> 
-                  <div className="flex h-auto w-auto mr-1">
-                    <svg
-                      className={`h-6 w-6 ml-1 ${
-                        arreglo[(index * 1) % arreglo.length]
-                      }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
+              {isMobile && <div className="shrink-0 w-[5%]" />}
+              {items.map((item, index) => (
+                <div
+                  key={index}
+                  className={`${isMobile ? "w-[70%] flex-shrink-0 snap-center" : "md:min-w-0"} bg-white rounded-xl shadow-md p-2 flex flex-col items-center h-auto max-w-[260px]`}
+                >
+                  <img src={item.portada} alt={item.titulo} className="w-full h-auto object-cover rounded" />
+                  <p className="mt-2 text-center text-sm font-semibold">{item.titulo}</p>
+                  <div className="flex justify-between gap-2 mt-2">
+                    <a
+                      href={item.linkDescarga}
+                      download
+                      className="p-2 rounded-lg border border-gray-400 hover:bg-[#611232] hover:text-white transition-colors"
+                      title="Descargar"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 16.5v1.125c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V16.5M7.5 12l4.5 4.5m0 0l4.5-4.5m-4.5 4.5V3" />
+                      </svg>
+                    </a>
+                    <button
+                      onClick={() => {
+                        setIframeUrl(item.linkVista || "https://archive.org/embed/manualzilla-id-6854751");
+                        setIframeVisible(true);
+                      }}
+                      className="p-2 rounded-lg border border-gray-400 hover:bg-[#611232] hover:text-white transition-colors"
+                      title="Ver en línea"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.574 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.574-3.007-9.963-7.178z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </button>
                   </div>
-                  {item.material}
                 </div>
+              ))}
+              {isMobile && <div className="shrink-0 w-[5%]" />}
+            </div>
+
+            {isMobile && (
+              <>
+                <button
+                  onClick={() => scrollToCard(Math.max(activeIndex - 1, 0))}
+                  className="absolute top-1/2 left-2 -translate-y-1/2 p-2 bg-[#611232] text-white rounded-full disabled:opacity-30 z-10"
+                  disabled={activeIndex === 0}
+                >
+                  ◀
+                </button>
+                <button
+                  onClick={() => scrollToCard(Math.min(activeIndex + 1, items.length - 1))}
+                  className="absolute top-1/2 right-2 -translate-y-1/2 p-2 bg-[#611232] text-white rounded-full disabled:opacity-30 z-10"
+                  disabled={activeIndex === items.length - 1}
+                >
+                  ▶
+                </button>
+              </>
+            )}
+
+            {isMobile && (
+              <div className="flex justify-center mt-4 gap-2">
+                {items.map((_, idx) => (
+                  <div
+                    key={idx}
+                    className={`h-2 w-2 rounded-full ${idx === activeIndex ? "bg-[#611232]" : "bg-gray-300"}`}
+                  ></div>
+                ))}
               </div>
-              <div className="justify-normal text-left mb-[20px] mx-[20px]">
-                {item.dir && <p>{item.dir}</p>}
-                {item.atel && <p>Tel: {item.atel}</p>}
+            )}
+          </div>
+
+          {iframeVisible && (
+            <div
+              className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 z-50 flex items-center justify-center"
+              onClick={() => setIframeVisible(false)}
+            >
+              <div
+                className="bg-white rounded-lg p-4 w-[75%] md:w-[65%] h-[70%] overflow-hidden relative"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="absolute top-2 right-2 text-white bg-[#611232] rounded-full p-2 z-50"
+                  onClick={() => setIframeVisible(false)}
+                >
+                  ✕
+                </button>
+                <iframe
+                  src={iframeUrl}
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
               </div>
             </div>
-          );
-        })}
-      </div>
-    );
+          )}
+        </div>
+      );
+    }
+
+    return null;
   };
 
   return (
-    <div className="h-auto">
-      {/* botones */}
+    <div className="w-full px-4 md:px-10 max-w-screen-xl mx-auto">
       <div className="flex flex-wrap">
         {materiales.map((elemento) => (
           <button
-          key={elemento.IndexSlides}
-          type="button"
-          className="text-[#611232] rounded-lg hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-white font-medium px-5 py-2.5 text-center me-2 mb-2 text-lg flex items-center justify-center gap-2"
-          onClick={() => handleMaterialClick(elemento.IndexSlides)}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-5 h-5"
+            key={elemento.IndexSlides}
+            type="button"
+            className="text-[#611232] rounded-lg hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-white font-medium px-5 py-2.5 text-center me-2 mb-2 text-lg flex items-center justify-center gap-2"
+            onClick={() => handleMaterialClick(elemento.IndexSlides)}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 16.5v1.125c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V16.5M7.5 12l4.5 4.5m0 0l4.5-4.5m-4.5 4.5V3"
-            />
-          </svg>
-          {elemento.material}
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4.5 16.5v1.125c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V16.5M7.5 12l4.5 4.5m0 0l4.5-4.5m-4.5 4.5V3"
+              />
+            </svg>
+            {elemento.material}
+          </button>
         ))}
       </div>
-      {/* Contenido principal */}
-      <div
-        id="datosMapaBotonesMat"
-        className="container mx-auto flex-column h-full bg-white mt-8"
-      >
+      <div id="datosMapaBotonesMat" className="w-full flex flex-col h-full bg-white mt-8">
         {datos.map((pageData, index) => (
           <div
             key={index}
-            className={`mb-5 border border-slate-300 rounded-lg  ${
-              index === currentPage ? "visible" : "hidden"
-            }`}
+            className={`w-full mb-5 border border-slate-300 rounded-lg ${index === currentPage ? "visible" : "hidden"}`}
           >
-            {/* Arriba */}
-            <div
-              className={`flex flex-col rounded-t-lg justify-center items-center p-5 bg-[#611232] text-white max-h-max ${
-                index === currentPage ? "translate-x-0" : "translate-x-full"
-              } transition duration-500`}
-            >
-              <h1 className="mb-3 uppercase text-2xl text-center">
-                {pageData.title}
-              </h1>
-              <p className="w-[100%]">{pageData.map}</p>
+            <div className="flex flex-col rounded-t-lg justify-center items-center p-5 bg-[#611232] text-white max-h-max">
+              <h1 className="mb-3 uppercase text-2xl text-center">{pageData.title}</h1>
+              <p className="w-full">{pageData.map}</p>
             </div>
-            {/* Abajo */}
-            <div
-              className={`flex flex-col rounded-b-lg justify-center items-center bg-[#f6f6f6] p-3 ${
-                index === currentPage ? "translate-x-0" : "-translate-x-full"
-              } transition duration-500`}
-            >
+            <div className="flex flex-col rounded-b-lg justify-center items-center bg-[#f6f6f6] p-3">
               <ColContent items={pageData.items} />
             </div>
           </div>
