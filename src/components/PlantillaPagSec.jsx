@@ -18,7 +18,9 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
         
         {/* Breadcrumb ajustado */}
         <div className="col-span-12 md:col-start-1 md:col-span-8 mb-2 -mt-2">
-          <Breadcrumb />
+          <div className="!text-[18px]"> {/* Forzar el tamaño del texto */}
+            <Breadcrumb />
+          </div>
         </div>
 
         <div className="col-span-12 md:col-span-8 -mt-4"> {/* Ajuste del margen superior */}
@@ -37,7 +39,7 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
 
         {/* Enlaces laterales */}
         <div className="hidden md:block md:col-span-4 self-start">
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-[2rem] ml-[2rem]">
             {Enlaces.map((enlace) => (
               <Card
                 key={enlace.title}

@@ -272,7 +272,7 @@ const Navbar = () => {
                       <Link
                         href="#"
                         onClick={toggleOE}
-                        className="hover:text-[#CBB486] p-2 flex items-center justify-between w-full cursor-pointer"
+                        className="whitespace-nowrap hover:text-[#CBB486] p-2 flex items-center justify-between w-full cursor-pointer"
                       >
                         Oferta educativa
                         <svg
@@ -440,7 +440,7 @@ const Navbar = () => {
                         href="#"
                         // onClick={() => setisClickCE(!isClickCE)}
                         onClick={toggleCE}
-                        className="hover:text-[#CBB486] p-2 flex items-center justify-between w-full cursor-pointer"
+                        className="whitespace-nowrap hover:text-[#CBB486] p-2 flex items-center justify-between w-full cursor-pointer"
                       >
                         Control escolar
                         <svg

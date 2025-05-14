@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import Breadcrumb from "@/components/Breadcrumb";
-import Card from "@/components/EnlacesR_Lateral";
-import CarouselEL from "@/components/CarouselEL";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -24,7 +22,7 @@ function PagSec({Titulo, Subtitulo, children, mostrarCarrusel = true }) {
         </div>
 
         {/* Contenido principal (alineado con la derecha) */}
-        <div className="col-span-12 md:col-span-8">
+        <div className={`col-span-12 ${mostrarCarrusel ? 'md:col-span-8' : 'md:col-span-12'}`}>
           {Titulo && (
             <h1 className={`${montserrat.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight`}>
               {Titulo}
