@@ -108,6 +108,23 @@ async function Page({ params }) {
   // Modificación en renderContenido
   const renderContenido = (contenido) => {
     return contenido.map((item, index) => {
+      // Detectar si es un párrafo que contiene un iframe (embed de YouTube u otro servicio)
+      if (item.type === "paragraph" && 
+          item.children && 
+          item.children.length === 1 && 
+          item.children[0].text && 
+          item.children[0].text.includes("<iframe")) {
+        // Es un código de embed dentro de un párrafo
+        return (
+          <div key={index} className="my-6 aspect-video w-full max-w-4xl mx-auto">
+            <div 
+              className="embed-container w-full h-full" 
+              dangerouslySetInnerHTML={{ __html: item.children[0].text }}
+            />
+          </div>
+        );
+      }
+      
       switch (item.type) {
         case "heading":
           return React.createElement(
@@ -194,6 +211,16 @@ async function Page({ params }) {
                 </div>
               );
           
+        case "embed":
+          return (
+            <div key={index} className="my-6 aspect-video w-full max-w-4xl mx-auto">
+              <div 
+                className="embed-container w-full h-full" 
+                dangerouslySetInnerHTML={{ __html: item.embed.html }}
+              />
+            </div>
+          );
+
         case "list":
           return (
             <ol
