@@ -49,7 +49,8 @@ const BotonesMat = ({ datos }) => {
       const container = scrollRef.current;
       if (!container) return;
       const cardWidth = container.children[1]?.offsetWidth || 0;
-      container.scrollTo({ left: index * cardWidth, behavior: "smooth" });
+      const spacing = parseInt(window.getComputedStyle(container).gap || 0);
+      container.scrollTo({ left: index * (cardWidth + spacing), behavior: "smooth" });
       setActiveIndex(index);
     };
 
@@ -81,13 +82,26 @@ const BotonesMat = ({ datos }) => {
               onTouchStart={isMobile ? handleTouchStart : undefined}
               onTouchMove={isMobile ? handleTouchMove : undefined}
               onTouchEnd={isMobile ? handleTouchEnd : undefined}
-              className={`${isMobile ? "flex overflow-x-auto snap-x snap-mandatory scroll-smooth space-x-20" : "md:grid md:grid-cols-3 gap-6"}`}
+              onScroll={() => {
+                if (!scrollRef.current) return;
+                const cardWidth = scrollRef.current.children[1]?.offsetWidth || 1;
+                const spacing = parseInt(window.getComputedStyle(scrollRef.current).gap || 0);
+                const index = Math.round(scrollRef.current.scrollLeft / (cardWidth + spacing));
+                setActiveIndex(index);
+              }}
+              className={`${
+                isMobile
+                  ? "flex overflow-x-scroll snap-x snap-mandatory scroll-smooth gap-6 px-4"
+                  : "md:grid md:grid-cols-3 gap-6"
+              }`}
             >
               {isMobile && <div className="shrink-0 w-[5%]" />}
               {items.map((item, index) => (
                 <div
                   key={index}
-                  className={`${isMobile ? "w-[70%] flex-shrink-0 snap-center" : "md:min-w-0"} bg-white rounded-xl shadow-md p-2 flex flex-col items-center h-auto max-w-[260px]`}
+                  className={`${
+                    isMobile ? "w-[70%] flex-shrink-0 snap-center" : "md:min-w-0"
+                  } bg-white rounded-xl shadow-md p-2 flex flex-col items-center h-auto max-w-[260px]`}
                 >
                   <img src={item.portada} alt={item.titulo} className="w-full h-auto object-cover rounded" />
                   <p className="mt-2 text-center text-sm font-semibold">{item.titulo}</p>
