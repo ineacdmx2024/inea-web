@@ -146,29 +146,59 @@ function Te_Contactamos() {
   const [captcha, setCaptcha] = React.useState("");
   const [enlaces, setEnlaces] = useState([]);
 
-  useEffect(() => {
-    const fetchEnlaces = async () => {
-      try {
-        const res = await fetch("https://inea-web-backend-cg20.onrender.com/api/i-enlaces?filters[Fijo][$eq]=true&populate=*");
-        const data = await res.json();
-  
-        const enlacesData = data.data.map((item) => ({
-          title: item.attributes.Titulo,
-          imageSrc: item.attributes.Imagen?.data?.attributes?.formats?.large?.url || "/placeholder.svg",
-          buttonText: "Ir al sitio",
-          link: `/home-enlaces-de-interes/${item.attributes.slug}`,
-        }));
-  
-        setEnlaces(enlacesData);
-      } catch (error) {
-        console.error("Error al cargar los enlaces:", error);
+useEffect(() => {
+  const fetchEnlaces = async () => {
+    try {
+      const resPineados = await fetch(
+        `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=*`,
+        {
+          cache: "no-store",
+          headers: {
+            "Cache-Control": "no-cache",
+          },
+        }
+      );
+      const { data: enlacesPineados } = await resPineados.json();
+
+      if (enlacesPineados.length < 3) {
+        const resNoPineados = await fetch(
+          `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=*&sort[0]=Fecha:desc`,
+          {
+            cache: "no-store",
+            headers: {
+              "Cache-Control": "no-cache",
+            },
+          }
+        );
+        const { data: enlacesNoPineados } = await resNoPineados.json();
+
+        const completados = [
+          ...enlacesPineados,
+          ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
+        ];
+        setEnlaces(formatearEnlaces(completados));
+      } else {
+        setEnlaces(formatearEnlaces(enlacesPineados));
       }
-    };
-  
-    fetchEnlaces();
-  }, []);
+    } catch (error) {
+      console.error("Error al obtener los enlaces:", error);
+    }
+  };
 
+  const formatearEnlaces = (items) =>
+    items.map((item) => ({
+      title: item.attributes.Titulo,
+      imageSrc: item.attributes.Imagen?.data?.[0]?.attributes?.url || "/placeholder.svg",
+      buttonText: "Ir al sitio",
+      link: item.attributes.URL_Externo
+        ? item.attributes.URL_Externo
+        : `/enlaces-de-interes/${item.attributes.slug}`,
+    }));
 
+  fetchEnlaces();
+}, []);
+
+       
 
   const [formData, setFormData] = React.useState({
     to: '',//correo
