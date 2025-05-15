@@ -21,7 +21,7 @@ const Breadcrumb = () => {
   };
 
   return (
-    <nav className="relative z-10 text-gray-700 text-[22px] md:text-[22px] mt-10 font-medium">
+    <nav className="relative z-10 text-gray-700 text-[18px] md:text-[px] mt-10 font-medium">
       <ol className="flex flex-row flex-wrap items-center gap-x-2 gap-y-1">
         <li className="flex items-center">
           <Link href="/" className="flex items-center text-gray-500 hover:underline">
