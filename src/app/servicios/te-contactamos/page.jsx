@@ -144,13 +144,42 @@ function Te_Contactamos() {
 
   const [datos, setDatos] = useState([]);
   const [captcha, setCaptcha] = React.useState("");
-  const [enlaces, setEnlaces] = useState([]);
+  const [cards, setCards] = useState([]);
 
-useEffect(() => {
-  const fetchEnlaces = async () => {
+  // Cargar datos de pre-registros
+  const fetchData = async () => {
     try {
-      const resPineados = await fetch(
-        `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=*`,
+      const res = await fetch(
+        `https://inea-web-backend-cg20.onrender.com/api/correo-pre-registros?populate=%2A`
+      );
+
+      if (!res.ok) {
+        throw new Error("Algo salió mal al obtener los datos");
+      }
+
+      const { data } = await res.json();
+      setDatos(data);
+    } catch (error) {
+      console.error("Error al obtener los datos:", error);
+    }
+  };
+
+  // Cargar enlaces laterales
+  const loadEnlaces = async () => {
+    const resPineados = await fetch(
+      "https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A",
+      {
+        cache: "no-store",
+        headers: {
+          "Cache-Control": "no-cache",
+        },
+      }
+    );
+    const { data: enlacesPineados } = await resPineados.json();
+
+    if (enlacesPineados.length < 3) {
+      const resNoPineados = await fetch(
+        "https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc",
         {
           cache: "no-store",
           headers: {
@@ -158,47 +187,33 @@ useEffect(() => {
           },
         }
       );
-      const { data: enlacesPineados } = await resPineados.json();
+      const { data: enlacesNoPineados } = await resNoPineados.json();
 
-      if (enlacesPineados.length < 3) {
-        const resNoPineados = await fetch(
-          `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=*&sort[0]=Fecha:desc`,
-          {
-            cache: "no-store",
-            headers: {
-              "Cache-Control": "no-cache",
-            },
-          }
-        );
-        const { data: enlacesNoPineados } = await resNoPineados.json();
-
-        const completados = [
-          ...enlacesPineados,
-          ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
-        ];
-        setEnlaces(formatearEnlaces(completados));
-      } else {
-        setEnlaces(formatearEnlaces(enlacesPineados));
-      }
-    } catch (error) {
-      console.error("Error al obtener los enlaces:", error);
+      return [
+        ...enlacesPineados,
+        ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
+      ];
     }
+    return enlacesPineados;
   };
 
-  const formatearEnlaces = (items) =>
-    items.map((item) => ({
-      title: item.attributes.Titulo,
-      imageSrc: item.attributes.Imagen?.data?.[0]?.attributes?.url || "/placeholder.svg",
-      buttonText: "Ir al sitio",
-      link: item.attributes.URL_Externo
-        ? item.attributes.URL_Externo
-        : `/enlaces-de-interes/${item.attributes.slug}`,
-    }));
+  // Ejecutar cuando el componente monta
+  useEffect(() => {
+    fetchData();
 
-  fetchEnlaces();
-}, []);
+    loadEnlaces().then((enlaces) => {
+      const noticias = enlaces.map((item) => ({
+        title: item.attributes.Titulo,
+        imageSrc: item.attributes?.Imagen?.data?.[0]?.attributes?.url,
+        buttonText: "Ir al sitio",
+        link: item.attributes.URL_Externo
+          ? item.attributes.URL_Externo
+          : `/enlaces-de-interes/${item.attributes.slug}`,
+      }));
+      setCards(noticias);
+    });
+  }, []);
 
-       
 
   const [formData, setFormData] = React.useState({
     to: '',//correo
@@ -415,7 +430,7 @@ return (
   <div className={`${montserrat.className}  text-[#333334]  text-start `}>
 
     <PagSec
-        Enlaces={enlaces}
+        Enlaces={cards}
         Titulo={"Te contactamos"}
       >
 
