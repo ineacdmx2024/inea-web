@@ -144,72 +144,30 @@ function Te_Contactamos() {
 
   const [datos, setDatos] = useState([]);
   const [captcha, setCaptcha] = React.useState("");
-  const [cards, setCards] = useState([]);
 
-  const fetchData = async () => {
-  try {
-    const res = await fetch(
-      `https://inea-web-backend-cg20.onrender.com/api/correo-pre-registros?populate=%2A`
-    );
-    if (!res.ok) {
-      throw new Error("Algo salió mal al obtener los datos");
-    }
-    const { data } = await res.json();
-    setDatos(data);
-  } catch (error) {
-    console.error("Error al obtener los datos:", error);
-  }
-};
+ 
+  const cards = [
+    {
+      title: "¿Qué modalidad elijo?",
+      imageSrc:
+        "https://imgs.search.brave.com/RAPyqA9Q7HK7hP22bJsUZyXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc",
+      buttonText: "Ir al sitio",
+      link: "/oferta-educativa/que-modalidad-elijo",
+    },
+    {
+      title: "Modalidad presencial",
+      imageSrc: "/Modalidad/programa_regular2.webp",
+      buttonText: "Ir al sitio",
+      link: "/oferta-educativa/presencial",
+    },
+    {
+      title: "Modalidad en linea",
+      imageSrc: "/Modalidad/aprendeINEAenlinea2.webp",
+      buttonText: "Ir al sitio",
+      link: "/oferta-educativa/enlinea",
+    },
+  ];
 
-  // Cargar enlaces laterales
-  const loadEnlaces = async () => {
-    const resPineados = await fetch(
-      "https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A",
-      {
-        cache: "no-store",
-        headers: {
-          "Cache-Control": "no-cache",
-        },
-      }
-    );
-    const { data: enlacesPineados } = await resPineados.json();
-
-    if (enlacesPineados.length < 3) {
-      const resNoPineados = await fetch(
-        "https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc",
-        {
-          cache: "no-store",
-          headers: {
-            "Cache-Control": "no-cache",
-          },
-        }
-      );
-      const { data: enlacesNoPineados } = await resNoPineados.json();
-
-      return [
-        ...enlacesPineados,
-        ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
-      ];
-    }
-    return enlacesPineados;
-  };
-
-  // Ejecutar cuando el componente monta
-  useEffect(() => {
-    fetchData();
-
-    loadEnlaces().then((enlaces) => {
-      const noticias = enlaces.map((item) => ({
-        title: item.attributes.Titulo,
-        imageSrc: item.attributes?.Imagen?.data?.[0]?.attributes?.url,
-        buttonText: "Ir al sitio",
-        link: item.attributes.URL_Externo
-          ? item.attributes.URL_Externo
-          : `/enlaces-de-interes/${item.attributes.slug}`,
-      }));
-      setCards(noticias);
-    });
-  }, []);
 
 
   const [formData, setFormData] = React.useState({
@@ -219,6 +177,38 @@ function Te_Contactamos() {
   });
 
   const {register,handleSubmit,watch, control,formState: { errors }} = useForm();
+
+
+
+
+
+  const fetchData = async  () => {
+    try {
+
+      
+           //const res = await fetch(`https://inea-web-backend.onrender.com/api/correo-pre-registros?populate=%2A`)
+           const res = await fetch(`https://inea-web-backend-cg20.onrender.com/api/correo-pre-registros?populate=%2A`)
+
+        
+
+          if(!res.ok){
+          throw new Error('Something went wrong')
+    }
+     const { data } = await res.json()
+
+      setDatos(data);
+
+
+    } catch (error) {
+      console.error("Error al obtener los datos:", error);
+    }
+  }
+
+
+    // useEffect para llamar a `fetchData` una vez que el componente se monta
+    useEffect(() => {
+      fetchData();
+    }, []);
 
 
 const onSubmit = async(data) =>{
