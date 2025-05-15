@@ -144,29 +144,29 @@ function Te_Contactamos() {
 
   const [datos, setDatos] = useState([]);
   const [captcha, setCaptcha] = React.useState("");
+  const [enlaces, setEnlaces] = useState([]);
 
- 
-  const cards = [
-    {
-      title: "¿Qué modalidad elijo?",
-      imageSrc:
-        "https://imgs.search.brave.com/RAPyqA9Q7HK7hP22bJsUZyXxmMTP1JhhZXpVMjgfr8c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXN0cm9taWEuY29t/L3VuaXZlcnNvL2Zv/dG9zL2xhc2VzdHJl/bGxhcy5qcGc",
-      buttonText: "Ir al sitio",
-      link: "/oferta-educativa/que-modalidad-elijo",
-    },
-    {
-      title: "Modalidad presencial",
-      imageSrc: "/Modalidad/programa_regular2.webp",
-      buttonText: "Ir al sitio",
-      link: "/oferta-educativa/presencial",
-    },
-    {
-      title: "Modalidad en linea",
-      imageSrc: "/Modalidad/aprendeINEAenlinea2.webp",
-      buttonText: "Ir al sitio",
-      link: "/oferta-educativa/enlinea",
-    },
-  ];
+  useEffect(() => {
+    const fetchEnlaces = async () => {
+      try {
+        const res = await fetch("https://inea-web-backend-cg20.onrender.com/api/i-enlaces?filters[Fijo][$eq]=true&populate=*");
+        const data = await res.json();
+  
+        const enlacesData = data.data.map((item) => ({
+          title: item.attributes.Titulo,
+          imageSrc: item.attributes.Imagen?.data?.attributes?.formats?.large?.url || "/placeholder.svg",
+          buttonText: "Ir al sitio",
+          link: `/home-enlaces-de-interes/${item.attributes.slug}`,
+        }));
+  
+        setEnlaces(enlacesData);
+      } catch (error) {
+        console.error("Error al cargar los enlaces:", error);
+      }
+    };
+  
+    fetchEnlaces();
+  }, []);
 
 
 
@@ -385,7 +385,7 @@ return (
   <div className={`${montserrat.className}  text-[#333334]  text-start `}>
 
     <PagSec
-        Enlaces={cards}
+        Enlaces={enlaces}
         Titulo={"Te contactamos"}
       >
 
