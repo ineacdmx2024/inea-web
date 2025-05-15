@@ -146,23 +146,20 @@ function Te_Contactamos() {
   const [captcha, setCaptcha] = React.useState("");
   const [cards, setCards] = useState([]);
 
-  // Cargar datos de pre-registros
   const fetchData = async () => {
-    try {
-      const res = await fetch(
-        `https://inea-web-backend-cg20.onrender.com/api/correo-pre-registros?populate=%2A`
-      );
-
-      if (!res.ok) {
-        throw new Error("Algo salió mal al obtener los datos");
-      }
-
-      const { data } = await res.json();
-      setDatos(data);
-    } catch (error) {
-      console.error("Error al obtener los datos:", error);
+  try {
+    const res = await fetch(
+      `https://inea-web-backend-cg20.onrender.com/api/correo-pre-registros?populate=%2A`
+    );
+    if (!res.ok) {
+      throw new Error("Algo salió mal al obtener los datos");
     }
-  };
+    const { data } = await res.json();
+    setDatos(data);
+  } catch (error) {
+    console.error("Error al obtener los datos:", error);
+  }
+};
 
   // Cargar enlaces laterales
   const loadEnlaces = async () => {
@@ -222,38 +219,6 @@ function Te_Contactamos() {
   });
 
   const {register,handleSubmit,watch, control,formState: { errors }} = useForm();
-
-
-
-
-
-  const fetchData = async  () => {
-    try {
-
-      
-           //const res = await fetch(`https://inea-web-backend.onrender.com/api/correo-pre-registros?populate=%2A`)
-           const res = await fetch(`https://inea-web-backend-cg20.onrender.com/api/correo-pre-registros?populate=%2A`)
-
-        
-
-          if(!res.ok){
-          throw new Error('Something went wrong')
-    }
-     const { data } = await res.json()
-
-      setDatos(data);
-
-
-    } catch (error) {
-      console.error("Error al obtener los datos:", error);
-    }
-  }
-
-
-    // useEffect para llamar a `fetchData` una vez que el componente se monta
-    useEffect(() => {
-      fetchData();
-    }, []);
 
 
 const onSubmit = async(data) =>{
