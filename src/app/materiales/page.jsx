@@ -15,47 +15,47 @@ const montserrat = Montserrat({
 function Materiales() {
   const primariaData = [
     {
-      title: "Estudiante",
+      title: "Educando",
       map: "Materiales para estudiantes",
       items: [
         {
           titulo: "Lengua y comunicación 1",
-          portada: "/Modalidad1.jpg",
-          linkDescarga: "/Modalidad1.jpg",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Lengua_y_comunicacion_1_nqahvr",
+          linkDescarga: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Lengua_y_comunicacion_1_nqahvr",
           linkVista: "https://archive.org/embed/manualzilla-id-6854751",
         },
         {
           titulo: "Lengua y comunicación 2",
-          portada: "/Modalidad1.jpg",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Lengua_y_comunicacion_2_i4pkyt",
           linkDescarga: "/Modalidad1.jpg",
           linkVista: "https://archive.org/embed/manualsonline-id-c0afeec3-9b65-4bfb-99ee-60580a7e2aa3",
         },
         {
-          titulo: "Lengua y comunicación 2",
-          portada: "/Modalidad1.jpg",
+          titulo: "Pensamiento matemático 1",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Pensamiento_matematico_1_mb1p9m",
           linkDescarga: "/Modalidad1.jpg",
           linkVista: "https://archive.org/embed/manualzilla-id-6854751",
         },
         {
-          titulo: "Lengua y comunicación 2",
-          portada: "/Modalidad1.jpg",
+          titulo: "Pensamiento matemático 2",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Pensamiento_matematico_2_mhxqno",
+          linkDescarga: "/Modalidad1.jpg",
+          linkVista: "https://archive.org/embed/manualzilla-id-6854751",
+        },
+        {
+          titulo: "Vida y comunidad 1",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Vida_y_comunidad_1_qv4h72",
           linkDescarga: "/Modalidad1.jpg",
           linkVista: "https://archive.org/embed/manualzilla-id-6854751",
         },
       ],
     },
     {
-      title: "Profesor",
+      title: "Educador",
       map: "Materiales para profesores",
       items: [
         {
           titulo: "Lengua y comunicación 1",
-          portada: "/Modalidad1.jpg",
-          linkDescarga: "/Modalidad1.jpg",
-          linkVista: "https://archive.org/embed/manualzilla-id-6854751",
-        },
-        {
-          titulo: "Lengua y comunicación 2",
           portada: "/Modalidad1.jpg",
           linkDescarga: "/Modalidad1.jpg",
           linkVista: "https://archive.org/embed/manualzilla-id-6854751",
@@ -66,48 +66,66 @@ function Materiales() {
 
   const secundariaData = [
     {
-      title: "Estudiante",
+      title: "Educando",
       map: "Materiales para estudiantes",
       items: [
         {
-          titulo: "Lengua y comunicación 1",
-          portada: "/Modalidad1.jpg",
+          titulo: "Lengua y comunicación 3",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Lengua_y_comunicacion_3_vi632d",
           linkDescarga: "/Modalidad1.jpg",
           linkVista: "https://archive.org/embed/manualzilla-id-6854751",
         },
         {
-          titulo: "Lengua y comunicación 2",
-          portada: "/Modalidad1.jpg",
+          titulo: "Lengua y comunicación 4",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Lengua_y_comunicacion_4_ybeus8",
           linkDescarga: "/Modalidad1.jpg",
           linkVista: "https://archive.org/embed/manualzilla-id-6854751",
         },
         {
-          titulo: "Lengua y comunicación 2",
-          portada: "/Modalidad1.jpg",
+          titulo: "Pensamiento matemático 3",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Pensamiento_matematico_3_vojt00",
           linkDescarga: "/Modalidad1.jpg",
           linkVista: "https://archive.org/embed/manualzilla-id-6854751",
         },
         {
-          titulo: "Lengua y comunicación 2",
-          portada: "/Modalidad1.jpg",
+          titulo: "Pensamiento matemático 4",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Pensamiento_matematico_4_r5s3sv",
+          linkDescarga: "/Modalidad1.jpg",
+          linkVista: "https://archive.org/embed/manualzilla-id-6854751",
+        },
+        {
+          titulo: "Pensamiento matemático 5",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Pensamiento_matematico_5_eu6b9q",
+          linkDescarga: "/Modalidad1.jpg",
+          linkVista: "https://archive.org/embed/manualzilla-id-6854751",
+        },
+        {
+          titulo: "Vida y comunidad 2",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_secundaria_Vida_y_comunidad_2_vkjt86",
+          linkDescarga: "/Modalidad1.jpg",
+          linkVista: "https://archive.org/embed/manualzilla-id-6854751",
+        },
+        {
+          titulo: "Vida y comunidad 3",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_secundaria_Vida_y_comunidad_3_ntplbf",
           linkDescarga: "/Modalidad1.jpg",
           linkVista: "https://archive.org/embed/manualzilla-id-6854751",
         },
       ],
     },
     {
-      title: "Profesor",
+      title: "Educador",
       map: "Materiales para profesores",
       items: [
         {
-          titulo: "Lengua y comunicación 1",
-          portada: "/Modalidad1.jpg",
+          titulo: "Lengua y comunicación 3",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Lengua_y_comunicacion_3_vi632d",
           linkDescarga: "/Modalidad1.jpg",
           linkVista: "https://archive.org/embed/manualzilla-id-6854751",
         },
         {
-          titulo: "Lengua y comunicación 2",
-          portada: "/Modalidad1.jpg",
+          titulo: "Lengua y comunicación 4",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Lengua_y_comunicacion_4_ybeus8",
           linkDescarga: "/Modalidad1.jpg",
           linkVista: "https://archive.org/embed/manualzilla-id-6854751",
         },
@@ -117,48 +135,42 @@ function Materiales() {
 
   const alfabetizacionData = [
     {
-      title: "Estudiante",
+      title: "Educando",
       map: "Materiales para estudiantes",
       items: [
         {
-          titulo: "Lengua y comunicación 1",
-          portada: "/Modalidad1.jpg",
+          titulo: "Cuaderno de Alfabetización",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_NyCM_Cuaderno_de_alfabetizacion_xfbhr4",
           linkDescarga: "/Modalidad1.jpg",
           linkVista: "https://archive.org/embed/manualzilla-id-6854751",
         },
         {
-          titulo: "Lengua y comunicación 2",
-          portada: "/Modalidad1.jpg",
+          titulo: "Libro de Alfabetización",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_NyCM_Libro_cde_alfabetizacion_s1bkfb",
           linkDescarga: "/Modalidad1.jpg",
           linkVista: "https://archive.org/embed/manualzilla-id-6854751",
         },
         {
-          titulo: "Lengua y comunicación 2",
-          portada: "/Modalidad1.jpg",
-          linkDescarga: "/Modalidad1.jpg",
-          linkVista: "https://archive.org/embed/manualzilla-id-6854751",
-        },
-        {
-          titulo: "Lengua y comunicación 2",
-          portada: "/Modalidad1.jpg",
+          titulo: "Revisemos lo aprendido",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Revisemos_lo_aprendido_Cuadernillo_para_el_educando_axevdc",
           linkDescarga: "/Modalidad1.jpg",
           linkVista: "https://archive.org/embed/manualzilla-id-6854751",
         },
       ],
     },
     {
-      title: "Profesor",
+      title: "Alfabetizador",
       map: "Materiales para profesores",
       items: [
         {
-          titulo: "Lengua y comunicación 1",
-          portada: "/Modalidad1.jpg",
+          titulo: "Libro para persona alfabetizadora",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_NyCM_Libro_de_persona_alfabetizadora_qwx32q",
           linkDescarga: "/Modalidad1.jpg",
           linkVista: "https://archive.org/embed/manualzilla-id-6854751",
         },
         {
-          titulo: "Lengua y comunicación 2",
-          portada: "/Modalidad1.jpg",
+          titulo: "Guía de aplicación",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Gu%C3%ADa_de_aplicaci%C3%B3n_Para_el_alfabetizador_beixhe",
           linkDescarga: "/Modalidad1.jpg",
           linkVista: "https://archive.org/embed/manualzilla-id-6854751",
         },

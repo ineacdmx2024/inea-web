@@ -11,7 +11,7 @@ const montserrat = Montserrat({
 });
 
 const BotonesMat = ({ datos }) => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(null);
   const [iframeVisible, setIframeVisible] = useState(false);
   const [iframeUrl, setIframeUrl] = useState("");
 
@@ -26,10 +26,7 @@ const BotonesMat = ({ datos }) => {
     }
   };
 
-  const materiales = [
-    { material: "Estudiante", IndexSlides: 0 },
-    { material: "Profesor", IndexSlides: 1 },
-  ];
+  const materiales = datos.map((item, index) => ({ material: item.title, IndexSlides: index }));
 
   const ColContent = ({ items }) => {
     const scrollRef = React.useRef(null);
