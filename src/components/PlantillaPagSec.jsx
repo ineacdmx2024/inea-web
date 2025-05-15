@@ -39,7 +39,7 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
 
         {/* Enlaces laterales */}
         <div className="hidden md:block md:col-span-4 self-start">
-          <div className="flex flex-col gap-[2rem] ml-[2rem]">
+          <div className="flex flex-col gap-[2rem] ml-[2rem] -mt-4">
             {Enlaces.map((enlace) => (
               <Card
                 key={enlace.title}
