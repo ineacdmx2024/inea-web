@@ -92,7 +92,7 @@ const BotonesMat = ({ datos }) => {
               className={`${
                 isMobile
                   ? "flex overflow-x-scroll snap-x snap-mandatory scroll-smooth gap-6 px-4"
-                  : "md:grid md:grid-cols-3 gap-6"
+                  : "grid grid-cols-4 gap-6"
               }`}
             >
               {isMobile && <div className="shrink-0 w-[5%]" />}
@@ -100,8 +100,8 @@ const BotonesMat = ({ datos }) => {
                 <div
                   key={index}
                   className={`${
-                    isMobile ? "w-[70%] flex-shrink-0 snap-center" : "md:min-w-0"
-                  } bg-white rounded-xl shadow-md p-2 flex flex-col items-center h-auto max-w-[260px]`}
+                    isMobile ? "w-[70%] flex-shrink-0 snap-center" : "w-[260px]"
+                  } bg-white rounded-xl shadow-md p-2 flex flex-col items-center h-auto`}
                 >
                   <img src={item.portada} alt={item.titulo} className="w-full h-auto object-cover rounded" />
                   <p className="mt-2 text-center text-sm font-semibold">{item.titulo}</p>
@@ -231,13 +231,12 @@ const BotonesMat = ({ datos }) => {
         {datos.map((pageData, index) => (
           <div
             key={index}
-            className={`w-full mb-5 border border-slate-300 rounded-lg ${index === currentPage ? "visible" : "hidden"}`}
+            className={`w-full mb-5 ${index === currentPage ? "visible" : "hidden"}`}
           >
-            <div className="flex flex-col rounded-t-lg justify-center items-center p-5 bg-[#611232] text-white max-h-max">
-              <h1 className="mb-3 uppercase text-2xl text-center">{pageData.title}</h1>
-              <p className="w-full">{pageData.map}</p>
+            <div className="text-center font-bold text-xl py-4">
+              {pageData.title}
             </div>
-            <div className="flex flex-col rounded-b-lg justify-center items-center bg-[#f6f6f6] p-3">
+            <div className="flex flex-col justify-center items-center p-3">
               <ColContent items={pageData.items} />
             </div>
           </div>
@@ -248,3 +247,4 @@ const BotonesMat = ({ datos }) => {
 };
 
 export default BotonesMat;
+

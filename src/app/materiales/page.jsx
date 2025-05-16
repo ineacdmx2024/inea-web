@@ -15,35 +15,35 @@ const montserrat = Montserrat({
 function Materiales() {
   const primariaData = [
     {
-      title: "Educando",
+      title: "Estudiante",
       map: "Materiales para estudiantes",
       items: [
         {
-          titulo: "Lengua y comunicación 1",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Lengua_y_comunicacion_1_nqahvr",
           linkDescarga: "https://archive.org/download/lyc-1/LYC1.pdf",
           linkVista: "https://archive.org/embed/lyc-1",
         },
         {
-          titulo: "Lengua y comunicación 2",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Lengua_y_comunicacion_2_i4pkyt",
           linkDescarga: "https://archive.org/download/lyc-2/LYC2.pdf",
           linkVista: "https://archive.org/embed/lyc-2",
         },
         {
-          titulo: "Pensamiento matemático 1",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Pensamiento_matematico_1_mb1p9m",
           linkDescarga: "https://archive.org/download/pm-1_20250421/PM1.pdf",
           linkVista: "https://archive.org/embed/pm-1_20250421",
         },
         {
-          titulo: "Pensamiento matemático 2",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Pensamiento_matematico_2_mhxqno",
           linkDescarga: "https://archive.org/download/pm-2_20250423/PM2.pdf",
           linkVista: "https://archive.org/embed/pm-2_20250423",
         },
         {
-          titulo: "Vida y comunidad 1",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Vida_y_comunidad_1_qv4h72",
           linkDescarga: "https://archive.org/download/vyc-1/VYC1.pdf",
           linkVista: "https://archive.org/embed/vyc-1",
@@ -73,47 +73,47 @@ function Materiales() {
 
   const secundariaData = [
     {
-      title: "Educando",
+      title: "Estudiante",
       map: "Materiales para estudiantes",
       items: [
         {
-          titulo: "Lengua y comunicación 3",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Lengua_y_comunicacion_3_vi632d",
           linkDescarga: "https://archive.org/download/lyc-3/LYC3.pdf",
           linkVista: "https://archive.org/embed/lyc-3",
         },
         {
-          titulo: "Lengua y comunicación 4",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Lengua_y_comunicacion_4_ybeus8",
           linkDescarga: "https://archive.org/download/lyc-4/LYC4.pdf",
           linkVista: "https://archive.org/embed/lyc-4",
         },
         {
-          titulo: "Pensamiento matemático 3",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Pensamiento_matematico_3_vojt00",
           linkDescarga: "https://archive.org/download/pm-3_20250503/PM3.pdf",
           linkVista: "https://archive.org/embed/pm-3_20250503",
         },
         {
-          titulo: "Pensamiento matemático 4",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Pensamiento_matematico_4_r5s3sv",
           linkDescarga: "https://archive.org/download/pm-4_20250503/PM4.pdf",
           linkVista: "https://archive.org/embed/pm-4_20250503",
         },
         {
-          titulo: "Pensamiento matemático 5",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Pensamiento_matematico_5_eu6b9q",
           linkDescarga: "https://archive.org/download/pm-5_20250503/PM5.pdf",
           linkVista: "https://archive.org/embed/pm-5_20250503",
         },
         {
-          titulo: "Vida y comunidad 2",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_secundaria_Vida_y_comunidad_2_vkjt86",
           linkDescarga: "https://archive.org/download/vyc-2/VYC2.pdf",
           linkVista: "https://archive.org/embed/vyc-2",
         },
         {
-          titulo: "Vida y comunidad 3",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_secundaria_Vida_y_comunidad_3_ntplbf",
           linkDescarga: "https://archive.org/download/vyc-3/VYC3.pdf",
           linkVista: "https://archive.org/embed/vyc-3",
@@ -144,23 +144,23 @@ function Materiales() {
 
   const alfabetizacionData = [
     {
-      title: "Educando",
+      title: "Estudiante",
       map: "Materiales para estudiantes",
       items: [
         {
-          titulo: "Cuaderno de Alfabetización",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_NyCM_Cuaderno_de_alfabetizacion_xfbhr4",
           linkDescarga: "https://archive.org/download/2-cuaderno-alfabetizacion-ny-cm-educando/2%20Cuaderno%20Alfabetizaci%C3%B3n%20NyCM_educando.pdf",
           linkVista: "https://archive.org/embed/2-cuaderno-alfabetizacion-ny-cm-educando",
         },
         {
-          titulo: "Libro de Alfabetización",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_NyCM_Libro_cde_alfabetizacion_s1bkfb",
           linkDescarga: "https://archive.org/download/libro-de-alfabetizacion-ny-cm-educando/Libro%20de%20Alfabetizaci%C3%B3n%20NyCM_Educando.pdf",
           linkVista: "https://archive.org/embed/libro-de-alfabetizacion-ny-cm-educando",
         },
         {
-          titulo: "Revisemos lo aprendido",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Revisemos_lo_aprendido_Cuadernillo_para_el_educando_axevdc",
           linkDescarga: "https://archive.org/download/revisemos-lo-aprendido-cuadernillo-para-el-educando/Revisemos%20lo%20aprendido-%20Cuadernillo%20para%20el%20educando.pdf",
           linkVista: "https://archive.org/embed/revisemos-lo-aprendido-cuadernillo-para-el-educando",
@@ -172,13 +172,13 @@ function Materiales() {
       map: "Materiales para profesores",
       items: [
         {
-          titulo: "Libro para persona alfabetizadora",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_NyCM_Libro_de_persona_alfabetizadora_qwx32q",
           linkDescarga: "https://archive.org/download/ny-cm-alfabetizador/NyCM-Alfabetizador.pdf",
           linkVista: "https://archive.org/embed/ny-cm-alfabetizador",
         },
         {
-          titulo: "Guía de aplicación",
+          titulo: "",
           portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Gu%C3%ADa_de_aplicaci%C3%B3n_Para_el_alfabetizador_beixhe",
           linkDescarga: "https://archive.org/download/guia-de-aplicacion-para-el-alfabetizador/Gu%C3%ADa%20de%20aplicaci%C3%B3n%20-Para%20el%20alfabetizador.pdf",
           linkVista: "https://archive.org/embed/guia-de-aplicacion-para-el-alfabetizador",
