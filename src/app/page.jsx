@@ -9,7 +9,7 @@ import ScrollLoadSection from "@/components/ScrollLoadSection";
 
 function Page() {
   return (
-    <main className={`mx-auto bg-white pt-[94px] pb-[100px] w-full overflow-x-hidden`}>
+    <main className="mx-auto bg-white pt-[94px] pb-[100px] w-full overflow-x-hidden">
       {/* <img
           src="/Banner_INEA_CDMX_EducacionMovilnueva.webp"
           alt="BannerMovil"
@@ -21,9 +21,10 @@ function Page() {
           className="w-full h-auto hidden medida3:block"
         /> */}
 
-      {/* <BannerContingencia />  */}
+      {/* <BannerContingencia /> */}
       <CarouselInicio />
 
+      {/* INEA en la Ciudad de México */}
       <div className="my-16 w-full text-center px-4 tablet:px-0">
         <h1 className="text-[24px] font-bold text-[#333334] mb-3 whitespace-normal tablet:text-[33px]">
           INEA en la Ciudad de México
@@ -38,8 +39,8 @@ function Page() {
       </div>
 
       {/* Blog */}
-      <div className="w-full px-4 tablet:px-0 my-20">
-        <div className="max-w-[1142px] mx-auto">
+      <div className="my-20 px-4 tablet:px-0">
+        <div className="max-w-[1130px] mx-auto">
           <h1 className="patria text-2xl font-medium text-[#333334] mb-2 letras:text-3xl">
             Blog
           </h1>
@@ -47,57 +48,59 @@ function Page() {
             <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
             <div className="flex-grow h-px bg-gray-300"></div>
           </div>
-          {/* CarouselBlog dentro del contenedor max-w */}
-          <ScrollLoadSection delay={3000}>
+          <ScrollLoadSection delay={2500}>
             <CarouselBlog />
           </ScrollLoadSection>
         </div>
       </div>
 
-
       {/* Oferta educativa */}
-      <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-        <h1 className="patria text-2xl font-medium text-[#333334] mb-2 letras:text-3xl">
-          Oferta educativa
-        </h1>
-        <div className="flex items-center">
-          <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
-          <div className="flex-grow h-px bg-gray-300"></div>
+      <div className="my-20 px-4 tablet:px-0">
+        <div className="max-w-[1130px] mx-auto">
+          <h1 className="patria text-2xl font-medium text-[#333334] mb-2 letras:text-3xl">
+            Oferta educativa
+          </h1>
+          <div className="flex items-center">
+            <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+            <div className="flex-grow h-px bg-gray-300"></div>
+          </div>
         </div>
+        <ScrollLoadSection delay={2500}>
+          <CarouselOfertEdu />
+        </ScrollLoadSection>
       </div>
-      <ScrollLoadSection delay={3000}>
-        <CarouselOfertEdu />
-      </ScrollLoadSection>
 
       {/* Enlaces de interés */}
-      <div className="my-20 mx-auto w-11/12 medida3:w-4/5 arrow:w-[750px] tablet:w-[1170px]">
-        <h1 className="patria text-2xl font-medium text-[#333334] mb-2 letras:text-3xl">
-          Enlaces de interés
-        </h1>
-        <div className="flex items-center">
-          <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
-          <div className="flex-grow h-px bg-gray-300"></div>
+      <div className="my-20 px-4 tablet:px-0">
+        <div className="max-w-[1130px] mx-auto">
+          <h1 className="patria text-2xl font-medium text-[#333334] mb-2 letras:text-3xl">
+            Enlaces de interés
+          </h1>
+          <div className="flex items-center">
+            <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+            <div className="flex-grow h-px bg-gray-300"></div>
+          </div>
         </div>
+        <ScrollLoadSection delay={2500}>
+          <SeccionLigasInte />
+        </ScrollLoadSection>
       </div>
-      <ScrollLoadSection delay={3000}>
-        <SeccionLigasInte />
-      </ScrollLoadSection>
 
       {/* Ubicación */}
-     <section className="mt-[97px] mb-2 px-4 flex flex-col items-center">
-       <div className="mb-6 max-w-[1170px] w-full text-left">
-         <h1 className="patria text-left text-2xl font-medium text-[#333334] letras:text-3xl">
-           Ubicación
-         </h1>
-         <div className="flex items-center mt-1">
-           <div className="w-9 h-[5px] bg-[#b38e61]"></div>
-           <div className="flex-grow h-px bg-gray-300"></div>
-         </div>
-       </div>
-      <ScrollLoadSection delay={3000}>
-        <Ubicacion />
-      </ScrollLoadSection>
-     </section>
+      <section className="mt-[97px] mb-2 px-4 tablet:px-0">
+        <div className="max-w-[1130px] mx-auto">
+          <h1 className="patria text-left text-2xl font-medium text-[#333334] letras:text-3xl">
+            Ubicación
+          </h1>
+          <div className="flex items-center mt-1">
+            <div className="w-9 h-[5px] bg-[#b38e61]"></div>
+            <div className="flex-grow h-px bg-gray-300"></div>
+          </div>
+        </div>
+        <ScrollLoadSection delay={2500}>
+          <Ubicacion />
+        </ScrollLoadSection>
+      </section>
     </main>
   );
 }
