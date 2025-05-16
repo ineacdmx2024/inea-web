@@ -277,7 +277,7 @@ function SeccionLigasInte() {
       `}</style>
 
 
-      <div className="p-2 pt-0">
+      <div className="p-2 pt-0 mt-12">
         {/* Desktop fixed links */}
         <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex gap-8">
           {fijos.map((fijos, index) => (
