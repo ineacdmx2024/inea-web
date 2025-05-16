@@ -3,7 +3,7 @@ import "./Ubicacion.css";
 
 const Ubicacion = () => {
   return (
-    <div id="UbicacionDivP" className="w-full max-w-[1170px] mx-auto px-4">
+    <div id="UbicacionDivP" className="w-full max-w-[1170px] mx-auto px-6 mt-[1rem]">
       <div className="flex flex-col md:flex-row gap-6 items-start md:items-stretch">
         <div
           id="direccion"
@@ -27,7 +27,7 @@ const Ubicacion = () => {
           </a>
         </div>
 
-        <div className="relative w-full h-[45vh] md:w-1/2">
+        <div className="relative w-full h-[45vh] md:w-1/2 ml-2">
           <iframe
             src="https://www.google.com/maps/d/u/1/embed?mid=11LVXyU_3QKH1JkOXIMVba2bEkN8f_iY&ehbc=2E312F&noprof=1"
             className="w-full h-full border-none rounded-lg"
