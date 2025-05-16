@@ -4,6 +4,7 @@
   font-family: 'Montserrat', sans-serif;
   width: 100%;
   height: auto;
+  margin-top: 1rem;
 }
 
 /* Contenedor de texto */
@@ -32,7 +33,7 @@
 /* Responsivo móvil: espaciado general */
 @media screen and (max-width: 768px) {
   #UbicacionDivP {
-    padding-left: 1rem;
+    padding-left: 0rem;
     padding-right: 1rem;
   }
 }
