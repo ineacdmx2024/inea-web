@@ -1,4 +1,5 @@
 import { Open_Sans, Montserrat } from "next/font/google";
+import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
 import React from "react";
 import Link from 'next/link'
@@ -32,20 +33,55 @@ async function loadPost(slug) {
   return data;
 }
 
+async function loadEnlaces() {
+  const resPineados = await fetch(
+    
+    `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
+      cache: 'no-store',
+      headers: {
+        'Cache-Control': 'no-cache'
+      }
+    }
+  );
+  const { data: enlacesPineados } = await resPineados.json();
+  if (enlacesPineados.length < 3) {
+    const resNoPineados = await fetch(
+      //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`,
+      `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`,
+      {
+        cache: "no-store",
+        headers: {
+          "Cache-Control": "no-cache",
+        },
+      }
+    );
+    const { data: enlacesNoPineados } = await resNoPineados.json();
+
+    const enlacesCompletados = [
+      ...enlacesPineados,
+      ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
+    ];
+    return enlacesCompletados;
+  }
+  return enlacesPineados;
+}
+
 async function Page({ params }) {
   const post = await loadPost(params.noticiasAntiguasId);
+
+  const enlaces = await loadEnlaces();
 
   const contenido = post.data.attributes.Contenido;
 
   const fechaFun = (fechaAPI) => {
     const diasSemana = [
-      "Domingo",
-      "Lunes",
-      "Martes",
+      "domingo",
+      "lunes",
+      "martes",
       "miércoles",
-      "Jueves",
-      "Viernes",
-      "Sábado",
+      "jueves",
+      "viernes",
+      "sábado",
     ];
     const meses = [
       "enero",
@@ -222,32 +258,46 @@ async function Page({ params }) {
       }
     });
   };
+
+  const noticias = enlaces.map((item) => (
+    {
+      title: item.attributes.Titulo,
+      imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
+      buttonText: "Ir al sitio",
+    link: item.attributes.URL_Externo 
+    ? item.attributes.URL_Externo 
+      : `/enlaces-de-interes/${item.attributes.slug}`,
+  }));
   
   return (
     <div>
       <div className="w-full max-w-screen-sm sm:max-w-2xl md:max-w-4xl px-4 mx-auto mb-10"></div>
-      <h1
-        className={`${montserrat.className} text-[#333334] text-[18px] font-light`}
-      >
-        INEA Ciudad de México |{" "}
-        {post.data?.attributes?.Fecha
-          ? fechaFun(post.data?.attributes?.Fecha)
-          : ""}
-      </h1>
-      <div className="flex justify-center my-6">
-        <div className="relative w-full max-w-4xl aspect-[3/2]">
-          <Image
-            src={post.data.attributes?.Imagen?.data?.attributes?.url}
-            alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
-            fill
-            priority
-            className="rounded-lg object-contain"
-          />
-        </div>
-      </div>
-      <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-left">
-        {renderContenido(contenido)}
-      </div>
+      <PagSec
+        Enlaces={noticias}
+        Titulo={post.data?.attributes?.Titulo}
+        Subtitulo={post.data?.attributes?.Subtitulo}
+        >
+        <h1
+          className={`${montserrat.className} text-[#333334] text-[18px] font-light`}
+          >
+          INEA Ciudad de México |{" "}
+          {post.data?.attributes?.Fecha
+            ? fechaFun(post.data?.attributes?.Fecha)
+            : ""}
+        </h1>
+          <div className="flex justify-center my-6">
+            <div className="relative w-full max-w-4xl aspect-[3/2]">
+              <Image
+                src={post.data.attributes?.Imagen?.data?.attributes?.url}
+                alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
+                fill
+                priority
+                className="rounded-lg object-contain"
+                />
+            </div>
+          </div>
+        <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-left">{renderContenido(contenido)}</div>
+      </PagSec>
     </div>
   );
 }
