@@ -40,7 +40,7 @@ function Page() {
 
       {/* Blog */}
       <div className="my-20 px-4 tablet:px-0">
-        <div className="max-w-[1130px] mx-auto">
+        <div className="max-w-[1200px] mx-auto">
           <h1 className="patria text-2xl font-medium text-[#333334] mb-2 letras:text-3xl">
             Blog
           </h1>
@@ -56,7 +56,7 @@ function Page() {
 
       {/* Oferta educativa */}
       <div className="my-20 px-4 tablet:px-0">
-        <div className="max-w-[1130px] mx-auto">
+        <div className="max-w-[1200px] mx-auto">
           <h1 className="patria text-2xl font-medium text-[#333334] mb-2 letras:text-3xl">
             Oferta educativa
           </h1>
@@ -72,7 +72,7 @@ function Page() {
 
       {/* Enlaces de interés */}
       <div className="my-20 px-4 tablet:px-0">
-        <div className="max-w-[1130px] mx-auto">
+        <div className="max-w-[1200px] mx-auto">
           <h1 className="patria text-2xl font-medium text-[#333334] mb-2 letras:text-3xl">
             Enlaces de interés
           </h1>
@@ -88,7 +88,7 @@ function Page() {
 
       {/* Ubicación */}
       <section className="mt-[97px] mb-2 px-4 tablet:px-0">
-        <div className="max-w-[1130px] mx-auto">
+        <div className="max-w-[1200px] mx-auto">
           <h1 className="patria text-left text-2xl font-medium text-[#333334] letras:text-3xl">
             Ubicación
           </h1>
