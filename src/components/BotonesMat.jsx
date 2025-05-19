@@ -243,8 +243,8 @@ const BotonesMat = ({ datos }) => {
             key={index}
             className={`w-full mb-5 ${index === currentPage ? "visible" : "hidden"}`}
           >
-            <div className="text-center font-bold text-xl py-4">
-              {pageData.title}
+            <div className="text-center font-bold text-3xl py-4 text-[#333334] font-patria">
+              Materiales para el {pageData.title}
             </div>
             <div className="flex flex-col items-start p-0">
               <ColContent items={pageData.items} />

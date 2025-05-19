@@ -34,6 +34,7 @@ module.exports = {
         sans: ['"Open Sans"', "sans-serif"],
         serif: ['IBM Plex Serif', ...fontFamily.serif],
         body: ['Montserrat' ],
+        patria: ['"Patria"', 'sans-serif'],
       },
     },
   },
