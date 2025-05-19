@@ -49,8 +49,8 @@ function Materiales() {
           linkVista: "https://archive.org/embed/vyc-1",
         },
         {
-          titulo: "Guía certificar primaría completa",
-          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Vida_y_comunidad_1_qv4h72",
+          titulo: "",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portadas_Gu%C3%ADa_de_estudio_para_certificar_FINAL_slatkv",
           linkDescarga: "https://archive.org/download/guia-certificar-primaria-completa/Gu%C3%ADa%20Certificar%20primaria%20completa.pdf",
           linkVista: "https://archive.org/embed/guia-certificar-primaria-completa",
         },
@@ -119,8 +119,8 @@ function Materiales() {
           linkVista: "https://archive.org/embed/vyc-3",
         },
         {
-          titulo: "Guía certificar secundaría completa",
-          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_secundaria_Vida_y_comunidad_3_ntplbf",
+          titulo: "",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portadas_Gu%C3%ADa_de_estudio_para_certificar_FINAL_1_i9nlle",
           linkDescarga: "https://archive.org/download/guia-certificar-secundaria-completa/Gu%C3%ADa%20certificar%20secundaria%20completa.pdf",
           linkVista: "https://archive.org/embed/guia-certificar-secundaria-completa",
         },
@@ -208,6 +208,7 @@ function Materiales() {
   return (
     <div className={`${montserrat.className} text-[#333334] text-start`}>
       <PagSec Titulo={"Descarga de materiales"} mostrarCarrusel={false}>
+        <div className="w-full">
         <div className="row-span-1">
           <div id="pestañas">
             <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 leading-7">
@@ -293,6 +294,7 @@ function Materiales() {
               </div>
             </div>
           )}
+        </div>
         </div>
       </PagSec>
     </div>

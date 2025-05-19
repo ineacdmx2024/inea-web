@@ -11,7 +11,7 @@ const montserrat = Montserrat({
 });
 
 const BotonesMat = ({ datos }) => {
-  const [currentPage, setCurrentPage] = useState(null);
+  const [currentPage, setCurrentPage] = useState(0);
   const [iframeVisible, setIframeVisible] = useState(false);
   const [iframeUrl, setIframeUrl] = useState("");
 
@@ -92,10 +92,10 @@ const BotonesMat = ({ datos }) => {
               className={`${
                 isMobile
                   ? "flex overflow-x-scroll snap-x snap-mandatory scroll-smooth gap-6 px-4"
-                  : "grid grid-cols-4 gap-6"
+                  : "grid grid-cols-4 gap-4 justify-start px-0"
               }`}
             >
-              {isMobile && <div className="shrink-0 w-[5%]" />}
+              {isMobile && <div className="shrink-0 w-[16px] sm:w-[24px]" />}
               {items.map((item, index) => (
                 <div
                   key={index}
@@ -103,7 +103,17 @@ const BotonesMat = ({ datos }) => {
                     isMobile ? "w-[70%] flex-shrink-0 snap-center" : "w-[260px]"
                   } bg-white rounded-xl shadow-md p-2 flex flex-col items-center h-auto`}
                 >
-                  <img src={item.portada} alt={item.titulo} className="w-full h-auto object-cover rounded" />
+                  <div className="relative w-full transition-transform duration-300 ease-in-out hover:scale-105">
+                  <img src={item.portada} alt={item.titulo} 
+                  className="w-full h-auto object-cover rounded-lg shadow-sm border" 
+                  style={{ borderColor: "#a27d36", borderWidth: "3px", borderStyle: "solid" }}
+                  />
+                  <div className="absolute top-1/2 right-[-10px] -translate-y-1/2 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow-md"
+                  style={{ borderColor: "#a27d36", borderWidth: "3px", borderStyle: "solid" }}
+                  >
+                    PDF
+                  </div>
+                  </div>
                   <p className="mt-2 text-center text-sm font-semibold">{item.titulo}</p>
                   <div className="flex justify-between gap-2 mt-2">
                     <a
@@ -132,7 +142,7 @@ const BotonesMat = ({ datos }) => {
                   </div>
                 </div>
               ))}
-              {isMobile && <div className="shrink-0 w-[5%]" />}
+              {isMobile && <div className="shrink-0 w-[16px] sm:w-[24px]" />}
             </div>
 
             {isMobile && (
@@ -200,7 +210,7 @@ const BotonesMat = ({ datos }) => {
   };
 
   return (
-    <div className="w-full px-4 md:px-10 max-w-screen-xl mx-auto">
+    <div className="w-full max-w-full px-0">
       <div className="flex flex-wrap">
         {materiales.map((elemento) => (
           <button
@@ -236,7 +246,7 @@ const BotonesMat = ({ datos }) => {
             <div className="text-center font-bold text-xl py-4">
               {pageData.title}
             </div>
-            <div className="flex flex-col justify-center items-center p-3">
+            <div className="flex flex-col items-start p-0">
               <ColContent items={pageData.items} />
             </div>
           </div>
