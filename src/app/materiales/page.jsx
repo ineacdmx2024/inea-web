@@ -238,10 +238,12 @@ function Materiales() {
               <div className="mx-auto mb-4 w-full max-w-full ">
                 <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
                   <strong>Aquí puedes descargar tus módulos y materiales</strong>
-                  <p className="pt-4 leading-7 justify-start text-[#333334] text-[18px] text-justify">Esta sección ofrece materiales gratuitos en PDF para fortalecer el proceso de alfabetización: 
-                                            para estudiantes, el libro "Nombrando y Contando al mundo" (lectoescritura y matemáticas aplicadas) 
-                                            y el "Cuadernillo del educando" (práctica gradual); para alfabetizadores, el "Libro de la persona alfabetizadora" 
-                                            (metodologías pedagógicas) y la "Guía de aplicación".</p>
+                  <p className="pt-4 leading-7 justify-start text-[#333334] text-[18px] text-justify">
+  Esta sección ofrece materiales gratuitos en PDF para fortalecer el proceso de alfabetización: 
+  para estudiantes, el libro &quot;Nombrando y Contando al mundo&quot; (lectoescritura y matemáticas aplicadas) 
+  y el &quot;Cuadernillo del educando&quot; (práctica gradual); para alfabetizadores, el &quot;Libro de la persona alfabetizadora&quot; 
+  (metodologías pedagógicas) y la &quot;Guía de aplicación&quot;.
+</p>
                 </div>
               </div>
               <div className="w-full flex-col">
