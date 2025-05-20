@@ -100,7 +100,7 @@ const BotonesMat = ({ datos }) => {
                 <div
                   key={index}
                   className={`${
-                    isMobile ? "w-[70%] flex-shrink-0 snap-center" : "w-[260px]"
+                    isMobile ? "w-[100%] flex-shrink-0 snap-center" : "w-[260px]"
                   } bg-white rounded-xl shadow-md p-2 flex flex-col items-center h-auto`}
                 >
                   <div className="relative w-full transition-transform duration-300 ease-in-out hover:scale-105">
