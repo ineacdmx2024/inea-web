@@ -9,7 +9,7 @@ const linea = {
   description: "",
   paragraphs: [
     "Aprende INEA es una plataforma educativa en línea y gratuita, accesible para cualquier persona. Su objetivo principal es proporcionar una vía flexible y conveniente para que los adultos de 15 años o más completen su educación Primaria o Secundaria y obtengan el certificado correspondiente.",
-    "Una vez registrado, cada estudiante tiene la libertad de estudiar a su ritmo a través de su teléfono o computadora, sin restricciones de tiempo para completar los módulos. Sin embargo, se espera que mantengan una participación activa en la plataforma. El nivel Primaria comprende cinco módulos, mientras Secundaria consta de nueve módulos.",
+    "Una vez registrado, cada estudiante tiene la libertad de estudiar a su ritmo a través de su teléfono o computadora, sin restricciones de tiempo para completar los módulos. Sin embargo, se espera que mantengan una participación activa en la plataforma. El nivel Primaria comprende un propedéutico y cinco módulos. Mientras Secundaria consta de un propedéutico y siete módulos.",
     "El proceso de aprendizaje implica estudiar los materiales digitales, realizar actividades y aprobar una evaluación final por módulo con una calificación mínima. Los estudiantes tienen la oportunidad de mejorar sus calificaciones a través de múltiples intentos en las actividades y evaluaciones.",
   ],
   Boton: [
@@ -102,8 +102,7 @@ function Aprende_Inea() {
       {/* El Breadcrumb ahora solo se muestra dentro del componente PagSec */}
       <PagSec Enlaces={enlacesL}>
         <PagMod info={linea} />
-        <p>El archivo se llama &quot;Guía de estudio&quot;.</p>
-      </PagSec>
+              </PagSec>
     </div>
   );
 }
