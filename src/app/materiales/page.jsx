@@ -238,7 +238,10 @@ function Materiales() {
               <div className="mx-auto mb-4 w-full max-w-full ">
                 <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
                   <strong>Aquí puedes descargar tus módulos y materiales</strong>
-                  <p className="font-light">Enlaces</p>
+                  <p className="pt-4 leading-7 justify-start text-[#333334] text-[18px] text-justify">Esta sección ofrece materiales gratuitos en PDF para fortalecer el proceso de alfabetización: 
+                                            para estudiantes, el libro "Nombrando y Contando al mundo" (lectoescritura y matemáticas aplicadas) 
+                                            y el "Cuadernillo del educando" (práctica gradual); para alfabetizadores, el "Libro de la persona alfabetizadora" 
+                                            (metodologías pedagógicas) y la "Guía de aplicación".</p>
                 </div>
               </div>
               <div className="w-full flex-col">
@@ -252,7 +255,11 @@ function Materiales() {
               <div className="mx-auto mb-4 w-full max-w-full ">
                 <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
                   <strong>Aquí puedes descargar tus módulos y materiales</strong>
-                  <p className="font-light">Enlaces</p>
+                  <p className="pt-4 leading-7 justify-start text-[#333334] text-[18px] text-justify">Los materiales gratuitos en formato PDF descargables incluyen cinco módulos
+                                             para primaria: Lengua y comunicación 1 y 2, que se centran en la expresión oral y escrita, 
+                                             el análisis textual y la diversidad lingüística; Pensamiento matemático 1 y 2, que cubren 
+                                             operaciones básicas, geometría, estadística y la resolución de problemas cotidianos; y Vida 
+                                             y comunidad 1, que combina ciencias sociales y naturales.</p>
                 </div>
               </div>
               <div className="w-full flex-col">
@@ -266,7 +273,11 @@ function Materiales() {
               <div className="mx-auto mb-4 w-full max-w-full ">
                 <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
                   <strong>Aquí puedes descargar tus módulos y materiales</strong>
-                  <p className="font-light">Enlaces</p>
+                  <p className="pt-4 leading-7 justify-start text-[#333334] text-[18px] text-justify">Los materiales gratuitos en PDF para secundaria incluyen: 
+                    Lengua y comunicación 3 y 4 (análisis de textos, diversidad lingüística y convivencia); 
+                    Pensamiento matemático 3, 4 y 5 (números reales, álgebra, estadística y probabilidad aplicada); 
+                    y Vida y comunidad 2 y 3 (diversidad biocultural, historia comunitaria y sociedades democráticas). 
+                    Todos vinculan habilidades comunicativas, matemáticas y valores socioambientales.</p>
                 </div>
               </div>
               <div className="w-full flex-col">
