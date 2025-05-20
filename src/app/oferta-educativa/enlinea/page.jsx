@@ -102,7 +102,7 @@ function Aprende_Inea() {
       {/* El Breadcrumb ahora solo se muestra dentro del componente PagSec */}
       <PagSec Enlaces={enlacesL}>
         <PagMod info={linea} />
-        <p>El archivo se llama "Guía de estudio".</p>
+        <p>El archivo se llama &quot;Guía de estudio&quot;.</p>
       </PagSec>
     </div>
   );
