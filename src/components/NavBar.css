@@ -114,6 +114,7 @@
     max-width: 15rem;
     object-fit: contain;
     display: block;
+    margin-left: -63px;
   }
 }
 
