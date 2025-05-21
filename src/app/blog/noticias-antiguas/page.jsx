@@ -97,7 +97,7 @@ function NoticiasAntiguas({ item }) {
     <main>
       <PagSec Enlaces={[]} mostrarCarrusel={false}> {/* Deshabilitamos el carrusel */}
         <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-4 items-start mt-0"> {/* Ajuste del margen superior */}
-          <div className="col-span-12 md:col-span-8">
+          <div className="col-span-12">
             <h1
               className={`${montserrat.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight gap-8 ml-[-20px] md:ml-0.5`}
             >
@@ -105,7 +105,7 @@ function NoticiasAntiguas({ item }) {
             </h1>
 
             <div className="mb-16 flex flex-col items-start gap-8 ml-[-20px] md:ml-1 md:mr-30"> {/* Ajuste de márgenes izquierdo y derecho */}
-              <div className="w-full grid gap-6 grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"> {/* Ajuste del diseño de las fichas */}
+              <div className="w-full grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"> {/* Ajuste del diseño de las fichas */}
                 {datos ? (
                   datos.map((item, index) => (
                     <div
