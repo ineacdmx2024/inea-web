@@ -49,8 +49,8 @@ function Materiales() {
           linkVista: "https://archive.org/embed/vyc-1",
         },
         {
-          titulo: "Guía certificar primaría completa",
-          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Vida_y_comunidad_1_qv4h72",
+          titulo: "",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portadas_Gu%C3%ADa_de_estudio_para_certificar_FINAL_slatkv",
           linkDescarga: "https://archive.org/download/guia-certificar-primaria-completa/Gu%C3%ADa%20Certificar%20primaria%20completa.pdf",
           linkVista: "https://archive.org/embed/guia-certificar-primaria-completa",
         },
@@ -119,8 +119,8 @@ function Materiales() {
           linkVista: "https://archive.org/embed/vyc-3",
         },
         {
-          titulo: "Guía certificar secundaría completa",
-          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_secundaria_Vida_y_comunidad_3_ntplbf",
+          titulo: "",
+          portada: "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portadas_Gu%C3%ADa_de_estudio_para_certificar_FINAL_1_i9nlle",
           linkDescarga: "https://archive.org/download/guia-certificar-secundaria-completa/Gu%C3%ADa%20certificar%20secundaria%20completa.pdf",
           linkVista: "https://archive.org/embed/guia-certificar-secundaria-completa",
         },
@@ -208,6 +208,7 @@ function Materiales() {
   return (
     <div className={`${montserrat.className} text-[#333334] text-start`}>
       <PagSec Titulo={"Descarga de materiales"} mostrarCarrusel={false}>
+        <div className="w-full">
         <div className="row-span-1">
           <div id="pestañas">
             <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 leading-7">
@@ -237,7 +238,12 @@ function Materiales() {
               <div className="mx-auto mb-4 w-full max-w-full ">
                 <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
                   <strong>Aquí puedes descargar tus módulos y materiales</strong>
-                  <p className="font-light">Enlaces</p>
+                  <p className="pt-4 leading-7 justify-start text-[#333334] text-[18px] text-justify">
+  Esta sección ofrece materiales gratuitos en PDF para fortalecer el proceso de alfabetización: 
+  para estudiantes, el libro &quot;Nombrando y Contando al mundo&quot; (lectoescritura y matemáticas aplicadas) 
+  y el &quot;Cuadernillo del educando&quot; (práctica gradual); para alfabetizadores, el &quot;Libro de la persona alfabetizadora&quot; 
+  (metodologías pedagógicas) y la &quot;Guía de aplicación&quot;.
+</p>
                 </div>
               </div>
               <div className="w-full flex-col">
@@ -251,7 +257,11 @@ function Materiales() {
               <div className="mx-auto mb-4 w-full max-w-full ">
                 <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
                   <strong>Aquí puedes descargar tus módulos y materiales</strong>
-                  <p className="font-light">Enlaces</p>
+                  <p className="pt-4 leading-7 justify-start text-[#333334] text-[18px] text-justify">Los materiales gratuitos en formato PDF descargables incluyen cinco módulos
+                                             para primaria: Lengua y comunicación 1 y 2, que se centran en la expresión oral y escrita, 
+                                             el análisis textual y la diversidad lingüística; Pensamiento matemático 1 y 2, que cubren 
+                                             operaciones básicas, geometría, estadística y la resolución de problemas cotidianos; y Vida 
+                                             y comunidad 1, que combina ciencias sociales y naturales.</p>
                 </div>
               </div>
               <div className="w-full flex-col">
@@ -265,7 +275,11 @@ function Materiales() {
               <div className="mx-auto mb-4 w-full max-w-full ">
                 <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
                   <strong>Aquí puedes descargar tus módulos y materiales</strong>
-                  <p className="font-light">Enlaces</p>
+                  <p className="pt-4 leading-7 justify-start text-[#333334] text-[18px] text-justify">Los materiales gratuitos en PDF para secundaria incluyen: 
+                    Lengua y comunicación 3 y 4 (análisis de textos, diversidad lingüística y convivencia); 
+                    Pensamiento matemático 3, 4 y 5 (números reales, álgebra, estadística y probabilidad aplicada); 
+                    y Vida y comunidad 2 y 3 (diversidad biocultural, historia comunitaria y sociedades democráticas). 
+                    Todos vinculan habilidades comunicativas, matemáticas y valores socioambientales.</p>
                 </div>
               </div>
               <div className="w-full flex-col">
@@ -293,6 +307,7 @@ function Materiales() {
               </div>
             </div>
           )}
+        </div>
         </div>
       </PagSec>
     </div>

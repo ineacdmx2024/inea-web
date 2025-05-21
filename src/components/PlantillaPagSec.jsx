@@ -17,7 +17,7 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
       <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
         
         {/* Breadcrumb ajustado */}
-        <div className="col-span-12 md:col-start-1 md:col-span-8 mb-2 -mt-2">
+        <div className="col-span-12 md:col-start-1 md:col-span-8 mb-4 -mt-2">
           <div className="!text-[18px]"> {/* Forzar el tamaño del texto */}
             <Breadcrumb />
           </div>
