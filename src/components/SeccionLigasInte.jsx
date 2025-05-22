@@ -362,7 +362,7 @@ function SeccionLigasInte() {
         <div className="carrusel desktop-carousel">
           <Slider
             {...settings}
-            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
+            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lx tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[310px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {restantes.map((restantes, index) => (
               <div key={index} className="tablet:h-[450px] pt-4 tablet:pt-0">
