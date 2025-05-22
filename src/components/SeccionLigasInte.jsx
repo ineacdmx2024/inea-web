@@ -319,9 +319,9 @@ function SeccionLigasInte() {
 
         {/* Mobile fixed links carousel*/}
         <div className="carrusel tablet:hidden px-4">
-          <Slider
-          {...settings}
-          className="bg-white border border-slate-300 rounded-lg mx-auto w-full max-w-sm pb-10"
+         <Slider
+            {...settings}
+            className="bg-white border border-slate-300 rounded-lg mx-auto w-full max-w-[300px] letras:max-w-[310px] ofertaEdu:max-w-[400px] pb-10"
           >
             {fijos.map((fijos, index) => (
               <div key={index} className="pt-4 tablet:pt-0">
