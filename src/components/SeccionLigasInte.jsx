@@ -165,84 +165,63 @@ function SeccionLigasInte() {
     nextArrow: <NextArrow />,
   }
 
-  return (
+   return (
     <>
-     <style jsx global>{`
+      <style jsx global>{`
         .custom-dots {
           bottom: -20px;
           display: flex;
           justify-content: center;
           width: 100%;
-          padding: 0;
-          margin: 0;
         }
+
         .custom-dots li {
           margin: 0 4px;
-          display: inline-block;
         }
-        .custom-dots li button {
-          border: none;
-          background: none;
-          padding: 0;
-        }
+
         .custom-dots li button:before {
           font-size: 12px;
           color: #ccc;
           opacity: 1;
-          transition: all 0.3s ease;
         }
+
         .custom-dots li.slick-active button:before {
           color: #611232;
           transform: scale(1.2);
         }
-        
-        /* Estilos solo para desktop que igualan el gap */
+
         @media (min-width: 768px) {
           .desktop-carousel .slick-slide {
-            padding: 0 16px;  /* Mitad del gap-8 (32px) */
+            padding: 0 16px;
           }
-          
+
           .desktop-carousel .slick-list {
-            margin: 0 -16px;  /* Negativo del padding */
+            margin: 0 -16px;
           }
-          
-          /* Aseguramos que la card tiene las mismas dimensiones */
+
           .desktop-carousel .carousel-card {
             height: 450px;
-            display: flex;
-            flex-direction: column;
           }
         }
-        
-        /* Estilos para mobile */
+
         @media (max-width: 767px) {
-            .slick-slider {
-              padding-bottom: 30px;
-            }
-            .custom-dots {
+          .slick-slider {
+            padding-bottom: 30px;
+          }
+
+          .custom-dots {
             bottom: -52px;
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            padding: 0;
-            margin: 0;
           }
         }
-        
+
         .carousel-card {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           align-items: center;
+          border-radius: 1rem !important;
         }
 
-        .button-container {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-        }
-        
-        /* Dimensiones fijas para imágenes */
         .image-container {
           width: 100%;
           max-width: 296px;
@@ -259,8 +238,7 @@ function SeccionLigasInte() {
           object-fit: cover;
           border-radius: 1rem;
         }
-        
-        /* Medidas responsivas para dispositivos móviles */
+
         @media (max-width: 767px) {
           .image-container {
             width: 100%;
