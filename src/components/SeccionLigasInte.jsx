@@ -68,7 +68,8 @@ const NextArrow = (props) => {
 
 function SeccionLigasInte() {
   const [slidesToShow, setSlidesToShow] = useState(3)
-  const router = useRouter()
+  const router = useRouter() // Hook de Next.js para navegación dinámica
+
   const [isSmallScreen, setIsSmallScreen] = useState(false)
 
   const truncateText = (text, maxLength) => {
@@ -85,8 +86,12 @@ function SeccionLigasInte() {
     }
 
     handleResize()
+
     window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
+
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
   }, [])
 
   const [fijos, setFijos] = useState([])
@@ -94,30 +99,32 @@ function SeccionLigasInte() {
 
   useEffect(() => {
     const fetchFijos = async () => {
+      //const res = await fetch("https://inea-web-backend.onrender.com/api/i-enlaces?filters[Fijo][$eq]=true&populate=*")
       const res = await fetch("https://inea-web-backend-cg20.onrender.com/api/i-enlaces?filters[Fijo][$eq]=true&populate=*")
       const data = await res.json()
       const enlacesData = data.data.map((item) => ({
         id: item.id,
         titulo: item.attributes.Titulo,
-        subtitulo: item.attributes.Subtitulo,
-        contenido: item.attributes.Contenido,
+        subtitulo: item.attributes.Subtitulo, // Verifica si 'Subtitulo' existe
+        contenido: item.attributes.Contenido, // Verifica si 'Contenido' existe
         link: item.attributes.Link,
-        slug: item.attributes.slug,
+        slug: item.attributes.slug, // Asegúrate de que 'slug' esté presente
         imagen: item.attributes.Imagen?.data?.attributes?.formats?.large?.url,
       }))
       setFijos(enlacesData)
     }
 
     const fetchEnlaces = async () => {
+      //const res = await fetch("https://inea-web-backend.onrender.com/api/i-enlaces?filters[Fijo][$eq]=false&populate=*")
       const res = await fetch("https://inea-web-backend-cg20.onrender.com/api/i-enlaces?filters[Fijo][$eq]=false&populate=*")
       const data = await res.json()
       const enlacesData2 = data.data.map((item) => ({
         id: item.id,
         titulo: item.attributes.Titulo,
-        subtitulo: item.attributes.Subtitulo,
-        contenido: item.attributes.Contenido,
+        subtitulo: item.attributes.Subtitulo, // Verifica si 'Subtitulo' existe
+        contenido: item.attributes.Contenido, // Verifica si 'Contenido' existe
         link: item.attributes.Link,
-        slug: item.attributes.slug,
+        slug: item.attributes.slug, // Asegúrate de que 'slug' esté presente
         imagen: item.attributes.Imagen?.data?.attributes?.url,
       }))
       setRestantes(enlacesData2)
@@ -128,10 +135,13 @@ function SeccionLigasInte() {
   }, [])
 
   const handleButtonClick = (item) => {
-    if (item?.link) {
-      window.open(item.link, "_blank")
-    } else if (item?.slug) {
+    if (item && item.link) {
+      window.open(item.link, "_blank") // Abre en una nueva pestaña
+    } else if (item && item.slug) {
+      ;<DetalleEnlace slug={item.slug} />
       router.push(`/home-enlaces-de-interes/${item.slug}`)
+
+      console.log(item.slug.toString())
     } else {
       console.log("El objeto 'item' no está bien definido:", item)
     }
@@ -148,7 +158,7 @@ function SeccionLigasInte() {
     dotsClass: "slick-dots custom-dots",
     appendDots: (dots) => (
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <ul style={{ margin: "0", padding: "0", display: "flex", justifyContent: "center" }}>{dots}</ul>
+        <ul style={{ margin: "0", padding: "0", display: "flex", justifyContent: "center", bottom: "-30px" }}> {dots} </ul>
       </div>
     ),
     prevArrow: <PrevArrow />,
@@ -163,80 +173,101 @@ function SeccionLigasInte() {
           display: flex;
           justify-content: center;
           width: 100%;
+          padding: 0;
+          margin: 0;
         }
-
         .custom-dots li {
           margin: 0 4px;
+          display: inline-block;
         }
-
+        .custom-dots li button {
+          border: none;
+          background: none;
+          padding: 0;
+        }
         .custom-dots li button:before {
           font-size: 12px;
           color: #ccc;
           opacity: 1;
+          transition: all 0.3s ease;
         }
-
         .custom-dots li.slick-active button:before {
           color: #611232;
           transform: scale(1.2);
         }
-
+        
+        /* Estilos solo para desktop que igualan el gap */
         @media (min-width: 768px) {
           .desktop-carousel .slick-slide {
-            padding: 0 16px;
+            padding: 0 16px;  /* Mitad del gap-8 (32px) */
           }
-
+          
           .desktop-carousel .slick-list {
-            margin: 0 -16px;
+            margin: 0 -16px;  /* Negativo del padding */
           }
-
+          
+          /* Aseguramos que la card tiene las mismas dimensiones */
           .desktop-carousel .carousel-card {
             height: 450px;
+            display: flex;
+            flex-direction: column;
           }
         }
-
+        
+        /* Estilos para mobile */
         @media (max-width: 767px) {
-          .slick-slider {
-            padding-bottom: 30px;
-          }
-
-          .custom-dots {
+            .slick-slider {
+              padding-bottom: 30px;
+            }
+            .custom-dots {
             bottom: -52px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 0;
+            margin: 0;
           }
         }
-
+        
         .carousel-card {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           align-items: center;
-          border-radius: 1rem !important;
         }
 
+        .button-container {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+        
+        /* Dimensiones fijas para imágenes */
         .image-container {
           width: 100%;
-          max-width: 296px;
-          height: 236.8px;
+          max-width: 296px; /* Ancho fijo de 296px */
+          height: 236.8px; /* Alto fijo de 236.8px */
           position: relative;
           overflow: hidden;
-          border-radius: 1rem;
+          border-radius: 0.5rem;
           margin: 0 auto;
         }
-
+        
         .image-container img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          border-radius: 1rem;
         }
-
+        
+        /* Medidas responsivas para dispositivos móviles */
         @media (max-width: 767px) {
           .image-container {
             width: 100%;
             height: 0;
-            padding-bottom: 80%;
+            padding-bottom: 80%; /* Mantiene proporción similar en móviles */
             max-width: none;
           }
-
+          
           .image-container img {
             position: absolute;
             top: 0;
@@ -245,21 +276,34 @@ function SeccionLigasInte() {
         }
       `}</style>
 
+
       <div className="p-2 pt-0 mt-12">
+        {/* Desktop fixed links */}
         <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex gap-8">
-          {fijos.map((fijo, index) => (
+          {fijos.map((fijos, index) => (
             <div className="w-1/3 cursor-pointer" key={index}>
-              <Link href={`/home-enlaces-de-interes/${fijo.slug}`} target="_self" className="block h-full">
-                <div className="border border-slate-300 shadow-none rounded-[1rem] h-[450px] p-2 tablet:p-8 flex flex-col carousel-card">
+              <Link
+                href={`/home-enlaces-de-interes/${fijos.slug}`}
+                target="_self"
+                className="block h-full"
+              >
+                <div className="border border-slate-300 shadow-none rounded-lg h-[450px] p-2 tablet:p-8 flex flex-col carousel-card">
                   <div className="image-container mb-4">
-                    <img src={fijo.imagen || "/placeholder.svg"} alt={fijo.titulo} />
+                    <img
+                      src={fijos.imagen || "/placeholder.svg"}
+                      alt={fijos.titulo}
+                    />
                   </div>
                   <div className="flex flex-col justify-between flex-grow">
-                    <h3 className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium w-[17ch] break-normal h-[32px]">
-                      {truncateText(fijo.titulo, 37)}
+                    <h3
+                      className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium  w-[17ch] break-normal h-[32px]"
+                    >
+                      {truncateText(fijos.titulo, 37)}
                     </h3>
                     <div className="flex justify-center mt-10 tablet:mt-4">
-                      <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
+                      <button
+                        className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
+                      >
                         Ir al sitio
                       </button>
                     </div>
@@ -270,21 +314,36 @@ function SeccionLigasInte() {
           ))}
         </div>
 
+        {/* Mobile fixed links carousel*/}
         <div className="carrusel tablet:hidden px-4">
-          <Slider {...settings} className="mx-auto w-full max-w-sm pb-10">
-            {fijos.map((fijo, index) => (
+          <Slider
+          {...settings}
+          className="bg-white border border-slate-300 rounded-lg mx-auto w-full max-w-sm pb-10"
+          >
+            {fijos.map((fijos, index) => (
               <div key={index} className="pt-4 tablet:pt-0">
-                <Link href={`/home-enlaces-de-interes/${fijo.slug}`} target="_self" className="block h-full">
-                  <div className="border border-slate-300 shadow-none rounded-[1rem] h-full p-2 tablet:p-8 flex flex-col carousel-card">
+                <Link
+                  href={`/home-enlaces-de-interes/${fijos.slug}`}
+                  target="_self"
+                  className="block h-full"
+                >
+                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 tablet:p-8 flex flex-col carousel-card">
                     <div className="image-container mb-4">
-                      <img src={fijo.imagen || "/placeholder.svg"} alt={fijo.titulo} />
+                      <img
+                        src={fijos.imagen || "/placeholder.svg"}
+                        alt={fijos.titulo}
+                      />
                     </div>
                     <div className="flex flex-col justify-between flex-grow">
-                      <h3 className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium w-[17ch] break-normal h-[32px]">
-                        {truncateText(fijo.titulo, 37)}
+                      <h3
+                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium  w-[17ch] break-normal h-[32px]"
+                      >
+                        {truncateText(fijos.titulo, 37)}
                       </h3>
                       <div className="flex justify-center mt-10 tablet:mt-4">
-                        <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
+                        <button
+                          className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
+                        >
                           Ir al sitio
                         </button>
                       </div>
@@ -296,21 +355,36 @@ function SeccionLigasInte() {
           </Slider>
         </div>
 
+        {/* Remaining links carousel */}
         <div className="carrusel desktop-carousel">
-          <Slider {...settings} className="bg-white border tablet:border-0 border-slate-300 rounded-[1rem] mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0">
-            {restantes.map((restante, index) => (
+          <Slider
+            {...settings}
+            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
+          >
+            {restantes.map((restantes, index) => (
               <div key={index} className="tablet:h-[450px] pt-4 tablet:pt-0">
-                <Link href={`/home-enlaces-de-interes/${restante.slug}`} target="_self" className="block h-full">
-                  <div className="border border-slate-300 shadow-none rounded-[1rem] h-full p-2 tablet:p-8 flex flex-col carousel-card">
+                <Link
+                  href={`/home-enlaces-de-interes/${restantes.slug}`}
+                  target="_self"
+                  className="block h-full"
+                >
+                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 tablet:p-8 flex flex-col carousel-card">
                     <div className="image-container mb-4">
-                      <img src={restante.imagen || "/placeholder.svg"} alt={restante.titulo} />
+                      <img
+                        src={restantes.imagen || "/placeholder.svg"}
+                        alt={restantes.titulo}
+                      />
                     </div>
                     <div className="flex flex-col justify-between flex-grow">
-                      <h3 className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium w-[17ch] break-normal h-[32px]">
-                        {truncateText(restante.titulo, 37)}
+                      <h3
+                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium w-[17ch] break-normal h-[32px]"
+                      >
+                        {truncateText(restantes.titulo, 37)}
                       </h3>
                       <div className="flex justify-center mt-10 tablet:mt-4">
-                        <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
+                        <button
+                          className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
+                        >
                           Ir al sitio
                         </button>
                       </div>
