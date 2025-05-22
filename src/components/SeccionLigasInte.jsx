@@ -278,33 +278,22 @@ function SeccionLigasInte() {
       `}</style>
 
 
-      <div className="p-2 pt-0 mt-12">
-        {/* Desktop fixed links */}
+     <div className="p-2 pt-0 mt-12">
+       {/* Desktop fixed links */}
         <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex gap-8">
-          {fijos.map((fijos, index) => (
+          {fijos.map((fijo, index) => (
             <div className="w-1/3 cursor-pointer" key={index}>
-              <Link
-                href={`/home-enlaces-de-interes/${fijos.slug}`}
-                target="_self"
-                className="block h-full"
-              >
-                <div className="border border-slate-300 shadow-none rounded-2xl h-[450px] p-2 tablet:p-8 flex flex-col carousel-card">
+              <Link href={`/home-enlaces-de-interes/${fijo.slug}`} target="_self" className="block h-full">
+                <div className="border border-slate-300 shadow-none rounded-[1rem] h-[450px] p-2 tablet:p-8 flex flex-col carousel-card">
                   <div className="image-container mb-4">
-                    <img
-                      src={fijos.imagen || "/placeholder.svg"}
-                      alt={fijos.titulo}
-                    />
+                    <img src={fijo.imagen || "/placeholder.svg"} alt={fijo.titulo} />
                   </div>
                   <div className="flex flex-col justify-between flex-grow">
-                    <h3
-                      className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium  w-[17ch] break-normal h-[32px]"
-                    >
-                      {truncateText(fijos.titulo, 37)}
+                    <h3 className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium w-[17ch] break-normal h-[32px]">
+                      {truncateText(fijo.titulo, 37)}
                     </h3>
                     <div className="flex justify-center mt-10 tablet:mt-4">
-                      <button
-                        className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
-                      >
+                      <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
                         Ir al sitio
                       </button>
                     </div>
@@ -317,34 +306,20 @@ function SeccionLigasInte() {
 
         {/* Mobile fixed links carousel*/}
         <div className="carrusel tablet:hidden px-4">
-          <Slider
-          {...settings}
-          className="bg-white border border-slate-300 rounded-lg mx-auto w-full max-w-sm pb-10"
-          >
-            {fijos.map((fijos, index) => (
+          <Slider {...settings} className="bg-white border border-slate-300 rounded-[1rem] mx-auto w-full max-w-sm pb-10">
+            {fijos.map((fijo, index) => (
               <div key={index} className="pt-4 tablet:pt-0">
-                <Link
-                  href={`/home-enlaces-de-interes/${fijos.slug}`}
-                  target="_self"
-                  className="block h-full"
-                >
-                  <div className="border border-slate-300 shadow-none rounded-2xl h-full p-2 tablet:p-8 flex flex-col carousel-card">
+                <Link href={`/home-enlaces-de-interes/${fijo.slug}`} target="_self" className="block h-full">
+                  <div className="border border-slate-300 shadow-none rounded-[1rem] h-full p-2 tablet:p-8 flex flex-col carousel-card">
                     <div className="image-container mb-4">
-                      <img
-                        src={fijos.imagen || "/placeholder.svg"}
-                        alt={fijos.titulo}
-                      />
+                      <img src={fijo.imagen || "/placeholder.svg"} alt={fijo.titulo} />
                     </div>
                     <div className="flex flex-col justify-between flex-grow">
-                      <h3
-                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium  w-[17ch] break-normal h-[32px]"
-                      >
-                        {truncateText(fijos.titulo, 37)}
+                      <h3 className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium w-[17ch] break-normal h-[32px]">
+                        {truncateText(fijo.titulo, 37)}
                       </h3>
                       <div className="flex justify-center mt-10 tablet:mt-4">
-                        <button
-                          className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
-                        >
+                        <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
                           Ir al sitio
                         </button>
                       </div>
@@ -358,34 +333,20 @@ function SeccionLigasInte() {
 
         {/* Remaining links carousel */}
         <div className="carrusel desktop-carousel">
-          <Slider
-            {...settings}
-            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
-          >
-            {restantes.map((restantes, index) => (
+          <Slider {...settings} className="bg-white border tablet:border-0 border-slate-300 rounded-[1rem] mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0">
+            {restantes.map((restante, index) => (
               <div key={index} className="tablet:h-[450px] pt-4 tablet:pt-0">
-                <Link
-                  href={`/home-enlaces-de-interes/${restantes.slug}`}
-                  target="_self"
-                  className="block h-full"
-                >
-                  <div className="border border-slate-300 shadow-none rounded-2xl h-full p-2 tablet:p-8 flex flex-col carousel-card">
+                <Link href={`/home-enlaces-de-interes/${restante.slug}`} target="_self" className="block h-full">
+                  <div className="border border-slate-300 shadow-none rounded-[1rem] h-full p-2 tablet:p-8 flex flex-col carousel-card">
                     <div className="image-container mb-4">
-                      <img
-                        src={restantes.imagen || "/placeholder.svg"}
-                        alt={restantes.titulo}
-                      />
+                      <img src={restante.imagen || "/placeholder.svg"} alt={restante.titulo} />
                     </div>
                     <div className="flex flex-col justify-between flex-grow">
-                      <h3
-                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium w-[17ch] break-normal h-[32px]"
-                      >
-                        {truncateText(restantes.titulo, 37)}
+                      <h3 className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium w-[17ch] break-normal h-[32px]">
+                        {truncateText(restante.titulo, 37)}
                       </h3>
                       <div className="flex justify-center mt-10 tablet:mt-4">
-                        <button
-                          className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
-                        >
+                        <button className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
                           Ir al sitio
                         </button>
                       </div>
