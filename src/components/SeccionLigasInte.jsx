@@ -267,14 +267,12 @@ function SeccionLigasInte() {
             height: 0;
             padding-bottom: 80%;
             max-width: none;
-            border-radius: 1rem;
           }
 
           .image-container img {
             position: absolute;
             top: 0;
             left: 0;
-            border-radius: 1rem;
           }
         }
       `}</style>
