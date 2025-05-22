@@ -206,7 +206,7 @@ function Materiales() {
   };
 
   return (
-    <div className={`${montserrat.className} text-[#333334] text-start`}>
+    <div className={`${montserrat.className} text-[#333334] text-start mt-[-32px] ml-[-32px]`}>
       <PagSec Titulo={"Descarga de materiales"} mostrarCarrusel={false}>
         <div className="w-full">
         <div className="row-span-1">
