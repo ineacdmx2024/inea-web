@@ -245,18 +245,19 @@ function SeccionLigasInte() {
         /* Dimensiones fijas para imágenes */
         .image-container {
           width: 100%;
-          max-width: 296px; /* Ancho fijo de 296px */
-          height: 236.8px; /* Alto fijo de 236.8px */
+          max-width: 296px;
+          height: 236.8px;
           position: relative;
           overflow: hidden;
-          border-radius: 0.5rem;
+          border-radius: 1rem;
           margin: 0 auto;
         }
-        
+
         .image-container img {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          border-radius: 1rem;
         }
         
         /* Medidas responsivas para dispositivos móviles */
@@ -264,14 +265,16 @@ function SeccionLigasInte() {
           .image-container {
             width: 100%;
             height: 0;
-            padding-bottom: 80%; /* Mantiene proporción similar en móviles */
+            padding-bottom: 80%;
             max-width: none;
+            border-radius: 1rem;
           }
-          
+
           .image-container img {
             position: absolute;
             top: 0;
             left: 0;
+            border-radius: 1rem;
           }
         }
       `}</style>
@@ -287,7 +290,7 @@ function SeccionLigasInte() {
                 target="_self"
                 className="block h-full"
               >
-                <div className="border border-slate-300 shadow-none rounded-lg h-[450px] p-2 tablet:p-8 flex flex-col carousel-card">
+                <div className="border border-slate-300 shadow-none rounded-2xl h-[450px] p-2 tablet:p-8 flex flex-col carousel-card">
                   <div className="image-container mb-4">
                     <img
                       src={fijos.imagen || "/placeholder.svg"}
@@ -315,10 +318,10 @@ function SeccionLigasInte() {
         </div>
 
         {/* Mobile fixed links carousel*/}
-        <div className="carrusel tablet:hidden">
+        <div className="carrusel tablet:hidden px-4">
           <Slider
-            {...settings}
-            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
+          {...settings}
+          className="bg-white border border-slate-300 rounded-lg mx-auto w-full max-w-sm pb-10"
           >
             {fijos.map((fijos, index) => (
               <div key={index} className="pt-4 tablet:pt-0">
@@ -327,7 +330,7 @@ function SeccionLigasInte() {
                   target="_self"
                   className="block h-full"
                 >
-                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 tablet:p-8 flex flex-col carousel-card">
+                  <div className="border border-slate-300 shadow-none rounded-2xl h-full p-2 tablet:p-8 flex flex-col carousel-card">
                     <div className="image-container mb-4">
                       <img
                         src={fijos.imagen || "/placeholder.svg"}
@@ -368,7 +371,7 @@ function SeccionLigasInte() {
                   target="_self"
                   className="block h-full"
                 >
-                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 tablet:p-8 flex flex-col carousel-card">
+                  <div className="border border-slate-300 shadow-none rounded-2xl h-full p-2 tablet:p-8 flex flex-col carousel-card">
                     <div className="image-container mb-4">
                       <img
                         src={restantes.imagen || "/placeholder.svg"}
