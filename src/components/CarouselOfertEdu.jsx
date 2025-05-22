@@ -235,14 +235,14 @@ function CarouselOfertEdu() {
           height: 236.8px; /* Alto fijo de 236.8px */
           position: relative;
           overflow: hidden;
-          border-radius: 0.75rem;
+          border-radius: 1rem;
           margin: 0 auto;
         }
         
         .image-container img {
           width: 100%;
           height: 100%;
-          border-radius: 0.75rem;
+          border-radius: 1rem;
           object-fit: cover;
         }
         
@@ -253,12 +253,14 @@ function CarouselOfertEdu() {
             height: 0;
             padding-bottom: 80%; /* Mantiene proporción similar en móviles */
             max-width: none;
+            border-radius: 1rem;
           }
           
           .image-container img {
             position: absolute;
             top: 0;
             left: 0;
+            border-radius: 1rem;
           }
         }
       `}</style>
@@ -275,7 +277,7 @@ function CarouselOfertEdu() {
                   href={`/oferta-educativa${noticia.url}`}
                   className="block h-full"
                 >
-                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-xl h-full p-2 tablet:p-8 flex flex-col carousel-card">
+                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-2xl h-full p-2 tablet:p-8 flex flex-col carousel-card">
                     <div className="image-container mb-4">
                       <img
                         src={noticia.image || "/placeholder.svg"}
