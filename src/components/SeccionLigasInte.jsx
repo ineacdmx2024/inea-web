@@ -249,7 +249,7 @@ function SeccionLigasInte() {
           height: 236.8px; /* Alto fijo de 236.8px */
           position: relative;
           overflow: hidden;
-          border-radius: 0.5rem;
+          border-radius: 1rem;
           margin: 0 auto;
         }
         
@@ -257,6 +257,7 @@ function SeccionLigasInte() {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          border-radius: 1rem;
         }
         
         /* Medidas responsivas para dispositivos móviles */
@@ -266,12 +267,14 @@ function SeccionLigasInte() {
             height: 0;
             padding-bottom: 80%; /* Mantiene proporción similar en móviles */
             max-width: none;
+            border-radius: 1rem;
           }
           
           .image-container img {
             position: absolute;
             top: 0;
             left: 0;
+            border-radius: 1rem;
           }
         }
       `}</style>
