@@ -167,7 +167,7 @@ function SeccionLigasInte() {
 
   return (
     <>
-      <style jsx global>{`
+     <style jsx global>{`
         .custom-dots {
           bottom: -20px;
           display: flex;
@@ -245,18 +245,19 @@ function SeccionLigasInte() {
         /* Dimensiones fijas para imágenes */
         .image-container {
           width: 100%;
-          max-width: 296px; /* Ancho fijo de 296px */
-          height: 236.8px; /* Alto fijo de 236.8px */
+          max-width: 296px;
+          height: 236.8px;
           position: relative;
           overflow: hidden;
-          border-radius: 0.5rem;
+          border-radius: 1rem;
           margin: 0 auto;
         }
-        
+
         .image-container img {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          border-radius: 1rem;
         }
         
         /* Medidas responsivas para dispositivos móviles */
@@ -264,10 +265,10 @@ function SeccionLigasInte() {
           .image-container {
             width: 100%;
             height: 0;
-            padding-bottom: 80%; /* Mantiene proporción similar en móviles */
+            padding-bottom: 80%;
             max-width: none;
           }
-          
+
           .image-container img {
             position: absolute;
             top: 0;
