@@ -253,14 +253,12 @@ function CarouselOfertEdu() {
             height: 0;
             padding-bottom: 80%; /* Mantiene proporción similar en móviles */
             max-width: none;
-            border-radius: 1rem;
           }
           
           .image-container img {
             position: absolute;
             top: 0;
             left: 0;
-            border-radius: 1rem;
           }
         }
       `}</style>
@@ -268,8 +266,8 @@ function CarouselOfertEdu() {
       <div className="p-2 pt-0">
         <div className="carrusel desktop-carousel">
           <Slider
-            {...settings}
-            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
+          {...settings}
+          className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-[1rem] tablet:rounded-none mx-auto !z-5 w-full max-w-[280px] letras:max-w-[310px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {modalidades.map((noticia, index) => (
               <div key={index*36} className="tablet:h-[450px] pt-4 tablet:pt-0">
@@ -277,7 +275,7 @@ function CarouselOfertEdu() {
                   href={`/oferta-educativa${noticia.url}`}
                   className="block h-full"
                 >
-                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-2xl h-full p-2 tablet:p-8 flex flex-col carousel-card">
+                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-xl h-full p-2 tablet:p-8 flex flex-col carousel-card">
                     <div className="image-container mb-4">
                       <img
                         src={noticia.image || "/placeholder.svg"}
