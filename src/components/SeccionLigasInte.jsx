@@ -321,7 +321,7 @@ function SeccionLigasInte() {
         <div className="carrusel tablet:hidden px-4">
          <Slider
             {...settings}
-            className="bg-white border border-slate-300 rounded-lg mx-auto w-full max-w-[280px] letras:max-w-[310px] ofertaEdu:max-w-[400px] pb-10"
+            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-[1rem] tablet:rounded-none mx-auto !z-5 w-full max-w-[280px] letras:max-w-[310px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {fijos.map((fijos, index) => (
               <div key={index} className="pt-4 tablet:pt-0">
