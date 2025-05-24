@@ -249,7 +249,7 @@ function SeccionLigasInte() {
           height: 236.8px; /* Alto fijo de 236.8px */
           position: relative;
           overflow: hidden;
-          border-radius: 0.5rem;
+          border-radius: 1rem;
           margin: 0 auto;
         }
         
@@ -257,6 +257,7 @@ function SeccionLigasInte() {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          border-radius: 1rem;
         }
         
         /* Medidas responsivas para dispositivos móviles */
@@ -266,20 +267,22 @@ function SeccionLigasInte() {
             height: 0;
             padding-bottom: 80%; /* Mantiene proporción similar en móviles */
             max-width: none;
+            border-radius: 1rem;
           }
           
           .image-container img {
             position: absolute;
             top: 0;
             left: 0;
+            border-radius: 1rem;
           }
         }
       `}</style>
 
 
-      <div className="p-2 pt-0 mt-12">
+      <div className="p-2 pt-0">
         {/* Desktop fixed links */}
-        <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex gap-8">
+        <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex gap-8 mt-[2rem]">
           {fijos.map((fijos, index) => (
             <div className="w-1/3 cursor-pointer" key={index}>
               <Link
@@ -296,7 +299,7 @@ function SeccionLigasInte() {
                   </div>
                   <div className="flex flex-col justify-between flex-grow">
                     <h3
-                      className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium  w-[17ch] break-normal h-[32px]"
+                       className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium  w-[17ch] break-normal h-[32px]"
                     >
                       {truncateText(fijos.titulo, 37)}
                     </h3>
@@ -377,7 +380,7 @@ function SeccionLigasInte() {
                     </div>
                     <div className="flex flex-col justify-between flex-grow">
                       <h3
-                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium w-[17ch] break-normal h-[32px]"
+                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium  w-[17ch] break-normal h-[32px]"
                       >
                         {truncateText(restantes.titulo, 37)}
                       </h3>

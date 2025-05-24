@@ -3,7 +3,7 @@ import "./Ubicacion.css";
 
 const Ubicacion = () => {
   return (
-    <div id="UbicacionDivP" className="w-full max-w-[1170px] mx-auto px-6 mt-[1rem]">
+    <div id="UbicacionDivP" className="w-full max-w-[1170px] mx-auto pl-2 pr-6 mt-[1rem]">
       <div className="flex flex-col md:flex-row gap-6 items-start md:items-stretch">
         <div
           id="direccion"

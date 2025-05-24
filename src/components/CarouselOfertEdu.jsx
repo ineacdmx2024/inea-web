@@ -128,7 +128,7 @@ function CarouselOfertEdu() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1,
+    speed: 500,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
@@ -155,30 +155,25 @@ function CarouselOfertEdu() {
             padding: 0;
             position: relative;
           }
-
         .custom-dots li {
           margin: 0 4px;
           display: inline-block;
         }
-        
         .custom-dots li button {
           border: none;
           background: none;
           padding: 0;
         }
-        
         .custom-dots li button:before {
           font-size: 12px;
           color: #ccc;
           opacity: 1;
           transition: all 0.3s ease;
         }
-        
         .custom-dots li.slick-active button:before {
-          color: #611232;
+          color: #611232; /* Color rojo para el punto activo */
           transform: scale(1.2);
         }
-
 
         /* Estilos solo para desktop que igualan el gap */
         @media (min-width: 768px) {
@@ -204,14 +199,14 @@ function CarouselOfertEdu() {
             padding-bottom: 30px;
           }
             .custom-dots {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            bottom: -52px
-            width: 100%;
-            margin-top: 20px;
-            padding: 0;
-            position: relative;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             bottom: -52px
+             width: 100%;
+             margin-top: 20px;
+             padding: 0;
+             position: relative;
           }
         }
         
@@ -235,14 +230,14 @@ function CarouselOfertEdu() {
           height: 236.8px; /* Alto fijo de 236.8px */
           position: relative;
           overflow: hidden;
-          border-radius: 0.75rem;
+          border-radius: 1rem;
           margin: 0 auto;
         }
         
         .image-container img {
           width: 100%;
           height: 100%;
-          border-radius: 0.75rem;
+          border-radius: 1rem;
           object-fit: cover;
         }
         
@@ -253,12 +248,14 @@ function CarouselOfertEdu() {
             height: 0;
             padding-bottom: 80%; /* Mantiene proporción similar en móviles */
             max-width: none;
+	          border-radius: 1rem;
           }
           
           .image-container img {
             position: absolute;
             top: 0;
             left: 0;
+	          border-radius: 1rem;
           }
         }
       `}</style>
@@ -275,7 +272,7 @@ function CarouselOfertEdu() {
                   href={`/oferta-educativa${noticia.url}`}
                   className="block h-full"
                 >
-                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-xl h-full p-2 tablet:p-8 flex flex-col carousel-card">
+                  <div className="border-0 tablet:border border-slate-300 tablet:shadow-none rounded-none tablet:rounded-lg h-full p-2 tablet:p-8 flex flex-col carousel-card">
                     <div className="image-container mb-4">
                       <img
                         src={noticia.image || "/placeholder.svg"}
