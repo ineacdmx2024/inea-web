@@ -1,4 +1,5 @@
 import React from "react";
+import { Noto_Sans } from "next/font/google";
 import CarouselBlog from "@/components/CarouselBlog";
 import CarouselInicio from "@/components/CarouselInicio";
 import CarouselOfertEdu from "@/components/CarouselOfertEdu";
@@ -6,6 +7,12 @@ import SeccionLigasInte from "@/components/SeccionLigasInte";
 import Ubicacion from "@/components/Ubicacion";
 import BannerContingencia from "@/components/BannerContingencia";
 import ScrollLoadSection from "@/components/ScrollLoadSection";
+
+const notoSans = Noto_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-noto",
+});
 
 function Page() {
   return (
@@ -25,12 +32,12 @@ function Page() {
       <CarouselInicio />
 
       {/* INEA en la Ciudad de México */}
-      <div className="my-16 w-full text-center px-4 tablet:px-0">
-        <h1 className="text-[24px] font-bold text-[#333334] mb-3 whitespace-normal tablet:text-[33px]">
+      <div className={`my-16 w-full text-center px-4 tablet:px-0 ${notoSans.variable}`}>
+        <h1 className="ns text-[24px] font-bold text-[#333334] mb-3 whitespace-normal tablet:text-[33px]">
           INEA en la Ciudad de México
         </h1>
-        <div className="max-w-[1130px] mx-auto">
-          <p className="text-center text-[16px] text-[#333334] tablet:text-[18px]">
+        <div className="max-w-[1200px] mx-auto">
+          <p className="ns text-center text-[16px] text-[#333334] tablet:text-[18px]">
             El <strong>Instituto Nacional para la Educación de los Adultos en la Ciudad de México</strong> es una Unidad de Operación del Instituto en esta 
             entidad federativa que coordina y brinda servicios gratuitos de alfabetización, primaria y secundaria para jóvenes y adultos mayores de 15 años. Además, certifica la 
             educación básica y distribuye materiales didácticos para facilitar el aprendizaje a esta población.
