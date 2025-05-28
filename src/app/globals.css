@@ -26,6 +26,10 @@ html, body, #__next, main {
     font-family: patria;
 }
 
+.ns{
+  font-family: var(--font-noto);
+}
+
 #animation{
   animation: fadeIn 1.5s;
 }

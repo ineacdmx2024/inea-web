@@ -127,15 +127,22 @@ async function Page({ params }) {
       
       switch (item.type) {
         case "heading":
-          return React.createElement(
-            `h${item.level}`,
-            {
-              key: index,
-              className: `${montserrat.className} text-[#333334] font-bold text-[${
-                21 - item.level
-              }px]`,
-            },
-            item.children[0]?.text || ""
+          return (
+            <div style={{ width: '720px', maxWidth: '100%', overflow: 'hidden' }}>
+              <div className="w-full overflow-hidden">
+                {React.createElement(
+                  `h${item.level}`,
+                  {
+                    key: index,
+                    className: `${montserrat.className} text-[#333334] font-bold text-[${
+                      21 - item.level
+                    }px] break-words`,
+                    style: { wordWrap: 'break-word', overflowWrap: 'break-word' }
+                  },
+                  item.children[0]?.text || ""
+                )}
+              </div>
+            </div>
           );
           case "paragraph":
             const textContent = item.children
@@ -148,11 +155,13 @@ async function Page({ params }) {
             }
           
             return (
-              <p
-                key={index}
-                className={` text-[#333334] text-[18px] font-light`}
-              >
-                {item.children.map((child, i) => {
+              <div style={{ width: '720px', maxWidth: '100%', overflow: 'hidden' }}>
+                <p
+                  key={index}
+                  className={` text-[#333334] text-[18px] font-light break-words`}
+                  style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
+                >
+                  {item.children.map((child, i) => {
                   if (child.type === "link" && child.url) {
                     return (
                       <a
@@ -193,29 +202,30 @@ async function Page({ params }) {
                   return null; // Manejo para tipos inesperados
                 })}
               </p>
+              </div>
             );
           
         case "image":
               return (
-                <div className="flex justify-center my-4">
-                  <div className="relative w-full max-w-4xl aspect-[3/2]">
-                    <Image
-                      key={index}
-                      src={item.image.formats.large.url}
-                      alt={item.image.alternativeText || "Imagen de la noticia"}
-                      fill
-                      priority={true}
-                      className="rounded-lg object-contain"
-                    />
-                  </div>
+                <div className="my-4 overflow-hidden" style={{ width: '720px', maxWidth: '100%' }}>
+                  <Image
+                    key={index}
+                    src={item.image.formats.large.url}
+                    alt={item.image.alternativeText || "Imagen de la noticia"}
+                    width={720}
+                    height={420}
+                    priority={true}
+                    className="rounded-lg w-full"
+                    style={{ height: 'auto', maxHeight: '450px' }}
+                  />
                 </div>
               );
           
         case "embed":
           return (
-            <div key={index} className="my-6 aspect-video w-full max-w-4xl mx-auto">
+            <div key={index} className="my-6 mx-auto" style={{ width: '720px', maxWidth: '100%' }}>
               <div 
-                className="embed-container w-full h-full" 
+                className="embed-container w-full aspect-video" 
                 dangerouslySetInnerHTML={{ __html: item.embed.html }}
               />
             </div>
@@ -277,26 +287,28 @@ async function Page({ params }) {
         Titulo={post.data?.attributes?.Titulo}
         Subtitulo={post.data?.attributes?.Subtitulo}
         >
-        <h1
-          className={`${montserrat.className} text-[#333334] text-[18px] font-light`}
-          >
-          INEA Ciudad de México |{" "}
-          {post.data?.attributes?.Fecha
-            ? fechaFun(post.data?.attributes?.Fecha)
-            : ""}
-        </h1>
-          <div className="flex justify-center my-6">
-            <div className="relative w-full max-w-4xl aspect-[3/2]">
-              <Image
-                src={post.data.attributes?.Imagen?.data?.attributes?.url}
-                alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
-                fill
-                priority
-                className="rounded-lg object-contain"
-                />
-            </div>
+        <div style={{ width: '720px', maxWidth: '100%' }}>
+          <h1
+            className={`${montserrat.className} text-[#333334] text-[18px] font-light`}
+            >
+            INEA Ciudad de México |{" "}
+            {post.data?.attributes?.Fecha
+              ? fechaFun(post.data?.attributes?.Fecha)
+              : ""}
+          </h1>
+        </div>
+          <div className="my-6 overflow-hidden" style={{ width: '720px', maxWidth: '100%' }}>
+            <Image
+              src={post.data.attributes?.Imagen?.data?.attributes?.url}
+              alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
+              width={720}
+              height={420}
+              priority
+              className="rounded-lg w-full"
+              style={{ height: 'auto', maxHeight: '450px' }}
+            />
           </div>
-        <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-left">{renderContenido(contenido)}</div>
+        <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-left" style={{ width: '720px', maxWidth: '100%' }}>{renderContenido(contenido)}</div>
       </PagSec>
     </div>
   );

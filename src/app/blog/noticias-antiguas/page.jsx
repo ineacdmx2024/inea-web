@@ -142,7 +142,7 @@ function NoticiasAntiguas({ item }) {
                           </h2>
                         </article>
                       </div>
-                      <div className="flex justify-end mt-4">
+                      <div className="flex justify-center mt-4">
                         <Link
                           href={`/blog/noticias-antiguas/${item.attributes.slug}`}
                           className="bg-[#611232] text-white text-center py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full"

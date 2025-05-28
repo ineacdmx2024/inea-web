@@ -220,12 +220,12 @@ function SeccionLigasInte() {
               padding-bottom: 30px;
             }
             .custom-dots {
-            bottom: -52px;
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            padding: 0;
-            margin: 0;
+              bottom: -52px;
+              display: flex;
+              justify-content: center;
+              width: 100%;
+              padding: 0;
+              margin: 0;
           }
         }
         
@@ -249,7 +249,7 @@ function SeccionLigasInte() {
           height: 236.8px; /* Alto fijo de 236.8px */
           position: relative;
           overflow: hidden;
-          border-radius: 1rem;
+          border-radius: 0.5rem;
           margin: 0 auto;
         }
         
@@ -257,7 +257,6 @@ function SeccionLigasInte() {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          border-radius: 1rem;
         }
         
         /* Medidas responsivas para dispositivos móviles */
@@ -267,22 +266,20 @@ function SeccionLigasInte() {
             height: 0;
             padding-bottom: 80%; /* Mantiene proporción similar en móviles */
             max-width: none;
-            border-radius: 1rem;
           }
           
           .image-container img {
             position: absolute;
             top: 0;
             left: 0;
-            border-radius: 1rem;
           }
         }
       `}</style>
 
 
-      <div className="p-2 pt-0 mt-12">
+      <div className="p-2 pt-0">
         {/* Desktop fixed links */}
-        <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex gap-8">
+        <div className="fijas justify-center items-center !z-5 w-4/5 tablet:w-[1150px] mx-auto hidden tablet:flex gap-8 mt-[2rem]">
           {fijos.map((fijos, index) => (
             <div className="w-1/3 cursor-pointer" key={index}>
               <Link
@@ -299,7 +296,7 @@ function SeccionLigasInte() {
                   </div>
                   <div className="flex flex-col justify-between flex-grow">
                     <h3
-                      className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium  w-[17ch] break-normal h-[32px]"
+                       className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium  w-[17ch] break-normal h-[32px]"
                     >
                       {truncateText(fijos.titulo, 37)}
                     </h3>
@@ -318,10 +315,10 @@ function SeccionLigasInte() {
         </div>
 
         {/* Mobile fixed links carousel*/}
-        <div className="carrusel tablet:hidden px-4">
-         <Slider
+        <div className="carrusel tablet:hidden">
+          <Slider
             {...settings}
-            className="bg-white border border-slate-300 rounded-lg mx-auto w-full max-w-[280px] letras:max-w-[310px] ofertaEdu:max-w-[400px] pb-10"
+            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {fijos.map((fijos, index) => (
               <div key={index} className="pt-4 tablet:pt-0">
@@ -362,7 +359,7 @@ function SeccionLigasInte() {
         <div className="carrusel desktop-carousel">
           <Slider
             {...settings}
-            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-[1rem] tablet:rounded-none mx-auto !z-5 w-full max-w-[280px] letras:max-w-[310px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
+            className="bg-white border tablet:border-0 border-slate-300 tablet:shadow-none rounded-lg tablet:rounded-none mx-auto !z-5 w-full max-w-[300px] letras:max-w-[360px] ofertaEdu:max-w-[400px] tablet:max-w-[1150px] mt-8 px-4 tablet:px-0"
           >
             {restantes.map((restantes, index) => (
               <div key={index} className="tablet:h-[450px] pt-4 tablet:pt-0">
@@ -380,7 +377,7 @@ function SeccionLigasInte() {
                     </div>
                     <div className="flex flex-col justify-between flex-grow">
                       <h3
-                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium w-[17ch] break-normal h-[32px]"
+                        className="mt-4 px-2 tablet:px-5 text-center text-[16px] tablet:text-[22px] text-[#333334] font-medium  w-[17ch] break-normal h-[32px]"
                       >
                         {truncateText(restantes.titulo, 37)}
                       </h3>
