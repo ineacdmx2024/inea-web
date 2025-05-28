@@ -1,29 +1,44 @@
-
 "use client";
 
-
-
 import React, { useState } from "react";
-
 
 // Función para capitalizar el texto
 const capitalizarTexto = (texto) => {
   return texto
-  .toLowerCase() // Convierte todo el texto a minúsculas
-  .split(' ') // Divide el texto en palabras
-  .map((palabra) => {
-    // Capitaliza la primera letra y deja el resto en minúsculas
-    return palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase();
-  })
-  .join(' '); // Vuelve a juntar las palabras
+    .toLowerCase() // Convierte todo el texto a minúsculas
+    .split(" ") // Divide el texto en palabras
+    .map((palabra) => {
+      // Capitaliza la primera letra y deja el resto en minúsculas
+      return palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase();
+    })
+    .join(" "); // Vuelve a juntar las palabras
 };
-
-
-  
 
 const SkewedPagesResponsive = ({ datos }) => {
   const [currentPage, setCurrentPage] = useState(0);
-  const handleAlcaldiaClick = (indexSlides) => {
+
+  // Mapeo de alcaldías a IndexSlides
+  const alcaldiaToIndex = {
+    "Álvaro Obregón": 3,
+    Azcapotzalco: 6,
+    "Benito Juárez": 5,
+    Coyoacán: 2,
+    Cuajimalpa: 3, // Queremos mostrar la info de "Justo Sierra"
+    Cuauhtémoc: 6,
+    "Gustavo A. Madero": 4,
+    Iztacalco: 5,
+    Iztapalapa: 7,
+    "La Magdalena Contreras": 1,
+    "Miguel Hidalgo": 6,
+    "Milpa Alta": 0,
+    Tláhuac: 0,
+    Tlalpan: 1,
+    "Venustiano Carranza": 5,
+    Xochimilco: 2,
+  };
+
+  const handleAlcaldiaClick = (alcaldia) => {
+    const indexSlides = alcaldiaToIndex[alcaldia];
     setCurrentPage(indexSlides); // Cambia la página actual usando IndexSlides
 
     //Centrar en los mapas
@@ -49,37 +64,33 @@ const SkewedPagesResponsive = ({ datos }) => {
   ];
 
   const alcaldias = [
-    { alcaldia: "Álvaro Obregón", IndexSlides: 3 },
-    { alcaldia: "Azcapotzalco", IndexSlides: 6 },
-    { alcaldia: "Benito Juárez", IndexSlides: 5 },
-    { alcaldia: "Coyoacán", IndexSlides: 2 },
-    { alcaldia: "Cuajimalpa", IndexSlides: 1 },
-    { alcaldia: "Cuauhtémoc", IndexSlides: 6 },
-    { alcaldia: "Gustavo A. Madero", IndexSlides: 4 },
-    { alcaldia: "Iztacalco", IndexSlides: 5 },
-    { alcaldia: "Iztapalapa", IndexSlides: 7 },
-    { alcaldia: "La Magdalena Contreras", IndexSlides: 3 },
-    { alcaldia: "Miguel Hidalgo", IndexSlides: 6 },
-    { alcaldia: "Milpa Alta", IndexSlides: 0 },
-    { alcaldia: "Tláhuac", IndexSlides: 0 },
-    { alcaldia: "Tlalpan", IndexSlides: 1 },
-    { alcaldia: "Venustiano Carranza", IndexSlides: 5 },
-    { alcaldia: "Xochimilco", IndexSlides: 2 },
+    { alcaldia: "Álvaro Obregón" },
+    { alcaldia: "Azcapotzalco" },
+    { alcaldia: "Benito Juárez" },
+    { alcaldia: "Coyoacán" },
+    { alcaldia: "Cuajimalpa" },
+    { alcaldia: "Cuauhtémoc" },
+    { alcaldia: "Gustavo A. Madero" },
+    { alcaldia: "Iztacalco" },
+    { alcaldia: "Iztapalapa" },
+    { alcaldia: "La Magdalena Contreras" },
+    { alcaldia: "Miguel Hidalgo" },
+    { alcaldia: "Milpa Alta" },
+    { alcaldia: "Tláhuac" },
+    { alcaldia: "Tlalpan" },
+    { alcaldia: "Venustiano Carranza" },
+    { alcaldia: "Xochimilco" },
   ];
 
   return (
-    <div  className="h-auto">
-      
-      
-
+    <div className="h-auto">
       <div className="flex flex-wrap top-0">
-      {/* <div className="flex flex-wrap bg-white p-3 top-0 w-full"> */}
         {alcaldias.map((elemento) => (
           <button
-            key={elemento.IndexSlides}
+            key={elemento.alcaldia}
             type="button"
-               className="text-[#611232] rounded-lg top-0 hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-[white] font-medium px-5 py-2.5 text-center me-2 mb-2  text-lg flex"
-               onClick={() => handleAlcaldiaClick(elemento.IndexSlides)}
+            className="text-[#611232] rounded-lg top-0 hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-[white] font-medium px-5 py-2.5 text-center me-2 mb-2  text-lg flex"
+            onClick={() => handleAlcaldiaClick(elemento.alcaldia)}
           >
             <svg
               className="w-5 h-5"
@@ -150,7 +161,6 @@ const SkewedPagesResponsive = ({ datos }) => {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        strokeWidth="2.5"
                       >
                         <path
                           strokelinecap="round"
@@ -166,8 +176,8 @@ const SkewedPagesResponsive = ({ datos }) => {
                         />
                       </svg>
                       <div className="m-[0%] capitalize textoAlcaldia  text-xl text-center">
-                        {capitalizarTexto(item.alcaldia)} 
-                         {/* {item.alcaldia}  */}
+                        {capitalizarTexto(item.alcaldia)}
+                        {/* {item.alcaldia}  */}
                       </div>
                     </div>
                     <div className="px-2 capitalize text-normal text-center">
