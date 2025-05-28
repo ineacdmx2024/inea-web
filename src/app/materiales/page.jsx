@@ -246,7 +246,7 @@ function Materiales() {
 </p>
                 </div>
               </div>
-              <div className="w-full flex-col">
+              <div className="w-full flex-col mb-4">
                 <BotonesMat datos={alfabetizacionData} onVistaClick={handleVistaClick} />
               </div>
             </div>
