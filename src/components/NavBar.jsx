@@ -77,7 +77,7 @@ const Navbar = () => {
   return (
     // <div className="navBar text-white ">
     <div
-      ref={navRef}
+      // ref={navRef}
       className="navBar w-screen max-w-full"
     >
       <div className="bg-[#611232] w-full">
