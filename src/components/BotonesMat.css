@@ -1,84 +1,52 @@
-.card{
-    padding: 10px;
-    border-radius: 5px;
-    transition: box-shadow .3s ease, transform .2s ease;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid #bfbfbf;
+.card {
+  padding: 10px;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
-.card:hover {
- box-shadow: 0 8px 50px #23232333;
- border: none;
-
+.image {
+  position: relative;
+  transition: transform 0.2s ease;
 }
 
-.image{
-    position: relative;
-    transition: transform .2s ease
-
+.image img {
+  transition: transform 0.2s ease;
 }
 
-.image img{
-    transition: transform .2s ease, box-shadow .2s ease;
-} 
-
-.pin{
-    position: absolute;
-    top: 30%;
-    right: -25px;
-    background-color: #de6351;
-    padding: 0px 10px;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 5px;
-    border: 3px solid #a27d36;
-    transition: transform .2s ease
+.pin {
+  position: absolute;
+  top: 30%;
+  right: -25px;
+  background-color: #de6351;
+  padding: 0px 10px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 3px solid #a27d36;
+  transition: transform 0.2s ease;
 }
 
-.title{
-     transition: transform .2s;
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.btns{
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.card:hover .image img {
+  transform: scale(1.08);
 }
 
-.boton{
-    opacity: 0;
-    transform: translateY(10px);
-    transition: transform .2s ease, opacity .2s ease;
+.card:hover .image .pin {
+  transform: scale(1.08);
 }
 
-.card:hover .boton{
-    opacity: 1;
-    transform: translateY(-5px);
+.content {
+  height: auto;
+  margin-top: 30px;
 }
-
-.card:hover .image img{
-     transform: translateZ(10px) rotateX(10deg) rotateY(20deg);
-        box-shadow:
-    1px -1px 0 2px #000000,    
-    3px -3px 0 3px #fff,       
-    5px -5px 0 5px #000; 
-}
-
-.card:hover .image .pin{
-         transform: translateZ(10px) rotateX(10deg) rotateY(20deg);
-}
-
-.card:hover .title{
-    transform: translateY(-5px)
-}
-
-.content{
-    height: auto;
-    margin-top: 30px;
-}
-

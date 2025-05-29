@@ -18,6 +18,9 @@ const BotonesMat = ({ datos }) => {
     IndexSlides: index,
   }));
 
+  const [iframeUrl, setIframeUrl] = useState("");
+  const [iframeVisible, setIframeVisible] = useState(false);
+
   const ColContent = ({ items }) => {
     const [isMobile, setIsMobile] = React.useState(false);
 
@@ -118,7 +121,7 @@ const BotonesMat = ({ datos }) => {
             <Carousel>
               {items.map((item, index) => (
                 <div key={index} className="embla__slide">
-                  <div  className={`card embla__slide__number`}>
+                  <div className={`card embla__slide__number`}>
                     <div className="image">
                       <img
                         src={item.portada}
@@ -194,6 +197,33 @@ const BotonesMat = ({ datos }) => {
               ))}
             </Carousel>
           )}
+
+          {iframeVisible && (
+            <div
+              className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 z-50 flex items-center justify-center"
+              onClick={() => setIframeVisible(false)}
+            >
+              <div
+                className="bg-white rounded-lg p-4 w-[75%] md:w-[65%] h-[70%] overflow-hidden relative"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="absolute top-2 right-2 text-white bg-[#611232] rounded-full p-2 z-50"
+                  onClick={() => setIframeVisible(false)}
+                >
+                  ✕
+                </button>
+                <iframe
+                  src={iframeUrl}
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+            </div>
+          )}
         </div>
       );
     }
@@ -232,10 +262,7 @@ const BotonesMat = ({ datos }) => {
         className="w-full flex flex-col h-full bg-white mt-8"
       >
         {datos.map((pageData, index) => (
-          <div
-            key={index}
-            className="w-full mb-5"
-          >
+          <div key={index} className="w-full mb-5">
             <div className="text-center font-bold text-3xl py-4 text-[#333334] font-patria">
               Materiales para el {pageData.title}
             </div>
