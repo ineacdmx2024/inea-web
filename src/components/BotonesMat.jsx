@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import "../app/globals.css";
 import Carousel from "./Carousel";
 
-import { Montserrat } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import "./BotonesMat.css";
 
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
@@ -236,7 +236,7 @@ const BotonesMat = ({ datos }) => {
             key={index}
             className="w-full mb-5"
           >
-            <div className="text-center font-bold text-3xl py-4 text-[#333334] font-patria">
+            <div className="text-center font-bold text-3xl py-4 text-[#333334] patria">
               Materiales para el {pageData.title}
             </div>
             <div className="content">
