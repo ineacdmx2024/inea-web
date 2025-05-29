@@ -2,9 +2,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import CardComponent from "./AnimatedCards";
-import { Montserrat } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
@@ -83,7 +83,7 @@ function PagMod({ info }) {
         {info.paragraphs.map((paragraph, index) => (
           <p
             key={index}
-            className={`${montserrat.className} text-[18px] font-normal text-[#333334] mb-7 leading-7`}
+            className={`${notoSans.className} text-[18px] font-normal text-[#333334] mb-7 leading-7`}
           >
             {paragraph}
           </p>
