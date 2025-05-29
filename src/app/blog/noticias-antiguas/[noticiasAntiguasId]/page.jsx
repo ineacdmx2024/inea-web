@@ -1,4 +1,4 @@
-import { Open_Sans, Montserrat } from "next/font/google";
+import { Open_Sans, Noto_Sans } from "next/font/google";
 import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
 import React from "react";
@@ -12,7 +12,7 @@ const open_Sans = Open_Sans({
   subsets: ["latin"],
 });
 
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
@@ -134,7 +134,7 @@ async function Page({ params }) {
                   `h${item.level}`,
                   {
                     key: index,
-                    className: `${montserrat.className} text-[#333334] font-bold text-[${
+                    className: `${notoSans.className} text-[#333334] font-bold text-[${
                       21 - item.level
                     }px] break-words`,
                     style: { wordWrap: 'break-word', overflowWrap: 'break-word' }
@@ -289,7 +289,7 @@ async function Page({ params }) {
         >
         <div style={{ width: '720px', maxWidth: '100%' }}>
           <h1
-            className={`${montserrat.className} text-[#333334] text-[18px] font-light`}
+            className={`${notoSans.className} text-[#333334] text-[18px] font-light`}
             >
             INEA Ciudad de México |{" "}
             {post.data?.attributes?.Fecha
