@@ -1,5 +1,5 @@
 "use client";
-import { Open_Sans, Montserrat } from "next/font/google";
+import { Open_Sans, Noto_Sans } from "next/font/google";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +11,7 @@ const open_Sans = Open_Sans({
   subsets: ["latin"],
 });
 
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
@@ -99,7 +99,7 @@ function NoticiasAntiguas({ item }) {
         <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-4 items-start mt-0"> {/* Ajuste del margen superior */}
           <div className="col-span-12">
             <h1
-              className={`${montserrat.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight gap-8 ml-[-20px] md:ml-0.5`}
+              className={`${notoSans.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight gap-8 ml-[-20px] md:ml-0.5`}
             >
               Noticias antiguas
             </h1>
