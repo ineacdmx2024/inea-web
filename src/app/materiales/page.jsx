@@ -4,9 +4,9 @@ import PagSec from "@/components/PlantillaPagMat";
 import BotonesMat from "@/components/BotonesMat";
 import "../../app/globals.css";
 
-import { Montserrat } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
@@ -239,7 +239,7 @@ function Materiales() {
 
   return (
     <div
-      className={`${montserrat.className} text-[#333334] text-start mt-[-32px] ml-[-16px`}
+      className={`${notoSans.className} text-[#333334] text-start mt-[-32px] ml-[-16px`}
     >
       <PagSec Titulo={"Descarga de materiales"} mostrarCarrusel={false}>
         <div className="w-full">
@@ -254,7 +254,7 @@ function Materiales() {
                   <li key={key} className="p-0">
                     <a
                       className={`${
-                        montserrat.className
+                        notoSans.className
                       } inline-block p-4 text-[18px] ${
                         opcionSeleccionada === key
                           ? "text-[#A57F2C] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C]"
