@@ -5,9 +5,9 @@ import PagSec from "@/components/PlantillaPagSec";
 import Plazas from "@/components/Plazas";
 import "../../app/globals.css";
 
-import { Montserrat } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
@@ -1341,7 +1341,7 @@ function Ubicacion() {
   };
 
   return (
-    <div className={`${montserrat.className}  text-[#333334]  text-start `}>
+    <div className={`${notoSans.className}  text-[#333334]  text-start `}>
       <PagSec
         Enlaces={enlacesL}
         Titulo={"Ubicación de oficinas de trámites y espacios de estudio"}
@@ -1353,7 +1353,7 @@ function Ubicacion() {
                 <a
                   aria-current="page"
                   className={`${
-                    montserrat.className
+                    notoSans.className
                   } inline-block p-4 text-[18px] ${
                     opcionSeleccionada === "coordinaciones"
                       ? "text-[#A57F2C]  font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C]"
@@ -1368,7 +1368,7 @@ function Ubicacion() {
                 <a
                   // href="#"
                   className={`${
-                    montserrat.className
+                    notoSans.className
                   } inline-block p-4 text-[18px] ${
                     opcionSeleccionada === "plazas"
                       ? "text-[#A57F2C]  font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C]"
@@ -1383,7 +1383,7 @@ function Ubicacion() {
                 <a
                   // href=""
                   className={`${
-                    montserrat.className
+                    notoSans.className
                   } inline-block p-4 text-[18px] ${
                     opcionSeleccionada === "pilares"
                       ? "text-[#A57F2C] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C] "

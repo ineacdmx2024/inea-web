@@ -1,19 +1,13 @@
 "use client";
 import Image from "next/image";
 import Slider from "react-slick";
-import { Open_Sans, Montserrat } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-const open_Sans = Open_Sans({
-  weight: ["300", "400", "500", "700"],
-  style: ["italic", "normal"],
-  subsets: ["latin"],
-});
-
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "700"],
   style: ["italic", "normal"],
   subsets: ["latin"],
@@ -210,7 +204,7 @@ const CarouselBlog = ({ item }) => {
                   href={`/blog/noticias-antiguas/${item.attributes.slug}`}
                 >
                   <article
-                    className={`${montserrat.className} h-auto blog:h-[390px] letras:h-auto flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] tablet:px-5 px-0 py-2 m-auto arrow:w-[750px]`}
+                    className={`${notoSans.className} h-auto blog:h-[390px] letras:h-auto flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] tablet:px-5 px-0 py-2 m-auto arrow:w-[750px]`}
                   >
                     <p className="letras:text-base text-gray-700 text-sm mb-2">
                       {item.attributes.Fecha

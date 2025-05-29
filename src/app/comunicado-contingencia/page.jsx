@@ -1,5 +1,5 @@
 import React from "react";
-import { Open_Sans, Montserrat } from "next/font/google";
+import { Open_Sans, Noto_Sans } from "next/font/google";
 import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
 
@@ -9,7 +9,7 @@ const open_Sans = Open_Sans({
   subsets: ["latin"],
 });
 
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
@@ -101,7 +101,7 @@ async function ComunicadoContingencia() {
             `h${item.level}`,
             {
               key: index,
-              className: `${montserrat.className} font-bold text-[${
+              className: `${notoSans.className} font-bold text-[${
                 21 - item.level
               }px]`,
             },
@@ -120,7 +120,7 @@ async function ComunicadoContingencia() {
             return (
               <p
                 key={index}
-                className={`${montserrat.className} text-[#333334] text-[18px] font-light`}
+                className={`${notoSans.className} text-[#333334] text-[18px] font-light`}
               >
                 {item.children.map((child, i) => {
                   if (child.type === "link" && child.url) {
@@ -144,7 +144,7 @@ async function ComunicadoContingencia() {
                   if (child.type === "text") {
                     return (
                       <span
-                      className={`${montserrat.className}`}
+                      className={`${notoSans.className}`}
                         key={i}
                         style={{
                           fontWeight: child.bold ? "bold" : "normal",
@@ -218,7 +218,7 @@ async function ComunicadoContingencia() {
         Titulo={post.data?.attributes?.Titulo}
         Subtitulo={post.data?.attributes?.Subtitulo}
       >
-        <h1 className={`${montserrat.className} text-[#333334] text-[18px] font-light`}>
+        <h1 className={`${notoSans.className} text-[#333334] text-[18px] font-light`}>
           INEA Ciudad de México |{" "}
           {post.data?.attributes?.Fecha
             ? fechaFun(post.data?.attributes?.Fecha)

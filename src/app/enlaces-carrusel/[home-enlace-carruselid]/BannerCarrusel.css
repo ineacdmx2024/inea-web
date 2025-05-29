@@ -1,9 +1,7 @@
-
-
 .__className_b5b07c {
 
     color: #333334;
-    font-family: 'Montserrat';
+    font-family: 'Noto sans'!important;
     box-sizing: border-box;
     padding-bottom: 0px;
     font-size:18px;
@@ -15,5 +13,5 @@
 li {
     padding: 0;
     text-align: left;
-    font-family: 'Montserrat'!important;
+    font-family: 'Noto sans'!important;
   }

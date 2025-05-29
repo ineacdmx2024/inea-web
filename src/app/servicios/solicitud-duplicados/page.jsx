@@ -12,9 +12,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale, setDefaultLocale } from  "react-datepicker";
 import { es } from 'date-fns/locale/es';
 registerLocale('es', es)
-import { Montserrat } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
@@ -415,7 +415,7 @@ const onSubmit = async(data) =>{
 
 return (
 
-  <div className={`${montserrat.className}  text-[#333334]  text-start `}>
+  <div className={`${notoSans.className}  text-[#333334]  text-start `}>
 
     <PagSec
         Enlaces={enlacesL}
@@ -461,7 +461,7 @@ return (
               </label>
               <div className="border rounded">
                 <select
-                  className={`${montserrat.className} text-[#333334] cursor-no-drop input-personalizado color-gris`}
+                  className={`${notoSans.className} text-[#333334] cursor-no-drop input-personalizado color-gris`}
                   name="Estado de la Republica"
                   id="Estado_Republica"
                   readonly
@@ -479,7 +479,7 @@ return (
        
                   type="text"
                   name="ApellidoPaterno"
-                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
                   id="AppellidoPaterno"
                   placeholder="Apellido Paterno"
                   maxLength={70}  
@@ -538,7 +538,7 @@ return (
                   id="Nombre"
                   type="text"
                   name="text"
-                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
                   placeholder="Nombre(S)"
                   maxLength={70}  
               
@@ -628,7 +628,7 @@ return (
                dateFormat="dd/MM/yyyy" // Formato de fecha (día, mes, año)
                placeholderText="DD/MM/AAAA" // Texto de marcador
                locale={es} // Configurar el idioma a español
-               className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
+               className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
       
              />
            )}
@@ -645,7 +645,7 @@ return (
                   Lugar de nacimiento<spam className="red"> (*)</spam>
                 </label>
                 <select
-                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
                   name="Lugar de nacimiento"
                   id="LugarNacimiento"
                   {...register("LugarNacimiento", { required: true })}
@@ -703,7 +703,7 @@ return (
                   type="email"
                   name="to"
                   // name="email"
-                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
                   placeholder="Correo@correo.com"
                   maxLength={250}  
                   {...register("Correo", {
@@ -725,7 +725,7 @@ return (
                 </label>
                 <input
                   type="text"
-                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
                   id="telefono"
                   name="Teléfono"
                   placeholder="Teléfono"
@@ -755,7 +755,7 @@ return (
                 <input
                   id="confirmEmail"
                   type="email"
-                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
                   placeholder="Correo@correo.com"
                   maxLength={250}  
                   {...register("confirmEmail", {
@@ -779,7 +779,7 @@ return (
                   name="text"
                   placeholder="Comentarios"
                   maxLength={450}  
-                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
                   {...register("Comentarios", { required: false })}
                 />
                 {errors?.Comentarios?.type === "required" && (
@@ -795,7 +795,7 @@ return (
                   id="NivelEducativo"
                   type="text"
                   name="text"
-                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
                   {...register("NivelEducativo", { required: true })}
                 >
                   <option value="">Seleccione..</option>
@@ -897,7 +897,7 @@ return (
                   name="text"
                   placeholder="Año"
                   maxLength={5}  
-                  className={`${montserrat.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
                   {...register("Año", { required: false })}
                 />
                 {errors?.Año?.type === "required" && (

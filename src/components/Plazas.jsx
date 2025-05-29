@@ -2,9 +2,9 @@
 import "../app/globals.css";
 import React, { useState, useEffect } from "react";
 
-import { Montserrat } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
@@ -122,7 +122,7 @@ const Plazas = ({ datos }) => {
           return (
             <div
               key={index}
-              className={`${montserrat.className}  text-[#333334] mb-4  text-start leading-none justify-start cursor-pointer`}
+              className={`${notoSans.className}  text-[#333334] mb-4  text-start leading-none justify-start cursor-pointer`}
               onClick={() => window.open(item.url, "_blank")}
             >
               {

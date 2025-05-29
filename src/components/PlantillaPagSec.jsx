@@ -3,9 +3,9 @@ import React from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import Card from "@/components/EnlacesR_Lateral";
 import CarouselEL from "@/components/CarouselEL";
-import { Montserrat } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
@@ -25,12 +25,12 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
 
         <div className="col-span-12 md:col-span-8 -mt-4"> {/* Ajuste del margen superior */}
           {Titulo && (
-            <h1 className={`${montserrat.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight`}>
+            <h1 className={`${notoSans.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight`}>
               {Titulo}
             </h1>
           )}
           {Subtitulo && (
-            <h2 className={`${montserrat.className} text-[27px] font-light text-[#333334] mb-4 leading-9`}>
+            <h2 className={`${notoSans.className} text-[27px] font-light text-[#333334] mb-4 leading-9`}>
               {Subtitulo}
             </h2>
           )}
