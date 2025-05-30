@@ -33,7 +33,7 @@ module.exports = {
       fontFamily: {
         sans: ['"Open Sans"', "sans-serif"],
         serif: ['IBM Plex Serif', ...fontFamily.serif],
-        body: ['Montserrat' ],
+        body: ['Noto sans' ],
         patria: ['"Patria"', 'sans-serif'],
       },
     },
