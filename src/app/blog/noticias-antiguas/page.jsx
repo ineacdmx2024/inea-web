@@ -1,15 +1,9 @@
 "use client";
-import { Open_Sans, Noto_Sans } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import PagSec from "@/components/PlantillaPagSec"; // Nuevo componente importado
-
-const open_Sans = Open_Sans({
-  weight: ["300", "400", "500", "700"],
-  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
-  subsets: ["latin"],
-});
 
 const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -130,7 +124,7 @@ function NoticiasAntiguas({ item }) {
                           </div>
                         </Link>
                         <article
-                          className={`${open_Sans.className} mt-4 w-full px-2 sm:px-4 py-2`}
+                          className={`${notoSans.className} mt-4 w-full px-2 sm:px-4 py-2`}
                         >
                           <p className="text-sm text-gray-700 mb-2">
                             {item.attributes.Fecha
