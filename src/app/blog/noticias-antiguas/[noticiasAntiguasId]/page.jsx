@@ -177,7 +177,7 @@ async function Page({ params }) {
                     return (
                       <span
                         key={i}
-                        className="font-light"
+                        className="font-body font-light"
                         style={{
                           textAlign: "left",
                           fontWeight: child.bold ? "bold" : "normal",
