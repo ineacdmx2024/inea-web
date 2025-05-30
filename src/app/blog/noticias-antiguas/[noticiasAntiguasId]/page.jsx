@@ -1,16 +1,9 @@
-import { Open_Sans, Noto_Sans } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
 import React from "react";
 import Link from 'next/link'
 import "./Noticias.css";
-
-
-const open_Sans = Open_Sans({
-  weight: ["300", "400", "500", "600", "700", "800"],
-  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
-  subsets: ["latin"],
-});
 
 const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -184,7 +177,7 @@ async function Page({ params }) {
                     return (
                       <span
                         key={i}
-                        className="font-body font-light"
+                        className="font-light"
                         style={{
                           textAlign: "left",
                           fontWeight: child.bold ? "bold" : "normal",
@@ -235,7 +228,7 @@ async function Page({ params }) {
           return (
             <ol
               key={index}
-              className={`${open_Sans.className} list-decimal pl-6 mb-4`}
+              className={`${notoSans.className} list-decimal pl-6 mb-4`}
             >
               {item.children.map((listItem, liIndex) => (
                 <li key={liIndex}>{listItem.children[0]?.text || ""}</li>
