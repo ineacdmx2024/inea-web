@@ -74,7 +74,7 @@ const Footer = () => {
                   <li className="hover:text-[#A57F2C]">
                     <a href="/">Directorio</a>
                   </li>
-                  <li className="hover:text-[#A57F2C]">
+                  <li className="p-1 hover:text-[#A57F2C]">
                     <a href="/">Correo@inea.gob.mx</a>
                   </li>
                 </ul>
