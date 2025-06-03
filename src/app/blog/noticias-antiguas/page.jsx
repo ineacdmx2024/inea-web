@@ -104,13 +104,13 @@ function NoticiasAntiguas({ item }) {
               Noticias antiguas
             </h1>
 
-            <div className="mb-16 flex flex-col items-start gap-8 ml-[-20px] md:ml-1 md:mr-30"> {/* Ajuste de márgenes izquierdo y derecho */}
+            <div className="mb-16 w-full"> {/* Ajuste de márgenes izquierdo y derecho */}
               <div className="w-full grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"> {/* Ajuste del diseño de las fichas */}
                 {datos ? (
                   datos.map((item, index) => (
                     <div
                       key={index}
-                      className="overflow-hidden w-full h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
+                      className="overflow-hidden w-full max-w-[320px] mx-auto sm:mx-0 h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
                     >
                       <div>
                         <Link href={`/blog/noticias-antiguas/${item.attributes.slug}`}>
