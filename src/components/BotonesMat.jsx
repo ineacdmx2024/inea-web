@@ -142,7 +142,7 @@ const BotonesMat = ({ datos }) => {
                       <a
                         href={item.linkDescarga}
                         download
-                        className="boton p-2 rounded-lg border border-gray-400 hover:bg-[#611232] hover:text-white transition-colors"
+                        className="boton text-[#611232] p-2 rounded-lg border border-[#611232] hover:bg-[#611232] hover:text-white transition-colors"
                         title="Descargar"
                       >
                         <svg
@@ -168,7 +168,7 @@ const BotonesMat = ({ datos }) => {
                           );
                           setIframeVisible(true);
                         }}
-                        className=" boton p-2 rounded-lg border border-gray-400 hover:bg-[#611232] hover:text-white transition-colors"
+                        className="boton text-[#611232] p-2 rounded-lg border border-[#611232] hover:bg-[#611232] hover:text-white transition-colors"
                         title="Ver en línea"
                       >
                         <svg
