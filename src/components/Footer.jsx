@@ -39,7 +39,7 @@ const Footer = () => {
                   Mapa de Sitio
                 </h2>
                 <ul className=" text-sm dark:text-white">
-                  <li className="hover:text-[#A57F2C]">
+                  <li className="hover:text-[#A57F2C] p-[4px]">
                     <a href="https://datos.gob.mx/">Trámites y Servicios</a>
                   </li>
                   <li className="hover:text-[#A57F2C]">
