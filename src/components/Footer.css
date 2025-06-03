@@ -8,7 +8,7 @@ footer{
   margin-top: 5rem;
 }
 li{
-  padding: 4px;
+  padding: 4px !important;
 }
 
 #Content{
