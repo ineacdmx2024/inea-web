@@ -198,19 +198,19 @@ async function Page({ params }) {
               </div>
             );
           
-        case "image":
+         case "image":
               return (
-                <div className="my-4 overflow-hidden" style={{ width: '720px', maxWidth: '100%' }}>
-                  <Image
-                    key={index}
-                    src={item.image.formats.large.url}
-                    alt={item.image.alternativeText || "Imagen de la noticia"}
-                    width={720}
-                    height={420}
-                    priority={true}
-                    className="rounded-lg w-full"
-                    style={{ height: 'auto', maxHeight: '450px' }}
-                  />
+                <div className="flex justify-center my-4">
+                  <div className="relative w-full max-w-4xl aspect-[3/2]">
+                    <Image
+                      key={index}
+                      src={item.image.formats.large.url}
+                      alt={item.image.alternativeText || "Imagen de la noticia"}
+                      fill
+                      priority={true}
+                      className="rounded-lg object-contain"
+                    />
+                  </div>
                 </div>
               );
           
@@ -290,16 +290,16 @@ async function Page({ params }) {
               : ""}
           </h1>
         </div>
-          <div className="my-6 overflow-hidden" style={{ width: '720px', maxWidth: '100%' }}>
-            <Image
-              src={post.data.attributes?.Imagen?.data?.attributes?.url}
-              alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
-              width={720}
-              height={420}
-              priority
-              className="rounded-lg w-full"
-              style={{ height: 'auto', maxHeight: '450px' }}
-            />
+          <div className="flex justify-center my-6">
+            <div className="relative w-full max-w-4xl aspect-[3/2]">
+              <Image
+                src={post.data.attributes?.Imagen?.data?.attributes?.url}
+                alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
+                fill
+                priority
+                className="rounded-lg object-contain"
+                />
+            </div>
           </div>
         <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-left" style={{ width: '720px', maxWidth: '100%' }}>{renderContenido(contenido)}</div>
       </PagSec>
