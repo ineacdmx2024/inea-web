@@ -290,7 +290,7 @@ async function Page({ params }) {
             <Image
               src={post.data.attributes?.Imagen?.data?.attributes?.url}
               alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
-              className="w-full h-[420px] object-cover"
+              className="w-full h-auto object-cover"
               width={1000}
               height={700}
             />
