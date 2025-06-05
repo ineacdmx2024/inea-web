@@ -7,7 +7,7 @@ footer{
   font-family: 'Noto sans', sans-serif;
   margin-top: 5rem;
 }
-li{
+.footer-list{
   padding: 4px !important;
 }
 
