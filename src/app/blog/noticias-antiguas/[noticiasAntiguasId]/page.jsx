@@ -1,18 +1,11 @@
-import { Open_Sans, Montserrat } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
 import React from "react";
 import Link from 'next/link'
 import "./Noticias.css";
 
-
-const open_Sans = Open_Sans({
-  weight: ["300", "400", "500", "600", "700", "800"],
-  styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
-  subsets: ["latin"],
-});
-
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
@@ -134,7 +127,7 @@ async function Page({ params }) {
                   `h${item.level}`,
                   {
                     key: index,
-                    className: `${montserrat.className} text-[#333334] font-bold text-[${
+                    className: `${notoSans.className} text-[#333334] font-bold text-[${
                       21 - item.level
                     }px] break-words`,
                     style: { wordWrap: 'break-word', overflowWrap: 'break-word' }
@@ -205,21 +198,17 @@ async function Page({ params }) {
               </div>
             );
           
-        case "image":
-              return (
-                <div className="my-4 overflow-hidden" style={{ width: '720px', maxWidth: '100%' }}>
-                  <Image
-                    key={index}
-                    src={item.image.formats.large.url}
-                    alt={item.image.alternativeText || "Imagen de la noticia"}
-                    width={720}
-                    height={420}
-                    priority={true}
-                    className="rounded-lg w-full"
-                    style={{ height: 'auto', maxHeight: '450px' }}
-                  />
-                </div>
-              );
+         case "image":
+          return (
+            <Image
+            key={index}
+            src={item.image.formats.large.url}
+            alt={item.image.alternativeText || "Imagen de la noticia"}
+            width={item.image.width}
+            height={item.image.height}
+            className="my-4"
+            />
+          );
           
         case "embed":
           return (
@@ -235,7 +224,7 @@ async function Page({ params }) {
           return (
             <ol
               key={index}
-              className={`${open_Sans.className} list-decimal pl-6 mb-4`}
+              className={`${notoSans.className} list-decimal pl-6 mb-4`}
             >
               {item.children.map((listItem, liIndex) => (
                 <li key={liIndex}>{listItem.children[0]?.text || ""}</li>
@@ -289,7 +278,7 @@ async function Page({ params }) {
         >
         <div style={{ width: '720px', maxWidth: '100%' }}>
           <h1
-            className={`${montserrat.className} text-[#333334] text-[18px] font-light`}
+            className={`${notoSans.className} text-[#333334] text-[18px] font-light`}
             >
             INEA Ciudad de México |{" "}
             {post.data?.attributes?.Fecha
@@ -297,15 +286,13 @@ async function Page({ params }) {
               : ""}
           </h1>
         </div>
-          <div className="my-6 overflow-hidden" style={{ width: '720px', maxWidth: '100%' }}>
+         <div className="m-auto my-6 rounded-lg">
             <Image
-              src={post.data.attributes?.Imagen?.data?.attributes?.url}
-              alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
-              width={720}
-              height={420}
-              priority
-              className="rounded-lg w-full"
-              style={{ height: 'auto', maxHeight: '450px' }}
+            src={post.data.attributes?.Imagen?.data?.attributes?.url}
+            alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
+            className="w-full rounded-lg max-h-[420px]"
+            width={1000}
+            height={700}
             />
           </div>
         <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-left" style={{ width: '720px', maxWidth: '100%' }}>{renderContenido(contenido)}</div>

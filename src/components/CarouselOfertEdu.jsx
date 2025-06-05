@@ -230,14 +230,13 @@ function CarouselOfertEdu() {
           height: 236.8px; /* Alto fijo de 236.8px */
           position: relative;
           overflow: hidden;
-          border-radius: 1rem;
+          border-radius: 0.5rem;
           margin: 0 auto;
         }
         
         .image-container img {
           width: 100%;
           height: 100%;
-          border-radius: 1rem;
           object-fit: cover;
         }
         
@@ -248,14 +247,12 @@ function CarouselOfertEdu() {
             height: 0;
             padding-bottom: 80%; /* Mantiene proporción similar en móviles */
             max-width: none;
-	          border-radius: 1rem;
           }
           
           .image-container img {
             position: absolute;
             top: 0;
             left: 0;
-	          border-radius: 1rem;
           }
         }
       `}</style>

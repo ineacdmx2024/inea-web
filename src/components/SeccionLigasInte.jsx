@@ -5,11 +5,11 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { useRouter } from "next/navigation"
-import { Montserrat } from "next/font/google"
+import { Noto_Sans } from "next/font/google"
 import Link from "next/link"
 import Image from "next/image"
 
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 })
@@ -220,12 +220,12 @@ function SeccionLigasInte() {
               padding-bottom: 30px;
             }
             .custom-dots {
-            bottom: -52px;
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            padding: 0;
-            margin: 0;
+              bottom: -52px;
+              display: flex;
+              justify-content: center;
+              width: 100%;
+              padding: 0;
+              margin: 0;
           }
         }
         
@@ -249,7 +249,7 @@ function SeccionLigasInte() {
           height: 236.8px; /* Alto fijo de 236.8px */
           position: relative;
           overflow: hidden;
-          border-radius: 1rem;
+          border-radius: 0.5rem;
           margin: 0 auto;
         }
         
@@ -257,7 +257,6 @@ function SeccionLigasInte() {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          border-radius: 1rem;
         }
         
         /* Medidas responsivas para dispositivos móviles */
@@ -267,14 +266,12 @@ function SeccionLigasInte() {
             height: 0;
             padding-bottom: 80%; /* Mantiene proporción similar en móviles */
             max-width: none;
-            border-radius: 1rem;
           }
           
           .image-container img {
             position: absolute;
             top: 0;
             left: 0;
-            border-radius: 1rem;
           }
         }
       `}</style>

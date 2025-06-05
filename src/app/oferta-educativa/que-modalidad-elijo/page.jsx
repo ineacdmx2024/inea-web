@@ -64,43 +64,43 @@ function Modalidad() {
               title="¿Quieres estudiar primaria o secundaria con materiales impresos en un lugar fijo o conoces a alguien que quiera aprender a leer y escribir?"
               content={
                 <div>
-                  <p className="font-semibold">
+                  <p className="font-semibold !text-[#333334]">
                     Te conviene el Programa Regular Presencial (Modelo de
                     Educación para la Vida - MEV AprendeINEA)
                   </p>
-                  <p className="mt-2">
-                    <strong>Descripción: </strong> Opción educativa presencial y
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Descripción: </strong> Opción educativa presencial y
                     gratuita diseñada para personas de 15 años o más con tiempo
                     para dedicar al estudio que buscan alfabetizarse u obtener
                     el certificado de Primaria o Secundaria.
                   </p>
-                  <p className="mt-2">
-                    <strong>Objetivo: </strong> Brindar una alternativa
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Objetivo: </strong> Brindar una alternativa
                     educativa accesible y de calidad para aquellos que nunca han
                     asistido a la escuela o no han concluido sus estudios.
                   </p>
-                  <p className="mt-2">
-                    <strong>Modalidad de atención: </strong> Presencial (en una
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Modalidad de atención: </strong> Presencial (en una
                     de las 120 Plazas Comunitarias del INEA en Ciudad de
                     México).
                   </p>
-                  <p className="mt-2">
-                    <strong>Material de estudio: </strong> Módulos impresos.
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Material de estudio: </strong> Módulos impresos.
                   </p>
-                  <p className="mt-2">
-                    <strong>Estructura curricular: </strong> Cinco módulos
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Estructura curricular: </strong> Cinco módulos
                     básicos y uno diversificado para Primaria; siete módulos
                     básicos y dos diversificados para Secundaria. Incluye áreas
                     como lectura, escritura, matemáticas, ciencias sociales y
                     naturales.
                   </p>
-                  <p className="mt-2 mb-9">
-                    <strong>Tiempo estimado de conclusión: </strong> 3 a 6 meses
+                  <p className="mt-2 mb-9 !text-[#333334]">
+                    <strong className="!text-[#333334]">Tiempo estimado de conclusión: </strong> 3 a 6 meses
                     dedicando 4 horas por semana.
                   </p>
                   <div
                     id="alert-additional-content-4"
-                    className="p-4 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
+                    className="p-4 mb-4 mt-2 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:border-yellow-800"
                     role="alert"
                   >
                     <div className="flex items-center">
@@ -114,38 +114,26 @@ function Modalidad() {
                         <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 15a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 12 17Zm1-4.5a1 1 0 0 1-2 0V7a1 1 0 0 1 2 0Z" />
                       </svg>
                       <span className="sr-only">Info</span>
-                      <h3 className="text-lg font-medium">
-                        <strong>Requisitos:</strong>
+                      <h3 className="text-lg font-medium !text-[#333334]">
+                        <strong className="!text-[#333334]">Requisitos:</strong>
                       </h3>
                     </div>
-                    <div className="mt-2 mb-4 text-lg">
-                      <ul className="list-disc ml-8">
-                        <li>Tener 15 años o más</li>
-                        <li>Acta de nacimiento</li>
-                        <li>CURP</li>
-                        <li>Certificado</li>
-                        <li>Primaria (en caso de comenzar Secundaria)</li>
-                        <li>
-                          Documento binacional (para personas provenientes del
-                          extranjero)
+                    <div className="mt-2 mb-4 text-lg !text-[#333334]">
+                      <ul className="list-disc ml-8 !text-[#333334]">
+                        <li className="!text-[#333334]">Tener 15 años o más</li>
+                        <li className="!text-[#333334]">Acta de nacimiento</li>
+                        <li className="!text-[#333334]">CURP</li>
+                        <li className="!text-[#333334]">Certificado</li>
+                        <li className="!text-[#333334]">Primaria (en caso de comenzar Secundaria)</li>
+                        <li className="!text-[#333334]">
+                          Documento binacional (para personas provenientes del extranjero)
                         </li>
-                        <li>
-                          En caso de haber cursado en grados escolarizados
-                          (Primaria o Secundaria) se deben presentar las boletas
-                          correspondientes
+                        <li className="!text-[#333334]">
+                          En caso de haber cursado en grados escolarizados (Primaria o Secundaria) se deben presentar las boletas correspondientes
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <Link href="/">
-                    <motion.button
-                      className="mt-4 px-4 py-2 bg-[#611232] text-white rounded-lg mx-auto block border-2 hover:bg-white hover:text-[#611232] hover:border-[#611232] focus:bg-[#A57F2C]"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Regístrate
-                    </motion.button>
-                  </Link>
                 </div>
               }
               imageSrc="/Modalidad/programa_regular2.webp"
@@ -154,43 +142,31 @@ function Modalidad() {
               title="¿Cuentas con antecedentes escolares y deseas realizar solo un examen por nivel? "
               content={
                 <div>
-                  <p className="font-semibold">
+                  <p className="font-semibold !text-[#333334]">
                     Te conviene el Examen de Reconocimiento de Saberes (Examen
                     Único)
                   </p>
-                  <p className="mt-2">
-                    <strong>Descripción: </strong> Examen único para evaluar y
-                    certificar los conocimientos y habilidades adquiridos por
-                    personas de 15 años o más a lo largo de su vida.
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Descripción: </strong> Examen único para evaluar y certificar los conocimientos y habilidades adquiridos por personas de 15 años o más a lo largo de su vida.
                   </p>
-                  <p className="mt-2">
-                    <strong>Objetivo: </strong> Ofrecer una oportunidad rápida y
-                    gratuita para obtener el certificado de Primaria o
-                    Secundaria sin necesidad de cursar un programa educativo
-                    completo.
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Objetivo: </strong> Ofrecer una oportunidad rápida y gratuita para obtener el certificado de Primaria o Secundaria sin necesidad de cursar un programa educativo completo.
                   </p>
-                  <p className="mt-2">
-                    <strong>Modalidad de atención: </strong>Presencial (una
-                    única vez para aplicación del examen). El estudio es
-                    autodidacta, con opción de asesorías presenciales o en
-                    línea.
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Modalidad de atención: </strong>Presencial (una única vez para aplicación del examen). El estudio es autodidacta, con opción de asesorías presenciales o en línea.
                   </p>
-                  <p className="mt-2">
-                    <strong>Material de estudio: </strong> Guía impresa de
-                    preparación para el Examen Único.
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Material de estudio: </strong> Guía impresa de preparación para el Examen Único.
                   </p>
-                  <p className="mt-2">
-                    <strong>Estructura curricular: </strong> Examen con 70
-                    preguntas que evalúan áreas como lectura, escritura,
-                    matemáticas, ciencias sociales y naturales con diferentes
-                    niveles de profundidad según el nivel educativo.
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Estructura curricular: </strong> Examen con 70 preguntas que evalúan áreas como lectura, escritura, matemáticas, ciencias sociales y naturales con diferentes niveles de profundidad según el nivel educativo.
                   </p>
-                  <p className="mt-2 mb-9">
-                    <strong>Tiempo estimado de conclusión: </strong> Inmediato
+                  <p className="mt-2 mb-9 !text-[#333334]">
+                    <strong className="!text-[#333334]">Tiempo estimado de conclusión: </strong> Inmediato
                   </p>
                   <div
                     id="alert-additional-content-4"
-                    className="p-4 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
+                    className="p-4 mb-4 mt-2 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:border-yellow-800"
                     role="alert"
                   >
                     <div className="flex items-center">
@@ -204,38 +180,20 @@ function Modalidad() {
                         <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 15a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 12 17Zm1-4.5a1 1 0 0 1-2 0V7a1 1 0 0 1 2 0Z" />
                       </svg>
                       <span className="sr-only">Info</span>
-                      <h3 className="text-lg font-medium">
-                        <strong>Requisitos:</strong>
+                      <h3 className="text-lg font-medium !text-[#333334]">
+                        <strong className="!text-[#333334]">Requisitos:</strong>
                       </h3>
                     </div>
-                    <div className="mt-2 mb-4 text-lg">
-                      <ul className="list-disc ml-8">
-                        <li>Tener 15 años o más</li>
-                        <li>Identificación oficial con fotografía</li>
-                        <li>
-                          Portafolio de evidencias (reconocimientos, constancias
-                          y diplomas)
-                        </li>
-                        <li>
-                          Dos fotografías tamaño infantil (color o blanco y
-                          negro)
-                        </li>
-                        <li>
-                          Certificado de Primaria (sólo para quienes harán
-                          examen de secundaria)
-                        </li>
+                    <div className="mt-2 mb-4 text-lg !text-[#333334]">
+                      <ul className="list-disc ml-8 !text-[#333334]">
+                        <li className="!text-[#333334]">Tener 15 años o más</li>
+                        <li className="!text-[#333334]">Identificación oficial con fotografía</li>
+                        <li className="!text-[#333334]">Portafolio de evidencias (reconocimientos, constancias y diplomas)</li>
+                        <li className="!text-[#333334]">Dos fotografías tamaño infantil (color o blanco y negro)</li>
+                        <li className="!text-[#333334]">Certificado de Primaria (sólo para quienes harán examen de secundaria)</li>
                       </ul>
                     </div>
                   </div>
-                  <Link href="/">
-                    <motion.button
-                      className="mt-4 px-4 py-2 bg-[#611232] text-white rounded-lg mx-auto block border-2 hover:bg-white hover:text-[#611232] hover:border-[#611232] focus:bg-[#A57F2C]"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Regístrate
-                    </motion.button>
-                  </Link>
                 </div>
               }
               imageSrc="/Modalidad/examen_unico2024.jpg"
@@ -244,39 +202,30 @@ function Modalidad() {
               title="¿Deseas estudiar con el uso de dispositivos móviles o computadora desde casa?  "
               content={
                 <div>
-                  <p className="font-semibold">
-                    Te conviene estudiar en AprendeINEA en Línea{" "}
+                  <p className="font-semibold !text-[#333334]">
+                    Te conviene estudiar en AprendeINEA en Línea
                   </p>
-                  <p className="mt-2">
-                    <strong>Descripción: </strong>Plataforma educativa en línea
-                    diseñada para que los adultos de 15 años o más completen su
-                    educación Primaria o Secundaria en línea.
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Descripción: </strong>Plataforma educativa en línea diseñada para que los adultos de 15 años o más completen su educación Primaria o Secundaria en línea.
                   </p>
-                  <p className="mt-2">
-                    <strong>Objetivo: </strong>Proporcionar una vía flexible,
-                    conveniente y gratuita para obtener el certificado de
-                    Primaria o Secundaria.
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Objetivo: </strong>Proporcionar una vía flexible, conveniente y gratuita para obtener el certificado de Primaria o Secundaria.
                   </p>
-                  <p className="mt-2">
-                    <strong>Modalidad de atención: </strong>En línea.
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Modalidad de atención: </strong>En línea.
                   </p>
-                  <p className="mt-2">
-                    <strong>Material de estudio: </strong>Materiales digitales
-                    disponibles en la plataforma en línea (es necesario contar
-                    con teléfono o computadora con acceso a internet).
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Material de estudio: </strong>Materiales digitales disponibles en la plataforma en línea (es necesario contar con teléfono o computadora con acceso a internet).
                   </p>
-                  <p className="mt-2">
-                    <strong>Estructura curricular: </strong>Un propedéutico y 5
-                    módulos para Primaria y un propedéutico y 7 módulos para
-                    Secundaria.
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Estructura curricular: </strong>Un propedéutico y 5 módulos para Primaria y un propedéutico y 7 módulos para Secundaria.
                   </p>
-                  <p className="mt-2 mb-9">
-                    <strong>Tiempo estimado de conclusión: </strong> 2 a 3
-                    semanas por módulo.
+                  <p className="mt-2 mb-9 !text-[#333334]">
+                    <strong className="!text-[#333334]">Tiempo estimado de conclusión: </strong> 2 a 3 semanas por módulo.
                   </p>
                   <div
                     id="alert-additional-content-4"
-                    className="p-4 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
+                    className="p-4 mb-4 mt-2 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:border-yellow-800"
                     role="alert"
                   >
                     <div className="flex items-center">
@@ -290,38 +239,22 @@ function Modalidad() {
                         <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 15a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 12 17Zm1-4.5a1 1 0 0 1-2 0V7a1 1 0 0 1 2 0Z" />
                       </svg>
                       <span className="sr-only">Info</span>
-                      <h3 className="text-lg font-medium">
-                        <strong>Requisitos:</strong>
+                      <h3 className="text-lg font-medium !text-[#333334]">
+                        <strong className="!text-[#333334]">Requisitos:</strong>
                       </h3>
                     </div>
-                    <div className="mt-2 mb-4 text-lg">
-                      <ul className="list-disc ml-8">
-                        <li>Tener 15 años o más</li>
-                        <li>Acta de nacimiento</li>
-                        <li>CURP</li>
-                        <li>Certificado</li>
-                        <li>Primaria (en caso de comenzar Secundaria)</li>
-                        <li>
-                          Documento binacional (para personas provenientes del
-                          extranjero)
-                        </li>
-                        <li>
-                          En caso de haber cursado en grados escolarizados
-                          (Primaria o Secundaria) se deben presentar las boletas
-                          correspondientes
-                        </li>
+                    <div className="mt-2 mb-4 text-lg !text-[#333334]">
+                      <ul className="list-disc ml-8 !text-[#333334]">
+                        <li className="!text-[#333334]">Tener 15 años o más</li>
+                        <li className="!text-[#333334]">Acta de nacimiento</li>
+                        <li className="!text-[#333334]">CURP</li>
+                        <li className="!text-[#333334]">Certificado</li>
+                        <li className="!text-[#333334]">Primaria (en caso de comenzar Secundaria)</li>
+                        <li className="!text-[#333334]">Documento binacional (para personas provenientes del extranjero)</li>
+                        <li className="!text-[#333334]">En caso de haber cursado en grados escolarizados (Primaria o Secundaria) se deben presentar las boletas correspondientes</li>
                       </ul>
                     </div>
                   </div>
-                  <Link href="/">
-                    <motion.button
-                      className="mt-4 px-4 py-2 bg-[#611232] text-white rounded-lg mx-auto block border-2 hover:bg-white hover:text-[#611232] hover:border-[#611232] focus:bg-[#A57F2C]"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Regístrate
-                    </motion.button>
-                  </Link>
                 </div>
               }
               imageSrc="/Modalidad/aprendeINEAenlinea2.webp"
@@ -331,30 +264,30 @@ function Modalidad() {
               title="¿Tienes antecedentes escolares que deseas sean considerados al realizar solo exámenes para concluir tus estudios? "
               content={
                 <div>
-                  <p className="font-semibold">
-                    Te convienen los Exámenes Diagnóstico{" "}
+                  <p className="font-semibold !text-[#333334]">
+                    Te convienen los Exámenes Diagnóstico
                   </p>
-                  <p className="mt-2">
-                    <strong>Descripción: </strong>Modalidad para evaluar y certificar conocimientos de personas de 15 años o más, permitiendo acreditar Primaria o Secundaria a través de dos exámenes por nivel, reconociendo progresivamente lo aprendido.
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Descripción: </strong>Modalidad para evaluar y certificar conocimientos de personas de 15 años o más, permitiendo acreditar Primaria o Secundaria a través de dos exámenes por nivel, reconociendo progresivamente lo aprendido.
                   </p>
-                  <p className="mt-2">
-                    <strong>Objetivo: </strong>Certificar conocimientos adquiridos y, si es necesario, ofrecer retroalimentación y orientación en los módulos de estudio requeridos en los que se divide cada examen para obtener el certificado de Primario y/o Secundaria.
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Objetivo: </strong>Certificar conocimientos adquiridos y, si es necesario, ofrecer retroalimentación y orientación en los módulos de estudio requeridos en los que se divide cada examen para obtener el certificado de Primario y/o Secundaria.
                   </p>
-                  <p className="mt-2">
-                    <strong>Modalidad de atención: </strong>Sesiones de estudio presencial y asesoría a distancia opcional.
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Modalidad de atención: </strong>Sesiones de estudio presencial y asesoría a distancia opcional.
                   </p>
-                  <p className="mt-2">
-                    <strong>Material de estudio: </strong>Guías de Aprendizaje impresas o digitales, organizadas en unidades de aprendizaje.
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Material de estudio: </strong>Guías de Aprendizaje impresas o digitales, organizadas en unidades de aprendizaje.
                   </p>
-                  <p className="mt-2">
-                    <strong>Estructura curricular: </strong>Dos unidades de aprendizaje por nivel que abarcan lengua y comunicación, pensamiento matemático, y vida y comunidad.
+                  <p className="mt-2 !text-[#333334]">
+                    <strong className="!text-[#333334]">Estructura curricular: </strong>Dos unidades de aprendizaje por nivel que abarcan lengua y comunicación, pensamiento matemático, y vida y comunidad.
                   </p>
-                  <p className="mt-2 mb-9">
-                    <strong>Tiempo estimado de conclusión: </strong>2 a 3 meses dedicando 2 horas por semana.
+                  <p className="mt-2 mb-9 !text-[#333334]">
+                    <strong className="!text-[#333334]">Tiempo estimado de conclusión: </strong>2 a 3 meses dedicando 2 horas por semana.
                   </p>
                   <div
                     id="alert-additional-content-4"
-                    className="p-4 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
+                    className="p-4 mb-4 mt-2 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:border-yellow-800"
                     role="alert"
                   >
                     <div className="flex items-center">
@@ -368,38 +301,22 @@ function Modalidad() {
                         <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 15a1.5 1.5 0 1 1-1.5 1.5A1.5 1.5 0 0 1 12 17Zm1-4.5a1 1 0 0 1-2 0V7a1 1 0 0 1 2 0Z" />
                       </svg>
                       <span className="sr-only">Info</span>
-                      <h3 className="text-lg font-medium">
-                        <strong>Requisitos:</strong>
+                      <h3 className="text-lg font-medium !text-[#333334]">
+                        <strong className="!text-[#333334]">Requisitos:</strong>
                       </h3>
                     </div>
-                    <div className="mt-2 mb-4 text-lg">
-                      <ul className="list-disc ml-8">
-                        <li>Tener 15 años o más</li>
-                        <li>Acta de nacimiento</li>
-                        <li>CURP</li>
-                        <li>Certificado</li>
-                        <li>Primaria (en caso de comenzar Secundaria)</li>
-                        <li>
-                          Documento binacional (para personas provenientes del
-                          extranjero)
-                        </li>
-                        <li>
-                          En caso de haber cursado en grados escolarizados
-                          (Primaria o Secundaria) se deben presentar las boletas
-                          correspondientes
-                        </li>
+                    <div className="mt-2 mb-4 text-lg !text-[#333334]">
+                      <ul className="list-disc ml-8 !text-[#333334]">
+                        <li className="!text-[#333334]">Tener 15 años o más</li>
+                        <li className="!text-[#333334]">Acta de nacimiento</li>
+                        <li className="!text-[#333334]">CURP</li>
+                        <li className="!text-[#333334]">Certificado</li>
+                        <li className="!text-[#333334]">Primaria (en caso de comenzar Secundaria)</li>
+                        <li className="!text-[#333334]">Documento binacional (para personas provenientes del extranjero)</li>
+                        <li className="!text-[#333334]">En caso de haber cursado en grados escolarizados (Primaria o Secundaria) se deben presentar las boletas correspondientes</li>
                       </ul>
                     </div>
                   </div>
-                  <Link href="/">
-                    <motion.button
-                      className="mt-4 px-4 py-2 bg-[#611232] text-white rounded-lg mx-auto block border-2 hover:bg-white hover:text-[#611232] hover:border-[#611232] focus:bg-[#A57F2C]"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Regístrate
-                    </motion.button>
-                  </Link>
                 </div>
               }
               imageSrc="/Modalidad/examenes_diagnostico.jpg"

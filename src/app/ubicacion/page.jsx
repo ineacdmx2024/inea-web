@@ -5,9 +5,9 @@ import PagSec from "@/components/PlantillaPagSec";
 import Plazas from "@/components/Plazas";
 import "../../app/globals.css";
 
-import { Montserrat } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
@@ -86,9 +86,9 @@ function Ubicacion() {
     },
     {
       title: "Elena Garro",
-      nom: "Mitzi Martínez Pérez",
+      nom: "Laura Merlos Sedeño",
       tel: " 55 25 20 46 76",
-      email: "",
+      email: "lmerlos@inea.gob.mx",
       map: (
         <iframe
           src="https://www.google.com/maps/d/embed?mid=19J4WWcFAKKUoKRAwA5MC_6Nl4y29PUo&ehbc=2E312F"
@@ -98,17 +98,17 @@ function Ubicacion() {
       items: [
         {
           alcaldia: "Tlálpan",
-          dir: "Av. México # 985, Col. Héroes de Padierna, Alcaldía Magdalena Contreras, CP 10700, CDMX",
-          atel: "55 56 52 72 87",
-          aemail: "czmcontreras@inea.gob.mx",
-          url: "https://maps.app.goo.gl/Dh7uZbSH1rDHnXSb8",
+          dir: "Periférico Sur #5290, Col. Isidro Fabela, Alcaldía Tlalpan, CP 01403, Ciudad de México",
+          atel: "55 56 66 17 50",
+          aemail: "cztlalpan@inea.gob.mx",
+          url: "https://maps.app.goo.gl/vwJfFRAy2GMGM2AUA",
         },
         {
           alcaldia: "Magdalena Contreras",
-          dir: "Av. Luis Castillo Ledón # 17, Col. Cuajimalpa, Alcaldía Cuajimalpa, CP 05000, CDMX",
-          atel: "55 58 12 35 91",
-          aemail: "czcuajimalpa@inea.gob.mx",
-          url: "https://maps.app.goo.gl/jUQ8fgfUi3unTXhH8",
+          dir: "Av. México 985, Héroes de Padierna, Héroes de Padierna, La Magdalena Contreras, CP 10700, Ciudad de México",
+          atel: "55 56 52 72 87",
+          aemail: "czmcontreras@inea.gob.mx",
+          url: "https://maps.app.goo.gl/24F1NmJLczLY4mfo9",
         },
       ],
     },
@@ -135,9 +135,9 @@ function Ubicacion() {
     },
     {
       title: "Justo Sierra",
-      nom: "Laura Merlos Sedeño",
+      nom: "Wiliber Sánchez Sánchez",
       tel: "55 79 46 79 55",
-      email: "lmerlos@inea.gob.mx",
+      email: "wsanchez@inea.gob.mx",
       map: (
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1KNGOzsp4CL4BUr69KA3UFsheA_jVG2E&ehbc=2E312F"
@@ -434,7 +434,7 @@ function Ubicacion() {
       title: "Benito Juárez",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1x2BWSPci6dXVLQRGMJqYPlX9j7_o6Io&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/1/embed?mid=11TxF0-Xr_zMdOm3JohqipE9ULyNeVyE&ehbc=2E312F"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -450,7 +450,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1ITyGlGxzE2bOtY_Nvn3ZpQuGsIETQh0&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1ITyGlGxzE2bOtY_Nvn3ZpQuGsIETQh0&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -486,7 +486,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1BwTQcdqppGITq9b3FiZlElmMmrK-DQk&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1BwTQcdqppGITq9b3FiZlElmMmrK-DQk&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -518,7 +518,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1QQ9E05nybLWo3xQ-ghjhRN0v3ltjSdI&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1QQ9E05nybLWo3xQ-ghjhRN0v3ltjSdI&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -897,11 +897,10 @@ function Ubicacion() {
         },
         {
           alcaldia: "PILARES Iztlaccihuatl",
-          url: "Playa Erizo Num S/N, Col. Reforma Iztlaccihuatl, C.P. 8810",
-          dir: "https://maps.app.goo.gl/HpBe7Pkv9wY2m8p69",
+          url: "https://maps.app.goo.gl/HpBe7Pkv9wY2m8p69",
+          dir: "Playa Erizo Num S/N, Col. Reforma Iztlaccihuatl, C.P. 8810",
           atel: "",
-        },
-       
+        }, 
       ],
     },
     {
@@ -1119,7 +1118,7 @@ function Ubicacion() {
       title: "Milpa Alta",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1IO2-asrRxv8fBvR6vfsQOqjohy2pIIw&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1IO2-asrRxv8fBvR6vfsQOqjohy2pIIw&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -1150,7 +1149,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1KyEsuAGClb9AJaB_132IGHOkDQTtHww&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1KyEsuAGClb9AJaB_132IGHOkDQTtHww&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         />
       ),
@@ -1198,7 +1197,7 @@ function Ubicacion() {
       title: "Tlalpan",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1WMzcmG_cP0QEkJqPQUttqSVSRDo-UR8&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1WMzcmG_cP0QEkJqPQUttqSVSRDo-UR8&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -1255,7 +1254,7 @@ function Ubicacion() {
       title: "Venustiano Carranza",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1-IH5YXtPfckdLJzkRCoXXVEGmXYIk5s&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1-IH5YXtPfckdLJzkRCoXXVEGmXYIk5s&ehbc=2E312F&noprof=1"
           className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -1288,7 +1287,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1WuZvjTjaWd_2I6IAG7D7DVXqgYHEL_4&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/1/embed?mid=1gDIObMv2mNjoF5xMGtf6TIhxdEW5qFw&ehbc=2E312F"
           className="  md:h-[380px] sm: w-[100%] sm: h-[300px]"
         ></iframe>
       ),
@@ -1334,467 +1333,6 @@ function Ubicacion() {
     },
   ];
 
-  const plazasData = [
-    {
-      title: "Álvaro Obregón",
-
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1GLZ_yu1v0d_ReD9eQTP9S5z5XfOS77M&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
-      ),
-      items: [
-        {
-          alcaldia: "El Cuernito Centro Comunitario",
-          dir: "Av. Chicago, S/N, Reacomodo El Cuernito, Álvaro Obregón, C.P. 01289",
-          atel: "55 56152857",
-          url: "https://maps.app.goo.gl/Y4sxywUpEAWhQSF69",
-        },
-        {
-          alcaldia: "DIF Jalapa El Grande",
-          dir: "Peral, S/N, Jalalpa El Grande, Álvaro Obregón, C.P. 01296",
-          atel: "55 25917247",
-          url: "https://maps.app.goo.gl/KFzShWkxVpQxVMbu5",
-        },
-        {
-          alcaldia: "La Era",
-          dir: "Av. 29 de Octubre, S/N, Lomas de La Era, Álvaro Obregón, C.P. 01860",
-          atel: "55 26502684",
-          url: "https://maps.app.goo.gl/KDqjDhkbxFyeDKup7",
-        },
-      ],
-    },
-    {
-      title: "Azcapotzalco",
-
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1OpDsI4wB82GhT1H24u5RPISvOZn7wPc&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
-      ),
-      items: [
-        {
-          alcaldia: "Azcapotzalco Prohogar",
-          dir: "Calle 22, 17, Prohogar, Azcapotzalco, C.P. 02600",
-          atel: "55 53554230",
-          url: "https://maps.app.goo.gl/tEjm5fRX8pYJPo5FA",
-        },
-        {
-          alcaldia: "El Rosario",
-          dir: "Av. de las Culturas, S/N, Unidad Habitacional El Rosario, Azcapotzalco, C.P. 02100 ",
-          atel: "55 26375579",
-          url: "https://maps.app.goo.gl/qLj3puNK1p2YYfxd6",
-        },
-        {
-          alcaldia: "San Antonio",
-          dir: "Campo Maluco, S/N, San Antonio, Azcapotzalco, C.P. 02720",
-          atel: "",
-          url: "https://maps.app.goo.gl/L5rYaD2KXpB6fqnE9",
-        },
-      ],
-    },
-
-    {
-      title: "Benito Juárez",
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=11TxF0-Xr_zMdOm3JohqipE9ULyNeVyE&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
-      ),
-      items: [
-        {
-          alcaldia: "Extremadura",
-          url: "https://maps.app.goo.gl/2AuWcxxSP8uF2sqz6",
-          dir: "Extremadura, 26, Insurgentes Extremadura, Benito Juárez, C.P. 03740",
-          atel: "55 25941842",
-        },
-        {
-          alcaldia: "Centro de desarrollo Social 8 de Agosto",
-          url: "https://maps.app.goo.gl/fEzoqM79bWDjRrAHA",
-          dir: "Cerrada Becerra, S/N, 8 de Agosto, Benito Juárez, C.P. 03820",
-          atel: "55 52762183",
-        },
-      ],
-    },
-    {
-      title: "Coyoacán",
-
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1sBBkdZDsa_VAHhVpQHMPNzmD840E_sc&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
-      ),
-      items: [
-        {
-          alcaldia: "DGOSE-UNAM",
-          url: "https://maps.app.goo.gl/f4ApA5z1uPa3nBqeA",
-          dir: "Insurgentes Sur, 3000, Ciudad Universitaria, Coyoacán, C.P. 04510 ",
-          atel: "",
-        },
-        {
-          alcaldia:
-            'Centro de Desarrollo Comunitario "San Francisco Culhuacan"',
-          url: "https://maps.app.goo.gl/riorcX1m9UgCPuLg8",
-          dir: "Eje 2 Oriente Escuela Naval Militar, 3, San Francisco Culhuacán, Coyoacán, C.P. 04260",
-          atel: "55 56072333",
-        },
-        {
-          alcaldia: "C.D.C. Cuauhtemoc",
-          url: "https://maps.app.goo.gl/pPkMh7ApLcxPhEr36",
-          dir: "Papalotl, S/N, Santo Domingo, Coyoacán, C.P. 04369",
-          atel: "55 15177440",
-        },
-        {
-          alcaldia: "2 de Octubre 1968",
-          url: "https://maps.app.goo.gl/LHxnRPM4ovuDe6wv6",
-          dir: "Avenida Panamericana, 59-A, Villa Panamericana, Coyoacán, C.P. 04700",
-          atel: "55 56664778",
-        },
-      ],
-    },
-    {
-      title: "Cuajimalpa",
-
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1pRhCdjAb3bGbYXk59bzElVfrvzxyib4&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
-      ),
-      items: [
-        {
-          alcaldia: "Centro de desarrollo Chimalpa",
-          url: "https://maps.app.goo.gl/QnJhbEn9LgVHmE997",
-          dir: "Porfirio Díaz, S/N, San Pablo Chimalpa, Cuajimalpa de Morelos, C.P. 5050",
-          atel: "55 / 81643263",
-        },
-        {
-          alcaldia: "Iglesia de San Mateo",
-          url: "https://maps.app.goo.gl/VTPpJkG7XVPQ64LZA",
-          dir: "S/N, San Mateo Tlaltenango, Cuajimalpa de Morelos, C.P. 3560",
-          atel: "55 / 81647867",
-        },
-        {
-          alcaldia: "Contadero",
-          url: "https://maps.app.goo.gl/DV4LWp6v7aVmuEFv5",
-          dir: "Avenida 16 de Septiembre, S/N, Contadero, Cuajimalpa de Morelos, C.P. 5500",
-          atel: "55 / 21634452",
-        },
-        {
-          alcaldia: "San Lorenzo Acopilco",
-          url: "https://maps.app.goo.gl/SFti4F691teCAEnc7",
-          dir: "Puerto Escondido, 8, Zentlatpatl, Cuajimalpa de Morelos, C.P. 5010",
-          atel: "",
-        },
-      ],
-    },
-    {
-      title: "Cuauhtémoc",
-
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1QeQuu8mT6f2UGhEMEPPzUKpfFpJAD38&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
-      ),
-      items: [
-        {
-          alcaldia: "Centro IMSS Merced",
-          url: "https://maps.app.goo.gl/F92LdbxtFcGzjM718",
-          dir: "San Pablo, 31, Centro, Cuauhtémoc, C.P. 6020",
-          atel: "55 / 54911129",
-        },
-        {
-          alcaldia: "David Alfaro Siqueiros",
-          url: "https://maps.app.goo.gl/rzueMSCowwVr9KuA7",
-          dir: "Fernando de Alva Ixtlilxóchitl, 185, Tránsito, Cuauhtémoc, C.P. 6820",
-          atel: "55 / 21242559",
-        },
-        {
-          alcaldia: "Paulo Freire",
-          url: "https://maps.app.goo.gl/N7p3tgLxUYGpXb897",
-          dir: "Francisco Márquez, 160, Condesa, Cuauhtémoc, C.P. 6140",
-          atel: "55 / 55535052",
-        },
-        {
-          alcaldia: "Biblioteca Jesús Reyes Heroles",
-          url: "https://maps.app.goo.gl/R6Z33HhUo6772jW28",
-          dir: "Francisco Ayala, 123, Asturias, Cuauhtémoc, C.P. 6850",
-          atel: "55 / 57418381",
-        },
-        {
-          alcaldia: "CROC Donceles 28 ",
-          url: "https://maps.app.goo.gl/2ZGvNDC9w9M3mGFs8",
-          dir: "Donceles, 28, Centro, Cuauhtémoc, C.P. 6010",
-          atel: "55 / 21242559",
-        },
-      ],
-    },
-    {
-      title: "Gustavo A. Madero",
-
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1eCfaAhwI_yQASenCJukusXFzawGqr9I&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
-      ),
-      items: [
-        {
-          alcaldia:
-            "Cooperativa LF del Centro-Sindicato Mexicano de Electricistas",
-          url: "https://maps.app.goo.gl/9YuDKKy8Bq4Z5yKb6",
-          dir: "Av. Río de Guadalupe, 54, San Pedro El Chico, Gustavo A. Madero, C.P. 7480",
-          atel: "",
-        },
-        {
-          alcaldia: "CSS IMSS Tepeyac",
-          url: "https://maps.app.goo.gl/rVAMcxsQx8GiSaCn9",
-          dir: "Calzada de Guadalupe, 497, Estrella, Gustavo A. Madero, C.P. 7810",
-          atel: "5555371231",
-        },
-        {
-          alcaldia: "CECEM Cuautepec",
-          url: "https://maps.app.goo.gl/gyHy7FZzme7wgcfM7",
-          dir: "Lomas Cierzo, S/N, Lomas de Cuautepec Barrio Alto, Gustavo A. Madero, C.P. 7110",
-          atel: "5518581345",
-        },
-        {
-          alcaldia: "Aquiles Serdán",
-          url: "https://maps.app.goo.gl/9hGF2f8CwZRnJ64v9",
-          dir: "Puerto Tampico, S/N, Casas Alemán, Gustavo A. Madero, C.P. 7580",
-          atel: "5557507338",
-        },
-      ],
-    },
-    {
-      title: "Iztacalco",
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1Ba0DuI4nZyUHQJeM9ICUqwcBd3goN2s&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
-      ),
-      items: [
-        {
-          alcaldia: "Plaza comunitaria Fortaleza",
-          url: "https://maps.app.goo.gl/2uY1SB8gEVwnh8QB9",
-          dir: "Oriente 116, S/N, Cuchilla Ramos Millán, Iztacalco, C.P. 8030",
-          atel: "55 / 56649475",
-        },
-      ],
-    },
-    {
-      title: "Iztapalapa",
-
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1hfbIhr2v6I2MUr0OKcH3FAHv7jYZlL4&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
-      ),
-      items: [
-        {
-          alcaldia: "CONALEP Iztapalapa V",
-          url: "https://maps.app.goo.gl/1NHQi3WGsRouKFTPA",
-          dir: "Ahuehuetes, 1, Unidad Habitacional Solidaridad, Iztapalapa, C.P. 9530",
-          atel: "55 / 15528243",
-        },
-        {
-          alcaldia: "Santa Catarina",
-          url: "https://maps.app.goo.gl/57yao2aQS2cXiXoJ8",
-          dir: "Lázaro Cárdenas, S/N, Ixtlahuacan, Iztapalapa, C.P. 9690",
-          atel: "55 / 26353512",
-        },
-        {
-          alcaldia: "Atlalilco",
-          url: "https://maps.app.goo.gl/57yao2aQS2cXiXoJ8",
-          dir: "Ermita Iztapalapa, 1029, Barrio San Lucas, Iztapalapa, C.P. 9000",
-          atel: "55 / 55548903",
-        },
-        {
-          alcaldia: "Vicente Guerrero",
-          url: "https://maps.app.goo.gl/rMFAicdEPzGSQJWg9",
-          dir: "Super Manzana 6, Edificio B Primer Piso, S/N, Unidad Habitacional Vicente Guerrero, Iztapalapa, C.P. 9200",
-          atel: "55 / 26085160",
-        },
-      ],
-    },
-    {
-      title: "La Magdalena Contreras",
-
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1lOqAixDT8dKi2x_QV3Ya8prcg3y0Bck&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
-      ),
-      items: [
-        {
-          alcaldia: "Escuela de oficios La Malinche",
-          url: "https://maps.app.goo.gl/GvezE5X3wwTzcFKfA",
-          dir: "Lote 21, La Malinche, Magdalena Contreras, C.P. 10010",
-          atel: "55 / 56832692",
-        },
-      ],
-    },
-    {
-      title: "Miguel Hidalgo",
-
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=16fPqTuB8v8TY7fMcTs4xp6CafHTz29g&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
-      ),
-      items: [
-        {
-          alcaldia: "Faro del Saber Legaria",
-          url: "https://maps.app.goo.gl/Ad3RssYeeRrMFaZR6",
-          dir: "Abelar Rodríguez, S/N, Francisco I Madero, Miguel Hidalgo, C.P. 11480",
-          atel: "55 / 53421953",
-        },
-      ],
-    },
-
-    {
-      title: "Milpa Alta",
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1W-f09zlUlMIutaNVR7GYCYlOLuWKN2c&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
-      ),
-      items: [
-        {
-          alcaldia: "Temachtilcalco",
-          url: "https://maps.app.goo.gl/7QcyckqLpBnRz66i9",
-          dir: "Avenida 5 de Mayo, S/N, San Antonio Tecomitl, Milpa Alta, C.P. 12100",
-          atel: "55 / 58477404",
-        },
-        {
-          alcaldia: "C.C. San José-Villa Milpa Alta",
-          url: "https://maps.app.goo.gl/vwiw1eBcFdRe3G1JA",
-          dir: "Jalisco, S/N, Los Ángeles, Milpa Alta, C.P. 12000",
-          atel: "55 / 22115954",
-        },
-        {
-          alcaldia: "San Pablo Oztotepec",
-          url: "https://maps.app.goo.gl/ohxDD6zzN15xdQUW6",
-          dir: "Guerrero Sur, S/N, Barrio Centro, Milpa Alta, C.P. 12400",
-          atel: "55 / 22115540",
-        },
-      ],
-    },
-    {
-      title: "Tláhuac",
-
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=18MvNS2u4wLcz6z9sUDxPeTzEKvZptXA&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        />
-      ),
-      items: [
-        {
-          alcaldia: "Del Mar",
-          url: "https://maps.app.goo.gl/gK2KYY2GPDaVhojQ7",
-          dir: "Calle Gitana, S/N, Del Mar, Tláhuac, C.P. 13270",
-          atel: "55 / 58508076",
-        },
-      ],
-    },
-    {
-      title: "Tlalpan",
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1_DlpyIry4s8cb6iZnr76O6-uD1T-W4E&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
-      ),
-
-      items: [
-        {
-          alcaldia: "Iztapapalotl",
-          url: "https://maps.app.goo.gl/xRd1faBjusSVdfUu5",
-          dir: "Paseo de las Azucenas, S/N, Mirador I, Tlalpan, C.P. 14449",
-          atel: "55 / 54469454",
-        },
-        {
-          alcaldia: "San Pedro Mártir",
-          url: "https://maps.app.goo.gl/GRTsvNuPpLUUSULA6",
-          dir: "Carretera Federal a Cuernavaca, S/N, San Pedro Mártir, Tlalpan, C.P. 14650",
-          atel: "55 / 29760014",
-        },
-        {
-          alcaldia: "Magdalena Petlacalco",
-          url: "https://maps.app.goo.gl/3DdRYw3Qqkbd32wd6",
-          dir: "Avenida México - Ajusco, S/N, Magdalena Petlacalco, Tlalpan, C.P. 14480",
-          atel: "55 / 13159505",
-        },
-        {
-          alcaldia: "Centro comunitario Carrasco",
-          url: "https://maps.app.goo.gl/pXoTAyXWohsUxegd6",
-          dir: "Carrasco, 67, Toriello Guerra, Tlalpan, C.P. 14050",
-          atel: "55 / 51711716",
-        },
-      ],
-    },
-    {
-      title: "Venustiano Carranza",
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1Z-CZEd0zxdnDZWghgIOxlrOaA9wpMf4&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
-      ),
-      items: [
-        {
-          alcaldia: "TAPO",
-          url: "https://maps.app.goo.gl/nku6WGET5jWxQng37",
-          dir: "General Ignacio Zaragoza, 200, 10 DE MAYO, Venustiano Carranza, 15290",
-          atel: "55 55220595",
-        },
-
-        {
-          alcaldia: "Casa de cultura Enrique Ramírez y Ramírez",
-          url: "https://maps.app.goo.gl/k4bB4CVqsjyQwScX9",
-          dir: "Vidal Alcocer, 280, Morelos, Venustiano Carranza, 15270",
-          atel: "55 / 26161501",
-        },
-        {
-          alcaldia: "Arenal",
-          url: "https://maps.app.goo.gl/V7YNtiZqqkKTR3mF7",
-          dir: "Xochistlahuaca, 54, Arenal 4A. Secc., Venustiano Carranza, 15640",
-          atel: "55 / 15455230",
-        },
-      ],
-    },
-
-    {
-      title: "Xochimilco",
-
-      map: (
-        <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1gDIObMv2mNjoF5xMGtf6TIhxdEW5qFw&ehbc=2E312F"
-          className="  md:h-[380px] sm: w-[100%] sm: h-[300px]"
-        ></iframe>
-      ),
-      items: [
-        {
-          alcaldia: "Xochimilco",
-          url: "https://maps.app.goo.gl/S6wEWd2ZE8JZ52bQ8",
-          dir: "Pedro Ramírez del Castillo, S/N, Barrio de San Antonio, Xochimilco, C.P. 16000",
-          atel: "55 / 54897413",
-        },
-      ],
-    },
-  ];
-
   const [opcionSeleccionada, setOpcionSeleccionada] =
     useState("coordinaciones");
   const handleOpcionSeleccionada = (opcion) => {
@@ -1802,7 +1340,7 @@ function Ubicacion() {
   };
 
   return (
-    <div className={`${montserrat.className}  text-[#333334]  text-start `}>
+    <div className={`${notoSans.className}  text-[#333334]  text-start `}>
       <PagSec
         Enlaces={enlacesL}
         Titulo={"Ubicación de oficinas de trámites y espacios de estudio"}
@@ -1814,7 +1352,7 @@ function Ubicacion() {
                 <a
                   aria-current="page"
                   className={`${
-                    montserrat.className
+                    notoSans.className
                   } inline-block p-4 text-[18px] ${
                     opcionSeleccionada === "coordinaciones"
                       ? "text-[#A57F2C]  font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C]"
@@ -1829,7 +1367,7 @@ function Ubicacion() {
                 <a
                   // href="#"
                   className={`${
-                    montserrat.className
+                    notoSans.className
                   } inline-block p-4 text-[18px] ${
                     opcionSeleccionada === "plazas"
                       ? "text-[#A57F2C]  font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C]"
@@ -1844,7 +1382,7 @@ function Ubicacion() {
                 <a
                   // href=""
                   className={`${
-                    montserrat.className
+                    notoSans.className
                   } inline-block p-4 text-[18px] ${
                     opcionSeleccionada === "pilares"
                       ? "text-[#A57F2C] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C] "

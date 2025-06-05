@@ -5,15 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useState } from "react";
+
 const open_Sans = Open_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
 });
 
-import { Montserrat } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 
-const montserrat = Montserrat({
+const notoSans = Noto_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -141,7 +142,7 @@ function DetalleEnlace(slug) {
             {
               key: index,
               className: `${
-                montserrat.className
+                notoSans.className
               } text-[#333334] font-bold text-[${21 - item.level}px]`,
             },
             item.children[0]?.text || ""
@@ -227,7 +228,7 @@ function DetalleEnlace(slug) {
           return (
             <ol
               key={index}
-              className={`${montserrat.className} text-[#333334] list-decimal pl-6 mb-4`}
+              className={`${notoSans.className} text-[#333334] list-decimal pl-6 mb-4`}
             >
               {item.children.map((listItem, liIndex) => (
                 <li key={liIndex}>{listItem.children[0]?.text || ""}</li>
@@ -272,7 +273,7 @@ function DetalleEnlace(slug) {
             Subtitulo={cont.subtitulo}
           >
             <h1
-              className={`${montserrat.className} text-[#333334] text-[18px] font-light`}
+              className={`${notoSans.className} text-[#333334] text-[18px] font-light`}
             >
               INEA Ciudad de México | {cont.fecha ? fechaFun(cont.fecha) : ""}
             </h1>
