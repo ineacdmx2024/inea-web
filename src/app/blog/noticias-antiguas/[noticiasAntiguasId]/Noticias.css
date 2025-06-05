@@ -13,5 +13,6 @@
 li {
     padding: 0;
     text-align: left;
-    font-family: 'Noto Sans'!important;
-  }
+    font-family: 'Noto Sans' !important;
+    color: #333334;
+}

@@ -897,11 +897,10 @@ function Ubicacion() {
         },
         {
           alcaldia: "PILARES Iztlaccihuatl",
-          url: "Playa Erizo Num S/N, Col. Reforma Iztlaccihuatl, C.P. 8810",
-          dir: "https://maps.app.goo.gl/HpBe7Pkv9wY2m8p69",
+          url: "https://maps.app.goo.gl/HpBe7Pkv9wY2m8p69",
+          dir: "Playa Erizo Num S/N, Col. Reforma Iztlaccihuatl, C.P. 8810",
           atel: "",
-        },
-       
+        }, 
       ],
     },
     {
