@@ -286,13 +286,13 @@ async function Page({ params }) {
               : ""}
           </h1>
         </div>
-         <div className="m-auto my-6 rounded-lg">
+         <div className="m-auto my-6 rounded-lg overflow-hidden max-h-[420px]">
             <Image
-            src={post.data.attributes?.Imagen?.data?.attributes?.url}
-            alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
-            className="w-full rounded-lg max-h-[420px]"
-            width={1000}
-            height={700}
+              src={post.data.attributes?.Imagen?.data?.attributes?.url}
+              alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
+              className="w-full h-[420px] object-cover"
+              width={1000}
+              height={700}
             />
           </div>
         <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-left" style={{ width: '720px', maxWidth: '100%' }}>{renderContenido(contenido)}</div>
