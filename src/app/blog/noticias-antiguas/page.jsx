@@ -132,7 +132,7 @@ function NoticiasAntiguas({ item }) {
                               : "No hay fecha"}
                           </p>
                           <h2 className="text-lg font-medium text-[#333334] mb-4">
-                            {truncateText(item.attributes.Titulo, 50)}
+                            {truncateText(item.attributes.Titulo, 70)}
                           </h2>
                         </article>
                       </div>
