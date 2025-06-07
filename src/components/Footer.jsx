@@ -39,31 +39,31 @@ const Footer = () => {
                   Mapa de Sitio
                 </h2>
                 <ul className=" text-sm dark:text-white">
-                  <li className="hover:text-[#A57F2C]">
+                  <li className="footer-list hover:text-[#A57F2C]">
                     <a href="https://datos.gob.mx/">Trámites y Servicios</a>
                   </li>
-                  <li className="hover:text-[#A57F2C]">
+                  <li className="footer-list hover:text-[#A57F2C]">
                     <a href="/">Sobre el INEA</a>
                   </li>
-                  <li className="hover:text-[#A57F2C]">
+                  <li className="footer-list hover:text-[#A57F2C]">
                     <a href="/">Aviso de privacidad</a>
                   </li>
-                  <li className="hover:text-[#A57F2C]">
+                  <li className="footer-list hover:text-[#A57F2C]">
                     <a href="/">Comité de Ética</a>
                   </li>
-                  <li className="hover:text-[#A57F2C]">
+                  <li className="footer-list hover:text-[#A57F2C]">
                     <a href="/">Transparencia</a>
                   </li>
-                  <li className="hover:text-[#A57F2C]">
+                  <li className="footer-list hover:text-[#A57F2C]">
                     <a href="/">Glosario</a>
                   </li>
-                  <li className="hover:text-[#A57F2C]">
+                  <li className="footer-list hover:text-[#A57F2C]">
                     <a href="/">INEA Nacional</a>
                   </li>
-                  <li className="hover:text-[#A57F2C]">
+                  <li className="footer-list hover:text-[#A57F2C]">
                     <a href="/">Gobierno</a>
                   </li>
-                  <li className="hover:text-[#A57F2C]">
+                  <li className="footer-list hover:text-[#A57F2C]">
                     <a href="/">Créditos</a>
                   </li>
                 </ul>
@@ -71,10 +71,10 @@ const Footer = () => {
               <div>
                 <h2 className="mb-3 text-white dark:text-white ">Contacto</h2>
                 <ul className=" text-sm dark:text-white">
-                  <li className="hover:text-[#A57F2C]">
+                  <li className="footer-list hover:text-[#A57F2C]">
                     <a href="/">Directorio</a>
                   </li>
-                  <li className="hover:text-[#A57F2C]">
+                  <li className="footer-list hover:text-[#A57F2C]">
                     <a href="/">Correo@inea.gob.mx</a>
                   </li>
                 </ul>
