@@ -314,6 +314,16 @@ function Materiales() {
                       problemas cotidianos; y Vida y comunidad 1, que combina
                       ciencias sociales y naturales.
                     </p>
+                    <br />
+                    <p>
+                      También podrás descargar la{" "}
+                      <i className="fst-italic">
+                        {" "}
+                        Guía de estudio para certificar primaria{" "}
+                      </i>{" "}
+                      mediante exámenes que evalúan conocimientos previos. Así
+                      como otros materiales.
+                    </p>
                   </div>
                 </div>
                 <div className="">
@@ -341,6 +351,13 @@ function Materiales() {
                       (diversidad biocultural, historia comunitaria y sociedades
                       democráticas). Todos vinculan habilidades comunicativas,
                       matemáticas y valores socioambientales.
+                    </p>
+                    <br />
+                    <p>
+                      También podrás descargar la{" "}
+                      <i> Guía de estudio para certificar secundaria </i>{" "}
+                      mediante exámenes que evalúan conocimientos previos. Así
+                      como otros materiales.
                     </p>
                   </div>
                 </div>
