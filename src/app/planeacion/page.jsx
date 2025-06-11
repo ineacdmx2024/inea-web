@@ -29,7 +29,7 @@ function Planeacion() {
 
     try {
       const response = await fetch(
-        `https://inea-web-backend-cg20.onrender.com/api/planning?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
+        `http://localhost:1337/api/plannings?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
       );
       const result = await response.json();
       setDatos(result.data);
@@ -94,7 +94,7 @@ function Planeacion() {
             <h1
               className={`${notoSans.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight gap-8 ml-[-20px] md:ml-0.5`}
             >
-              Planeación
+             Departamento de Planeación, Seguimiento Operativo y Acreditación
             </h1>
 
             <div className="mb-16 w-full">

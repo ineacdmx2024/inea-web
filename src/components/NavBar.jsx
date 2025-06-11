@@ -505,7 +505,7 @@ const Navbar = () => {
                           SAEL
                         </Link>
                         <Link
-                          href=""
+                          href="/planeacion"
                           onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded"
                         >
@@ -928,7 +928,7 @@ const Navbar = () => {
                       </Link>
                       <Link
                         onClick={closeAllMenus && closeMobileMenu}
-                        href=""
+                        href="/planeacion"
                         className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded"
                       >
                         Departamento de Planeación
