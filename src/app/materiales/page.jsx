@@ -15,8 +15,8 @@ const notoSans = Noto_Sans({
 function Materiales() {
   const primariaData = [
     {
-      title: "Estudiante",
-      map: "Materiales para el Estudiante",
+      title: "Módulos",
+      map: "Módulos para el Estudiante",
       items: [
         {
           titulo: "",
@@ -57,7 +57,7 @@ function Materiales() {
     },
       { 
       title: "Guías",
-      map: "Guías",
+      map: "Guía para certificar por exámenes",
       items: [
         {
           titulo: "",
@@ -74,8 +74,8 @@ function Materiales() {
 
   const secundariaData = [
     {
-      title: "Estudiante",
-      map: "Materiales para el Estudiante",
+      title: "Módulos",
+      map: "Módulos para el Estudiante",
       items: [
         {
           titulo: "",
@@ -130,7 +130,7 @@ function Materiales() {
     },
       { 
       title: "Guías",
-      map: "Guías",
+      map: "Guía para certificar por exámenes",
       items: [
         {
           titulo: "",
@@ -225,7 +225,7 @@ function Materiales() {
 
   return (
     <div
-      className={`${notoSans.className} text-[#333334] text-start`}
+      className={`${notoSans.className} text-[#333334] text-start mt-[-32px] ml-[-16px`}
     >
       <PagSec Titulo={"Descarga de materiales"} mostrarCarrusel={false}>
         <div className="w-full">
