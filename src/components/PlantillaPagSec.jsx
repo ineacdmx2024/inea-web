@@ -18,12 +18,13 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
         
         {/* Breadcrumb ajustado */}
         <div className="col-span-12 md:col-start-1 md:col-span-8 mb-4 -mt-2">
-          <div className="!text-[18px]"> {/* Forzar el tamaño del texto */}
+          <div className="!text-[18px]">
             <Breadcrumb />
           </div>
         </div>
 
-        <div className="col-span-12 md:col-span-8 -mt-4"> {/* Ajuste del margen superior */}
+        {/* Contenido principal */}
+        <div className="col-span-12 md:col-span-8 -mt-4">
           {Titulo && (
             <h1 className={`${notoSans.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight`}>
               {Titulo}
@@ -37,7 +38,7 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
           {children}
         </div>
 
-        {/* Enlaces laterales */}
+        {/* Enlaces laterales - usando grid correctamente */}
         <div className="hidden md:block md:col-span-4 self-start">
           <div className="flex flex-col gap-[2rem] ml-[2rem] -mt-4">
             {Enlaces.map((enlace) => (
@@ -47,7 +48,7 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
                 imageSrc={enlace.imageSrc}
                 buttonText={enlace.buttonText}
                 link={enlace.link}
-                className="w-full h-auto object-contain mx-auto"
+                className="w-full h-auto object-cover mx-auto"
               />
             ))}
           </div>
@@ -55,7 +56,7 @@ function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }
 
         {/* Carrusel de Cards (visible en pantallas pequeñas) */}
         {mostrarCarrusel && (
-          <div className="md:hidden w-full">
+          <div className="md:hidden col-span-12 w-full">
             <CarouselEL cards={Enlaces} />
           </div>
         )}
