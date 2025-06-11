@@ -29,7 +29,7 @@ function Planeacion() {
 
     try {
       const response = await fetch(
-        `http://localhost:1337/api/plannings?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
+        `https://inea-web-backend-cg20.onrender.com/api/plannings?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
       );
       const result = await response.json();
       setDatos(result.data);
