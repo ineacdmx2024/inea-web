@@ -243,6 +243,19 @@ const BotonesMat = ({ datos }) => {
     }
   };
 
+  const handleMaterialClick = (index) => {
+  const elemento = datos[index];
+  const contenedor = document.getElementById("datosMapaBotonesMat");
+  if (contenedor) {
+    const seccion = contenedor.children[index];
+    if (seccion) {
+      const offset = 80;
+      const top = seccion.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  }
+};
+
   return (
     <div className="w-full max-w-full px-0">
       <div className="flex flex-wrap">

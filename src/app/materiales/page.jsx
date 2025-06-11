@@ -53,6 +53,12 @@ function Materiales() {
           linkDescarga: "https://archive.org/download/vyc-1/VYC1.pdf",
           linkVista: "https://archive.org/embed/vyc-1",
         },
+      ],
+    },
+      { 
+      title: "Educador",
+      map: "Materiales para profesores",
+      items: [
         {
           titulo: "",
           portada:
@@ -64,19 +70,6 @@ function Materiales() {
         },
       ],
     },
-    /*HABILITAR SEGUNDO BOTON
-      { 
-      title: "Educador",
-      map: "Materiales para profesores",
-      items: [
-        {
-          titulo: "Educador",
-          portada: "/Modalidad1.jpg",
-          linkDescarga: "/Modalidad1.jpg",
-          linkVista: "",
-        },
-      ],
-    },*/
   ];
 
   const secundariaData = [
@@ -133,6 +126,12 @@ function Materiales() {
           linkDescarga: "https://archive.org/download/vyc-3/VYC3.pdf",
           linkVista: "https://archive.org/embed/vyc-3",
         },
+      ],
+    },
+      { 
+      title: "Educador",
+      map: "Materiales para profesores",
+      items: [
         {
           titulo: "",
           portada:
@@ -144,19 +143,6 @@ function Materiales() {
         },
       ],
     },
-    /*HABILITAR SEGUNDO BOTON
-      { 
-      title: "Educador",
-      map: "Materiales para profesores",
-      items: [
-        {
-          titulo: "Educador",
-          portada: "/Modalidad1.jpg",
-          linkDescarga: "/Modalidad1.jpg",
-          linkVista: "",
-        },
-      ],
-    },*/
   ];
 
   const alfabetizacionData = [
