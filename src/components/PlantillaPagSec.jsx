@@ -14,7 +14,7 @@ const notoSans = Noto_Sans({
 function PagSec({ Enlaces, Titulo, Subtitulo, children, mostrarCarrusel = true }) {
   return (
     <div className="mt-[8vh]"> {/* Reducir el margen superior */}
-      <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+      <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1200px] grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
         
         {/* Breadcrumb ajustado */}
         <div className="col-span-12 md:col-start-1 md:col-span-8 mb-4 -mt-2">
