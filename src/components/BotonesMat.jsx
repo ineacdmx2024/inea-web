@@ -291,7 +291,7 @@ const BotonesMat = ({ datos }) => {
         {datos.map((pageData, index) => (
           <div key={index} className="w-full mb-5">
             <div className="text-center font-bold text-3xl py-4 text-[#333334] patria materiales-titulo">
-              Materiales para el {pageData.title}
+              {pageData.map}
             </div>
             <div className="content">
               <ColContent items={pageData.items} />

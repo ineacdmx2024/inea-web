@@ -16,7 +16,7 @@ function Materiales() {
   const primariaData = [
     {
       title: "Estudiante",
-      map: "Materiales para estudiantes",
+      map: "Materiales para el Estudiante",
       items: [
         {
           titulo: "",
@@ -56,8 +56,8 @@ function Materiales() {
       ],
     },
       { 
-      title: "Educador",
-      map: "Materiales para profesores",
+      title: "Guías",
+      map: "Guías",
       items: [
         {
           titulo: "",
@@ -75,7 +75,7 @@ function Materiales() {
   const secundariaData = [
     {
       title: "Estudiante",
-      map: "Materiales para estudiantes",
+      map: "Materiales para el Estudiante",
       items: [
         {
           titulo: "",
@@ -129,8 +129,8 @@ function Materiales() {
       ],
     },
       { 
-      title: "Educador",
-      map: "Materiales para profesores",
+      title: "Guías",
+      map: "Guías",
       items: [
         {
           titulo: "",
@@ -148,7 +148,7 @@ function Materiales() {
   const alfabetizacionData = [
     {
       title: "Estudiante",
-      map: "Materiales para estudiantes",
+      map: "Materiales para el Estudiante",
       items: [
         {
           titulo: "",
@@ -181,7 +181,7 @@ function Materiales() {
     },
     {
       title: "Alfabetizador",
-      map: "Materiales para profesores",
+      map: "Materiales para el Alfabetizador",
       items: [
         {
           titulo: "",
@@ -225,7 +225,7 @@ function Materiales() {
 
   return (
     <div
-      className={`${notoSans.className} text-[#333334] text-start mt-[-32px] ml-[-16px`}
+      className={`${notoSans.className} text-[#333334] text-start`}
     >
       <PagSec Titulo={"Descarga de materiales"} mostrarCarrusel={false}>
         <div className="w-full">
