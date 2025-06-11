@@ -249,7 +249,7 @@ const BotonesMat = ({ datos }) => {
   if (contenedor) {
     const seccion = contenedor.children[index];
     if (seccion) {
-      const offset = 100;
+      const offset = 120;
       const top = seccion.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: "smooth" });
     }
