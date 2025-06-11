@@ -48,6 +48,13 @@ const BotonesMat = ({ datos }) => {
                     <img
                       src={item.portada}
                       alt={item.titulo}
+                       onClick={() => {
+                          setIframeUrl(
+                            item.linkVista ||
+                              "https://archive.org/embed/manualzilla-id-6854751"
+                          );
+                          setIframeVisible(true);
+                        }}
                       className="w-full h-auto object-cover rounded-lg shadow-sm border"
                       style={{
                         borderColor: "#a27d36",
@@ -124,6 +131,13 @@ const BotonesMat = ({ datos }) => {
                   <div className={`card embla__slide__number`}>
                     <div className="image">
                       <img
+                       onClick={() => {
+                          setIframeUrl(
+                            item.linkVista ||
+                              "https://archive.org/embed/manualzilla-id-6854751"
+                          );
+                          setIframeVisible(true);
+                        }}
                         src={item.portada}
                         alt={item.titulo}
                         className="w-full h-auto object-cover rounded-lg shadow-sm border"
@@ -229,6 +243,19 @@ const BotonesMat = ({ datos }) => {
     }
   };
 
+  const handleMaterialClick = (index) => {
+  const elemento = datos[index];
+  const contenedor = document.getElementById("datosMapaBotonesMat");
+  if (contenedor) {
+    const seccion = contenedor.children[index];
+    if (seccion) {
+      const offset = 80;
+      const top = seccion.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  }
+};
+
   return (
     <div className="w-full max-w-full px-0">
       <div className="flex flex-wrap">
@@ -263,8 +290,8 @@ const BotonesMat = ({ datos }) => {
       >
         {datos.map((pageData, index) => (
           <div key={index} className="w-full mb-5">
-            <div className="text-center font-bold text-3xl py-4 text-[#333334] patria">
-              Materiales para el {pageData.title}
+            <div className="text-center font-bold text-3xl py-4 text-[#333334] patria materiales-titulo">
+              {pageData.map}
             </div>
             <div className="content">
               <ColContent items={pageData.items} />

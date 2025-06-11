@@ -16,7 +16,7 @@ function Materiales() {
   const primariaData = [
     {
       title: "Estudiante",
-      map: "Materiales para estudiantes",
+      map: "Materiales para el Estudiante",
       items: [
         {
           titulo: "",
@@ -53,6 +53,12 @@ function Materiales() {
           linkDescarga: "https://archive.org/download/vyc-1/VYC1.pdf",
           linkVista: "https://archive.org/embed/vyc-1",
         },
+      ],
+    },
+      { 
+      title: "Guías",
+      map: "Guías",
+      items: [
         {
           titulo: "",
           portada:
@@ -64,25 +70,12 @@ function Materiales() {
         },
       ],
     },
-    /*HABILITAR SEGUNDO BOTON
-      { 
-      title: "Educador",
-      map: "Materiales para profesores",
-      items: [
-        {
-          titulo: "Educador",
-          portada: "/Modalidad1.jpg",
-          linkDescarga: "/Modalidad1.jpg",
-          linkVista: "",
-        },
-      ],
-    },*/
   ];
 
   const secundariaData = [
     {
       title: "Estudiante",
-      map: "Materiales para estudiantes",
+      map: "Materiales para el Estudiante",
       items: [
         {
           titulo: "",
@@ -133,6 +126,12 @@ function Materiales() {
           linkDescarga: "https://archive.org/download/vyc-3/VYC3.pdf",
           linkVista: "https://archive.org/embed/vyc-3",
         },
+      ],
+    },
+      { 
+      title: "Guías",
+      map: "Guías",
+      items: [
         {
           titulo: "",
           portada:
@@ -144,25 +143,12 @@ function Materiales() {
         },
       ],
     },
-    /*HABILITAR SEGUNDO BOTON
-      { 
-      title: "Educador",
-      map: "Materiales para profesores",
-      items: [
-        {
-          titulo: "Educador",
-          portada: "/Modalidad1.jpg",
-          linkDescarga: "/Modalidad1.jpg",
-          linkVista: "",
-        },
-      ],
-    },*/
   ];
 
   const alfabetizacionData = [
     {
       title: "Estudiante",
-      map: "Materiales para estudiantes",
+      map: "Materiales para el Estudiante",
       items: [
         {
           titulo: "",
@@ -195,7 +181,7 @@ function Materiales() {
     },
     {
       title: "Alfabetizador",
-      map: "Materiales para profesores",
+      map: "Materiales para el Alfabetizador",
       items: [
         {
           titulo: "",
@@ -239,7 +225,7 @@ function Materiales() {
 
   return (
     <div
-      className={`${notoSans.className} text-[#333334] text-start mt-[-32px] ml-[-16px`}
+      className={`${notoSans.className} text-[#333334] text-start`}
     >
       <PagSec Titulo={"Descarga de materiales"} mostrarCarrusel={false}>
         <div className="w-full">
@@ -314,6 +300,16 @@ function Materiales() {
                       problemas cotidianos; y Vida y comunidad 1, que combina
                       ciencias sociales y naturales.
                     </p>
+                    <br />
+                    <p>
+                      También podrás descargar la{" "}
+                      <i className="fst-italic">
+                        {" "}
+                        Guía de estudio para certificar primaria{" "}
+                      </i>{" "}
+                      mediante exámenes que evalúan conocimientos previos. Así
+                      como otros materiales.
+                    </p>
                   </div>
                 </div>
                 <div className="">
@@ -341,6 +337,13 @@ function Materiales() {
                       (diversidad biocultural, historia comunitaria y sociedades
                       democráticas). Todos vinculan habilidades comunicativas,
                       matemáticas y valores socioambientales.
+                    </p>
+                    <br />
+                    <p>
+                      También podrás descargar la{" "}
+                      <i> Guía de estudio para certificar secundaria </i>{" "}
+                      mediante exámenes que evalúan conocimientos previos. Así
+                      como otros materiales.
                     </p>
                   </div>
                 </div>
