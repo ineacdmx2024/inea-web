@@ -245,6 +245,14 @@ const BotonesMat = ({ datos }) => {
 
   const handleMaterialClick = (index) => {
   const elemento = datos[index];
+
+  // Si el botón corresponde a "Materiales estatales", abrir el link en nueva pestaña
+  if (elemento.title === "Materiales Estatales" && elemento.items?.[0]?.linkDescarga) {
+    window.open(elemento.items[0].linkDescarga, "_blank");
+    return; // evita continuar con el scroll
+  }
+
+  // Para los demás botones, comportamiento normal (scroll)
   const contenedor = document.getElementById("datosMapaBotonesMat");
   if (contenedor) {
     const seccion = contenedor.children[index];
@@ -289,15 +297,17 @@ const BotonesMat = ({ datos }) => {
         className="w-full flex flex-col h-full bg-white mt-8"
       >
         {datos.map((pageData, index) => (
-          <div key={index} className="w-full mb-5">
+        <div key={index} className="w-full mb-5">
+          {pageData.title !== "Materiales Estatales" && (
             <div className="text-center font-bold text-3xl py-4 text-[#333334] patria materiales-titulo">
               {pageData.map}
             </div>
-            <div className="content">
-              <ColContent items={pageData.items} />
-            </div>
+          )}
+          <div className="content">
+            <ColContent items={pageData.items} />
           </div>
-        ))}
+        </div>
+      ))}
       </div>
     </div>
   );
