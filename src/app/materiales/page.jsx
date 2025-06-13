@@ -70,6 +70,15 @@ function Materiales() {
         },
       ],
     },
+    {
+      title: "Materiales Estatales",
+      map: "Ir a sitio externo",
+      items: [
+        {
+          linkDescarga: "https://recursos-educativos-inea-cdmx.my.canva.site/dagi2tryx-u",
+        },
+      ],
+    },
   ];
 
   const secundariaData = [
@@ -143,6 +152,15 @@ function Materiales() {
         },
       ],
     },
+    {
+      title: "Materiales Estatales",
+      map: "Ir a sitio externo",
+      items: [
+        {
+          linkDescarga: "https://recursos-educativos-inea-cdmx.my.canva.site/dagi2tryx-u",
+        },
+      ],
+    },
   ];
 
   const alfabetizacionData = [
@@ -202,6 +220,15 @@ function Materiales() {
         },
       ],
     },
+    {
+      title: "Materiales Estatales",
+      map: "Ir a sitio externo",
+      items: [
+        {
+          linkDescarga: "https://recursos-educativos-inea-cdmx.my.canva.site/dagi2tryx-u",
+        },
+      ],
+    },
   ];
 
   const [opcionSeleccionada, setOpcionSeleccionada] =
@@ -234,8 +261,8 @@ function Materiales() {
               <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 leading-7">
                 {[
                   { key: "alfabetizacion", label: "Alfabetización" },
-                  { key: "primaria", label: "Primaría" },
-                  { key: "secundaria", label: "Secundaría" },
+                  { key: "primaria", label: "Primaria" },
+                  { key: "secundaria", label: "Secundaria" },
                 ].map(({ key, label }) => (
                   <li key={key} className="p-0">
                     <a
@@ -260,17 +287,17 @@ function Materiales() {
                 <div className="mx-auto mb-4 w-full max-w-full ">
                   <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
                     <strong>
-                      Aquí puedes descargar tus módulos y materiales
+                      Aquí puedes descargar módulos y materiales para la alfabetización
                     </strong>
                     <p className="pt-4 leading-7 justify-start text-[#333334] text-[18px] text-justify">
                       Esta sección ofrece materiales gratuitos en PDF para
                       fortalecer el proceso de alfabetización: para estudiantes,
-                      el libro &quot;Nombrando y Contando al mundo&quot;
+                      el libro {" "}<i>{" "}Nombrando y Contando al mundo{" "}</i>{" "}
                       (lectoescritura y matemáticas aplicadas) y el
-                      &quot;Cuadernillo del educando&quot; (práctica gradual);
-                      para alfabetizadores, el &quot;Libro de la persona
-                      alfabetizadora&quot; (metodologías pedagógicas) y la
-                      &quot;Guía de aplicación&quot;.
+                      {" "}<i>{" "}Cuadernillo del educando{" "}</i>{" "} 
+                      (práctica gradual); para alfabetizadores, el {" "}<i>
+                        {" "}Libro de la persona alfabetizadora{" "}</i>{" "} (metodologías pedagógicas) y la
+                      {" "}<i>{" "}Guia de aplicación{" "}</i>{" "}.
                     </p>
                   </div>
                 </div>
@@ -288,21 +315,17 @@ function Materiales() {
                 <div className="mx-auto mb-4 w-full max-w-full ">
                   <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
                     <strong>
-                      Aquí puedes descargar tus módulos y materiales
+                      Aquí puedes descargar módulos y materiales para la alfabetización
                     </strong>
                     <p className="pt-4 leading-7 justify-start text-[#333334] text-[18px] text-justify">
                       Los materiales gratuitos en formato PDF descargables
-                      incluyen cinco módulos para primaria: Lengua y
-                      comunicación 1 y 2, que se centran en la expresión oral y
+                      incluyen cinco módulos para primaria: {" "}<i>{" "}
+                        Lengua y comunicación{" "}</i>{" "} 1 y 2, que se centran en la expresión oral y
                       escrita, el análisis textual y la diversidad lingüística;
-                      Pensamiento matemático 1 y 2, que cubren operaciones
-                      básicas, geometría, estadística y la resolución de
-                      problemas cotidianos; y Vida y comunidad 1, que combina
-                      ciencias sociales y naturales.
-                    </p>
-                    <br />
-                    <p>
-                      También podrás descargar la{" "}
+                      {" "}<i>{" "}Pensamiento matemático{" "}</i>{" "} 1 y 2, que cubren 
+                      operaciones básicas, geometría, estadística y la resolución de
+                      problemas cotidianos; y {" "}<i>{" "}Vida y comunidad{" "}</i>{" "} 
+                      1, que combina ciencias sociales y naturales. También podrás descargar la{" "}
                       <i className="fst-italic">
                         {" "}
                         Guía de estudio para certificar primaria{" "}
@@ -326,21 +349,18 @@ function Materiales() {
                 <div className="mx-auto mb-4 w-full max-w-full ">
                   <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px]">
                     <strong>
-                      Aquí puedes descargar tus módulos y materiales
+                      Aquí puedes descargar módulos y materiales para la alfabetización
                     </strong>
                     <p className="pt-4 leading-7 justify-start text-[#333334] text-[18px] text-justify">
                       Los materiales gratuitos en PDF para secundaria incluyen:
-                      Lengua y comunicación 3 y 4 (análisis de textos,
-                      diversidad lingüística y convivencia); Pensamiento
-                      matemático 3, 4 y 5 (números reales, álgebra, estadística
-                      y probabilidad aplicada); y Vida y comunidad 2 y 3
+                      {" "}<i>{" "}Lengua y comunicación{" "}</i>{" "} 
+                      3 y 4 (análisis de textos, diversidad lingüística y convivencia); {" "}
+                      <i>{" "}Pensamiento matemático{" "}</i>{" "} 3, 4 y 5 
+                      (números reales, álgebra, estadística y probabilidad aplicada); 
+                      y {" "}<i>{" "}Vida y comunidad{" "}</i>{" "} 2 y 3
                       (diversidad biocultural, historia comunitaria y sociedades
                       democráticas). Todos vinculan habilidades comunicativas,
-                      matemáticas y valores socioambientales.
-                    </p>
-                    <br />
-                    <p>
-                      También podrás descargar la{" "}
+                      matemáticas y valores socioambientales. También podrás descargar la{" "}
                       <i> Guía de estudio para certificar secundaria </i>{" "}
                       mediante exámenes que evalúan conocimientos previos. Así
                       como otros materiales.
