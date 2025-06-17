@@ -109,9 +109,9 @@ async function Page({ params }) {
           item.children[0].text.includes("<iframe")) {
         // Es un código de embed dentro de un párrafo
         return (
-          <div key={index} className="my-6 aspect-video w-full max-w-4xl mx-auto">
+          <div key={index} className="my-6 mx-auto rounded-lg overflow-hidden" style={{ width: '720px', maxWidth: '100%' }}>
             <div 
-              className="embed-container w-full h-full" 
+              className="embed-container md:ml-[15%] w-full aspect-video" 
               dangerouslySetInnerHTML={{ __html: item.children[0].text }}
             />
           </div>
@@ -212,7 +212,7 @@ async function Page({ params }) {
           
         case "embed":
           return (
-            <div key={index} className="my-6 mx-auto" style={{ width: '720px', maxWidth: '100%' }}>
+            <div key={index} className="my-6 mx-auto rounded-lg overflow-hidden" style={{ width: '720px', maxWidth: '100%' }}>
               <div 
                 className="embed-container w-full aspect-video" 
                 dangerouslySetInnerHTML={{ __html: item.embed.html }}
