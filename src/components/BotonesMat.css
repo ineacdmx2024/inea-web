@@ -57,8 +57,16 @@
     margin-top: -20px;
   }
 
-  .embla__slide__number{
-    margin: 0 ;
+  .embla__slide__number {
+    margin: 0;
     padding: 0;
+  }
+
+  .card:hover .image img {
+    transform: none;
+  }
+
+  .card:hover .image .pin {
+    transform: none;
   }
 }

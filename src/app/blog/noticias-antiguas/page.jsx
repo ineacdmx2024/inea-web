@@ -104,7 +104,7 @@ function NoticiasAntiguas({ item }) {
                   datos.map((item, index) => (
                     <div
                       key={index}
-                      className="overflow-hidden w-full max-w-[320px] mx-auto sm:mx-0 h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
+                      className="overflow-hidden w-full max-w-[380px] mx-auto sm:mx-0 h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
                     >
                       <div>
                         <Link href={`/blog/noticias-antiguas/${item.attributes.slug}`}>
