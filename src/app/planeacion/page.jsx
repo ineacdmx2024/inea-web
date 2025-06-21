@@ -20,27 +20,68 @@ const truncateText = (text, maxLetters) => {
 
 function Planeacion() {
   const [datos, setDatos] = useState(null);
+  const [fijos, setFijos] = useState(null);
   const [totalNoticias, setTotalNoticias] = useState(0);
   const [paginaActual, setPaginaActual] = useState(1);
   const noticiasPorPagina = 9;
+
+  const fetchFijos = async () => {
+    try {
+      const response = await fetch(
+        `https://inea-web-backend-cg20.onrender.com/api/plannings?filters[Fijo][$eq]=true&populate=*&sort[0]=Fecha:desc`
+      );
+      const result = await response.json();
+      console.log("Datos fijos:", result);
+      setFijos(result.data);
+    } catch (error) {
+      console.error("Error al obtener los datos fijos:", error);
+    }
+  };
 
   const fetchData = async (page = 1) => {
     const start = (page - 1) * noticiasPorPagina;
 
     try {
+      // Primero intentamos obtener solo los no fijos
       const response = await fetch(
-        `https://inea-web-backend-cg20.onrender.com/api/plannings?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
+        `https://inea-web-backend-cg20.onrender.com/api/plannings?filters[$or][0][Fijo][$eq]=false&filters[$or][1][Fijo][$null]=true&populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
       );
       const result = await response.json();
-      setDatos(result.data);
-      const total = result.meta.pagination.total;
-      setTotalNoticias(total);
+      console.log("Datos no fijos:", result);
+      
+      // Si no hay resultados con el filtro, obtener todos los datos como fallback
+      if (!result.data || result.data.length === 0) {
+        console.log("No hay datos con filtro, obteniendo todos...");
+        const responseAll = await fetch(
+          `https://inea-web-backend-cg20.onrender.com/api/plannings?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
+        );
+        const resultAll = await responseAll.json();
+        console.log("Todos los datos:", resultAll);
+        setDatos(resultAll.data);
+        setTotalNoticias(resultAll.meta.pagination.total);
+      } else {
+        setDatos(result.data);
+        setTotalNoticias(result.meta.pagination.total);
+      }
     } catch (error) {
       console.error("Error al obtener los datos:", error);
+      // Como fallback, intentar obtener todos los datos sin filtro
+      try {
+        const responseFallback = await fetch(
+          `https://inea-web-backend-cg20.onrender.com/api/plannings?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
+        );
+        const resultFallback = await responseFallback.json();
+        console.log("Datos fallback:", resultFallback);
+        setDatos(resultFallback.data);
+        setTotalNoticias(resultFallback.meta.pagination.total);
+      } catch (fallbackError) {
+        console.error("Error en fallback:", fallbackError);
+      }
     }
   };
 
   useEffect(() => {
+    fetchFijos();
     fetchData(paginaActual);
   }, [paginaActual]);
 
@@ -86,6 +127,20 @@ function Planeacion() {
     if (paginaActual > 1) setPaginaActual(paginaActual - 1);
   };
 
+  // Combinar datos fijos y no fijos
+  const todosLosDatos = () => {
+    const fijosArray = fijos || [];
+    const datosArray = datos || [];
+    
+    // Si estamos en la primera página, mostrar fijos + datos
+    if (paginaActual === 1) {
+      return [...fijosArray, ...datosArray];
+    } else {
+      // En páginas siguientes, solo mostrar datos no fijos
+      return datosArray;
+    }
+  };
+
   return (
     <main>
       <PagSec Enlaces={[]} mostrarCarrusel={false}>
@@ -99,10 +154,10 @@ function Planeacion() {
 
             <div className="mb-16 w-full">
               <div className="w-full grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                {datos ? (
-                  datos.map((item, index) => (
+                {todosLosDatos().length > 0 ? (
+                  todosLosDatos().map((item, index) => (
                     <div
-                      key={index}
+                      key={`${item.attributes.Fijo ? 'fijo' : 'normal'}-${index}`}
                       className="overflow-hidden w-full max-w-[380px] mx-auto sm:mx-0 h-full min-h-[536px] rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
                     >
                       <div>
@@ -151,31 +206,34 @@ function Planeacion() {
               </div>
             </div>
 
-            <div className="flex justify-center items-center gap-4 mt-8">
-              <button
-                onClick={handlePrevPage}
-                disabled={paginaActual === 1}
-                className={`px-4 py-2 bg-[#611232] text-white rounded-md ${
-                  paginaActual === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-[#8a1a4a]"
-                }`}
-              >
-                Anterior
-              </button>
-              <span className="text-gray-700">
-                Página {paginaActual} de {totalPaginas}
-              </span>
-              <button
-                onClick={handleNextPage}
-                disabled={paginaActual === totalPaginas}
-                className={`px-4 py-2 bg-[#611232] text-white rounded-md ${
-                  paginaActual === totalPaginas
-                    ? "opacity-50 cursor-not-allowed"
-                    : "hover:bg-[#8a1a4a]"
-                }`}
-              >
-                Siguiente
-              </button>
-            </div>
+            {/* Paginación */}
+            {totalNoticias > 0 && (
+              <div className="flex justify-center items-center gap-4 mt-8">
+                <button
+                  onClick={handlePrevPage}
+                  disabled={paginaActual === 1}
+                  className={`px-4 py-2 bg-[#611232] text-white rounded-md ${
+                    paginaActual === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-[#8a1a4a]"
+                  }`}
+                >
+                  Anterior
+                </button>
+                <span className="text-gray-700">
+                  Página {paginaActual} de {totalPaginas}
+                </span>
+                <button
+                  onClick={handleNextPage}
+                  disabled={paginaActual === totalPaginas}
+                  className={`px-4 py-2 bg-[#611232] text-white rounded-md ${
+                    paginaActual === totalPaginas
+                      ? "opacity-50 cursor-not-allowed"
+                      : "hover:bg-[#8a1a4a]"
+                  }`}
+                >
+                  Siguiente
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </PagSec>
