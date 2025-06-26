@@ -109,11 +109,21 @@ async function Page({ params }) {
           item.children[0].text.includes("<iframe")) {
         // Es un código de embed dentro de un párrafo
         return (
-          <div key={index} className="my-6 mx-auto rounded-lg overflow-hidden" style={{ width: '720px', maxWidth: '100%' }}>
+          <div key={index} className="my-6 mx-auto rounded-lg overflow-hidden w-full px-2 sm:px-4 md:px-0" style={{ maxWidth: '720px' }}>
             <div 
-              className="embed-container md:ml-[15%] w-full aspect-video" 
-              dangerouslySetInnerHTML={{ __html: item.children[0].text }}
-            />
+              className="relative w-full h-0 md:ml-[15%] md:w-[85%]"
+              style={{ paddingBottom: '56.25%' }} // 16:9 aspect ratio
+            >
+              <div 
+                className="absolute top-0 left-0 w-full h-full"
+                dangerouslySetInnerHTML={{ 
+                  __html: item.children[0].text.replace(
+                    /<iframe/g, 
+                    '<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"'
+                  )
+                }}
+              />
+            </div>
           </div>
         );
       }
@@ -212,9 +222,9 @@ async function Page({ params }) {
           
         case "embed":
           return (
-            <div key={index} className="my-6 mx-auto rounded-lg overflow-hidden" style={{ width: '720px', maxWidth: '100%' }}>
+            <div key={index} className="my-6 mx-auto rounded-lg overflow-hidden w-full max-w-full px-4 sm:px-0" style={{ maxWidth: '720px' }}>
               <div 
-                className="embed-container w-full aspect-video" 
+                className="embed-container w-full aspect-video md:ml-[15%] md:w-[85%]" 
                 dangerouslySetInnerHTML={{ __html: item.embed.html }}
               />
             </div>
