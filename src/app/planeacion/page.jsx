@@ -28,7 +28,7 @@ function Planeacion() {
   const fetchFijos = async () => {
     try {
       const response = await fetch(
-        `https://inea-web-backend-cg20.onrender.com/api/plannings?filters[Fijo][$eq]=true&populate=*&sort[0]=Fecha:desc`
+        `https://inea-web-backend-cg20.onrender.com/api/plannings?filters[Fijo][$eq]=true&populate=*&sort[0]=Orden:asc&pagination[limit]=10`
       );
       const result = await response.json();
       console.log("Datos fijos:", result);
