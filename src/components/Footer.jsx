@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useEffect } from "react";
+import Link from 'next/link';
 import "./Footer.css";
 
 const Footer = () => {
@@ -52,16 +53,16 @@ const Footer = () => {
                     <a href="/">Comité de Ética</a>
                   </li>
                   <li className="footer-list hover:text-[#A57F2C]">
-                    <a href="/">Transparencia</a>
+                    <a href="https://www.plataformadetransparencia.org.mx/Inicio">Transparencia</a>
                   </li>
                   <li className="footer-list hover:text-[#A57F2C]">
                     <a href="/">Glosario</a>
                   </li>
                   <li className="footer-list hover:text-[#A57F2C]">
-                    <a href="/">INEA Nacional</a>
+                    <a href="https://www.gob.mx/inea/">INEA Nacional</a>
                   </li>
                   <li className="footer-list hover:text-[#A57F2C]">
-                    <a href="/">Gobierno</a>
+                    <a href="https://www.gob.mx/">Gobierno</a>
                   </li>
                   <li className="footer-list hover:text-[#A57F2C]">
                     <a href="/">Créditos</a>
@@ -72,7 +73,7 @@ const Footer = () => {
                 <h2 className="mb-3 text-white dark:text-white ">Contacto</h2>
                 <ul className=" text-sm dark:text-white">
                   <li className="footer-list hover:text-[#A57F2C]">
-                    <a href="/">Directorio</a>
+                    <Link href="/ubicacion">Directorio</Link>
                   </li>
                   <li className="footer-list hover:text-[#A57F2C]">
                     <a href="/">Correo@inea.gob.mx</a>
