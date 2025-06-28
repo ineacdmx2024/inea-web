@@ -21,35 +21,35 @@ function Materiales() {
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Lengua_y_comunicacion_1_nqahvr",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077181/Portada_Primaria_Lengua_y_comunicacion_1_ndijvi.webp",
           linkDescarga: "https://archive.org/download/lyc-1/LYC1.pdf",
           linkVista: "https://archive.org/embed/lyc-1",
         },
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Lengua_y_comunicacion_2_i4pkyt",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077183/Portada_Primaria_Lengua_y_comunicacion_2_qkof8p.webp",
           linkDescarga: "https://archive.org/download/lyc-2/LYC2.pdf",
           linkVista: "https://archive.org/embed/lyc-2",
         },
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Pensamiento_matematico_1_mb1p9m",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077183/Portada_Primaria_Pensamiento_matematico_1_kg2afx.webp",
           linkDescarga: "https://archive.org/download/pm-1_20250421/PM1.pdf",
           linkVista: "https://archive.org/embed/pm-1_20250421",
         },
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Pensamiento_matematico_2_mhxqno",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077184/Portada_Primaria_Pensamiento_matematico_2_clr6je.webp",
           linkDescarga: "https://archive.org/download/pm-2_20250423/PM2.pdf",
           linkVista: "https://archive.org/embed/pm-2_20250423",
         },
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Primaria_Vida_y_comunidad_1_qv4h72",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077187/Portada_Primaria_Vida_y_comunidad_1_ohu7fw.webp",
           linkDescarga: "https://archive.org/download/vyc-1/VYC1.pdf",
           linkVista: "https://archive.org/embed/vyc-1",
         },
@@ -62,7 +62,7 @@ function Materiales() {
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portadas_Gu%C3%ADa_de_estudio_para_certificar_FINAL_slatkv",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077179/Portadas_Gu%C3%ADa_de_estudio_para_certificar_primaria_km8wx6.webp",
           linkDescarga:
             "https://archive.org/download/guia-certificar-primaria-completa/Gu%C3%ADa%20Certificar%20primaria%20completa.pdf",
           linkVista:
@@ -89,49 +89,49 @@ function Materiales() {
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Lengua_y_comunicacion_3_vi632d",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077188/Portada_Secundaria_Lengua_y_comunicacion_3_zbowpy.webp",
           linkDescarga: "https://archive.org/download/lyc-3/LYC3.pdf",
           linkVista: "https://archive.org/embed/lyc-3",
         },
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Lengua_y_comunicacion_4_ybeus8",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077190/Portada_Secundaria_Lengua_y_comunicacion_4_szaoix.webp",
           linkDescarga: "https://archive.org/download/lyc-4/LYC4.pdf",
           linkVista: "https://archive.org/embed/lyc-4",
         },
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Pensamiento_matematico_3_vojt00",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077191/Portada_Secundaria_Pensamiento_matematico_3_ihfssk.webp",
           linkDescarga: "https://archive.org/download/pm-3_20250503/PM3.pdf",
           linkVista: "https://archive.org/embed/pm-3_20250503",
         },
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Pensamiento_matematico_4_r5s3sv",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077191/Portada_Secundaria_Pensamiento_matematico_4_k0xxit.webp",
           linkDescarga: "https://archive.org/download/pm-4_20250503/PM4.pdf",
           linkVista: "https://archive.org/embed/pm-4_20250503",
         },
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Secundaria_Pensamiento_matematico_5_eu6b9q",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077194/Portada_Secundaria_Pensamiento_matematico_5_ojmenh.webp",
           linkDescarga: "https://archive.org/download/pm-5_20250503/PM5.pdf",
           linkVista: "https://archive.org/embed/pm-5_20250503",
         },
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_secundaria_Vida_y_comunidad_2_vkjt86",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077195/Portada_secundaria_Vida_y_comunidad_2_bgttcj.webp",
           linkDescarga: "https://archive.org/download/vyc-2/VYC2.pdf",
           linkVista: "https://archive.org/embed/vyc-2",
         },
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_secundaria_Vida_y_comunidad_3_ntplbf",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077196/Portada_secundaria_Vida_y_comunidad_3_dhnyba.webp",
           linkDescarga: "https://archive.org/download/vyc-3/VYC3.pdf",
           linkVista: "https://archive.org/embed/vyc-3",
         },
@@ -144,7 +144,7 @@ function Materiales() {
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portadas_Gu%C3%ADa_de_estudio_para_certificar_FINAL_1_i9nlle",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077180/Portadas_Gu%C3%ADa_de_estudio_para_certificar_secundaria_okoqn4.webp",
           linkDescarga:
             "https://archive.org/download/guia-certificar-secundaria-completa/Gu%C3%ADa%20certificar%20secundaria%20completa.pdf",
           linkVista:
@@ -171,7 +171,7 @@ function Materiales() {
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_NyCM_Cuaderno_de_alfabetizacion_xfbhr4",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077171/Portada_NyCM_Cuaderno_de_alfabetizacion_euq6sa.webp",
           linkDescarga:
             "https://archive.org/download/2-cuaderno-alfabetizacion-ny-cm-educando/2%20Cuaderno%20Alfabetizaci%C3%B3n%20NyCM_educando.pdf",
           linkVista:
@@ -180,7 +180,7 @@ function Materiales() {
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_NyCM_Libro_cde_alfabetizacion_s1bkfb",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077171/Portada_NyCM_Libro_cde_alfabetizacion_skywhs.webp",
           linkDescarga:
             "https://archive.org/download/libro-de-alfabetizacion-ny-cm-educando/Libro%20de%20Alfabetizaci%C3%B3n%20NyCM_Educando.pdf",
           linkVista:
@@ -189,7 +189,7 @@ function Materiales() {
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Revisemos_lo_aprendido_Cuadernillo_para_el_educando_axevdc",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077177/Portada_Revisemos_lo_aprendido_Cuadernillo_para_el_educando_iaqgth.webp",
           linkDescarga:
             "https://archive.org/download/revisemos-lo-aprendido-cuadernillo-para-el-educando/Revisemos%20lo%20aprendido-%20Cuadernillo%20para%20el%20educando.pdf",
           linkVista:
@@ -204,7 +204,7 @@ function Materiales() {
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_NyCM_Libro_de_persona_alfabetizadora_qwx32q",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077175/Portada_NyCM_Libro_de_persona_alfabetizadora_l6cnns.webp",
           linkDescarga:
             "https://archive.org/download/ny-cm-alfabetizador/NyCM-Alfabetizador.pdf",
           linkVista: "https://archive.org/embed/ny-cm-alfabetizador",
@@ -212,7 +212,7 @@ function Materiales() {
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/f_auto,q_auto/Portada_Gu%C3%ADa_de_aplicaci%C3%B3n_Para_el_alfabetizador_beixhe",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077170/Portada_Gu%C3%ADa_de_aplicaci%C3%B3n_Para_el_alfabetizador_ika3xr.webp",
           linkDescarga:
             "https://archive.org/download/guia-de-aplicacion-para-el-alfabetizador/Gu%C3%ADa%20de%20aplicaci%C3%B3n%20-Para%20el%20alfabetizador.pdf",
           linkVista:
