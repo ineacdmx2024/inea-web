@@ -3,7 +3,7 @@ import React from "react";
 import PagSec from "@/components/PlantillaPagMS"; 
 import Link from "next/link";
 
-export default function MapaDelSitio() {
+function MapaDelSitio() {
   return (
     <PagSec Titulo="Mapa del sitio">
       <div className="space-y-6 text-[#333]">
@@ -49,3 +49,5 @@ export default function MapaDelSitio() {
     </PagSec>
   );
 }
+
+export default MapaDelSitio;
