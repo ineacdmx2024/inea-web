@@ -6,7 +6,7 @@ import Link from "next/link";
 function MapaDelSitio() {
   return (
     <PagSec Titulo="Mapa del sitio">
-      <div className="space-y-6 text-[#3334] text-base sm:text-[15px]">
+      <div className="space-y-6 text-[#333334] text-base sm:text-[15px]">
         {/* Sección 1 */}
         <div>
           <h2 className="text-lg sm:text-xl font-semibold mb-2">Inicio</h2>
