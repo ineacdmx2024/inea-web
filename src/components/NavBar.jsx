@@ -203,7 +203,7 @@ const Navbar = () => {
                   Contacto
                 </Link>
                 <Link
-                  href="/"
+                  href="/mapa-sitio"
                   passHref
                   className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
                 >
