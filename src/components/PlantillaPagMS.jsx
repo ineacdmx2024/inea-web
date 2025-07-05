@@ -11,7 +11,7 @@ const notoSans = Noto_Sans({
 
 function PagSec({ Titulo, children }) {
   return (
-    <div className="mt-[8.5vh]">
+    <div className="mt-[6.5vh]">
       <div className="mx-auto w-full medida3:w-4/5 md:w-[1280px] grid grid-cols-1 md:grid-cols-12 gap-8 items-start px-4 md:px-[2.5rem]">
         
         {/* Breadcrumb */}
