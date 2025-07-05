@@ -158,7 +158,7 @@ function Planeacion() {
                   todosLosDatos().map((item, index) => (
                     <div
                       key={`${item.attributes.Fijo ? 'fijo' : 'normal'}-${index}`}
-                      className="overflow-hidden w-full max-w-[380px] mx-auto sm:mx-0 h-full min-h-[474px] rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
+                      className="overflow-hidden w-full max-w-[380px] mx-auto sm:mx-0 h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
                     >
                       <div>
                         <Link href={`/planeacion/${item.attributes.slug}`}>
@@ -186,11 +186,11 @@ function Planeacion() {
                               : "No hay fecha"}
                           </p>
                           <h2 className="text-lg font-medium text-[#333334] mb-4">
-                            {truncateText(item.attributes.Titulo, 86)}
+                            {truncateText(item.attributes.Titulo, 70)}
                           </h2>
                         </article>
                       </div>
-                      <div className="flex justify-center my-4">
+                      <div className="flex justify-center mt-4">
                         <Link
                           href={`/planeacion/${item.attributes.slug}`}
                           className="bg-[#611232] text-white text-center py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full"
