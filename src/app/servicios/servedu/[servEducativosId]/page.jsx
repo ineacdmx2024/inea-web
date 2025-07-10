@@ -3,7 +3,6 @@ import PagSec from "@/components/PlantillaPagSec";
 import Image from "next/image";
 import React from "react";
 import Link from 'next/link'
-import "../../blog/noticias-antiguas/[noticiasAntiguasId]/Noticias.css";
 
 const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
