@@ -1,0 +1,53 @@
+.content {
+  padding-top: 20px;
+  font-size: 18px;
+}
+
+.a-sep {
+  text-decoration: underline;
+  color: blue;
+}
+
+.ul-sep,
+.ul-sep2 {
+  list-style-type: disc;
+  margin-left: 25px;
+}
+
+.ul-sep li {
+  margin-bottom: 20px;
+}
+
+.title-sep {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.subtitle-sep {
+  font-weight: bold;
+}
+
+.presencial {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.addresses {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 20px;
+}
+
+.addressData {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.data-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
