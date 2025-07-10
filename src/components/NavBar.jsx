@@ -114,8 +114,7 @@ const Navbar = () => {
                       Contacto
                     </Link>
                     <Link
-                      href="/"
-                      passHref
+                      href="/mapa-sitio"
                       className="hover:text-[#D3C09B] p-1 rounded"
                     >
                       Mapa del sitio
@@ -204,7 +203,7 @@ const Navbar = () => {
                   Contacto
                 </Link>
                 <Link
-                  href="/"
+                  href="/mapa-sitio"
                   passHref
                   className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
                 >

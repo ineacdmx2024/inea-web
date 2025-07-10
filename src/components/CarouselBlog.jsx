@@ -206,15 +206,15 @@ const CarouselBlog = ({ item }) => {
                   <article
                     className={`${notoSans.className} h-auto blog:h-[390px] letras:h-auto flex flex-col justify-between pt-4 mt-5 tablet:m-0 w-auto tablet:w-[390px] tablet:px-5 px-0 py-2 m-auto arrow:w-[750px]`}
                   >
-                    <p className="letras:text-base text-gray-700 text-sm mb-2">
+                    <p className="letras:text-base text-[#333334] text-sm mb-2">
                       {item.attributes.Fecha
                         ? fechaFun(item.attributes.Fecha)
                         : "No hay"}
                     </p>
-                    <h2 className="letras:text-[28px] text-[20px] leading-tight font-medium mb-4 uppercase">
+                    <h2 className="letras:text-[28px] text-[20px] leading-tight font-medium mb-4 uppercase text-[#333334]">
                       {truncateText(item.attributes.Titulo, 9)}
                     </h2>
-                    <p className="letras:text-[17px] text-gray-900 font-light text-[14px] mb-4 uppercase">
+                    <p className="letras:text-[17px] text-[#333334] font-light text-[14px] mb-4 uppercase">
                       {truncateText(item.attributes.Subtitulo, 18)}
                     </p>
                     <div className="overflow-visible !z-10">
