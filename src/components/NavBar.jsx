@@ -366,6 +366,13 @@ const Navbar = () => {
                         } bg-gray-100 text-black rounded shadow-lg transition-opacity duration-300 ease-in-out delay-200 z-50`}
                       >
                         <Link
+                          href="/servicios/servedu/"
+                          onClick={closeAllMenus}
+                          className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
+                        >
+                          Servicios Educativos
+                        </Link>
+                        <Link
                           href="http://certificacion.inea.gob.mx/DescCertificado.aspx"
                           onClick={closeAllMenus}
                           className="block text-gray-900 hover:bg-[#A57F2C] hover:text-white p-2 rounded truncate"
