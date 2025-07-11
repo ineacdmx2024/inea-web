@@ -65,7 +65,7 @@ function Reposicion_certificados() {
   ];
 
   const datosSecundaria = [
-    {
+     {
       titulo: "Dirección Operativa 1",
       direccion:
         "Maestro Rural No. 57, Col. Un Hogar para Nosotros, Alcaldía Miguel Hidalgo",
@@ -102,7 +102,9 @@ function Reposicion_certificados() {
         }
         mostrarCarrusel={false}
       >
-        <div id="pestañas">
+        {/* DIV ENVOLVENTE PARA EL COLOR DE TEXTO */}
+        <div className="text-[#333334]">
+           <div id="pestañas">
           <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 leading-7">
             {[
               { key: "internet", label: "Por Internet" },
@@ -293,6 +295,7 @@ function Reposicion_certificados() {
             </div>
           </div>
         )}
+        </div>
       </PagSec>
     </div>
   );
