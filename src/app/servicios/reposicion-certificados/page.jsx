@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from "react";
-import PagSec from "@/components/PlantillaPagMat";
+import React, { useState, useEffect } from "react";
+import PagSec from "@/components/PlantillaPagSec";
 import { Noto_Sans } from "next/font/google";
 import AddressComponent from "@/components/address";
 import "./reposicion.css";
@@ -17,6 +17,45 @@ function Reposicion_certificados() {
   const handleOpcionSeleccionada = (opcion) => {
     setOpcionSeleccionada(opcion);
   };
+
+   //enlaces laterales
+  const [enlacesL, setenlacesL] = useState([]);
+  
+    useEffect(() => {
+      let enlaces = [];
+      const fetchEnlacesL = async () => {
+        const resPineados = await fetch(
+         // `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+          `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+        );
+        const { data: enlacesPineados } = await resPineados.json();
+        if (enlacesPineados.length < 3) {
+          const resNoPineados = await fetch(
+            //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+           `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+          );
+          const { data: enlacesNoPineados } = await resNoPineados.json();
+  
+          const enlacesCompletados = [
+            ...enlacesPineados,
+            ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
+          ];
+          enlaces = enlacesCompletados;
+        } else {
+          enlaces = enlacesPineados;
+        }
+        const enlacesLData = enlaces.map((item) => ({
+          title: item.attributes.Titulo,
+          imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
+          buttonText: "Ir al sitio",
+          link: item.attributes.URL_Externo
+            ? item.attributes.URL_Externo
+            : `/enlaces-de-interes/${item.attributes.slug}`,
+        }));
+        setenlacesL(enlacesLData);
+      };
+      fetchEnlacesL();
+    }, []);
 
   const datosPrimaria = [
     {
@@ -65,7 +104,7 @@ function Reposicion_certificados() {
   ];
 
   const datosSecundaria = [
-     {
+    {
       titulo: "Dirección Operativa 1",
       direccion:
         "Maestro Rural No. 57, Col. Un Hogar para Nosotros, Alcaldía Miguel Hidalgo",
@@ -97,36 +136,33 @@ function Reposicion_certificados() {
   return (
     <div>
       <PagSec
-        Titulo={
-          "Duplicado de certificado de terminación de estudios de primaria y/o secundaria en escuelas de la Ciudad de México"
-        }
-        mostrarCarrusel={false}
+        Enlaces={enlacesL}
+        Titulo="Duplicado de certificado de terminación de estudios de primaria y/o secundaria en escuelas de la Ciudad de México"
       >
-        {/* DIV ENVOLVENTE PARA EL COLOR DE TEXTO */}
         <div className="text-[#333334]">
-           <div id="pestañas">
-          <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 leading-7">
-            {[
-              { key: "internet", label: "Por Internet" },
-              { key: "presencial", label: "Presencial" },
-            ].map(({ key, label }) => (
-              <li key={key} className="p-0">
-                <button
-                  className={`${
-                    notoSans.className
-                  } inline-block p-4 text-[18px] ${
-                    opcionSeleccionada === key
-                      ? "text-[#A57F2C] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C]"
-                      : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#611232] hover:font-bold hover:bg-slate-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
-                  }`}
-                  onClick={() => handleOpcionSeleccionada(key)}
-                >
-                  {label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+          <div id="pestañas">
+            <ul className="flex flex-wrap text-sm font-medium text-center border-b border-gray-200 dark:border-gray-700 leading-7">
+              {[
+                { key: "internet", label: "Por Internet" },
+                { key: "presencial", label: "Presencial" },
+              ].map(({ key, label }) => (
+                <li key={key} className="p-0">
+                  <button
+                    className={`${
+                      notoSans.className
+                    } inline-block p-4 text-[18px] ${
+                      opcionSeleccionada === key
+                        ? "text-[#A57F2C] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800"
+                        : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#611232] hover:font-bold hover:bg-slate-50"
+                    }`}
+                    onClick={() => handleOpcionSeleccionada(key)}
+                  >
+                    {label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
 
         {opcionSeleccionada === "internet" && (
           <div className="content">
@@ -165,7 +201,7 @@ function Reposicion_certificados() {
         )}
 
         {opcionSeleccionada === "presencial" && (
-          <div className="content presencial">
+          <div className="content presencial flex flex-col gap-8">
             <div>
               <h2 className="title-sep">Primaria</h2>
               <h3 className="subtitle-sep">
@@ -175,7 +211,7 @@ function Reposicion_certificados() {
                 Coordinación Sectorial de Educación Primaria Departamento de
                 Control Escolar
               </h3>
-              <div className="data-container">
+              <div className="data-container flex items-start gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -193,7 +229,7 @@ function Reposicion_certificados() {
                   Alcaldía Cuauhtémoc, Ciudad de México.
                 </p>
               </div>
-              <div className="data-container">
+              <div className="data-container flex items-start gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -210,7 +246,7 @@ function Reposicion_certificados() {
               </div>
             </div>
 
-            <div className="addresses">
+            <div className="addresses flex flex-col gap-4">
               {datosPrimaria.map((datos, index) => (
                 <div key={index}>
                   <AddressComponent datos={datos} />
@@ -250,7 +286,7 @@ function Reposicion_certificados() {
                 Coordinación Sectorial de Educación Secundaria.{" "}
               </h3>
               <h3 className="subtitle-sep">Departamento de Control Escolar.</h3>
-              <div className="data-container">
+              <div className="data-container flex items-start gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -268,7 +304,7 @@ function Reposicion_certificados() {
                   Alcaldía Cuauhtémoc, Ciudad de México.
                 </p>
               </div>
-              <div className="data-container">
+              <div className="data-container flex items-start gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -286,7 +322,7 @@ function Reposicion_certificados() {
               </div>
             </div>
 
-            <div className="addresses">
+            <div className="addresses flex flex-col gap-4">
               {datosSecundaria.map((datos, index) => (
                 <div key={index}>
                   <AddressComponent datos={datos} />
