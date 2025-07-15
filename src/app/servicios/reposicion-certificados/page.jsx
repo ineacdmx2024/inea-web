@@ -191,7 +191,7 @@ function Reposicion_certificados() {
                 >
                   https://www.controlescolar.aefcm.gob.mx/valida
                 </a>
-                siempre y cuando tengas a la mano el folio SEP del documento el
+                 siempre y cuando tengas a la mano el folio SEP del documento el
                 cual consta de 36 caracteres incluyendo guion medio o por medio
                 del lector de código QR. (código de respuesta rápida) desde tu
                 dispositivo Android.
