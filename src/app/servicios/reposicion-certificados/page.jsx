@@ -182,7 +182,7 @@ function Reposicion_certificados() {
               </li>
 
               <li>
-                Si obtuviste tu certificado de estudios de primaria o secundaria
+                Si obtuviste tu certificado de estudios de primaria o secundaria 
                 <strong>a partir del mes de julio de 2017</strong>, lo puedes
                 descargar a través de la siguiente página de internet: &nbsp;
                 <a
