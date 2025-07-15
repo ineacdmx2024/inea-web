@@ -36,7 +36,7 @@
 
 .addresses {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -48,6 +48,14 @@
 
 .data-container {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 10px;
-  align-items: center;
+}
+
+.data-container p,
+.ul-sep li,
+.ul-sep2 li {
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
