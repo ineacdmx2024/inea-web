@@ -186,7 +186,7 @@ function Planeacion() {
                               : "No hay fecha"}
                           </p>
                           <h2 className="text-lg font-medium text-[#333334] mb-4">
-                            {truncateText(item.attributes.Titulo, 70)}
+                            {truncateText(item.attributes.Titulo, 71)}
                           </h2>
                         </article>
                       </div>
