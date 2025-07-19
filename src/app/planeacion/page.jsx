@@ -178,7 +178,7 @@ function Planeacion() {
                           </div>
                         </Link>
                         <article
-                          className={`${notoSans.className} mt-4 w-full px-2 sm:px-4 py-2`}
+                          className={`${notoSans.className} mt-4 w-full px-2 sm:px-4 py-1`}
                         >
                           <p className="text-sm text-gray-700 mb-2">
                             {item.attributes.Fecha
@@ -193,7 +193,7 @@ function Planeacion() {
                       <div className="flex justify-center">
                         <Link
                           href={`/planeacion/${item.attributes.slug}`}
-                          className="bg-[#611232] text-white text-center py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full mb-3"
+                          className="bg-[#611232] text-white text-center py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full mb-5"
                         >
                           Continuar leyendo
                         </Link>
