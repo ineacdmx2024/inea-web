@@ -189,7 +189,7 @@ function Reposicion_certificados() {
                 className="a-sep"
                 href="https://www.controlescolar.aefcm.gob.mx/valida"
               >
-                https://www.controlescolar.aefcm.gob.mx/valida
+                https://www.controlescolar.aefcm.gob.mx/valida.
               </a>
               <p>
                 Siempre y cuando tengas a la mano el folio SEP del documento 
