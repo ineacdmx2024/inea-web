@@ -158,11 +158,12 @@ function Planeacion() {
                   todosLosDatos().map((item, index) => (
                     <div
                       key={`${item.attributes.Fijo ? 'fijo' : 'normal'}-${index}`}
-                      className="overflow-hidden w-full max-w-[380px] mx-auto sm:mx-0 h-[536px] rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
+                      className="overflow-hidden w-full max-w-[380px] mx-auto sm:mx-0 rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
+                      style={{ height: "474px" }}
                     >
                       <div>
                         <Link href={`/planeacion/${item.attributes.slug}`}>
-                          <div className="rounded-xl max-h-[220px] h-[220px] w-full overflow-hidden">
+                          <div className="rounded-xl overflow-hidden" style={{ width: 300, height: 220 }}>
                             <Image
                               src={
                                 item.attributes.Imagen?.data?.attributes?.formats?.medium?.url ||
@@ -171,9 +172,10 @@ function Planeacion() {
                               alt={
                                 item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
                               }
-                              className="object-cover w-full h-full"
                               width={300}
                               height={220}
+                              className="object-cover w-full h-full"
+                              style={{ width: "300px", height: "220px" }}
                             />
                           </div>
                         </Link>
