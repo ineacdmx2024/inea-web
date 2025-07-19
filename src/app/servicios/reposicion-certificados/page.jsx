@@ -143,7 +143,7 @@ function Reposicion_certificados() {
           <div id="pestañas">
             <ul className="flex flex-wrap text-sm font-medium text-center border-b border-gray-200 dark:border-gray-700 leading-7">
               {[
-                { key: "internet", label: "Por Internet" },
+                { key: "internet", label: "Por internet" },
                 { key: "presencial", label: "Presencial" },
               ].map(({ key, label }) => (
                 <li key={key} className="p-0">
@@ -169,7 +169,7 @@ function Reposicion_certificados() {
             <ul className="ul-sep">
               <li>
                 De todas las escuelas, siempre y cuando hayas concluido y
-                acreditado el Ciclo Escolar. *Si obtuviste tu certificado{" "}
+                acreditado el Ciclo Escolar. Si obtuviste tu certificado{" "}
                 <strong> antes de julio del 2017 </strong> o concluiste tus
                 estudios en un CEDEX, deberás continuar con este trámite a
                 través de la siguiente página de internet: &nbsp;
@@ -182,20 +182,22 @@ function Reposicion_certificados() {
               </li>
 
               <li>
-                Si obtuviste tu certificado de estudios de primaria o secundaria 
-                <strong> a partir del mes de julio de 2017</strong>, lo puedes
-                descargar a través de la siguiente página de internet: &nbsp;
-                <a
-                  className="a-sep"
-                  href="https://www.controlescolar.aefcm.gob.mx/valida"
-                >
-                  https://www.controlescolar.aefcm.gob.mx/valida
-                </a>
-                 siempre y cuando tengas a la mano el folio SEP del documento el
-                cual consta de 36 caracteres incluyendo guion medio o por medio
-                del lector de código QR. (código de respuesta rápida) desde tu
-                dispositivo Android.
-              </li>
+              Si obtuviste tu certificado de estudios de primaria o secundaria 
+              <strong> a partir del mes de julio de 2017</strong>, lo puedes
+              descargar a través de la siguiente página de internet:&nbsp;
+              <a
+                className="a-sep"
+                href="https://www.controlescolar.aefcm.gob.mx/valida"
+              >
+                https://www.controlescolar.aefcm.gob.mx/valida
+              </a>
+              <p>
+                Siempre y cuando tengas a la mano el folio SEP del documento 
+                el cual consta de 36 caracteres incluyendo guion medio o por 
+                medio del lector de código QR (código de respuesta rápida) 
+                desde tu dispositivo Android.
+              </p>
+            </li>
             </ul>
           </div>
         )}
