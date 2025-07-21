@@ -5,7 +5,12 @@
 
 .a-sep {
   text-decoration: underline;
-  color: blue;
+  color: #611232; 
+  cursor: pointer; 
+}
+
+.a-sep:hover {
+  color: #D3C09B; 
 }
 
 .ul-sep,
