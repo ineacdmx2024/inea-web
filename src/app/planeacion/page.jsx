@@ -163,7 +163,7 @@ function Planeacion() {
                     >
                       <div>
                         <Link href={`/planeacion/${item.attributes.slug}`}>
-                          <div className="rounded-xl overflow-hidden" style={{ width: 300, height: 220 }}>
+                          <div className="rounded-xl overflow-hidden" style={{ width: "330.66px", height: "220px" }}>
                             <Image
                               src={
                                 item.attributes.Imagen?.data?.attributes?.formats?.medium?.url ||
@@ -172,10 +172,10 @@ function Planeacion() {
                               alt={
                                 item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
                               }
-                              width={300}
+                              width={330.66}
                               height={220}
-                              className="object-cover w-full h-full"
-                              style={{ width: "300px", height: "220px" }}
+                              className="object-cover"
+                              style={{ width: "330.66px", height: "220px" }}
                             />
                           </div>
                         </Link>
@@ -188,7 +188,7 @@ function Planeacion() {
                               : "No hay fecha"}
                           </p>
                           <h2 className="text-lg font-medium text-[#333334] mb-4">
-                            {truncateText(item.attributes.Titulo, 71)}
+                            {truncateText(item.attributes.Titulo, 88)}
                           </h2>
                         </article>
                       </div>
