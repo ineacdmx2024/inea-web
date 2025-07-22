@@ -139,7 +139,7 @@ function Reposicion_certificados() {
         Enlaces={enlacesL}
         Titulo="Duplicado de certificado de terminación de estudios de primaria y/o secundaria en escuelas de la Ciudad de México"
       >
-        <div className="text-[#333334]">
+        <div className="mx-auto max-w-4xl px-4 text-[#333334]">
           <div id="pestañas">
             <ul className="flex flex-wrap text-sm font-medium text-center border-b border-gray-200 dark:border-gray-700 leading-7">
               {[
@@ -165,7 +165,7 @@ function Reposicion_certificados() {
           </div>
 
         {opcionSeleccionada === "internet" && (
-          <div className="content">
+          <div className="content mt-2">
             <ul className="ul-sep">
               <li>
                 De todas las escuelas, siempre y cuando hayas concluido y
@@ -203,8 +203,44 @@ function Reposicion_certificados() {
         )}
 
         {opcionSeleccionada === "presencial" && (
-          <div className="content presencial flex flex-col gap-8">
-            <div>
+          <div className="content presencial flex flex-col gap-8 mt-2">
+            <div className="flex flex-wrap mb-6">
+            {[
+              { id: "primaria", label: "Primaria" },
+              { id: "secundaria", label: "Secundaria" },
+            ].map(({ id, label }) => (
+              <button
+                key={id}
+                type="button"
+                className="text-[#611232] rounded-lg hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-white font-medium px-5 py-2.5 text-center me-2 mb-2 text-lg flex items-center justify-center gap-2"
+                onClick={() => {
+                  const section = document.getElementById(id);
+                  if (section) {
+                    const offset = 120; // ajusta si quieres compensar navbar fija
+                    const top = section.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({ top, behavior: "smooth" });
+                  }
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4.5 16.5v1.125c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V16.5M7.5 12l4.5 4.5m0 0l4.5-4.5m-4.5 4.5V3"
+                  />
+                </svg>
+                {label}
+              </button>
+            ))}
+          </div>
+            <div id="primaria">
               <h2 className="title-sep">Primaria</h2>
               <h3 className="subtitle-sep">
                 Dirección General de Operación de Servicios Educativos.
@@ -215,9 +251,8 @@ function Reposicion_certificados() {
               </h3>
               <div className="data-container flex items-start gap-2">
                 <svg
+                  className="icon"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="26"
                   viewBox="0 0 14 20"
                   fill="none"
                 >
@@ -233,9 +268,8 @@ function Reposicion_certificados() {
               </div>
               <div className="data-container flex items-start gap-2">
                 <svg
+                  className="icon"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="16"
                   viewBox="0 0 20 16"
                   fill="none"
                 >
@@ -282,7 +316,7 @@ function Reposicion_certificados() {
               </ul>
             </div>
 
-            <div>
+            <div id="secundaria">
               <h2 className="title-sep">Secundaria</h2>
               <h3 className="subtitle-sep">
                 Coordinación Sectorial de Educación Secundaria.{" "}
@@ -290,9 +324,8 @@ function Reposicion_certificados() {
               <h3 className="subtitle-sep">Departamento de Control Escolar.</h3>
               <div className="data-container flex items-start gap-2">
                 <svg
+                  className="icon"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="26"
                   viewBox="0 0 14 20"
                   fill="none"
                 >
@@ -308,9 +341,8 @@ function Reposicion_certificados() {
               </div>
               <div className="data-container flex items-start gap-2">
                 <svg
+                  className="icon"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="16"
                   viewBox="0 0 20 16"
                   fill="none"
                 >
