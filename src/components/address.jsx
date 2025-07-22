@@ -1,7 +1,5 @@
 "use client";
-
 import React from "react";
-
 import { Noto_Sans } from "next/font/google";
 
 const notoSans = Noto_Sans({
@@ -14,11 +12,11 @@ const AddressComponent = ({ datos }) => {
   return (
     <div className="addressData">
       <h2 className="subtitle-sep">{datos.titulo}</h2>
+
       <div className="data-container">
         <svg
+          className="icon"
           xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="26"
           viewBox="0 0 14 20"
           fill="none"
         >
@@ -27,14 +25,16 @@ const AddressComponent = ({ datos }) => {
             fill="#611232"
           />
         </svg>
-        <p>{datos.direccion}</p>
+        <div className="text">
+          <p>{datos.direccion}</p>
+        </div>
       </div>
-      {datos.telefono !== undefined && (
+
+      {datos.telefonos !== undefined && (
         <div className="data-container">
           <svg
+            className="icon"
             xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="19"
             viewBox="0 0 18 19"
             fill="none"
           >
@@ -43,7 +43,7 @@ const AddressComponent = ({ datos }) => {
               fill="#611232"
             />
           </svg>
-          <div>
+          <div className="text">
             {datos.telefonos.map((telefono, index) => (
               <p key={index}>{telefono}</p>
             ))}
@@ -51,12 +51,11 @@ const AddressComponent = ({ datos }) => {
         </div>
       )}
 
-      {datos.telefono !== undefined && (
+      {datos.correos !== undefined && (
         <div className="data-container">
           <svg
+            className="icon"
             xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="16"
             viewBox="0 0 20 16"
             fill="none"
           >
@@ -65,7 +64,7 @@ const AddressComponent = ({ datos }) => {
               fill="#611232"
             />
           </svg>
-          <div>
+          <div className="text">
             {datos.correos.map((correo, index) => (
               <p key={index}>{correo}</p>
             ))}
@@ -75,12 +74,11 @@ const AddressComponent = ({ datos }) => {
 
       {datos.horario !== undefined && (
         <div>
-          <h2 className="subtitle-sep">HORARIO DE ATENCION</h2>
+          <h2 className="subtitle-sep">Horario de atencion</h2>
           <div className="data-container">
             <svg
+              className="icon"
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="21"
               viewBox="0 0 20 21"
               fill="none"
             >
@@ -89,13 +87,15 @@ const AddressComponent = ({ datos }) => {
                 fill="#611232"
               />
             </svg>
-            <p>{datos.horario}</p>
+            <div className="text">
+              <p>{datos.horario}</p>
+            </div>
           </div>
         </div>
       )}
 
-      <h2 className="subtitle-sep">ALCALDIAS QUE ATIENDEN</h2>
-      <div className="data-container">
+      <h2 className="subtitle-sep">Alcaldias que atienden</h2>
+      <div className="text">
         <p>{datos.alcaldias}</p>
       </div>
     </div>
