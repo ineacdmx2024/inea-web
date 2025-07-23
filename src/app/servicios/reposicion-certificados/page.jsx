@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from "react";
-import PagSec from "@/components/PlantillaPagMat";
+import React, { useState, useEffect } from "react";
+import PagSec from "@/components/PlantillaPagSec";
 import { Noto_Sans } from "next/font/google";
 import AddressComponent from "@/components/address";
 import "./reposicion.css";
@@ -17,6 +17,45 @@ function Reposicion_certificados() {
   const handleOpcionSeleccionada = (opcion) => {
     setOpcionSeleccionada(opcion);
   };
+
+   //enlaces laterales
+  const [enlacesL, setenlacesL] = useState([]);
+  
+    useEffect(() => {
+      let enlaces = [];
+      const fetchEnlacesL = async () => {
+        const resPineados = await fetch(
+         // `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+          `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+        );
+        const { data: enlacesPineados } = await resPineados.json();
+        if (enlacesPineados.length < 3) {
+          const resNoPineados = await fetch(
+            //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+           `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+          );
+          const { data: enlacesNoPineados } = await resNoPineados.json();
+  
+          const enlacesCompletados = [
+            ...enlacesPineados,
+            ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
+          ];
+          enlaces = enlacesCompletados;
+        } else {
+          enlaces = enlacesPineados;
+        }
+        const enlacesLData = enlaces.map((item) => ({
+          title: item.attributes.Titulo,
+          imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
+          buttonText: "Ir al sitio",
+          link: item.attributes.URL_Externo
+            ? item.attributes.URL_Externo
+            : `/enlaces-de-interes/${item.attributes.slug}`,
+        }));
+        setenlacesL(enlacesLData);
+      };
+      fetchEnlacesL();
+    }, []);
 
   const datosPrimaria = [
     {
@@ -97,41 +136,40 @@ function Reposicion_certificados() {
   return (
     <div>
       <PagSec
-        Titulo={
-          "Duplicado de certificado de terminación de estudios de primaria y/o secundaria en escuelas de la Ciudad de México"
-        }
-        mostrarCarrusel={false}
+        Enlaces={enlacesL}
+        Titulo="Duplicado de certificado de terminación de estudios de primaria y/o secundaria en escuelas de la Ciudad de México"
       >
-        <div id="pestañas">
-          <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 leading-7">
-            {[
-              { key: "internet", label: "Por Internet" },
-              { key: "presencial", label: "Presencial" },
-            ].map(({ key, label }) => (
-              <li key={key} className="p-0">
-                <button
-                  className={`${
-                    notoSans.className
-                  } inline-block p-4 text-[18px] ${
-                    opcionSeleccionada === key
-                      ? "text-[#A57F2C] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C]"
-                      : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#611232] hover:font-bold hover:bg-slate-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
-                  }`}
-                  onClick={() => handleOpcionSeleccionada(key)}
-                >
-                  {label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className={`${notoSans.className} text-[#333334] text-start ml-[-16px`}>
+          <div id="pestañas">
+            <ul className="flex flex-wrap text-sm font-medium text-center border-b border-gray-200 dark:border-gray-700 leading-7">
+              {[
+                { key: "internet", label: "Por internet" },
+                { key: "presencial", label: "Presencial" },
+              ].map(({ key, label }) => (
+                <li key={key} className="p-0">
+                  <button
+                    className={`${
+                      notoSans.className
+                    } inline-block p-4 text-[18px] ${
+                      opcionSeleccionada === key
+                        ? "text-[#A57F2C] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800"
+                        : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#611232] hover:font-bold hover:bg-slate-50"
+                    }`}
+                    onClick={() => handleOpcionSeleccionada(key)}
+                  >
+                    {label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
 
         {opcionSeleccionada === "internet" && (
-          <div className="content">
+          <div className="content mt-[20px]">
             <ul className="ul-sep">
               <li>
                 De todas las escuelas, siempre y cuando hayas concluido y
-                acreditado el Ciclo Escolar. *Si obtuviste tu certificado{" "}
+                acreditado el Ciclo Escolar. Si obtuviste tu certificado{" "}
                 <strong> antes de julio del 2017 </strong> o concluiste tus
                 estudios en un CEDEX, deberás continuar con este trámite a
                 través de la siguiente página de internet: &nbsp;
@@ -144,40 +182,82 @@ function Reposicion_certificados() {
               </li>
 
               <li>
-                Si obtuviste tu certificado de estudios de primaria o secundaria
-                <strong>a partir del mes de julio de 2017</strong>, lo puedes
-                descargar a través de la siguiente página de internet: &nbsp;
-                <a
-                  className="a-sep"
-                  href="https://www.controlescolar.aefcm.gob.mx/valida"
-                >
-                  https://www.controlescolar.aefcm.gob.mx/valida
-                </a>
-                siempre y cuando tengas a la mano el folio SEP del documento el
-                cual consta de 36 caracteres incluyendo guion medio o por medio
-                del lector de código QR. (código de respuesta rápida) desde tu
-                dispositivo Android.
-              </li>
+              Si obtuviste tu certificado de estudios de primaria o secundaria 
+              <strong> a partir del mes de julio de 2017</strong>, lo puedes
+              descargar a través de la siguiente página de internet:&nbsp;
+              <a
+                className="a-sep"
+                href="https://www.controlescolar.aefcm.gob.mx/valida"
+              >
+                https://www.controlescolar.aefcm.gob.mx/valida.
+              </a>
+              <p>
+                Siempre y cuando tengas a la mano el folio SEP del documento 
+                el cual consta de 36 caracteres incluyendo guion medio o por 
+                medio del lector de código QR (código de respuesta rápida) 
+                desde tu dispositivo Android.
+              </p>
+            </li>
             </ul>
           </div>
         )}
 
         {opcionSeleccionada === "presencial" && (
-          <div className="content presencial">
-            <div>
+          <div className="content presencial flex flex-col gap-8">
+            <div className="flex flex-wrap mb-6">
+            {[
+              { id: "primaria", label: "Primaria" },
+              { id: "secundaria", label: "Secundaria" },
+            ].map(({ id, label }) => (
+            <button
+              key={id}
+              type="button"
+              className="text-[#611232] rounded-lg hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-white font-medium px-5 py-2.5 text-center me-2 mb-2 text-lg flex items-center justify-center gap-2"
+              onClick={() => {
+                const section = document.getElementById(id);
+                if (section) {
+                  const offset = 120;
+                  const top = section.getBoundingClientRect().top + window.scrollY - offset;
+                  window.scrollTo({ top, behavior: "smooth" });
+                }
+              }}
+            >
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M16.5 3.75H8.25A2.25 2.25 0 006 6v12a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25V7.5L16.5 3.75z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M16.5 3.75V7.5h3.75M9 10.5h6M9 13.5h6M9 16.5h6"
+                />
+              </svg>
+              {label}
+            </button>
+            ))}
+          </div>
+            <div id="primaria" className="mt-[-5px]">
               <h2 className="title-sep">Primaria</h2>
               <h3 className="subtitle-sep">
                 Dirección General de Operación de Servicios Educativos.
               </h3>
-              <h3 className="subtitle-sep">
+              <h3 className="subtitle-sep mt-4">
                 Coordinación Sectorial de Educación Primaria Departamento de
                 Control Escolar
               </h3>
-              <div className="data-container">
+              <div className="data-container flex items-start gap-2">
                 <svg
+                  className="icon"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="26"
                   viewBox="0 0 14 20"
                   fill="none"
                 >
@@ -191,11 +271,10 @@ function Reposicion_certificados() {
                   Alcaldía Cuauhtémoc, Ciudad de México.
                 </p>
               </div>
-              <div className="data-container">
+              <div className="data-container flex items-start gap-2">
                 <svg
+                  className="icon"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="16"
                   viewBox="0 0 20 16"
                   fill="none"
                 >
@@ -208,7 +287,7 @@ function Reposicion_certificados() {
               </div>
             </div>
 
-            <div className="addresses">
+            <div className="addresses flex flex-col gap-4">
               {datosPrimaria.map((datos, index) => (
                 <div key={index}>
                   <AddressComponent datos={datos} />
@@ -242,17 +321,16 @@ function Reposicion_certificados() {
               </ul>
             </div>
 
-            <div>
+            <div id="secundaria">
               <h2 className="title-sep">Secundaria</h2>
               <h3 className="subtitle-sep">
                 Coordinación Sectorial de Educación Secundaria.{" "}
               </h3>
-              <h3 className="subtitle-sep">Departamento de Control Escolar.</h3>
-              <div className="data-container">
+              <h3 className="subtitle-sep mt-4">Departamento de Control Escolar.</h3>
+              <div className="data-container flex items-start gap-2">
                 <svg
+                  className="icon"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="26"
                   viewBox="0 0 14 20"
                   fill="none"
                 >
@@ -266,11 +344,10 @@ function Reposicion_certificados() {
                   Alcaldía Cuauhtémoc, Ciudad de México.
                 </p>
               </div>
-              <div className="data-container">
+              <div className="data-container flex items-start gap-2">
                 <svg
+                  className="icon"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="16"
                   viewBox="0 0 20 16"
                   fill="none"
                 >
@@ -284,7 +361,7 @@ function Reposicion_certificados() {
               </div>
             </div>
 
-            <div className="addresses">
+            <div className="addresses flex flex-col gap-4">
               {datosSecundaria.map((datos, index) => (
                 <div key={index}>
                   <AddressComponent datos={datos} />
@@ -293,6 +370,7 @@ function Reposicion_certificados() {
             </div>
           </div>
         )}
+        </div>
       </PagSec>
     </div>
   );

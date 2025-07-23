@@ -24,6 +24,7 @@ function Planeacion() {
   const [totalNoticias, setTotalNoticias] = useState(0);
   const [paginaActual, setPaginaActual] = useState(1);
   const noticiasPorPagina = 9;
+  const [isMobile, setIsMobile] = useState(false);
 
   const fetchFijos = async () => {
     try {
@@ -84,6 +85,15 @@ function Planeacion() {
     fetchFijos();
     fetchData(paginaActual);
   }, [paginaActual]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640); // sm breakpoint de Tailwind
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const fechaFun = (fechaAPI) => {
     const diasSemana = [
@@ -158,11 +168,12 @@ function Planeacion() {
                   todosLosDatos().map((item, index) => (
                     <div
                       key={`${item.attributes.Fijo ? 'fijo' : 'normal'}-${index}`}
-                      className="overflow-hidden w-full max-w-[380px] mx-auto sm:mx-0 h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
+                      className="overflow-hidden w-full max-w-[380px] mx-auto sm:mx-0 rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
+                      style={{ height: "474px" }}
                     >
                       <div>
                         <Link href={`/planeacion/${item.attributes.slug}`}>
-                          <div className="rounded-xl max-h-[220px] h-[220px] w-full overflow-hidden">
+                          <div className="rounded-xl overflow-hidden" style={{ width: "330.66px", height: "220px" }}>
                             <Image
                               src={
                                 item.attributes.Imagen?.data?.attributes?.formats?.medium?.url ||
@@ -171,29 +182,30 @@ function Planeacion() {
                               alt={
                                 item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
                               }
-                              className="object-cover w-full h-full"
-                              width={300}
+                              width={330.66}
                               height={220}
+                              className="object-cover"
+                              style={{ width: "330.66px", height: "220px" }}
                             />
                           </div>
                         </Link>
                         <article
-                          className={`${notoSans.className} mt-4 w-full px-2 sm:px-4 py-2`}
+                          className={`${notoSans.className} mt-4 w-full px-2 sm:px-4 py-1`}
                         >
-                          <p className="text-sm text-gray-700 mb-2">
+                          <p className="text-lg sm:text-base text-gray-700 mb-2">
                             {item.attributes.Fecha
                               ? fechaFun(item.attributes.Fecha)
                               : "No hay fecha"}
                           </p>
-                          <h2 className="text-lg font-medium text-[#333334] mb-4">
-                            {truncateText(item.attributes.Titulo, 70)}
+                          <h2 className="text-xl sm:text-2xl font-medium text-[#333334] mb-0">
+                            {truncateText(item.attributes.Titulo, isMobile ? 77 : 72)}
                           </h2>
                         </article>
                       </div>
-                      <div className="flex justify-center mt-4">
+                      <div className="flex justify-center">
                         <Link
                           href={`/planeacion/${item.attributes.slug}`}
-                          className="bg-[#611232] text-white text-center py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full"
+                          className="bg-[#611232] text-white text-center py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full mb-5"
                         >
                           Continuar leyendo
                         </Link>
