@@ -214,8 +214,8 @@ async function Page({ params }) {
             key={index}
             src={item.image.formats.large.url}
             alt={item.image.alternativeText || "Imagen de la noticia"}
-            width={item.image.width}
-            height={item.image.height}
+            // width={item.image.width}
+            // height={item.image.height}
             className="my-4"
             />
           );
@@ -300,7 +300,7 @@ async function Page({ params }) {
             <Image
               src={post.data.attributes?.Imagen?.data?.attributes?.url}
               alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
-              className="w-full h-auto object-cover"
+              // className="w-full h-auto object-cover"
               width={1000}
               height={700}
             />

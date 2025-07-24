@@ -3,11 +3,11 @@ import "./Ubicacion.css";
 
 const Ubicacion = () => {
   return (
-    <div id="UbicacionDivP" className="w-full max-w-[1170px] mx-auto pl-2 pr-6 mt-[1rem]">
+    <div id="UbicacionDivP" className="w-full max-w-[1170px] mx-auto pl-2 pr-6 mt-[1rem] font-noto md:pl-0 md:pr-4">
       <div className="flex flex-col md:flex-row gap-6 items-start md:items-stretch">
         <div
           id="direccion"
-          className="text-base text-zinc-800 flex flex-col justify-center space-y-4 md:w-1/2 text-left"
+          className="text-base text-zinc-800 flex flex-col justify-center space-y-4 md:w-1/2 text-left m-0 p-0 h-full"
         >
           <p className="font-semibold">Dirección INEA Ciudad de México:</p>
           <p className="text-zinc-700">

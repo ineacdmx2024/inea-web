@@ -78,20 +78,21 @@ const Navbar = () => {
     // <div className="navBar text-white ">
     <div
       ref={navRef}
-      className="navBar w-screen max-w-full"
+      // aqui estaba la clase navBar
+      className="font-montserrat m-auto text-[16px] font-light justify-between text-white fixed top-0 left-0 z-[100] w-screen max-w-full"
     >
       <div className="bg-[#611232] w-full">
         {/* Menú gobierno */}
         <nav className="bg-[#611232]">
           <div className="flex items-center justify-between w-full md:ml-[1rem] px-4 md:px-0">
-          <div className="flex items-center justify-between w-full" id="Msup">
+          <div className="flex items-center justify-between w-full  pl-10 pr-4 mx-auto max-w-[1200px] " id="Msup">
             {/* Logo educación */}
             <div className="flex items-center h-[64px]">
             <Link href="https://www.gob.mx/sep" passHref>
                   <img
                     src="/Logo_educacion_white_2025.svg"
                     alt="Educacion"
-                    className="h-[64px] hover:text-[#8B6C41] rounded inline-block mr-[1rem]"
+                    className="h-[45px] hover:text-[#8B6C41] rounded inline-block md:h-[56px] md:mr-[1rem] md:ml-[-55px]  "
                   />
                 </Link>
             </div>
@@ -238,7 +239,7 @@ const Navbar = () => {
         <nav className="bg-[#A57F2C] lg:h-[37px]">
           <div className="flex items-center justify-between py-[0.06rem] px-4 h-[37px] sm:ml-[17rem] md:ml-[16rem]">
             <div
-              className="flex items-end justify-end"
+              className="flex items-end justify-end mx-auto max-w-[1200px] h-auto pl-10 pr-4 mb-0 pb-0"
               id="Minf"
             >
               <div className="flex items-end space-x-10">

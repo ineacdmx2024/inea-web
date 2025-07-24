@@ -64,7 +64,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/embed?mid=122hM5GKsgDsm2hophXyiQkdE6I-kzgU&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px] w-full h-[300px]"
         ></iframe>
       ),
       items: [
@@ -92,7 +92,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/embed?mid=19J4WWcFAKKUoKRAwA5MC_6Nl4y29PUo&ehbc=2E312F"
-          className="  md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className="  md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -120,7 +120,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1ADndmYvW3k1K5kQU7_icHDSJWItFpMs&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -141,7 +141,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1KNGOzsp4CL4BUr69KA3UFsheA_jVG2E&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -176,7 +176,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1yJS8ylTeFs_h-AIe7K4RG4dLXXj5Wzo&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -204,7 +204,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1jYl_g2AOqdFwlTY8BqtN3JrPofhRaZc&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
 
@@ -240,7 +240,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1C9rsjt3V3drRpnMGa-f3mXlpiUIiPYU&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         />
       ),
       items: [
@@ -275,7 +275,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1m7JWJM7KiLjTibY591u_2iTi0T01mTs&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -312,7 +312,7 @@ function Ubicacion() {
         <iframe
     
           src="https://www.google.com/maps/d/embed?mid=1KUG8-R8CmUpVRp3E-nIXuzz06p1wNlw&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -388,7 +388,7 @@ function Ubicacion() {
         <iframe
 
           src="https://www.google.com/maps/d/embed?mid=1tvi1UH-veWd6uDbiO3qqnEjuNgnYEtg&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -435,7 +435,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/u/1/embed?mid=11TxF0-Xr_zMdOm3JohqipE9ULyNeVyE&ehbc=2E312F"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -451,7 +451,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/u/1/embed?mid=1ITyGlGxzE2bOtY_Nvn3ZpQuGsIETQh0&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -487,7 +487,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/u/1/embed?mid=1BwTQcdqppGITq9b3FiZlElmMmrK-DQk&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -519,7 +519,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/u/1/embed?mid=1QQ9E05nybLWo3xQ-ghjhRN0v3ltjSdI&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -571,7 +571,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1lAOkYsB99LTW8e_TOnjY9Scs3o-jjjc&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -831,7 +831,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1iLy4t7C7rHAzzMdZNQ2CRV6p7BnYhSg&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -909,7 +909,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1OznqZCbiP9RCZsItgJ4A5VtHJqVn3bY&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -1051,7 +1051,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1ncVqwipRDOxyw_QgeNRzQ6fsqe5vXks&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -1083,7 +1083,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1zXfA0ytyAY7vwUiaZ_yoBwBYNe-Tc9s&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -1119,7 +1119,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/u/1/embed?mid=1IO2-asrRxv8fBvR6vfsQOqjohy2pIIw&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -1150,7 +1150,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/u/1/embed?mid=1KyEsuAGClb9AJaB_132IGHOkDQTtHww&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         />
       ),
       items: [
@@ -1198,7 +1198,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/u/1/embed?mid=1WMzcmG_cP0QEkJqPQUttqSVSRDo-UR8&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
 
@@ -1255,7 +1255,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/u/1/embed?mid=1-IH5YXtPfckdLJzkRCoXXVEGmXYIk5s&ehbc=2E312F&noprof=1"
-          className=" md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -1288,7 +1288,7 @@ function Ubicacion() {
       map: (
         <iframe
           src="https://www.google.com/maps/d/u/1/embed?mid=1gDIObMv2mNjoF5xMGtf6TIhxdEW5qFw&ehbc=2E312F"
-          className="  md:h-[380px] sm: w-[100%] sm: h-[300px]"
+          className="  md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
@@ -1340,7 +1340,8 @@ function Ubicacion() {
   };
 
   return (
-    <div className={`${notoSans.className}  text-[#333334]  text-start `}>
+    // <div className={`${notoSans.className}  text-[#333334]  text-start `}>
+    <div className={`font-noto  text-[#333334]  text-start `}>
       <PagSec
         Enlaces={enlacesL}
         Titulo={"Ubicación de oficinas de trámites y espacios de estudio"}
@@ -1351,9 +1352,8 @@ function Ubicacion() {
               <li className="p-0">
                 <a
                   aria-current="page"
-                  className={`${
-                    notoSans.className
-                  } inline-block p-4 text-[18px] ${
+                  // className={`${notoSans.className} inline-block p-4 text-[18px] ${
+                  className={`font-noto inline-block p-4 text-[18px] ${
                     opcionSeleccionada === "coordinaciones"
                       ? "text-[#A57F2C]  font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C]"
                       : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#611232] hover:font-bold hover:bg-slate-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
@@ -1366,9 +1366,8 @@ function Ubicacion() {
               <li className="p-0">
                 <a
                   // href="#"
-                  className={`${
-                    notoSans.className
-                  } inline-block p-4 text-[18px] ${
+                  // className={`${notoSans.className} inline-block p-4 text-[18px] ${
+                  className={`font-noto inline-block p-4 text-[18px] ${
                     opcionSeleccionada === "plazas"
                       ? "text-[#A57F2C]  font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C]"
                       : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#611232] hover:font-bold hover:bg-slate-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
@@ -1381,9 +1380,8 @@ function Ubicacion() {
               <li className="p-0">
                 <a
                   // href=""
-                  className={`${
-                    notoSans.className
-                  } inline-block p-4 text-[18px] ${
+                  // className={`${notoSans.className} inline-block p-4 text-[18px] ${
+                  className={`font-noto inline-block p-4 text-[18px] ${
                     opcionSeleccionada === "pilares"
                       ? "text-[#A57F2C] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C] "
                       : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#611232] hover:font-bold hover:bg-slate-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"

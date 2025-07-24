@@ -45,7 +45,7 @@ const Card = ({ title, imageSrc, buttonText, link }) => {
       `}</style>
       <Link href={link} className="block h-full w-full">
         <div className="bg-white border border-slate-200 rounded-lg h-full p-8 flex flex-col w-[362px] h-[450px]max-w-[800px] letras:max-w-[900px] ofertaEdu:max-w-[1000px] tablet:max-w-[1800px]">
-          <div className="image-container mb-6">
+          <div className="max-w-full mb-6">
             <img
               src={imageSrc}
               alt={title}
