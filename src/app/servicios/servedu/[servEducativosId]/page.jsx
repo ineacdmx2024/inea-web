@@ -11,17 +11,27 @@ const notoSans = Noto_Sans({
 });
 
 async function loadPost(slug) {
-  const res = await fetch(
-    `https://inea-web-backend-cg20.onrender.com/api/servedus/${slug}?populate=%2A`, {
-      cache: 'no-store',
-      headers: {
-        'Cache-Control': 'no-cache'
+  try {
+    const res = await fetch(
+      `https://inea-web-backend-cg20.onrender.com/api/servedus/${slug}?populate=%2A`, {
+        cache: 'no-store',
+        headers: {
+          'Cache-Control': 'no-cache'
+        }
       }
+    );
+    
+    if (!res.ok) {
+      console.error('Error fetching post:', res.status, res.statusText);
+      return null;
     }
-  );
-  const data = await res.json();
-
-  return data;
+    
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error('Network error fetching post:', error);
+    return null;
+  }
 }
 
 async function loadEnlaces() {
@@ -57,11 +67,33 @@ async function loadEnlaces() {
 }
 
 async function Page({ params }) {
-  const post = await loadPost(params.serveduId);
+  const post = await loadPost(params.servEducativosId);
+
+  // Handle case when post is not found or API returns unexpected structure
+  if (!post || !post.data || !post.data.attributes) {
+    return (
+      <div className="w-full max-w-screen-sm sm:max-w-2xl md:max-w-4xl px-4 mx-auto mb-10">
+        <div className="text-center py-20">
+          <h1 className={`${notoSans.className} text-2xl font-bold text-[#333334] mb-4`}>
+            Servicio Educativo No Encontrado
+          </h1>
+          <p className={`${notoSans.className} text-[#333334] mb-6`}>
+            El servicio educativo que buscas no existe o no está disponible.
+          </p>
+          <Link 
+            href="/servicios/servedu" 
+            className="bg-[#611232] text-white px-6 py-3 rounded-lg hover:bg-[#4a0e26] transition-colors"
+          >
+            Volver a Servicios Educativos
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   const enlaces = await loadEnlaces();
 
-  const contenido = post.data.attributes.Contenido;
+  const contenido = post.data.attributes.Contenido || [];
 
   const fechaFun = (fechaAPI) => {
     const diasSemana = [
@@ -298,4 +330,4 @@ async function Page({ params }) {
   );
 }
 
-export default Page; 
+export default Page;

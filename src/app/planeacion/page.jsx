@@ -24,6 +24,7 @@ function Planeacion() {
   const [totalNoticias, setTotalNoticias] = useState(0);
   const [paginaActual, setPaginaActual] = useState(1);
   const noticiasPorPagina = 9;
+  const [isMobile, setIsMobile] = useState(false);
 
   const fetchFijos = async () => {
     try {
@@ -84,6 +85,15 @@ function Planeacion() {
     fetchFijos();
     fetchData(paginaActual);
   }, [paginaActual]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640); // sm breakpoint de Tailwind
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const fechaFun = (fechaAPI) => {
     const diasSemana = [
@@ -182,13 +192,13 @@ function Planeacion() {
                         <article
                           className={`${notoSans.className} mt-4 w-full px-2 sm:px-4 py-1`}
                         >
-                          <p className="text-sm text-gray-700 mb-2">
+                          <p className="text-lg sm:text-base text-gray-700 mb-2">
                             {item.attributes.Fecha
                               ? fechaFun(item.attributes.Fecha)
                               : "No hay fecha"}
                           </p>
-                          <h2 className="text-lg font-medium text-[#333334] mb-4">
-                            {truncateText(item.attributes.Titulo, 88)}
+                          <h2 className="text-xl sm:text-2xl font-medium text-[#333334] mb-0">
+                            {truncateText(item.attributes.Titulo, isMobile ? 77 : 72)}
                           </h2>
                         </article>
                       </div>
