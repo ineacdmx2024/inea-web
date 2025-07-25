@@ -304,6 +304,8 @@ function Ubicacion() {
     },
   ];
 
+  const plazasData = pageData;
+
   const pilaresData = [
     {
       title: "Álvaro Obregón",
