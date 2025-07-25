@@ -63,6 +63,16 @@
   margin-bottom: 20px; 
 }
 
+.link-hover {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.link-hover:hover {
+  color: #D3C09B; 
+}
+
 /* ===========================
     BLOQUES CON ICONOS
 =========================== */

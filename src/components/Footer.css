@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
    font-family: 'Noto sans';
    src: url("/NotoSans-Regular.ttf");
 }
@@ -6,18 +6,18 @@
 footer{
    font-family: 'Noto sans', sans-serif;
    margin-top: 5rem;
-}
+} */
 
-.footer-list{
+/* .footer-list{
    padding: 4px !important;
    text: white;
-}
+} */
 
-#Content{
+/* #Content{
    justify-content: space-evenly;
   
-}
-.pleca{
+} */
+/* .pleca{
    background-color: #fff;
    background-image: url("../../public/pleca.svg");
    height: 5vh;
@@ -26,13 +26,13 @@ footer{
    background-size: auto 100%;
    max-width: 100vw;
    overflow: hidden;
-}
+} */
 
-@media screen and (max-width: 800px) and (min-width:300px) {
+/* @media screen and (max-width: 800px) and (min-width:300px) {
   .pleca {
     width: 100%;
     background-repeat: repeat-x;
     background-size: auto 100%;
   }
  
-}
+} */

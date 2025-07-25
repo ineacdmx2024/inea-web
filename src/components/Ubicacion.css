@@ -1,37 +1,38 @@
-#UbicacionDivP {
+/* código traspasado a tailwind */
+/* #UbicacionDivP {
   font-family: 'Noto sans', sans-serif;
   width: 100%;
   height: auto;
   margin-top: 1rem;
-}
+} */
 
 /* Contenedor de texto */
-#direccion {
+/* #direccion {
   margin: 0;
   padding: 0;
   height: 100%;
   text-align: left;
   font-size: 18px;
-}
+} */
 
-@media (min-width: 750px) {
+/* @media (min-width: 750px) {
   #direccion {
     font-size: 18px; 
   }
-}
+} */
 
-#UbicacionDivP a {
+/* #UbicacionDivP a {
   color: #ffffff;
-}
-
+} */
+/* 
 #UbicacionDivP a:hover {
   color: #611232;
-}
+} */
 
 /* Responsivo móvil: espaciado general */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   #UbicacionDivP {
     padding-left: 0rem;
     padding-right: 1rem;
   }
-}
+} */

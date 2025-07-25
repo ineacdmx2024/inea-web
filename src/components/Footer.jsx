@@ -1,13 +1,12 @@
 "use client";
 
 import React from "react";
-import { useEffect } from "react";
 import Link from 'next/link';
-import "./Footer.css";
+// import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className=" bg-[#611232] h-auto">
+    <footer className="font-noto mt-20 bg-[#611232] h-auto">
       <div className="flex items-center justify-between py-[0.1rem] px-auto">
         <div className="mx-auto p-6 md:p-0 md:pt-4 w-full max-w-[1142px] px-4">
           <div className="md:flex justify-between">
@@ -40,31 +39,31 @@ const Footer = () => {
                   Mapa de Sitio
                 </h2>
                 <ul className=" text-sm dark:text-white">
-                  <li className="footer-list hover:text-[#A57F2C]">
+                  <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="https://datos.gob.mx/">Trámites y Servicios</a>
                   </li>
-                  <li className="footer-list hover:text-[#A57F2C]">
+                  <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="/">Sobre el INEA</a>
                   </li>
-                  <li className="footer-list hover:text-[#A57F2C]">
+                  <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="/">Aviso de privacidad</a>
                   </li>
-                  <li className="footer-list hover:text-[#A57F2C]">
+                  <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="/">Comité de Ética</a>
                   </li>
-                  <li className="footer-list hover:text-[#A57F2C]">
+                  <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="https://www.plataformadetransparencia.org.mx/Inicio">Transparencia</a>
                   </li>
-                  <li className="footer-list hover:text-[#A57F2C]">
+                  <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="/">Glosario</a>
                   </li>
-                  <li className="footer-list hover:text-[#A57F2C]">
+                  <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="https://www.gob.mx/inea/">INEA Nacional</a>
                   </li>
-                  <li className="footer-list hover:text-[#A57F2C]">
+                  <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="https://www.gob.mx/">Gobierno</a>
                   </li>
-                  <li className="footer-list hover:text-[#A57F2C]">
+                  <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="/">Créditos</a>
                   </li>
                 </ul>
@@ -72,10 +71,10 @@ const Footer = () => {
               <div>
                 <h2 className="mb-3 text-white dark:text-white ">Contacto</h2>
                 <ul className=" text-sm dark:text-white">
-                  <li className="footer-list hover:text-[#A57F2C]">
+                  <li className="p-1 text-white hover:text-[#A57F2C]">
                     <Link href="/ubicacion">Directorio</Link>
                   </li>
-                  <li className="footer-list hover:text-[#A57F2C]">
+                  <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="/">Correo@inea.gob.mx</a>
                   </li>
                 </ul>
@@ -142,10 +141,10 @@ const Footer = () => {
           <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
           </div>
         </div> */}
-        </div>
+        </div> 
       </div>
 
-      <div className="pleca"></div>
+      <div className="bg-white bg-[url('/pleca.svg')] h-[5vh] w-full bg-repeat-x bg-[auto_100%] max-w-[100vw] overflow-hidden"></div>
     </footer>
   );
 };

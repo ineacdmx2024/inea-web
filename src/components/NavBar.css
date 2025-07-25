@@ -1,10 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 .navBar {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: auto;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 300;
@@ -15,31 +12,31 @@
   top: 0px;
   z-index: 100;
   left: 0px;
-}
+} */
 
-.navBar ul {
+/* .navBar ul {
   display: flex;
   gap: 1rem;
 }
 
 .navBar ul li {
   list-style: none;
-}
+} */
 
-.navBarGob {
+/* .navBarGob {
   background: #0C231E;
-}
+} */
 
 /* Imagen del logo */
-.navBar img,
+/* .navBar img,
 .navBarINEA img {
   height: 50px;
   margin: 1px auto 0 -30px;
   width: 150px;
-}
+} */
 
 /* Contenedor del contenido superior (Gobierno) */
-#Msup {
+/* #Msup {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -47,10 +44,10 @@
   height: auto;
   padding-left: 2.5rem;
   padding-right: 1rem;
-}
+} */
 
 /* Contenedor del menú inferior (INEA) */
-#Minf {
+/* #Minf {
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
@@ -59,40 +56,40 @@
   padding-right: 1rem;
   margin-bottom: 0;
   padding-bottom: 0;
-}
+} */
 
 /* Botón hamburguesa superior (Gobierno) */
-.navBar .md\\:hidden button {
+/* .navBar .md\\:hidden button {
   position: relative;
   float: right;
   margin-right: 0;
   padding: 9px 10px;
   margin-top: 6px;
   margin-bottom: 6px;
-}
+} */
 
 /* Botón hamburguesa inferior (INEA) */
-.navBarINEA .md\\:hidden button {
+/* .navBarINEA .md\\:hidden button {
   position: relative;
   float: right;
   margin-right: 0;
   padding: 9px 10px;
   margin-top: 6px;
   margin-bottom: 6px;
-}
+} */
 
 /* Estilos generales del toggle */
-.navbar-toggle {
+/* .navbar-toggle {
   position: relative;
   float: right;
   margin-right: 15px;
   padding: 9px 10px;
   margin-top: 6px;
   margin-bottom: 6px;
-}
+} */
 
 /* Mejoras responsivas en desktop */
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   #Msup {
     float: right !important;
     margin-right: auto;
@@ -116,10 +113,10 @@
     display: block;
     margin-left: -63px;
   }
-}
+} */
 
 /* Versión móvil */
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
   #Msup {
     position: relative;
     float: right;
@@ -145,7 +142,7 @@
     display: block;
     margin: 0;
   }
-}
+} */
 
 /* Opcionales desactivados
 @media screen and (max-width: 1200px) and (min-width: 300px) {
