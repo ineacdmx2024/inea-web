@@ -30,7 +30,7 @@ const AddressComponent = ({ datos }) => {
               href={datos.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#D3C09B] underline cursor-pointer"
+              className="hover:text-[#D3C09B] hover:underline cursor-pointer"
             >
               {datos.direccion}
             </a>
