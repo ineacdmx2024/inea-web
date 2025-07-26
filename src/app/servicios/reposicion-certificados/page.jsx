@@ -149,7 +149,7 @@ function Reposicion_certificados() {
         Enlaces={enlacesL}
         Titulo="Duplicado de certificado de terminación de estudios de primaria y/o secundaria en escuelas de la Ciudad de México"
       >
-        <div className={`${notoSans.className} text-[#333334] text-start max-w-[1200px] pr-4`}>
+        <div className={`${notoSans.className} text-[#333334] text-start max-w-[1200px]`}>
           <div id="pestañas">
             <ul className="flex flex-wrap text-sm font-medium text-center border-b border-gray-200 dark:border-gray-700 leading-7">
               {[
