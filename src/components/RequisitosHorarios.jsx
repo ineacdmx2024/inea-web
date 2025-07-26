@@ -10,7 +10,7 @@ export default function RequisitosHorarios() {
         <h3 className="text-lg font-bold mb-2">
         Requisitos y horarios de atención
         </h3>
-        <ul className="list-disc ml-8">
+        <ul className="ul-sep list-disc ml-8">
        <li>
             Solicitud del trámite:{" "}
         <a
