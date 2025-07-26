@@ -30,6 +30,12 @@
   overflow-wrap: break-word;
 }
 
+ul.ul-sep2 a {
+  word-break: break-all;
+  overflow-wrap: break-word;
+  display: inline-block;
+}
+
 .title-sep {
   font-size: 24px;
   font-weight: bold;
