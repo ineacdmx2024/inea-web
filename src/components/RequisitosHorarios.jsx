@@ -11,8 +11,15 @@ export default function RequisitosHorarios() {
         Requisitos y horarios de atención
         </h3>
         <ul className="list-disc ml-8">
-        <li>Solicitud del trámite: <br /> 
-            https://www10.aefcm.gob.mx:8006/ugd/rce/</li>
+       <li>
+            Solicitud del trámite:{" "}
+        <a
+            href="https://www10.aefcm.gob.mx:8006/ugd/rce/"
+            className="link-hover"
+        >
+            https://www10.aefcm.gob.mx:8006/ugd/rce/
+        </a>
+        </li>
         <li>Copia de Acta de Nacimiento o documento equivalente.</li>
         <li>Constancia de CURP (en caso de contar con ella).</li>
         <li>Comprobante original de pago de derechos.</li>
