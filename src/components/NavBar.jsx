@@ -237,12 +237,13 @@ const Navbar = () => {
 
         {/* Menú inferior */}
         <nav className="bg-[#A57F2C] lg:h-[37px]">
-          <div className="flex items-center justify-between py-[0.06rem] px-4 h-[37px] sm:ml-[17rem] md:ml-[16rem]">
+          <div className="flex items-center  justify-between py-[0.06rem]  px-4 h-[37px] ">
             <div
-              className="flex items-end justify-end mx-auto max-w-[1200px] h-auto pl-10 pr-4 mb-0 pb-0"
+              className="  w-full flex items-end justify-end   h-auto pl-10 pr-4 mb-0 pb-0"
               id="Minf"
             >
-              <div className="flex items-end space-x-10">
+            
+              <div className="flex items-end justify-end w-full arrow:pr-0 medida3:pr-0 tablet:pr-[78px]    ">
                 <div className="hidden md:block">
                   <div className="flex items-end space-x-5">
                     <Link
@@ -637,7 +638,8 @@ const Navbar = () => {
               </div>
 
               {/* Boton hamburguesa */}
-              <div className="md:hidden flex items-center h-[64px]" style={{ marginLeft: "7rem" }}>
+              <div className="md:hidden flex items-center h-[64px]" style={{ marginLeft: "18rem" }}>
+              {/* <div className="md:hidden flex items-center h-[64px] md:ml-28" style={{ marginLeft: "18rem" }}> */}
                 <button
                   className="inline-flex items-center justify-center  p-2 rounded-md text-white hover:text-[#E4CDA7]
                  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#E4CDA7]"

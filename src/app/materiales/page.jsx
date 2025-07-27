@@ -231,8 +231,7 @@ function Materiales() {
     },
   ];
 
-  const [opcionSeleccionada, setOpcionSeleccionada] =
-    useState("alfabetizacion");
+  const [opcionSeleccionada, setOpcionSeleccionada] = useState("alfabetizacion");
   const [iframeVista, setIframeVista] = useState(null);
 
   const handleOpcionSeleccionada = (opcion) => {
@@ -252,7 +251,8 @@ function Materiales() {
 
   return (
     <div
-      className={`${notoSans.className} text-[#333334] text-start mt-[-32px] ml-[-16px`}
+      // className={`${notoSans.className} text-[#333334] text-start mt-[-32px] ml-[-16px`}
+      className={`font-noto text-[#333334] text-start mt-[-32px] ml-[-16px`}
     >
       <PagSec Titulo={"Descarga de materiales"} mostrarCarrusel={false}>
         <div className="w-full">
@@ -266,9 +266,10 @@ function Materiales() {
                 ].map(({ key, label }) => (
                   <li key={key} className="p-0">
                     <a
-                      className={`${
-                        notoSans.className
-                      } inline-block p-4 text-[18px] ${
+                      // className={`${
+                      //   notoSans.className
+                      // } inline-block p-4 text-[18px] ${
+                      className={` font-noto inline-block p-4 text-[18px] ${
                         opcionSeleccionada === key
                           ? "text-[#A57F2C] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C]"
                           : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#611232] hover:font-bold hover:bg-slate-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
@@ -336,6 +337,7 @@ function Materiales() {
                   </div>
                 </div>
                 <div className="">
+                  {/* revisa desde aqui */}
                   <BotonesMat
                     datos={primariaData}
                     onVistaClick={handleVistaClick}

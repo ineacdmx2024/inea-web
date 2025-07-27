@@ -125,9 +125,10 @@ function DetalleEnlace_CarruselBanner(slug) {
         item.children[0].text.includes("<iframe")) {
       // Es un código de embed dentro de un párrafo
       return (
-        <div key={index} className="my-6 aspect-video w-full max-w-4xl mx-auto">
+        <div key={index} className="my-6  aspect-video w-full max-w-4xl mx-auto">
           <div 
-            className="embed-container w-full h-full" 
+            // className="embed-container w-full h-full" 
+            className=" w-full h-full" 
             dangerouslySetInnerHTML={{ __html: item.children[0].text }}
           />
         </div>
@@ -217,7 +218,8 @@ function DetalleEnlace_CarruselBanner(slug) {
             return (
               <div key={index} className="my-6 aspect-video w-full max-w-4xl mx-auto">
                 <div 
-                  className="embed-container w-full h-full" 
+                  // className="embed-container w-full h-full" 
+                  className=" w-full h-full" 
                   dangerouslySetInnerHTML={{ __html: item.embed.html }}
                 />
               </div>

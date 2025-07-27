@@ -99,7 +99,8 @@ async function Page({ params }) {
       return (
         <div key={index} className="my-6 aspect-video w-full max-w-4xl mx-auto">
           <div 
-            className="embed-container w-full h-full" 
+            // className="embed-container w-full h-full" 
+            className="w-full h-full" 
             dangerouslySetInnerHTML={{ __html: item.children[0].text }}
           />
         </div>
@@ -129,7 +130,7 @@ async function Page({ params }) {
           return (
             <p
               key={index}
-              style={{ fontFamily: "IBM Plex Serif, serif" }}
+              // style={{ fontFamily: "IBM Plex Serif, serif" }}
               className={`font-body text-[#333334] text-[18px] font-thin tracking-wider`}
             >
               {item.children.map((child, i) => {
@@ -189,7 +190,8 @@ async function Page({ params }) {
           return (
             <ol
               key={index}
-              className={`${ibm_plex_serif.className} list-decimal pl-6 mb-4`}
+              // className={`${ibm_plex_serif.className} list-decimal pl-6 mb-4`}
+              className={`font-serif list-decimal pl-6 mb-4`}
             >
               {item.children.map((listItem, liIndex) => (
                 <li key={liIndex}>{listItem.children[0]?.text || ""}</li>
@@ -200,7 +202,8 @@ async function Page({ params }) {
             return (
               <div key={index} className="my-6 aspect-video w-full max-w-4xl mx-auto">
                 <div 
-                  className="embed-container w-full h-full" 
+                  // className="embed-container w-full h-full" 
+                  className=" w-full h-full" 
                   dangerouslySetInnerHTML={{ __html: item.embed.html }}
                 />
               </div>
@@ -241,8 +244,8 @@ async function Page({ params }) {
       : `/enlaces-de-interes/${item.attributes.slug}`,
   }));
   return (
-    <div>
-      <div className="ml-[26rem] mb-10"></div>
+    <div className="bg-green-500">
+      <div className="ml-[26rem]  mb-10"></div>
       <PagSec
         Enlaces={noticias}
         Titulo={post.data?.attributes?.Titulo}

@@ -129,7 +129,8 @@ function DetalleEnlace(slug) {
       return (
         <div key={index} className="my-6 aspect-video w-full max-w-4xl mx-auto">
           <div 
-            className="embed-container w-full h-full" 
+            // className="embed-container w-full h-full" 
+            className=" w-full h-full" 
             dangerouslySetInnerHTML={{ __html: item.children[0].text }}
           />
         </div>
@@ -219,7 +220,8 @@ function DetalleEnlace(slug) {
             return (
               <div key={index} className="my-6 aspect-video w-full max-w-4xl mx-auto">
                 <div 
-                  className="embed-container w-full h-full" 
+                  // className="embed-container w-full h-full" 
+                  className="w-full h-full" 
                   dangerouslySetInnerHTML={{ __html: item.embed.html }}
                 />
               </div>
@@ -288,7 +290,8 @@ function DetalleEnlace(slug) {
               />
             </div>
 
-            <div className="prose lg:prose-xl mt-8 max-w-3xl text-[#333334] overflow-hidden clear-both" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', wordBreak: 'break-word', textAlign: 'left' }}>
+            {/* <div className="prose lg:prose-xl mt-8 max-w-3xl text-[#333334] overflow-hidden clear-both" style={{ wordWrap: 'break-word', overflowWrap: 'break-word', wordBreak: 'break-word', textAlign: 'left' }}> */}
+            <div className="prose lg:prose-xl mt-8 max-w-3xl text-[#333334] overflow-hidden clear-both break-words text-left" >
               {renderContenido(cont.contenido)}
             </div>
           </PagSec>
