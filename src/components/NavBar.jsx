@@ -236,7 +236,7 @@ const Navbar = () => {
 
         {/* Menú inferior */}
         <nav className="bg-[#A57F2C] lg:h-[37px]">
-          <div className="flex items-center justify-between py-[0.06rem] px-4 h-[37px] sm:ml-[17rem] md:ml-[16rem]">
+          <div className="flex items-center justify-between py-[0.06rem] px-4 h-[37px] sm:ml-[17rem] md:ml-[10rem]">
             <div
               className="flex items-end justify-end"
               id="Minf"
@@ -265,7 +265,6 @@ const Navbar = () => {
                       </div>
                       <div>Inicio</div>
                     </Link>
-
                     {/* Servicios */}
                     <div className="group relative">
                       <Link
@@ -631,6 +630,16 @@ const Navbar = () => {
                         </Link>
                       </div>
                     </div>
+                      {/* Glosario */}
+                    <div className="group relative ">
+                      <Link
+                        href="/glosario"
+                        onClick={closeAllMenus}
+                        className="hover:text-[#CBB486] p-2 rounded flex items-center justify-between w-full "
+                      >
+                        Glosario
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -797,6 +806,13 @@ const Navbar = () => {
                   </button>
                   {isClickS && (
                     <div className="pl-4 space-y-1">
+                      <Link
+                        onClick={closeAllMenus && closeMobileMenu}
+                        href="/servicios/servedu/"
+                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded truncate"
+                      >
+                        Servicios Educativos
+                      </Link>
                       <Link
                         onClick={closeAllMenus && closeMobileMenu}
                         href="http://certificacion.inea.gob.mx/DescCertificado.aspx"
@@ -1047,6 +1063,16 @@ const Navbar = () => {
                       </Link>
                     </div>
                   )}
+                </div>
+                {/* Glosario */}
+                <div className="group relative">
+                  <Link
+                    onClick={closeAllMenus && closeMobileMenu}
+                    href="/glosario"
+                    className="hover:text-[#611232]  p-2 rounded"
+                  >
+                    Glosario
+                  </Link>
                 </div>
               </div>
             </div>
