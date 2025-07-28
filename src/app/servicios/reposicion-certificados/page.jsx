@@ -175,7 +175,7 @@ function Reposicion_certificados() {
           </div>
 
         {opcionSeleccionada === "internet" && (
-          <div className="content mt-[20px]">
+          <div className="content mt-[20px] ">
             <ul className="ul-sep">
               <li>
                 De todas las escuelas, siempre y cuando hayas concluido y
@@ -184,7 +184,8 @@ function Reposicion_certificados() {
                 estudios en un CEDEX, deberás continuar con este trámite a
                 través de la siguiente página de internet: &nbsp;
                 <a
-                  className="a-sep"
+                  // className="a-sep"
+                  className="text-[#611232] cursor-pointer hover:text-[#D3C09B] hover:underline"
                   href=" https://www10.aefcm.gob.mx:8006/ugd/rce/"
                 >
                   https://www10.aefcm.gob.mx:8006/ugd/rce/
@@ -196,7 +197,8 @@ function Reposicion_certificados() {
               <strong> a partir del mes de julio de 2017</strong>, lo puedes
               descargar a través de la siguiente página de internet:&nbsp;
               <a
-                className="a-sep"
+                // className="a-sep"
+                className="text-[#611232] cursor-pointer hover:text-[#D3C09B] hover:underline"
                 href="https://www.controlescolar.aefcm.gob.mx/valida"
               >
                 https://www.controlescolar.aefcm.gob.mx/valida.
@@ -300,7 +302,7 @@ function Reposicion_certificados() {
                 Coordinación Sectorial de Educación Secundaria.{" "} <br />
                 Departamento de Control Escolar.
               </h3>
-              <div className="data-container flex items-start gap-2">
+              <div className="data-container flex flex-row items-start gap-[10px]">
                 <svg
                   className="icon"
                   xmlns="http://www.w3.org/2000/svg"
