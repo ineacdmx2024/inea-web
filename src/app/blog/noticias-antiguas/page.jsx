@@ -3,7 +3,7 @@ import { Noto_Sans } from "next/font/google";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import PagSec from "@/components/PlantillaPagSec"; // Nuevo componente importado
+import PagSec from "@/components/PlantillaPagSec";
 
 const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -18,24 +18,22 @@ const truncateText = (text, maxLetters) => {
   return text;
 };
 
-function NoticiasAntiguas({ item }) {
+function NoticiasAntiguas() {
   const [datos, setDatos] = useState(null);
   const [totalNoticias, setTotalNoticias] = useState(0);
   const [paginaActual, setPaginaActual] = useState(1);
   const noticiasPorPagina = 9;
+  const [isMobile, setIsMobile] = useState(false);
 
   const fetchData = async (page = 1) => {
     const start = (page - 1) * noticiasPorPagina;
-
     try {
       const response = await fetch(
         `https://inea-web-backend-cg20.onrender.com/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
-        //`https://inea-web-backend.onrender.com/api/blogs?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
       );
       const result = await response.json();
       setDatos(result.data);
-      const total = result.meta.pagination.total;
-      setTotalNoticias(total);
+      setTotalNoticias(result.meta.pagination.total);
     } catch (error) {
       console.error("Error al obtener los datos:", error);
     }
@@ -44,6 +42,15 @@ function NoticiasAntiguas({ item }) {
   useEffect(() => {
     fetchData(paginaActual);
   }, [paginaActual]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640); // sm breakpoint de Tailwind
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const fechaFun = (fechaAPI) => {
     const diasSemana = [
@@ -73,10 +80,6 @@ function NoticiasAntiguas({ item }) {
     return `${diasSemana[fecha.getDay()]}, ${fecha.getDate()} de ${meses[fecha.getMonth()]} de ${fecha.getFullYear()}`;
   };
 
-  const handlePageChange = (newPage) => {
-    setPaginaActual(newPage);
-  };
-
   const totalPaginas = Math.ceil(totalNoticias / noticiasPorPagina);
 
   const handleNextPage = () => {
@@ -89,8 +92,8 @@ function NoticiasAntiguas({ item }) {
 
   return (
     <main>
-      <PagSec Enlaces={[]} mostrarCarrusel={false}> {/* Deshabilitamos el carrusel */}
-        <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-4 items-start mt-0"> {/* Ajuste del margen superior */}
+      <PagSec Enlaces={[]} mostrarCarrusel={false}>
+        <div className="mx-auto w-11/12 medida3:w-4/5 md:w-[1142px] grid grid-cols-1 md:grid-cols-12 gap-4 items-start mt-0">
           <div className="col-span-12">
             <h1
               className={`${notoSans.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight gap-8 ml-[-20px] md:ml-0.5`}
@@ -98,17 +101,18 @@ function NoticiasAntiguas({ item }) {
               Noticias antiguas
             </h1>
 
-            <div className="mb-16 w-full"> {/* Ajuste de márgenes izquierdo y derecho */}
-              <div className="w-full grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"> {/* Ajuste del diseño de las fichas */}
+            <div className="mb-16 w-full">
+              <div className="w-full grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                 {datos ? (
                   datos.map((item, index) => (
                     <div
                       key={index}
-                      className="overflow-hidden w-full max-w-[380px] mx-auto sm:mx-0 h-full rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
+                      className="overflow-hidden w-full max-w-[380px] mx-auto sm:mx-0 rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
+                      style={{ height: "474px" }}
                     >
                       <div>
                         <Link href={`/blog/noticias-antiguas/${item.attributes.slug}`}>
-                          <div className="rounded-xl max-h-[220px] h-[220px] w-full overflow-hidden">
+                          <div className="rounded-xl overflow-hidden" style={{ width: "330.66px", height: "220px" }}>
                             <Image
                               src={
                                 item.attributes.Imagen?.data?.attributes?.formats?.medium?.url ||
@@ -117,29 +121,30 @@ function NoticiasAntiguas({ item }) {
                               alt={
                                 item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
                               }
-                              className="object-cover w-full h-full"
-                              width={300}
+                              width={330.66}
                               height={220}
+                              className="object-cover"
+                              style={{ width: "330.66px", height: "220px" }}
                             />
                           </div>
                         </Link>
                         <article
-                          className={`${notoSans.className} mt-4 w-full px-2 sm:px-4 py-2`}
+                          className={`${notoSans.className} mt-4 w-full px-2 sm:px-4 py-1`}
                         >
-                          <p className="text-sm text-gray-700 mb-2">
+                          <p className="text-base sm:text-lg text-gray-700 mb-2">
                             {item.attributes.Fecha
                               ? fechaFun(item.attributes.Fecha)
                               : "No hay fecha"}
                           </p>
-                          <h2 className="text-lg font-medium text-[#333334] mb-4">
-                            {truncateText(item.attributes.Titulo, 70)}
+                          <h2 className="text-lg sm:text-xl font-medium text-[#333334] mb-0">
+                            {truncateText(item.attributes.Titulo, isMobile ? 85 : 86)}
                           </h2>
                         </article>
                       </div>
-                      <div className="flex justify-center mt-4">
+                      <div className="flex justify-center">
                         <Link
                           href={`/blog/noticias-antiguas/${item.attributes.slug}`}
-                          className="bg-[#611232] text-white text-center py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full"
+                          className="bg-[#611232] text-white text-center py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full mb-5"
                         >
                           Continuar leyendo
                         </Link>
@@ -152,7 +157,8 @@ function NoticiasAntiguas({ item }) {
               </div>
             </div>
 
-              {/* Botones de navegación */}
+            {/* Botones de navegación */}
+            {totalNoticias > 0 && (
               <div className="flex justify-center items-center gap-4 mt-8">
                 <button
                   onClick={handlePrevPage}
@@ -178,6 +184,7 @@ function NoticiasAntiguas({ item }) {
                   Siguiente
                 </button>
               </div>
+            )}
           </div>
         </div>
       </PagSec>
