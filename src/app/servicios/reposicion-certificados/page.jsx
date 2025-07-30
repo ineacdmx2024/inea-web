@@ -34,7 +34,7 @@ function Reposicion_certificados() {
         if (enlacesPineados.length < 3) {
           const resNoPineados = await fetch(
             //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
-            `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+             `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
           );
           const { data: enlacesNoPineados } = await resNoPineados.json();
   
@@ -65,6 +65,7 @@ function Reposicion_certificados() {
       direccion:
         "Melchor Ocampo No. 91, Col. Tlaxpana, Alcaldía Miguel Hidalgo, C.P. 11370, Ciudad de México",
       url: "https://maps.app.goo.gl/vgEVhVhvU3moQZdi6",
+      url: "https://maps.app.goo.gl/vgEVhVhvU3moQZdi6",
       telefonos: ["5536018400 Ext. 48250"],
       correos: ["msussy.padillar@aefcm.gob.mx", "msussy.padillar@aefcm.gob.mx"],
       horario: "Lunes a viernes de 09:00 a 15:00 hrs y de 16:00 a 18:00 hrs.",
@@ -75,6 +76,7 @@ function Reposicion_certificados() {
       direccion:
         "Av. Poniente 140 No. 475, Col. Nueva Vallejo, Alcaldía Gustavo A. Madero, C.P. 07750, Ciudad de México.",
       url: "https://maps.app.goo.gl/MNEtTuTsQ3d6RtrG8",
+      url: "https://maps.app.goo.gl/MNEtTuTsQ3d6RtrG8",
       telefonos: ["5591307511"],
       correos: ["tomasfr@aefcm.gob.mx", "nadia.hernandez@aefcm.gob.mx"],
       horario: "Lunes a viernes de 09:00 a 15:00 hrs y de 16:00 a 18:00 hrs.",
@@ -84,6 +86,7 @@ function Reposicion_certificados() {
       titulo: "Dirección de Educación Primaria No. 3",
       direccion:
         "Avenida Coyoacán No. 521, 2° piso, Col. Del Valle, Alcaldía Benito Juárez, C.P. 03100, Ciudad de México",
+      url: "https://maps.app.goo.gl/gVfrwtanw1u6DEar7",
       url: "https://maps.app.goo.gl/gVfrwtanw1u6DEar7",
       telefonos: ["5536018400 Ext. 48622", "56878860"],
       correos: [
@@ -97,6 +100,7 @@ function Reposicion_certificados() {
       titulo: "Dirección de Educación Primaria No. 4",
       direccion:
         "Calzada México Xochimilco No. 4832. Col. San Lorenzo Huipulco, Alcaldía Tlalpan, C.P. 14370, Ciudad de México.",
+      url: "https://maps.app.goo.gl/u3PuvEYe8jeGL3ha7",
       url: "https://maps.app.goo.gl/u3PuvEYe8jeGL3ha7",
       telefonos: ["5591300906"],
       correos: [
@@ -115,6 +119,7 @@ function Reposicion_certificados() {
       direccion:
         "Maestro Rural No. 57, Col. Un Hogar para Nosotros, Alcaldía Miguel Hidalgo",
       url: "https://maps.app.goo.gl/nRajSiLKwrTsZr2z8",
+      url: "https://maps.app.goo.gl/nRajSiLKwrTsZr2z8",
       alcaldias:
         "Álvaro Obregón, Cuajimalpa de Morelos, Cuauhtémoc y Miguel Hidalgo.",
     },
@@ -123,12 +128,14 @@ function Reposicion_certificados() {
       direccion:
         "Schumann y Constantino S/N Col. Vallejo, Alcaldía Gustavo A. Madero, C.P. 07870",
       url: "https://maps.app.goo.gl/tt4gB1mt5ZXAUZZe9",
+      url: "https://maps.app.goo.gl/tt4gB1mt5ZXAUZZe9",
       alcaldias: "Azcapotzalco y Gustavo A. Madero",
     },
     {
       titulo: "Dirección Operativa 3",
       direccion:
         "Sur 65-A No. 3228, Col. Viaducto Piedad, C.P. 08200, Alcaldía Iztacalco, Ciudad de México.",
+      url: "https://maps.app.goo.gl/KUvDoP6WV5TiJjiZ6",
       url: "https://maps.app.goo.gl/KUvDoP6WV5TiJjiZ6",
       alcaldias:
         "Benito Juárez, Coyoacán, Iztacalco, Venustiano Carranza e Iztapalapa para Telesecundarias",
@@ -137,6 +144,7 @@ function Reposicion_certificados() {
       titulo: "Dirección Operativa 4",
       direccion:
         "Anillo Periférico No. 7650, Col. Ex Hacienda Coapa, Alcaldía Tlalpan, C.P. 14330, Ciudad de México.",
+      url: "https://maps.app.goo.gl/NnfJHhmTrkfxonAL8",
       url: "https://maps.app.goo.gl/NnfJHhmTrkfxonAL8",
       alcaldias:
         "Magdalena Contreras, Milpa Alta, Tláhuac, Tlalpan y Xochimilco",

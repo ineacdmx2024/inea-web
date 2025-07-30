@@ -63,7 +63,7 @@ const AddressComponent = ({ datos }) => {
               <p key={index}>{telefono}</p>
             ))}
           </div>
-        </div>
+        </div> 
       )}
 
       {datos.correos?.length > 0 && (
