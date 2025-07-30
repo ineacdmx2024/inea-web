@@ -84,11 +84,11 @@ const Navbar = () => {
       <div className="bg-[#611232] w-full">
         {/* Menú gobierno */}
         <nav className="bg-[#611232]">
-          <div className="flex items-center justify-between w-full md:ml-[1rem] px-4 md:px-0">
+          <div className="flex items-center justify-between w-full pl-[10px] md:ml-[1rem] px-4 md:px-0">
           {/* <div className="flex items-center justify-between w-full  pl-4 pr-4 mx-auto max-w-[1200px] " id="Msup"> */}
-          <div className="flex items-center justify-between w-full  pl-2 pr-0 mx-auto max-w-[1200px] " id="Msup">
+          <div className="flex items-center justify-between w-screen pl-0 pr-0 md:pl-4 md:mx-auto md:max-w-[1200px] " id="Msup">
             {/* Logo educación */}
-            <div className="flex items-center h-[64px]">
+            <div className="flex items-center h-[75px] md:h-[64px]">
             <Link href="https://www.gob.mx/sep" passHref>
                   <img
                     src="/Logo_educacion_white_2025.svg"

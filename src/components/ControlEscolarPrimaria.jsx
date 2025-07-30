@@ -4,7 +4,8 @@ import React from "react";
 export default function ControlEscolarPrimaria() {
   return (
     <div>
-      <h3 className="subtitle-sep font-bold text-[#333334]">
+      {/* <h3 className="subtitle-sep font-bold text-[#333334]"> */}
+      <h3 className="font-bold text-[#333334]">
         Dirección General de Operación de Servicios Educativos.
       </h3>
 
@@ -20,9 +21,10 @@ export default function ControlEscolarPrimaria() {
           </h3>
 
           {/* Dirección */}
-          <div className="data-container flex items-start gap-2">
+          {/* <div className="data-container flex items-start gap-2"> */}
+          <div className="flex flex-row items-start gap-[10px]">
             <svg
-              className="icon"
+              className="flex-shrink-0 w-5 h-5 object-contain"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 14 20"
               fill="none"
@@ -44,9 +46,10 @@ export default function ControlEscolarPrimaria() {
           </div>
 
           {/* Teléfono */}
-          <div className="data-container flex items-start gap-2">
+          {/* <div className="data-container flex items-start gap-2"> */}
+          <div className="flex flex-row items-start gap-[10px]">
             <svg
-              className="icon"
+              className="flex-shrink-0 w-5 h-5 object-contain"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 18 19"
               fill="none"
@@ -60,9 +63,10 @@ export default function ControlEscolarPrimaria() {
           </div>
 
           {/* Correo */}
-          <div className="data-container flex items-start gap-2">
+          {/* <div className="data-container flex items-start gap-2"> */}
+          <div className="flex flex-row items-start gap-[10px]">
             <svg
-              className="icon"
+              className="flex-shrink-0 w-5 h-5 object-contain"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 16"
               fill="none"

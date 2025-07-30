@@ -175,9 +175,11 @@ function Reposicion_certificados() {
           </div>
 
         {opcionSeleccionada === "internet" && (
-          <div className="content mt-[20px] ">
-            <ul className="ul-sep">
-              <li>
+          // <div className="content mt-[20px] ">
+          <div className="pt-[25px] text-lg mt-[20px] ">
+            {/* <ul className="ul-sep"> */}
+            <ul className="list-disc ml-[25px]">
+              <li className="mb-5 break-words">
                 De todas las escuelas, siempre y cuando hayas concluido y
                 acreditado el Ciclo Escolar. Si obtuviste tu certificado{" "}
                 <strong> antes de julio del 2017 </strong> o concluiste tus
@@ -192,7 +194,7 @@ function Reposicion_certificados() {
                 </a>
               </li>
 
-              <li>
+              <li className="mb-5 break-words">
               Si obtuviste tu certificado de estudios de primaria o secundaria 
               <strong> a partir del mes de julio de 2017</strong>, lo puedes
               descargar a través de la siguiente página de internet:&nbsp;
@@ -215,7 +217,8 @@ function Reposicion_certificados() {
         )}
 
         {opcionSeleccionada === "presencial" && (
-          <div className="content presencial flex flex-col gap-8">
+          // <div className="content presencial flex flex-col gap-10">
+          <div className="pt-[25px] text-lg mt-[20px] presencial flex flex-col gap-10">
             <div className="flex flex-wrap mb-6">
             {[
               { id: "primaria", label: "Primaria" },
@@ -259,7 +262,8 @@ function Reposicion_certificados() {
           </div>
             <div id="primaria" className="mt-[-5px]">
               <div className="mb-4">
-                <h2 className="patria title-sep">Primaria</h2>
+                {/* <h2 className="patria title-sep">Primaria</h2> */}
+                <h2 className="patria text-2xl font-bold mb-4">Primaria</h2>
                 <div className="flex items-center">
                   <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
                   <div className="flex-grow h-px bg-gray-300"></div>
@@ -274,14 +278,16 @@ function Reposicion_certificados() {
               
               {/* Nuevo Título de sección */}
               <div className="mb-4">
-                <h2 className="patria title-sep mt-12">Direcciones adicionales</h2>
+                {/* <h2 className="patria title-sep mt-12">Direcciones adicionales</h2> */}
+                <h2 className="patria text-2xl font-bold mb-4 mt-12">Direcciones adicionales</h2>
                   <div className="flex items-center">
                       <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
                       <div className="flex-grow h-px bg-gray-300"></div>
                   </div>
               </div>
                 
-              <div className="addresses flex flex-col gap-4">
+              {/* <div className="addresses flex flex-col gap-4"> */}
+              <div className="grid grid-cols-1 gap-5 mt-6 ">
                 {datosPrimaria.map((datos, index) => (
                   <div key={index}>
                     <AddressComponent datos={datos} />
@@ -292,19 +298,23 @@ function Reposicion_certificados() {
 
             <div id="secundaria">
               <div className="mb-4">
-                <h2 className="patria title-sep mt-6">Secundaria</h2>
+                {/* <h2 className="patria title-sep mt-6">Secundaria</h2> */}
+                <h2 className="patria text-2xl font-bold mb-4 mt-6">Secundaria</h2>
                 <div className="flex items-center">
                   <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
                   <div className="flex-grow h-px bg-gray-300"></div>
                 </div>
               </div>
-              <h3 className="subtitle-sep mt-4">
+              {/* <h3 className="subtitle-sep mt-4"> */}
+              <h3 className="font-bold mt-4">
                 Coordinación Sectorial de Educación Secundaria.{" "} <br />
                 Departamento de Control Escolar.
               </h3>
-              <div className="data-container flex flex-row items-start gap-[10px]">
+              {/* <div className="data-container flex flex-row items-start gap-[10px]"> */}
+              <div className=" flex flex-row items-start gap-[10px]">
                 <svg
-                  className="icon"
+                  // className="icon"
+                  className="flex-shrink-0 w-5 h-5 object-contain"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 14 20"
                   fill="none"
@@ -318,16 +328,19 @@ function Reposicion_certificados() {
                   href="https://maps.app.goo.gl/MGe9SWn1Gzqv3XBu7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="link-hover text-underline"
+                  // className="link-hover text-underline"
+                  className="cursor-pointer transition-colors duration-200 ease-in-out no-underline hover:underline hover:text-[#D3C09B] text-underline"
                 >
                   Nezahualcóyotl, No. Ext: 127, No. Int: Piso 8, C.P. 06080,
                   Alcaldía Cuauhtémoc, Ciudad de México.
                 </a>
               </div>
 
-            <div className="data-container flex items-start gap-2">
+            {/* <div className="data-container flex items-start gap-2"> */}
+            <div className="flex flex-row items-start gap-[10px]">
               <svg
-                className="icon"
+                // className="icon"
+                className="flex-shrink-0 w-5 h-5 object-contain"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 18 19"
                 fill="none"
@@ -340,9 +353,11 @@ function Reposicion_certificados() {
               <span className="text-[#333334]">5536018400 Ext. 48380</span>
             </div>
 
-              <div className="data-container flex items-start gap-2">
+              {/* <div className="data-container flex items-start gap-2"> */}
+              <div className="flex flex-row items-start gap-[10px]">
                 <svg
-                  className="icon"
+                  // className="icon"
+                  className="flex-shrink-0 w-5 h-5 object-contain"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 16"
                   fill="none"
@@ -354,14 +369,16 @@ function Reposicion_certificados() {
                 </svg>
                 <a
                   href="mailto:control.escolar.cses@aefcm.gob.mx"
-                  className="link-hover"
+                  // className="link-hover"
+                  className="cursor-pointer transition-colors duration-200 ease-in-out no-underline hover:underline hover:text-[#D3C09B]"
                 >
                   control.escolar.cses@aefcm.gob.mx
                 </a>
               </div>
             </div>
 
-            <div className="addresses flex flex-col gap-4">
+            {/* <div className="addresses flex flex-col gap-4"> */}
+            <div className="grid grid-cols-1 gap-5 mt-6">
               {datosSecundaria.map((datos, index) => (
                 <div key={index}>
                   <AddressComponent datos={datos} />

@@ -10,12 +10,16 @@ const notoSans = Noto_Sans({
 
 const AddressComponent = ({ datos }) => {
   return (
-    <div className="addressData">
-      <h2 className="subtitle-sep">{datos.titulo}</h2>
+    // <div className="addressData">
+    <div className="flex flex-col gap-[5px] mb-5">
+      {/* <h2 className="subtitle-sep">{datos.titulo}</h2> */}
+      <h2 className="font-bold">{datos.titulo}</h2>
 
-      <div className="data-container">
+      {/* <div className="data-container"> */}
+      <div className="flex flex-row items-start gap-[10px]">
           <svg
-            className="icon"
+            // className="icon"
+            className="flex-shrink-0 w-5 h-5 object-contain"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 14 20"
             fill="none"
@@ -25,7 +29,8 @@ const AddressComponent = ({ datos }) => {
               fill="#611232"
             />
           </svg>
-          <div className="text">
+          {/* <div className="text"> */}
+          <div className="flex-1 break-words">
             <a
               href={datos.url}
               target="_blank"
@@ -38,9 +43,11 @@ const AddressComponent = ({ datos }) => {
         </div>
 
       {datos.telefonos !== undefined && (
-        <div className="data-container">
+        // <div className="data-container">
+        <div className="flex flex-row items-start gap-[10px]">
           <svg
-            className="icon"
+            // className="icon"
+            className="flex-shrink-0 w-5 h-5 object-contain"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 18 19"
             fill="none"
@@ -50,7 +57,8 @@ const AddressComponent = ({ datos }) => {
               fill="#611232"
             />
           </svg>
-          <div className="text">
+          {/* <div className="text"> */}
+          <div className="flex-1 break-words">
             {datos.telefonos.map((telefono, index) => (
               <p key={index}>{telefono}</p>
             ))}
@@ -59,9 +67,11 @@ const AddressComponent = ({ datos }) => {
       )}
 
       {datos.correos?.length > 0 && (
-        <div className="data-container">
+        // <div className="data-container">
+        <div className="flex flex-row items-start gap-[10px]">
           <svg
-            className="icon"
+            // className="icon"
+            className="flex-shrink-0 w-5 h-5 object-contain"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 16"
             fill="none"
@@ -71,12 +81,14 @@ const AddressComponent = ({ datos }) => {
               fill="#611232"
             />
           </svg>
-          <div className="text">
+          {/* <div className="text"> */}
+          <div className="flex-1 break-words">
             {datos.correos.map((correo, index) => (
               <a
                 key={index}
                 href={`mailto:${correo}`}
-                className="link-hover block"
+                // className="link-hover block"
+                className="cursor-pointer transition-colors duration-200 ease-in-out no-underline hover:underline hover:text-[#D3C09B] block"
               >
                 {correo}
               </a>
@@ -87,10 +99,13 @@ const AddressComponent = ({ datos }) => {
 
       {datos.horario !== undefined && (
         <div className="mt-4">
-          <h2 className="subtitle-sep">Horario de atención</h2>
-          <div className="data-container">
+          {/* <h2 className="subtitle-sep">Horario de atención</h2> */}
+          <h2 className="font-bold">Horario de atención</h2>
+          {/* <div className="data-container"> */}
+          <div className="flex flex-row items-start gap-[10px]">
             <svg
-              className="icon"
+              // className="icon"
+              className="flex-shrink-0 w-5 h-5 object-contain"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 21"
               fill="none"
@@ -100,15 +115,18 @@ const AddressComponent = ({ datos }) => {
                 fill="#611232"
               />
             </svg>
-            <div className="text">
+            {/* <div className="text"> */}
+            <div className="flex-1 break-words">
               <p>{datos.horario}</p>
             </div>
           </div>
         </div>
       )}
 
-      <h2 className="subtitle-sep mt-4">Alcaldías que atienden</h2>
-      <div className="text">
+      {/* <h2 className="subtitle-sep mt-4">Alcaldías que atienden</h2> */}
+      <h2 className="font-bold mt-4">Alcaldías que atienden</h2>
+      {/* <div className="text"> */}
+      <div className="flex-1 break-words">
         <p>{datos.alcaldias}</p>
       </div>
     </div>
