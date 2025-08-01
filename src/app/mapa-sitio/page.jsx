@@ -129,7 +129,7 @@ export default function MapaDelSitio() {
             <h2 className="text-lg sm:text-xl font-semibold mb-2">Servicio Social</h2>
             <ul className="list-disc list-inside space-y-1">
                 <li><Link href="/servicio-social" className="text-[#611232] hover:text-[#D3C09B] cursor-pointer hover:underline">
-                Conoce aqui como realizarlo con nosotros</Link></li>
+                Conoce aqui como realizarlo en el INEA CDMX</Link></li>
             </ul>
         </div>
 
