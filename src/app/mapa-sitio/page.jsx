@@ -123,6 +123,15 @@ export default function MapaDelSitio() {
                 hover:underline">Inicia sesión aquí</Link></li>
           </ul>
         </div>
+        
+        {/* Sección: Servicio Social */}
+         <div>
+            <h2 className="text-lg sm:text-xl font-semibold mb-2">Servicio Social</h2>
+            <ul className="list-disc list-inside space-y-1">
+                <li><Link href="/servicio-social" className="text-[#611232] hover:text-[#D3C09B] cursor-pointer hover:underline">
+                Conoce aqui como realizarlo con nosotros</Link></li>
+            </ul>
+        </div>
 
         {/* Sección: Enlaces */}
         <div>
