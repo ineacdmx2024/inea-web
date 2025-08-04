@@ -176,8 +176,9 @@ function Planeacion() {
                           <div className="rounded-xl overflow-hidden" style={{ width: "330.66px", height: "220px" }}>
                             <Image
                               src={
-                                item.attributes.Imagen?.data?.attributes?.formats?.medium?.url ||
-                                item.attributes.Imagen?.data?.attributes?.url
+                                item.attributes.Imagen?.data?.attributes?.url ||
+                                item.attributes.Imagen?.data?.attributes?.formats?.large?.url ||
+                                item.attributes.Imagen?.data?.attributes?.formats?.medium?.url
                               }
                               alt={
                                 item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
@@ -186,6 +187,9 @@ function Planeacion() {
                               height={220}
                               className="object-cover"
                               style={{ width: "330.66px", height: "220px" }}
+                              quality={100}
+                              priority={index < 6}
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                             />
                           </div>
                         </Link>
