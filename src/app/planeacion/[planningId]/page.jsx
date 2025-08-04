@@ -200,11 +200,14 @@ async function Page({ params }) {
           return (
             <Image
             key={index}
-            src={item.image.formats.large.url}
+            src={item.image.url || item.image.formats?.large?.url || item.image.formats?.medium?.url}
             alt={item.image.alternativeText || "Imagen de planeación"}
             width={item.image.width}
             height={item.image.height}
             className="my-4"
+            quality={100}
+            priority={true}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           );
           
@@ -291,6 +294,9 @@ async function Page({ params }) {
               className="w-full h-full object-contain"
               width={1000}
               height={700}
+              quality={100}
+              priority={true}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 720px"
             />
           </div>
         <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-left" style={{ width: '720px', maxWidth: '100%' }}>{renderContenido(contenido)}</div>
@@ -299,4 +305,4 @@ async function Page({ params }) {
   );
 }
 
-export default Page; 
+export default Page;
