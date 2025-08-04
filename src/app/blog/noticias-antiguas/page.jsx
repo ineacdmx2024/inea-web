@@ -131,12 +131,12 @@ function NoticiasAntiguas() {
                         <article
                           className={`${notoSans.className} mt-4 w-full px-2 sm:px-4 py-1`}
                         >
-                          <p className="text-base sm:text-lg text-gray-700 mb-2">
+                          <p className="text-sm sm:text-base text-gray-700 mb-2">
                             {item.attributes.Fecha
                               ? fechaFun(item.attributes.Fecha)
                               : "No hay fecha"}
                           </p>
-                          <h2 className="text-lg sm:text-xl font-medium text-[#333334] mb-0">
+                          <h2 className="text-base sm:text-lg font-medium text-[#333334] mb-0">
                             {truncateText(item.attributes.Titulo, isMobile ? 85 : 86)}
                           </h2>
                         </article>
