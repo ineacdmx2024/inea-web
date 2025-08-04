@@ -201,8 +201,8 @@ function Planeacion() {
                               ? fechaFun(item.attributes.Fecha)
                               : "No hay fecha"}
                           </p>
-                          <h2 className="text-xl sm:text-2xl font-medium text-[#333334] mb-0">
-                            {truncateText(item.attributes.Titulo, isMobile ? 77 : 72)}
+                          <h2 className="text-lg font-medium text-[#333334] mb-0">
+                            {truncateText(item.attributes.Titulo, isMobile ? 77 : 85)}
                           </h2>
                         </article>
                       </div>
