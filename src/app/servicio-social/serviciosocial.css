@@ -1,0 +1,88 @@
+/* ===========================
+    CONTENIDO GENERAL
+=========================== */
+
+.content {
+  padding-top: 25px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333334;
+}
+
+.ul-sep,
+.ul-sep2 {
+  list-style-type: disc;
+  margin-left: 25px;
+}
+
+.ul-sep li,
+.ul-sep2 li {
+  margin-bottom: 20px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Links generales para correos y direcciones */
+.a-sep {
+  color: #611232;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.a-sep:hover {
+  text-decoration: underline;
+  color: #D3C09B;
+}
+
+.link-hover {
+  color: #333334; 
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.link-hover:hover {
+  text-decoration: underline;
+  color: #D3C09B;
+}
+
+/* ===========================
+    TÍTULOS Y SUBTÍTULOS
+=========================== */
+
+.title-sep {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.subtitle-sep {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* ===========================
+    BLOQUES CON ICONOS
+=========================== */
+
+.data-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.data-container .icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.data-container .text {
+  flex: 1 1 auto;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
