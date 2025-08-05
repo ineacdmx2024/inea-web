@@ -39,6 +39,8 @@ export default function MapaDelSitio() {
         <div>
           <h2 className="text-lg sm:text-xl font-semibold mb-2">Servicios</h2>
           <ul className="list-disc list-inside space-y-1">
+            <li><Link href="/servicios/servedu" className="text-[#611232] hover:text-[#D3C09B] cursor-pointer 
+                hover:underline"> Servicios educativos</Link></li>
             <li><Link href="https://certificacion.inea.gob.mx/DescCertificado.aspx" 
                 className="text-[#611232] hover:text-[#D3C09B] cursor-pointer hover:underline">
                 Descarga tu certificado</Link></li>
@@ -148,7 +150,7 @@ export default function MapaDelSitio() {
             <li><Link href="https://www.plataformadetransparencia.org.mx/Inicio" 
                 className="text-[#611232] hover:text-[#D3C09B] cursor-pointer hover:underline">
                 Transparencia (página oficial)</Link></li>
-            <li><Link href="/" className="text-[#611232] hover:text-[#D3C09B] cursor-pointer hover:underline">
+            <li><Link href="/glosario" className="text-[#611232] hover:text-[#D3C09B] cursor-pointer hover:underline">
                 Glosario</Link></li>
             <li><Link href="https://www.gob.mx/inea/" className="text-[#611232] hover:text-[#D3C09B] cursor-pointer 
                 hover:underline">Página oficial INEA Nacional</Link></li>
