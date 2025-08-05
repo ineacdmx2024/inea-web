@@ -183,10 +183,9 @@ function Planeacion() {
                               alt={
                                 item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
                               }
-                              width={330.66}
+                              width={300}
                               height={220}
-                              className="object-cover"
-                              style={{ width: "330.66px", height: "220px" }}
+                              className="object-cover w-full h-full"
                               quality={100}
                               priority={index < 6}
                               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
