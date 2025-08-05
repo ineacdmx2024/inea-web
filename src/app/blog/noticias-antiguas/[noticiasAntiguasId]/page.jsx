@@ -60,6 +60,7 @@ async function loadEnlaces() {
 }
 
 async function Page({ params }) {
+  console.log('HOLA MUNDO')
   const post = await loadPost(params.noticiasAntiguasId);
 
   const enlaces = await loadEnlaces();
@@ -131,7 +132,8 @@ async function Page({ params }) {
       switch (item.type) {
         case "heading":
           return (
-            <div style={{ width: '720px', maxWidth: '100%', overflow: 'hidden' }}>
+            // <div style={{ width: '720px', maxWidth: '100%', overflow: 'hidden' }}>
+            <div className="w-[720px] max-w-full overflow-hidden">
               <div className="w-full overflow-hidden">
                 {React.createElement(
                   `h${item.level}`,
@@ -158,11 +160,12 @@ async function Page({ params }) {
             }
           
             return (
-              <div style={{ width: '720px', maxWidth: '100%', overflow: 'hidden' }}>
+              // <div style={{ width: '720px', maxWidth: '100%', overflow: 'hidden' }}>
+              <div className="w-[720px] max-w-full overflow-hidden">
                 <p
                   key={index}
+                  // style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
                   className={` text-[#333334] text-[18px] font-light break-words`}
-                  style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
                 >
                   {item.children.map((child, i) => {
                   if (child.type === "link" && child.url) {
@@ -214,8 +217,8 @@ async function Page({ params }) {
             key={index}
             src={item.image.formats.large.url}
             alt={item.image.alternativeText || "Imagen de la noticia"}
-            width={item.image.width}
-            height={item.image.height}
+            // width={item.image.width}
+            // height={item.image.height}
             className="my-4"
             />
           );
@@ -224,7 +227,7 @@ async function Page({ params }) {
           return (
             <div key={index} className="my-6 mx-auto rounded-lg overflow-hidden w-full max-w-full px-4 sm:px-0" style={{ maxWidth: '720px' }}>
               <div 
-                className="embed-container w-full aspect-video md:ml-[15%] md:w-[85%]" 
+                className="embed-container w-full aspect-video md:ml-[15%] md:w-[85%] " 
                 dangerouslySetInnerHTML={{ __html: item.embed.html }}
               />
             </div>

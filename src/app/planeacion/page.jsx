@@ -168,12 +168,12 @@ function Planeacion() {
                   todosLosDatos().map((item, index) => (
                     <div
                       key={`${item.attributes.Fijo ? 'fijo' : 'normal'}-${index}`}
-                      className="overflow-hidden w-full max-w-[380px] mx-auto sm:mx-0 rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
+                      className="overflow-hidden w-full max-w-[380px] mx-auto sm:mx-0 h-full min-h-[474px] rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
                       style={{ height: "474px" }}
                     >
                       <div>
                         <Link href={`/planeacion/${item.attributes.slug}`}>
-                          <div className="rounded-xl overflow-hidden" style={{ width: "330.66px", height: "220px" }}>
+                          <div className="rounded-xl max-h-[220px] h-[220px] w-full overflow-hidden">
                             <Image
                               src={
                                 item.attributes.Imagen?.data?.attributes?.url ||
@@ -183,10 +183,9 @@ function Planeacion() {
                               alt={
                                 item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
                               }
-                              width={330.66}
+                              width={300}
                               height={220}
-                              className="object-cover"
-                              style={{ width: "330.66px", height: "220px" }}
+                              className="object-cover w-full h-full"
                               quality={100}
                               priority={index < 6}
                               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -196,13 +195,13 @@ function Planeacion() {
                         <article
                           className={`${notoSans.className} mt-4 w-full px-2 sm:px-4 py-1`}
                         >
-                          <p className="text-lg sm:text-base text-gray-700 mb-2">
+                          <p className="text-sm sm:text-base text-gray-700 mb-2">
                             {item.attributes.Fecha
                               ? fechaFun(item.attributes.Fecha)
                               : "No hay fecha"}
                           </p>
-                          <h2 className="text-lg font-medium text-[#333334] mb-0">
-                            {truncateText(item.attributes.Titulo, isMobile ? 77 : 85)}
+                          <h2 className="text-base sm:text-lg font-medium text-[#333334] mb-0">
+                            {truncateText(item.attributes.Titulo, isMobile ? 85 : 86)}
                           </h2>
                         </article>
                       </div>

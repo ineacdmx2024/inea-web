@@ -2,89 +2,113 @@
     CONTENIDO GENERAL
 =========================== */
 
-.content {
+/* .content {
   padding-top: 25px;
   font-size: 18px;
-}
+} */
 
-.a-sep {
-  text-decoration: underline;
+/* .a-sep {
   color: #611232;
   cursor: pointer;
 }
 
 .a-sep:hover {
+  text-decoration: underline;
   color: #D3C09B;
-}
+}  */
 
-.ul-sep,
+/* .ul-sep,
 .ul-sep2 {
-  list-style-type: disc;
+  list-style-type: disc; 
   margin-left: 25px;
-}
+} */
+/* list-disc ml-[25px] */
 
-.ul-sep li,
+/* .ul-sep li,
 .ul-sep2 li {
   margin-bottom: 20px;
   word-break: break-word;
   overflow-wrap: break-word;
-}
+} */
+/* mb-5 break-words */
+/* ul.ul-sep2 a {
+  word-break: break-all;
+  overflow-wrap: break-word;
+  display: inline-block;
+} */
 
-.title-sep {
+/* .title-sep {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 15px;
-}
+} */
 
-.subtitle-sep {
+/* .subtitle-sep {
   font-weight: bold;
-}
-
+} */
+/* font-bold */
 /* ===========================
     SECCIÓN PRESENCIAL
 =========================== */
 
-.presencial {
+/* .presencial {
   display: flex;
   flex-direction: column;
   gap: 40px;
-}
+} */
 
-.addresses {
+/* .addresses {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-}
+  margin-top: 1.5rem;
+} */
 
-.addressData {
+/* .addressData {
   display: flex;
   flex-direction: column;
   gap: 5px;
   margin-bottom: 20px; 
 }
+flex flex-col gap-[5px] mb-5 */
 
+/* .link-hover {
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+cursor-pointer transition-colors duration-200 ease-in-out no-underline 
+
+.link-hover:hover {
+  text-decoration: underline;
+  color: #D3C09B; 
+} */
+/* hover:underline hover:text-[#D3C09B] */
 /* ===========================
     BLOQUES CON ICONOS
 =========================== */
 
-.data-container {
+/* .data-container {
   display: flex;
   flex-direction: row; 
   align-items: flex-start;
   gap: 10px;
-}
+} */
+/* flex flex-row items-start gap-[10px] */
 
 /* Nuevo: aseguramos que los íconos no se encogen */
-.data-container .icon {
+/* .data-container .icon {
   flex-shrink: 0;
   width: 20px;
   height: 20px;
   object-fit: contain;
-}
+} */
+/* flex-shrink-0 w-5 h-5 object-contain */
 
 /* Nuevo: envoltorio del texto para forzar buen ajuste en móvil */
-.data-container .text {
+/* .data-container .text {
   flex: 1 1 auto;
   overflow-wrap: break-word;
   word-break: break-word;
-}
+}  */
+/* flex-1 break-words */

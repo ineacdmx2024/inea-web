@@ -89,7 +89,8 @@ async function ComunicadoContingencia() {
       return (
         <div key={index} className="my-6 aspect-video w-full max-w-4xl mx-auto">
           <div 
-            className="embed-container w-full h-full" 
+            // className="embed-container w-full h-full" 
+            className=" w-full h-full" 
             dangerouslySetInnerHTML={{ __html: item.children[0].text }}
           />
         </div>
@@ -101,7 +102,8 @@ async function ComunicadoContingencia() {
             `h${item.level}`,
             {
               key: index,
-              className: `${notoSans.className} font-bold text-[${
+              // className: `${notoSans.className} font-bold text-[${
+              className: `font-noto font-bold text-[${
                 21 - item.level
               }px]`,
             },
@@ -120,7 +122,8 @@ async function ComunicadoContingencia() {
             return (
               <p
                 key={index}
-                className={`${notoSans.className} text-[#333334] text-[18px] font-light`}
+                // className={`${notoSans.className} text-[#333334] text-[18px] font-light`}
+                className={`font-noto text-[#333334] text-[18px] font-light`}
               >
                 {item.children.map((child, i) => {
                   if (child.type === "link" && child.url) {
@@ -179,7 +182,8 @@ async function ComunicadoContingencia() {
             return (
               <div key={index} className="my-6 aspect-video w-full max-w-4xl mx-auto">
                 <div 
-                  className="embed-container w-full h-full" 
+                  // className="embed-container w-full h-full" 
+                  className=" w-full h-full" 
                   dangerouslySetInnerHTML={{ __html: item.embed.html }}
                 />
               </div>
@@ -218,7 +222,8 @@ async function ComunicadoContingencia() {
         Titulo={post.data?.attributes?.Titulo}
         Subtitulo={post.data?.attributes?.Subtitulo}
       >
-        <h1 className={`${notoSans.className} text-[#333334] text-[18px] font-light`}>
+        {/* <h1 className={`${notoSans.className} text-[#333334] text-[18px] font-light`}> */}
+        <h1 className={`font-noto text-[#333334] text-[18px] font-light`}>
           INEA Ciudad de México |{" "}
           {post.data?.attributes?.Fecha
             ? fechaFun(post.data?.attributes?.Fecha)

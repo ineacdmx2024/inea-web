@@ -35,6 +35,8 @@ module.exports = {
         serif: ['IBM Plex Serif', ...fontFamily.serif],
         body: ['Noto sans' ],
         patria: ['"Patria"', 'sans-serif'],
+        noto: ['Noto Sans', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
       },
     },
   },

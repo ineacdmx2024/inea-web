@@ -14,10 +14,13 @@ function CarouselInicio() {
 
   useEffect(() => {
     const fetchEnlaces = async () => {
-     
+      // EMPIEZA A CORRER EL TIEMPO DE REQUEST A LA API
+      const start = performance.now();
       const res = await fetch("https://inea-web-backend-cg20.onrender.com/api/baner-principals?populate=*&pagination[limit]=4")
       const data = await res.json()
-
+      // FIN DEL TIEMPO DE RESPUESTA DE LA API
+      const end = performance.now(); // Marca final
+      console.log(`⏱️ La API tardó ${Math.round(end - start)} ms en responder`);
       const enlacesData2 = data.data.map((item) => ({
         id: item.id,
         titulo: item.attributes.Titulo,
@@ -29,6 +32,7 @@ function CarouselInicio() {
         imagenMovil: item.attributes.Banner_movile?.data?.attributes?.url,  // Imagen para móvil
         imagenEscritorio: item.attributes.Imagen?.data?.attributes?.url,
       }))
+      console.log(enlacesData2)
       setRestantes(enlacesData2)
     }
 
@@ -61,8 +65,10 @@ function CarouselInicio() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: (dots) => (
-      <div style={{ bottom: "-25px" }}>
-        <ul style={{ margin: "0" }}> {dots} </ul>
+      // <div  style={{ bottom: "-25px" }}> -->cambio
+      <div className="bottom-[-25px]" >
+        {/* <ul style={{ margin: "0" }}> {dots} </ul> -->cambio*/}
+        <ul className="m-0"> {dots} </ul>
       </div>
     ),
     responsive: [
@@ -80,8 +86,10 @@ function CarouselInicio() {
           // arrows: false,
           dotsClass: "slick-dots custom-dots",
           appendDots: (dots) => (
-            <div style={{ bottom: "-25px" }}>
-              <ul style={{ margin: "0" }}> {dots} </ul>
+            // <div style={{ bottom: "-25px" }}> -->cambio
+            <div className="bottom-[-25px]">
+              {/* <ul style={{ margin: "0" }}> {dots} </ul> -->cambio */} 
+              <ul className="m-0"> {dots} </ul>
             </div>
           ),
         }
@@ -149,24 +157,22 @@ function CarouselInicio() {
                 />
               </div> */}
 
-<div className="w-full block md:hidden">
-  <Image
-    // className="h-[460px] w-[544px] blog:w-full blog:h-full object-cover blog:object-fill"
-    src={restante.imagenMovil || "/placeholder.svg"}
-    alt={restante.subtitulo || "Imagen de banner móvil"}
-    width={544} // puedes ajustar esto o quitarlo y usar layout="responsive"
-    layout="responsive"
-    height={460}
-    quality={100}
-    priority
-    onClick={(e) => {
-      e.stopPropagation();
-      handleButtonClick(restante);
-    }}
-  />
-</div>
-
-
+              <div className="w-full block md:hidden">
+                <Image
+                  // className="h-[460px] w-[544px] blog:w-full blog:h-full object-cover blog:object-fill"
+                  src={restante.imagenMovil || "/placeholder.svg"}
+                  alt={restante.subtitulo || "Imagen de banner móvil"}
+                  width={544} // puedes ajustar esto o quitarlo y usar layout="responsive"
+                  layout="responsive"
+                  height={460}
+                  quality={100}
+                  priority
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleButtonClick(restante);
+                  }}
+                />
+              </div>
             </div>
           ))}
         </Slider>

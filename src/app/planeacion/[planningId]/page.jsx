@@ -252,7 +252,7 @@ async function Page({ params }) {
               >
                 {item.children[0]?.text || "Enlace"}
               </Link>
-            );
+            );z
             default:
           return null;
       }

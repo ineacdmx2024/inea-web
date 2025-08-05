@@ -78,20 +78,22 @@ const Navbar = () => {
     // <div className="navBar text-white ">
     <div
       ref={navRef}
-      className="navBar w-screen max-w-full"
+      // aqui estaba la clase navBar
+      className="font-montserrat m-auto text-[16px] font-light justify-between text-white fixed top-0 left-0 z-[100] w-screen max-w-full"
     >
       <div className="bg-[#611232] w-full">
         {/* Menú gobierno */}
         <nav className="bg-[#611232]">
-          <div className="flex items-center justify-between w-full md:ml-[1rem] px-4 md:px-0">
-          <div className="flex items-center justify-between w-full" id="Msup">
+          <div className="flex items-center justify-between w-full pl-[10px] md:ml-[1rem] px-4 md:px-0">
+          {/* <div className="flex items-center justify-between w-full  pl-4 pr-4 mx-auto max-w-[1200px] " id="Msup"> */}
+          <div className="flex items-center justify-between w-screen pl-0 pr-0 md:pl-4 md:mx-auto md:max-w-[1200px] " id="Msup">
             {/* Logo educación */}
-            <div className="flex items-center h-[64px]">
+            <div className="flex items-center h-[75px]">
             <Link href="https://www.gob.mx/sep" passHref>
                   <img
                     src="/Logo_educacion_white_2025.svg"
                     alt="Educacion"
-                    className="h-[64px] hover:text-[#8B6C41] rounded inline-block mr-[1rem]"
+                    className="h-[45px] hover:text-[#8B6C41] rounded inline-block md:h-[56px] md:mr-[1rem] md:ml-[-55px]  "
                   />
                 </Link>
             </div>
@@ -217,6 +219,13 @@ const Navbar = () => {
                   Mapa del sitio
                 </Link>
                 <Link
+                      href="/glosario"
+                      passHref
+                      className="hover:text-[#D3C09B] hover:bg-[#611232] block p-2 rounded w-full text-start"
+                    >
+                      Glosario
+                    </Link>
+                <Link
                   href="https://www.gob.mx/busqueda?utf8=%E2%9C%93"
                   passHref
                   className="hover:text-[#D3C09B] hover:bg-[#611232] p-2 rounded flex items-center justify-between w-full"
@@ -243,11 +252,9 @@ const Navbar = () => {
 
         {/* Menú inferior */}
         <nav className="bg-[#A57F2C] lg:h-[37px]">
-          <div className="flex items-center justify-between py-[0.06rem] px-4 h-[37px] sm:ml-[17rem] md:ml-[16rem]">
-            <div
-              className="flex items-end justify-end"
-              id="Minf"
-            >
+          <div className="flex items-center justify-between w-full pl-[10px] md:ml-[1rem] px-4 md:px-0">
+            <div className="flex items-center justify-between w-screen pl-0 pr-0 md:pl-4 md:mx-auto md:max-w-[1200px]" id="Minf">
+              <div></div>
               <div className="flex items-end space-x-10">
                 <div className="hidden md:block">
                   <div className="flex items-end space-x-5">
@@ -272,6 +279,7 @@ const Navbar = () => {
                       </div>
                       <div>Inicio</div>
                     </Link>
+
                     {/* Servicios */}
                     <div className="group relative">
                       <Link
@@ -643,9 +651,9 @@ const Navbar = () => {
               </div>
 
               {/* Boton hamburguesa */}
-              <div className="md:hidden flex items-center h-[64px]" style={{ marginLeft: "7rem" }}>
+              <div className="md:hidden flex items-center h-[64px] ml-auto">
                 <button
-                  className="inline-flex items-center justify-center  p-2 rounded-md text-white hover:text-[#E4CDA7]
+                  className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-[#E4CDA7]
                  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#E4CDA7]"
                   onClick={toggleNavBarINEA}
                 >
@@ -804,13 +812,6 @@ const Navbar = () => {
                   </button>
                   {isClickS && (
                     <div className="pl-4 space-y-1">
-                      <Link
-                        onClick={closeAllMenus && closeMobileMenu}
-                        href="/servicios/servedu/"
-                        className="block hover:bg-[#A57F2C] hover:text-[#611232]  p-2 rounded truncate"
-                      >
-                        Servicios Educativos
-                      </Link>
                       <Link
                         onClick={closeAllMenus && closeMobileMenu}
                         href="http://certificacion.inea.gob.mx/DescCertificado.aspx"
@@ -1061,16 +1062,6 @@ const Navbar = () => {
                       </Link>
                     </div>
                   )}
-                </div>
-                {/* Glosario */}
-                <div className="group relative">
-                  <Link
-                    onClick={closeAllMenus && closeMobileMenu}
-                    href="/glosario"
-                    className="hover:text-[#611232]  p-2 rounded"
-                  >
-                    Glosario
-                  </Link>
                 </div>
               </div>
             </div>

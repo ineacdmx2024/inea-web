@@ -10,30 +10,44 @@ const notoSans = Noto_Sans({
 
 const AddressComponent = ({ datos }) => {
   return (
-    <div className="addressData">
-      <h2 className="subtitle-sep">{datos.titulo}</h2>
+    // <div className="addressData">
+    <div className="flex flex-col gap-[5px] mb-5">
+      {/* <h2 className="subtitle-sep">{datos.titulo}</h2> */}
+      <h2 className="font-bold">{datos.titulo}</h2>
 
-      <div className="data-container">
-        <svg
-          className="icon"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 14 20"
-          fill="none"
-        >
-          <path
-            d="M7 4.5C7.66304 4.5 8.29893 4.76339 8.76777 5.23223C9.23661 5.70107 9.5 6.33696 9.5 7C9.5 7.3283 9.43534 7.65339 9.3097 7.95671C9.18406 8.26002 8.99991 8.53562 8.76777 8.76777C8.53562 8.99991 8.26002 9.18406 7.95671 9.3097C7.65339 9.43534 7.3283 9.5 7 9.5C6.33696 9.5 5.70107 9.23661 5.23223 8.76777C4.76339 8.29893 4.5 7.66304 4.5 7C4.5 6.33696 4.76339 5.70107 5.23223 5.23223C5.70107 4.76339 6.33696 4.5 7 4.5ZM7 0C8.85652 0 10.637 0.737498 11.9497 2.05025C13.2625 3.36301 14 5.14348 14 7C14 12.25 7 20 7 20C7 20 0 12.25 0 7C0 5.14348 0.737498 3.36301 2.05025 2.05025C3.36301 0.737498 5.14348 0 7 0ZM7 2C5.67392 2 4.40215 2.52678 3.46447 3.46447C2.52678 4.40215 2 5.67392 2 7C2 8 2 10 7 16.71C12 10 12 8 12 7C12 5.67392 11.4732 4.40215 10.5355 3.46447C9.59785 2.52678 8.32608 2 7 2Z"
-            fill="#611232"
-          />
-        </svg>
-        <div className="text">
-          <p>{datos.direccion}</p>
+      {/* <div className="data-container"> */}
+      <div className="flex flex-row items-start gap-[10px]">
+          <svg
+            // className="icon"
+            className="flex-shrink-0 w-5 h-5 object-contain"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 14 20"
+            fill="none"
+          >
+            <path
+              d="M7 4.5C7.66304 4.5 8.29893 4.76339 8.76777 5.23223C9.23661 5.70107 9.5 6.33696 9.5 7C9.5 7.3283 9.43534 7.65339 9.3097 7.95671C9.18406 8.26002 8.99991 8.53562 8.76777 8.76777C8.53562 8.99991 8.26002 9.18406 7.95671 9.3097C7.65339 9.43534 7.3283 9.5 7 9.5C6.33696 9.5 5.70107 9.23661 5.23223 8.76777C4.76339 8.29893 4.5 7.66304 4.5 7C4.5 6.33696 4.76339 5.70107 5.23223 5.23223C5.70107 4.76339 6.33696 4.5 7 4.5ZM7 0C8.85652 0 10.637 0.737498 11.9497 2.05025C13.2625 3.36301 14 5.14348 14 7C14 12.25 7 20 7 20C7 20 0 12.25 0 7C0 5.14348 0.737498 3.36301 2.05025 2.05025C3.36301 0.737498 5.14348 0 7 0ZM7 2C5.67392 2 4.40215 2.52678 3.46447 3.46447C2.52678 4.40215 2 5.67392 2 7C2 8 2 10 7 16.71C12 10 12 8 12 7C12 5.67392 11.4732 4.40215 10.5355 3.46447C9.59785 2.52678 8.32608 2 7 2Z"
+              fill="#611232"
+            />
+          </svg>
+          {/* <div className="text"> */}
+          <div className="flex-1 break-words">
+            <a
+              href={datos.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#D3C09B] hover:underline cursor-pointer"
+            >
+              {datos.direccion}
+            </a>
+          </div>
         </div>
-      </div>
 
       {datos.telefonos !== undefined && (
-        <div className="data-container">
+        // <div className="data-container">
+        <div className="flex flex-row items-start gap-[10px]">
           <svg
-            className="icon"
+            // className="icon"
+            className="flex-shrink-0 w-5 h-5 object-contain"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 18 19"
             fill="none"
@@ -43,18 +57,21 @@ const AddressComponent = ({ datos }) => {
               fill="#611232"
             />
           </svg>
-          <div className="text">
+          {/* <div className="text"> */}
+          <div className="flex-1 break-words">
             {datos.telefonos.map((telefono, index) => (
               <p key={index}>{telefono}</p>
             ))}
           </div>
-        </div>
+        </div> 
       )}
 
-      {datos.correos !== undefined && (
-        <div className="data-container">
+      {datos.correos?.length > 0 && (
+        // <div className="data-container">
+        <div className="flex flex-row items-start gap-[10px]">
           <svg
-            className="icon"
+            // className="icon"
+            className="flex-shrink-0 w-5 h-5 object-contain"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 16"
             fill="none"
@@ -64,9 +81,17 @@ const AddressComponent = ({ datos }) => {
               fill="#611232"
             />
           </svg>
-          <div className="text">
+          {/* <div className="text"> */}
+          <div className="flex-1 break-words">
             {datos.correos.map((correo, index) => (
-              <p key={index}>{correo}</p>
+              <a
+                key={index}
+                href={`mailto:${correo}`}
+                // className="link-hover block"
+                className="cursor-pointer transition-colors duration-200 ease-in-out no-underline hover:underline hover:text-[#D3C09B] block"
+              >
+                {correo}
+              </a>
             ))}
           </div>
         </div>
@@ -74,10 +99,13 @@ const AddressComponent = ({ datos }) => {
 
       {datos.horario !== undefined && (
         <div className="mt-4">
-          <h2 className="subtitle-sep">Horario de atención</h2>
-          <div className="data-container">
+          {/* <h2 className="subtitle-sep">Horario de atención</h2> */}
+          <h2 className="font-bold">Horario de atención</h2>
+          {/* <div className="data-container"> */}
+          <div className="flex flex-row items-start gap-[10px]">
             <svg
-              className="icon"
+              // className="icon"
+              className="flex-shrink-0 w-5 h-5 object-contain"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 21"
               fill="none"
@@ -87,15 +115,18 @@ const AddressComponent = ({ datos }) => {
                 fill="#611232"
               />
             </svg>
-            <div className="text">
+            {/* <div className="text"> */}
+            <div className="flex-1 break-words">
               <p>{datos.horario}</p>
             </div>
           </div>
         </div>
       )}
 
-      <h2 className="subtitle-sep mt-4">Alcaldías que atienden</h2>
-      <div className="text">
+      {/* <h2 className="subtitle-sep mt-4">Alcaldías que atienden</h2> */}
+      <h2 className="font-bold mt-4">Alcaldías que atienden</h2>
+      {/* <div className="text"> */}
+      <div className="flex-1 break-words">
         <p>{datos.alcaldias}</p>
       </div>
     </div>
