@@ -120,6 +120,13 @@ const Navbar = () => {
                       Mapa del sitio
                     </Link>
                     <Link
+                      href="/glosario"
+                      passHref
+                      className="hover:text-[#D3C09B] p-1 rounded"
+                    >
+                      Glosario
+                    </Link>
+                    <Link
                       href="https://www.gob.mx/busqueda?utf8=%E2%9C%93"
                       passHref
                       className="hover:text-[#D3C09B] p-1 rounded"
@@ -236,7 +243,7 @@ const Navbar = () => {
 
         {/* Menú inferior */}
         <nav className="bg-[#A57F2C] lg:h-[37px]">
-          <div className="flex items-center justify-between py-[0.06rem] px-4 h-[37px] sm:ml-[17rem] md:ml-[10rem]">
+          <div className="flex items-center justify-between py-[0.06rem] px-4 h-[37px] sm:ml-[17rem] md:ml-[16rem]">
             <div
               className="flex items-end justify-end"
               id="Minf"
@@ -630,16 +637,7 @@ const Navbar = () => {
                         </Link>
                       </div>
                     </div>
-                      {/* Glosario */}
-                    <div className="group relative ">
-                      <Link
-                        href="/glosario"
-                        onClick={closeAllMenus}
-                        className="hover:text-[#CBB486] p-2 rounded flex items-center justify-between w-full "
-                      >
-                        Glosario
-                      </Link>
-                    </div>
+                      
                   </div>
                 </div>
               </div>
