@@ -252,7 +252,7 @@ const Navbar = () => {
 
         {/* Menú inferior */}
         <nav className="bg-[#A57F2C] lg:h-[37px]">
-          <div className="flex items-center justify-between w-full pl-[10px] md:ml-[1rem] px-4 md:px-0">
+          <div className="flex items-center justify-between py-[0.06rem] px-4 h-[37px] w-full pl-[10px] md:ml-[1rem] md:px-0">
             <div className="flex items-center justify-between w-screen pl-0 pr-0 md:pl-4 md:mx-auto md:max-w-[1200px]" id="Minf">
               <div></div>
               <div className="flex items-end space-x-10">
