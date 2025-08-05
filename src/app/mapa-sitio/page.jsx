@@ -40,7 +40,7 @@ export default function MapaDelSitio() {
           <h2 className="text-lg sm:text-xl font-semibold mb-2">Servicios</h2>
           <ul className="list-disc list-inside space-y-1">
             <li><Link href="/servicios/servedu" className="text-[#611232] hover:text-[#D3C09B] cursor-pointer 
-                hover:underline"> Servicios educativos</Link></li>
+                hover:underline">Servicios educativos</Link></li>
             <li><Link href="https://certificacion.inea.gob.mx/DescCertificado.aspx" 
                 className="text-[#611232] hover:text-[#D3C09B] cursor-pointer hover:underline">
                 Descarga tu certificado</Link></li>
