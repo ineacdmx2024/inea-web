@@ -69,7 +69,7 @@ function ServicioSocial() {
         >
           {/* Imagen */}
           {imagenFicha && (
-            <div className="m-auto my-6 rounded-lg overflow-hidden max-h-[420px]">
+            <div className="m-auto -my-7 rounded-lg overflow-hidden max-h-[420px]">
               <Image
                 src={imagenFicha}
                 alt="Ficha Servicio Social"
