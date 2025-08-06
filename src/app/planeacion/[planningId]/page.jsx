@@ -107,7 +107,8 @@ async function Page({ params }) {
           item.children[0].text.includes("<iframe")) {
         // Es un código de embed dentro de un párrafo
         return (
-          <div key={index} className="my-6 mx-auto rounded-lg overflow-hidden" style={{ width: '720px', maxWidth: '100%' }}>
+          // <div key={index} className="my-6 mx-auto rounded-lg overflow-hidden" style={{ width: '720px', maxWidth: '100%' }}>
+          <div key={index} className="my-6 mx-auto rounded-lg overflow-hidden w-[720px] max-w-full">
             <div 
               className="embed-container md:ml-[15%] w-full aspect-video" 
               dangerouslySetInnerHTML={{ __html: item.children[0].text }}
@@ -119,7 +120,8 @@ async function Page({ params }) {
       switch (item.type) {
         case "heading":
           return (
-            <div style={{ width: '720px', maxWidth: '100%', overflow: 'hidden' }}>
+            // <div style={{ width: '720px', maxWidth: '100%', overflow: 'hidden' }}>
+            <div className="w-[720px] max-w-full overflow-hidden">
               <div className="w-full overflow-hidden">
                 {React.createElement(
                   `h${item.level}`,
@@ -146,11 +148,12 @@ async function Page({ params }) {
             }
           
             return (
-              <div style={{ width: '720px', maxWidth: '100%', overflow: 'hidden' }}>
+              // <div style={{ width: '720px', maxWidth: '100%', overflow: 'hidden' }}>
+              <div className="w-[720px] max-w-full overflow-hidden">
                 <p
                   key={index}
                   className={` text-[#333334] text-[18px] font-light break-words`}
-                  style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
+                  // style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
                 >
                   {item.children.map((child, i) => {
                   if (child.type === "link" && child.url) {
@@ -213,7 +216,8 @@ async function Page({ params }) {
           
         case "embed":
           return (
-            <div key={index} className="my-6 mx-auto rounded-lg overflow-hidden" style={{ width: '720px', maxWidth: '100%' }}>
+            // <div key={index} className="my-6 mx-auto rounded-lg overflow-hidden" style={{ width: '720px', maxWidth: '100%' }}>
+            <div key={index} className="my-6 mx-auto rounded-lg overflow-hidden w-[720px] max-w-full" >
               <div 
                 className="embed-container w-full aspect-video" 
                 dangerouslySetInnerHTML={{ __html: item.embed.html }}
@@ -277,7 +281,8 @@ async function Page({ params }) {
         Titulo={post.data?.attributes?.Titulo}
         Subtitulo={post.data?.attributes?.Subtitulo}
         >
-        <div style={{ width: '720px', maxWidth: '100%' }}>
+        {/* <div style={{ width: '720px', maxWidth: '100%' }}> */}
+        <div className="w-[720px] max-w-full">
           <h1
             className={`${notoSans.className} text-[#333334] text-[18px] font-light`}
             >

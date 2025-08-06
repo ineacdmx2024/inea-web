@@ -5,7 +5,7 @@ import Carousel from "./Carousel";
 
 import { Noto_Sans } from "next/font/google";
 import "./BotonesMat.css";
-
+ 
 const notoSans = Noto_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
