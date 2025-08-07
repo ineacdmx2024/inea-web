@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import Link from 'next/link';
 // import "./Footer.css";
@@ -55,7 +54,7 @@ const Footer = () => {
                     <a href="https://www.plataformadetransparencia.org.mx/Inicio">Transparencia</a>
                   </li>
                   <li className="p-1 text-white hover:text-[#A57F2C]">
-                    <a href="/">Glosario</a>
+                    <a href="/glosario">Glosario</a>
                   </li>
                   <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="https://www.gob.mx/inea/">INEA Nacional</a>
