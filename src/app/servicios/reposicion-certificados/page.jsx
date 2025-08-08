@@ -225,50 +225,49 @@ function Reposicion_certificados() {
         )}
 
         {opcionSeleccionada === "presencial" && (
-          // <div className="content presencial flex flex-col gap-10">
-          <div className="pt-[25px] text-lg mt-[20px] presencial flex flex-col gap-10">
-            <div className="flex flex-wrap mb-6">
-            {[
-              { id: "primaria", label: "Primaria" },
-              { id: "secundaria", label: "Secundaria" },
-            ].map(({ id, label }) => (
-            <button
-              key={id}
-              type="button"
-              className="text-[#611232] rounded-lg hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-white font-medium px-5 py-2.5 text-center me-2 mb-2 text-lg flex items-center justify-center gap-2"
-              onClick={() => {
-                const section = document.getElementById(id);
-                if (section) {
-                  const offset = 120;
-                  const top = section.getBoundingClientRect().top + window.scrollY - offset;
-                  window.scrollTo({ top, behavior: "smooth" });
-                }
-              }}
-            >
-              <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-5 h-5"
+          <div className="pt-2 text-lg mt-2 presencial flex flex-col gap-10">
+            <div className="flex flex-wrap mb-0 mt-0 gap-y-1 gap-x-2">
+              {[
+                { id: "primaria", label: "Primaria" },
+                { id: "secundaria", label: "Secundaria" },
+              ].map(({ id, label }) => (
+                <button
+                  key={id}
+                  type="button"
+                  className="text-[#611232] rounded-lg hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-white font-medium px-5 py-2 text-center me-1 mb-0 mt-0 text-lg flex items-center justify-center gap-2"
+                  onClick={() => {
+                    const section = document.getElementById(id);
+                    if (section) {
+                      const offset = 120;
+                      const top = section.getBoundingClientRect().top + window.scrollY - offset;
+                      window.scrollTo({ top, behavior: "smooth" });
+                    }
+                  }}
                 >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M16.5 3.75H8.25A2.25 2.25 0 006 6v12a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25V7.5L16.5 3.75z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M16.5 3.75V7.5h3.75M9 10.5h6M9 13.5h6M9 16.5h6"
-                />
-              </svg>
-              {label}
-            </button>
-            ))}
-          </div>
-            <div id="primaria" className="mt-[-5px]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M16.5 3.75H8.25A2.25 2.25 0 006 6v12a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25V7.5L16.5 3.75z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M16.5 3.75V7.5h3.75M9 10.5h6M9 13.5h6M9 16.5h6"
+                    />
+                  </svg>
+                  {label}
+                </button>
+              ))}
+            </div>
+            <div id="primaria" className="mt-[-30px]">
               <div className="mb-4">
                 {/* <h2 className="patria title-sep">Primaria</h2> */}
                 <h2 className="patria text-2xl font-bold mb-4">Primaria</h2>
