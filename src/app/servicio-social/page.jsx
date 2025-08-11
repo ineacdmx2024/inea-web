@@ -65,7 +65,8 @@ function ServicioSocial() {
     <div>
       <PagSec Enlaces={enlacesL} Titulo="Realiza tu servicio social en el INEA Ciudad de México">
         <div
-          className={`${notoSans.className} content text-start max-w-[1200px]`}
+          // className={`${notoSans.className} content text-start max-w-[1200px]`}
+          className={`${notoSans.className} pt-[25px] text-lg text-[#333334] leading-[1.7] text-start max-w-[1200px]`}
         >
           {/* Imagen */}
           {imagenFicha && (
@@ -82,7 +83,8 @@ function ServicioSocial() {
 
           {/* Vacantes */}
           <div className="mb-4">
-            <h2 className="patria title-sep mt-12">Vacantes</h2>
+            {/* <h2 className="patria title-sep mt-12">Vacantes</h2> */}
+            <h2 className="patria text-2xl font-bold mb-[15px] mt-12">Vacantes</h2>
             <div className="flex items-center">
               <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
               <div className="flex-grow h-px bg-gray-300"></div>
@@ -91,26 +93,30 @@ function ServicioSocial() {
 
           <div className="space-y-6">
             <div>
-              <h3 className="subtitle-sep">Asesor educativo</h3>
+              {/* <h3 className="subtitle-sep">Asesor educativo</h3> */}
+              <h3 className="font-bold text-xl">Asesor educativo</h3>
               <p>
                 Brindando atención directa a jóvenes y adultos que desean concluir su educación basica.
               </p><br />
-              <ul className="ul-sep">
-                <li>Brindar asesorias a jóvenes y adultos en primaria o secundaria</li>
-                <li>Apoyar avance académico y registro en sistema.</li>
-                <li>Elaborar reportes mensuales y evidencias de atención.</li>
+              {/* <ul className="ul-sep"> */}
+              <ul className="list-disc ml-[25px]">
+                <li className="mb-5 break-words">Brindar asesorias a jóvenes y adultos en primaria o secundaria</li>
+                <li className="mb-5 break-words">Apoyar avance académico y registro en sistema.</li>
+                <li className="mb-5 break-words">Elaborar reportes mensuales y evidencias de atención.</li>
               </ul>
             </div>
 
             <div>
-              <h3 className="subtitle-sep">Apoyo administrativo</h3>
+              {/* <h3 className="subtitle-sep">Apoyo administrativo</h3> */}
+              <h3 className="font-bold text-xl">Apoyo administrativo</h3>
               <p>
                 Colaborando en tareas organizativas y de gestión interna.
               </p><br />
-              <ul className="ul-sep">
-                <li>Apoyar en tareas de organización y control de documentos.</li>
-                <li>Registrar datos y actividades.</li>
-                <li>Asistir en procesos internos del INEA.</li>
+              {/* <ul className="ul-sep"> */}
+              <ul className="list-disc ml-[25px]">
+                <li className="mb-5 break-words">Apoyar en tareas de organización y control de documentos.</li>
+                <li className="mb-5 break-words">Registrar datos y actividades.</li>
+                <li className="mb-5 break-words">Asistir en procesos internos del INEA.</li>
               </ul>
             </div>
           </div>
@@ -123,7 +129,8 @@ function ServicioSocial() {
 
           {/* Requisitos */}
           <div className="mb-4">
-            <h2 className="patria title-sep mt-12">Requisitos y liberación</h2>
+            {/* <h2 className="patria title-sep mt-12">Requisitos y liberación</h2> */}
+            <h2 className="patria text-2xl font-bold mb-[15px] mt-12">Requisitos y liberación</h2>
             <div className="flex items-center">
               <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
               <div className="flex-grow h-px bg-gray-300"></div>
@@ -135,7 +142,8 @@ function ServicioSocial() {
 
           {/* Sedes */}
           <div className="mb-4">
-            <h2 className="patria title-sep mt-12">Sedes en CDMX</h2>
+            {/* <h2 className="patria title-sep mt-12">Sedes en CDMX</h2> */}
+            <h2 className="patria text-2xl font-bold mb-[15px] mt-12">Sedes en CDMX</h2>
             <div className="flex items-center">
               <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
               <div className="flex-grow h-px bg-gray-300"></div>
@@ -145,7 +153,11 @@ function ServicioSocial() {
             Puedes realizar tu servicio social en cualquiera de nuestras sedes en la Ciudad de México, 
             eligiendo la más cercana a tu escuela o domicilio.
           </p> <br />
-          <p><Link href="/ubicacion" className="link-hover">Consulta aqui las sedes disponibles
+          <p><Link href="/ubicacion" 
+            // className="link-hover"
+            className="text-[#333334] cursor-pointer transition-colors duration-200 ease-in-out no-underline hover:underline hover:text-[#D3C09B]"
+            >
+            Consulta aqui las sedes disponibles
             donde puedes realizarlo</Link>
           </p><br />
           <div className="space-y-6">
@@ -183,7 +195,8 @@ function ServicioSocial() {
           
           {/* CONTACTO */}
           <div className="mb-4">
-            <h2 className="patria title-sep mt-12">Contáctanos</h2>
+            {/* <h2 className="patria title-sep mt-12">Contáctanos</h2> */}
+            <h2 className="patria text-2xl font-bold mb-[15px] mt-12">Contáctanos</h2>
             <div className="flex items-center">
               <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
               <div className="flex-grow h-px bg-gray-300"></div>
@@ -191,9 +204,11 @@ function ServicioSocial() {
           </div>
 
           {/* Dirección */}
-          <div className="data-container mb-2">
+          {/* <div className="data-container mb-2"> */}
+          <div className="flex flex-row items-start gap-[10px] mb-2">
             <svg
-              className="icon"
+              // className="icon"
+              className="flex-shrink-0 w-5 h-5 object-contain"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 14 20"
               fill="none"
@@ -207,16 +222,19 @@ function ServicioSocial() {
               href="https://maps.app.goo.gl/6iEqnNmKDSi33vSa6"
               target="_blank"
               rel="noopener noreferrer"
-              className="link-hover"
+              // className="link-hover"
+              className="text-[#333334] cursor-pointer transition-colors duration-200 ease-in-out no-underline hover:underline hover:text-[#D3C09B]"
             >
               Francisco Márquez No. 160, planta baja, Col. Condesa, Alcaldía Cuauhtémoc, CDMX, C.P. 06140
             </a>
           </div>
 
           {/* Teléfono */}
-          <div className="data-container mb-2">
+          {/* <div className="data-container mb-2"> */}
+          <div className="flex flex-row items-start gap-[10px] mb-2">
             <svg
-              className="icon"
+              // className="icon"
+              className="flex-shrink-0 w-5 h-5 object-contain"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 18 19"
               fill="none"
@@ -230,9 +248,11 @@ function ServicioSocial() {
           </div>
 
           {/* Correo */}
-          <div className="data-container mb-2">
+          {/* <div className="data-container mb-2"> */}
+          <div className="flex flex-row items-start gap-[10px] mb-2">
             <svg
-              className="icon"
+              // className="icon"
+              className="flex-shrink-0 w-5 h-5 object-contain"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 16"
               fill="none"
@@ -242,15 +262,20 @@ function ServicioSocial() {
                 fill="#611232"
               />
             </svg>
-            <a href="mailto:cdmx_ssocial@inea.gob.mx" className="link-hover">
+            <a href="mailto:cdmx_ssocial@inea.gob.mx"      
+            // className="link-hover"
+            className="text-[#333334] cursor-pointer transition-colors duration-200 ease-in-out no-underline hover:underline hover:text-[#D3C09B]"
+            >
               cdmx_ssocial@inea.gob.mx
             </a>
           </div>
 
           {/* Facebook */}
-          <div className="data-container mb-2">
+          {/* <div className="data-container mb-2"> */}
+          <div className="flex flex-row items-start gap-[10px] mb-2">
             <svg
-              className="icon"
+              // className="icon"
+              className="flex-shrink-0 w-5 h-5 object-contain"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="#611232"
@@ -261,16 +286,21 @@ function ServicioSocial() {
           </div>
 
           {/* Sitio Web */}
-          <div className="data-container">
+          {/* <div className="data-container"> */}
+          <div className="flex flex-row items-start gap-[10px]">
             <svg
-              className="icon"
+              // className="icon"
+              className="flex-shrink-0 w-5 h-5 object-contain"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="#611232"
             >
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 8h-2.07c-.46-2.28-1.49-4.17-2.93-5.43C14.74 5.02 16.39 6.92 17 10zm-5-6c1.93 1.55 3.35 4.03 3.85 7H8.15c.5-2.97 1.92-5.45 3.85-7zM7 10H5c.61-3.08 2.26-5.57 4.07-6.43C8.56 5.83 7.53 7.72 7 10zm0 4h2.07c.46 2.28 1.49 4.17 2.93 5.43C9.26 18.98 7.61 17.08 7 14zm5 6c-1.93-1.55-3.35-4.03-3.85-7h7.7c-.5 2.97-1.92 5.45-3.85 7zM17 14h2c-.61 3.08-2.26 5.57-4.07 6.43C15.44 18.17 16.47 16.28 17 14z" />
             </svg>
-            <Link href="https://cdmx.inea.gob.mx" target="_blank" className="link-hover">
+            <Link href="https://cdmx.inea.gob.mx" target="_blank" 
+            // className="link-hover"
+            className="text-[#333334] cursor-pointer transition-colors duration-200 ease-in-out no-underline hover:underline hover:text-[#D3C09B]"
+            >
               cdmx.inea.gob.mx
             </Link>
           </div>
