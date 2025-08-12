@@ -267,7 +267,7 @@ function Reposicion_certificados() {
                 </button>
               ))}
             </div>
-            <div id="primaria" className="mt-[-30px]">
+            <div id="primaria" className="mt-[12px]">
               <div className="mb-4">
                 {/* <h2 className="patria title-sep">Primaria</h2> */}
                 <h2 className="patria text-2xl font-bold mb-4">Primaria</h2>
