@@ -42,9 +42,6 @@ const Footer = () => {
                     <a href="https://datos.gob.mx/">Trámites y Servicios</a>
                   </li>
                   <li className="p-1 text-white hover:text-[#A57F2C]">
-                    <a href="/">Sobre el INEA</a>
-                  </li>
-                  <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="/">Aviso de privacidad</a>
                   </li>
                   <li className="p-1 text-white hover:text-[#A57F2C]">
@@ -64,6 +61,9 @@ const Footer = () => {
                   </li>
                   <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="/">Créditos</a>
+                  </li>
+                   <li className="p-1 text-white hover:text-[#A57F2C]">
+                    <a href="/servicio-social">Servicio Social</a>
                   </li>
                 </ul>
               </div>
