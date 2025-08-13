@@ -1,47 +1,43 @@
-.AlertaCampo{
+/* .AlertaCampo{
     color: red;
-  }
-
-  .swal-wide{
+  } */
+/* text-red-600 */
+  /* .swal-wide{
     width:50px !important;
-}
+} */
 
-.red{
+/* .red{
   color: red;
+} */
+/* text-red-600 */
 
-}
-
-
-  .input-personalizado {
-    box-sizing: border-box; /* Asegura que el borde no expanda el tamaño de la caja */
-    border: 1px solid #ccc; /* Color de borde por defecto */  
-    border-radius: 4px; /* Bordes redondeados */
-    padding: 0.5rem; /* Espaciado interno */
-    width: 100%; /* Ancho completo */
-    /*transition: border-color 0.3s, background-color 0.3s, border-width 0.3s; /* Transición suave */
-    outline: none !important; 
-  }
-
-  .input-apellidopaterno{
+  /* .input-personalizado {
     box-sizing: border-box; 
-    border: 1px solid #ccc; /* Color de borde por defecto */  
-    border-radius: 4px; /* Bordes redondeados */
-    padding: 0.5rem; /* Espaciado interno */
-    /*transition: border-color 0.3s, background-color 0.3s, border-width 0.3s; *//* Transición suave */
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    padding: 0.5rem;
+    width: 100%; 
     outline: none !important; 
-  }
-
+  } */
+/* box-border border border-solid border-[#ccc] rounded p-2 w-full  */
+  /* .input-apellidopaterno{
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    outline: none !important; 
+    padding: 0.5rem; 
+  } */
+  
 
   /* Estilo para cuando el input está en foco */
-   .input-personalizado:focus, .input-apellidopaterno:focus{ 
+   /* .input-personalizado:focus, .input-apellidopaterno:focus{ 
     outline: none !important; 
     border-color: #496cec !important;
-  box-shadow: 0 0 10px rgba(173, 216, 230, 0.7) !important; /* Difuminado azul claro */
-  }   
+  box-shadow: 0 0 10px rgba(173, 216, 230, 0.7) !important; 
+  }    */
+/* focus:outline-none focus:border-[#496cec] focus:shadow-[0_0_10px_rgba(173,216,230,0.7)] */
 
-
-.color-gris{
+/* .color-gris{
   background-color: #d3d3d3;
-}
-
-
+} */
+/* text-[#d3d3d3] */

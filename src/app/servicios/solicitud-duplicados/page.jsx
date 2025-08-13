@@ -157,9 +157,6 @@ const day = [
   const fetchData = async  () => {
     try {
 
-
-
-     
       //const res = await fetch(`https://inea-web-backend-cg20.onrender.com/api/correos?populate=%2A`)
       //const res = await fetch(`https://inea-web-backend.onrender.com/api/correos?populate=%2A`)
       const res = await fetch(`https://inea-web-backend-cg20.onrender.com/api/correos?populate=%2A`)
@@ -461,7 +458,8 @@ return (
               </label>
               <div className="border rounded">
                 <select
-                  className={`${notoSans.className} text-[#333334] cursor-no-drop input-personalizado color-gris`}
+                  // className={`${notoSans.className} text-[#333334] cursor-no-drop input-personalizado color-gris`}
+                  className={`${notoSans.className} cursor-no-drop box-border border border-solid border-[#ccc] rounded p-2 w-full focus:outline-none focus:border-[#496cec] focus:shadow-[0_0_10px_rgba(173,216,230,0.7)] text-[#d3d3d3]`}
                   name="Estado de la Republica"
                   id="Estado_Republica"
                   readonly
@@ -474,12 +472,16 @@ return (
 
             <div className="pt-3 grid grid-cols-1  sm:grid-cols-3">
               <div className="sm:mr-7 " >
-                <label className="block">Apellido Paterno<spam className="red"> (*)</spam></label>
+                <label className="block">Apellido Paterno
+                  {/* <spam className="red">  */}
+                  <spam className="text-red-600"> 
+                    (*)</spam></label>
                 <input
        
                   type="text"
                   name="ApellidoPaterno"
-                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  // className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer box-border border border-solid border-[#ccc] rounded p-2 w-full focus:outline-none focus:border-[#496cec] focus:shadow-[0_0_10px_rgba(173,216,230,0.7)]`}
                   id="AppellidoPaterno"
                   placeholder="Apellido Paterno"
                   maxLength={70}  
@@ -492,22 +494,28 @@ return (
                   })}
                 />
                 {errors?.ApellidoPaterno?.type === "required" && (
-                  <p className="AlertaCampo">Este campo es obligatorio</p>
+                  // <p className="AlertaCampo">
+                  <p className="text-red-600">
+                  Este campo es obligatorio</p>
                 )}
 
                 {errors?.ApellidoPaterno && (
-                      <p className="AlertaCampo">
+                      // <p className="AlertaCampo">
+                      <p className="text-red-600">
                         {errors.ApellidoPaterno.message}
                       </p>
                     )}
               </div>
 
               <div clclassNameass="sm:ml-3">
-                <label className="pt-3 sm:pt-0 block">Apellido Materno<spam className="red"> (*)</spam></label>
+                <label className="pt-3 sm:pt-0 block">Apellido Materno
+                {/* <spam className="red">  */}
+                <spam className="text-red-600"> 
+                  (*)</spam></label>
                 <input
                   type="text"
                   name="ApellidoMaterno"
-                  className="border rounded p-2 w-full sm:w-11/12 input-apellidopaterno"
+                  className="box-border border border-solid border-[#ccc] rounded p-2 w-full sm:w-11/12 focus:outline-none focus:border-[#496cec] focus:shadow-[0_0_10px_rgba(173,216,230,0.7)]"
                   id="title"
                   placeholder="Apellido Materno"
                   maxLength={70}  
@@ -522,23 +530,30 @@ return (
 
                 />
                 {errors?.ApellidoMaterno?.type === "required" && (
-                  <p className="AlertaCampo">Este campo es obligatorio</p>
+                  // <p className="AlertaCampo">
+                  <p className="text-red-600">
+                  Este campo es obligatorio</p>
                 )}
 
                 {errors?.ApellidoMaterno && (
-                      <p className="AlertaCampo">
+                      // <p className="AlertaCampo">
+                      <p className="text-red-600">
                         {errors.ApellidoMaterno.message}
                       </p>
                     )}
               </div>
 
               <div clclassNameass="sm:ml-3">
-                <label className="pt-3 sm:pt-0 block">Nombre(S)<spam className="red"> (*)</spam></label>
+                <label className="pt-3 sm:pt-0 block">Nombre(S)
+                  {/* <spam className="red">  */}
+                  <spam className="text-red-600"> 
+                  (*)</spam></label>
                 <input
                   id="Nombre"
                   type="text"
                   name="text"
-                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  // className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer box-border border border-solid border-[#ccc] rounded p-2 w-full focus:outline-none focus:border-[#496cec] focus:shadow-[0_0_10px_rgba(173,216,230,0.7)]`}
                   placeholder="Nombre(S)"
                   maxLength={70}  
               
@@ -551,11 +566,14 @@ return (
                   })}
                 />
                 {errors?.Nombre?.type === "required" && (
-                  <p className="AlertaCampo">Este campo es obligatorio</p>
+                  // <p className="AlertaCampo">
+                  <p className="text-red-600">
+                  Este campo es obligatorio</p>
                 )}
 
                {errors?.Nombre && (
-                      <p className="AlertaCampo">
+                      // <p className="AlertaCampo">
+                      <p className="text-red-600">
                         {errors.Nombre.message}
                       </p>
                     )}
@@ -565,7 +583,10 @@ return (
             <div className="pt-3  grid grid-cols-1  sm:grid-cols-2">
          <div className="sm:mr-5">
          <label className="block" for="calendarYear">
-               Fecha de nacimiento<spam className="red"> (*)</spam>
+               Fecha de nacimiento
+               {/* <spam className="red">  */}
+               <spam className="text-red-600"> 
+                (*)</spam>
              </label>
          <Controller
            control={control}  // Se pasa el 'control' para integrar con react-hook-form
@@ -628,7 +649,8 @@ return (
                dateFormat="dd/MM/yyyy" // Formato de fecha (día, mes, año)
                placeholderText="DD/MM/AAAA" // Texto de marcador
                locale={es} // Configurar el idioma a español
-               className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+              //  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+               className={`${notoSans.className} text-[#333334] cursor-pointer box-border border border-solid border-[#ccc] rounded p-2 w-full focus:outline-none focus:border-[#496cec] focus:shadow-[0_0_10px_rgba(173,216,230,0.7)]`}
       
              />
            )}
@@ -636,16 +658,21 @@ return (
  
          {/* Mostrar mensaje de error si no se selecciona la fecha */}
          {errors?.FechaNacimiento && (
-           <p className="AlertaCampo">{errors.FechaNacimiento.message}</p>
+          //  <p className="AlertaCampo">
+           <p className="text-red-600">
+            {errors.FechaNacimiento.message}</p>
          )}
          </div>
 
               <div className="">
                 <label className="pt-3 sm:pt-0 block">
-                  Lugar de nacimiento<spam className="red"> (*)</spam>
+                  Lugar de nacimiento
+                  {/* <spam className="red"> (*)</spam> */}
+                  <spam className="text-red-600"> (*)</spam>
                 </label>
                 <select
-                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  // className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer box-border border border-solid border-[#ccc] rounded p-2 w-full focus:outline-none focus:border-[#496cec] focus:shadow-[0_0_10px_rgba(173,216,230,0.7)]`}
                   name="Lugar de nacimiento"
                   id="LugarNacimiento"
                   {...register("LugarNacimiento", { required: true })}
@@ -686,7 +713,9 @@ return (
                   <option value="Otro">Otro</option>
                 </select>
                 {errors?.LugarNacimiento?.type === "required" && (
-                  <p className="AlertaCampo">Este campo es obligatorio</p>
+                  // <p className="AlertaCampo">
+                  <p className="text-red-600">
+                  Este campo es obligatorio</p>
                 )}
               </div>
 
@@ -696,14 +725,17 @@ return (
                   for="email"
                   htmlFor="email"
                 >
-                  Correo<spam className="red"> (*)</spam>
+                  Correo
+                  {/* <spam className="red"> (*)</spam> */}
+                  <spam className="text-red-600"> (*)</spam>
                 </label>
                 <input
                   id="email"
                   type="email"
                   name="to"
                   // name="email"
-                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  // className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer box-border border border-solid border-[#ccc] rounded p-2 w-full focus:outline-none focus:border-[#496cec] focus:shadow-[0_0_10px_rgba(173,216,230,0.7)]`}
                   placeholder="Correo@correo.com"
                   maxLength={250}  
                   {...register("Correo", {
@@ -715,17 +747,22 @@ return (
                   })}
                 />
                {errors?.Correo && (
-                  <p className="AlertaCampo">{errors.Correo.message}</p>
+                  // <p className="AlertaCampo">
+                  <p className="text-red-600">
+                    {errors.Correo.message}</p>
                 )}
               </div>
 
               <div className="pt-3 sm:pt-0">
                 <label className="pt-0 sm:pt-3 block" for="teléfono">
-                  Teléfono<spam className="red"> (*)</spam>
+                  Teléfono
+                  {/* <spam className="red"> (*)</spam> */}
+                  <spam className="text-red-600"> (*)</spam>
                 </label>
                 <input
                   type="text"
-                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  // className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer box-border border border-solid border-[#ccc] rounded p-2 w-full focus:outline-none focus:border-[#496cec] focus:shadow-[0_0_10px_rgba(173,216,230,0.7)]`}
                   id="telefono"
                   name="Teléfono"
                   placeholder="Teléfono"
@@ -742,20 +779,27 @@ return (
 
                 />
                 {errors?.Telefono?.type === "required" && (
-                  <p className="AlertaCampo">Este campo es obligatorio</p>
+                  // <p className="AlertaCampo">
+                  <p className="text-red-600">
+                    Este campo es obligatorio</p>
                 )}
 
                 {errors?.Telefono?.type === "pattern" && (
-                  <p className="AlertaCampo">{errors.Telefono.message}</p>
+                  // <p className="AlertaCampo">
+                  <p className="text-red-600">
+                    {errors.Telefono.message}</p>
                 )}
               </div>
 
               <div className="pt-3 sm:pt-0 sm:mr-5">
-                <label className="pt-0 sm:pt-3 block">Confirmar correo<spam className="red"> (*)</spam></label>
+                <label className="pt-0 sm:pt-3 block">Confirmar correo
+                  {/* <spam className="red"> (*)</spam></label> */}
+                  <spam className="text-red-600"> (*)</spam></label>
                 <input
                   id="confirmEmail"
                   type="email"
-                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  // className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer box-border border border-solid border-[#ccc] rounded p-2 w-full focus:outline-none focus:border-[#496cec] focus:shadow-[0_0_10px_rgba(173,216,230,0.7)]`}
                   placeholder="Correo@correo.com"
                   maxLength={250}  
                   {...register("confirmEmail", {
@@ -765,7 +809,9 @@ return (
                   })}
                 />
                   {errors?.confirmEmail && (
-                  <p className="AlertaCampo">{errors.confirmEmail.message}</p>
+                  // <p className="AlertaCampo">
+                  <p className="text-red-600">
+                    {errors.confirmEmail.message}</p>
                 )}
               </div>
 
@@ -779,23 +825,29 @@ return (
                   name="text"
                   placeholder="Comentarios"
                   maxLength={450}  
-                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  // className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer box-border border border-solid border-[#ccc] rounded p-2 w-full focus:outline-none focus:border-[#496cec] focus:shadow-[0_0_10px_rgba(173,216,230,0.7)]`}
                   {...register("Comentarios", { required: false })}
                 />
                 {errors?.Comentarios?.type === "required" && (
-                  <p className="AlertaCampo">Este campo es obligatorio</p>
+                  // <p className="AlertaCampo">
+                  <p className="text-red-600">
+                    Este campo es obligatorio</p>
                 )}
               </div>
 
               <div className="pt-3 sm:pt-0 sm:mr-5">
                 <label className="pt-0 sm:pt-3  block" for="niveleducativo">
-                  Nivel educativo del duplicado<spam className="red"> (*)</spam>
+                  Nivel educativo del duplicado
+                  {/* <spam className="red"> (*)</spam> */}
+                  <spam className="text-red-600"> (*)</spam>
                 </label>
                 <select
                   id="NivelEducativo"
                   type="text"
                   name="text"
-                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  // className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer box-border border border-solid border-[#ccc] rounded p-2 w-full focus:outline-none focus:border-[#496cec] focus:shadow-[0_0_10px_rgba(173,216,230,0.7)]`}
                   {...register("NivelEducativo", { required: true })}
                 >
                   <option value="">Seleccione..</option>
@@ -803,7 +855,9 @@ return (
                   <option value="Secundaria">Secundaria</option>
                 </select>
                 {errors?.NivelEducativo?.type === "required" && (
-                  <p className="AlertaCampo">Este campo es obligatorio</p>
+                  // <p className="AlertaCampo">
+                  <p className="text-red-600">
+                    Este campo es obligatorio</p>
                 )}
               </div>
             </div>
@@ -811,7 +865,9 @@ return (
             <div className="pt-3 grid grid-cols-1  sm:grid-cols-2 gap-5">
               <div class="">
                 <label class="control-label" htmlFor="curp">
-                  Curp:<spam className="red"> (*)</spam>
+                  Curp:
+                  {/* <spam className="red"> (*)</spam> */}
+                  <spam className="text-red-600"> (*)</spam>
                 </label>
                 <input
                   id="Curp"
@@ -824,12 +880,17 @@ return (
                   {...register("Curp",{required:true})}
                 />
                {/* {file && <p>Archivo seleccionado: {file.name}</p>} */}
-                 {errors?.Curp?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>}
+                 {errors?.Curp?.type === "required" && 
+                //  <p className="AlertaCampo">
+                 <p className="text-red-600">
+                  Por favor seleccione un archivo</p>}
 
               </div>
               <div className="">
                 <label className="w-full" for="ine">
-                  Identificación oficial INE con fotografía por ambos lados:<spam className="red"> (*)</spam>
+                  Identificación oficial INE con fotografía por ambos lados:
+                  {/* <spam className="red"> (*)</spam> */}
+                  <spam className="text-red-600"> (*)</spam>
                 </label>
                 <input
                   id="INE"
@@ -841,12 +902,17 @@ return (
                   {...register("Identificacion",{required:true})}
                 />
                  {/* {file && <p>Archivo seleccionado: {file.name}</p>}*/}
-                 {errors?.Identificacion?.type === "required" && <p className="AlertaCampo">Por favor seleccione un archivo</p>}
+                 {errors?.Identificacion?.type === "required" && 
+                //  <p className="AlertaCampo">
+                 <p className="text-red-600">
+                  Por favor seleccione un archivo</p>}
               </div>
 
               <div class="pt-3">
                 <label class="control-label" for="fotografia">
-                  Fotografía tamaño infantil, con fondo blanco y camisa clara<spam className="red"> (*)</spam>
+                  Fotografía tamaño infantil, con fondo blanco y camisa clara
+                  {/* <spam className="red"> (*)</spam> */}
+                  <spam className="text-red-600"> (*)</spam>
                 </label>
                 <input
                   id="foto"
@@ -857,7 +923,10 @@ return (
                   onChange={handleFileChange}
                   {...register("Fotografia",{required:true})}
                 />
-                 {errors?.Fotografia?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>}
+                 {errors?.Fotografia?.type === "required" && 
+                //  <p className="AlertaCampo">
+                 <p className="text-red-600">
+                  Por favor selecione un archivo</p>}
               </div>
             </div>
 
@@ -886,7 +955,10 @@ return (
                 {...register("Certificado",{required:false})}
                 />
               </div>
-              {errors?.Certificado?.type === "required" && <p className="AlertaCampo">Por favor selecione un archivo</p>}
+              {errors?.Certificado?.type === "required" && 
+              // <p className="AlertaCampo">
+              <p className="text-red-600">
+                Por favor selecione un archivo</p>}
               <div class="">
                 <label class="control-label" for="anio">
                   Año (opcional)
@@ -897,11 +969,14 @@ return (
                   name="text"
                   placeholder="Año"
                   maxLength={5}  
-                  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  // className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                  className={`${notoSans.className} text-[#333334] cursor-pointer box-border border border-solid border-[#ccc] rounded p-2 w-full focus:outline-none focus:border-[#496cec] focus:shadow-[0_0_10px_rgba(173,216,230,0.7)]`}
                   {...register("Año", { required: false })}
                 />
                 {errors?.Año?.type === "required" && (
-                  <p className="AlertaCampo">Este campo es obligatorio</p>
+                  // <p className="AlertaCampo">
+                  <p className="text-red-600">
+                    Este campo es obligatorio</p>
                 )}
               </div>
             </div>
@@ -916,9 +991,11 @@ return (
                     type="checkbox"
                     {...register("Terminos", { required: true })}
                   />
-                  <spam className="red"> (*)</spam>
+                  {/* <spam className="red"> (*)</spam> */}
+                  <spam className="text-red-600"> (*)</spam>
                   {errors?.Terminos?.type === "required" && (
-                    <p className="AlertaCampo">
+                    // <p className="AlertaCampo">
+                    <p className="text-red-600">
                       Por favor acepte el manifiesto
                     </p>
                   )}
@@ -941,7 +1018,9 @@ return (
               //  {...register("Recaptcha",{required:true})}
             />
             {errors?.Recaptcha?.type === "required" && (
-              <p className="AlertaCampo">Por favor resuelva el recaptcha</p>
+              // <p className="AlertaCampo">
+              <p className="text-red-600">
+                Por favor resuelva el recaptcha</p>
             )}
             <div className="pt-3 pb-3">
               <button
