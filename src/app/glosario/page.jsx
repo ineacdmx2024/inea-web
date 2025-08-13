@@ -79,10 +79,6 @@ function Glosario() {
       "significado": "Documento oficial válido en los Estados Unidos Mexicanos que no requiere trámites adicionales de legalización, diseñado por la Dirección General de Acreditación, Incorporación y Revalidación de la SEP y que el INEA expiden a personas educandas que concluyeron satisfactoriamente los estudios correspondientes en primaria o secundaria conforme al esquema curricular vigente."
     },
     {
-      "concepto": "Círculo educativo",
-      "significado": "Grupo de personas educandas que se reúnen para recibir los servicios educativos que coordina el INEA con los Institutos Estales, Unidades de Operación del INEA y Plazas Comunitarias en el Exterior."
-    },
-    {
       "concepto": "Círculos de Estudio",
       "significado": "Un círculo de estudio es la unidad operativa básica, conformada por un grupo de educandos que se reúnen en un lugar y horario convenido con el propósito de estudiar, resolver dudas, intercambiar y aportar experiencias, siendo atendidos por uno o varios asesores/as."
     },
