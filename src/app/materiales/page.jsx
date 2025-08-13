@@ -171,7 +171,7 @@ function Materiales() {
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077171/Portada_NyCM_Cuaderno_de_alfabetizacion_euq6sa.webp",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1755055178/Portada_Libro_Alfabetizacion_1-Nombrando_y_Contando_al_Mundo_hgdwtc.webp",
           linkDescarga:
             "https://archive.org/download/2-cuaderno-alfabetizacion-ny-cm-educando/2%20Cuaderno%20Alfabetizaci%C3%B3n%20NyCM_educando.pdf",
           linkVista:
@@ -180,7 +180,7 @@ function Materiales() {
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077171/Portada_NyCM_Libro_cde_alfabetizacion_skywhs.webp",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1755055177/Portada_Libro_Alfabetizacion_2-Nombrando_y_Contando_al_Mundo_nqjbec.webp",
           linkDescarga:
             "https://archive.org/download/libro-de-alfabetizacion-ny-cm-educando/Libro%20de%20Alfabetizaci%C3%B3n%20NyCM_Educando.pdf",
           linkVista:
@@ -189,7 +189,7 @@ function Materiales() {
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077177/Portada_Revisemos_lo_aprendido_Cuadernillo_para_el_educando_iaqgth.webp",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1755055177/Portada_Cuadernillo-Revisemos_lo_Aprendido_yarbmv.webp",
           linkDescarga:
             "https://archive.org/download/revisemos-lo-aprendido-cuadernillo-para-el-educando/Revisemos%20lo%20aprendido-%20Cuadernillo%20para%20el%20educando.pdf",
           linkVista:
@@ -204,7 +204,7 @@ function Materiales() {
         {
           titulo: "",
           portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077175/Portada_NyCM_Libro_de_persona_alfabetizadora_l6cnns.webp",
+            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1755055184/Portada_Libro_Alfabetizador-Nombrando_y_Contando_al_Mundo_s7uocg.webp",
           linkDescarga:
             "https://archive.org/download/ny-cm-alfabetizador/NyCM-Alfabetizador.pdf",
           linkVista: "https://archive.org/embed/ny-cm-alfabetizador",
