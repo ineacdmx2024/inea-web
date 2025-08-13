@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import Link from 'next/link';
 // import "./Footer.css";
@@ -43,9 +42,6 @@ const Footer = () => {
                     <a href="https://datos.gob.mx/">Trámites y Servicios</a>
                   </li>
                   <li className="p-1 text-white hover:text-[#A57F2C]">
-                    <a href="/">Sobre el INEA</a>
-                  </li>
-                  <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="/">Aviso de privacidad</a>
                   </li>
                   <li className="p-1 text-white hover:text-[#A57F2C]">
@@ -55,7 +51,7 @@ const Footer = () => {
                     <a href="https://www.plataformadetransparencia.org.mx/Inicio">Transparencia</a>
                   </li>
                   <li className="p-1 text-white hover:text-[#A57F2C]">
-                    <a href="/">Glosario</a>
+                    <a href="/glosario">Glosario</a>
                   </li>
                   <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="https://www.gob.mx/inea/">INEA Nacional</a>
@@ -65,6 +61,9 @@ const Footer = () => {
                   </li>
                   <li className="p-1 text-white hover:text-[#A57F2C]">
                     <a href="/">Créditos</a>
+                  </li>
+                   <li className="p-1 text-white hover:text-[#A57F2C]">
+                    <a href="/servicio-social">Servicio Social</a>
                   </li>
                 </ul>
               </div>

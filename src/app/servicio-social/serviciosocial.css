@@ -2,87 +2,90 @@
     CONTENIDO GENERAL
 =========================== */
 
-.content {
+/* .content {
   padding-top: 25px;
   font-size: 18px;
   line-height: 1.7;
   color: #333334;
-}
+} */
+/* pt-[25px] text-lg text-[#333334] leading-[1.7] */
 
-.ul-sep,
+/* .ul-sep,
 .ul-sep2 {
   list-style-type: disc;
   margin-left: 25px;
-}
-
-.ul-sep li,
+} */
+/* list-disc ml-[25px] */
+/* .ul-sep li,
 .ul-sep2 li {
   margin-bottom: 20px;
   word-break: break-word;
   overflow-wrap: break-word;
-}
-
+} */
+/* mb-5 break-words */
 /* Links generales para correos y direcciones */
-.a-sep {
+/* .a-sep {
   color: #611232;
   cursor: pointer;
   transition: color 0.2s ease;
   text-decoration: none;
-}
+} */
 
-.a-sep:hover {
+/* .a-sep:hover {
   text-decoration: underline;
   color: #D3C09B;
-}
+} */
 
-.link-hover {
+/* .link-hover {
   color: #333334; 
   cursor: pointer;
   transition: color 0.2s ease;
   text-decoration: none;
-}
-
-.link-hover:hover {
+} */
+/* text-[#333334] cursor-pointer transition-colors duration-200 ease-in-out no-underline */
+/* .link-hover:hover {
   text-decoration: underline;
   color: #D3C09B;
-}
+} */
+/* hover:underline hover:text-[#D3C09B] */
 
 /* ===========================
     TÍTULOS Y SUBTÍTULOS
 =========================== */
 
-.title-sep {
+/* .title-sep {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 15px;
-}
-
-.subtitle-sep {
+} */
+/* text-2xl font-bold mb-[15px] */
+/* .subtitle-sep {
   font-weight: bold;
   font-size: 20px;
-}
+} */
+/* font-bold text-xl */
 
 /* ===========================
     BLOQUES CON ICONOS
 =========================== */
 
-.data-container {
+/* .data-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 10px;
-}
-
-.data-container .icon {
+} */
+/* flex flex-row items-start gap-[10px] */
+/* .data-container .icon {
   flex-shrink: 0;
   width: 20px;
   height: 20px;
   object-fit: contain;
-}
-
-.data-container .text {
+} */
+/* flex-shrink-0 w-5 h-5 object-contain */
+/* .data-container .text {
   flex: 1 1 auto;
   word-break: break-word;
   overflow-wrap: break-word;
-}
+} */
 

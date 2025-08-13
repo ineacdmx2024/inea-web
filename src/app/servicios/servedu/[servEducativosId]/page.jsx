@@ -150,7 +150,8 @@ async function Page({ params }) {
       switch (item.type) {
         case "heading":
           return (
-            <div style={{ width: '720px', maxWidth: '100%', overflow: 'hidden' }}>
+            // <div style={{ width: '720px', maxWidth: '100%', overflow: 'hidden' }}>
+            <div className="w-[720px] max-w-full overflow-hidden">
               <div className="w-full overflow-hidden">
                 {React.createElement(
                   `h${item.level}`,
@@ -159,7 +160,7 @@ async function Page({ params }) {
                     className: `${notoSans.className} text-[#333334] font-bold text-[${
                       21 - item.level
                     }px] break-words`,
-                    style: { wordWrap: 'break-word', overflowWrap: 'break-word' }
+                    // style: { wordWrap: 'break-word', overflowWrap: 'break-word' }
                   },
                   item.children[0]?.text || ""
                 )}
@@ -177,11 +178,12 @@ async function Page({ params }) {
             }
           
             return (
-              <div style={{ width: '720px', maxWidth: '100%', overflow: 'hidden' }}>
+              // <div style={{ width: '720px', maxWidth: '100%', overflow: 'hidden' }}>
+              <div className="w-[720px] max-w-full overflow-hidden">
                 <p
                   key={index}
                   className={` text-[#333334] text-[18px] font-light break-words`}
-                  style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
+                  // style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
                 >
                   {item.children.map((child, i) => {
                   if (child.type === "link" && child.url) {
@@ -244,7 +246,9 @@ async function Page({ params }) {
           
         case "embed":
           return (
-            <div key={index} className="my-6 mx-auto rounded-lg overflow-hidden" style={{ width: '720px', maxWidth: '100%' }}>
+            // <div key={index} className="my-6 mx-auto rounded-lg overflow-hidden" 
+            // style={{ width: '720px', maxWidth: '100%' }}>
+            <div key={index} className="w-[720px] max-w-full my-6 mx-auto rounded-lg overflow-hidden">
               <div 
                 className="embed-container w-full aspect-video" 
                 dangerouslySetInnerHTML={{ __html: item.embed.html }}
@@ -308,7 +312,8 @@ async function Page({ params }) {
         Titulo={post.data?.attributes?.Titulo}
         Subtitulo={post.data?.attributes?.Subtitulo}
         >
-        <div style={{ width: '720px', maxWidth: '100%' }}>
+        {/* <div style={{ width: '720px', maxWidth: '100%' }}> */}
+        <div className="w-[720px] max-w-full">
           <h1
             className={`${notoSans.className} text-[#333334] text-[18px] font-light`}
             >
@@ -330,7 +335,10 @@ async function Page({ params }) {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 720px"
             />
           </div>
-        <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-left" style={{ width: '720px', maxWidth: '100%' }}>{renderContenido(contenido)}</div>
+        {/* <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-left" style={{ width: '720px', maxWidth: '100%' }}> */}
+        <div className="w-[720px] max-w-full mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-left">
+          
+        {renderContenido(contenido)}</div>
       </PagSec>
     </div>
   );

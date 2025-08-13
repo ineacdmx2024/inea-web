@@ -14,22 +14,24 @@ export default function RequisitosLiberacion() {
           {/* Bloque: Requisitos */}
           <div>
             <h3 className="text-lg font-bold mb-2">Requisitos</h3>
-            <ul className="ul-sep">
-              <li>70% de créditos (licenciatura) o 50% (medio superior).</li>
-              <li>Disponibilidad de 4 horas diarias (entre 9:00 y 18:00 hrs).</li>
+            {/* <ul className="ul-sep"> */}
+            <ul className="list-disc ml-[25px]">
+              <li className="mb-5 break-words">70% de créditos (licenciatura) o 50% (medio superior).</li>
+              <li className="mb-5 break-words">Disponibilidad de 4 horas diarias (entre 9:00 y 18:00 hrs).</li>
             </ul>
           </div>
 
           {/* Bloque: Documentación */}
           <div>
             <h3 className="text-lg font-bold mb-2">Documentos</h3>
-            <ul className="ul-sep">
-              <li>Carta de presentación de tu escuela.</li>
-              <li>Constancia de créditos y credencial escolar.</li>
-              <li>INE o carta del tutor (si es menor de edad).</li>
-              <li>Acta de nacimiento (si es menor).</li>
-              <li>CURP y comprobante de domicilio (menor a 3 meses).</li>
-              <li>2 fotos tamaño infantil.</li>
+            {/* <ul className="ul-sep"> */}
+            <ul className="list-disc ml-[25px]">
+              <li className="mb-5 break-words">Carta de presentación de tu escuela.</li>
+              <li className="mb-5 break-words">Constancia de créditos y credencial escolar.</li>
+              <li className="mb-5 break-words">INE o carta del tutor (si es menor de edad).</li>
+              <li className="mb-5 break-words">Acta de nacimiento (si es menor).</li>
+              <li className="mb-5 break-words">CURP y comprobante de domicilio (menor a 3 meses).</li>
+              <li className="mb-5 break-words">2 fotos tamaño infantil.</li>
             </ul>
           </div>
         </div>
