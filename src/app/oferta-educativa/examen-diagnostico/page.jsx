@@ -8,8 +8,9 @@ const examen = {
   title: "Examen Diagnóstico",
   description: "",
   paragraphs: [
-    "La modalidad de Examen Diagnóstico con Guías de Aprendizaje ofrece una opción educativa flexible y gratuita para todas las personas de 15 años o más que desean iniciar, continuar o concluir sus estudios de Primaria o Secundaria.",
-    "La Guía de Aprendizaje es un material impreso que está organizada en dos unidades de aprendizaje que incluyen ejercicios y explicaciones de los contenidos relevantes en tres campos formativos: lengua y comunicación, pensamiento matemático, y vida y comunidad. Al final de cada unidad, se presentan ejercicios de autoevaluación para que la persona pueda identificar sus logros y áreas que necesitan refuerzo antes de presentar un examen. Al presentar satisfactoriamente los dos exámenes (uno al concluir cada unidad), se obtendrá el certificado de Primaria o Secundaria. Si por alguna razón la persona no logra acreditar el nivel deseado, tendrá la oportunidad de seguir preparándose y presentar nuevamente el examen.",
+    "Los exámenes diagnósticos del INEA son evaluaciones de opción múltiple dirigidas a personas de 15 años o más que desean iniciar, continuar o concluir su educación básica. Cumplen dos funciones principales: certificar y ubicar. Si se aprueban todos los módulos que conforman el examen, se obtiene el certificado oficial de Primaria o Secundaria. En caso de no acreditar alguno, los módulos aprobados se consideran válidos y solo es necesario presentar el examen del módulo no acreditado, con la posibilidad de recibir asesoría adicional.",
+    <>
+    Esta modalidad incluye el uso de Guías de Aprendizaje impresas, organizadas en dos unidades con ejercicios, explicaciones y autoevaluaciones, que ayudan a preparar al estudiante en tres campos formativos: <em>Lengua y Comunicación, Pensamiento Matemático y Vida y Comunidad.</em></>,
   ],
   time: "2 a 3 meses dedicando 2 horas por semana",
   requirements: [
