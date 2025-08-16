@@ -2,10 +2,7 @@
 import Link from "next/link";
 
 const truncateText = (text, maxLetters) => {  
-  if (text.length > maxLetters) {
-    return text.slice(0, maxLetters) + "...";
-  }
-  return text;
+  return text; // No recorta, siempre devuelve el texto completo
 };
 
 const Card = ({ title, imageSrc, buttonText, link }) => {
@@ -53,8 +50,16 @@ const Card = ({ title, imageSrc, buttonText, link }) => {
             />
           </div>
           <div className="flex flex-col justify-between flex-grow">
-            <h3 className="text-center text-[18px] tablet:text-[22px] text-[#333334] font-medium mt-4 mb-6">
-              {truncateText(title, 37)}
+            <h3
+              className="text-center text-[18px] tablet:text-[22px] text-[#333334] font-medium mt-4 mb-6 leading-snug"
+              style={{
+                display: "-webkit-box",
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+              }}
+            >
+              {truncateText(title)}
             </h3>
             <div className="flex justify-center mt-4">
               <button className="bg-[#611232] text-white text-sm py-2.5 px-6 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-medium transition-all duration-300">
