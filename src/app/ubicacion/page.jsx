@@ -313,7 +313,7 @@ function Ubicacion() {
       map: (
         <iframe
     
-          src="https://www.google.com/maps/d/embed?mid=1KUG8-R8CmUpVRp3E-nIXuzz06p1wNlw&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1dUoDkBhnZ7kM3M8YNK0TpRaTimI1FSk&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -362,7 +362,7 @@ function Ubicacion() {
       map: (
         <iframe
 
-          src="https://www.google.com/maps/d/embed?mid=1tvi1UH-veWd6uDbiO3qqnEjuNgnYEtg&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1P4WOrE7ULq-hKgAWUDCKA6dRMAB9xMo&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -398,7 +398,7 @@ function Ubicacion() {
       title: "Benito Juárez",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=11TxF0-Xr_zMdOm3JohqipE9ULyNeVyE&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1iXbUSmuOj-hyJhtW9lcYimmQO7m1XUk&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -411,7 +411,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1ITyGlGxzE2bOtY_Nvn3ZpQuGsIETQh0&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1tVjuVrGXnC3ocsTFLZNGQ8b2AcDhPDM&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -424,7 +424,7 @@ function Ubicacion() {
         },
         {
           alcaldia: "PILARES Topiltzin",
-          url: "https://maps.app.goo.gl/LsRYLxB8waWjE33H6",
+          url: "https://maps.app.goo.gl/vbmXFCAe5J2tKHh89",
           dir: "Mixtecas, S/N, Ajusco, Coyoacán, C.P. 04300",
           atel: "",
         },
@@ -435,7 +435,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1BwTQcdqppGITq9b3FiZlElmMmrK-DQk&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1uNFMpeEOyiNCRjThsUT5qEATrq9L9gI&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
