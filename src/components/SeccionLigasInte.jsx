@@ -157,8 +157,10 @@ function SeccionLigasInte() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: (dots) => (
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <ul style={{ margin: "0", padding: "0", display: "flex", justifyContent: "center", bottom: "-30px" }}> {dots} </ul>
+      // <div style={{ display: "flex", justifyContent: "center" }}>
+      <div className="flex justify-center">
+        {/* <ul style={{ margin: "0", padding: "0", display: "flex", justifyContent: "center", bottom: "-30px" }}> {dots} </ul> */}
+        <ul className="m-0 p-0 flex justify-center bottom-[-30px] "> {dots} </ul>
       </div>
     ),
     prevArrow: <PrevArrow />,
@@ -196,17 +198,15 @@ function SeccionLigasInte() {
           transform: scale(1.2);
         }
         
-        /* Estilos solo para desktop que igualan el gap */
         @media (min-width: 768px) {
           .desktop-carousel .slick-slide {
-            padding: 0 16px;  /* Mitad del gap-8 (32px) */
+            padding: 0 16px;  
           }
           
           .desktop-carousel .slick-list {
-            margin: 0 -16px;  /* Negativo del padding */
+            margin: 0 -16px;  
           }
           
-          /* Aseguramos que la card tiene las mismas dimensiones */
           .desktop-carousel .carousel-card {
             height: 450px;
             display: flex;
@@ -214,7 +214,6 @@ function SeccionLigasInte() {
           }
         }
         
-        /* Estilos para mobile */
         @media (max-width: 767px) {
             .slick-slider {
               padding-bottom: 30px;
@@ -242,11 +241,10 @@ function SeccionLigasInte() {
           justify-content: center;
         }
         
-        /* Dimensiones fijas para imágenes */
         .image-container {
           width: 100%;
-          max-width: 296px; /* Ancho fijo de 296px */
-          height: 236.8px; /* Alto fijo de 236.8px */
+          max-width: 296px; 
+          height: 236.8px; 
           position: relative;
           overflow: hidden;
           border-radius: 0.5rem;
@@ -259,12 +257,11 @@ function SeccionLigasInte() {
           object-fit: cover;
         }
         
-        /* Medidas responsivas para dispositivos móviles */
         @media (max-width: 767px) {
           .image-container {
             width: 100%;
             height: 0;
-            padding-bottom: 80%; /* Mantiene proporción similar en móviles */
+            padding-bottom: 80%; 
             max-width: none;
           }
           

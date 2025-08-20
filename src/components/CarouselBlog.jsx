@@ -128,8 +128,10 @@ const CarouselBlog = ({ item }) => {
     nextArrow: <NextArrow />,
     dotsClass: "slick-dots custom-dots",
     appendDots: (dots) => (
-      <div style={{ bottom: "-25px" }}>
-        <ul style={{ margin: "0" }}> {dots} </ul>
+      // <div style={{ bottom: "-25px" }}>
+      <div className="bottom-[-25px]">
+        {/* <ul style={{ margin: "0" }}> {dots} </ul> */}
+        <ul className="m-0"> {dots} </ul>
       </div>
     ),
   };
@@ -153,7 +155,7 @@ const CarouselBlog = ({ item }) => {
 
   return (
     <>
-      <style jsx global>{`
+      {/* <style jsx global>{`
         .custom-dots {
           bottom: -30px;
         }
@@ -175,7 +177,7 @@ const CarouselBlog = ({ item }) => {
           color: #611232;
           transform: scale(1.2);
         }
-      `}</style>
+      `}</style> */}
 
       <Slider {...settings} className="mx-auto !z-5">
         {datos ? (

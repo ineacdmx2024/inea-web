@@ -305,7 +305,7 @@ function Ubicacion() {
   ];
 
   const plazasData = pageData;
-
+  //Respaldo 20 de agosto
   const pilaresData = [
     {
       title: "Álvaro Obregón",
