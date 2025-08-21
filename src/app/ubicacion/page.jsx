@@ -471,7 +471,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1QQ9E05nybLWo3xQ-ghjhRN0v3ltjSdI&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1vHQf833wZK1JmolYXyYahLvV9QuaA-A&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -513,7 +513,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1lAOkYsB99LTW8e_TOnjY9Scs3o-jjjc&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1HbfOxKiEQxw0VmF1FK3jgZ55YsivCME&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -596,7 +596,7 @@ function Ubicacion() {
       title: "Iztacalco",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1iLy4t7C7rHAzzMdZNQ2CRV6p7BnYhSg&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1RWgD5ZEvgfDqP-K4LCZ-W6afS76F5Qg&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -632,7 +632,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1OznqZCbiP9RCZsItgJ4A5VtHJqVn3bY&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1g6Gw-nWoi_N903Wi0eB_j31Q1uObuLM&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -640,7 +640,7 @@ function Ubicacion() {
         { alcaldia: "PILARES Bambú", url: "https://maps.app.goo.gl/MRHut1SEKK9pfnHU8", dir: "1, Lt16 Lt101, Lomas de la Estancia, Iztapalapa, C.P. 9640", atel: "" },
         { alcaldia: "PILARES Calmécac", url: "https://maps.app.goo.gl/G6zpw9zZ7BV2oJMJ6", dir: "Valle de México, S/N, Miravalles, Iztapalapa, C.P. 9696", atel: "" },
         { alcaldia: "PILARES Cerro Azul", url: "https://maps.app.goo.gl/Z4VHGiqejHdHkvok7", dir: "Cerro Azul, Lt4 Mz95-C, Buenavista, Iztapalapa, C.P. 9700", atel: "" },
-        { alcaldia: "PILARES Ejercito De Agua Prieta", url: "", dir: "Circuvalacion Num S/N, Col. Ejercito De Agua Prieta, C.P. 9578, Alcaldía Iztapalapa", atel: "" },
+        { alcaldia: "PILARES Ejercito De Agua Prieta (Guelatao)", url: "https://maps.app.goo.gl/UHxNE2jbcPvppVho8", dir: "Circuvalacion Num S/N, Col. Ejercito De Agua Prieta, C.P. 9578, Alcaldía Iztapalapa", atel: "" },
         { alcaldia: "PILARES Lomas de la Estancia", url: "https://maps.app.goo.gl/BNxT1MQ7jsjzeaY66", dir: "Camino a las Minas, S/N, Lomas de la Estancia, Iztapalapa, C.P. 9640", atel: "" },
         { alcaldia: "PILARES Palmitas", url: "https://maps.app.goo.gl/NYULxhZgNg7DEECe8", dir: "Nativitas, S/N, Palmitas, Iztapalapa, C.P. 9670", atel: "" },
         { alcaldia: "PILARES República Federal", url: "https://maps.app.goo.gl/ZHgEsMorEE8UqxFm7", dir: "República Federal, S/N, Santa María Acatitla Sur, Iztapalapa, C.P. 9530", atel: "" },
@@ -658,7 +658,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1ncVqwipRDOxyw_QgeNRzQ6fsqe5vXks&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1j-IipwRhA4n3DjOLOW-qwVtJO_QlQTo&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -682,7 +682,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/embed?mid=1zXfA0ytyAY7vwUiaZ_yoBwBYNe-Tc9s&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1ojNbNWeAtEa9F7Oxgy2QIxkN-tnumFw&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -713,7 +713,7 @@ function Ubicacion() {
       title: "Milpa Alta",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1IO2-asrRxv8fBvR6vfsQOqjohy2pIIw&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=19X_1K8o_WRXLftyXb45hRLTgY7Rw6ck&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -738,7 +738,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1KyEsuAGClb9AJaB_132IGHOkDQTtHww&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1oLfTOQvxw7JQVZLEUMcC-vScIwavF3g&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         />
       ),
@@ -767,7 +767,7 @@ function Ubicacion() {
       title: "Tlalpan",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1WMzcmG_cP0QEkJqPQUttqSVSRDo-UR8&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1envJgOZv-SpQNBUjLqj3ZJbZIcykP2c&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -803,7 +803,7 @@ function Ubicacion() {
       title: "Venustiano Carranza",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1-IH5YXtPfckdLJzkRCoXXVEGmXYIk5s&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1XyPBP0g2GhuYLMD2-kdEiH7oHiM6KT4&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -828,7 +828,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1gDIObMv2mNjoF5xMGtf6TIhxdEW5qFw&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1Ihs3t8alZ2uC6B4XWla_mOOXnXhXVj4&ehbc=2E312F&noprof=1"
           className="  md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
