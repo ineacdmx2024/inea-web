@@ -313,7 +313,7 @@ function Ubicacion() {
       map: (
         <iframe
     
-          src="https://www.google.com/maps/d/embed?mid=1KUG8-R8CmUpVRp3E-nIXuzz06p1wNlw&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1dUoDkBhnZ7kM3M8YNK0TpRaTimI1FSk&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -343,44 +343,17 @@ function Ubicacion() {
           url: "https://maps.app.goo.gl/9bA2ekVzkbvwELFg7",
         },
         {
-          alcaldia: "PILARES Olivar del Conde",
-          dir: "20, S/N, Olivar del Conde 1a Sección, Álvaro Obregón, C.P. 01400 ",
+          alcaldia: "PILARES LOMAS DE LA ERA",
+          dir: "29 De Octubre Num Sn, Col. Lomas De La Era, C.P. 18600, Alcaldía Alvaro Obregon",
           atel: "",
-          url: "https://maps.app.goo.gl/6YMKEcBJn14xyyBZ7",
+          url: "https://maps.app.goo.gl/jp66fNw3shn9yTfH6",
         },
         {
-          alcaldia: "PILARES Rio San Borja",
+          alcaldia: "PILARES Olivar Del Conde",
           dir: "Río San Borja, S/N, Olivar del Conde 2a Sección, Álvaro Obregón, C.P. 01408 ",
           atel: "",
           url: "https://maps.app.goo.gl/f78g83EqNyKSihfU8",
         },
-        {  alcaldia: "PILARES  Presidentes", url: "https://maps.app.goo.gl/QchV25hXLStJA2qn7", dir: "Adolfo De La Huerta Num Sn, 0, Col. Presidentes, C.P. 1290, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  El Capulin", url: "https://maps.app.goo.gl/tDVBLe1yprbWVaTG9", dir: "Artificios Num 234, Col. Capulin, C.P. 1110, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  Belen De Las Flores", url: "https://maps.app.goo.gl/h45EqLUP5hSBp21Y8", dir: "Belen De Las Flores Num 11, Col. Belen De Las Flores, C.P. 1110, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  Jalalpa Tepito", url: "https://maps.app.goo.gl/NnH7acRrc4dLickY6", dir: "Encinal, Santa Fe, Jalapa Tepito 2da Ampliación, C.P. 01296, Alcaldía Alvaro Obregon Ciudad De México Cdmx",  atel: "", }, 
-        {  alcaldia: "PILARES  Santa Lucia", url: "https://maps.app.goo.gl/JCVWvtgN3twFARdW6", dir: "Santa Lucia Num 281, Col. Colina Del Sur, C.P. 1430, Alcaldía Alvaro Obregon",  atel: "", }, 
-
-        {  alcaldia: "PILARES  Pueblo Santa Fe", url: "https://maps.app.goo.gl/ZVrKM5Mgey7MiG6KA", dir: "Corregidora Num 0, 0, Col. Santa Fe, C.P. 1210, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  La Cuesta", url: "https://maps.app.goo.gl/zq5YHBrTi2CcPZvE6", dir: "Tecalcapa Num 26, S/N, Col. Tcamino Real De Tetelpan, C.P. 1700, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  Lomas De La Era", url: "https://maps.app.goo.gl/jp66fNw3shn9yTfH6", dir: "29 De Octubre Num Sn, Col. Lomas De La Era, C.P. 18600, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  San Bartolo", url: "", dir: "5 De Mayo Num S/N, 0, Col. San Bartolo Ameyalco, C.P. 1800, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  Chamontoya", url: "https://maps.app.goo.gl/TrP6rgWMWyinSsu3A", dir: "Jazmin Num 68, 0, Col. Chamontoya, C.P. 1857, Alcaldía Alvaro Obregon",  atel: "", }, 
-        
-        {  alcaldia: "PILARES  Las Aguilas", url: "https://maps.app.goo.gl/rwm2qYyEDEBHtdqA9", dir: "Barranca Del Muerto Num S/N, 0, Col. Las Aguilas Seccion Hornos, C.P. 1710, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  Miguel Gaona Armenta", url: "https://maps.app.goo.gl/Sq4m1RTWWZBiuC5z6", dir: "14 De Marzo Num S/N, Col. Santa Lucia, C.P. 1509, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  Gomez Farias", url: "https://maps.app.goo.gl/5B2Hy9URg1kcEYDK7", dir: "Gomez Farias Num S/N, Col. Bejero, C.P. 1310, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  La Conchita", url: "https://maps.app.goo.gl/ghzq88QnZub2TAWz8", dir: "Primero De Noviembre Num S/N, Col. La Conchita, C.P. 1190, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  Tolteca", url: "https://maps.app.goo.gl/nLmLrm81AhaFGZDk7", dir: "Escuadron 201 Num S/N, Col. Tolteca, C.P. 1120, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  Lomas De Becerra", url: "https://maps.app.goo.gl/ybTqZ4b54sgPnpxX7", dir: "Antigua Via A La Venta Num S/N, Col. Lomas De Becerra, C.P. 1200, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  El Bosque", url: "https://maps.app.goo.gl/wv8ynLANoofPTy4G6", dir: "Camino Real A Toluca Num S/N, Col. El Bosque 2a Seccion, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  Jose Saramago", url: "https://maps.app.goo.gl/oR2T5HaCNpJiPhfD8", dir: "Rio Mixcoac Oriente Num 29, S/N, Col. Lomas De Plateros, C.P. 11111, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  Plateros I", url: "https://maps.app.goo.gl/XaAGaFSMnJWvfMYJ9", dir: "Francisco P. Miranda Num S/N, Col. Merced Gomez, C.P. 11111, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  La Comuna", url: "https://maps.app.goo.gl/UnhcZSYebDbA9DxS7", dir: "Ricardo Flores Magon Num Sn, Sn, Col. Olivar Del Conde 1a Seccion, C.P. 1408, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  Piloto", url: "https://maps.app.goo.gl/dpBydtgv9W9iMhc77", dir: "Puerto Mazatlan Num Sn, Sn, Col. Piloto Adolfo Mateos, C.P. 1298, Alcaldía Alvaro Obregon",  atel: "", }, 
-        {  alcaldia: "PILARES  Santa Rosa Xochiac", url: "https://maps.app.goo.gl/VbaTefnW4uaRZrCD8", dir: "Rinconada De Jesus Num S/N, Col. Santa Rosa Xochiac, C.P. 1830, Alcaldía Alvaro Obregon",  atel: "", }, 
-        
-
-
       ],
     },
     {
@@ -389,7 +362,7 @@ function Ubicacion() {
       map: (
         <iframe
 
-          src="https://www.google.com/maps/d/embed?mid=1tvi1UH-veWd6uDbiO3qqnEjuNgnYEtg&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1P4WOrE7ULq-hKgAWUDCKA6dRMAB9xMo&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -418,17 +391,6 @@ function Ubicacion() {
           atel: "",
           url: "https://maps.app.goo.gl/htuXAudzkVR5byjCA",
         },
-        {  alcaldia: "PILARES  La Naranja", url: "https://maps.app.goo.gl/Q7UwLGY257XpB1Gw9", dir: "La Naranja Num 1015, Col. San Pedro Xalpa, C.P. 2719, Alcaldía Azcapotzalco",  atel: "", }, 
-        {  alcaldia: "PILARES  Xochinahuac", url: "https://maps.app.goo.gl/C89AuTXdBkZjAbfKA", dir: "Benito Juarez Num 124, Col. San Martin Xochinahuac, C.P. 21200, Alcaldía Azcapotzalco",  atel: "", }, 
-
-        {  alcaldia: "PILARES  Electricistas", url: "https://maps.app.goo.gl/LCvjd91buvP2C3JN9", dir: "Rabaul Num 35 A, Sn, Col. Sindicato Mexicano De Electricistas, C.P. 2060, Alcaldía Azcapotzalco",  atel: "", }, 
-        {  alcaldia: "PILARES  Prohogar", url: "https://maps.app.goo.gl/CZZeckBsiZtaYaji7", dir: "22 Num S/N, Col. Prohogar, C.P. 2600, Alcaldía Azcapotzalco",  atel: "", }, 
-        {  alcaldia: "PILARES  Real De San Martin", url: "https://maps.app.goo.gl/4wJ7UZpoqFbhFqbj7", dir: "Real De San Martin Num 270, Col. Nueva España, C.P. 2129, Alcaldía Azcapotzalco",  atel: "", }, 
-        {  alcaldia: "PILARES  Las Salinas", url: "https://maps.app.goo.gl/QMbaX1UQp2Nozvkn8", dir: "Cahuacatzingo Num 10, Col. Las Salinas, C.P. 2360, Alcaldía Azcapotzalco",  atel: "", }, 
-        {  alcaldia: "PILARES  Tepantongo", url: "https://maps.app.goo.gl/UY7TDnw9qUy6FJh89", dir: "Tepantongo Num Sn, Col. San Marcos, C.P. 2020, Alcaldía Azcapotzalco",  atel: "", }, 
-        {  alcaldia: "PILARES  San Pedro Xalpa", url: "https://maps.app.goo.gl/4w191qBmfgV56RwM8", dir: "Hidalgo Num S/N, Col. San Pedro Xalpa, C.P. 2710, Alcaldía Azcapotzalco",  atel: "", }, 
-        
-
       ],
     },
 
@@ -436,15 +398,12 @@ function Ubicacion() {
       title: "Benito Juárez",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=11TxF0-Xr_zMdOm3JohqipE9ULyNeVyE&ehbc=2E312F"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1iXbUSmuOj-hyJhtW9lcYimmQO7m1XUk&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
-        {  alcaldia: "PILARES  Municipio Libre", url: "https://maps.app.goo.gl/vBToUz9UKZpHR65M8", dir: "Municipio Libre Num 48, Col. Portales, C.P. 3300, Alcaldía Benito Juarez",  atel: "", }, 
-        {  alcaldia: "PILARES  8 De Agosto", url: "https://maps.app.goo.gl/d7zbQRw6bfLukUPx6", dir: "Becerra Num S/N, Col. 8 De Agosto, C.P. 3820, Alcaldía Benito Juarez",  atel: "", }, 
-        {  alcaldia: "PILARES  Portales", url: "https://maps.app.goo.gl/HrHL43vBhQb8JZa36", dir: "7 A Sur Num 52, Col. Portales Sur, C.P. 3300, Alcaldía Benito Juarez",  atel: "", }, 
-        
+        {  alcaldia: "PILARES  8 De Agosto", url: "https://maps.app.goo.gl/d7zbQRw6bfLukUPx6", dir: "Becerra Num S/N, Col. 8 De Agosto, C.P. 3820, Alcaldía Benito Juarez",  atel: "", },
       ],
     },
     {
@@ -452,7 +411,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1ITyGlGxzE2bOtY_Nvn3ZpQuGsIETQh0&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1tVjuVrGXnC3ocsTFLZNGQ8b2AcDhPDM&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -465,22 +424,10 @@ function Ubicacion() {
         },
         {
           alcaldia: "PILARES Topiltzin",
-          url: "https://maps.app.goo.gl/LsRYLxB8waWjE33H6",
+          url: "https://maps.app.goo.gl/vbmXFCAe5J2tKHh89",
           dir: "Mixtecas, S/N, Ajusco, Coyoacán, C.P. 04300",
           atel: "",
         },
-        {  alcaldia: "PILARES  Cantera", url: "https://maps.app.goo.gl/EnoyrUNd6RCCHAyJ9", dir: "Antonio Delfin Madrigal Num 1, Col. Pedregal De Santo Domingo, C.P. 43690, Alcaldía Coyoacan",  atel: "", }, 
-        {  alcaldia: "PILARES  Villa Panamericana", url: "https://maps.app.goo.gl/jzvfm3izuJZqqVwJ8", dir: "Panamericana, C.P. 4700, Alcaldía Coyoacan",  atel: "", }, 
-        {  alcaldia: "PILARES  Emiliano Zapata", url: "", dir: "Jose Maria Morelos Num 43, Col. Emiliano Zapata, C.P. 4815, Alcaldía Coyoacan",  atel: "", }, 
-        {  alcaldia: "PILARES  Francisco J Mujica", url: "https://maps.app.goo.gl/1YTtz41WjpJTSaS88", dir: "Canal Nacional Num S/N, Col. Culhuacan Ctm Viii, Alcaldía Coyoacan",  atel: "", }, 
-        {  alcaldia: "PILARES  El Reloj", url: "https://maps.app.goo.gl/xeAk7MysFxo226KZ8", dir: "Corola Num S/N, Col. El Reloj, C.P. 46200, Alcaldía Coyoacan",  atel: "", },         
-        {  alcaldia: "PILARES  Taxqueña", url: "https://maps.app.goo.gl/LokRN6rvFcUDGVGp7", dir: "Tlalpan Num 2130, Col. Campestre Churubusco, C.P. 4200, Alcaldía Coyoacan",  atel: "", }, 
-        {  alcaldia: "PILARES  Huayamilpas", url: "", dir: "Quinto Callejon Huayamilpas Num 52, Col. Nueva Diaz Ordaz, C.P. 4000, Alcaldía Coyoacan",  atel: "", }, 
-        {  alcaldia: "PILARES  Carmen Serdan", url: "https://maps.app.goo.gl/7Fwp3wW1MMW2p3SCA", dir: "De La Virgen Num S/N, Col. Piloto Culhuacan 5, C.P. 4480, Alcaldía Coyoacan",  atel: "", }, 
-        {  alcaldia: "PILARES  Santa Ana", url: "https://maps.app.goo.gl/vVgU9TTfynctyjsM6", dir: "Santa Ana Num S/N, Col. Ctm Culhuacan V, Alcaldía Coyoacan",  atel: "", }, 
-        {  alcaldia: "PILARES  Parian", url: "https://maps.app.goo.gl/V3WqbgBnCv2Zo4YWA", dir: "Hidalgo Num 128, Col. San Lucas, C.P. 4030, Alcaldía Coyoacan",  atel: "", }, 
-        
-      
       ],
     },
     {
@@ -488,13 +435,13 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/1/embed?mid=1BwTQcdqppGITq9b3FiZlElmMmrK-DQk&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/0/embed?mid=1uNFMpeEOyiNCRjThsUT5qEATrq9L9gI&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
       items: [
         {
-          alcaldia: "PILARES Lic. Benito Juárez García (Chamixto)",
+          alcaldia: "PILARES BENITO JUÁREZ",
           url: "https://maps.app.goo.gl/iofW8kDEDXH2psN36",
           dir: "Leandro Valle, 75, San Lorenzo Acopilco, Cuajimalpa de Morelos, C.P. 5410",
           atel: "55 / 58110518",
@@ -511,8 +458,6 @@ function Ubicacion() {
           dir: "Guillermo Prieto, S/N, Cuajimalpa, Cuajimalpa de Morelos, C.P. 5000",
           atel: "",
         },
-        {  alcaldia: "PILARES  San Pablo Chimalpa", url: "https://maps.app.goo.gl/SUGofcKmB1vVnzQV6", dir: "Porfirio Diaz Num S/N, Col. Chimalpa, C.P. 5050, Alcaldía Cuajimalpa De Morelos",  atel: "", }, 
-        {  alcaldia: "PILARES  Contadero", url: "https://maps.app.goo.gl/nEVDtgDUv1WDTH4X6", dir: "16 De Septiembre Num S/N, Col. Contadero, C.P. 5500, Alcaldía Cuajimalpa De Morelos",  atel: "", }, 
       ],
     },
     {
@@ -549,22 +494,12 @@ function Ubicacion() {
           dir: "República de Perú, 88, Centro, Cuauhtémoc, C.P. 6010",
           atel: "",
         },
-        {  alcaldia: "PILARES  Tolnahuac", url: "https://maps.app.goo.gl/A92Wo8NLArUvYL3T8", dir: "Poniente Guerrero Num S/N, Col. San Simon Tolnahuac, Alcaldía Cuauhtemoc",  atel: "", }, 
-        {  alcaldia: "PILARES  Zona Rosa", url: "https://maps.app.goo.gl/9QzWqjAJWSfYcEts5", dir: "Londres Num 154, S/N, Col. Juarez, C.P. 6600, Alcaldía Cuauhtemoc",  atel: "", }, 
-        {  alcaldia: "PILARES  Tultenco", url: "https://maps.app.goo.gl/2X7T7fiUm2umC5tu5", dir: "San Francisco Tultenco Num 41, Col. Paulino Navarro, Alcaldía Cuauhtemoc",  atel: "", }, 
-        {  alcaldia: "PILARES  Glorieta De Insurgentes", url: "https://maps.app.goo.gl/ts7xUHwy9TRfCGeC8", dir: "Glorieta De Los Insurgentes Num S/N, Col. Juarez, C.P. 6700, Alcaldía Cuauhtemoc",  atel: "", }, 
-        {  alcaldia: "PILARES  Atlampa", url: "https://maps.app.goo.gl/qwWoPeDDneNknDBt8", dir: "De Cedro Num 561, Col. Atlampa, C.P. 6450, Alcaldía Cuauhtemoc",  atel: "", }, 
-
-        {  alcaldia: "PILARES  Tepito", url: "https://maps.app.goo.gl/5YgPUSqrb1FLX7Kr5", dir: "Del Trabajo Num Sn, S/N, Col. Tepito Morelos, C.P. 6200, Alcaldía Cuauhtemoc",  atel: "", }, 
-        {  alcaldia: "PILARES  Monterrey 206", url: "https://maps.app.goo.gl/ZMqpkSE6voG1PwTX7", dir: "Monterrey Num 206, Col. Roma Norte, C.P. 6700, Alcaldía Cuauhtemoc",  atel: "", }, 
-        {  alcaldia: "PILARES  Raton Macias", url: "https://maps.app.goo.gl/4verRp4NsurUwCbTA", dir: "Dr Andrade Num 401, Col. Buenos Aires, C.P. 6780, Alcaldía Cuauhtemoc",  atel: "", }, 
-        {  alcaldia: "PILARES  Tiber", url: "https://maps.app.goo.gl/z9Aksft6e99rk8Er7", dir: "Rio Tiber Num 22, Col. Cuauhtemoc, C.P. 6500, Alcaldía Cuauhtemoc",  atel: "", }, 
-        {  alcaldia: "PILARES  Benito Juarez Monterrey", url: "https://maps.app.goo.gl/ZMqpkSE6voG1PwTX7", dir: "Monterrey Num 206, Col. Roma Norte, C.P. 6700, Alcaldía Cuauhtemoc",  atel: "", }, 
-        {  alcaldia: "PILARES  Sepi", url: "https://maps.app.goo.gl/oYF9nZd3iThqoxvv7", dir: "Netzahualcoyotl Num 29, Col. Centro, Alcaldía Cuauhtemoc",  atel: "", }, 
- 
-        {  alcaldia: "PILARES  El Hijo Del Ahuizote", url: "https://maps.app.goo.gl/GcZjkDxmMXnGRfnQ9", dir: "Republica De Colombia Num 42, Col. Centro, C.P. 6020, Alcaldía Cuauhtemoc",  atel: "", }, 
-        {  alcaldia: "PILARES  Chabacano", url: "https://maps.app.goo.gl/5WD8TwTudTByfPbp6", dir: "San Antonio Abad Num 45, Col. Obrera, Alcaldía Cuauhtemoc",  atel: "", }, 
-
+        {
+          alcaldia: "PILARES Tepito",
+          url: "https://maps.app.goo.gl/5YgPUSqrb1FLX7Kr5",
+          dir: "JESUS CARRANZA, 15, Tepito, C.P. 6200",
+          atel: "",
+        },
       ],
     },
     {
@@ -584,7 +519,7 @@ function Ubicacion() {
           atel: "",
         },
         {
-          alcaldia: "PILARES Benemerito de las Américas",
+          alcaldia: "PILARES BENEMÉRITO DE LAS AMÉRICAS",
           url: "https://maps.app.goo.gl/VX8VPwnxRuPpVJsbA",
           dir: "Vicente Riva Palacio, S/N, Benito Juárez, Gustavo A. Madero, C.P. 7259",
           atel: "",
@@ -632,7 +567,7 @@ function Ubicacion() {
           atel: "",
         },
         {
-          alcaldia: "PILARES San Felipe II",
+          alcaldia: "PILARES SAN FELIPE DE JESÚS",
           url: "https://maps.app.goo.gl/1k121N1yCF4Hy8uK8",
           dir: "Tamazula, S/N, San Felipe de Jesús, Gustavo A. Madero, C.P. 7510",
           atel: "",
@@ -649,183 +584,6 @@ function Ubicacion() {
           dir: "Eje 3 Oriente Ing. Eduardo Molina Enríquez, S/N, Vasco de Quiroga, Gustavo A. Madero, C.P. 7440",
           atel: "",
         },
-        {
-          alcaldia: "PILARES 333 5 De Mayo",
-          url: "",
-          dir: "Tecnologico, C.P. 7200",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Centenario",
-          url: "https://maps.app.goo.gl/B4io3VYZNk8cV7Kr8",
-          dir: "Centenario Num S/N, Col. Juan Gonzalez Romero, C.P. 7410",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Benita Galeana",
-          url: "https://maps.app.goo.gl/GDuPWHHcRcHtrRKdA",
-          dir: "Norte 94 Num S/N, Col. Nueva Tenochtitlan",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Tixtla",
-          url: "https://maps.app.goo.gl/Lg9pXSCraQ2MaKng7",
-          dir: "Cabo San Lucas Num Manzana 14, Lote 5, Col. Gabriel Hernandez",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES San Felipe de Jesus 1",
-          url: "https://maps.app.goo.gl/d7ReBkVhQRjKediK8",
-          dir: "Leon de los Aldama Num S/N, Col. San Felipe De Jesus, C.P. 7510",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Villa de Aragon",
-          url: "https://maps.app.goo.gl/dpwddJvk7HGpZKUg7",
-          dir: "412 Num S/N, Col. Villas De Aragon, C.P. 7550",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Gertrudis Sanchez",
-          url: "https://maps.app.goo.gl/Ki7YY6b73RXAW8QN9",
-          dir: "Henry Ford Num 4313, Col. Gertrudis Sanchez Ii Segunda Seccion, C.P. 7839",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Gran Canal",
-          url: "https://maps.app.goo.gl/VCQrvNd6AwhAgG5QA",
-          dir: "Gran Canal Del Desague Num 6828, Col. Ampliacion Casas Aleman",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Ejidos San Juan de Aragon",
-          url: "https://maps.app.goo.gl/tSAPmWoPxgpNL5iw5",
-          dir: "Puerto Kiel Num S/N, Col. San Juan De Aragon",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES el Vivero",
-          url: "https://maps.app.goo.gl/FBTXVXY9C9HNiT6M6",
-          dir: "Blanca Estela Pavon Num S/N, Col. Forestal, C.P. 7140",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Compositores Mexicanos",
-          url: "https://maps.app.goo.gl/SSuCV1FadiYwvhxr9",
-          dir: "Folkloricos Mexicanos Num S/N, Col. Compositores Mexicanos, C.P. 7130",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES  Salvador diaz Mirón",
-          url: "https://maps.app.goo.gl/CyYdkWAatYSPuqJr7",
-          dir: "Oriente 155 B Num 3418, Col. Salvador Diaz Mirón, C.P. 7400",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Heroes de Cerro Prieto",
-          url: "https://maps.app.goo.gl/uPWroYL3fv6x642NA",
-          dir: "Rublos Num 57, Col. Heroes De Cerro Prieto",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES la Muela",
-          url: "https://maps.app.goo.gl/9Qx5MuVZSmQvdfFb8",
-          dir: "Vrginia Fabregas Num S/N, Col. Arbolillo 2",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Carrera",
-          url: "https://maps.app.goo.gl/d9Wt5mARhEMHHUm88",
-          dir: "Francisco Echeverria Num 315, Col. Martin Carrera, C.P. 7070",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Providencia",
-          url: "https://maps.app.goo.gl/EaQa1Mir5oi21Unh6",
-          dir: "Estado De Morelos Num 81, Col. Providencia, C.P. 7550",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Chalma de Guadalupe",
-          url: "https://maps.app.goo.gl/c1qS3mo3UwspFDqF8",
-          dir: "Morelos Num S/N, Col. Chalma De Guadalupe, C.P. 7160, Alcaldía Gustavo A. Madero",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Lomas de San Juan Ixhuatepec",
-          url: "https://maps.app.goo.gl/gWCnB9GXVFVmgWNi8",
-          dir: "Parque Nacional Num S/N, Col. Lomas De San Juan Ixhuantepec, C.P. 7360, Alcaldía Gustavo A. Madero",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Estrella",
-          url: "https://maps.app.goo.gl/3qPmpzB7Ae3ZKtND7",
-          dir: "Escuela Num S/N, Col. Estrella, C.P. 7810",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Loma la Palma",
-          url: "https://maps.app.goo.gl/1ZfosS5amN1b7fU56",
-          dir: "Tecnologico Num S/N, Col. Loma La Palma, C.P. 7160",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Mercado Emiliano Zapata",
-          url: "",
-          dir: "Oriente 97 Num 95, Col. Tablas De San Agustin, C.P. 7860",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Progreso Nacional",
-          url: "https://maps.app.goo.gl/Pd3f3n6iKw8Zk65x6",
-          dir: "Rio De Los Remdios Num 330, 336, Col. Progreso Nacional, C.P. 7700",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Ramon Corona",
-          url: "https://maps.app.goo.gl/WGrZxdkXJFjNHpga6",
-          dir: "Constancia Num 45, Col. Industrial, C.P. 7800",
-          atel: "",
-        },
-         {
-          alcaldia: "PILARES Ali Chumacero",
-          url: "https://maps.app.goo.gl/LEvEiKrMbHdVjAXT8",
-          dir: "Plan de San Luis Num 50, Col. La Purisima, C.P. 7320",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Bosques de Aragon",
-          url: "https://maps.app.goo.gl/p73ocXHKhaAExdAGA",
-          dir: "510 Num S/N, Col. San Juan De Aragon, C.P. 7920",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Malacates",
-          url: "https://maps.app.goo.gl/kD4A5GE2NzAhH8VZ6",
-          dir: "La Cañada Num 37, Col. Malacates",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Candelaria Ticoman",
-          url: "https://maps.app.goo.gl/59N7HTRSrJAXkuqA6",
-          dir: "Inspectores De La Luz Num 7, 5, Col. Candelaria Ticoman",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Joya De Nieves",
-          url: "https://maps.app.goo.gl/CEFxEVm6qUB3R9qa7",
-          dir: "Paseo Del Bosque Num S/N, Col. Arboledas De Cuautepec, C.P. 7145",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Tres Estrellas",
-          url: "https://maps.app.goo.gl/s5v7JDELMNeyLhFJ9",
-          dir: "Granito Num S/N, Col. Tres Estrellas, C.P. 7820",
-          atel: "",
-        },
-
-       
-       
       ],
     },
     {
@@ -838,7 +596,13 @@ function Ubicacion() {
       ),
       items: [
         {
-          alcaldia: "PILARES Santa Anita",
+          alcaldia: "PILARES ROJO GÓMEZ",
+          url: "https://maps.app.goo.gl/HpA69qd8h2F6Y93E9",
+          dir: "Eje 5 Oriente Javier Rojo Gómez y Calzada Ignacio Zaragoza, S/N, Agrícola Oriental, Iztacalco, C.P. 8500",
+          atel: "",
+        },
+        {
+          alcaldia: "PILARES SANTA ANITA",
           url: "https://maps.app.goo.gl/YWBKUpVY6iwLmFAX8",
           dir: "Congreso de la Unión, S/N, Santa Anita, Iztacalco, C.P. 8300",
           atel: "",
@@ -850,57 +614,9 @@ function Ubicacion() {
           atel: "",
         },
         {
-          alcaldia: "PILARES Rojo Gómez",
-          url: "https://maps.app.goo.gl/HpA69qd8h2F6Y93E9",
-          dir: "Eje 5 Oriente Javier Rojo Gómez y Calzada Ignacio Zaragoza, S/N, Agrícola Oriental, Iztacalco, C.P. 8500",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Paquita Calvo Zapata",
-          url: "https://maps.app.goo.gl/jsz4JGA8RQjAKNQC6",
-          dir: "Lenguas Indígenas, S/N, Carlos Zapata Vela, Iztacalco, C.P. 8040",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Agricola Pantitlan",
-          url: "https://maps.app.goo.gl/gUYfG61ArhFysRzN9",
-          dir: "Uno Num Sn, Col. Pantitlan, C.P. 8100",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Jose Marti",
-          url: "https://maps.app.goo.gl/CroCrA4raCvdRMbW7",
-          dir: "Benito Juarez Num Sn, Col. La Asuncion, C.P. 8600",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Zapata Vela",
+          alcaldia: "PILARES ZAPATA VELA",
           url: "https://maps.app.goo.gl/qPjkmjiruFPMyVNf7",
           dir: "Lenguas Indigenas Num 31, Col. Carlos Zapata Vela, C.P. 8410",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Tezontle",
-          url: "https://maps.app.goo.gl/DN7L5mAznNSsQAiu5",
-          dir: "Canal De Tezontle Num S/N, Col. Campamento 2 De Octubre, C.P. 8930",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Coyuya",
-          url: "",
-          dir: "Plutarco Elias Calles Num S/N, Col. La Cruz Coyuya, C.P. 8320",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Pilares Tlaloc",
-          url: "https://maps.app.goo.gl/GVZTMLPjv1GzjkKE7",
-          dir: "5 Num 425, Col. Agricola Pantitlan, C.P. 8100",
-          atel: "",
-        },
-        {
-          alcaldia: "PILARES Iztlaccihuatl",
-          url: "https://maps.app.goo.gl/HpBe7Pkv9wY2m8p69",
-          dir: "Playa Erizo Num S/N, Col. Reforma Iztlaccihuatl, C.P. 8810",
           atel: "",
         }, 
       ],
