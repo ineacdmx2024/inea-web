@@ -135,9 +135,9 @@ function CarouselOfertEdu() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: dots => (
-     <div className="flex justify-center w-full relative">
-       <ul className="m-0 p-0 flex">{dots}</ul>
-     </div>
+    <div className="flex justify-center w-full">
+      <ul className="m-0 p-0 flex relative">{dots}</ul>
+    </div>
     ),
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
