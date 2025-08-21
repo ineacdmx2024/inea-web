@@ -135,11 +135,9 @@ function CarouselOfertEdu() {
     autoplaySpeed: 5000,
     dotsClass: "slick-dots custom-dots",
     appendDots: dots => (
-      // <div style={{ display: "flex", justifyContent: "center", width: "100%" }} --->cambio a tailwind >
-      <div className="flex justify-center w-full">
-        {/* <ul style={{ margin: 0, padding: 0, display: "flex" }}>{dots}</ul> --->cambio a tailwind */}
-        <ul className="m-0 p-0 flex ">{dots}</ul>
-      </div>
+     <div className="flex justify-center w-full relative">
+       <ul className="m-0 p-0 flex">{dots}</ul>
+     </div>
     ),
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
