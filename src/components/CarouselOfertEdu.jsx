@@ -133,12 +133,12 @@ function CarouselOfertEdu() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
-    dotsClass: "slick-dots custom-dots",
+    dotsClass: "slick-dots custom-dots ",
     appendDots: dots => (
-      // <div style={{ display: "flex", justifyContent: "center", width: "100%" }} --->cambio a tailwind >
-      <div className="flex justify-center w-full">
+    // <div style={{ display: "flex", justifyContent: "center", width: "100%" }} --->cambio a tailwind >
+      <div className="flex justify-center w-full ">
         {/* <ul style={{ margin: 0, padding: 0, display: "flex" }}>{dots}</ul> --->cambio a tailwind */}
-        <ul className="m-0 p-0 flex ">{dots}</ul>
+        <ul className="m-0 p-0 flex">{dots}</ul>
       </div>
     ),
     prevArrow: <PrevArrow />,
@@ -146,7 +146,7 @@ function CarouselOfertEdu() {
   }
   return (
     <>
-      {/* <style jsx global>{`
+      <style jsx global>{`
         .custom-dots {
             display: flex;
             justify-content: center;
@@ -154,6 +154,7 @@ function CarouselOfertEdu() {
             bottom: -20px
             width: 100%;
             margin-top: 20px;
+            margin-bottom: -15px;
             padding: 0;
             position: relative;
           }
@@ -252,7 +253,7 @@ function CarouselOfertEdu() {
             left: 0;
           }
         }
-      `}</style> */}
+      `}</style>
 
       <div className="p-2 pt-0">
         <div className="carrusel desktop-carousel">
