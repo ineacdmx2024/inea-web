@@ -146,7 +146,7 @@ function CarouselOfertEdu() {
   }
   return (
     <>
-      {/* <style jsx global>{`
+      <style jsx global>{`
         .custom-dots {
             display: flex;
             justify-content: center;
@@ -252,7 +252,7 @@ function CarouselOfertEdu() {
             left: 0;
           }
         }
-      `}</style> */}
+      `}</style>
 
       <div className="p-2 pt-0">
         <div className="carrusel desktop-carousel">
