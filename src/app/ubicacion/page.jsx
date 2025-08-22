@@ -368,7 +368,7 @@ function Ubicacion() {
       map: (
         <iframe
 
-          src="https://www.google.com/maps/d/u/0/embed?mid=1P4WOrE7ULq-hKgAWUDCKA6dRMAB9xMo&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1tvi1UH-veWd6uDbiO3qqnEjuNgnYEtg&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -404,7 +404,7 @@ function Ubicacion() {
       title: "Benito Juárez",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=1iXbUSmuOj-hyJhtW9lcYimmQO7m1XUk&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1x2BWSPci6dXVLQRGMJqYPlX9j7_o6Io&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -417,7 +417,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=1tVjuVrGXnC3ocsTFLZNGQ8b2AcDhPDM&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1ITyGlGxzE2bOtY_Nvn3ZpQuGsIETQh0&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -441,7 +441,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=1uNFMpeEOyiNCRjThsUT5qEATrq9L9gI&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1BwTQcdqppGITq9b3FiZlElmMmrK-DQk&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -471,7 +471,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=1vHQf833wZK1JmolYXyYahLvV9QuaA-A&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1QQ9E05nybLWo3xQ-ghjhRN0v3ltjSdI&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
