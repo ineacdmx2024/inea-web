@@ -313,7 +313,7 @@ function Ubicacion() {
       map: (
         <iframe
     
-          src="https://www.google.com/maps/d/u/0/embed?mid=1dUoDkBhnZ7kM3M8YNK0TpRaTimI1FSk&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1KUG8-R8CmUpVRp3E-nIXuzz06p1wNlw&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
