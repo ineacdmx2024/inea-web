@@ -513,7 +513,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=1HbfOxKiEQxw0VmF1FK3jgZ55YsivCME&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1lAOkYsB99LTW8e_TOnjY9Scs3o-jjjc&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -596,7 +596,7 @@ function Ubicacion() {
       title: "Iztacalco",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=1RWgD5ZEvgfDqP-K4LCZ-W6afS76F5Qg&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1iLy4t7C7rHAzzMdZNQ2CRV6p7BnYhSg&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -632,7 +632,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=1g6Gw-nWoi_N903Wi0eB_j31Q1uObuLM&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1OznqZCbiP9RCZsItgJ4A5VtHJqVn3bY&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -658,7 +658,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=1j-IipwRhA4n3DjOLOW-qwVtJO_QlQTo&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1ncVqwipRDOxyw_QgeNRzQ6fsqe5vXks&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -682,7 +682,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=1ojNbNWeAtEa9F7Oxgy2QIxkN-tnumFw&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1zXfA0ytyAY7vwUiaZ_yoBwBYNe-Tc9s&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -713,7 +713,7 @@ function Ubicacion() {
       title: "Milpa Alta",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=19X_1K8o_WRXLftyXb45hRLTgY7Rw6ck&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1IO2-asrRxv8fBvR6vfsQOqjohy2pIIw&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -738,7 +738,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=1oLfTOQvxw7JQVZLEUMcC-vScIwavF3g&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1KyEsuAGClb9AJaB_132IGHOkDQTtHww&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         />
       ),
@@ -767,7 +767,7 @@ function Ubicacion() {
       title: "Tlalpan",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=1envJgOZv-SpQNBUjLqj3ZJbZIcykP2c&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1WMzcmG_cP0QEkJqPQUttqSVSRDo-UR8&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -803,7 +803,7 @@ function Ubicacion() {
       title: "Venustiano Carranza",
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=1XyPBP0g2GhuYLMD2-kdEiH7oHiM6KT4&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1-IH5YXtPfckdLJzkRCoXXVEGmXYIk5s&ehbc=2E312F&noprof=1"
           className=" md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
@@ -828,7 +828,7 @@ function Ubicacion() {
 
       map: (
         <iframe
-          src="https://www.google.com/maps/d/u/0/embed?mid=1Ihs3t8alZ2uC6B4XWla_mOOXnXhXVj4&ehbc=2E312F&noprof=1"
+          src="https://www.google.com/maps/d/u/3/embed?mid=1WuZvjTjaWd_2I6IAG7D7DVXqgYHEL_4&ehbc=2E312F&noprof=1"
           className="  md:h-[380px]  w-[100%]  h-[300px]"
         ></iframe>
       ),
