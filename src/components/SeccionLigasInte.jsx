@@ -179,7 +179,7 @@ function SeccionLigasInte() {
           margin: 0;
         }
         .custom-dots li {
-          margin: 0 4px;
+          margin: -10px 4px;
           display: inline-block;
         }
         .custom-dots li button {

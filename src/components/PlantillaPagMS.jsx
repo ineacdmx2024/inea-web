@@ -24,8 +24,8 @@ function PagSec({ Enlaces = [], Titulo, children, mostrarCarrusel = true }) {
 
         {/* Contenido principal (8/12 en md+) */}
         <div
-          style={{ marginTop: "-20px" }}
-          className="col-span-12 md:col-span-8 text-[18px]"
+          // style={{ marginTop: "-20px" }}
+          className="mt-[-20px] col-span-12 md:col-span-8 text-[18px]"
         >
           {Titulo && (
             <h1
