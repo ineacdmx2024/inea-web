@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 
 // Función para capitalizar el texto
@@ -89,7 +88,7 @@ const SkewedPagesResponsive = ({ datos }) => {
           <button
             key={elemento.alcaldia}
             type="button"
-            className="text-[#611232] rounded-lg top-0 hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-[white] font-medium px-5 py-2.5 text-center me-2 mb-2  text-lg flex"
+            className="text-[#700425] rounded-lg top-0 hover:text-white border border-[#700425] hover:bg-[#700425] focus:ring-4 focus:outline-none focus:ring-[#3a0c1e] focus:bg-[#700425] focus:text-[white] font-medium px-5 py-2.5 text-center me-2 mb-2  text-lg flex"
             onClick={() => handleAlcaldiaClick(elemento.alcaldia)}
           >
             <svg
@@ -129,7 +128,7 @@ const SkewedPagesResponsive = ({ datos }) => {
           >
             {/* Lado izquierdo- Arriba */}
             <div className="left-0 top-0">
-              <div className="flex-column items-center justify-center text-center p-2 h-full bg-cover bg-[#611232] rounded-t-lg text-white">
+              <div className="flex-column items-center justify-center text-center p-2 h-full bg-cover bg-[#700425] rounded-t-lg text-white">
                 <h1 className="mt-3 uppercase text-[25px] text-center">
                   {pageData.title}
                 </h1>
