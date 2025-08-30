@@ -862,8 +862,8 @@ function Ubicacion() {
                   // className={`${notoSans.className} inline-block p-4 text-[18px] ${
                   className={`font-noto inline-block p-4 text-[18px] ${
                     opcionSeleccionada === "coordinaciones"
-                      ? "text-[#A57F2C]  font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C]"
-                      : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#611232] hover:font-bold hover:bg-slate-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                      ? "text-[#3a0c1e]  font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#3a0c1e]"
+                      : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#700425] hover:font-bold hover:bg-slate-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
                   }`}
                   onClick={() => handleOpcionSeleccionada("coordinaciones")}
                 >
@@ -876,8 +876,8 @@ function Ubicacion() {
                   // className={`${notoSans.className} inline-block p-4 text-[18px] ${
                   className={`font-noto inline-block p-4 text-[18px] ${
                     opcionSeleccionada === "plazas"
-                      ? "text-[#A57F2C]  font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C]"
-                      : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#611232] hover:font-bold hover:bg-slate-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                      ? "text-[#3a0c1e]  font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#3a0c1e]"
+                      : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#700425] hover:font-bold hover:bg-slate-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
                   }`}
                   onClick={() => handleOpcionSeleccionada("plazas")}
                 >
@@ -890,8 +890,8 @@ function Ubicacion() {
                   // className={`${notoSans.className} inline-block p-4 text-[18px] ${
                   className={`font-noto inline-block p-4 text-[18px] ${
                     opcionSeleccionada === "pilares"
-                      ? "text-[#A57F2C] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#A57F2C] "
-                      : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#611232] hover:font-bold hover:bg-slate-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+                      ? "text-[#3a0c1e] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800 dark:text-[#3a0c1e] "
+                      : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#700425] hover:font-bold hover:bg-slate-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
                   }`}
                   onClick={() => handleOpcionSeleccionada("pilares")}
                 >
@@ -946,7 +946,6 @@ function Ubicacion() {
               </div>
             )}
             {opcionSeleccionada === "pilares" && (
-              // Luego implementamos lo de pulares ahorita puse las plazas
               <div className="row-span-1">
                 <div className="mx-auto mb-4 w-full max-w-full ">
                   <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px] ">
