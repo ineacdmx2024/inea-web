@@ -7,6 +7,7 @@ import Ubicacion from "@/components/Ubicacion";
 import BannerContingencia from "@/components/BannerContingencia";
 import ScrollLoadSection from "@/components/ScrollLoadSection";
 
+
 function Page() {
   return (
     <main className="mx-auto bg-white pt-[94px] pb-[100px] w-full overflow-x-hidden">
@@ -45,7 +46,7 @@ function Page() {
             Blog
           </h1>
           <div className="flex items-center mb-6">
-            <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+            <div className="w-9 h-[5px] bg-[#3a0c1e] mt-1"></div>
             <div className="flex-grow h-px bg-gray-300"></div>
           </div>
           <ScrollLoadSection delay={2500}>
@@ -61,7 +62,7 @@ function Page() {
             Oferta educativa
           </h1>
           <div className="flex items-center">
-            <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+            <div className="w-9 h-[5px] bg-[#3a0c1e] mt-1"></div>
             <div className="flex-grow h-px bg-gray-300"></div>
           </div>
         </div>
@@ -77,7 +78,7 @@ function Page() {
             Enlaces de interés
           </h1>
           <div className="flex items-center">
-            <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+            <div className="w-9 h-[5px] bg-[#3a0c1e] mt-1"></div>
             <div className="flex-grow h-px bg-gray-300"></div>
           </div>
         </div>
@@ -93,7 +94,7 @@ function Page() {
             Ubicación
           </h1>
           <div className="flex items-center mt-1">
-            <div className="w-9 h-[5px] bg-[#b38e61]"></div>
+            <div className="w-9 h-[5px] bg-[#3a0c1e]"></div>
             <div className="flex-grow h-px bg-gray-300"></div>
           </div>
         </div>
