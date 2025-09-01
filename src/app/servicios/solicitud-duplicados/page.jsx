@@ -28,7 +28,7 @@ function Solicitud_duplicados() {
   const [file, setFile] = useState(null);
   const [captcha, setCaptcha] = React.useState("");
 
- 
+
   function range(start, end, step) {
     const result = [];
     for (let i = start; i < end; i += step) {
@@ -165,7 +165,7 @@ const day = [
           if(!res.ok){
           throw new Error('Something went wrong')
     }
-     const { data } = await res.json()
+    const { data } = await res.json()
 
       setDatos(data);
 
@@ -204,7 +204,7 @@ const onSubmit = async(data) =>{
 
 
       if (item) {
-     
+    
         if (item.Lugar_de_nacimiento === "Genérico" || item.Lugar_de_nacimiento === "Generico" ) {
             // Si es así, agregamos el correo a la lista de Obt_Correos
             Obt_Correo_Generico.push(item.Correo);
@@ -214,8 +214,8 @@ const onSubmit = async(data) =>{
     });
   }
 
-   if(captcha)
-   {
+    if(captcha)
+  {
 
 
     // Mostrar el indicador de carga (loading)
@@ -259,37 +259,37 @@ const onSubmit = async(data) =>{
 
           const maxLengthNombre = 70;
           const truncatedName = data.Nombre.length > maxLengthNombre ? `${data.Nombre.substring(0, maxLengthNombre)}` : data.Nombre;
-         
+        
           const maxLengthApellidoMaterno = 70;
           const truncatedApellidoMaterno = data.ApellidoMaterno.length > maxLengthApellidoMaterno ? `${data.ApellidoMaterno.substring(0, maxLengthApellidoMaterno)}` : data.ApellidoMaterno;
-         
+        
           const maxLengthApellidoPaterno = 70;
           const truncatedApellidoPaterno = data.ApellidoPaterno.length > maxLengthApellidoPaterno ? `${data.ApellidoPaterno.substring(0, maxLengthApellidoPaterno)}` : data.ApellidoPaterno;
-         
+        
           // Formatear la fecha a español
           const formattedDate = format(data.FechaNacimiento, "dd 'de' MMMM 'de' yyyy", { locale: es });
 
 
 
-           const maxLengthFechaNacimiento = 10;
-           const truncatedFechaNacimiento = data.FechaNacimiento.length > maxLengthFechaNacimiento ? `${data.FechaNacimiento.substring(0, maxLengthFechaNacimiento)}` : data.FechaNacimiento;
+          const maxLengthFechaNacimiento = 10;
+          const truncatedFechaNacimiento = data.FechaNacimiento.length > maxLengthFechaNacimiento ? `${data.FechaNacimiento.substring(0, maxLengthFechaNacimiento)}` : data.FechaNacimiento;
           
-           const maxLengthCorreo= 250;
+          const maxLengthCorreo= 250;
           const truncatedCorreo = data.Correo.length > maxLengthCorreo ? `${data.Correo.substring(0, maxLengthCorreo)}` : data.Correo;
-         
+        
           const maxLengthTelefono= 50;
           const truncatedTelefono = data.Telefono.length > maxLengthTelefono ? `${data.Telefono.substring(0, maxLengthTelefono)}` : data.Telefono;
-         
+        
           const maxLengthComentarios= 450;
           const truncatedComentarios = data.Comentarios.length > maxLengthComentarios ? `${data.Comentarios.substring(0, maxLengthComentarios)}` : data.Comentarios;
-         
+        
           const maxLengthAño = 5;
           const truncatedAño = data.Año.length > maxLengthAño ? `${data.Año.substring(0, maxLengthAño)}` : data.Año;
 
 
           if(RESDATA.URL_Certificado){
-   
-         
+  
+    
             emailData = {
               data: {
                   Para: `${Obt_Correo_Generico[0]},${data.Correo}`,
@@ -308,17 +308,17 @@ const onSubmit = async(data) =>{
                   `,
                 
   
-                 imagen: [
-                    ...(RESDATA.URL_Curp ? [RESDATA.URL_Curp] : []),
-                    ...(RESDATA.URL_Identificacion ? [RESDATA.URL_Identificacion] : []),
-                    ...(RESDATA.URL_Fotografia ? [RESDATA.URL_Fotografia] : []),
-                    ...(RESDATA.URL_Certificado ? [RESDATA.URL_Certificado] : []),
-                  ].join('|')  // Unir los nombres de los archivos con una coma
-  
-              }
-          };
+                  imagen: [
+                      ...(RESDATA.URL_Curp ? [RESDATA.URL_Curp] : []),
+                      ...(RESDATA.URL_Identificacion ? [RESDATA.URL_Identificacion] : []),
+                      ...(RESDATA.URL_Fotografia ? [RESDATA.URL_Fotografia] : []),
+                      ...(RESDATA.URL_Certificado ? [RESDATA.URL_Certificado] : []),
+                    ].join('|')  // Unir los nombres de los archivos con una coma
+    
+                }
+            };
 
-       }else{
+        }else{
 
   
         emailData = {
@@ -339,7 +339,7 @@ const onSubmit = async(data) =>{
               `,
 
               Para: `${Obt_Correos[0]},${Obt_Correo_Generico[0]},${data.Correo}`,
-             imagen: [
+              imagen: [
                 ...(RESDATA.URL_Curp ? [RESDATA.URL_Curp] : []),
                 ...(RESDATA.URL_Identificacion ? [RESDATA.URL_Identificacion] : []),
                 ...(RESDATA.URL_Fotografia ? [RESDATA.URL_Fotografia] : []),
@@ -348,7 +348,7 @@ const onSubmit = async(data) =>{
           }
       };
 
-       }
+      }
 
 
       
@@ -394,7 +394,7 @@ const onSubmit = async(data) =>{
         }
       
 
-   }else{
+    }else{
       Swal.fire({
         title: 'Ups...!',
         text: '¡por favor capture recaphca!',
@@ -425,14 +425,14 @@ return (
         <div className="mx-auto mb-4 w-full max-w-full md:max-w-[1140px]">
         <div className="pt-4 leading-7 justify-start text-[#333334] text-[18px] ">
             <p className="text-left font-light">
-               Si recibiste tu certificado en formato impreso antes de 2018 y lo has extraviado, completa el siguiente
-               formulario con la información correcta. Ésta será enviada a la Unidad de Operación del INEA en la Ciudad
-               de México para solicitar un duplicado o la digitalización de tu certificado de primaria o secundaria 
-               expedido por esta institución. Si concluiste en el 2018 o en adelante, accede a 
-                 <strong>
-                   <a className="text-blue-700" href="https://certificacion.inea.gob.mx/DescCertificado.aspx">
-                   este sitio para descargar tu certificado.
-                   </a>
+                Si recibiste tu certificado en formato impreso antes de 2018 y lo has extraviado, completa el siguiente
+                formulario con la información correcta. Ésta será enviada a la Unidad de Operación del INEA en la Ciudad
+                de México para solicitar un duplicado o la digitalización de tu certificado de primaria o secundaria 
+                expedido por esta institución. Si concluiste en el 2018 o en adelante, accede a 
+                  <strong>
+                    <a className="text-[#700425] hover:underline hover:text-[#3a0c1e]" href="https://certificacion.inea.gob.mx/DescCertificado.aspx">
+                     este sitio para descargar tu certificado.
+                    </a>
                 </strong>{" "}
             </p>
           </div>
@@ -477,7 +477,7 @@ return (
                   <spam className="text-red-600"> 
                     (*)</spam></label>
                 <input
-       
+
                   type="text"
                   name="ApellidoPaterno"
                   // className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
@@ -571,7 +571,7 @@ return (
                   Este campo es obligatorio</p>
                 )}
 
-               {errors?.Nombre && (
+                {errors?.Nombre && (
                       // <p className="AlertaCampo">
                       <p className="text-red-600">
                         {errors.Nombre.message}
@@ -581,88 +581,88 @@ return (
             </div>
 
             <div className="pt-3  grid grid-cols-1  sm:grid-cols-2">
-         <div className="sm:mr-5">
-         <label className="block" for="calendarYear">
-               Fecha de nacimiento
+          <div className="sm:mr-5">
+          <label className="block" for="calendarYear">
+                Fecha de nacimiento
                {/* <spam className="red">  */}
-               <spam className="text-red-600"> 
+                <spam className="text-red-600"> 
                 (*)</spam>
-             </label>
-         <Controller
-           control={control}  // Se pasa el 'control' para integrar con react-hook-form
-           name="FechaNacimiento"
-           rules={{ required: "Este campo es obligatorio" }} // Validación obligatoria
-           render={({ field }) => (
-             <DatePicker
+              </label>
+          <Controller
+            control={control}  // Se pasa el 'control' para integrar con react-hook-form
+            name="FechaNacimiento"
+            rules={{ required: "Este campo es obligatorio" }} // Validación obligatoria
+            render={({ field }) => (
+              <DatePicker
                {...field}  // Pasamos 'field' para manejar el valor y los cambios
-               renderCustomHeader={({
-                 date,
-                 changeYear,
-                 changeMonth,
-                 decreaseMonth,
-                 increaseMonth,
-                 prevMonthButtonDisabled,
-                 nextMonthButtonDisabled,
-               }) => (
-                 <div
-                   style={{
-                     margin: 10,
-                     display: "flex",
-                     justifyContent: "center",
-                   }}
-                 >
-                   <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
-                     {"<"}
-                   </button>
- 
-                   <select
-                     value={date.getFullYear()}
-                     onChange={({ target: { value } }) => changeYear(Number(value))}
-                   >
-                     {years.map((option) => (
-                       <option key={option} value={option}>
-                         {option}
-                       </option>
-                     ))}
-                   </select>
- 
-                   <select
-                     value={months[date.getMonth()]}
-                     onChange={({ target: { value } }) =>
-                       changeMonth(months.indexOf(value))
-                     }
-                   >
-                     {months.map((option) => (
-                       <option key={option} value={option}>
-                         {option}
-                       </option>
-                     ))}
-                   </select>
- 
-                   <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
-                     {">"}
-                   </button>
-                 </div>
-               )}
+                renderCustomHeader={({
+                  date,
+                  changeYear,
+                  changeMonth,
+                  decreaseMonth,
+                  increaseMonth,
+                  prevMonthButtonDisabled,
+                  nextMonthButtonDisabled,
+                }) => (
+                  <div
+                    style={{
+                      margin: 10,
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <button onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
+                      {"<"}
+                    </button>
+                    
+                    <select
+                      value={date.getFullYear()}
+                      onChange={({ target: { value } }) => changeYear(Number(value))}
+                    >
+                      {years.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                    
+                    <select
+                      value={months[date.getMonth()]}
+                      onChange={({ target: { value } }) =>
+                        changeMonth(months.indexOf(value))
+                      }
+                    >
+                      {months.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+  
+                    <button onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
+                      {">"}
+                    </button>
+                  </div>
+                )}
                selected={field.value} // Aquí tomamos el valor del campo controlado por react-hook-form
                onChange={field.onChange}  // Asegúrate de manejar el cambio usando field.onChange
                dateFormat="dd/MM/yyyy" // Formato de fecha (día, mes, año)
                placeholderText="DD/MM/AAAA" // Texto de marcador
                locale={es} // Configurar el idioma a español
-              //  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
-               className={`${notoSans.className} text-[#333334] cursor-pointer box-border border border-solid border-[#ccc] rounded p-2 w-full focus:outline-none focus:border-[#496cec] focus:shadow-[0_0_10px_rgba(173,216,230,0.7)]`}
-      
-             />
-           )}
-         />
- 
+                //  className={`${notoSans.className} text-[#333334] cursor-pointer input-personalizado`}
+                className={`${notoSans.className} text-[#333334] cursor-pointer box-border border border-solid border-[#ccc] rounded p-2 w-full focus:outline-none focus:border-[#496cec] focus:shadow-[0_0_10px_rgba(173,216,230,0.7)]`}
+        
+              />
+            )}
+          />
+
          {/* Mostrar mensaje de error si no se selecciona la fecha */}
-         {errors?.FechaNacimiento && (
-          //  <p className="AlertaCampo">
-           <p className="text-red-600">
-            {errors.FechaNacimiento.message}</p>
-         )}
-         </div>
+          {errors?.FechaNacimiento && (
+            //  <p className="AlertaCampo">
+            <p className="text-red-600">
+              {errors.FechaNacimiento.message}</p>
+          )}
+          </div>
 
               <div className="">
                 <label className="pt-3 sm:pt-0 block">
@@ -1024,7 +1024,7 @@ return (
             )}
             <div className="pt-3 pb-3">
               <button
-                className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] flex w-full justify-center"                type="submit"
+                className="m-auto letras:ml-auto bg-[#700425] text-white py-3 px-3 hover:bg-white hover:text-[#700425] rounded-full border-2 border-[#700425] flex w-full justify-center"                type="submit"
                 value="Enviar"
               >
                 Enviar
@@ -1035,7 +1035,7 @@ return (
               <p className="pt-3 text-left font-light">
                 En la cuenta{" "}
                 <strong>
-                  <a className="text-blue-700" href="mailto:inea@inea.gob.mx">
+                  <a className="text-[#700425] hover:underline hover:text-[#3a0c1e]" href="mailto:inea@inea.gob.mx">
                     inea@inea.gob.mx
                   </a>
                 </strong>{" "}
@@ -1045,7 +1045,7 @@ return (
                 Si te condicionaron o pidieron algo a cambio de la entrega de tu
                 certificado o de cualquier otro servicio, DENÚNCIALO al:{" "}
                 <strong>
-                  <a className="text-blue-700" href="tel:+558000060300">
+                  <a className="text-[#700425] hover:underline hover:text-[#3a0c1e]" href="tel:+558000060300">
                     {" "}
                     800-0060-300.
                   </a>
