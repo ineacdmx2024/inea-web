@@ -170,8 +170,8 @@ function Reposicion_certificados() {
                       notoSans.className
                     } inline-block p-4 text-[18px] ${
                       opcionSeleccionada === key
-                        ? "text-[#A57F2C] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800"
-                        : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#611232] hover:font-bold hover:bg-slate-50"
+                        ? "text-[#3a0c1e] font-bold bg-gray-100 rounded-t-lg active dark:bg-gray-800"
+                        : "text-[#333334] border border-gray-200 rounded-t-lg hover:text-[#700425] hover:font-bold hover:bg-slate-50"
                     }`}
                     onClick={() => handleOpcionSeleccionada(key)}
                   >
@@ -195,7 +195,7 @@ function Reposicion_certificados() {
                 través de la siguiente página de internet: &nbsp;
                 <a
                   // className="a-sep"
-                  className="text-[#611232] cursor-pointer hover:text-[#D3C09B] hover:underline"
+                  className="text-[#700425] cursor-pointer hover:text-[#3a0c1e] hover:underline"
                   href=" https://www10.aefcm.gob.mx:8006/ugd/rce/"
                 >
                   https://www10.aefcm.gob.mx:8006/ugd/rce/
@@ -208,7 +208,7 @@ function Reposicion_certificados() {
               descargar a través de la siguiente página de internet:&nbsp;
               <a
                 // className="a-sep"
-                className="text-[#611232] cursor-pointer hover:text-[#D3C09B] hover:underline"
+                className="text-[#700425] cursor-pointer hover:text-[#3a0c1e] hover:underline"
                 href="https://www.controlescolar.aefcm.gob.mx/valida"
               >
                 https://www.controlescolar.aefcm.gob.mx/valida.
@@ -234,7 +234,7 @@ function Reposicion_certificados() {
                 <button
                   key={id}
                   type="button"
-                  className="text-[#611232] rounded-lg hover:text-white border border-[#611232] hover:bg-[#611232] focus:ring-4 focus:outline-none focus:ring-[#A57F2C] focus:bg-[#611232] focus:text-white font-medium px-5 py-2 text-center me-1 mb-0 mt-0 text-lg flex items-center justify-center gap-2"
+                  className="text-[#700425] rounded-lg hover:text-white border border-[#700425] hover:bg-[#700425] focus:ring-4 focus:outline-none focus:ring-[#3a0c1e] focus:bg-[#700425] focus:text-white font-medium px-5 py-2 text-center me-1 mb-0 mt-0 text-lg flex items-center justify-center gap-2"
                   onClick={() => {
                     const section = document.getElementById(id);
                     if (section) {
@@ -272,7 +272,7 @@ function Reposicion_certificados() {
                 {/* <h2 className="patria title-sep">Primaria</h2> */}
                 <h2 className="patria text-2xl font-bold mb-4">Primaria</h2>
                 <div className="flex items-center">
-                  <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+                  <div className="w-9 h-[5px] bg-[#3a0c1e] mt-1"></div>
                   <div className="flex-grow h-px bg-gray-300"></div>
                 </div>
                 <div className="space-y-6 mt-6">
@@ -288,7 +288,7 @@ function Reposicion_certificados() {
                 {/* <h2 className="patria title-sep mt-12">Direcciones adicionales</h2> */}
                 <h2 className="patria text-2xl font-bold mb-4 mt-12">Direcciones adicionales</h2>
                   <div className="flex items-center">
-                      <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+                      <div className="w-9 h-[5px] bg-[#3a0c1e] mt-1"></div>
                       <div className="flex-grow h-px bg-gray-300"></div>
                   </div>
               </div>
@@ -308,7 +308,7 @@ function Reposicion_certificados() {
                 {/* <h2 className="patria title-sep mt-6">Secundaria</h2> */}
                 <h2 className="patria text-2xl font-bold mb-4 mt-6">Secundaria</h2>
                 <div className="flex items-center">
-                  <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
+                  <div className="w-9 h-[5px] bg-[#3a0c1e] mt-1"></div>
                   <div className="flex-grow h-px bg-gray-300"></div>
                 </div>
               </div>
@@ -328,7 +328,7 @@ function Reposicion_certificados() {
                 >
                   <path
                     d="M7 4.5C7.66304 4.5 8.29893 4.76339 8.76777 5.23223C9.23661 5.70107 9.5 6.33696 9.5 7C9.5 7.3283 9.43534 7.65339 9.3097 7.95671C9.18406 8.26002 8.99991 8.53562 8.76777 8.76777C8.53562 8.99991 8.26002 9.18406 7.95671 9.3097C7.65339 9.43534 7.3283 9.5 7 9.5C6.33696 9.5 5.70107 9.23661 5.23223 8.76777C4.76339 8.29893 4.5 7.66304 4.5 7C4.5 6.33696 4.76339 5.70107 5.23223 5.23223C5.70107 4.76339 6.33696 4.5 7 4.5ZM7 0C8.85652 0 10.637 0.737498 11.9497 2.05025C13.2625 3.36301 14 5.14348 14 7C14 12.25 7 20 7 20C7 20 0 12.25 0 7C0 5.14348 0.737498 3.36301 2.05025 2.05025C3.36301 0.737498 5.14348 0 7 0ZM7 2C5.67392 2 4.40215 2.52678 3.46447 3.46447C2.52678 4.40215 2 5.67392 2 7C2 8 2 10 7 16.71C12 10 12 8 12 7C12 5.67392 11.4732 4.40215 10.5355 3.46447C9.59785 2.52678 8.32608 2 7 2Z"
-                    fill="#611232"
+                    fill="#700425"
                   />
                 </svg>
                 <a
@@ -336,7 +336,7 @@ function Reposicion_certificados() {
                   target="_blank"
                   rel="noopener noreferrer"
                   // className="link-hover text-underline"
-                  className="cursor-pointer transition-colors duration-200 ease-in-out no-underline hover:underline hover:text-[#D3C09B] text-underline"
+                  className="cursor-pointer transition-colors duration-200 ease-in-out no-underline hover:underline hover:text-[#3a0c1e] text-underline"
                 >
                   Nezahualcóyotl, No. Ext: 127, No. Int: Piso 8, C.P. 06080,
                   Alcaldía Cuauhtémoc, Ciudad de México.
@@ -354,7 +354,7 @@ function Reposicion_certificados() {
               >
                 <path
                   d="M17 13C15.8 13 14.5 12.8 13.4 12.4C13.3 12.4 13.2 12.4 13.1 12.4C12.8 12.4 12.6 12.5 12.4 12.7L10.2 14.9C7.4 13.4 5 11.1 3.6 8.3L5.8 6.1C6.1 5.8 6.2 5.4 6 5.1C5.7 4 5.5 2.7 5.5 1.5C5.5 1 5 0.5 4.5 0.5H1C0.5 0.5 0 1 0 1.5C0 10.9 7.6 18.5 17 18.5C17.5 18.5 18 18 18 17.5V14C18 13.5 17.5 13 17 13ZM2 2.5H3.5C3.6 3.4 3.8 4.3 4 5.1L2.8 6.3C2.4 5.1 2.1 3.8 2 2.5ZM16 16.5C14.7 16.4 13.4 16.1 12.2 15.7L13.4 14.5C14.2 14.7 15.1 14.9 16 14.9V16.5Z"
-                  fill="#611232"
+                  fill="#700425"
                 />
               </svg>
               <span className="text-[#333334]">5536018400 Ext. 48380</span>
@@ -371,13 +371,13 @@ function Reposicion_certificados() {
                 >
                   <path
                     d="M20 2C20 0.9 19.1 0 18 0H2C0.9 0 0 0.9 0 2V14C0 15.1 0.9 16 2 16H18C19.1 16 20 15.1 20 14V2ZM18 2L10 7L2 2H18ZM18 14H2V4L10 9L18 4V14Z"
-                    fill="#611232"
+                    fill="#700425"
                   />
                 </svg>
                 <a
                   href="mailto:control.escolar.cses@aefcm.gob.mx"
                   // className="link-hover"
-                  className="cursor-pointer transition-colors duration-200 ease-in-out no-underline hover:underline hover:text-[#D3C09B]"
+                  className="cursor-pointer transition-colors duration-200 ease-in-out no-underline hover:underline hover:text-[#3a0c1e]"
                 >
                   control.escolar.cses@aefcm.gob.mx
                 </a>
