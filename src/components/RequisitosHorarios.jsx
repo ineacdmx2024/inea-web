@@ -12,11 +12,11 @@ export default function RequisitosHorarios() {
         </h3>
         {/* <ul className="ul-sep list-disc ml-8"> */}
         <ul className="list-disc ml-8">
-       <li className="mb-5 break-words">
+        <li className="mb-5 break-words">
             Solicitud del trámite:{" "}
         <a
             href="https://www10.aefcm.gob.mx:8006/ugd/rce/"
-            className="cursor-pointer transition-colors duration-200 ease-in-out no-underline hover:underline hover:text-[#D3C09B]"
+            className="cursor-pointer transition-colors duration-200 ease-in-out no-underline hover:underline hover:text-[#3a0c1e]"
         >
             https://www10.aefcm.gob.mx:8006/ugd/rce/
         </a>
