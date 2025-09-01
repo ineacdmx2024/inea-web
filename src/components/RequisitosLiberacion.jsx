@@ -6,7 +6,7 @@ export default function RequisitosLiberacion() {
     <div>
       <div
         id="alert-requisitos-liberacion"
-        className="p-4 mb-4 mt-2 border border-[#A57F2C] rounded-lg bg-yellow-50 text-[#333334]"
+        className="p-4 mb-4 mt-2 border border-[#3a0c1e] rounded-lg bg-yellow-50 text-[#333334]"
         role="alert"
       >
         <div className="flex flex-col gap-4">
