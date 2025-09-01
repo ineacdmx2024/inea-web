@@ -174,7 +174,7 @@ const CarouselBlog = ({ item }) => {
           transition: all 0.3s ease;
         }
         .custom-dots li.slick-active button:before {
-          color: #611232;
+          color: #700425;
           transform: scale(1.2);
         }
       `}</style> */}
@@ -221,7 +221,7 @@ const CarouselBlog = ({ item }) => {
                     </p>
                     <div className="overflow-visible !z-10">
                       <Link
-                        className="text-center m-auto w-44 letras:ml-auto bg-[#611232] text-white py-3 hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] block"
+                        className="text-center m-auto w-44 letras:ml-auto bg-[#700425] text-white py-3 hover:bg-white hover:text-[#700425] rounded-full border-2 border-[#700425] block"
                         href={`/blog/noticias-antiguas/${item.attributes.slug}`}
                       >
                         <p className="text-xs letras:text-[14.5px] font-light">
@@ -242,7 +242,7 @@ const CarouselBlog = ({ item }) => {
       {/* Botón Noticias Anteriores */}
       <div className="w-full flex justify-end mt-12 px-4 tablet:px-0 mb-12 tablet:mb-16">
         <Link
-          className="w-40 text-center bg-[#611232] text-white py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full block text-sm letras:text-base"
+          className="w-40 text-center bg-[#700425] text-white py-2 px-4 hover:bg-white hover:text-[#700425] border-2 border-[#700425] rounded-full block text-sm letras:text-base"
           href={`/blog/noticias-antiguas/`}
         >
           <p className="font-light">Noticias Anteriores</p>
