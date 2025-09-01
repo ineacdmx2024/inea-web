@@ -172,7 +172,7 @@ async function Page({ params }) {
                         href={child.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#333334] underline hover:text-[#611232]"
+                        className="text-[#333334] underline hover:text-[#700425]"
                       >
                         {child.children?.map((linkChild, j) =>
                           linkChild.type === "text" ? (
@@ -260,7 +260,7 @@ async function Page({ params }) {
                 href={item.url || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#333334] underline hover:text-[#611232]"
+                className="text-[#333334] underline hover:text-[#700425]"
               >
                 {item.children[0]?.text || "Enlace"}
               </Link>
