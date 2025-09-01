@@ -119,7 +119,7 @@ function PagMod({ info }) {
                 </p>
                 <div className="text-center">
                   <button
-                    className="bg-[#611232] text-white text-xs letras:text-[16.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
+                    className="bg-[#700425] text-white text-xs letras:text-[16.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#700425] border-2 border-[#700425] font-light"
                     onClick={() => {
                       console.log("Redirigiendo a:", paragraph.link);
                       window.location.href = paragraph.link;
@@ -137,7 +137,7 @@ function PagMod({ info }) {
         {/* Requisitos */}
         <div
           id="alert-additional-content-4"
-          className="p-2 mb-4 mt-2 text-yellow-950 border border-[#A57F2C] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
+          className="p-2 mb-4 mt-2 text-yellow-950 border border-[#3a0c1e] rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
           role="alert"
         >
           <div className="flex items-center">
