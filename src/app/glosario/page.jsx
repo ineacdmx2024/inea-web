@@ -282,7 +282,7 @@ function Glosario() {
                   onClick={() => handleFiltroLetra('TODOS')}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                     filtroLetra === 'TODOS'
-                      ? 'bg-[#700425] text-white'
+                      ? 'bg-[#611432] text-white'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                   }`}
                 >
@@ -294,7 +294,7 @@ function Glosario() {
                     onClick={() => handleFiltroLetra(letra)}
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                       filtroLetra === letra
-                        ? 'bg-[#700425] text-white'
+                        ? 'bg-[#611432] text-white'
                         : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                     }`}
                   >
