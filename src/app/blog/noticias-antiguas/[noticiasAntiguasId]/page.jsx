@@ -175,7 +175,7 @@ async function Page({ params }) {
                         href={child.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#333334] underline hover:text-[#611232]"
+                        className="text-[#333334] underline hover:text-[#700425]"
                       >
                         {child.children?.map((linkChild, j) =>
                           linkChild.type === "text" ? (
@@ -211,7 +211,7 @@ async function Page({ params }) {
               </div>
             );
           
-         case "image":
+          case "image":
           return (
             <Image
             key={index}
@@ -260,7 +260,7 @@ async function Page({ params }) {
                 href={item.url || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#333334] underline hover:text-[#611232]"
+                className="text-[#333334] underline hover:text-[#700425]"
               >
                 {item.children[0]?.text || "Enlace"}
               </Link>
@@ -299,7 +299,7 @@ async function Page({ params }) {
               : ""}
           </h1>
         </div>
-         <div className="m-auto my-6 rounded-lg overflow-hidden max-h-[420px]">
+          <div className="m-auto my-6 rounded-lg overflow-hidden max-h-[420px]">
             <Image
               src={post.data.attributes?.Imagen?.data?.attributes?.url}
               alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}

@@ -174,7 +174,7 @@ function CarouselOfertEdu() {
           transition: all 0.3s ease;
         }
         .custom-dots li.slick-active button:before {
-          color: #611232;
+          color: #700425;
           transform: scale(1.2);
         }
 
@@ -199,14 +199,14 @@ function CarouselOfertEdu() {
             padding-bottom: 30px;
           }
             .custom-dots {
-             display: flex;
-             justify-content: center;
-             align-items: center;
-             bottom: -52px
-             width: 100%;
-             margin-top: 20px;
-             padding: 0;
-             position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              bottom: -52px
+              width: 100%;
+              margin-top: 20px;
+              padding: 0;
+              position: relative;
           }
         }
         
@@ -282,7 +282,7 @@ function CarouselOfertEdu() {
                       </h3>
                       <div className="flex justify-center mt-10 tablet:mt-4">
                         <button
-                          className="bg-[#611232] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light"
+                          className="bg-[#700425] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#700425] border-2 border-[#700425] font-light"
                         >
                           Ir al sitio
                         </button>

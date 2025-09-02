@@ -964,7 +964,7 @@ return (
             )}
             <div className="pt-3 pb-3">
               <button
-                className="m-auto letras:ml-auto bg-[#611232] text-white py-3 px-3 hover:bg-white hover:text-[#611232] rounded-full border-2 border-[#611232] block w-full justify-center"
+                className="m-auto letras:ml-auto bg-[#700425] text-white py-3 px-3 hover:bg-white hover:text-[#700425] rounded-full border-2 border-[#700425] block w-full justify-center"
                 type="submit"
                 value="Enviar"
               >
@@ -977,7 +977,7 @@ return (
               <p className="pt-3 text-left font-light">
                 En la cuenta{" "}
                 <strong>
-                  <a className="text-blue-700" href="mailto:inea@inea.gob.mx">
+                  <a className="text-[#700425] hover:underline hover:text-[#3a0c1e]" href="mailto:inea@inea.gob.mx">
                     inea@inea.gob.mx
                   </a>
                 </strong>{" "}
@@ -987,7 +987,7 @@ return (
                 Si te condicionaron o pidieron algo a cambio de la entrega de tu
                 certificado o de cualquier otro servicio, DENÚNCIALO al:{" "}
                 <strong>
-                  <a className="text-blue-700" href="tel:+558000060300">
+                  <a className="text-[#700425] hover:underline hover:text-[#3a0c1e]" href="tel:+558000060300">
                     {" "}
                     800-0060-300.
                   </a>

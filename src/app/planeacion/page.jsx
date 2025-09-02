@@ -208,7 +208,7 @@ function Planeacion() {
                       <div className="flex justify-center">
                         <Link
                           href={`/planeacion/${item.attributes.slug}`}
-                          className="bg-[#611232] text-white text-center py-2 px-4 hover:bg-white hover:text-[#611232] border-2 border-[#611232] rounded-full mb-5"
+                          className="bg-[#700425] text-white text-center py-2 px-4 hover:bg-white hover:text-[#700425] border-2 border-[#700425] rounded-full mb-5"
                         >
                           Continuar leyendo
                         </Link>
@@ -227,7 +227,7 @@ function Planeacion() {
                 <button
                   onClick={handlePrevPage}
                   disabled={paginaActual === 1}
-                  className={`px-4 py-2 bg-[#611232] text-white rounded-md ${
+                  className={`px-4 py-2 bg-[#700425] text-white rounded-md ${
                     paginaActual === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-[#8a1a4a]"
                   }`}
                 >
@@ -239,7 +239,7 @@ function Planeacion() {
                 <button
                   onClick={handleNextPage}
                   disabled={paginaActual === totalPaginas}
-                  className={`px-4 py-2 bg-[#611232] text-white rounded-md ${
+                  className={`px-4 py-2 bg-[#700425] text-white rounded-md ${
                     paginaActual === totalPaginas
                       ? "opacity-50 cursor-not-allowed"
                       : "hover:bg-[#8a1a4a]"

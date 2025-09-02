@@ -28,7 +28,7 @@ const CardComponent = ({ items }) => {
             rel="noopener noreferrer"
           >
             <motion.button
-              className="mt-4 px-4 py-2 bg-[#611232] text-white rounded-lg mx-auto block hover:bg-[#A57F2C]"
+              className="mt-4 px-4 py-2 bg-[#700425] text-white rounded-lg mx-auto block hover:bg-[#3a0c1e]"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -84,7 +84,7 @@ const CardComponent = ({ items }) => {
               </motion.div>
 
               <motion.button
-                className="mt-4 px-4 py-2 bg-[#611232] text-white rounded-lg mx-auto block"
+                className="mt-4 px-4 py-2 bg-[#700425] text-white rounded-lg mx-auto block"
                 onClick={() => setSelectedId(null)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}

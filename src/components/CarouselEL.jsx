@@ -40,7 +40,7 @@ const ResponsiveCarousel = ({ cards, widthClass, visibilityClass }) => (
                   <h3 className="text-center text-[18px] text-[#333334] font-medium mt-4 mb-6 w-full">
                     {truncateText(card.title, 37)}
                   </h3>
-                  <button className="bg-[#611232] text-white text-sm py-2.5 px-5 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-light">
+                  <button className="bg-[#700425] text-white text-sm py-2.5 px-5 rounded-full hover:bg-white hover:text-[#700425] border-2 border-[#700425] font-light">
                     {card.buttonText}
                   </button>
                 </div>
@@ -78,7 +78,7 @@ const CarouselEL = ({ cards }) => {
         }
 
         .custom-dots li.slick-active button:before {
-          color: #611232;
+          color: #700425;
           transform: scale(1.2);
         }
 
