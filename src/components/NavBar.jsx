@@ -82,10 +82,10 @@ const Navbar = () => {
       className="font-montserrat m-auto text-[16px] font-light justify-between text-white fixed top-0 left-0 z-[100] w-screen max-w-full"
     >
       {/* <div className="bg-[#611232] w-full"> */}
-      <div className="bg-[#700425] w-full">
+      <div className="bg-[#611432] w-full">
         {/* Menú gobierno */}
         {/* <nav className="bg-[#611232]"> */}
-        <nav className="bg-[#700425]">
+        <nav className="bg-[#611432]">
           <div className="flex items-center justify-between w-full pl-[10px] md:ml-[1rem] px-4 md:px-0">
           {/* <div className="flex items-center justify-between w-full  pl-4 pr-4 mx-auto max-w-[1200px] " id="Msup"> */}
           <div className="flex items-center justify-between w-screen pl-0 pr-0 md:pl-4 md:mx-auto md:max-w-[1200px] " id="Msup">
