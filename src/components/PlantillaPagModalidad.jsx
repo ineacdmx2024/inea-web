@@ -119,7 +119,7 @@ function PagMod({ info }) {
                 </p>
                 <div className="text-center">
                   <button
-                    className="bg-[#700425] text-white text-xs letras:text-[16.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#700425] border-2 border-[#700425] font-light"
+                    className="bg-[#611432] text-white text-xs letras:text-[16.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611432] border-2 border-[#611432] font-light"
                     onClick={() => {
                       console.log("Redirigiendo a:", paragraph.link);
                       window.location.href = paragraph.link;
