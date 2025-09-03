@@ -62,7 +62,7 @@ const Card = ({ title, imageSrc, buttonText, link }) => {
               {truncateText(title)}
             </h3>
             <div className="flex justify-center mt-4">
-              <button className="bg-[#611232] text-white text-sm py-2.5 px-6 rounded-full hover:bg-white hover:text-[#611232] border-2 border-[#611232] font-medium transition-all duration-300">
+              <button className="bg-[#611432] text-white text-sm py-2.5 px-6 rounded-full hover:bg-white hover:text-[#611432] border-2 border-[#611432] font-medium transition-all duration-300">
                 {buttonText}
               </button>
             </div>
