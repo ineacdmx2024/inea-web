@@ -82,7 +82,7 @@ async function Page({ params }) {
           </p>
           <Link 
             href="/servicios/servedu" 
-            className="bg-[#700425] text-white px-6 py-3 rounded-lg hover:bg-[#4a0e26] transition-colors"
+            className="bg-[#611432] text-white px-6 py-3 rounded-lg hover:bg-[#4a0e26] transition-colors"
           >
             Volver a Servicios Educativos
           </Link>
@@ -203,7 +203,7 @@ async function Page({ params }) {
                         href={child.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#333334] underline hover:text-[#700425]"
+                        className="text-[#333334] underline hover:text-[#611432]"
                       >
                         {child.children?.map((linkChild, j) =>
                           linkChild.type === "text" ? (
@@ -291,7 +291,7 @@ async function Page({ params }) {
                 href={item.url || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#333334] underline hover:text-[#700425]"
+                className="text-[#333334] underline hover:text-[#611432]"
               >
                 {item.children[0]?.text || "Enlace"}
               </Link>
