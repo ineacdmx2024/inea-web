@@ -79,7 +79,7 @@ const Navbar = () => {
     <div
       ref={navRef}
       // aqui estaba la clase navBar
-      className="font-montserrat m-auto text-[16px] font-light justify-between text-white fixed top-0 left-0 z-[100] w-screen max-w-full"
+      className="font-montserrat m-auto text-[16px] font-light justify-between text-white fixed top-0 left-0 z-[100] w-screen max-w-full "
     >
       <div className="bg-[#611432] w-full">
         {/* Menú gobierno */}
