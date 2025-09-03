@@ -174,7 +174,7 @@ function CarouselOfertEdu() {
           transition: all 0.3s ease;
         }
         .custom-dots li.slick-active button:before {
-          color: #700425;
+          color: #611432;
           transform: scale(1.2);
         }
 
@@ -282,7 +282,7 @@ function CarouselOfertEdu() {
                       </h3>
                       <div className="flex justify-center mt-10 tablet:mt-4">
                         <button
-                          className="bg-[#700425] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#700425] border-2 border-[#700425] font-light"
+                          className="bg-[#611432] text-white text-xs letras:text-[13.5px] py-2 px-4 rounded-full hover:bg-white hover:text-[#611432] border-2 border-[#611432] font-light"
                         >
                           Ir al sitio
                         </button>
