@@ -20,7 +20,7 @@ const Ubicacion = () => {
           </p>
           <p>Horario de atención de 9:00 a 16:00 horas.</p>
           <a
-            className="inline-block w-44 bg-[#700425] text-white py-3 hover:bg-white hover:text-[#700425] rounded-full border-2 border-[#700425] text-center transition-colors duration-300"
+            className="inline-block w-44 bg-[#611432] text-white py-3 hover:bg-white hover:text-[#611432] rounded-full border-2 border-[#611432] text-center transition-colors duration-300"
             href="/ubicacion"
           >
             Detalles de ubicaciones
