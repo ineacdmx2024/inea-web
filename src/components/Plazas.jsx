@@ -175,7 +175,7 @@ const Plazas = ({ datos }) => {
           <button
             key={elemento.IndexSlides}
             type="button"
-            className="text-[#700425] rounded-lg hover:text-white border border-[#700425] hover:bg-[#700425] focus:ring-4 focus:outline-none focus:ring-[#3a0c1e] focus:bg-[#700425] focus:text-[white] font-medium px-5 py-2.5 text-center me-2 mb-2  text-lg flex"
+            className="text-[#611432] rounded-lg hover:text-white border border-[#611432] hover:bg-[#611432] focus:ring-4 focus:outline-none focus:ring-[#3a0c1e] focus:bg-[#611432] focus:text-[white] font-medium px-5 py-2.5 text-center me-2 mb-2  text-lg flex"
             onClick={() => handleAlcaldiaClick(elemento.IndexSlides)}
           >
             <svg
@@ -215,7 +215,7 @@ const Plazas = ({ datos }) => {
           >
             {/* Arriba */}
             <div
-              className={`flex flex-col rounded-t-lg justify-center items-center p-5 bg-[#700425] text-white max-h-max ${
+              className={`flex flex-col rounded-t-lg justify-center items-center p-5 bg-[#611432] text-white max-h-max ${
                 index === currentPage ? "translate-x-0" : "translate-x-full"
               } transition duration-500`}
             >
