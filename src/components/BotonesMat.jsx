@@ -70,7 +70,7 @@ const BotonesMat = ({ datos }) => {
                     <a
                       href={item.linkDescarga}
                       download
-                      className="boton text-[#700425] p-2 rounded-lg border border-[#700425] hover:bg-[#700425] hover:text-white transition-colors"
+                      className="boton text-[#611432] p-2 rounded-lg border border-[#611432] hover:bg-[#611432] hover:text-white transition-colors"
                       title="Descargar"
                     >
                       <svg
@@ -96,7 +96,7 @@ const BotonesMat = ({ datos }) => {
                         );
                         setIframeVisible(true);
                       }}
-                      className="boton text-[#700425] p-2 rounded-lg border border-[#700425] hover:bg-[#700425] hover:text-white transition-colors"
+                      className="boton text-[#611432] p-2 rounded-lg border border-[#611432] hover:bg-[#611432] hover:text-white transition-colors"
                       title="Ver en línea"
                     >
                       <svg
@@ -155,7 +155,7 @@ const BotonesMat = ({ datos }) => {
                       <a
                         href={item.linkDescarga}
                         download
-                        className="boton text-[#700425] p-2 rounded-lg border border-[#700425] hover:bg-[#700425] hover:text-white transition-colors"
+                        className="boton text-[#611432] p-2 rounded-lg border border-[#611432] hover:bg-[#611432] hover:text-white transition-colors"
                         title="Descargar"
                       >
                         <svg
@@ -181,7 +181,7 @@ const BotonesMat = ({ datos }) => {
                           );
                           setIframeVisible(true);
                         }}
-                        className="boton text-[#700425] p-2 rounded-lg border border-[#700425] hover:bg-[#700425] hover:text-white transition-colors"
+                        className="boton text-[#611432] p-2 rounded-lg border border-[#611432] hover:bg-[#611432] hover:text-white transition-colors"
                         title="Ver en línea"
                       >
                         <svg
@@ -221,7 +221,7 @@ const BotonesMat = ({ datos }) => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
-                  className="absolute top-2 right-2 text-white bg-[#700425] rounded-full p-2 z-50"
+                  className="absolute top-2 right-2 text-white bg-[#611432] rounded-full p-2 z-50"
                   onClick={() => setIframeVisible(false)}
                 >
                   ✕
@@ -270,7 +270,7 @@ const BotonesMat = ({ datos }) => {
           <button
             key={elemento.IndexSlides}
             type="button"
-            className="text-[#700425] rounded-lg hover:text-white border border-[#700425] hover:bg-[#700425] focus:ring-4 focus:outline-none focus:ring-[#3a0c1e] focus:bg-[#700425] focus:text-white font-medium px-5 py-2.5 text-center me-2 mb-2 text-lg flex items-center justify-center gap-2"
+            className="text-[#611432] rounded-lg hover:text-white border border-[#611432] hover:bg-[#611432] focus:ring-4 focus:outline-none focus:ring-[#3a0c1e] focus:bg-[#611432] focus:text-white font-medium px-5 py-2.5 text-center me-2 mb-2 text-lg flex items-center justify-center gap-2"
             onClick={() => handleMaterialClick(elemento.IndexSlides)}
           >
             <svg
