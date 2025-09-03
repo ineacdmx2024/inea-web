@@ -430,7 +430,7 @@ return (
                 de México para solicitar un duplicado o la digitalización de tu certificado de primaria o secundaria 
                 expedido por esta institución. Si concluiste en el 2018 o en adelante, accede a 
                   <strong>
-                    <a className="text-[#700425] hover:underline hover:text-[#3a0c1e]" href="https://certificacion.inea.gob.mx/DescCertificado.aspx">
+                    <a className="text-[#611432] hover:underline hover:text-[#3a0c1e]" href="https://certificacion.inea.gob.mx/DescCertificado.aspx">
                      este sitio para descargar tu certificado.
                     </a>
                 </strong>{" "}
@@ -1024,7 +1024,7 @@ return (
             )}
             <div className="pt-3 pb-3">
               <button
-                className="m-auto letras:ml-auto bg-[#700425] text-white py-3 px-3 hover:bg-white hover:text-[#700425] rounded-full border-2 border-[#700425] flex w-full justify-center"                type="submit"
+                className="m-auto letras:ml-auto bg-[#611432] text-white py-3 px-3 hover:bg-white hover:text-[#611432] rounded-full border-2 border-[#611432] flex w-full justify-center"                type="submit"
                 value="Enviar"
               >
                 Enviar
@@ -1035,7 +1035,7 @@ return (
               <p className="pt-3 text-left font-light">
                 En la cuenta{" "}
                 <strong>
-                  <a className="text-[#700425] hover:underline hover:text-[#3a0c1e]" href="mailto:inea@inea.gob.mx">
+                  <a className="text-blue-600 hover:text-blue-800 underline" href="mailto:inea@inea.gob.mx">
                     inea@inea.gob.mx
                   </a>
                 </strong>{" "}
@@ -1045,7 +1045,7 @@ return (
                 Si te condicionaron o pidieron algo a cambio de la entrega de tu
                 certificado o de cualquier otro servicio, DENÚNCIALO al:{" "}
                 <strong>
-                  <a className="text-[#700425] hover:underline hover:text-[#3a0c1e]" href="tel:+558000060300">
+                  <a className="text-blue-600 hover:text-blue-800 underline" href="tel:+558000060300">
                     {" "}
                     800-0060-300.
                   </a>
