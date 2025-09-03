@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="font-noto mt-20 bg-[#700425] h-auto">
+    <footer className="font-noto mt-20 bg-[#611432] h-auto">
       <div className="flex items-center justify-between py-[0.1rem] px-auto">
         <div className="mx-auto p-6 md:p-0 md:pt-4 w-full max-w-[1142px] px-4">
           <div className="md:flex justify-between">
@@ -38,31 +38,31 @@ const Footer = () => {
                   Mapa de Sitio
                 </h2>
                 <ul className=" text-sm dark:text-white">
-                  <li className="p-1 text-white hover:text-[#3a0c1e]">
+                  <li className="p-1 text-white hover:text-[#D3C09B]">
                     <a href="https://datos.gob.mx/">Trámites y Servicios</a>
                   </li>
-                  <li className="p-1 text-white hover:text-[#3a0c1e]">
+                  <li className="p-1 text-white hover:text-[#D3C09B]">
                     <a href="/">Aviso de privacidad</a>
                   </li>
-                  <li className="p-1 text-white hover:text-[#3a0c1e]">
+                  <li className="p-1 text-white hover:text-[#D3C09B]">
                     <a href="/">Comité de Ética</a>
                   </li>
-                  <li className="p-1 text-white hover:text-[#3a0c1e]">
+                  <li className="p-1 text-white hover:text-[#D3C09B]">
                     <a href="https://www.plataformadetransparencia.org.mx/Inicio">Transparencia</a>
                   </li>
-                  <li className="p-1 text-white hover:text-[#3a0c1e]">
+                  <li className="p-1 text-white hover:text-[#D3C09B]">
                     <a href="/glosario">Glosario</a>
                   </li>
-                  <li className="p-1 text-white hover:text-[#3a0c1e]">
+                  <li className="p-1 text-white hover:text-[#D3C09B]">
                     <a href="https://www.gob.mx/inea/">INEA Nacional</a>
                   </li>
-                  <li className="p-1 text-white hover:text-[#3a0c1e]">
+                  <li className="p-1 text-white hover:text-[#D3C09B]">
                     <a href="https://www.gob.mx/">Gobierno</a>
                   </li>
-                  <li className="p-1 text-white hover:text-[#3a0c1e]">
+                  <li className="p-1 text-white hover:text-[#D3C09B]">
                     <a href="/">Créditos</a>
                   </li>
-                  <li className="p-1 text-white hover:text-[#3a0c1e]">
+                  <li className="p-1 text-white hover:text-[#D3C09B]">
                     <a href="/servicio-social">Servicio Social</a>
                   </li>
                 </ul>
@@ -70,10 +70,10 @@ const Footer = () => {
               <div>
                 <h2 className="mb-3 text-white dark:text-white ">Contacto</h2>
                 <ul className=" text-sm dark:text-white">
-                  <li className="p-1 text-white hover:text-[#3a0c1e]">
+                  <li className="p-1 text-white hover:text-[#D3C09B]">
                     <Link href="/ubicacion">Directorio</Link>
                   </li>
-                  <li className="p-1 text-white hover:text-[#3a0c1e]">
+                  <li className="p-1 text-white hover:text-[#D3C09B]">
                     <a href="/">Correo@inea.gob.mx</a>
                   </li>
                 </ul>
@@ -85,7 +85,7 @@ const Footer = () => {
                 <div className="flex mt-4 space-x-3 sm:justify-left sm:mt-0">
                   <a
                     href="/"
-                    className="text-white hover:text-[#3a0c1e] dark:hover:text-white"
+                    className="text-white hover:text-[#D3C09B] dark:hover:text-white"
                   >
                     <svg
                       className="w-7 h-7"
@@ -102,7 +102,7 @@ const Footer = () => {
                   </a>
                   <a
                     href="/"
-                    className="text-white hover:text-[#3a0c1e] dark:hover:text-white"
+                    className="text-white hover:text-[#D3C09B] dark:hover:text-white"
                   >
                     <svg
                       className="w-7 h-7"
@@ -115,7 +115,7 @@ const Footer = () => {
                   </a>
                   <a
                     href="/"
-                    className="text-white hover:text-[#3a0c1e] dark:hover:text-white"
+                    className="text-white hover:text-[#D3C09B] dark:hover:text-white"
                   >
                     <svg
                       className="h-8 w-8"
