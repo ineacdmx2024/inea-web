@@ -86,7 +86,7 @@ function ServicioSocial() {
             {/* <h2 className="patria title-sep mt-12">Vacantes</h2> */}
             <h2 className="patria text-2xl font-bold mb-[15px] mt-12">Vacantes</h2>
             <div className="flex items-center">
-              <div className="w-9 h-[5px] bg-[#3a0c1e] mt-1"></div>
+              <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
               <div className="flex-grow h-px bg-gray-300"></div>
             </div>
           </div>
@@ -132,7 +132,7 @@ function ServicioSocial() {
             {/* <h2 className="patria title-sep mt-12">Requisitos y liberación</h2> */}
             <h2 className="patria text-2xl font-bold mb-[15px] mt-12">Requisitos y liberación</h2>
             <div className="flex items-center">
-              <div className="w-9 h-[5px] bg-[#3a0c1e] mt-1"></div>
+              <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
               <div className="flex-grow h-px bg-gray-300"></div>
             </div>
           </div>
@@ -145,7 +145,7 @@ function ServicioSocial() {
             {/* <h2 className="patria title-sep mt-12">Sedes en CDMX</h2> */}
             <h2 className="patria text-2xl font-bold mb-[15px] mt-12">Sedes en CDMX</h2>
             <div className="flex items-center">
-              <div className="w-9 h-[5px] bg-[#3a0c1e] mt-1"></div>
+              <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
               <div className="flex-grow h-px bg-gray-300"></div>
             </div>
           </div>
@@ -198,7 +198,7 @@ function ServicioSocial() {
             {/* <h2 className="patria title-sep mt-12">Contáctanos</h2> */}
             <h2 className="patria text-2xl font-bold mb-[15px] mt-12">Contáctanos</h2>
             <div className="flex items-center">
-              <div className="w-9 h-[5px] bg-[#3a0c1e] mt-1"></div>
+              <div className="w-9 h-[5px] bg-[#b38e61] mt-1"></div>
               <div className="flex-grow h-px bg-gray-300"></div>
             </div>
           </div>
