@@ -58,7 +58,7 @@ function DetalleEnlace_CarruselBanner(slug) {
   useEffect(() => {
     const Contenido = async () => {
       const res = await fetch(
-       `https://inea-web-backend-cg20.onrender.com/api/baner-principals?filters[slug][$eq]=${slug.params["home-enlace-carruselid"]}&populate=*`
+       `https://inea-web-backend-production.up.railway.app/api/baner-principals?filters[slug][$eq]=${slug.params["home-enlace-carruselid"]}&populate=*`
       );
       const data = await res.json();
       const enlacesData = data.data.map((item) => ({
@@ -83,14 +83,14 @@ function DetalleEnlace_CarruselBanner(slug) {
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
 
-         `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+         `https://inea-web-backend-production.up.railway.app/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
        
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
         const resNoPineados = await fetch(
 
-         `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+         `https://inea-web-backend-production.up.railway.app/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
         );
         const { data: enlacesNoPineados } = await resNoPineados.json();
 
