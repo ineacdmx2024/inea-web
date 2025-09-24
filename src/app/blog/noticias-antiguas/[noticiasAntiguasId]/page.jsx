@@ -14,7 +14,6 @@ const notoSans = Noto_Sans({
 async function loadPost(slug) {
   const res = await fetch(
    // `https://inea-web-backend.onrender.com/api/blogs/${slug}?populate=%2A`, {
-    // `https://inea-web-backend-cg20.onrender.com/api/blogs/${slug}?populate=%2A`, {
     `https://inea-web-backend-production.up.railway.app/api/blogs/${slug}?populate=%2A`, {
       cache: 'no-store',
       headers: {
@@ -30,7 +29,6 @@ async function loadPost(slug) {
 async function loadEnlaces() {
   const resPineados = await fetch(
     
-    // `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
     `https://inea-web-backend-production.up.railway.app/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
       cache: 'no-store',
       headers: {
@@ -42,7 +40,6 @@ async function loadEnlaces() {
   if (enlacesPineados.length < 3) {
     const resNoPineados = await fetch(
       //`https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`,
-      // `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`,
       `https://inea-web-backend-production.up.railway.app/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`,
       {
         cache: "no-store",
