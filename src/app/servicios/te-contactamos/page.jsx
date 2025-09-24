@@ -151,13 +151,13 @@ function Te_Contactamos() {
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
        // `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
-        `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+        `https://inea-web-backend-production.up.railway.app/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
         const resNoPineados = await fetch(
          // `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
-          `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
+          `https://inea-web-backend-production.up.railway.app/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`
         );
         const { data: enlacesNoPineados } = await resNoPineados.json();
 
@@ -197,7 +197,7 @@ function Te_Contactamos() {
 
       
            //const res = await fetch(`https://inea-web-backend.onrender.com/api/correo-pre-registros?populate=%2A`)
-           const res = await fetch(`https://inea-web-backend-cg20.onrender.com/api/correo-pre-registros?populate=%2A`)
+           const res = await fetch(`https://inea-web-backend-production.up.railway.app/api/correo-pre-registros?populate=%2A`)
 
         
 
@@ -338,7 +338,7 @@ const onSubmit = async(data) =>{
       
 
         //const response = await fetch('https://inea-web-backend.onrender.com/api/historialde-pre-registros', {
-         const response = await fetch('https://inea-web-backend-cg20.onrender.com/api/historialde-pre-registros', {
+         const response = await fetch('https://inea-web-backend-production.up.railway.app/api/historialde-pre-registros', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
