@@ -23,8 +23,8 @@ function Ubicacion() {
     let enlaces = [];
     const fetchEnlacesL = async () => {
       const resPineados = await fetch(
-       // `https://inea-web-backend.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
-        `https://inea-web-backend-cg20.onrender.com/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+       // `https://inea-web-backend-production.up.railway.app/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
+        `https://inea-web-backend-production.up.railway.app/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`
       );
       const { data: enlacesPineados } = await resPineados.json();
       if (enlacesPineados.length < 3) {
