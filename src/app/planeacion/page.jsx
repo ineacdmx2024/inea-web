@@ -29,7 +29,7 @@ function Planeacion() {
   const fetchFijos = async () => {
     try {
       const response = await fetch(
-        `https://inea-web-backend-cg20.onrender.com/api/plannings?filters[Fijo][$eq]=true&populate=*&sort[0]=Orden:asc&pagination[limit]=10`
+        `https://inea-web-backend-production.up.railway.app/api/plannings?filters[Fijo][$eq]=true&populate=*&sort[0]=Orden:asc&pagination[limit]=10`
       );
       const result = await response.json();
       console.log("Datos fijos:", result);
@@ -45,7 +45,7 @@ function Planeacion() {
     try {
       // Primero intentamos obtener solo los no fijos
       const response = await fetch(
-        `https://inea-web-backend-cg20.onrender.com/api/plannings?filters[$or][0][Fijo][$eq]=false&filters[$or][1][Fijo][$null]=true&populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
+        `https://inea-web-backend-production.up.railway.app/api/plannings?filters[$or][0][Fijo][$eq]=false&filters[$or][1][Fijo][$null]=true&populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
       );
       const result = await response.json();
       console.log("Datos no fijos:", result);
@@ -54,7 +54,7 @@ function Planeacion() {
       if (!result.data || result.data.length === 0) {
         console.log("No hay datos con filtro, obteniendo todos...");
         const responseAll = await fetch(
-          `https://inea-web-backend-cg20.onrender.com/api/plannings?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
+          `https://inea-web-backend-production.up.railway.app/api/plannings?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
         );
         const resultAll = await responseAll.json();
         console.log("Todos los datos:", resultAll);
@@ -69,7 +69,7 @@ function Planeacion() {
       // Como fallback, intentar obtener todos los datos sin filtro
       try {
         const responseFallback = await fetch(
-          `https://inea-web-backend-cg20.onrender.com/api/plannings?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
+          `https://inea-web-backend-production.up.railway.app/api/plannings?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
         );
         const resultFallback = await responseFallback.json();
         console.log("Datos fallback:", resultFallback);
