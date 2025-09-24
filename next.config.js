@@ -2,8 +2,8 @@
 const nextConfig = {
   images: {
     domains: [
-      'res.cloudinary.com',  // Dominio principal de Cloudinary
-      'inea-web-backend-cg20.onrender.com'  // Dominio de tu backend Strapi
+      'res.cloudinary.com',                     // Dominio principal de Cloudinary
+      'inea-web-backend-production.up.railway.app' // Nuevo dominio de Strapi en Railway
     ],
     remotePatterns: [
       {
@@ -13,12 +13,11 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'inea-web-backend-cg20.onrender.com',
+        hostname: 'inea-web-backend-production.up.railway.app',
         pathname: '/**',
       }
     ]
   },
-  // Asegura que Next.js procese correctamente las URLs absolutas de Cloudinary
   async rewrites() {
     return [];
   }
