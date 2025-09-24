@@ -12,8 +12,8 @@ export default function Banner() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          //"https://inea-web-backend.onrender.com/api/banner-contingencia?populate=*"
-          "https://inea-web-backend-cg20.onrender.com/api/banner-contingencia?populate=*"
+          //"https://inea-web-backend-production.up.railway.app/api/banner-contingencia?populate=*"
+          "https://inea-web-backend-production.up.railway.app/api/banner-contingencia?populate=*"
         );
         const json = await res.json();
 
