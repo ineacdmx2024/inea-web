@@ -103,7 +103,7 @@ const CarouselBlog = ({ item }) => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://inea-web-backend-cg20.onrender.com/api/blogs?populate=*&pagination[limit]=4&sort[0]=Fecha:desc"
+        "https://inea-web-backend-production.up.railway.app/api/blogs?populate=*&pagination[limit]=4&sort[0]=Fecha:desc"
       );
       const result = await response.json();
       setData(result.data);
