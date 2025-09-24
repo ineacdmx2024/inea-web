@@ -16,7 +16,7 @@ function CarouselInicio() {
     const fetchEnlaces = async () => {
       // EMPIEZA A CORRER EL TIEMPO DE REQUEST A LA API
       const start = performance.now();
-      const res = await fetch("https://inea-web-backend-cg20.onrender.com/api/baner-principals?populate=*&pagination[limit]=4")
+      const res = await fetch("https://inea-web-backend-production.up.railway.app/api/baner-principals?populate=*&pagination[limit]=4")
       const data = await res.json()
       // FIN DEL TIEMPO DE RESPUESTA DE LA API
       const end = performance.now(); // Marca final
