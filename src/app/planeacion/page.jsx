@@ -45,7 +45,8 @@ function Planeacion() {
     try {
       // Primero intentamos obtener solo los no fijos
       const response = await fetch(
-        `https://inea-web-backend-production.up.railway.app/api/plannings?filters[$or][0][Fijo][$eq]=false&filters[$or][1][Fijo][$null]=true&populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
+        // `https://inea-web-backend-production.up.railway.app/api/plannings?filters[$or][0][Fijo][$eq]=false&filters[$or][1][Fijo][$null]=true&populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
+        `https://inea-web-backend-production.up.railway.app/api/plannings?filters[$or][0][Fijo][$eq]=false&filters[$or][1][Fijo][$null]=true&populate=*&sort[0]=Fecha:desc&pagination[limit]=1&pagination[start]=${start}`
       );
       const result = await response.json();
       console.log("Datos no fijos:", result);
