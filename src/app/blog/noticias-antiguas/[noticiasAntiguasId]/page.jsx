@@ -217,9 +217,12 @@ async function Page({ params }) {
             key={index}
             src={item.image.formats.large.url}
             alt={item.image.alternativeText || "Imagen de la noticia"}
-            // width={item.image.width}
-            // height={item.image.height}
+            width={item.image.width}
+            height={item.image.height}
             className="my-4"
+            quality={100}
+            priority={true}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           );
           
@@ -299,13 +302,16 @@ async function Page({ params }) {
               : ""}
           </h1>
         </div>
-          <div className="m-auto my-6 rounded-lg overflow-hidden max-h-[420px]">
+          <div className="m-auto my-6 rounded-lg overflow-hidden max-h-[420px] flex items-center justify-center">
             <Image
               src={post.data.attributes?.Imagen?.data?.attributes?.url}
               alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-contain"
               width={1000}
               height={700}
+              quality={100} 
+              priority={true} 
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 720px"
             />
           </div>
         <div className="mb-6 mt-8 leading-7 overflow-hidden word-wrap: break-word overflow-wrap: break-word text-left" style={{ width: '720px', maxWidth: '100%' }}>{renderContenido(contenido)}</div>
