@@ -189,27 +189,19 @@ async function Page({ params }) {
           );
 
         case "image":
-          return (
-            <div
-              key={index}
-              className="w-full max-w-[720px] mx-auto my-4 flex justify-center"
-            >
-              <Image
-                src={
-                  item.image.url ||
-                  item.image.formats?.large?.url ||
-                  item.image.formats?.medium?.url
-                }
-                alt={item.image.alternativeText || "Imagen de la noticia"}
-                width={item.image.width}
-                height={item.image.height}
-                className="w-full h-auto object-contain"
-                quality={100}
-                priority={true}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 720px"
-              />
-            </div>
-          );
+        return (
+          <div key={index} className="relative my-4 w-full aspect-video">
+            <Image
+              src={item.image.url || item.image.formats?.large?.url || item.image.formats?.medium?.url}
+              alt={item.image.alternativeText || "Imagen de noticia"}
+              fill
+              className="object-contain"
+              quality={100}
+              priority
+              sizes="100vw"
+            />
+          </div>
+        );
 
         case "embed":
           return (
@@ -292,19 +284,14 @@ async function Page({ params }) {
           </h1>
         </div>
 
-        <div className="m-auto my-6 rounded-lg overflow-hidden max-h-[420px] flex items-center justify-center">
+        <div className="relative m-auto my-6 rounded-lg overflow-hidden max-h-[420px] flex items-center justify-center">
           <Image
-            src={
-              post.data.attributes?.Imagen?.data?.attributes?.url || "/placeholder.png"
-            }
-            alt={
-              post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"
-            }
-            className="w-full h-full object-contain"
-            width={1000}
-            height={700}
+            src={post.data.attributes?.Imagen?.data?.attributes?.url}
+            alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
+            fill
+            className="object-contain"
             quality={100}
-            priority={true}
+            priority
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 720px"
           />
         </div>
