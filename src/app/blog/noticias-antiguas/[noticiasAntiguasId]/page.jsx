@@ -284,7 +284,7 @@ async function Page({ params }) {
           </h1>
         </div>
 
-        <div className="relative m-auto my-6 rounded-lg overflow-hidden max-h-[420px] flex items-center justify-center">
+        <div className="relative w-full m-auto my-6 rounded-lg overflow-hidden max-h-[420px] flex items-center justify-center">
           <Image
             src={post.data.attributes?.Imagen?.data?.attributes?.url}
             alt={post.data.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
