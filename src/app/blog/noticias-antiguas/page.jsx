@@ -112,19 +112,14 @@ function NoticiasAntiguas() {
                     >
                       <div>
                         <Link href={`/blog/noticias-antiguas/${item.attributes.slug}`}>
-                          <div className="rounded-xl overflow-hidden" style={{ width: "330.66px", height: "220px" }}>
+                          <div className="relative w-full aspect-[3/2] rounded-xl overflow-hidden">
                             <Image
-                              src={
-                                item.attributes.Imagen?.data?.attributes?.formats?.medium?.url ||
-                                item.attributes.Imagen?.data?.attributes?.url
-                              }
-                              alt={
-                                item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
-                              }
-                              width={330.66}
-                              height={220}
+                              src={item.attributes.Imagen?.data?.attributes?.formats?.medium?.url ||
+                                   item.attributes.Imagen?.data?.attributes?.url}
+                              alt={item.attributes.Nombre_de_la_Imagen || "Imagen sin título"}
+                              fill
                               className="object-cover"
-                              style={{ width: "330.66px", height: "220px" }}
+                              sizes="(max-width: 640px) 100vw, 330px"
                             />
                           </div>
                         </Link>
