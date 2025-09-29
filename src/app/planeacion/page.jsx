@@ -19,77 +19,93 @@ const truncateText = (text, maxLetters) => {
 };
 
 function Planeacion() {
-  const [datos, setDatos] = useState(null);
-  const [fijos, setFijos] = useState(null);
-  const [totalNoticias, setTotalNoticias] = useState(0);
+  const [datos, setDatos] = useState([]); // datos no-fijos (para la página actual)
+  const [fijos, setFijos] = useState([]); // todas las noticias fijas
+  const [totalNonFijos, setTotalNonFijos] = useState(0); // total de no-fijos (para paginación)
   const [paginaActual, setPaginaActual] = useState(1);
-  const noticiasPorPagina = 9;
+  const noticiasPorPagina = 4;
   const [isMobile, setIsMobile] = useState(false);
 
+  // Fetch fijos
   const fetchFijos = async () => {
     try {
       const response = await fetch(
-        `https://inea-web-backend-production.up.railway.app/api/plannings?filters[Fijo][$eq]=true&populate=*&sort[0]=Orden:asc&pagination[limit]=10`
+        `https://inea-web-backend-production.up.railway.app/api/plannings?filters[Fijo][$eq]=true&populate=*&sort[0]=Orden:asc&pagination[limit]=100`
       );
       const result = await response.json();
-      console.log("Datos fijos:", result);
-      setFijos(result.data);
+      setFijos(result.data || []);
     } catch (error) {
       console.error("Error al obtener los datos fijos:", error);
+      setFijos([]);
     }
   };
 
-  const fetchData = async (page = 1) => {
-    const start = (page - 1) * noticiasPorPagina;
-
+  // Fetch total de no-fijos (solo la cuenta)
+  const fetchCountNonFijos = async () => {
     try {
-      // Primero intentamos obtener solo los no fijos
       const response = await fetch(
-        // `https://inea-web-backend-production.up.railway.app/api/plannings?filters[$or][0][Fijo][$eq]=false&filters[$or][1][Fijo][$null]=true&populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
-        `https://inea-web-backend-production.up.railway.app/api/plannings?filters[$or][0][Fijo][$eq]=false&filters[$or][1][Fijo][$null]=true&populate=*&sort[0]=Fecha:desc&pagination[limit]=1&pagination[start]=${start}`
+        `https://inea-web-backend-production.up.railway.app/api/plannings?filters[$or][0][Fijo][$eq]=false&filters[$or][1][Fijo][$null]=true&pagination[limit]=1`
       );
       const result = await response.json();
-      console.log("Datos no fijos:", result);
-      
-      // Si no hay resultados con el filtro, obtener todos los datos como fallback
-      if (!result.data || result.data.length === 0) {
-        console.log("No hay datos con filtro, obteniendo todos...");
-        const responseAll = await fetch(
-          `https://inea-web-backend-production.up.railway.app/api/plannings?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
-        );
-        const resultAll = await responseAll.json();
-        console.log("Todos los datos:", resultAll);
-        setDatos(resultAll.data);
-        setTotalNoticias(resultAll.meta.pagination.total);
-      } else {
-        setDatos(result.data);
-        setTotalNoticias(result.meta.pagination.total);
-      }
+      const total = result?.meta?.pagination?.total || 0;
+      setTotalNonFijos(total);
     } catch (error) {
-      console.error("Error al obtener los datos:", error);
-      // Como fallback, intentar obtener todos los datos sin filtro
-      try {
-        const responseFallback = await fetch(
-          `https://inea-web-backend-production.up.railway.app/api/plannings?populate=*&sort[0]=Fecha:desc&pagination[limit]=${noticiasPorPagina}&pagination[start]=${start}`
-        );
-        const resultFallback = await responseFallback.json();
-        console.log("Datos fallback:", resultFallback);
-        setDatos(resultFallback.data);
-        setTotalNoticias(resultFallback.meta.pagination.total);
-      } catch (fallbackError) {
-        console.error("Error en fallback:", fallbackError);
-      }
+      console.error("Error al obtener total no-fijos:", error);
+      setTotalNonFijos(0);
     }
   };
 
+  // Fetch datos no-fijos necesarios para la página actual
+  const fetchData = async (page = 1) => {
+    // Indices globales (virtuales) dentro del listado combinado (fijos primero)
+    const startIndexGlobal = (page - 1) * noticiasPorPagina;
+    const endIndexGlobal = startIndexGlobal + noticiasPorPagina - 1;
+
+    // Cuántos fijos hay que tomar para esta página (puede ser 0..noticiasPorPagina)
+    const fijosStartIndex = Math.max(0, startIndexGlobal);
+    const fijosTake = Math.max(0, Math.min(fijos.length - fijosStartIndex, noticiasPorPagina));
+
+    // Si la página requiere no-fijos, calculamos el start dentro del arreglo de no-fijos
+    // El primer índice de no-fijos dentro del listado combinado es fijos.length (0-based)
+    // startIndexGlobal - fijos.length (si es negativo => 0)
+    const startNonFijos = Math.max(0, startIndexGlobal - fijos.length);
+    const requiredNonFijos = noticiasPorPagina - fijosTake; // puede ser 0
+
+    if (requiredNonFijos <= 0) {
+      // esta página se llena completamente con fijos: no necesitamos pedir no-fijos
+      setDatos([]); // limpiamos
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `https://inea-web-backend-production.up.railway.app/api/plannings?filters[$or][0][Fijo][$eq]=false&filters[$or][1][Fijo][$null]=true&populate=*&sort[0]=Fecha:desc&pagination[limit]=${requiredNonFijos}&pagination[start]=${startNonFijos}`
+      );
+      const result = await response.json();
+      setDatos(result.data || []);
+      const totalFromMeta = result?.meta?.pagination?.total;
+      if (typeof totalFromMeta === "number") setTotalNonFijos(totalFromMeta);
+    } catch (error) {
+      console.error("Error al obtener los datos no fijos:", error);
+      setDatos([]);
+    }
+  };
+
+  // Al montar, traemos fijos y la cuenta de no-fijos
   useEffect(() => {
     fetchFijos();
+    fetchCountNonFijos();
+  }, []);
+
+  // Cada vez que cambie la página o cambien los fijos, traemos los datos no-fijos necesarios
+  useEffect(() => {
     fetchData(paginaActual);
-  }, [paginaActual]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [paginaActual, fijos]);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 640); // sm breakpoint de Tailwind
+      setIsMobile(window.innerWidth < 640);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -128,28 +144,38 @@ function Planeacion() {
     setPaginaActual(newPage);
   };
 
-  const totalPaginas = Math.ceil(totalNoticias / noticiasPorPagina);
+  // total de páginas basado en fijos + no-fijos
+  const totalItems = (fijos?.length || 0) + (totalNonFijos || 0);
+  const totalPaginas = Math.max(1, Math.ceil(totalItems / noticiasPorPagina));
 
   const handleNextPage = () => {
-    if (paginaActual < totalPaginas) setPaginaActual(paginaActual + 1);
+    if (paginaActual < totalPaginas) setPaginaActual((p) => p + 1);
   };
 
   const handlePrevPage = () => {
-    if (paginaActual > 1) setPaginaActual(paginaActual - 1);
+    if (paginaActual > 1) setPaginaActual((p) => p - 1);
   };
 
-  // Combinar datos fijos y no fijos
+  // Construye el array final a renderizar para la página actual:
+  // toma slice de fijos según corresponda y concatena los datos no-fijos que se pidieron
   const todosLosDatos = () => {
     const fijosArray = fijos || [];
     const datosArray = datos || [];
-    
-    // Si estamos en la primera página, mostrar fijos + datos
-    if (paginaActual === 1) {
-      return [...fijosArray, ...datosArray];
-    } else {
-      // En páginas siguientes, solo mostrar datos no fijos
-      return datosArray;
+
+    const startIndexGlobal = (paginaActual - 1) * noticiasPorPagina;
+    const endIndexGlobal = startIndexGlobal + noticiasPorPagina - 1;
+
+    // Slice de fijos que pertenecen a esta página
+    // si startIndexGlobal >= fijos.length => no hay fijos en esta página
+    let fijosSlice = [];
+    if (startIndexGlobal < fijosArray.length) {
+      const fijosSliceStart = startIndexGlobal;
+      const fijosSliceEnd = Math.min(fijosArray.length, endIndexGlobal + 1); // end exclusive
+      fijosSlice = fijosArray.slice(fijosSliceStart, fijosSliceEnd);
     }
+
+    // datosArray ya contiene exactamente los no-fijos requeridos para la página
+    return [...fijosSlice, ...datosArray];
   };
 
   return (
@@ -160,7 +186,7 @@ function Planeacion() {
             <h1
               className={`${notoSans.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight gap-8 ml-[-20px] md:ml-0.5`}
             >
-             Departamento de Planeación, Seguimiento Operativo y Acreditación
+              Departamento de Planeación, Seguimiento Operativo y Acreditación
             </h1>
 
             <div className="mb-16 w-full">
@@ -168,7 +194,7 @@ function Planeacion() {
                 {todosLosDatos().length > 0 ? (
                   todosLosDatos().map((item, index) => (
                     <div
-                      key={`${item.attributes.Fijo ? 'fijo' : 'normal'}-${index}`}
+                      key={item.id ?? `${index}-${item.attributes?.slug ?? index}`}
                       className="overflow-hidden w-full max-w-[380px] mx-auto sm:mx-0 h-full min-h-[474px] rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
                       style={{ height: "474px" }}
                     >
@@ -223,7 +249,7 @@ function Planeacion() {
             </div>
 
             {/* Paginación */}
-            {totalNoticias > 0 && (
+            {totalPaginas > 0 && (
               <div className="flex justify-center items-center gap-4 mt-8">
                 <button
                   onClick={handlePrevPage}
