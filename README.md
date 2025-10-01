@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📖 Proyecto INEA – Plataforma Web  
 
-## Getting Started
+## 📌 Descripción  
+Este proyecto es una **plataforma web institucional** desarrollada para el INEA (Instituto Nacional para la Educación de los Adultos).  
+Su objetivo es ofrecer información, materiales educativos y servicios digitales a los usuarios de forma accesible y adaptable a las necesidades de cada estado.  
 
-First, run the development server:
+---
 
+## ⚙️ Tecnologías utilizadas  
+- [Next.js 13](https://nextjs.org/) (con App Router)  
+- React 18  
+- TailwindCSS  
+- JavaScript / JSX  
+- API Routes (Next.js)  
+
+---
+
+## 🖥️ Requisitos previos  
+- Node.js **v18 o superior**  
+- npm 
+- Editor recomendado: **Visual Studio Code**  
+
+---
+
+## 🚀 Instalación  
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clonar el repositorio
+git clone https://github.com/inea/proyecto-front.git
+
+# Entrar a la carpeta
+cd inea-web
+
+# Instalar dependencias
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## ▶️ Uso en desarrollo  
+```bash
+# Levantar el servidor de desarrollo
+npm run dev
+```
+La aplicación estará disponible en:  
+👉 [http://localhost:3000](http://localhost:3000)  
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+## 📦 Generar build de producción  
+```bash
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📂 Estructura del proyecto  
+```bash
+proyecto/
+ ┣ public/               # Recursos estáticos (logos, banners, imágenes, tipografías)
+ ┣ src/
+ ┃ ┣ app/                # Rutas principales de Next.js
+ ┃ ┃ ┣ api/              # Endpoints internos de la API
+ ┃ ┃ ┣ blog/             # Noticias y comunicados
+ ┃ ┃ ┣ comunicado-contingencia/  # Página especial de contingencia
+ ┃ ┃ ┣ control-escolar/       
+ ┃ ┃ ┣ enlaces-carrusel/       
+ ┃ ┃ ┣ enlaces-de-interes/       
+ ┃ ┃ ┣ glosario/       
+ ┃ ┃ ┣ home-enlaces-de-interes/       
+ ┃ ┃ ┣ INTRANET/       
+ ┃ ┃ ┣ mapa-sitio/       
+ ┃ ┃ ┣ materiales/       
+ ┃ ┃ ┣ oferta-educativa/       
+ ┃ ┃ ┣ planeacion/       
+ ┃ ┃ ┣ servicio-social/       
+ ┃ ┃ ┣ servicios/       
+ ┃ ┃ ┣ ubicacion/       
+ ┃ ┃ ┣ layout.jsx        # Layout principal
+ ┃ ┃ ┣ not-found.jsx     # Página de error 404
+ ┃ ┃ ┗ page.jsx          # Página de inicio
+ ┃ ┣ components/         # 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Configuración  
+- **Colores y estilos** definidos en `tailwind.config.js`.  
+- **Imágenes institucionales y logos** en `public/`.  
+- **Fuentes tipográficas** en `public/`.  
+- **Variables de entorno** (si aplica) deben configurarse en un archivo `.env.local`.  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Ejemplo:  
+```env
+API_URL=https://api.inea.gob.mx
+```
+
+---
+
+## 🔗 Conexión con API  
+Las llamadas a la API se hacen mediante rutas en `src/app/api/`.  
+Ejemplo (`src/app/api/upload/route.js`): 
+```
+
+---
+
+## 🎨 Personalización  
+Para que otros estados del INEA puedan **adaptar la plataforma**, deben modificar:  
+- **Logos e imágenes** → en `public/`.  
+- **Colores institucionales** → en `tailwind.config.js` o las mismas clases que tailwind te permite usar.  
+- **Textos principales** → directamente en los archivos `.jsx` de `src/app/`.  
+
+---
+
+## 📚 Páginas principales  
+- `/` → Página de inicio.  
+- `/blog` → Noticias institucionales.  
+- `/comunicado-contingencia` → Página especial para comunicados.   
+
+---
+
+## 🤝 Contribución  
+1. Crear una nueva rama:  
+   ```bash
+   git checkout -b feature/nueva-funcionalidad
+   ```
+2. Hacer los cambios y confirmar:  
+   ```bash
+   git commit -m "Agrega nueva funcionalidad"
+   ```
+3. Subir la rama y crear un Pull Request.  
+
+---
+
+## 👨‍💻 Autores  
+Equipo de Desarrollo – **INEA CDMX**  
