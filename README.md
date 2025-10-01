@@ -54,7 +54,7 @@ npm start
 
 ---
 
-## 📂 Estructura del proyecto  
+## 📂 Estructura y Flujo del proyecto  
 ```bash
 proyecto/
  ┣ public/               # Recursos estáticos (logos, banners, imágenes, tipografías)
@@ -82,7 +82,23 @@ proyecto/
  ┃ ┣ components/         # 
 
 ```
+## 🧩 Principales vistas y componentes
+1. Vistas principales
 
+- / (Inicio) → Página de bienvenida con accesos directos a secciones.
+- /blog → Noticias y comunicados institucionales.
+- /comunicado-contingencia → Página especial para anuncios urgentes.
+- /oferta-educativa → Información sobre programas y servicios educativos.
+- /servicio-social → Detalles para estudiantes en servicio social.
+- /ubicacion → Módulo con mapa interactivo para localizar centros del INEA.
+
+2. Componentes clave (src/components/)
+
+- Navbar.jsx → Menú de navegación principal.
+- Footer.jsx → Pie de página con enlaces institucionales.
+- Carrusel.jsx → Componente para mostrar imágenes y enlaces destacados.
+- FormularioContacto.jsx → Formulario con validación para usuarios.
+- CardNoticia.jsx → Tarjetas reutilizables para publicaciones en el blog.
 ---
 
 ## 🛠️ Configuración  
