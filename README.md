@@ -61,25 +61,41 @@ proyecto/
  ┣ src/
  ┃ ┣ app/                # Rutas principales de Next.js
  ┃ ┃ ┣ api/              # Endpoints internos de la API
- ┃ ┃ ┣ blog/             # Noticias y comunicados
+ ┃ ┃ ┣ blog/noticias-antiguas/  # Noticias y comunicados
+ ┃ ┃ ┣ ┣ noticiasAntiguasId/
  ┃ ┃ ┣ comunicado-contingencia/  # Página especial de contingencia
- ┃ ┃ ┣ control-escolar/       
- ┃ ┃ ┣ enlaces-carrusel/       
- ┃ ┃ ┣ enlaces-de-interes/       
+ ┃ ┃ ┣ control-escolar/departamento-planeacion/       
+ ┃ ┃ ┣ enlaces-carrusel/home-enlace-carruselid/      
+ ┃ ┃ ┣ enlaces-de-interes/enlace-interesId/       
  ┃ ┃ ┣ glosario/       
- ┃ ┃ ┣ home-enlaces-de-interes/       
- ┃ ┃ ┣ INTRANET/       
+ ┃ ┃ ┣ home-enlaces-de-interes/home-enlace-interesId/      
+ ┃ ┃ ┣ INTRANET/ inicio-sesion /      
  ┃ ┃ ┣ mapa-sitio/       
  ┃ ┃ ┣ materiales/       
- ┃ ┃ ┣ oferta-educativa/       
- ┃ ┃ ┣ planeacion/       
+ ┃ ┃ ┣ oferta-educativa/ 
+ ┃ ┃ ┣ ┣ enlinea      
+ ┃ ┃ ┣ ┣ examen-diagnostico     
+ ┃ ┃ ┣ ┣ examen-unico     
+ ┃ ┃ ┣ ┣ presencial     
+ ┃ ┃ ┣ ┣ que-modalidad-elijo     
+ ┃ ┃ ┣ planeacion/  
+ ┃ ┃ ┣ ┣ planningId     
  ┃ ┃ ┣ servicio-social/       
- ┃ ┃ ┣ servicios/       
+ ┃ ┃ ┣ servicios/  
+ ┃ ┃ ┣ ┣ constancia-comipems     
+ ┃ ┃ ┣ ┣ descargar-material    
+ ┃ ┃ ┣ ┣ descargar-modulos    
+ ┃ ┃ ┣ ┣ guias-aprendizajes    
+ ┃ ┃ ┣ ┣ reposicion-certificados    
+ ┃ ┃ ┣ ┣ revalidacion-extranjeros    
+ ┃ ┃ ┣ ┣ servedu    
+ ┃ ┃ ┣ ┣ solucitud-duplicados    
+ ┃ ┃ ┣ ┣ te-contactamos    
  ┃ ┃ ┣ ubicacion/       
  ┃ ┃ ┣ layout.jsx        # Layout principal
  ┃ ┃ ┣ not-found.jsx     # Página de error 404
  ┃ ┃ ┗ page.jsx          # Página de inicio
- ┃ ┣ components/         # 
+ ┃ ┣ components/         
 
 ```
 ## 🧩 Principales vistas y componentes
@@ -113,11 +129,6 @@ API_URL=https://api.inea.gob.mx
 ```
 
 ---
-
-## 🔗 Conexión con API  
-Las llamadas a la API se hacen mediante rutas en `src/app/api/`.  
-Ejemplo (`src/app/api/upload/route.js`): 
-```
 
 ---
 
