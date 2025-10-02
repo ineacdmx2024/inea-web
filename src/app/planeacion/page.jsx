@@ -1,6 +1,6 @@
 "use client";
 import { Noto_Sans } from "next/font/google";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import PagSec from "@/components/PlantillaPagSec";
@@ -12,6 +12,7 @@ const notoSans = Noto_Sans({
 });
 
 const truncateText = (text, maxLetters) => {
+  if (!text) return "";
   if (text.length > maxLetters) {
     return text.slice(0, maxLetters) + "...";
   }
@@ -19,6 +20,9 @@ const truncateText = (text, maxLetters) => {
 };
 
 function Planeacion() {
+  const cardsRef = useRef(null);
+  const firstMountRef = useRef(true);
+
   const [datos, setDatos] = useState([]); // datos no-fijos (para la página actual)
   const [fijos, setFijos] = useState([]); // todas las noticias fijas
   const [totalNonFijos, setTotalNonFijos] = useState(0); // total de no-fijos (para paginación)
@@ -57,23 +61,21 @@ function Planeacion() {
 
   // Fetch datos no-fijos necesarios para la página actual
   const fetchData = async (page = 1) => {
-    // Indices globales (virtuales) dentro del listado combinado (fijos primero)
     const startIndexGlobal = (page - 1) * noticiasPorPagina;
-    const endIndexGlobal = startIndexGlobal + noticiasPorPagina - 1;
 
-    // Cuántos fijos hay que tomar para esta página (puede ser 0..noticiasPorPagina)
-    const fijosStartIndex = Math.max(0, startIndexGlobal);
-    const fijosTake = Math.max(0, Math.min(fijos.length - fijosStartIndex, noticiasPorPagina));
+    // Cuántos fijos caen en esta página
+    let fijosTake = 0;
+    if (startIndexGlobal < fijos.length) {
+      fijosTake = Math.min(fijos.length - startIndexGlobal, noticiasPorPagina);
+      if (fijosTake < 0) fijosTake = 0;
+    }
 
-    // Si la página requiere no-fijos, calculamos el start dentro del arreglo de no-fijos
-    // El primer índice de no-fijos dentro del listado combinado es fijos.length (0-based)
-    // startIndexGlobal - fijos.length (si es negativo => 0)
     const startNonFijos = Math.max(0, startIndexGlobal - fijos.length);
     const requiredNonFijos = noticiasPorPagina - fijosTake; // puede ser 0
 
     if (requiredNonFijos <= 0) {
       // esta página se llena completamente con fijos: no necesitamos pedir no-fijos
-      setDatos([]); // limpiamos
+      setDatos([]);
       return;
     }
 
@@ -91,13 +93,11 @@ function Planeacion() {
     }
   };
 
-  // Al montar, traemos fijos y la cuenta de no-fijos
   useEffect(() => {
     fetchFijos();
     fetchCountNonFijos();
   }, []);
 
-  // Cada vez que cambie la página o cambien los fijos, traemos los datos no-fijos necesarios
   useEffect(() => {
     fetchData(paginaActual);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -140,43 +140,75 @@ function Planeacion() {
     return `${diasSemana[fecha.getDay()]}, ${fecha.getDate()} de ${meses[fecha.getMonth()]} de ${fecha.getFullYear()}`;
   };
 
-  const handlePageChange = (newPage) => {
-    setPaginaActual(newPage);
-  };
-
-  // total de páginas basado en fijos + no-fijos
-  const totalItems = (fijos?.length || 0) + (totalNonFijos || 0);
-  const totalPaginas = Math.max(1, Math.ceil(totalItems / noticiasPorPagina));
-
-  const handleNextPage = () => {
-    if (paginaActual < totalPaginas) setPaginaActual((p) => p + 1);
-  };
-
-  const handlePrevPage = () => {
-    if (paginaActual > 1) setPaginaActual((p) => p - 1);
-  };
-
   // Construye el array final a renderizar para la página actual:
-  // toma slice de fijos según corresponda y concatena los datos no-fijos que se pidieron
   const todosLosDatos = () => {
     const fijosArray = fijos || [];
     const datosArray = datos || [];
 
     const startIndexGlobal = (paginaActual - 1) * noticiasPorPagina;
-    const endIndexGlobal = startIndexGlobal + noticiasPorPagina - 1;
 
     // Slice de fijos que pertenecen a esta página
-    // si startIndexGlobal >= fijos.length => no hay fijos en esta página
     let fijosSlice = [];
     if (startIndexGlobal < fijosArray.length) {
-      const fijosSliceStart = startIndexGlobal;
-      const fijosSliceEnd = Math.min(fijosArray.length, endIndexGlobal + 1); // end exclusive
-      fijosSlice = fijosArray.slice(fijosSliceStart, fijosSliceEnd);
+      const start = startIndexGlobal;
+      const end = Math.min(fijosArray.length, start + noticiasPorPagina);
+      fijosSlice = fijosArray.slice(start, end);
     }
 
-    // datosArray ya contiene exactamente los no-fijos requeridos para la página
     return [...fijosSlice, ...datosArray];
   };
+
+  const items = todosLosDatos();
+
+  // paginación
+  const totalItems = (fijos?.length || 0) + (totalNonFijos || 0);
+  const totalPaginas = Math.max(1, Math.ceil(totalItems / noticiasPorPagina));
+
+  // Handlers: solo cambian la página (el scroll lo hago en el useEffect abajo)
+  const handlePageChange = (newPage) => {
+    if (newPage < 1 || newPage > totalPaginas) return;
+    setPaginaActual(newPage);
+  };
+
+  const handleNextPage = () => {
+    if (paginaActual < totalPaginas) {
+      setPaginaActual((p) => p + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (paginaActual > 1) {
+      setPaginaActual((p) => p - 1);
+    }
+  };
+
+  // SCROLL: cuando cambie paginaActual y los items se actualicen, hago scroll.
+  // Evito el primer mount con firstMountRef.
+  useEffect(() => {
+    if (firstMountRef.current) {
+      firstMountRef.current = false;
+      return;
+    }
+
+    // Pequeña espera para que el DOM se actualice (y los elementos ocupen su espacio).
+    const id = window.setTimeout(() => {
+      const section = cardsRef.current;
+      if (!section) return;
+
+      // Intento detectar un header fijo y restar su altura
+      const header =
+        document.querySelector("main") ||
+        null;
+      const headerHeight = header?.offsetHeight || 0;
+
+      const rect = section.getBoundingClientRect();
+      const top = rect.top + window.pageYOffset - headerHeight - 1; // 16px margen
+
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    }, 120); // 120ms suele ser suficiente; ajustar si es necesario
+
+    return () => window.clearTimeout(id);
+  }, [paginaActual, items.length]); // items.length para esperar a que cambie el número de cards
 
   return (
     <main>
@@ -189,59 +221,67 @@ function Planeacion() {
               Departamento de Planeación, Seguimiento Operativo y Acreditación
             </h1>
 
-            <div className="mb-16 w-full">
+            <div id="cards-section" ref={cardsRef} className="mb-16 w-full">
               <div className="w-full grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                {todosLosDatos().length > 0 ? (
-                  todosLosDatos().map((item, index) => (
-                    <div
-                      key={item.id ?? `${index}-${item.attributes?.slug ?? index}`}
-                      className="overflow-hidden w-full max-w-[380px] mx-auto sm:mx-0 h-full min-h-[474px] rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
-                      style={{ height: "474px" }}
-                    >
-                      <div>
-                        <Link href={`/planeacion/${item.attributes.slug}`}>
-                          <div className="rounded-xl max-h-[220px] h-[220px] w-full overflow-hidden">
-                            <Image
-                              src={
-                                item.attributes.Imagen?.data?.attributes?.url ||
-                                item.attributes.Imagen?.data?.attributes?.formats?.large?.url ||
-                                item.attributes.Imagen?.data?.attributes?.formats?.medium?.url
-                              }
-                              alt={
-                                item.attributes.Nombre_de_la_Imagen || "Imagen sin título"
-                              }
-                              width={300}
-                              height={220}
-                              className="object-cover w-full h-full"
-                              quality={100}
-                              priority={index < 6}
-                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            />
-                          </div>
-                        </Link>
-                        <article
-                          className={`${notoSans.className} mt-4 w-full px-2 sm:px-4 py-1`}
-                        >
-                          <p className="text-sm sm:text-base text-gray-700 mb-2">
-                            {item.attributes.Fecha
-                              ? fechaFun(item.attributes.Fecha)
-                              : "No hay fecha"}
-                          </p>
-                          <h2 className="text-base sm:text-lg font-medium text-[#333334] mb-0">
-                            {truncateText(item.attributes.Titulo, isMobile ? 85 : 86)}
-                          </h2>
-                        </article>
+                {items && items.length > 0 ? (
+                  items.map((item, index) => {
+                    const key =
+                      item?.id ?? item?.attributes?.slug ?? `${paginaActual}-${index}`;
+                    const slug = item?.attributes?.slug ?? "#";
+                    const imgSrc =
+                      item?.attributes?.Imagen?.data?.attributes?.url ||
+                      item?.attributes?.Imagen?.data?.attributes?.formats?.large?.url ||
+                      item?.attributes?.Imagen?.data?.attributes?.formats?.medium?.url ||
+                      "";
+                    return (
+                      <div
+                        key={key}
+                        className="overflow-hidden w-full max-w-[380px] mx-auto sm:mx-0 h-full min-h-[474px] rounded-xl border border-slate-300 p-4 flex flex-col justify-between"
+                        style={{ height: "474px" }}
+                      >
+                        <div>
+                          <Link href={`/planeacion/${slug}`}>
+                            <div className="rounded-xl max-h-[220px] h-[220px] w-full overflow-hidden">
+                              {imgSrc ? (
+                                <Image
+                                  src={imgSrc}
+                                  alt={item?.attributes?.Nombre_de_la_Imagen || "Imagen sin título"}
+                                  width={300}
+                                  height={220}
+                                  className="object-cover w-full h-full"
+                                  quality={100}
+                                  priority={index < 6}
+                                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                />
+                              ) : (
+                                <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                                  <span className="text-sm text-gray-500">Sin imagen</span>
+                                </div>
+                              )}
+                            </div>
+                          </Link>
+                          <article className={`${notoSans.className} mt-4 w-full px-2 sm:px-4 py-1`}>
+                            <p className="text-sm sm:text-base text-gray-700 mb-2">
+                              {item?.attributes?.Fecha
+                                ? fechaFun(item.attributes.Fecha)
+                                : "No hay fecha"}
+                            </p>
+                            <h2 className="text-base sm:text-lg font-medium text-[#333334] mb-0">
+                              {truncateText(item?.attributes?.Titulo ?? "", isMobile ? 85 : 86)}
+                            </h2>
+                          </article>
+                        </div>
+                        <div className="flex justify-center">
+                          <Link
+                            href={`/planeacion/${slug}`}
+                            className="bg-[#611432] text-white text-center py-2 px-4 hover:bg-white hover:text-[#611432] border-2 border-[#611432] rounded-full mb-5"
+                          >
+                            Continuar leyendo
+                          </Link>
+                        </div>
                       </div>
-                      <div className="flex justify-center">
-                        <Link
-                          href={`/planeacion/${item.attributes.slug}`}
-                          className="bg-[#611432] text-white text-center py-2 px-4 hover:bg-white hover:text-[#611432] border-2 border-[#611432] rounded-full mb-5"
-                        >
-                          Continuar leyendo
-                        </Link>
-                      </div>
-                    </div>
-                  ))
+                    );
+                  })
                 ) : (
                   <p className="text-center">Cargando planeación...</p>
                 )}
@@ -254,6 +294,7 @@ function Planeacion() {
                 <button
                   onClick={handlePrevPage}
                   disabled={paginaActual === 1}
+                  aria-label="Página anterior"
                   className={`px-4 py-2 bg-[#611432] text-white rounded-md ${
                     paginaActual === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-[#8a1a4a]"
                   }`}
@@ -266,10 +307,9 @@ function Planeacion() {
                 <button
                   onClick={handleNextPage}
                   disabled={paginaActual === totalPaginas}
+                  aria-label="Página siguiente"
                   className={`px-4 py-2 bg-[#611432] text-white rounded-md ${
-                    paginaActual === totalPaginas
-                      ? "opacity-50 cursor-not-allowed"
-                      : "hover:bg-[#8a1a4a]"
+                    paginaActual === totalPaginas ? "opacity-50 cursor-not-allowed" : "hover:bg-[#8a1a4a]"
                   }`}
                 >
                   Siguiente
