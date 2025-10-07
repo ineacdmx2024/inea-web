@@ -11,9 +11,11 @@ const notoSans = Noto_Sans({
   subsets: ["latin"],
 });
 
+//  Función asíncrona para cargar los datos de un post específico usando su slug
 async function loadPost(slug) {
+  //  Hace una petición fetch a la API de blogs pasando el slug
+  //  cache: 'no-store' y 'Cache-Control': 'no-cache' aseguran que siempre se obtenga la información más reciente
   const res = await fetch(
-   // `https://inea-web-backend-production.up.railway.app/api/blogs/${slug}?populate=%2A`, {
     `https://inea-web-backend-production.up.railway.app/api/blogs/${slug}?populate=%2A`, {
       cache: 'no-store',
       headers: {
@@ -22,21 +24,24 @@ async function loadPost(slug) {
     }
   );
   const data = await res.json();
-
+  // Devuelve los datos del post
   return data;
 }
 
+// Función que obtiene los enlaces laterales de interés (máximo 3, priorizando los "pineados")
 async function loadEnlaces() {
   const resPineados = await fetch(
-    
+    // Petición para obtener enlaces "pineados" (marcados como destacados)
     `https://inea-web-backend-production.up.railway.app/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
       cache: 'no-store',
       headers: {
         'Cache-Control': 'no-cache'
       }
     }
-  );
+  )
+  // Desestructura la respuesta para obtener los enlaces pineados
   const { data: enlacesPineados } = await resPineados.json();
+  // Si hay menos de 3 enlaces pineados, completa con los más recientes no pineados
   if (enlacesPineados.length < 3) {
     const resNoPineados = await fetch(
       //`https://inea-web-backend-production.up.railway.app/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=false&populate=%2A&sort[0]=Fecha:desc`,
@@ -49,24 +54,28 @@ async function loadEnlaces() {
       }
     );
     const { data: enlacesNoPineados } = await resNoPineados.json();
-
+// Combina los enlaces pineados con los no pineados necesarios para completar 3
     const enlacesCompletados = [
       ...enlacesPineados,
       ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
     ];
     return enlacesCompletados;
   }
+  // Si hay al menos 3 enlaces pineados, se devuelven solo esos
   return enlacesPineados;
 }
-
+// Componente principal de la página que muestra el detalle de una noticia antigua
+// Recibe los parámetros de la ruta (params) para cargar el post correspondiente
 async function Page({ params }) {
-  console.log('HOLA MUNDO')
+  // Carga los datos del post usando el slug de la ruta
   const post = await loadPost(params.noticiasAntiguasId);
 
+  // Carga los enlaces de interés laterales
   const enlaces = await loadEnlaces();
 
+  // Obtiene el contenido del post (arreglo de bloques de texto, imágenes, etc.)
   const contenido = post.data.attributes.Contenido;
-
+// Función que convierte la fecha de la API a formato legible en español
   const fechaFun = (fechaAPI) => {
     const diasSemana = [
       "domingo",
@@ -100,6 +109,7 @@ async function Page({ params }) {
   };
 
   // Modificación en renderContenido
+  // Función que interpreta y renderiza dinámicamente los diferentes tipos de contenido (texto, imágenes, embeds, etc.)
   const renderContenido = (contenido) => {
     return contenido.map((item, index) => {
       // Detectar si es un párrafo que contiene un iframe (embed de YouTube u otro servicio)
@@ -128,9 +138,10 @@ async function Page({ params }) {
           </div>
         );
       }
-      
+      // Renderizado según el tipo de bloque
       switch (item.type) {
         case "heading":
+          // Renderiza encabezados H1-H6 según level
           return (
             // <div style={{ width: '720px', maxWidth: '100%', overflow: 'hidden' }}>
             <div className="w-[720px] max-w-full overflow-hidden">
@@ -150,6 +161,7 @@ async function Page({ params }) {
             </div>
           );
           case "paragraph":
+            // Renderiza un párrafo de texto, detectando links y estilos (negrita, cursiva, subrayado)
             const textContent = item.children
               .map((child) => (child.type === "text" ? child.text : ""))
               .join("");

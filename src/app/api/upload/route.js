@@ -1,17 +1,20 @@
+// Importa la versión 2 del SDK de Cloudinary y la renombra como "cloudinary"
 import {v2 as cloudinary} from 'cloudinary';
 
-  // Configuration
+  // Configuration Configuración de Cloudinary usando variables de entorno para mantener seguras las credenciales
   cloudinary.config({ 
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME, // Nombre de la nube de Cloudinary
+    api_key: process.env.CLOUDINARY_API_KEY,       // Clave de la API de Cloudinary
+    api_secret: process.env.CLOUDINARY_API_SECRET  // Secreto de la API de Cloudinary
   });
 
-
+// Exporta una función asíncrona tipo POST que maneja la subida de archivos a Cloudinary
+// Esta función recibirá la petición con los archivos enviados desde un formulario
 //Enviar archivos imagenes o pdf a cloudinary para que los tome y se envien via correo electronico
 export async function POST(request) {
 
   // Obtener los datos del formulario
+  // Obtiene los datos enviados desde el formulario (formData)
   const datas = await request.formData();
 
   // Recuperar los archivos por sus nombres
@@ -22,7 +25,8 @@ export async function POST(request) {
 
 
 
-
+  // Verifica si los archivos obligatorios fueron enviados
+  // Si falta alguno de los tres (Curp, Identificación o Fotografía), retorna un error 400
   // Verificar si ambos archivos fueron enviados
   if (!curpFile || !identificacionFile || !fotografiaFile) {
     return new Response(
@@ -35,7 +39,8 @@ export async function POST(request) {
   const curpBytes = await curpFile.arrayBuffer();
   const Curp_Buffer = Buffer.from(curpBytes);
 
-
+// Sube el archivo CURP a Cloudinary usando upload_stream (flujo de carga)
+// Retorna una promesa que se resuelve con la respuesta de Cloudinary (URL, info, etc.)
 const Response_Curp = await new Promise((resolve, rejects)=>{
   cloudinary.uploader.upload_stream({
 

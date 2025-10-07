@@ -19,8 +19,9 @@ const notoSans = Noto_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
-
+// Componente principal que muestra el detalle de un enlace en el carrusel
 function DetalleEnlace_CarruselBanner(slug) {
+  // Función para formatear fechas en español
   const fechaFun = (fechaAPI) => {
     const diasSemana = [
       "domingo",
@@ -54,13 +55,16 @@ function DetalleEnlace_CarruselBanner(slug) {
   };
 
   const [cont, setCont] = useState([]);
-  console.log(slug.params["home-enlace-interesId"]);
+  // console.log(slug.params["home-enlace-interesId"]);
+  // useEffect para cargar el contenido principal al montar el componente
   useEffect(() => {
     const Contenido = async () => {
+      // Fetch para obtener los datos del banner principal filtrando por slug
       const res = await fetch(
        `https://inea-web-backend-production.up.railway.app/api/baner-principals?filters[slug][$eq]=${slug.params["home-enlace-carruselid"]}&populate=*`
       );
       const data = await res.json();
+      // Mapear los datos obtenidos y extraer solo lo necesario
       const enlacesData = data.data.map((item) => ({
         titulo: item.attributes.Titulo,
         subtitulo: item.attributes.Subtitulo, // Verifica si 'Subtitulo' existe
@@ -70,14 +74,15 @@ function DetalleEnlace_CarruselBanner(slug) {
         imagen: item.attributes.Imagen?.data?.attributes?.formats?.large?.url,
         NomImg: item.attributes.Imagen?.data?.attributes?.name,
       }));
-      setCont(enlacesData);
+      setCont(enlacesData); // Guardar los datos en el estado
     };
-    Contenido();
+    Contenido(); // Ejecutar la función asíncrona
   }, []);
 
   //enlaces laterales
+  // Estado para almacenar los enlaces laterales
   const [enlacesL, setenlacesL] = useState([]);
-
+// useEffect para cargar los enlaces laterales al montar el componente
   useEffect(() => {
     let enlaces = [];
     const fetchEnlacesL = async () => {
@@ -98,10 +103,11 @@ function DetalleEnlace_CarruselBanner(slug) {
           ...enlacesPineados,
           ...enlacesNoPineados.slice(0, 3 - enlacesPineados.length),
         ];
-        enlaces = enlacesCompletados;
+        enlaces = enlacesCompletados; // Unir pineados y no pineados
       } else {
-        enlaces = enlacesPineados;
+        enlaces = enlacesPineados; // Solo usar pineados si son 3 o más
       }
+      // Mapear los enlaces para estructura de PagSec
       const enlacesLData = enlaces.map((item) => ({
         title: item.attributes.Titulo,
         imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
@@ -118,6 +124,7 @@ function DetalleEnlace_CarruselBanner(slug) {
 
   const renderContenido = (contenido) => {
     return contenido.map((item, index) => {
+      // Detecta si un párrafo contiene un iframe y lo renderiza como embed
       if (item.type === "paragraph" && 
         item.children && 
         item.children.length === 1 && 
@@ -294,7 +301,6 @@ function DetalleEnlace_CarruselBanner(slug) {
       ))}
     </div>
   );
-  // Accede a los parámetros
 }
 
 export default DetalleEnlace_CarruselBanner;

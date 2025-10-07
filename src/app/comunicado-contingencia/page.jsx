@@ -14,21 +14,21 @@ const notoSans = Noto_Sans({
   styles: ["italic", "normal", "bold", "bold italic", "italic bold"],
   subsets: ["latin"],
 });
-
+// Función asíncrona para cargar los datos del banner de contingencia
 async function loadPost() {
   const res = await fetch(
     `https://inea-web-backend-production.up.railway.app/api/banner-contingencia?populate=%2A`,
     {
-      cache: "no-store",
+      cache: "no-store", // Siempre obtener datos frescos
       headers: {
         "Cache-Control": "no-cache",
       },
     }
   );
   const data = await res.json();
-  return data;
+  return data; // Devuelve los datos del banner
 }
-
+// Función asíncrona para cargar los enlaces de interés laterales
 async function loadEnlaces() {
   const res = await fetch(
     `https://inea-web-backend-production.up.railway.app/api/enlaces-de-interes-laterales?filters[Pinear][$eq]=true&populate=%2A`, {
@@ -40,13 +40,17 @@ async function loadEnlaces() {
   );
   const data = await res.json();
 
-  return data;
+  return data; // Devuelve los enlaces
 }
-
+// Componente principal de la página de comunicado de contingencia
 async function ComunicadoContingencia() {
+  // Cargar el banner principal
   const post = await loadPost();
+
+  // Cargar los enlaces de interés laterales
   const enlaces = await loadEnlaces();
 
+  // Función para formatear fechas a formato legible en español
   const fechaFun = (fechaAPI) => {
     const meses = [
       "enero",
@@ -68,7 +72,7 @@ async function ComunicadoContingencia() {
     const año = fecha.getFullYear();
     return `${dia + 1} de ${mes} de ${año}`;
   };
-
+// Mapea los enlaces obtenidos para pasarlos al componente PagSec
   const noticias = enlaces.data.map((item) => ({
     title: item.attributes.Titulo,
     imageSrc: item.attributes?.Imagen.data[0]?.attributes?.url,
@@ -77,7 +81,7 @@ async function ComunicadoContingencia() {
       ? item.attributes.URL_Externo 
       : `/enlaces-de-interes/${item.attributes.slug}`,
   }));
-
+// Función para renderizar el contenido del post según su tipo
   const renderContenido = (contenido) => {
     return contenido.map((item, index) => {
       if (item.type === "paragraph" && 
@@ -96,6 +100,7 @@ async function ComunicadoContingencia() {
         </div>
       );
     }
+    // Renderizado según tipo de bloque
       switch (item.type) {
         case "heading":
           return React.createElement(
@@ -110,6 +115,7 @@ async function ComunicadoContingencia() {
             item.children[0]?.text || ""
           );
           case "paragraph":
+            // Renderiza párrafos de texto, detectando enlaces y estilos
             const textContent = item.children
               .map((child) => (child.type === "text" ? child.text : ""))
               .join("");
@@ -118,7 +124,7 @@ async function ComunicadoContingencia() {
               // Manejo de párrafos vacíos: agrega un salto de línea visual
               return <br key={index} />;
             }
-          
+
             return (
               <p
                 key={index}
@@ -168,6 +174,7 @@ async function ComunicadoContingencia() {
             );
           
         case "image":
+          // Renderiza una imagen dentro del contenido
           return (
             <Image
               key={index}
@@ -179,6 +186,7 @@ async function ComunicadoContingencia() {
             />
           );
           case "embed":
+            // Renderiza contenido embebido (HTML) dentro de un contenedor responsive
             return (
               <div key={index} className="my-6 aspect-video w-full max-w-4xl mx-auto">
                 <div 
@@ -189,6 +197,7 @@ async function ComunicadoContingencia() {
               </div>
             );
         case "list":
+          // Renderiza listas ordenadas
           return (
             <ol
               key={index}
@@ -200,6 +209,7 @@ async function ComunicadoContingencia() {
             </ol>
           );
         case "quote":
+          // Renderiza citas
           return (
             <blockquote
               key={index}
