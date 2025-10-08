@@ -218,7 +218,7 @@ function Planeacion() {
             <h1
               className={`${notoSans.className} text-[38px] font-semibold text-[#333334] mb-5 leading-tight gap-8 ml-[-20px] md:ml-0.5`}
             >
-              Departamento de Planeación, Seguimiento Operativo y Acreditacion
+              Departamento de Planeación, Seguimiento Operativo y Acreditación
             </h1>
 
             <div id="cards-section" ref={cardsRef} className="mb-16 w-full">
