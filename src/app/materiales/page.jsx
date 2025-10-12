@@ -209,15 +209,6 @@ function Materiales() {
             "https://archive.org/download/nombrando-y-contando-al-mundo-albetizador/nycm_lib3_albetizador.pdf",
           linkVista: "https://archive.org/embed/nombrando-y-contando-al-mundo-albetizador",
         },
-        {
-          titulo: "",
-          portada:
-            "https://res.cloudinary.com/dce9xqd1e/image/upload/v1751077170/Portada_Gu%C3%ADa_de_aplicaci%C3%B3n_Para_el_alfabetizador_ika3xr.webp",
-          linkDescarga:
-            "https://archive.org/download/guia-de-aplicacion-para-el-alfabetizador/Gu%C3%ADa%20de%20aplicaci%C3%B3n%20-Para%20el%20alfabetizador.pdf",
-          linkVista:
-            "https://archive.org/embed/guia-de-aplicacion-para-el-alfabetizador",
-        },
       ],
     },
     {
