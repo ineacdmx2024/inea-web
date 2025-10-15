@@ -157,7 +157,7 @@ function Planeacion() {
             </h1>
 
             <div className="mb-16 w-full">
-              <div className="w-full grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ width: "calc(100% + 33px)",marginLeft: "-16px" }}>
+              <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-[calc(100%+33px)] ml-[-16px]">
                 {todosLosDatos().length > 0 ? (
                   todosLosDatos().map((item, index) => (
                     <div
